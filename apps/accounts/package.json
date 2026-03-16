@@ -1,0 +1,33 @@
+{
+  "name": "@suncube/accounts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "https://SunenaB3504.github.io/CBSE-XII-Commerce-App",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "lucide-react": "^0.563.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-markdown": "^10.1.0",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
+    "@suncube/ui": "workspace:*",
+    "@suncube/shared-logic": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "gh-pages": "^6.3.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

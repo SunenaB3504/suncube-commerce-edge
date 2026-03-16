@@ -1,0 +1,72 @@
+Unit 9 | ID: 2025-26-q29 | Marks: 4
+Q: Under what condition is financial leverage considering to be favourable?
+A: When ROI > Cost of Debt
+----------------------------------------
+Unit 9 | ID: 2024-25-q30 | Marks: 6
+Q: There is a time lag between the receipt of raw material and the realisation of cash from sales. How does this affect working capital requirements?
+A: Production Cycle (Longer cycle = Higher WC)
+----------------------------------------
+Unit 9 | ID: 2023-24-q23 | Marks: 3
+Q: A decision is taken to invest funds in a new project. Which type of financial decision is this?
+A: Investment Decision (Capital Budgeting)
+----------------------------------------
+Unit 9 | ID: 2022-23-q31 | Marks: 6
+Q: A company enters into a collaboration with another company to share production facilities. How will this affect its Fixed Capital requirement?
+A: Requirement Reduces (Level of Collaboration)
+----------------------------------------
+Unit 10 | ID: sqp-10-5 | Marks: 6
+Q: Explain the trading procedure on a Stock Exchange.
+A: 1. Selection of Broker 2. Opening Demat Account 3. Placing Order 4. Execution 5. Settlement.
+----------------------------------------
+Unit 10 | ID: sqp-10-6 | Marks: 3
+Q: Differentiate between Capital Market and Money Market on the basis of: (i) Duration (ii) Liquidity (iii) Safety.
+A: Capital: Long term, Less Liquid, Riskier. Money: Short term, High Liquid, Safer.
+----------------------------------------
+Unit 11 | ID: bulk_1001 | Marks: 3
+Q: Management of 'Product' mix involves evaluating certain decisions. Name any two.
+A: The correct approach involves identifying the core concept and outlining at least three distinct points of explanation or differentiation as required by the CBSE marking scheme. \n1. Primary Point: Defines the core subject clearly with an example.\n2. Secondary Point: Elaborates on the mechanism or rationale behind the concept.\n3. Tertiary Point: Discusses the implication or impact on the business environment.
+----------------------------------------
+Unit 11 | ID: 2025-26-q34 | Marks: 6
+Q: A company decides to launch a massive promotional campaign offering free gifts to clear its stock. Which element of promotion mix is used?
+A: Sales Promotion
+----------------------------------------
+Unit 11 | ID: 2024-25-q34b | Marks: 6
+Q: Explain the factors affecting the price of a product.
+A: Cost, Utility/Demand, Competition, Govt Regulation, Objectives
+----------------------------------------
+Unit 11 | ID: 2022-23-q34 | Marks: 6
+Q: A company appoints an on-ground sales team to deliver products to small shops in rural areas. Which element of marketing mix is this?
+A: Place / Physical Distribution
+----------------------------------------
+Unit 12 | ID: u12_extra_2 | Marks: 4
+Q: Explain any four responsibilities of a consumer.
+A: A four-mark answer must be comprehensive, breaking down the principles or processes into at least four distinct headings.\n\n1. First Heading: Detailed explanation linking back to the case study or direct theory.\n2. Second Heading: Expansion on the subsequent step or feature.\n3. Third Heading: Providing a real-world application or example.\n4. Fourth Heading: Summarizing the outcome or conclusion of the process.
+----------------------------------------
+Unit 12 | ID: u12_extra_3 | Marks: 3
+Q: State the pecuniary jurisdiction of the District Commission and State Commission under the Consumer Protection Act, 2019.
+A: The correct approach involves identifying the core concept and outlining at least three distinct points of explanation or differentiation as required by the CBSE marking scheme. \n1. Primary Point: Defines the core subject clearly with an example.\n2. Secondary Point: Elaborates on the mechanism or rationale behind the concept.\n3. Tertiary Point: Discusses the implication or impact on the business environment.
+----------------------------------------
+Unit 12 | ID: u12_extra_4 | Marks: 5
+Q: If a consumer is not satisfied with the order of the State Commission, where and within how many days can they appeal?
+A: This is a comprehensive long-form answer requiring deep analysis.\n\n1. Introduction: Define the broad concept asked in the question (e.g., Planning process, Fayol\'s principles).\n2. Core Point 1: Detail the first major feature or step with situational context.\n3. Core Point 2: Detail the second major feature or step.\n4. Core Point 3: Detail the third major feature or step.\n5. Core Point 4: Detail the fourth feature.\n6. Conclusion: A brief summarizing statement linking the points together.
+----------------------------------------
+Unit 12 | ID: bulk_1002 | Marks: 3
+Q: State any two rights of a consumer under the Consumer Protection Act, 2019.
+A: The correct approach involves identifying the core concept and outlining at least three distinct points of explanation or differentiation as required by the CBSE marking scheme. \n1. Primary Point: Defines the core subject clearly with an example.\n2. Secondary Point: Elaborates on the mechanism or rationale behind the concept.\n3. Tertiary Point: Discusses the implication or impact on the business environment.
+----------------------------------------
+Unit 12 | ID: 2025-26-q34a | Marks: 6
+Q: Suggest any three remedies or reliefs available to a consumer under the Consumer Protection Act, 2019.
+A: Removal of defect, Replacement, Refund, Compensation, Discontinuance of unfair practice.
+----------------------------------------
+Unit 12 | ID: 2024-25-q21 | Marks: 3
+Q: A consumer has the right to acquire knowledge and skill to be an informed consumer throughout life. Identify the right.
+A: Right to Consumer Education
+----------------------------------------
+Unit 12 | ID: 2023-24-q34c | Marks: 6
+Q: Identify the consumer responsibility highlighted in the statement: "A consumer should act like a prudent person and ask for a proof of purchase".
+A: Ask for a Cash Memo
+----------------------------------------
+Unit 12 | ID: 2022-23-q21 | Marks: 3
+Q: Business uses society\'s resources and therefore has an obligation to supply safer products. Which importance of consumer protection is this?
+A: Social Responsibility (Business View)
+----------------------------------------

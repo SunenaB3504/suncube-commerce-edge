@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@import "@suncube/ui/theme.css";
+
+@layer base {
+  body {
+    @apply antialiased bg-brand-slate text-white;
+  }
+}
+
+.glass-card {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-amber to-amber-600;
+}

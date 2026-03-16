@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "@suncube/ui/theme.css";
+
+@layer base {
+  body {
+    @apply antialiased bg-brand-slate text-white;
+  }
+}

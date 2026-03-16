@@ -1,0 +1,2173 @@
+Here is the complete production prompt:
+
+---
+
+## Antigravity Agent Prompt — Static GK Content Generator (CUET + MAH BBA CET)
+
+```
+## MISSION
+You are a Content Generation Agent for the Commerce Prep Pro project.
+Your task is to generate a comprehensive Static GK question bank
+covering Indian History & Culture, Geography, Indian Polity, Science
+& Technology, and Business Awareness — for BOTH CUET GAT and
+MAH BBA CET preparation.
+
+Static GK = facts that NEVER change. No verify flags needed
+for core content. These are permanent, examinable facts.
+
+Design Philosophy:
+  CUET: Tests SYNTHESIS — "Arrange battles chronologically"
+        "Which of these statements about Article 324 is CORRECT?"
+  MAH CET: Tests RECALL — "Where is Kaziranga National Park?"
+           "Who founded Infosys?"
+
+Both exams draw from the SAME fact pool.
+Questions are tagged by cognitiveType to serve the right
+exam mode automatically.
+
+---
+
+## MANDATORY FIRST STEPS (Do not skip)
+1. Read @RULES.md fully
+2. Read @DATA_SCHEMA.md fully
+3. Read @src/config/subjects.config.js
+4. Read @src/data/accountancy/ratio-analysis.data.js
+5. Read @src/data/gk-awareness/ca-briefing-flashcards.data.js
+   (to understand the 5-point briefing format)
+6. Output Plan Artifact with question count per file
+7. WAIT for human approval before writing any content
+
+---
+
+## EXAM CONFIGURATION
+
+STATIC_GK_CONFIG = {
+  CUET: {
+    sectionName: "General Test (Section III)",
+    staticGKWeightage: "25%",
+    cognitiveDepth: "synthesis",
+    timePerQuestion: 90,
+    negativeMarking: true,
+    marksPerCorrect: 5,
+    marksPerWrong: -1
+  },
+  MAH_CET: {
+    sectionName: "General Knowledge",
+    staticGKWeightage: "15%",
+    cognitiveDepth: "recall",
+    timePerQuestion: 20,
+    negativeMarking: false,
+    marksPerCorrect: 1,
+    marksPerWrong: 0
+  }
+}
+
+---
+
+## FILES TO CREATE
+
+File 1:  src/data/static-gk/history-battles.data.js
+File 2:  src/data/static-gk/history-freedom.data.js
+File 3:  src/data/static-gk/culture-dance-music.data.js
+File 4:  src/data/static-gk/geography-national-parks.data.js
+File 5:  src/data/static-gk/geography-rivers-dams.data.js
+File 6:  src/data/static-gk/geography-states-capitals.data.js
+File 7:  src/data/static-gk/polity-constitution.data.js
+File 8:  src/data/static-gk/polity-articles.data.js
+File 9:  src/data/static-gk/science-biology.data.js
+File 10: src/data/static-gk/science-physics-inventions.data.js
+File 11: src/data/static-gk/science-space-missions.data.js
+File 12: src/data/static-gk/business-brands-taglines.data.js
+File 13: src/data/static-gk/business-founders-hq.data.js
+File 14: src/data/static-gk/static-gk-study-notes.data.js
+File 15: src/data/static-gk/static-gk-flashcards.data.js
+File 16: src/data/static-gk/index.js
+
+---
+
+## EXTENDED SCHEMA FOR THIS MODULE
+
+Every question carries:
+
+  staticGKCategory:
+    "history-battles"        → Battles, wars, dynasties
+    "history-freedom"        → 1857–1947 independence movement
+    "culture-dance"          → Classical/folk dance, music
+    "geography-parks"        → National parks, wildlife
+    "geography-rivers"       → Rivers, dams, lakes
+    "geography-states"       → States, capitals, borders
+    "polity-constitution"    → Rights, Preamble, structure
+    "polity-articles"        → Specific Articles + functions
+    "science-biology"        → Vitamins, body, diseases
+    "science-physics"        → Inventions, SI units, laws
+    "science-space"          → ISRO, NASA, missions
+    "business-brands"        → Taglines, logos, slogans
+    "business-founders"      → Founders, HQs, established year
+
+  cognitiveType:
+    "recall"       → Single fact, direct answer
+    "synthesis"    → Two or more concepts combined
+    "chronological"→ Arrange in correct order
+    "match"        → Match column (List-I to List-II)
+    "elimination"  → "Which is NOT..." type
+
+  examTags: ["CUET"] | ["MH-CET"] | ["CUET","MH-CET"]
+
+  timePresure:
+    "speed"    → MAH CET recall (20 seconds)
+    "standard" → Both exams (60–90 seconds)
+    "deep"     → CUET synthesis (90–120 seconds)
+
+  speedTarget: 20 | 60 | 90 | 120   // seconds
+
+  // Learning content fields (on flashcard objects)
+  studyNote: {
+    summary: "",         // 40-60 words
+    keyPoints: [],       // exactly 5 points, 15-25 words each
+    examAngle: ""        // most likely question format
+  }
+  memoryHook: ""         // mnemonic or association
+  likelyQuestion: ""     // single most probable exam question
+
+---
+
+=================================================================
+=== FILE 1: history-battles.data.js
+    Topic: Significant Battles of Indian History
+=================================================================
+
+Generate 60 questions + 10 study notes + 10 flashcards.
+
+MASTER BATTLES LIST — Generate content for ALL:
+
+BATTLE 1: First Battle of Panipat (1526)
+  Between: Babur (Mughal) vs Ibrahim Lodi (Delhi Sultanate)
+  Result: Babur won — established Mughal Empire in India
+  Significance: End of Delhi Sultanate; start of Mughal era
+  Weapon advantage: Babur used gunpowder/cannons first time
+  studyNote keyPoints:
+    → "Fought in 1526 — Babur defeated Ibrahim Lodi,
+      ending Delhi Sultanate after 320 years."
+    → "Babur's key advantage: Use of gunpowder artillery
+      — first time used in a major Indian battle."
+    → "Established Mughal Empire — lasted until 1857
+      (official end after 1857 revolt)."
+    → "Location: Panipat, Haryana — fought on flat
+      plains ideal for cavalry and artillery."
+    → "Ibrahim Lodi was killed in battle — last ruler
+      of Delhi Sultanate from Lodi dynasty."
+  memoryHook: "1526 — Babur BATTERED Lodi with BULLETS
+               (gunpowder) at Panipat ONE"
+
+BATTLE 2: Second Battle of Panipat (1556)
+  Between: Akbar (Mughal, regent Bairam Khan)
+           vs Hemu (Hindu general, Adil Shah Suri)
+  Result: Akbar/Mughals won — consolidated Mughal power
+  Significance: Secured Mughal throne; defeated Sur Empire
+  Hemu: Was about to become Hindu Emperor of India
+  studyNote keyPoints:
+    → "Fought in 1556 between Akbar's forces (led by
+      Bairam Khan) and Hemu (Hindu general)."
+    → "Hemu had won 22 consecutive battles and declared
+      himself Vikramaditya — nearly restored Hindu rule."
+    → "Akbar was only 13 years old — Bairam Khan
+      (regent) actually commanded the battle."
+    → "Hemu was wounded by an arrow in the eye —
+      captured and executed after battle."
+    → "Result: Consolidated Mughal rule in North India
+      — Akbar went on to build greatest Mughal empire."
+  memoryHook: "1556 — AKBAR at THIRTEEN — BAIRAM
+               BATTLED for him"
+
+BATTLE 3: Third Battle of Panipat (1761)
+  Between: Ahmed Shah Durrani (Afghan) vs Maratha Empire
+  Result: Durrani won — massive Maratha defeat
+  Significance: Weakened Marathas permanently;
+    opened doors for British expansion
+  Casualties: One of bloodiest battles in 18th century
+  studyNote keyPoints:
+    → "Fought January 14, 1761 — Marathas vs Afghan
+      ruler Ahmed Shah Durrani (Abdali)."
+    → "Catastrophic Maratha defeat — Vishwasrao (heir)
+      and Bhau Saheb (commander) both killed."
+    → "Considered one of the largest battles of the
+      18th century — estimated 60,000+ casualties."
+    → "Weakened Maratha power permanently — paved way
+      for British expansion in India."
+    → "Ahmed Shah Durrani did NOT stay in India after
+      victory — returned to Afghanistan."
+  memoryHook: "1761 — THREE's the end — Marathas MEET
+               their match at Panipat"
+
+BATTLE 4: Battle of Plassey (1757)
+  Between: Robert Clive (British East India Company)
+           vs Nawab Siraj ud-Daulah (Bengal)
+  Result: British won — due to Mir Jafar's betrayal
+  Significance: Laid foundation of British rule in India
+  Location: Plassey (Palashi), West Bengal
+  studyNote keyPoints:
+    → "Fought June 23, 1757 — British EIC under Robert
+      Clive vs Nawab Siraj ud-Daulah of Bengal."
+    → "Key factor: Mir Jafar (Nawab's commander) betrayed
+      Siraj — did not engage troops in battle."
+    → "British won decisively despite smaller force —
+      treachery more important than military strength."
+    → "Laid foundation of British empire in India —
+      most consequential battle in Indian history."
+    → "Mir Jafar became Nawab of Bengal as reward —
+      'Mir Jafar' became synonym for traitor in India."
+  memoryHook: "PLASSEY 1757 — PLEASE SIR, JAFar BETRAYED"
+
+BATTLE 5: Battle of Buxar (1764)
+  Between: British EIC vs combined forces of
+    Mir Qasim + Nawab of Awadh + Mughal Emperor Shah Alam II
+  Result: British won — stronger than Plassey
+  Significance: More decisive than Plassey;
+    confirmed British military supremacy
+  Treaty: Treaty of Allahabad (1765)
+  studyNote keyPoints:
+    → "Fought October 22, 1764 — British vs three
+      combined Indian rulers including Mughal Emperor."
+    → "More decisive than Plassey — British defeated
+      combined forces of three kingdoms."
+    → "Led to Treaty of Allahabad (1765) — Mughal
+      Emperor granted British Diwani rights in Bengal."
+    → "Diwani rights: Right to collect revenue from
+      Bengal, Bihar, and Orissa — foundation of EIC power."
+    → "Robert Clive returned to India to negotiate —
+      secured economic control more than military."
+  memoryHook: "BUXAR 1764 — BIGGER than Plassey —
+               THREE kings BEATEN"
+
+BATTLE 6: Battle of Haldighati (1576)
+  Between: Maharana Pratap (Mewar) vs Akbar's forces
+    (led by Man Singh of Amber)
+  Result: Akbar's forces won tactically; Pratap escaped
+  Significance: Symbol of Rajput resistance to Mughal rule
+  Location: Haldighati pass, Rajasthan
+  studyNote keyPoints:
+    → "Fought June 18, 1576 — Maharana Pratap vs
+      Akbar's general Man Singh of Amber."
+    → "Maharana Pratap's horse Chetak became legendary —
+      carried wounded Pratap to safety."
+    → "Pratap escaped — continued guerrilla warfare
+      against Mughals for 25 more years."
+    → "Symbol of Rajput resistance and refusal to
+      submit to Mughal authority."
+    → "Akbar won the battle but never captured Pratap —
+      who reclaimed most of Mewar before death."
+  memoryHook: "HALDI (turmeric) = YELLOW PASS —
+               PRATAP never SURRENDERED"
+
+BATTLE 7: Battle of Talikota (1565)
+  Between: Vijayanagara Empire vs Deccan Sultanates
+    (Bijapur, Ahmadnagar, Golconda, Bidar)
+  Result: Deccan Sultanates won — destroyed Vijayanagara
+  Significance: End of last great Hindu empire in South
+  studyNote keyPoints:
+    → "Fought January 23, 1565 — Vijayanagara Empire
+      vs combined Deccan Sultanate forces."
+    → "King Aliya Rama Raya of Vijayanagara was captured
+      and beheaded during battle."
+    → "City of Vijayanagara (Hampi) was sacked and
+      destroyed — never rebuilt."
+    → "Ended the last great Hindu empire of South India
+      that had protected it for 230 years."
+    → "Hampi ruins are now a UNESCO World Heritage Site
+      — exam-testable geography link."
+  memoryHook: "TALIKOTA 1565 — TALI (clap) for the
+               LAST Hindu empire"
+
+BATTLE 8: Battle of Wandiwash (1760)
+  Between: British (Sir Eyre Coote) vs French (Lally)
+  Result: British won — French power broken in India
+  Significance: End of French ambitions in India;
+    British became dominant European power
+  studyNote keyPoints:
+    → "Fought January 22, 1760 — British vs French
+      forces in South India (Tamil Nadu)."
+    → "British general Eyre Coote defeated French
+      commander Count Lally decisively."
+    → "Ended French influence in India permanently —
+      they retained only Pondicherry."
+    → "British became the dominant European power
+      in India after this victory."
+    → "Part of larger Seven Years' War (1756-1763)
+      between Britain and France globally."
+  memoryHook: "WANDIWASH 1760 — WANDER no more,
+               FRENCH lost INDIA here"
+
+QUESTION PATTERNS (60 questions across 8 battles):
+
+  Recall questions (20) — examTags: ["MH-CET","CUET"]:
+    → "The First Battle of Panipat was fought in..."
+    → "Who won the Battle of Plassey?" (British EIC)
+    → "Battle of Buxar was fought between British and..."
+    → "The Third Battle of Panipat resulted in defeat of..."
+    → "Mir Jafar betrayed which Nawab at Plassey?"
+    → "Battle of Haldighati was fought between
+      Maharana Pratap and whose forces?"
+
+  Chronological questions (15) — examTags: ["CUET"]:
+    cognitiveType: "chronological", timePresure: "deep"
+    → "Arrange in chronological order:
+      (A) Battle of Plassey
+      (B) First Battle of Panipat
+      (C) Battle of Buxar
+      (D) Third Battle of Panipat"
+      Answer: B(1526), A(1757), C(1764), D(1761)
+      Wait — correct order: B,D,A,C
+      Verify all years before writing sequence questions
+
+  Match column questions (15) — examTags: ["CUET","MH-CET"]:
+    → Match: Battle ↔ Year
+    → Match: Battle ↔ Victor
+    → Match: Battle ↔ Significance
+    → Match: Battle ↔ Location
+
+  Elimination questions (10) — examTags: ["CUET","MH-CET"]:
+    → "Which of the following battles was NOT fought
+      at Panipat?"
+    → "Which battle did NOT involve the British?"
+    → "In which battle was treachery the decisive factor?"
+
+BATTLE FLASHCARDS (8 flashcards — one per battle):
+  Each flashcard: term = battle name, 5 points, memory hook
+
+---
+
+=================================================================
+=== FILE 2: history-freedom.data.js
+    Topic: Indian Freedom Movement 1857–1947
+=================================================================
+
+Generate 75 questions + 12 study notes + 12 flashcards.
+
+MASTER FREEDOM MOVEMENT TIMELINE:
+
+EVENT 1: First War of Independence 1857
+  Also called: Sepoy Mutiny / Indian Mutiny (British term)
+  Trigger: Greased cartridges (beef + pork fat)
+    for Enfield rifles — offended Hindu + Muslim soldiers
+  Key leaders: Mangal Pandey, Rani Lakshmibai,
+    Bahadur Shah Zafar, Nana Sahib, Tantia Tope
+  Result: British suppressed; last Mughal exiled
+  Aftermath: British Crown took over from East India Company
+  studyNote keyPoints:
+    → "Started May 10, 1857 at Meerut — Mangal Pandey
+      was first martyr at Barrackpore earlier."
+    → "Trigger: Greased cartridges (Enfield rifles) used
+      beef/pork fat — offended Hindu and Muslim sepoys."
+    → "Key leaders: Rani Lakshmibai (Jhansi), Nana Sahib
+      (Kanpur), Bahadur Shah Zafar (Delhi)."
+    → "Result: Suppressed by 1858 — British Crown replaced
+      East India Company in governing India."
+    → "First time Hindus and Muslims fought together —
+      seeds of national consciousness planted."
+  memoryHook: "1857 — EIGHTEEN-FIFTY-SEVEN — INDIA
+               FIRST STOOD EVERYWHERE"
+
+EVENT 2: Formation of Indian National Congress (1885)
+  Founder: A.O. Hume (retired British civil servant)
+  Co-founders: Dadabhai Naoroji, Dinshaw Wacha
+  First president: Womesh Chandra Bonnerjee
+  First session: Bombay (December 1885)
+  Initial character: Moderate — sought reforms,
+    not independence
+  studyNote keyPoints:
+    → "Founded December 28, 1885 by A.O. Hume in Bombay —
+      first session at Gokuldas Tejpal Sanskrit College."
+    → "First president: W.C. Bonnerjee — not A.O. Hume
+      who was the organiser, not president."
+    → "Initially moderate in approach — sought constitutional
+      reforms, not complete independence."
+    → "Dadabhai Naoroji introduced 'Drain Theory' — argued
+      British were draining India's wealth."
+    → "Three phases: Moderate (1885–1905), Extremist
+      (1905–1920), Gandhian (1920–1947)."
+  memoryHook: "INC 1885 — A.O. HUME HELPED INDIA
+               FIND ITS NATIONAL VOICE"
+
+EVENT 3: Partition of Bengal 1905 → Swadeshi Movement
+  Decision by: Lord Curzon (Viceroy)
+  Reason given: Administrative convenience
+  Real motive: Divide Hindu-Muslim unity in Bengal
+  Response: Swadeshi Movement — boycott British goods
+  Leaders: Bal Gangadhar Tilak, Bipin Chandra Pal,
+    Lala Lajpat Rai (Lal-Bal-Pal trio)
+  Result: Partition annulled 1911 — first British retreat
+  studyNote keyPoints:
+    → "Lord Curzon partitioned Bengal in 1905 — official
+      reason: administrative ease."
+    → "Real motive: Divide Bengali Hindu-Muslim unity —
+      'divide and rule' policy."
+    → "Response: Swadeshi Movement — boycott of British
+      goods, use of Indian-made products."
+    → "Led by Lal-Bal-Pal trio: Lala Lajpat Rai,
+      Bal Gangadhar Tilak, Bipin Chandra Pal."
+    → "Partition annulled in 1911 — first major retreat
+      of British under popular pressure."
+  memoryHook: "LAL-BAL-PAL fought CURZON's WALL
+               in 1905"
+
+EVENT 4: Non-Cooperation Movement 1920–1922
+  Leader: Mahatma Gandhi
+  Launched: September 1920
+  Methods: Boycott of schools, courts, councils,
+    foreign goods; return of titles
+  Suspension: Chauri Chaura incident (February 1922)
+    — mob burned police station, killing 22 policemen
+  Gandhi's reason for suspension: Violence betrayed
+    the movement's non-violent principles
+  studyNote keyPoints:
+    → "Launched September 1920 by Gandhi — first
+      mass movement under his leadership."
+    → "Methods: Boycott British schools, law courts,
+      legislative councils, and foreign cloth."
+    → "Suspension: Chauri Chaura (Feb 1922) — mob
+      burned police station killing 22 officers."
+    → "Gandhi suspended movement despite protests from
+      other leaders — non-violence was non-negotiable."
+    → "Important: NCM was suspended NOT completed —
+      British did NOT grant independence."
+  memoryHook: "NCM 1920 — Non-Cooperation MEANS
+               No CHAURI CHAURA violence"
+
+EVENT 5: Dandi March (Salt Satyagraha) 1930
+  Date: March 12 – April 6, 1930
+  Route: Sabarmati Ashram (Ahmedabad) to Dandi (Gujarat)
+  Distance: 241 miles (388 km) — 24 days
+  Significance: Defied salt tax; inspired mass civil
+    disobedience; global media coverage
+  Gandhi's famous act: Picked up a handful of salt
+    from beach at Dandi
+  studyNote keyPoints:
+    → "Gandhi walked 241 miles from Sabarmati Ashram
+      to Dandi coast (March 12 – April 6, 1930)."
+    → "Purpose: Defy British salt tax by making salt
+      from seawater — symbolic but powerful act."
+    → "Inspired mass civil disobedience across India —
+      thousands arrested including Gandhi."
+    → "International media covered it globally —
+      first movement to gain worldwide attention."
+    → "Named Civil Disobedience Movement — more
+      radical than Non-Cooperation Movement."
+  memoryHook: "DANDI 1930 — GANDHI DIPPED his hand
+               in the SEA for FREEDOM"
+
+EVENT 6: Quit India Movement 1942
+  Date: August 8, 1942
+  Slogan: "Do or Die" (Karo ya Maro) — Gandhi
+  Also called: August Movement / August Kranti
+  Trigger: Failure of Cripps Mission (1942)
+  Immediate action: All Congress leaders arrested
+    within 24 hours
+  Underground leaders: Aruna Asaf Ali, Ram Manohar Lohia
+  studyNote keyPoints:
+    → "Launched August 8, 1942 — most aggressive
+      movement demanding immediate British withdrawal."
+    → "Gandhi's slogan: 'Do or Die' — Karo Ya Maro
+      — most famous slogan of freedom movement."
+    → "All top Congress leaders arrested within 24 hours
+      — leadership went underground."
+    → "Aruna Asaf Ali hoisted Congress flag at Gowalia
+      Tank, Mumbai — became symbol of movement."
+    → "Cripps Mission failure (1942) triggered this —
+      British offered insufficient self-governance terms."
+  memoryHook: "QUIT INDIA 1942 — DO OR DIE —
+               AUGUST KRANTI = FREEDOM NOW"
+
+EVENT 7: Indian National Army (INA) and Subhas Chandra Bose
+  INA formed: 1942 (Singapore) by Rash Behari Bose,
+    later led by Subhas Chandra Bose
+  Bose's title: Netaji
+  Slogan: "Jai Hind" and "Give me blood, I will give
+    you freedom"
+  INA marched from: Southeast Asia toward Northeast India
+  Azad Hind Fauj: INA's Hindi name
+  Bose's death: August 18, 1945 — plane crash (disputed)
+  studyNote keyPoints:
+    → "INA (Azad Hind Fauj) formed 1942 in Singapore
+      — allied with Japan against British India."
+    → "Subhas Chandra Bose (Netaji) took command —
+      gave slogan 'Give me blood, I'll give freedom'."
+    → "INA marched through Southeast Asia and reached
+      Manipur — but Japan's retreat ended campaign."
+    → "INA trials (1945–46) in Delhi — public outrage
+      when officers tried for treason."
+    → "INA trials backfired on British — galvanised
+      Indian public and hastened independence."
+  memoryHook: "NETAJI + INA = JAI HIND —
+               Blood for FREEDOM"
+
+FREEDOM MOVEMENT QUESTION PATTERNS (75 questions):
+
+  Direct recall (25 questions) — examTags: ["MH-CET","CUET"]:
+    → "Who gave the slogan 'Do or Die'?" (Gandhi)
+    → "Dandi March began from which ashram?"
+      (Sabarmati Ashram)
+    → "Chauri Chaura incident led to suspension of
+      which movement?" (Non-Cooperation Movement)
+    → "'Jai Hind' slogan was given by..."
+      (Subhas Chandra Bose)
+    → "INA stands for..." (Indian National Army)
+    → "The first session of INC was held in..."
+      (Bombay, December 1885)
+    → "Who was the first President of INC?"
+      (W.C. Bonnerjee)
+    → "Partition of Bengal was annulled in..." (1911)
+
+  Chronological (20 questions) — examTags: ["CUET"]:
+    → "Arrange in correct order:
+      (A) Dandi March
+      (B) Non-Cooperation Movement
+      (C) Quit India Movement
+      (D) Partition of Bengal"
+      Answer sequence: D(1905), B(1920), A(1930), C(1942)
+    → "Which came first: Rowlatt Act OR Jallianwala Bagh?"
+      (Rowlatt Act 1919 → then Jallianwala Bagh 1919)
+      Note: Both 1919 — Rowlatt Act triggered the massacre
+
+  Match column (20 questions) — examTags: ["CUET","MH-CET"]:
+    → Match: Leader ↔ Movement they led
+    → Match: Slogan ↔ Person who gave it
+    → Match: Year ↔ Event
+    → Match: Location ↔ Significance
+
+  Multi-statement (10 questions) — examTags: ["CUET"]:
+    → "Which of these statements about the Quit India
+      Movement are CORRECT?
+      (A) Launched on August 8, 1942
+      (B) Slogan was 'Do or Die'
+      (C) Aruna Asaf Ali was immediately arrested
+      (D) All Congress leaders arrested within 24 hours"
+    → Options: A and B only / A,B,D only / All four / C and D
+
+FREEDOM FLASHCARDS (12 flashcards):
+  One per major event with 5-point briefing and memory hook
+
+---
+
+=================================================================
+=== FILE 3: culture-dance-music.data.js
+    Topic: Classical/Folk Dance Forms + Music + Art
+=================================================================
+
+Generate 45 questions + 8 study notes + 8 flashcards.
+
+CLASSICAL DANCE FORMS — COMPLETE MASTER LIST:
+(This is one of the HIGHEST YIELD static GK topics
+in both CUET and MAH CET)
+
+  Bharatanatyam:
+    State: Tamil Nadu
+    Origin: Devadasi temple tradition
+    Governing text: Natya Shastra
+    Characteristic: Pure dance (Nritta) + expressive
+      (Abhinaya) combination
+
+  Kathak:
+    State: Uttar Pradesh / North India
+    Origin: Storytelling tradition (Kathakas = storytellers)
+    Characteristic: Fast footwork (tatkar), spins (chakkar)
+    Two gharanas: Lucknow (lyrical) and Jaipur (vigorous)
+
+  Kathakali:
+    State: Kerala
+    Characteristic: Elaborate makeup, costume, facial
+      expressions — tells stories from Ramayana/Mahabharata
+    Performers: Traditionally only male
+
+  Mohiniyattam:
+    State: Kerala
+    Name meaning: Dance of the enchantress (Mohini)
+    Characteristic: Soft, graceful feminine movements
+    Costume: White and gold saree
+
+  Kuchipudi:
+    State: Andhra Pradesh / Telangana
+    Origin: Village of Kuchipudi in Krishna district
+    Characteristic: Mix of dance and drama (dance-drama)
+    Distinctive: Dancers perform on brass plate
+      (Tarangam) as finale
+
+  Odissi:
+    State: Odisha
+    Origin: Temples of Odisha (Jagannath cult)
+    Characteristic: Tribhangi posture
+      (three-body bend: head, torso, legs)
+
+  Manipuri:
+    State: Manipur
+    Characteristic: Soft, subtle movements — no
+      stamping of feet (unlike Bharatanatyam/Kathak)
+    Known for: Ras Lila dances depicting Radha-Krishna
+
+  Sattriya:
+    State: Assam
+    Origin: Vaishnavite monasteries (Sattras)
+    Founded by: Srimanta Sankardeva (15th century)
+    Recognition: Declared classical in 2000 (latest to join)
+
+FOLK DANCE FORMS BY STATE:
+  Rajasthan: Ghoomar, Kalbelia, Bhavai
+  Punjab: Bhangra (men), Giddha (women)
+  Gujarat: Garba, Dandiya Raas
+  West Bengal: Baul, Chhau
+  Maharashtra: Lavani, Tamasha, Dhangari Gaja
+  Kerala: Theyyam, Thiruvathirakali
+  Andhra Pradesh: Lambadi, Kolattam
+  Himachal Pradesh: Nati (world's largest folk dance
+    — Guinness Record)
+  Uttarakhand: Jhora, Chholiya
+  Assam: Bihu (most famous folk dance — harvest festival)
+  Odisha: Gotipua, Sambalpuri
+  Tamil Nadu: Kolattam, Kummi
+  Karnataka: Yakshagana, Dollu Kunitha
+  Sikkim: Singhi Chham (Snow Lion dance)
+  Goa: Dekhni, Fugdi
+
+MUSIC TRADITIONS:
+  Carnatic Music: South India (Tamil Nadu, Karnataka,
+    Kerala, Andhra Pradesh)
+    Trinity: Tyagaraja, Muthuswami Dikshitar, Syama Sastri
+  Hindustani Music: North India
+    Key forms: Dhrupad, Khyal, Thumri, Dadra
+    Gharanas: Gwalior, Kirana, Agra, Patiala
+
+QUESTION PATTERNS (45 questions):
+
+  State identification (15 questions):
+    → "Kathakali is the classical dance form of..."
+      (Kerala)
+    → "Sattriya dance originated in which state?"
+      (Assam)
+    → "Which classical dance form is from Odisha?"
+      (Odissi)
+    → "Mohiniyattam belongs to which state?" (Kerala)
+    → "Kuchipudi is the classical dance of..."
+      (Andhra Pradesh/Telangana)
+
+  Folk dance identification (15 questions):
+    → "Garba is the folk dance of..." (Gujarat)
+    → "Bihu is the folk dance of..." (Assam)
+    → "Ghoomar is the folk dance of..." (Rajasthan)
+    → "Bhangra is associated with which state?" (Punjab)
+    → "Lavani is the folk dance of..." (Maharashtra)
+    → "Nati holds which record?" (World's largest folk dance)
+    → "Chhau dance is associated with..." (West Bengal/
+      Jharkhand/Odisha — performed across all three)
+
+  Classical dance features (10 questions):
+    → "Which classical dance uses Tarangam
+      (performance on brass plate)?" (Kuchipudi)
+    → "Tribhangi posture is characteristic of..."
+      (Odissi)
+    → "Which classical dance involves elaborate
+      makeup telling Ramayana stories?" (Kathakali)
+    → "The latest classical dance form recognized
+      by Sangeet Natak Akademi is..." (Sattriya — 2000)
+    → "Sattriya was founded by..." (Srimanta Sankardeva)
+
+  Match column (5 questions):
+    → Match: Dance form ↔ State
+    → Match: Folk dance ↔ Festival/occasion
+    → Match: Classical dance ↔ Unique characteristic
+
+DANCE FLASHCARDS (8 flashcards):
+  BF for classical dances (1 card per dance)
+  studyNote keyPoints for each:
+    → What state it belongs to
+    → Key physical characteristic
+    → Who performs it traditionally
+    → What stories/themes it depicts
+    → Unique costume or prop associated
+
+---
+
+=================================================================
+=== FILE 4: geography-national-parks.data.js
+    Topic: National Parks, Wildlife Sanctuaries, Biosphere Reserves
+=================================================================
+
+Generate 60 questions + 10 study notes + 10 flashcards.
+
+NATIONAL PARKS — COMPLETE MASTER LIST:
+
+  STATE: Assam
+    Kaziranga National Park:
+      Known for: One-horned rhinoceros
+      UNESCO World Heritage Site: Yes (1985)
+      Also has: Tigers, elephants, wild buffalo
+    Manas National Park:
+      Known for: Tiger, Golden Langur, Pigmy Hog
+      UNESCO World Heritage Site: Yes
+
+  STATE: Madhya Pradesh (most national parks in India)
+    Kanha National Park:
+      Known for: Tiger, Barasingha (hard ground swamp deer)
+      Inspired Kipling's Jungle Book characters
+    Pench National Park:
+      Known for: Tiger, leopard
+      Also crosses into Maharashtra
+    Bandhavgarh National Park:
+      Known for: Highest tiger density in India
+    Panna National Park:
+      Known for: Tiger, Ken River flowing through it
+
+  STATE: Rajasthan
+    Ranthambore National Park:
+      Known for: Tiger (can be seen in daylight)
+      Has Ranthambore Fort inside the park
+    Sariska Tiger Reserve:
+      Known for: Tiger reintroduction programme
+    Keoladeo Ghana (Bharatpur Bird Sanctuary):
+      UNESCO World Heritage Site
+      Known for: Migratory birds from Siberia
+
+  STATE: Uttarakhand
+    Jim Corbett National Park:
+      Oldest national park in India (1936)
+      Originally: Hailey National Park
+      Known for: Tiger, elephants, gharial
+
+  STATE: West Bengal
+    Sundarbans National Park:
+      UNESCO World Heritage Site
+      Known for: Bengal Tiger (swimming tigers)
+      Largest mangrove forest in world
+      Shared with Bangladesh
+
+  STATE: Gujarat
+    Gir National Park:
+      Only habitat of Asiatic Lion in world
+      Only in: Gir, Saurashtra, Gujarat
+
+  STATE: Kerala
+    Periyar Wildlife Sanctuary:
+      Known for: Wild elephant, tiger
+      Has Periyar Lake inside — unique
+
+  STATE: Karnataka
+    Nagarhole National Park (Rajiv Gandhi NP):
+      Known for: Tiger, elephant, leopard
+    Bandipur National Park:
+      Part of Nilgiri Biosphere Reserve
+
+  STATE: Himachal Pradesh
+    Great Himalayan National Park:
+      UNESCO World Heritage Site (2014)
+      Known for: Snow Leopard, Western Tragopan
+
+  STATE: Manipur
+    Keibul Lamjao National Park:
+      Only floating national park in world
+      Known for: Sangai (Brow-antlered deer)
+
+  STATE: Arunachal Pradesh
+    Namdapha National Park:
+      Only park with 4 big cat species:
+      Tiger, Leopard, Snow Leopard, Clouded Leopard
+
+  STATE: Meghalaya
+    Nokrek National Park:
+      Biosphere Reserve
+      Known for: Red Panda
+
+  STATE: Andaman Islands
+    Mahatma Gandhi Marine National Park:
+      Known for: Coral reefs, sea turtles
+
+BIOSPHERE RESERVES (UNESCO):
+  Nilgiri Biosphere Reserve: First in India (1986)
+    States: Tamil Nadu, Kerala, Karnataka
+  Sundarbans: West Bengal
+  Nanda Devi: Uttarakhand
+  Gulf of Mannar: Tamil Nadu
+  Great Nicobar: Andaman & Nicobar Islands
+  Pachmarhi: Madhya Pradesh
+
+QUESTION PATTERNS (60 questions):
+
+  Animal-to-park matching (20 questions):
+    → "Which national park is the ONLY habitat of
+      Asiatic Lion in India?" (Gir, Gujarat)
+    → "One-horned rhinoceros is the flagship species of..."
+      (Kaziranga, Assam)
+    → "Which is the only floating national park
+      in the world?" (Keibul Lamjao, Manipur)
+    → "Sunderbans is known for which species?"
+      (Royal Bengal Tiger — swimming tigers)
+    → "Sangai (Brow-antlered deer) is found only in..."
+      (Keibul Lamjao, Manipur)
+    → "Which park has the highest tiger density?" (Bandhavgarh)
+    → "Namdapha houses how many big cat species?" (4)
+
+  State-to-park matching (20 questions):
+    → "Jim Corbett National Park is in which state?"
+      (Uttarakhand)
+    → "India's oldest national park is..." (Jim Corbett, 1936)
+    → "Keoladeo Bird Sanctuary is in which state?"
+      (Rajasthan)
+    → "Great Himalayan National Park is in..." (HP)
+    → "Which state has the most national parks?" (MP)
+
+  UNESCO and records (10 questions):
+    → "Which was India's first Biosphere Reserve?"
+      (Nilgiri, 1986)
+    → "Kaziranga was declared UNESCO World Heritage
+      Site in which year?" (1985)
+    → "Sundarbans is shared between India and..."
+      (Bangladesh)
+
+  Match column (10 questions):
+    → Match: National Park ↔ State
+    → Match: National Park ↔ Known For species
+    → Match: Biosphere Reserve ↔ State
+
+NATIONAL PARKS FLASHCARDS (10 flashcards):
+  One per key park — 5 points each covering:
+  State, known species, UNESCO status, record/unique feature,
+  exam trap (common wrong answer)
+
+---
+
+=================================================================
+=== FILE 5: geography-rivers-dams.data.js
+    Topic: Rivers, Dams, Lakes, Waterfalls
+=================================================================
+
+Generate 60 questions + 10 study notes + 10 flashcards.
+
+RIVERS MASTER LIST:
+
+  HIMALAYAN RIVERS (perennial — fed by glaciers):
+    Ganga:
+      Origin: Gangotri Glacier, Uttarakhand
+      Tributaries: Yamuna, Ghaghra, Kosi, Son, Gandak
+      Joins sea: Bay of Bengal (Sundarbans delta)
+      Total length: 2,525 km — longest in India
+    Yamuna:
+      Origin: Yamunotri Glacier, Uttarakhand
+      Joins Ganga at: Prayagraj (Triveni Sangam)
+      Cities on Yamuna: Delhi, Agra, Mathura
+    Brahmaputra:
+      Origin: Angsi Glacier, Tibet (as Yarlung Tsangpo)
+      Enters India through: Arunachal Pradesh
+      State in India: Assam (called Brahmaputra)
+      World's largest river island: Majuli (on Brahmaputra)
+    Indus:
+      Origin: Mansarovar Lake, Tibet
+      Flows through: J&K, then Pakistan
+      Indus Waters Treaty: India-Pakistan (1960)
+
+  PENINSULAR RIVERS (seasonal — rain-fed):
+    Godavari:
+      Nickname: Dakshin Ganga (Ganga of the South)
+      Origin: Trimbakeshwar, Nashik, Maharashtra
+      Longest peninsular river in India
+      Flows east — joins Bay of Bengal
+    Krishna:
+      Origin: Mahabaleshwar, Maharashtra
+      Flows through: Maharashtra, Karnataka, AP
+    Kaveri (Cauvery):
+      Nickname: Dakshin Ganga (also used — verify)
+      Origin: Talakaveri, Coorg (Kodagu), Karnataka
+      Dispute: Karnataka vs Tamil Nadu water sharing
+    Narmada:
+      Unique: Flows WEST (most peninsular rivers flow east)
+      Origin: Amarkantak, Madhya Pradesh
+      Flows through: MP, Gujarat — joins Arabian Sea
+      Sardar Sarovar Dam: On Narmada
+    Tapti (Tapi):
+      Also flows west — parallel to Narmada
+      Origin: Betul, Madhya Pradesh
+    Mahanadi:
+      State: Odisha (mainly)
+      Hirakud Dam: On Mahanadi — longest dam in India
+    Damodar:
+      Called: Sorrow of Bengal (floods historically)
+      Now: Damodar Valley Corporation (DVC) manages
+
+MAJOR DAMS — COMPLETE LIST:
+
+  Bhakra Nangal Dam:
+    River: Sutlej
+    States: Himachal Pradesh / Punjab border
+    Type: Straight gravity dam
+    Height: 226m — tallest gravity dam in Asia
+    Purpose: Irrigation + power (Punjab, Haryana, Rajasthan)
+    Quote by Nehru: "Temple of modern India"
+
+  Tehri Dam:
+    River: Bhagirathi (tributary of Ganga)
+    State: Uttarakhand
+    Type: Rockfill and earthfill
+    Height: 260.5m — tallest dam in India
+    Purpose: Power generation + irrigation
+
+  Sardar Sarovar Dam:
+    River: Narmada
+    States: Gujarat (dam) — involves MP, Maharashtra, Rajasthan
+    Controversy: Narmada Bachao Andolan (Medha Patkar)
+    Purpose: Irrigation for Gujarat, MP, Rajasthan
+
+  Hirakud Dam:
+    River: Mahanadi
+    State: Odisha
+    Distinction: Longest dam in India (26 km)
+    Built in: 1957 — one of first post-independence projects
+
+  Nagarjuna Sagar Dam:
+    River: Krishna
+    State: Telangana/Andhra Pradesh border
+    Distinction: World's largest masonry dam
+    Purpose: Irrigation for both states
+
+  Mettur Dam:
+    River: Kaveri (Cauvery)
+    State: Tamil Nadu
+    Significance: Key for Tamil Nadu agriculture
+
+  Koyna Dam:
+    River: Koyna (tributary of Krishna)
+    State: Maharashtra
+    Caused: Koyna earthquake (1967) — induced seismicity
+
+  Mullaperiyar Dam:
+    River: Periyar
+    States: Kerala (location) — Tamil Nadu (rights)
+    Dispute: Ongoing Kerala-Tamil Nadu water dispute
+
+QUESTION PATTERNS (60 questions):
+
+  River identification (20 questions):
+    → "Which is the longest river in India?" (Ganga)
+    → "Which river is called 'Dakshin Ganga'?" (Godavari)
+    → "Brahmaputra is called what in Tibet?"
+      (Yarlung Tsangpo)
+    → "Narmada is unique because it flows..." (westward)
+    → "Hirakud Dam is built on which river?" (Mahanadi)
+    → "Bhakra Nangal Dam is on which river?" (Sutlej)
+    → "Tehri Dam is built on..." (Bhagirathi)
+    → "Which is the longest dam in India?" (Hirakud, 26km)
+    → "Which is the tallest dam in India?" (Tehri, 260.5m)
+    → "Sardar Sarovar Dam is built on..." (Narmada)
+
+  Dam-river-state matching (20 questions):
+    → Match: Dam ↔ River
+    → Match: Dam ↔ State
+    → Match: Dam ↔ Unique record/feature
+
+  Synthesis questions — CUET style (20 questions):
+    → "Which of the following rivers does NOT flow
+      into the Bay of Bengal?"
+      (Narmada — flows into Arabian Sea)
+    → "Arrange rivers by length: Ganga, Godavari,
+      Krishna, Narmada"
+    → "Which of the following statements is INCORRECT
+      about Bhakra Nangal Dam?"
+
+RIVERS/DAMS FLASHCARDS (10 flashcards):
+  Key rivers with origin, mouth, dams, tributaries
+  Key dams with river, state, height/length records
+
+---
+
+=================================================================
+=== FILE 6: geography-states-capitals.data.js
+    Topic: Indian States, Capitals, Formation, Boundaries
+=================================================================
+
+Generate 45 questions + 8 study notes + 8 flashcards.
+
+STATES AND CAPITALS — COMPLETE LIST (28 states + 8 UTs):
+
+STATES:
+  Andhra Pradesh → Amaravati (new capital)
+    Note: Hyderabad was joint capital until 2024
+    // VERIFY current status of Amaravati
+  Arunachal Pradesh → Itanagar
+  Assam → Dispur
+    Note: Guwahati is largest city — NOT capital
+  Bihar → Patna
+  Chhattisgarh → Raipur
+  Goa → Panaji
+  Gujarat → Gandhinagar
+    Note: Ahmedabad is largest city — NOT capital
+  Haryana → Chandigarh (shared with Punjab)
+  Himachal Pradesh → Shimla
+  Jharkhand → Ranchi
+  Karnataka → Bengaluru
+  Kerala → Thiruvananthapuram
+  Madhya Pradesh → Bhopal
+  Maharashtra → Mumbai
+  Manipur → Imphal
+  Meghalaya → Shillong
+  Mizoram → Aizawl
+  Nagaland → Kohima
+  Odisha → Bhubaneswar
+  Punjab → Chandigarh (shared with Haryana)
+  Rajasthan → Jaipur
+  Sikkim → Gangtok
+  Tamil Nadu → Chennai
+  Telangana → Hyderabad
+  Tripura → Agartala
+  Uttar Pradesh → Lucknow
+  Uttarakhand → Dehradun
+    (Gairsain = summer capital — // VERIFY)
+  West Bengal → Kolkata
+
+UNION TERRITORIES:
+  Delhi (NCT) → New Delhi
+  Jammu & Kashmir → Srinagar (summer) + Jammu (winter)
+  Ladakh → Leh
+  Andaman & Nicobar → Port Blair
+  Chandigarh → Chandigarh
+  Dadra & Nagar Haveli and Daman & Diu → Daman
+  Lakshadweep → Kavaratti
+  Puducherry → Puducherry
+
+FORMATION DATES (CUET chronological questions):
+  1960: Maharashtra and Gujarat (from Bombay State)
+  1963: Nagaland
+  1966: Haryana and Punjab (from old Punjab State)
+  1972: Meghalaya, Tripura, Manipur
+  1975: Sikkim (joined India)
+  1987: Goa, Arunachal Pradesh, Mizoram
+  2000: Chhattisgarh, Jharkhand, Uttarakhand
+  2014: Telangana (from Andhra Pradesh)
+
+CAPITAL TRAPS (most commonly tested wrong answers):
+  Assam → Dispur (NOT Guwahati)
+  Gujarat → Gandhinagar (NOT Ahmedabad)
+  Maharashtra → Mumbai (capital AND largest city — correct)
+  Uttarakhand → Dehradun (NOT Haridwar or Rishikesh)
+  Punjab/Haryana → SHARE Chandigarh (both correct)
+  Andhra Pradesh → Amaravati (NOT Hyderabad anymore)
+
+QUESTION PATTERNS (45 questions):
+  Direct recall (20): State → Capital, Capital → State
+  Trap questions (10): Use common wrong answers as options
+  Chronological (10): Arrange state formations in order
+  Match column (5): State ↔ Capital ↔ Formation year
+
+---
+
+=================================================================
+=== FILE 7: polity-constitution.data.js
+    Topic: Constitution — Rights, Duties, Preamble, Structure
+=================================================================
+
+Generate 60 questions + 10 study notes + 10 flashcards.
+
+FUNDAMENTAL RIGHTS — ARTICLE NUMBERS:
+  Article 12–35: Defines Fundamental Rights
+  Article 14: Right to Equality
+  Article 19: Right to Freedom (6 freedoms)
+  Article 20: Protection against arbitrary arrest
+  Article 21: Right to Life and Personal Liberty
+    (most litigated fundamental right)
+  Article 21A: Right to Education (added 2002)
+  Article 22: Protection against detention
+  Article 23–24: Right against Exploitation
+    (23: no forced labour; 24: no child labour)
+  Article 25–28: Right to Freedom of Religion
+  Article 29–30: Cultural and Educational Rights
+    (minorities can establish institutions)
+  Article 32: Right to Constitutional Remedies
+    (Dr. Ambedkar called this "Heart and Soul of Constitution")
+
+SIX FUNDAMENTAL RIGHTS:
+  1. Right to Equality (Arts 14–18)
+  2. Right to Freedom (Arts 19–22)
+  3. Right against Exploitation (Arts 23–24)
+  4. Right to Freedom of Religion (Arts 25–28)
+  5. Cultural and Educational Rights (Arts 29–30)
+  6. Right to Constitutional Remedies (Art 32)
+  NOTE: Right to Property was removed (44th Amendment 1978)
+    — now a legal right under Article 300A only
+
+FUNDAMENTAL DUTIES (Article 51A):
+  Added by: 42nd Amendment 1976 (during Emergency)
+  Number: 11 duties (10 original + 1 added in 2002)
+  Key duties:
+    → Respect Constitution, National Flag, National Anthem
+    → Protect sovereignty and integrity of India
+    → Promote harmony and brotherhood
+    → Protect environment, forests, rivers, wildlife
+    → Develop scientific temper
+
+PREAMBLE:
+  Full text keywords: Sovereign, Socialist, Secular,
+    Democratic, Republic, Justice, Liberty, Equality,
+    Fraternity
+  "Socialist" and "Secular" added: 42nd Amendment 1976
+  Date of adoption: November 26, 1949
+    (Constitution Day = Samvidhan Diwas)
+  Date of enforcement: January 26, 1950
+    (Republic Day)
+
+CONSTITUTIONAL BODIES AND ARTICLES:
+  Article 280: Finance Commission
+  Article 315: Union Public Service Commission (UPSC)
+  Article 324: Election Commission of India
+  Article 148: Comptroller and Auditor General (CAG)
+  Article 263: Inter-State Council
+  Article 338: National Commission for SC
+  Article 338A: National Commission for ST
+
+DIRECTIVE PRINCIPLES OF STATE POLICY (DPSP):
+  Articles 36–51
+  Non-justiciable (cannot be enforced by courts)
+  But: Fundamental to governance
+  Key DPSPs:
+    Article 39A: Equal justice and free legal aid
+    Article 44: Uniform Civil Code
+    Article 45: Free and compulsory education
+      (superseded by Article 21A as FR)
+    Article 47: Prohibition of intoxicating drinks
+
+IMPORTANT AMENDMENTS:
+  1st Amendment (1951): Added land reforms to 9th Schedule
+  42nd Amendment (1976): "Mini Constitution" —
+    added Socialist, Secular to Preamble; added FDs
+  44th Amendment (1978): Restored rights curtailed by 42nd;
+    removed Right to Property as FR
+  73rd Amendment (1992): Panchayati Raj institutions
+  74th Amendment (1992): Urban local bodies (municipalities)
+  86th Amendment (2002): Article 21A (Right to Education);
+    added 11th Fundamental Duty
+  101st Amendment (2016): Goods and Services Tax (GST)
+  103rd Amendment (2019): 10% EWS reservation in education
+
+QUESTION PATTERNS (60 questions):
+
+  Fundamental Rights (20 questions):
+    → "Which Fundamental Right is called the 'Heart
+      and Soul' of the Constitution?" (Art 32)
+    → "Article 21 guarantees which right?"
+      (Right to Life and Personal Liberty)
+    → "Right to Property was removed by which amendment?"
+      (44th Amendment, 1978)
+    → "Article 21A provides which right?"
+      (Right to Education — added 2002)
+    → "How many Fundamental Rights are there?" (6)
+    → "Which Fundamental Rights protect minorities?"
+      (Cultural and Educational Rights — Arts 29-30)
+
+  Preamble and Amendments (20 questions):
+    → "Which words were added to the Preamble by
+      the 42nd Amendment?" (Socialist and Secular)
+    → "The Indian Constitution was adopted on..."
+      (November 26, 1949)
+    → "The Indian Constitution came into force on..."
+      (January 26, 1950)
+    → "How many Fundamental Duties are there?" (11)
+    → "Fundamental Duties were added by which amendment?"
+      (42nd Amendment, 1976)
+
+  Constitutional bodies (10 questions):
+    → "Article 324 relates to..." (Election Commission)
+    → "Finance Commission is constituted under..."
+      (Article 280)
+    → "CAG is mentioned in which Article?" (Article 148)
+
+  CUET synthesis (10 questions):
+    → "Which of these are NOT Fundamental Rights?
+      (A) Right to Property
+      (B) Right to Constitutional Remedies
+      (C) Right to Strike
+      (D) Right to Freedom of Religion"
+      (A and C are not FRs)
+
+POLITY FLASHCARDS (10 flashcards):
+  6 Fundamental Rights with article numbers
+  Key articles table
+  Preamble keywords
+  Important amendments table
+
+---
+
+=================================================================
+=== FILE 8: polity-articles.data.js
+    Topic: Important Articles of Constitution
+=================================================================
+
+Generate 45 questions + 8 study notes + 8 flashcards.
+
+TOP 50 MOST TESTED ARTICLES:
+
+  Article 1: India = Bharat = Union of States
+  Article 3: Formation of new states
+  Article 14: Right to Equality
+  Article 19: Right to Freedom (6 freedoms)
+  Article 21: Right to Life
+  Article 21A: Right to Education
+  Article 24: No child labour (under 14 in factories)
+  Article 32: Constitutional Remedies
+  Article 44: Uniform Civil Code
+  Article 51A: Fundamental Duties
+  Article 72: President's pardoning power
+  Article 74: Council of Ministers headed by PM
+  Article 76: Attorney General of India
+  Article 79: Parliament = President + Lok Sabha + Rajya Sabha
+  Article 80: Rajya Sabha = max 250 members
+  Article 81: Lok Sabha = max 552 members
+  Article 108: Joint sitting of Parliament
+  Article 110: Definition of Money Bill
+  Article 112: Annual Financial Statement (Budget)
+  Article 123: Presidential Ordinance power
+  Article 124: Supreme Court
+  Article 125: Salaries of SC judges
+  Article 143: President can seek SC's opinion
+  Article 148: CAG
+  Article 153: Governor of State
+  Article 161: Governor's pardoning power
+  Article 170: State Legislative Assembly
+  Article 200: Governor's assent to State Bills
+  Article 213: Governor's ordinance power
+  Article 226: High Court's writ jurisdiction
+  Article 243: Panchayati Raj (73rd Amendment)
+  Article 249: Parliament legislates on State List
+  Article 262: Disputes relating to water
+  Article 263: Inter-State Council
+  Article 280: Finance Commission
+  Article 312: All India Services
+  Article 315: UPSC
+  Article 324: Election Commission
+  Article 338: National Commission for SC
+  Article 343: Official Language (Hindi)
+  Article 352: National Emergency
+  Article 356: President's Rule (State Emergency)
+  Article 360: Financial Emergency
+  Article 368: Amendment procedure
+  Article 370: Special status J&K (abrogated 2019)
+
+QUESTION PATTERNS (45 questions):
+
+  Article number recall (20 questions):
+    → "President's Rule in a state is imposed under..."
+      (Article 356)
+    → "National Emergency is declared under..." (Article 352)
+    → "Right to Life is guaranteed by..." (Article 21)
+    → "Election Commission derives power from..."
+      (Article 324)
+    → "Uniform Civil Code is mentioned in..." (Article 44)
+
+  Article function recall (15 questions):
+    → "Which article defines a Money Bill?" (Article 110)
+    → "Which article provides for joint sitting
+      of Parliament?" (Article 108)
+    → "CAG is mentioned in which article?" (Article 148)
+
+  Match column (10 questions):
+    → Match: Article ↔ Subject/provision
+    → Match: Emergency ↔ Article number (352/356/360)
+
+---
+
+=================================================================
+=== FILE 9: science-biology.data.js
+    Topic: Vitamins, Human Body, Diseases, Biology Basics
+=================================================================
+
+Generate 60 questions + 10 study notes + 10 flashcards.
+
+VITAMINS — COMPLETE MASTER TABLE:
+
+  Vitamin A (Retinol):
+    Deficiency: Night Blindness, Xerophthalmia
+    Sources: Carrot, mango, milk, egg
+    Solubility: Fat-soluble
+
+  Vitamin B1 (Thiamine):
+    Deficiency: Beriberi (affects nervous system + heart)
+    Sources: Whole grains, legumes
+
+  Vitamin B2 (Riboflavin):
+    Deficiency: Ariboflavinosis (cracked lips, sore throat)
+
+  Vitamin B3 (Niacin):
+    Deficiency: Pellagra (4 Ds: Dermatitis, Diarrhoea,
+      Dementia, Death)
+
+  Vitamin B9 (Folic Acid):
+    Deficiency: Neural tube defects in foetus
+    Critical: During pregnancy
+
+  Vitamin B12 (Cobalamin):
+    Deficiency: Pernicious Anaemia
+    Unique: Only vitamin synthesized by bacteria
+    Vegans at risk of deficiency
+
+  Vitamin C (Ascorbic Acid):
+    Deficiency: Scurvy (bleeding gums, joint pain)
+    Sources: Citrus fruits, amla (highest in amla)
+    Solubility: Water-soluble
+    Special: Cannot be stored in body — daily intake needed
+
+  Vitamin D (Calciferol):
+    Deficiency: Rickets (children), Osteomalacia (adults)
+    Sources: Sunlight (body synthesizes), fish oil, eggs
+    Special: Only vitamin synthesized by human body
+      (via sunlight exposure)
+
+  Vitamin E (Tocopherol):
+    Deficiency: Sterility, muscle weakness
+    Role: Antioxidant
+
+  Vitamin K (Phylloquinone):
+    Deficiency: Excessive bleeding (poor clotting)
+    Role: Blood clotting (coagulation)
+    Mnemonic: K = Koagulation
+
+VITAMINS SOLUBILITY:
+  Fat-soluble (ADEK): Vitamins A, D, E, K
+    Stored in body fat — toxicity possible
+  Water-soluble (B, C): B-complex + C
+    Not stored — daily intake needed
+
+HUMAN BODY SYSTEMS:
+
+  Digestive System:
+    Longest part of alimentary canal: Small intestine
+    Hardest substance in body: Enamel (teeth)
+    Liver: Largest gland in body
+    Largest organ: Skin
+    Smallest bone: Stapes (in ear)
+    Largest bone: Femur (thigh bone)
+
+  Blood and Circulation:
+    Normal BP: 120/80 mmHg
+    Normal body temperature: 37°C (98.6°F)
+    Blood pH: 7.4 (slightly alkaline)
+    RBC lifespan: 120 days
+    WBC function: Fight infection (immunity)
+    Platelets function: Blood clotting
+    Blood groups: A, B, AB, O
+    Universal donor: O negative
+    Universal recipient: AB positive
+
+  Nervous System:
+    Largest cell in body: Neuron (nerve cell)
+    Fastest signal in body: Nerve impulse
+    Brain regions: Cerebrum (thinking), Cerebellum
+      (balance), Medulla (breathing/heartbeat)
+
+  Endocrine System:
+    Insulin: Produced by Pancreas (Beta cells)
+    Thyroxine: Produced by Thyroid gland
+    Adrenaline: Produced by Adrenal gland
+    Growth hormone: Produced by Pituitary gland
+    Pituitary = Master gland (controls other glands)
+
+DISEASES AND PATHOGENS:
+  Viral diseases: Influenza, COVID-19, Dengue,
+    Polio, Rabies, Hepatitis B, HIV/AIDS, Chickenpox
+  Bacterial diseases: Tuberculosis, Cholera, Typhoid,
+    Pneumonia, Tetanus, Plague
+  Protozoan diseases: Malaria (Plasmodium — by mosquito),
+    Amoebic dysentery, Kala-azar
+  Fungal diseases: Ringworm, Athlete's foot, Candidiasis
+
+MALARIA SPECIAL:
+  Caused by: Plasmodium (protozoan parasite)
+  Vector: Female Anopheles mosquito
+  Types: P. falciparum (most dangerous),
+    P. vivax (most common)
+  Drug: Quinine (traditional); Chloroquine; Artemisinin
+
+QUESTION PATTERNS (60 questions):
+
+  Vitamin deficiency (20 questions):
+    → "Which deficiency causes Night Blindness?"
+      (Vitamin A)
+    → "Scurvy is caused by deficiency of..."
+      (Vitamin C)
+    → "Rickets in children is caused by lack of..."
+      (Vitamin D)
+    → "Beriberi is caused by deficiency of..."
+      (Vitamin B1 — Thiamine)
+    → "Which is the only vitamin synthesized by the
+      human body through sunlight?" (Vitamin D)
+    → "Vitamin K is essential for..." (blood clotting)
+    → "Fat-soluble vitamins are..." (A, D, E, K)
+    → "Pellagra is caused by deficiency of..."
+      (Vitamin B3 — Niacin)
+
+  Human body facts (20 questions):
+    → "Which is the largest organ of the human body?"
+      (Skin)
+    → "Which is the smallest bone in the human body?"
+      (Stapes — in the ear)
+    → "Insulin is secreted by which organ?" (Pancreas)
+    → "Universal blood donor is..." (O negative)
+    → "Pituitary gland is called the 'master gland' because..."
+      (it controls other endocrine glands)
+    → "Normal human body temperature is..." (37°C)
+    → "Which blood cells carry oxygen?" (RBC — Red Blood Cells)
+
+  Diseases (20 questions):
+    → "Malaria is caused by which organism?"
+      (Plasmodium — transmitted by female Anopheles mosquito)
+    → "Dengue fever is spread by which mosquito?"
+      (Aedes aegypti)
+    → "TB (Tuberculosis) is caused by..."
+      (Mycobacterium tuberculosis — bacterium)
+    → "Cholera is caused by..." (Vibrio cholerae — bacterium)
+    → "Which disease is caused by Vitamin C deficiency?"
+      (Scurvy)
+
+BIOLOGY FLASHCARDS (10 flashcards):
+  Vitamins table (one card — all deficiencies)
+  Blood groups and donors
+  Human body records (largest, smallest, hardest)
+  Glands and their hormones
+  Disease types with examples
+
+---
+
+=================================================================
+=== FILE 10: science-physics-inventions.data.js
+    Topic: SI Units, Inventions, Laws of Physics
+=================================================================
+
+Generate 60 questions + 10 study notes + 10 flashcards.
+
+SI UNITS — COMPLETE LIST:
+
+  Length: Metre (m)
+  Mass: Kilogram (kg)
+  Time: Second (s)
+  Electric Current: Ampere (A)
+  Temperature: Kelvin (K)
+  Amount of Substance: Mole (mol)
+  Luminous Intensity: Candela (cd)
+
+DERIVED UNITS:
+  Force: Newton (N) = kg⋅m/s²
+  Energy/Work: Joule (J) = N⋅m
+  Power: Watt (W) = J/s
+  Pressure: Pascal (Pa) = N/m²
+  Frequency: Hertz (Hz) = cycles/second
+  Electric Charge: Coulomb (C)
+  Voltage: Volt (V)
+  Resistance: Ohm (Ω)
+  Magnetic field: Tesla (T)
+  Radioactivity: Becquerel (Bq)
+
+INVENTIONS — COMPLETE MASTER TABLE:
+
+  Telephone: Alexander Graham Bell (1876)
+  Bulb (practical): Thomas Edison (1879)
+  Radio: Guglielmo Marconi (1895)
+    Note: Jagadish Chandra Bose (India) demonstrated
+    radio waves in 1895 — priority disputed
+  X-Ray: Wilhelm Röntgen (1895)
+  Airplane: Wright Brothers — Orville and Wilbur (1903)
+  Penicillin: Alexander Fleming (1928)
+  Computer (first programmable): Charles Babbage
+    (Analytical Engine concept)
+  First electronic computer: ENIAC (1945)
+  World Wide Web: Tim Berners-Lee (1989)
+  Telephone (mobile): Martin Cooper, Motorola (1973)
+  Printing Press: Johannes Gutenberg (1440s)
+  Steam Engine (efficient): James Watt (1765)
+  Vaccination: Edward Jenner (1796 — smallpox)
+  Dynamite: Alfred Nobel (1867)
+  DNA structure: Watson and Crick (1953)
+    Rosalind Franklin's X-ray image crucial
+  Laser: Theodore Maiman (1960)
+  Internet (ARPANET): USA Defence Department (1969)
+  Transistor: Shockley, Bardeen, Brattain (1947)
+
+LAWS OF PHYSICS:
+  Newton's Laws:
+    1st: Inertia — body at rest stays at rest
+    2nd: F = ma — force equals mass times acceleration
+    3rd: Every action has equal opposite reaction
+  Archimedes' Principle: Upthrust = weight of displaced fluid
+  Ohm's Law: V = IR (Voltage = Current × Resistance)
+  Boyle's Law: PV = constant (pressure-volume)
+  Charles' Law: V/T = constant (volume-temperature)
+
+INDIAN SCIENTISTS:
+  CV Raman: Raman Effect (Nobel Physics 1930)
+    First Asian Nobel Prize in science
+  Homi J. Bhabha: Father of Indian Nuclear Programme
+  Vikram Sarabhai: Father of Indian Space Programme
+  APJ Abdul Kalam: Missile Man of India
+    AGNI, PRITHVI missile development
+  Srinivasa Ramanujan: Mathematical genius
+    Hardy-Ramanujan number = 1729 (taxicab number)
+  Jagadish Chandra Bose: Pioneer of radio and microwave
+  Satyendra Nath Bose: Bose-Einstein statistics
+    Boson particles named after him
+  M. Vishveshwaraiah: Engineer — built KRS Dam, Mysore
+
+QUESTION PATTERNS (60 questions):
+
+  SI units (15 questions):
+    → "The SI unit of force is..." (Newton)
+    → "Which is the SI unit of electric current?" (Ampere)
+    → "The SI unit of temperature is..." (Kelvin — not Celsius)
+    → "Watt is the unit of..." (Power)
+    → "Pascal is the SI unit of..." (Pressure)
+
+  Inventions (25 questions):
+    → "Who invented the telephone?" (Alexander Graham Bell)
+    → "Penicillin was discovered by..." (Alexander Fleming)
+    → "X-Rays were discovered by..." (Wilhelm Röntgen)
+    → "The Wright Brothers invented..." (Airplane — 1903)
+    → "Who developed the World Wide Web?" (Tim Berners-Lee)
+    → "Vaccination was pioneered by..." (Edward Jenner)
+    → "Dynamite was invented by..." (Alfred Nobel)
+    → "Watson and Crick discovered..." (DNA structure — 1953)
+    → "'Father of Indian Space Programme' is..."
+      (Vikram Sarabhai)
+    → "'Missile Man of India' refers to..." (APJ Abdul Kalam)
+    → "CV Raman won Nobel Prize for..." (Raman Effect, 1930)
+    → "Ramanujan number (1729) is associated with..."
+      (Srinivasa Ramanujan)
+
+  Physics laws (20 questions):
+    → "Newton's 3rd Law states..." (equal and opposite reaction)
+    → "Archimedes' Principle relates to..." (buoyancy/upthrust)
+    → "Ohm's Law states that V = ..." (IR)
+    → "F = ma represents Newton's ___ Law" (2nd)
+
+---
+
+=================================================================
+=== FILE 11: science-space-missions.data.js
+    Topic: ISRO, NASA, and Global Space Missions
+=================================================================
+
+Generate 45 questions + 8 study notes + 8 flashcards.
+
+ISRO MISSIONS — COMPLETE LIST:
+
+  Aryabhata (1975): First Indian satellite
+  Rohini (1980): First satellite launched by Indian rocket (SLV-3)
+  INSAT series: Communication satellites
+  IRS series: Remote sensing satellites
+
+  Chandrayaan-1 (2008):
+    First Indian mission to Moon
+    Discovery: Water molecules on lunar surface
+    Instrument: Moon Impact Probe (MIP)
+    Mission end: 2009 (lost contact)
+
+  Chandrayaan-2 (2019):
+    Orbiter: Success (still operational)
+    Vikram lander: Crashed during descent (2.1 km from surface)
+    Pragyan rover: Could not deploy
+    Outcome: Partial success
+
+  Chandrayaan-3 (2023):
+    Lander: Vikram — soft landing August 23, 2023
+    Rover: Pragyan — operated 14 Earth days
+    Landing site: Shiv Shakti Point (Moon south pole)
+    India = 4th country to land on Moon
+    Scientific find: Sulphur detected on Moon's surface
+
+  Mangalyaan / MOM (2014):
+    Mars Orbiter Mission
+    India = 4th to reach Mars AND first on maiden attempt
+    Cost: ₹450 crore — cheapest Mars mission in history
+    Less than Hollywood movie Gravity's budget (noted globally)
+
+  Aditya-L1 (2023):
+    India's first solar observatory
+    Destination: L1 Lagrange point
+    Reached L1: January 2024
+
+  RISAT, CARTOSAT, GSAT: Earth observation,
+    communication satellite series
+
+  PSLV (Polar Satellite Launch Vehicle):
+    Workhorse rocket of ISRO
+    Record: Launched 104 satellites in single mission (2017)
+
+  GSLV Mk III (LVM3):
+    Heaviest rocket of ISRO
+    Used for: Chandrayaan-2, Chandrayaan-3, OneWeb missions
+
+  Gaganyaan (upcoming):
+    India's first human spaceflight programme
+    Crew: 4 astronaut-designates (Gaganyatris)
+    Vehicle: LVM3 rocket
+
+NASA MISSIONS:
+  Apollo 11 (1969): First Moon landing — Neil Armstrong, Buzz Aldrin
+  Voyager 1 (1977): Farthest human-made object in space
+  Hubble Space Telescope (1990): Orbiting telescope
+  Mars Rovers: Curiosity (2012), Perseverance (2021)
+  James Webb Space Telescope (2021): Successor to Hubble
+  Artemis Programme: Return to Moon (ongoing)
+
+GLOBAL SPACE FIRSTS:
+  First satellite: Sputnik-1 (USSR, 1957)
+  First human in space: Yuri Gagarin (USSR, 1961)
+  First woman in space: Valentina Tereshkova (USSR, 1963)
+  First Moon landing: Neil Armstrong (USA, 1969)
+  First Indian in space: Rakesh Sharma (1984, Soviet mission)
+  First Indian woman in space: Kalpana Chawla (NASA, 1997)
+    Died in Columbia shuttle disaster (2003)
+  First Indian on ISS (upcoming): Shubhanshu Shukla
+
+QUESTION PATTERNS (45 questions):
+
+  ISRO milestones (20 questions):
+    → "India's first satellite was..." (Aryabhata, 1975)
+    → "Mangalyaan reached Mars on its..." (first attempt)
+    → "Which ISRO mission discovered water on Moon?"
+      (Chandrayaan-1, 2008)
+    → "PSLV's record is launching ___ satellites at once"
+      (104, in 2017)
+    → "Father of Indian Space Programme..." (Vikram Sarabhai)
+
+  Global space firsts (15 questions):
+    → "First human in space was..." (Yuri Gagarin, 1961)
+    → "First Moon landing was in which year?" (1969)
+    → "First Indian in space..." (Rakesh Sharma, 1984)
+    → "First woman in space..." (Valentina Tereshkova, 1963)
+
+  Match column (10 questions):
+    → Match: Mission ↔ Achievement
+    → Match: Rocket ↔ Mission launched
+
+---
+
+=================================================================
+=== FILE 12: business-brands-taglines.data.js
+    Topic: Brand Taglines, Logos, Slogans (BBA Critical)
+=================================================================
+
+Generate 60 questions + 10 study notes + 10 flashcards.
+
+BRAND TAGLINES — COMPLETE MASTER LIST:
+
+INDIAN BRANDS:
+  Tata Group:
+    Tagline: "Improving the Quality of Life"
+    // HIGH PRIORITY — exact example in framework
+  Amul:
+    Tagline: "The Taste of India"
+    Mascot: Amul Girl (created 1966)
+    Full form: Anand Milk Union Limited
+    Type: Cooperative — Gujarat Cooperative Milk Federation
+  Air India:
+    Tagline: "The Maharaja" (mascot name)
+    Now under: Tata Group
+  State Bank of India (SBI):
+    Tagline: "The Banker to Every Indian"
+    Largest bank: India's largest public sector bank
+  Life Insurance Corporation (LIC):
+    Tagline: "Zindagi ke saath bhi, Zindagi ke baad bhi"
+    (With life, and after life too)
+  Reliance:
+    Tagline: "Growth is Life"
+  Infosys:
+    Tagline: "Navigate your next"
+    Earlier tagline: "Powered by intellect, driven by values"
+  Wipro:
+    Tagline: "Applying Thought"
+  HDFC Bank:
+    Tagline: "We understand your world"
+  ICICI Bank:
+    Tagline: "Hum Hai Na" (We are here)
+  Maruti Suzuki:
+    Tagline: "Way of Life!"
+  Hero MotoCorp:
+    Tagline: "The Pleasure of Riding"
+  Bajaj:
+    Tagline: "Distinctly Ahead"
+    Old tagline: "Hamara Bajaj"
+  Mahindra:
+    Tagline: "Rise" / "Explore the Impossible"
+  Asian Paints:
+    Tagline: "Har Ghar Kuch Kehta Hai"
+    (Every home says something)
+
+GLOBAL BRANDS:
+  Nike: "Just Do It"
+  Apple: "Think Different"
+  McDonald's: "I'm Lovin' It"
+  Coca-Cola: "Taste the Feeling"
+  Samsung: "Do What You Can't"
+  Google: "Don't be evil" (old) / "Do the right thing"
+  Microsoft: "Empowering Every Person on the Planet"
+  Amazon: "Work Hard. Have Fun. Make History."
+  Toyota: "Let's Go Places"
+  BMW: "The Ultimate Driving Machine"
+  Mercedes-Benz: "The Best or Nothing"
+  Intel: "Intel Inside" / "Leap Ahead"
+  LG: "Life's Good"
+  Sony: "Make Believe"
+  Pepsi: "That's What I Like"
+  Adidas: "Impossible is Nothing"
+  Walmart: "Save Money. Live Better."
+  FedEx: "The World on Time"
+
+QUESTION PATTERNS (60 questions):
+
+  Tagline to brand (25 questions):
+    → "'The Taste of India' is the tagline of..." (Amul)
+    → "'Just Do It' is the tagline of..." (Nike)
+    → "'Improving the Quality of Life' belongs to..." (Tata)
+    → "'Zindagi ke saath bhi, zindagi ke baad bhi' is..."
+      (LIC)
+    → "'I'm Lovin' It' is used by..." (McDonald's)
+    → "'Life's Good' is tagline of..." (LG)
+    → "'The Ultimate Driving Machine' is..." (BMW)
+
+  Brand to tagline (20 questions):
+    → "What is the tagline of Amul?" (The Taste of India)
+    → "Apple's famous tagline is..." (Think Different)
+    → "SBI's tagline is..." (The Banker to Every Indian)
+    → "Reliance's tagline is..." (Growth is Life)
+
+  Mascots and special brand facts (15 questions):
+    → "The Amul Girl mascot was created in..." (1966)
+    → "Amul stands for..." (Anand Milk Union Limited)
+    → "Amul is a ___ type of organisation" (cooperative)
+    → "'Maharaja' is the mascot of..." (Air India)
+
+BRAND FLASHCARDS (10 flashcards):
+  Indian brands table: Brand → Tagline → Type
+  Global brands table: Brand → Tagline → Country
+  studyNote for each: history, type, exam trap
+
+---
+
+=================================================================
+=== FILE 13: business-founders-hq.data.js
+    Topic: Company Founders, Headquarters, Banking Bodies
+=================================================================
+
+Generate 60 questions + 10 study notes + 10 flashcards.
+
+INDIAN COMPANIES — FOUNDER + HQ + YEAR:
+
+  Tata Group:
+    Founder: Jamsetji Nusserwanji Tata
+    Founded: 1868
+    HQ: Mumbai
+    Key subsidiaries: TCS, Tata Steel, Tata Motors,
+      Air India, Taj Hotels
+
+  Reliance Industries:
+    Founder: Dhirubhai Ambani
+    Founded: 1966 (as Reliance Commercial Corporation)
+    HQ: Mumbai
+    Current chairman: Mukesh Ambani
+
+  Infosys:
+    Founders: N.R. Narayana Murthy + 6 co-founders
+      (Nandan Nilekani, S. Gopalakrishnan, S.D. Shibulal,
+      K. Dinesh, N.S. Raghavan, Ashok Arora)
+    Founded: 1981 (Pune initially, then Bengaluru)
+    HQ: Bengaluru
+    First Indian IT company listed on NASDAQ (1999)
+
+  Wipro:
+    Founder: M.H. Hasham Premji (original company)
+    Current: Azim Premji transformed it into IT giant
+    Founded: 1945 (as Western India Products)
+    HQ: Bengaluru
+
+  HDFC Bank:
+    Founded: 1994
+    HQ: Mumbai (Lower Parel)
+    Merged with HDFC Ltd: 2023
+
+  ICICI Bank:
+    Founded: 1994
+    HQ: Mumbai (Bandra-Kurla Complex)
+
+  Flipkart:
+    Founders: Sachin Bansal + Binny Bansal
+    Founded: 2007 (Bengaluru)
+    Acquired by: Walmart (2018, 77% stake)
+    HQ: Bengaluru
+
+  Paytm:
+    Founder: Vijay Shekhar Sharma
+    Founded: 2010
+    HQ: Noida
+    Full form: Pay Through Mobile
+
+  Zomato:
+    Founders: Deepinder Goyal + Pankaj Chaddah
+    Founded: 2008 (as Foodiebay)
+    HQ: Gurugram
+
+  BYJU'S:
+    Founder: Byju Raveendran
+    Founded: 2011 (Bengaluru)
+    HQ: Bengaluru
+    Became world's most valued edtech company (2022)
+
+  OYO:
+    Founder: Ritesh Agarwal
+    Founded: 2013
+    HQ: Gurugram
+
+  Ola Cabs:
+    Founders: Bhavish Aggarwal + Ankit Bhati
+    Founded: 2010
+    HQ: Bengaluru
+
+BANKING AND FINANCIAL BODIES — HQ LIST:
+
+  RBI (Reserve Bank of India):
+    HQ: Mumbai
+    Founded: April 1, 1935
+    Governor: Sanjay Malhotra (Dec 2024)
+    First Governor: Osborne Smith (British)
+    First Indian Governor: C.D. Deshmukh
+    Functions: Monetary policy, currency issuance,
+      banker's bank, lender of last resort
+
+  SEBI (Securities and Exchange Board of India):
+    HQ: Mumbai (Bandra-Kurla Complex)
+    Founded: 1992 (statutory body)
+    Function: Regulate securities/stock markets
+    Chairman: // VERIFY current holder
+
+  NABARD (National Bank for Agriculture and Rural Dev):
+    HQ: Mumbai
+    Founded: 1982
+    Function: Agricultural credit and rural development
+
+  SIDBI (Small Industries Development Bank of India):
+    HQ: Lucknow
+    Founded: 1990
+    Function: Finance small/medium enterprises
+
+  EXIM Bank:
+    HQ: Mumbai
+    Function: Finance international trade
+
+  NSE (National Stock Exchange):
+    HQ: Mumbai
+    Founded: 1992
+    Index: NIFTY 50
+
+  BSE (Bombay Stock Exchange):
+    HQ: Mumbai (Phiroze Jeejeebhoy Towers, Dalal Street)
+    Founded: 1875
+    Index: SENSEX (30 stocks)
+    Asia's oldest stock exchange
+
+  World Bank:
+    HQ: Washington D.C., USA
+    Founded: 1944 (Bretton Woods)
+    President: Ajay Banga (Indian-American) // VERIFY
+
+  IMF (International Monetary Fund):
+    HQ: Washington D.C., USA
+    Founded: 1944
+    MD: Kristalina Georgieva // VERIFY
+
+  ADB (Asian Development Bank):
+    HQ: Manila, Philippines
+    Founded: 1966
+    Focus: Asia-Pacific development
+
+  WTO (World Trade Organisation):
+    HQ: Geneva, Switzerland
+    Founded: 1995 (replaced GATT)
+    DG: Ngozi Okonjo-Iweala
+
+GLOBAL COMPANIES — FOUNDER + HQ:
+
+  Apple: Steve Jobs, Steve Wozniak, Ronald Wayne (1976)
+    HQ: Cupertino, California, USA
+  Microsoft: Bill Gates, Paul Allen (1975)
+    HQ: Redmond, Washington, USA
+  Google/Alphabet: Larry Page, Sergey Brin (1998)
+    HQ: Mountain View, California (Googleplex), USA
+  Amazon: Jeff Bezos (1994)
+    HQ: Seattle, Washington, USA
+  Meta (Facebook): Mark Zuckerberg (2004)
+    HQ: Menlo Park, California, USA
+  Tesla: Elon Musk, Martin Eberhard, others (2003)
+    HQ: Austin, Texas, USA
+  SpaceX: Elon Musk (2002)
+    HQ: Hawthorne, California, USA
+  Twitter/X: Jack Dorsey (2006)
+    Acquired by Elon Musk (2022) — renamed X
+  Netflix: Reed Hastings, Marc Randolph (1997)
+    HQ: Los Gatos, California, USA
+  Uber: Travis Kalanick, Garrett Camp (2009)
+    HQ: San Francisco, California, USA
+  Toyota: Kiichiro Toyoda (1937)
+    HQ: Toyota City, Aichi, Japan
+  Samsung: Lee Byung-chul (1938)
+    HQ: Suwon, South Korea
+  Sony: Masaru Ibuka, Akio Morita (1946)
+    HQ: Minato, Tokyo, Japan
+  IKEA: Ingvar Kamprad (1943)
+    HQ: Delft, Netherlands
+
+QUESTION PATTERNS (60 questions):
+
+  Founder recall (25 questions):
+    → "Tata Group was founded by..." (Jamsetji Tata, 1868)
+    → "Infosys was co-founded by..." (N.R. Narayana Murthy)
+    → "Who founded Flipkart?"
+      (Sachin Bansal and Binny Bansal)
+    → "Paytm was founded by..." (Vijay Shekhar Sharma)
+    → "Amazon was founded by..." (Jeff Bezos, 1994)
+    → "Google was founded by..." (Larry Page + Sergey Brin)
+
+  HQ recall (20 questions):
+    → "RBI headquarters is in..." (Mumbai)
+    → "SEBI is headquartered in..." (Mumbai)
+    → "SIDBI headquarters is in..." (Lucknow)
+    → "ADB is headquartered in..." (Manila, Philippines)
+    → "WTO headquarters is in..." (Geneva, Switzerland)
+    → "BSE is located on..." (Dalal Street, Mumbai)
+    → "IMF and World Bank are both in..."
+      (Washington D.C., USA)
+
+  Records and firsts (15 questions):
+    → "First Indian IT company on NASDAQ was..."
+      (Infosys, 1999)
+    → "Asia's oldest stock exchange is..."
+      (BSE, 1875)
+    → "BSE tracks which index?" (SENSEX)
+    → "NIFTY 50 is the index of..." (NSE)
+    → "RBI was established on..." (April 1, 1935)
+    → "First Indian Governor of RBI was..."
+      (C.D. Deshmukh)
+
+BUSINESS FLASHCARDS (10 flashcards):
+  Indian companies: Founder, Year, HQ (one card)
+  Global tech: Founder, Year, HQ (one card)
+  Banking bodies: Name, HQ, Function (one card)
+  International financial bodies: HQ table
+
+---
+
+## STUDY NOTES AND FLASHCARD FILES
+
+=================================================================
+=== FILE 14: static-gk-study-notes.data.js
+=================================================================
+
+Aggregate all study notes from Files 1–13 into one file.
+Each note follows this exact schema:
+
+  {
+    id: "sgk-sn-001",
+    category: "history-battles",
+    topicName: "First Battle of Panipat",
+    examTags: ["CUET", "MH-CET"],
+    summary: "40-60 word paragraph",
+    keyPoints: [
+      "Point 1: 15-25 words — WHAT happened + WHY testable",
+      "Point 2: ...",
+      "Point 3: ...",
+      "Point 4: ...",
+      "Point 5: ..."
+    ],
+    examAngle: "Most likely asked as: ...",
+    displayMode: "study-note",
+    showBeforeCategory: "history-battles"
+  }
+
+Total study notes: minimum 80 (across all 13 files)
+
+=================================================================
+=== FILE 15: static-gk-flashcards.data.js
+=================================================================
+
+Aggregate all briefing flashcards from Files 1–13.
+Each flashcard follows this exact schema:
+
+  {
+    id: "sgk-bf-001",
+    category: "history-battles",
+    term: "First Battle of Panipat (1526)",
+    headline: "Babur's cannons ended Delhi Sultanate in 1526",
+    examTags: ["CUET", "MH-CET"],
+    points: [
+      "Babur vs Ibrahim Lodi — Mughal Empire established",
+      "Key advantage: Gunpowder artillery used first time",
+      "Location: Panipat, Haryana — flat terrain key",
+      "Result: End of Delhi Sultanate (320 years old)",
+      "Trap: Second Panipat (1556) involved Akbar not Babur"
+    ],
+    memoryHook: "1526 — Babur BATTERED Lodi with BULLETS",
+    likelyQuestion: "First Battle of Panipat was fought in?",
+    displayMode: "briefing-flashcard"
+  }
+
+Total flashcards: minimum 80 (across all 13 files)
+
+---
+
+## QUALITY GATES
+
+GATE 1 — STUDY NOTE QUALITY:
+  [ ] Summary: exactly 40-60 words (count them)
+  [ ] Exactly 5 key points per topic
+  [ ] Each key point: 15-25 words
+  [ ] Point 1 always = most testable fact
+  [ ] examAngle aligns with Point 1
+  [ ] No repetition across 5 points
+
+GATE 2 — FLASHCARD QUALITY:
+  [ ] Headline: one sentence, under 15 words, punchy
+  [ ] Exactly 5 bullet points, each under 15 words
+  [ ] Point 5 always = exam trap/common wrong answer
+  [ ] memoryHook is genuinely helpful, not forced
+  [ ] likelyQuestion is a real MAH CET / CUET style question
+
+GATE 3 — FACTUAL ACCURACY:
+  [ ] All battle dates verified (1526, 1556, 1757, 1761, 1764)
+  [ ] All classical dance-state pairs verified
+  [ ] All national park-animal pairs verified
+  [ ] All river-dam pairs verified
+  [ ] All vitamin-deficiency pairs verified
+  [ ] All invention-inventor pairs verified
+  [ ] All company-founder pairs verified
+  [ ] All bank-HQ pairs verified
+  [ ] Capital traps verified (Dispur not Guwahati for Assam)
+
+GATE 4 — QUESTION QUALITY:
+  [ ] Every question has exactly ONE correct answer
+  [ ] Distractors use real facts from adjacent topics
+  [ ] CUET questions have cognitiveType synthesis or
+    chronological — not just recall
+  [ ] MAH CET questions have speedTarget: 20
+  [ ] CUET questions have speedTarget: 90 or 120
+
+GATE 5 — SCHEMA COMPLIANCE:
+  [ ] All questions have staticGKCategory field
+  [ ] All questions have cognitiveType field
+  [ ] All questions have timePresure field
+  [ ] All questions have speedTarget field
+  [ ] All study notes have displayMode: "study-note"
+  [ ] All flashcards have displayMode: "briefing-flashcard"
+  [ ] ID prefixes:
+      history-battles: hb-q-, hb-sn-, hb-bf-
+      history-freedom: hf-q-, hf-sn-, hf-bf-
+      culture-dance: cd-q-, cd-sn-, cd-bf-
+      geography-parks: gp-q-, gp-sn-, gp-bf-
+      geography-rivers: gr-q-, gr-sn-, gr-bf-
+      geography-states: gs-q-, gs-sn-, gs-bf-
+      polity-constitution: pc-q-, pc-sn-, pc-bf-
+      polity-articles: pa-q-, pa-sn-, pa-bf-
+      science-biology: sb-q-, sb-sn-, sb-bf-
+      science-physics: sp-q-, sp-sn-, sp-bf-
+      science-space: ss-q-, ss-sn-, ss-bf-
+      business-brands: bb-q-, bb-sn-, bb-bf-
+      business-founders: bf-q-, bf-sn-, bf-bf-
+  [ ] Minimum question counts:
+      Per file: minimum 45 questions
+      Total across all files: minimum 735 questions
+      Total study notes: minimum 80
+      Total flashcards: minimum 80
+
+---
+
+## OUTPUT SEQUENCE
+
+STEP 1: Plan Artifact
+  → List all 16 files with question counts
+  → Confirm study note count per file
+  → Confirm flashcard count per file
+  → List any facts needing verification
+  WAIT for human approval
+
+STEP 2–4: History files (Files 1, 2, 3)
+  → Each: Questions in batches of 25 → WAIT
+  → Study notes → WAIT
+  → Flashcards → WAIT
+
+STEP 5–7: Geography files (Files 4, 5, 6)
+  → Same pattern → WAIT after each section
+
+STEP 8–9: Polity files (Files 7, 8)
+  → Same pattern → WAIT after each section
+
+STEP 10–12: Science files (Files 9, 10, 11)
+  → Same pattern → WAIT after each section
+
+STEP 13–14: Business files (Files 12, 13)
+  → Same pattern → WAIT after each section
+
+STEP 15: Aggregate study notes file
+  → Compile all from Files 1–13 → WAIT
+
+STEP 16: Aggregate flashcards file
+  → Compile all from Files 1–13 → WAIT
+
+STEP 17: index.js
+  → Export all 16 files → confirm variable names
+
+---
+
+## ANTI-HALLUCINATION RULES
+
+1. BATTLES: Never confuse commanders between battles.
+   Mir Jafar betrayed at PLASSEY — NOT Buxar.
+   Bairam Khan led at Second Panipat — NOT Akbar directly.
+
+2. DANCE FORMS: Never assign a dance to the wrong state.
+   Mohiniyattam AND Kathakali are BOTH from Kerala —
+   differentiate by characteristic, not state.
+
+3. VITAMIN-DISEASE: Rickets = Vitamin D (NOT C).
+   Scurvy = Vitamin C (NOT D).
+   Beriberi = Vitamin B1 (NOT B12).
+   These are the three most commonly confused pairs.
+
+4. CAPITALS: Assam's capital is Dispur — NOT Guwahati.
+   Gujarat's capital is Gandhinagar — NOT Ahmedabad.
+   Include these as trap distractors — never as answers.
+
+5. BANK HQ: Every major bank and financial body HQ
+   must be verified against the master list.
+   SIDBI is in Lucknow — NOT Mumbai (common error).
+   ADB is in Manila — NOT Tokyo or Singapore.
+
+6. TAGLINES: Do NOT invent taglines. If uncertain
+   about a specific tagline — skip that company and
+   use only the verified ones in the master list above.
+
+7. RIVER DIRECTION: Narmada and Tapti flow WEST.
+   All other major peninsular rivers flow EAST.
+   This distinction generates multiple CUET questions.
+
+8. STUDY NOTE WORD COUNT: Count summary words manually.
+   40 words minimum. 60 words maximum. Non-negotiable.
+```
+
+---
+
+## Complete Deliverable Summary
+
+| File | Questions | Study Notes | Flashcards |
+|---|---|---|---|
+| history-battles | 60 | 8 | 8 |
+| history-freedom | 75 | 12 | 12 |
+| culture-dance-music | 45 | 8 | 8 |
+| geography-national-parks | 60 | 10 | 10 |
+| geography-rivers-dams | 60 | 10 | 10 |
+| geography-states-capitals | 45 | 8 | 8 |
+| polity-constitution | 60 | 10 | 10 |
+| polity-articles | 45 | 8 | 8 |
+| science-biology | 60 | 10 | 10 |
+| science-physics-inventions | 60 | 10 | 10 |
+| science-space-missions | 45 | 8 | 8 |
+| business-brands-taglines | 60 | 10 | 10 |
+| business-founders-hq | 60 | 10 | 10 |
+| **Totals** | **735** | **122** | **122** |
+
+Every question, study note, and flashcard is dual-tagged for CUET depth and MAH CET speed — giving your son one unified resource that serves both exams without duplication.

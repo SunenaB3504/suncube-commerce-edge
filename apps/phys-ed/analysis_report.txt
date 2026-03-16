@@ -1,0 +1,10 @@
+Unit 1: Topics=1, Flashcards=64, SQP=12, Viz=2
+Unit 2: Topics=4, Flashcards=57, SQP=12, Viz=9
+Unit 3: Topics=6, Flashcards=56, SQP=7, Viz=5
+Unit 4: Topics=7, Flashcards=48, SQP=11, Viz=10
+Unit 5: Topics=4, Flashcards=43, SQP=8, Viz=4
+Unit 6: Topics=4, Flashcards=46, SQP=8, Viz=4
+Unit 7: Topics=4, Flashcards=38, SQP=11, Viz=4
+Unit 8: Topics=5, Flashcards=46, SQP=11, Viz=5
+Unit 9: Topics=4, Flashcards=41, SQP=9, Viz=7
+Unit 10: Topics=5, Flashcards=26, SQP=9, Viz=5

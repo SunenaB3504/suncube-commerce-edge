@@ -1,0 +1,76 @@
+Unit 5 | ID: 2025-26-q26 | Marks: 6
+Q: Identify the organisation structure where each division functions as an autonomous unit and is accountable for its own profits and losses.
+A: Divisional Structure
+----------------------------------------
+Unit 5 | ID: 2024-25-q26 | Marks: 6
+Q: It is the act of making the subordinate answerable for the final outcome. Once authority has been delegated and responsibility accepted, one cannot deny it.
+A: Accountability
+----------------------------------------
+Unit 5 | ID: 2023-24-q34 | Marks: 6
+Q: Top management needs relief from routine decision making to focus on strategic issues. Which concept helps in this?
+A: Decentralisation
+----------------------------------------
+Unit 5 | ID: 2022-23-q23 | Marks: 4
+Q: Can a manager delegate accountability? Explain.
+A: No. Accountability is absolute.
+----------------------------------------
+Unit 6 | ID: bulk_402 | Marks: 3
+Q: Explain the concept of 'Training' and state any two benefits of training to an organisation.
+A: The correct approach involves identifying the core concept and outlining at least three distinct points of explanation or differentiation as required by the CBSE marking scheme. \n1. Primary Point: Defines the core subject clearly with an example.\n2. Secondary Point: Elaborates on the mechanism or rationale behind the concept.\n3. Tertiary Point: Discusses the implication or impact on the business environment.
+----------------------------------------
+Unit 6 | ID: 2025-26-q27 | Marks: 6
+Q: Which step in the staffing process involves determining the number and type of employees required?
+A: Estimating Manpower Requirements
+----------------------------------------
+Unit 6 | ID: 2024-25-q34 | Marks: 6
+Q: Differentiate between Trade Test and Aptitude Test.
+A: Trade Test measures existing skills. Aptitude Test measures potential to learn new skills.
+----------------------------------------
+Unit 6 | ID: 2023-24-q22 | Marks: 3
+Q: Which step involves introducing the selected employee to other employees and familiarizing him with the rules and policies?
+A: Orientation
+----------------------------------------
+Unit 6 | ID: 2023-24-q28 | Marks: 4
+Q: A company maintains a database of unsolicited applicants in its offices. Which source of recruitment is this?
+A: Casual Callers
+----------------------------------------
+Unit 6 | ID: 2022-23-q25 | Marks: 4
+Q: Staffing ensures the continuous survival and growth of the enterprise. Explain.
+A: Through Succession Planning
+----------------------------------------
+Unit 7 | ID: 2025-26-q28 | Marks: 4
+Q: Identify the barrier to communication when a superior acts in a manner that subordinates do not have the confidence to communicate with him?
+A: Personal Barrier (Fear of challenge to authority / Lack of confidence)
+----------------------------------------
+Unit 7 | ID: 2024-25-q27 | Marks: 6
+Q: Management of a company ensures that the basic salary of employees is enough to cover their food and shelter. Which need is being satisfied?
+A: Physiological Needs
+----------------------------------------
+Unit 7 | ID: 2023-24-q29 | Marks: 4
+Q: When a manager usage technical jargon which is not understood by the subordinates, which type of communication barrier is it?
+A: Semantic Barrier
+----------------------------------------
+Unit 7 | ID: 2022-23-q30 | Marks: 6
+Q: A company offers Stock Option / Co-partnership to its employees. What kind of incentive is this?
+A: Financial Incentive
+----------------------------------------
+Unit 8 | ID: bulk_701 | Marks: 4
+Q: Explain the concept of 'Controlling' and how it acts as a backward looking as well as a forward looking function.
+A: A four-mark answer must be comprehensive, breaking down the principles or processes into at least four distinct headings.\n\n1. First Heading: Detailed explanation linking back to the case study or direct theory.\n2. Second Heading: Expansion on the subsequent step or feature.\n3. Third Heading: Providing a real-world application or example.\n4. Fourth Heading: Summarizing the outcome or conclusion of the process.
+----------------------------------------
+Unit 8 | ID: 2025-26-q18 | Marks: 4
+Q: Identify the principle of management control that states: "An attempt to control everything results in controlling nothing".
+A: Management by Exception
+----------------------------------------
+Unit 8 | ID: 2024-25-q28 | Marks: 4
+Q: Planning and controlling are inseparable twins of management. How are they related?
+A: Blind without standards / Meaningless without implementation
+----------------------------------------
+Unit 8 | ID: 2023-24-q30 | Marks: 6
+Q: What should a manager do if the performance standards set in the planning process are found to be obsolete or unachievable?
+A: Revise the Standards (Corrective Action)
+----------------------------------------
+Unit 8 | ID: 2022-23-q26 | Marks: 6
+Q: Explain Critical Point Control with an example.
+A: Focus on KRAs (e.g., 5% rise in labour cost is more critical than 15% rise in postal charges)
+----------------------------------------

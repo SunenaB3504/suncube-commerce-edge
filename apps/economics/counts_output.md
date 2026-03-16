@@ -1,0 +1,16 @@
+| Chapter | Topics | Sub-topics | Flashcards | SQPs | Visuals |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| unit1-national-income | 0 | 10 | 55 | 0 | 2 |
+| unit2-money-banking | 2 | 12 | 59 | 0 | 3 |
+| unit3-income-determination | 3 | 4 | 55 | 0 | 2 |
+| unit4-govt-budget | 4 | 7 | 62 | 0 | 3 |
+| unit5-bop-forex | 2 | 6 | 71 | 0 | 8 |
+| unit6-ch1-eve-of-independence | 0 | 11 | 61 | 0 | 0 |
+| unit6-ch2-planning-era | 0 | 0 | 61 | 0 | 0 |
+| unit6-ch3-lpg-reforms | 0 | 10 | 62 | 0 | 0 |
+| unit7-ch4-hcf | 2 | 9 | 70 | 0 | 0 |
+| unit7-ch5-rural | 3 | 9 | 70 | 0 | 0 |
+| unit7-ch6-employment | 4 | 8 | 59 | 0 | 0 |
+| unit7-ch7-environment | 4 | 4 | 62 | 0 | 0 |
+| unit8-ied-comparison | 3 | 17 | 70 | 0 | 4 |
+| **TOTAL** | **27** | **107** | **817** | **0** | **22** |

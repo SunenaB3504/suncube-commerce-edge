@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* 3D Transform Utilities for Flashcards */
+  .preserve-3d { 
+    transform-style: preserve-3d; 
+  }
+  .perspective { 
+    perspective: 1000px; 
+  }
+  .backface-hidden { 
+    backface-visibility: hidden; 
+  }
+  .rotate-y-180 { 
+    transform: rotateY(180deg); 
+  }
+  .rotate-y-0 { 
+    transform: rotateY(0deg); 
+  }
+  
+  /* Additional Animation Utilities */
+  .perspective-1000 { perspective: 1000px; }
+  .transform-style-3d { transform-style: preserve-3d; }
+  .purple-gradient { background: linear-gradient(135deg, #581c87 0%, #7e22ce 100%); }
+
+  /* PDF Export Utilities */
+  .pdf-no-break { page-break-inside: avoid; }
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

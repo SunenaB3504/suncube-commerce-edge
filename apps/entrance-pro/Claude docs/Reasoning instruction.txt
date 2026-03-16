@@ -1,0 +1,1860 @@
+Here is the complete production prompt:
+
+---
+
+## Antigravity Agent Prompt — Logic Plaza: Logical & Analytical Reasoning Module
+
+```
+## MISSION
+You are a Content Generation Agent for the Commerce Prep Pro
+project. Your task is to generate a comprehensive Logical and
+Analytical Reasoning question bank for the "Logic Plaza" district
+of the app — covering Arrangements, Series, Coding-Decoding,
+Relationships, Analytical Logic, and Visual Reasoning.
+
+This is the HIGHEST WEIGHT section in MAH BBA CET (30% of paper)
+and a critical component of CUET GAT (30% of Section III).
+
+Design Philosophy:
+  CUET: Tests DEPTH — multi-constraint puzzles, 4–6 variable
+        arrangements, complex syllogism chains
+        Time: 90–120 seconds per question
+        Penalty: -1 for wrong answer
+
+  MAH CET: Tests SPEED — single-constraint quick logic,
+           pattern recognition in under 30 seconds
+           Time: 20–40 seconds per question
+           No negative marking
+
+Strategy: Build CUET-depth content first.
+          MAH CET speed becomes achievable automatically.
+
+App District Name: Logic Plaza
+Theme: Each sub-topic is a "zone" within Logic Plaza
+  Zone 1: Arrangement Arena (puzzles + seating)
+  Zone 2: Series Street (number + alphabet + alphanumeric)
+  Zone 3: Code Corner (coding-decoding)
+  Zone 4: Relations Roundabout (blood relations + direction)
+  Zone 5: Logic Lab (syllogisms + Venn + statement)
+  Zone 6: Visual Vault (mirror + water + paper folding)
+
+---
+
+## MANDATORY FIRST STEPS (Do not skip)
+1. Read @RULES.md fully
+2. Read @DATA_SCHEMA.md fully
+3. Read @src/config/subjects.config.js
+4. Read @src/data/static-gk/history-battles.data.js
+   (to understand study note + flashcard format)
+5. Output Plan Artifact with question count per file
+6. WAIT for human approval before writing any content
+
+---
+
+## EXAM CONFIGURATION
+
+LOGIC_PLAZA_CONFIG = {
+  CUET: {
+    sectionName: "General Test (Section III)",
+    reasoningWeightage: "30%",
+    questionsInExam: 18,
+    timePerQuestion: 90,
+    negativeMarking: true,
+    marksCorrect: 5,
+    marksWrong: -1,
+    dominantTypes: [
+      "complex-arrangement",
+      "syllogism",
+      "series-pattern",
+      "analytical-puzzle"
+    ]
+  },
+  MAH_CET: {
+    sectionName: "Logical and Verbal Reasoning",
+    reasoningWeightage: "30%",
+    questionsInExam: 30,
+    timePerQuestion: 36,
+    negativeMarking: false,
+    marksCorrect: 1,
+    marksWrong: 0,
+    dominantTypes: [
+      "seating-arrangement",
+      "blood-relations",
+      "series-completion",
+      "direction-sense",
+      "visual-reasoning"
+    ]
+  }
+}
+
+---
+
+## FILES TO CREATE
+
+File 1:  src/data/logic-plaza/arrangements-linear.data.js
+File 2:  src/data/logic-plaza/arrangements-circular.data.js
+File 3:  src/data/logic-plaza/arrangements-floor.data.js
+File 4:  src/data/logic-plaza/series-number.data.js
+File 5:  src/data/logic-plaza/series-alphabet.data.js
+File 6:  src/data/logic-plaza/series-alphanumeric.data.js
+File 7:  src/data/logic-plaza/coding-letter-shift.data.js
+File 8:  src/data/logic-plaza/coding-symbol.data.js
+File 9:  src/data/logic-plaza/relations-blood.data.js
+File 10: src/data/logic-plaza/relations-direction.data.js
+File 11: src/data/logic-plaza/logic-syllogism.data.js
+File 12: src/data/logic-plaza/logic-venn.data.js
+File 13: src/data/logic-plaza/logic-statement.data.js
+File 14: src/data/logic-plaza/visual-mirror-water.data.js
+File 15: src/data/logic-plaza/visual-paper-pattern.data.js
+File 16: src/data/logic-plaza/logic-plaza-study-notes.data.js
+File 17: src/data/logic-plaza/logic-plaza-flashcards.data.js
+File 18: src/data/logic-plaza/index.js
+
+---
+
+## EXTENDED SCHEMA FOR LOGIC PLAZA
+
+Every question carries ALL standard fields PLUS:
+
+  logicZone:
+    "arrangement-linear"
+    "arrangement-circular"
+    "arrangement-floor"
+    "series-number"
+    "series-alphabet"
+    "series-alphanumeric"
+    "coding-letter"
+    "coding-symbol"
+    "relations-blood"
+    "relations-direction"
+    "logic-syllogism"
+    "logic-venn"
+    "logic-statement"
+    "visual-mirror"
+    "visual-paper"
+
+  cognitiveType:
+    "pattern-recognition"  → Spot the rule, apply it
+    "deductive"            → From given facts to conclusion
+    "spatial"              → Visualise position/rotation
+    "elimination"          → Rule out wrong options
+    "set-theory"           → Overlapping group logic
+    "analytical"           → Multi-step reasoning chain
+
+  difficultyProfile:
+    variables: 2 | 3 | 4 | 5 | 6
+      // Number of people/elements in the puzzle
+    constraints: 1 | 2 | 3 | 4 | 5
+      // Number of clues/conditions given
+    steps: 1 | 2 | 3 | 4
+      // Solution steps required
+
+  // For puzzle/arrangement questions (sets of 4-5 Qs):
+  puzzleSetId: "ls-001"   // Links questions in same puzzle
+  puzzleSetSize: 5        // Total questions in this set
+
+  // For visual reasoning questions:
+  visualAssetRef: "mirror-001.svg"
+    // Reference to SVG asset Agent must describe
+    // in text form for developer to render
+
+  // Timing
+  speedTarget: 20 | 40 | 60 | 90 | 120   // seconds
+  timePresure: "speed" | "standard" | "deep"
+
+---
+
+## CRITICAL INSTRUCTION — PUZZLE SETS
+
+For arrangement and puzzle questions, generate
+COMPLETE PUZZLE SETS where one scenario has 4–5 questions.
+
+Format for puzzle set question:
+
+  {
+    id: "la-q-001",
+    puzzleSetId: "la-set-001",
+    puzzleSetSize: 5,
+    puzzlePosition: 1,       // This is Q1 of 5 in set
+    scenario: `
+      Eight people A, B, C, D, E, F, G, H sit in a
+      straight line facing North.
+      Conditions:
+      1. A sits at one of the extreme ends.
+      2. B sits exactly in the middle.
+      3. C and D are adjacent to each other.
+      4. E sits between F and G.
+      5. H is not adjacent to A.
+    `,
+    question: "Who sits at the extreme right end?",
+    options: ["A","C","F","H"],
+    correct: 2,
+    explanation: `
+      Step 1: A is at one extreme — try position 1 or 8.
+      Step 2: B is in middle — position 4 or 5...
+      [complete step-by-step walkthrough]
+      Final arrangement: A_F_E_B_G_C_D_H
+      Answer: F is at extreme right → Option C
+    `,
+    solution_steps: [
+      "Place A at position 1 (try left extreme first)",
+      "Place B at middle — for 8 people, position 4 or 5",
+      "E sits between F and G — so F-E-G or G-E-F as unit",
+      "C and D are adjacent — treat as CD or DC unit",
+      "H not adjacent to A — H cannot be at position 2",
+      "Final: A-?-F-E-B-G-C-D with H placed by elimination"
+    ],
+    logicZone: "arrangement-linear",
+    cognitiveType: "deductive",
+    difficultyProfile: {
+      variables: 8,
+      constraints: 5,
+      steps: 4
+    },
+    examTags: ["CUET","MH-CET"],
+    difficulty: "hard",
+    timePresure: "deep",
+    speedTarget: 120
+  }
+
+---
+
+=================================================================
+ZONE 1A — FILE 1: arrangements-linear.data.js
+Topic: Linear Seating Arrangements
+App Zone: "Arrangement Arena — Linear Track"
+=================================================================
+
+Generate 60 questions in 12 complete puzzle sets
+(5 questions per set — 12 sets total).
+
+DIFFICULTY DISTRIBUTION:
+  Easy (4 sets): 4 people, 2–3 constraints
+    → MAH CET style — 40 seconds
+    → Variables: 4, constraints: 2-3, steps: 1-2
+  Medium (5 sets): 6 people, 3–4 constraints
+    → Both exams — 60–90 seconds
+    → Variables: 6, constraints: 3-4, steps: 2-3
+  Hard (3 sets): 8 people, 4–5 constraints
+    → CUET style — 90–120 seconds
+    → Variables: 8, constraints: 5, steps: 3-4
+
+PUZZLE DESIGN RULES:
+  1. Every arrangement must have a UNIQUE solution
+  2. Constraints must not contradict each other
+  3. Include at least one "facing" constraint per set
+     (e.g., "A and B face each other")
+  4. Include "extreme end" and "adjacent" constraints
+  5. One distractor constraint per set (information
+     that seems important but is not needed)
+  6. Explanation must walk through ALL steps
+
+SAMPLE EASY SET (4-person, 2 constraints):
+  Scenario: "Four friends Arun, Bina, Chetan, Deepa
+    sit in a row facing North.
+    1. Arun is not at either extreme end.
+    2. Deepa sits to the immediate left of Chetan."
+
+  Q1: "Who sits at the leftmost position?"
+  Q2: "Who is to the immediate right of Arun?"
+  Q3: "What is Deepa's position from the right?"
+  Q4: "Who are the neighbours of Arun?"
+  Q5: "Which of these seating orders is correct?"
+    Options include: (A) Bina-Arun-Deepa-Chetan
+                     (B) Deepa-Arun-Chetan-Bina etc.
+
+SAMPLE MEDIUM SET (6-person, 4 constraints):
+  Scenario: "Six students P, Q, R, S, T, U sit in
+    a single row. Some face North, some face South.
+    1. P sits at an extreme end and faces South.
+    2. T is third to the right of P.
+    3. Q and R are adjacent, both facing North.
+    4. S is not adjacent to P or T."
+
+SAMPLE HARD SET (8-person CUET-style):
+  Scenario: "Eight executives sit in two parallel rows
+    of four each. Group 1 (A,B,C,D) faces South.
+    Group 2 (P,Q,R,S) faces North. Each person in
+    Group 1 faces exactly one person in Group 2.
+    1. A faces the person who sits to Q's left.
+    2. B is not at either extreme.
+    3. C sits to the immediate right of A.
+    4. R is at an extreme end and faces B.
+    5. S is not adjacent to P."
+
+STUDY NOTES — 4 notes for linear arrangements:
+  Note 1: "How to draw the grid — always label seats
+    1 to N before reading clues"
+  Note 2: "Constraint priority — extreme end clues first,
+    then adjacency, then relative position"
+  Note 3: "Facing North vs South — common MAH CET trap"
+  Note 4: "Two-row parallel arrangement — CUET signature"
+
+FLASHCARDS — 4 flashcards:
+  BF-LA-01: "Extreme End Clues" — use first always
+  BF-LA-02: "Adjacent vs Immediate Right/Left"
+  BF-LA-03: "Facing constraints — who faces whom"
+  BF-LA-04: "Two-row arrangements — diagonal facing trap"
+
+---
+
+=================================================================
+ZONE 1B — FILE 2: arrangements-circular.data.js
+Topic: Circular Seating Arrangements
+App Zone: "Arrangement Arena — Circular Track"
+=================================================================
+
+Generate 60 questions in 12 complete puzzle sets.
+
+CRITICAL CIRCULAR ARRANGEMENT RULES:
+  1. In circular arrangements — positions are RELATIVE,
+     not absolute (no leftmost or rightmost end)
+  2. "Immediate left" in circular = anticlockwise direction
+     "Immediate right" in circular = clockwise direction
+  3. For N people in a circle: (N-1)! arrangements
+     (fix one person, arrange rest)
+  4. Facing inward vs outward adds complexity
+
+DIFFICULTY DISTRIBUTION:
+  Easy (4 sets): 5 people, facing inward only, 2–3 clues
+  Medium (5 sets): 6–7 people, mix of facing, 3–4 clues
+  Hard (3 sets): 8 people, some facing in/some out, 5 clues
+
+SAMPLE EASY CIRCULAR (5-person):
+  Scenario: "Five friends A, B, C, D, E sit around
+    a circular table facing the centre.
+    1. A sits to the immediate right of B.
+    2. C is not adjacent to A.
+    3. D sits exactly opposite E."
+
+  Q1: "Who sits to the immediate left of B?"
+  Q2: "Who is opposite A?"
+  Q3: "How many people sit between C and D
+       going clockwise?"
+  Q4: "Which pair is NOT adjacent?"
+  Q5: "If F joins the group between A and B,
+       who are F's neighbours?"
+
+SAMPLE HARD CIRCULAR (8-person CUET-style):
+  Scenario: "Eight people 1,2,3,4,5,6,7,8 sit in
+    a circle. Four face the centre (inward),
+    four face away (outward).
+    1. Person 1 faces outward and is between 2 and 3.
+    2. Person 4 faces the back of person 1.
+    3. People facing inward: 2, 4, 6, 8.
+    4. Person 5 is immediately clockwise of person 6.
+    5. Person 7 is not adjacent to person 1."
+
+KEY CONCEPTS TO COVER:
+  → Inward vs outward facing in circle
+  → "Opposite" in circle = N/2 seats away
+  → Clockwise vs anticlockwise counting
+  → Linear-to-circular conversion problems
+  → Gender-alternating circle arrangements
+
+STUDY NOTES — 4 notes:
+  Note 1: Clockwise = right when facing centre
+  Note 2: How to find "opposite" seat in any circle
+  Note 3: Inward vs outward — same clue, different answer
+  Note 4: Fixing anchor person — always start here
+
+FLASHCARDS — 4 flashcards:
+  BF-CA-01: "Circular vs Linear — 3 key differences"
+  BF-CA-02: "Clockwise = Right when facing centre"
+  BF-CA-03: "Opposite seat calculation"
+  BF-CA-04: "Inward/Outward trap — the most missed
+             question type in MAH CET 2024"
+
+---
+
+=================================================================
+ZONE 1C — FILE 3: arrangements-floor.data.js
+Topic: Floor-Based and Box/Rank Arrangements
+App Zone: "Arrangement Arena — Skyscraper"
+=================================================================
+
+Generate 45 questions in 9 complete puzzle sets.
+
+FLOOR ARRANGEMENT RULES:
+  Standard setup: N floors, 1 person per floor
+    Ground floor = Floor 1 (lowest)
+    Top floor = Floor N (highest)
+  "Above" = higher floor number
+  "Below" = lower floor number
+  "Immediate above" = floor number +1
+
+DIFFICULTY LEVELS:
+  Easy (3 sets): 5 floors, 3 constraints
+  Medium (4 sets): 7 floors, 4–5 constraints
+  Hard (2 sets): 8 floors + box/colour attribute, 5+ clues
+
+SAMPLE MEDIUM FLOOR SET (7 floors):
+  Scenario: "Seven people A,B,C,D,E,F,G live on
+    7 floors of a building (Ground=1, Top=7).
+    Each person likes a different colour:
+    Red, Blue, Green, Yellow, Orange, Pink, White.
+    1. A lives above C but below E.
+    2. The person on floor 4 likes Blue.
+    3. B lives on an odd-numbered floor.
+    4. F lives immediately above the person who
+       likes Green.
+    5. D lives on the topmost floor."
+
+  Q1: "Who lives on floor 4?"
+  Q2: "Which colour does A like?"
+  Q3: "How many people live between B and G?"
+  Q4: "Who lives on the floor immediately below E?"
+  Q5: "Which of these floor orders is correct?"
+
+DOUBLE-ATTRIBUTE PUZZLES (CUET-style):
+  Add: Each floor person has TWO attributes
+  (e.g., profession + favourite sport)
+  This creates 3D logic — person + floor + attribute1 +
+  attribute2 — maximum CUET complexity
+
+STUDY NOTES — 3 notes:
+  Note 1: Draw the grid vertically — Floor N at top
+  Note 2: "Immediately above/below" vs "just above/below"
+    (they mean the same — do not let wording confuse)
+  Note 3: Double-attribute floors — solve one attribute
+    completely before attempting the second
+
+FLASHCARDS — 3 flashcards:
+  BF-FL-01: "Floor numbering convention — always draw first"
+  BF-FL-02: "Above/Below vs Immediate Above/Below"
+  BF-FL-03: "Double-attribute floors — column method"
+
+---
+
+=================================================================
+ZONE 2A — FILE 4: series-number.data.js
+Topic: Number Series and Sequences
+App Zone: "Series Street — Number Lane"
+=================================================================
+
+Generate 75 questions covering all number series types.
+
+NUMBER SERIES TAXONOMY — Generate questions for ALL types:
+
+TYPE 1: SIMPLE ARITHMETIC SERIES
+  Rule: Each term increases/decreases by SAME number
+  Example: 3, 7, 11, 15, 19, __, __
+  Answer: +4 each time → 23, 27
+  Easy — MAH CET staple — speedTarget: 20 seconds
+
+TYPE 2: GEOMETRIC SERIES
+  Rule: Each term multiplied/divided by SAME number
+  Example: 2, 6, 18, 54, __, __
+  Answer: ×3 each time → 162, 486
+  Easy-Medium — both exams
+
+TYPE 3: DIFFERENCE SERIES (CUET FAVOURITE)
+  Rule: Differences between terms form their own series
+  Example: 2, 6, 12, 20, 30, __, __
+    // Exact example from user's framework
+  Differences: 4, 6, 8, 10 → next difference = 12
+  Answer: 30 + 12 = 42 → then 42 + 14 = 56
+  This is the HIGHEST PRIORITY series type for CUET
+
+TYPE 4: SQUARE/CUBE SERIES
+  Square series: 1, 4, 9, 16, 25, __, __
+    (n² series → 36, 49)
+  Square + constant: 2, 5, 10, 17, 26, __
+    (n² + 1 → 37)
+  Cube series: 1, 8, 27, 64, __, __
+    (n³ → 125)
+  CUET loves n² ± k and n³ ± k patterns
+
+TYPE 5: FIBONACCI-TYPE SERIES
+  Rule: Each term = sum of two preceding terms
+  Classic: 1, 1, 2, 3, 5, 8, 13, __, __
+    (→ 21, 34)
+  Modified: 1, 3, 4, 7, 11, 18, __, __
+    (same rule, different start → 29, 47)
+
+TYPE 6: MIXED OPERATION SERIES
+  Rule: Operations ALTERNATE (+, ×, +, × etc.)
+  Example: 3, 6, 10, 20, 24, 48, __, __
+    (+3, ×2, +10, ×2... wait — verify pattern)
+    Actually: ×2, +4, ×2, +4... → 52, 104
+  MAH CET loves these — spot the alternating rule
+
+TYPE 7: TWO-TIER DIFFERENCE SERIES (CUET HARD)
+  Rule: Differences of differences form a series
+  Example: 5, 7, 10, 14, 19, 25, __, __
+    Differences: 2, 3, 4, 5, 6 → next = 7
+    Answer: 25 + 7 = 32 → 32 + 8 = 40
+  CUET staple — requires two levels of difference analysis
+
+TYPE 8: PRIME NUMBER SERIES
+  Example: 2, 3, 5, 7, 11, 13, __, __
+    (consecutive primes → 17, 19)
+  Mixed: 2, 5, 11, 17, 23, __, __
+    (primes with gap: every other prime starting from 2)
+
+TYPE 9: WRONG TERM SERIES (FIND THE ODD ONE)
+  Instead of finding next term: find the WRONG term
+  Example: 1, 4, 9, 16, 24, 36
+    Wrong term: 24 (should be 25 = 5²)
+  CUET uses this as a trap — trained students
+  look for next term but question asks for wrong term
+
+TYPE 10: NUMBER PAIR/TRIPLET SERIES (CUET ADVANCED)
+  Pattern: (2, 4, 8), (3, 9, 27), (4, 16, ??)
+    Rule: (n, n², n³) → answer: 64
+  Teaches: Recognise n, n², n³ relationship
+
+QUESTION FORMAT FOR EACH TYPE:
+
+  Standard (find next term):
+    "What comes next in the series: 2, 6, 12, 20, 30, ?"
+    cognitiveType: "pattern-recognition"
+    solution_steps must show:
+      Step 1: Calculate differences
+      Step 2: Identify pattern in differences
+      Step 3: Apply to find answer
+
+  Wrong term format:
+    "One number in the series is WRONG. Find it:
+    1, 4, 9, 16, 24, 36, 49"
+    cognitiveType: "elimination"
+
+  Fill the blank (CUET multi-blank):
+    "2, ?, 12, ?, 30, 42"
+    Find BOTH missing terms
+    cognitiveType: "pattern-recognition"
+
+DISTRIBUTION (75 questions):
+  Type 1 (arithmetic): 10 questions
+  Type 2 (geometric): 8 questions
+  Type 3 (difference): 12 questions  ← highest priority
+  Type 4 (square/cube): 10 questions
+  Type 5 (Fibonacci): 6 questions
+  Type 6 (mixed): 8 questions
+  Type 7 (two-tier): 8 questions  ← CUET hard
+  Type 8 (prime): 5 questions
+  Type 9 (wrong term): 5 questions
+  Type 10 (pairs/triplets): 3 questions
+
+STUDY NOTES — 5 notes:
+  Note 1: "First step ALWAYS — compute differences.
+    Never guess the rule by inspection alone."
+  Note 2: "Difference series — the 2, 6, 12, 20 type.
+    Always check if differences themselves increase
+    by a constant."
+  Note 3: "Square and cube — memorise 1³–15³ and
+    1²–25² before exam day."
+  Note 4: "Wrong term trap — read the question format
+    carefully before solving."
+  Note 5: "Two-tier difference — compute differences,
+    then compute differences of differences."
+
+FLASHCARDS — 5 flashcards:
+  BF-NS-01: "10 Series Types — Name + Quick Rule"
+  BF-NS-02: "Square numbers 1–25 (memorise table)"
+  BF-NS-03: "Cube numbers 1–15 (memorise table)"
+  BF-NS-04: "Difference series — 3-step method"
+  BF-NS-05: "Fibonacci variants — 5 common starts"
+
+---
+
+=================================================================
+ZONE 2B — FILE 5: series-alphabet.data.js
+Topic: Alphabet Series and Letter Patterns
+App Zone: "Series Street — Alphabet Alley"
+=================================================================
+
+Generate 60 questions covering all alphabet series types.
+
+ESSENTIAL REFERENCE — ALPHABET POSITION TABLE:
+  A=1, B=2, C=3, D=4, E=5, F=6, G=7, H=8, I=9, J=10
+  K=11, L=12, M=13, N=14, O=15, P=16, Q=17, R=18, S=19
+  T=20, U=21, V=22, W=23, X=24, Y=25, Z=26
+
+REVERSE POSITION (EJOTY trick for quick recall):
+  E=5, J=10, O=15, T=20, Y=25
+  (memorise these 5, calculate others from nearest)
+
+ALPHABET SERIES TYPES:
+
+TYPE 1: SIMPLE SKIP SERIES
+  Example: A, C, E, G, I, ?, ?
+    (Skip 1 letter — every alternate letter → K, M)
+  Example: A, D, G, J, M, ?, ?
+    (Skip 2 letters — every 3rd letter → P, S)
+  speedTarget: 20 seconds
+
+TYPE 2: REVERSE ALPHABET SERIES
+  Example: Z, X, V, T, R, ?, ?
+    (backward skip 1 → P, N)
+  Trap: Students may go forward — always check direction
+
+TYPE 3: POSITION-VALUE SERIES
+  Example: A, C, F, J, O, ?, ?
+    Positions: 1, 3, 6, 10, 15
+    Pattern: +2, +3, +4, +5 → next +6 = 21 = U
+    Answer: U, then 21+7=28 > 26 — wraps? No. U only.
+  This combines NUMBER SERIES with ALPHABET — CUET favourite
+
+TYPE 4: GROUP PATTERN SERIES
+  Example: AB, DE, GH, JK, ?, ?
+    Groups of 2 letters, gap of 1 between groups → MN, PQ
+  Example: AZ, BY, CX, DW, ?, ?
+    First letter forward, second letter backward → EV, FU
+
+TYPE 5: LETTER-MISSING SERIES
+  Example: A_CD_FG_I_K
+    Missing: B, E, H, J
+    Pattern: Alternating removal rule
+
+TYPE 6: CUET COMPLEX PATTERN
+  Example: ACF, JLP, SVZ, ?, ?
+    Position of each letter in group: +2, +3 between letters
+    Position of groups: +7 between group starts
+    Requires two-level analysis — like two-tier number series
+
+CODING JUNCTION (bridge topic):
+  Series leads naturally to coding:
+  If A=Z, B=Y... (reverse alphabet coding)
+  If A=2, B=3... (shifted position coding)
+  Link these explicitly in explanation
+
+DISTRIBUTION (60 questions):
+  Type 1 (skip series): 12 questions
+  Type 2 (reverse): 10 questions
+  Type 3 (position-value): 15 questions  ← hardest, CUET
+  Type 4 (group pattern): 12 questions
+  Type 5 (missing letter): 6 questions
+  Type 6 (complex CUET): 5 questions
+
+STUDY NOTES — 4 notes:
+  Note 1: "EJOTY trick — E=5, J=10, O=15, T=20, Y=25.
+    From these, calculate any letter's position fast."
+  Note 2: "Position-value series: convert letters to
+    numbers first, find number pattern, convert back."
+  Note 3: "Group patterns: treat each group as a unit,
+    find rule for first letter, then for last letter."
+  Note 4: "Reverse alphabet: A↔Z, B↔Y, C↔X...
+    Formula: Reverse position = 27 - forward position"
+
+FLASHCARDS — 4 flashcards:
+  BF-AS-01: "Full A=1 to Z=26 table — memorise"
+  BF-AS-02: "EJOTY trick — 5 anchor points"
+  BF-AS-03: "Reverse formula: 27 minus position"
+  BF-AS-04: "Group series — treat group as unit"
+
+---
+
+=================================================================
+ZONE 2C — FILE 6: series-alphanumeric.data.js
+Topic: Alphanumeric Patterns (Letters + Numbers + Symbols)
+App Zone: "Series Street — Mixed Matrix"
+=================================================================
+
+Generate 45 questions.
+
+ALPHANUMERIC SERIES TYPES:
+
+TYPE 1: LETTER-NUMBER ALTERNATING
+  Example: A1, B3, C6, D10, E15, ?, ?
+    Letters: A,B,C,D,E → next F, G
+    Numbers: 1,3,6,10,15 → differences 2,3,4,5 → next +6=21
+    Answer: F21, G28
+  CUET FAVOURITE — appears every year
+
+TYPE 2: THREE-ELEMENT PATTERN
+  Example: 2A4, 4B8, 6C12, 8D16, ?, ?
+    Rule: First number +2, letter +1 (A,B,C,D→E),
+    last number = first × 2
+    Answer: 10E20, 12F24
+
+TYPE 3: SYMBOL-INCLUDED SERIES (MAH CET)
+  Example: @3, #6, $12, @24, #48, ?, ?
+    Symbols cycle: @, #, $, @, #, $...
+    Numbers: ×2 each time
+    Answer: $96, @192
+
+TYPE 4: MATRIX PATTERN (CUET ADVANCED)
+  A 3×3 matrix of alphanumeric values with one
+  cell missing — find the pattern row-wise or column-wise:
+    A1  B4  C9
+    D16 E25 F36
+    G49 H64 ?
+    Answer: I81 (letters A-I, numbers 1²-9²)
+
+TYPE 5: THREE-TIER CUET PATTERN
+  Where letters follow one rule, numbers follow another,
+  and their relationship follows a third rule.
+  Example: A2Z, B4Y, C6X, D8W, ?, ?
+    First letter: A,B,C,D→E forward
+    Number: 2,4,6,8→10 (+2)
+    Last letter: Z,Y,X,W→V backward
+    Answer: E10V, F12U
+
+DISTRIBUTION (45 questions):
+  Type 1: 12 questions
+  Type 2: 10 questions
+  Type 3: 8 questions
+  Type 4: 8 questions (CUET hard)
+  Type 5: 7 questions (CUET hard)
+
+STUDY NOTES — 3 notes:
+  Note 1: Split the series — solve letters separately,
+    numbers separately, then combine.
+  Note 2: Three-element patterns — check if third element
+    is derived from first (e.g., ×2, ×3).
+  Note 3: Matrix patterns — check all three directions:
+    row rule, column rule, diagonal rule.
+
+FLASHCARDS — 3 flashcards:
+  BF-AN-01: "Alphanumeric split method — 3 steps"
+  BF-AN-02: "Three-element derivation patterns"
+  BF-AN-03: "Matrix pattern — row vs column vs diagonal"
+
+---
+
+=================================================================
+ZONE 3A — FILE 7: coding-letter-shift.data.js
+Topic: Letter Shifting and Substitution Coding
+App Zone: "Code Corner — Shift Station"
+=================================================================
+
+Generate 60 questions.
+
+CODING-DECODING TAXONOMY:
+
+TYPE 1: FORWARD SHIFT CODING
+  Rule: Each letter shifted +N positions in alphabet
+  Example: If CAT = FDW, what is DOG?
+    C+3=F, A+3=D, T+3=W → shift is +3
+    D+3=G, O+3=R, G+3=J → DOG = GRJ
+  Easy — MAH CET staple — speedTarget: 30 seconds
+
+TYPE 2: BACKWARD SHIFT CODING
+  Rule: Each letter shifted -N positions
+  Example: If CAT = XZW (exact example from user framework)
+    C-5=X? No. C→X: 3→24 = backward 5? 3-5 = -2 = 24
+    Actually: 26-(3-1) = 24 = X (opposite coding)
+    This is REVERSE ALPHABET: A=Z, B=Y, C=X
+    // Always verify the shift rule from the example given
+
+TYPE 3: REVERSE ALPHABET CODING
+  Rule: A↔Z, B↔Y, C↔X, D↔W...
+  Formula: Code letter position = 27 - original position
+  Example: CAT → XZG
+    C(3)→X(24): 27-3=24 ✓
+    A(1)→Z(26): 27-1=26 ✓
+    T(20)→G(7): 27-20=7 ✓
+  // This is what the framework example "CAT = XZW" tests
+  // Verify: T(20) → 27-20 = 7 = G, not W
+  // W = 23, so T→W would be -3 shift, not reverse
+  // Agent must ALWAYS derive the rule from example given,
+  // never assume — the rule must be consistent
+
+TYPE 4: POSITION-BASED CODING
+  Rule: Letters replaced by their position numbers
+  Example: CAT = 3-1-20
+  Or: CAT = (3)(1)(20) written as 31, or C+3=F type rule
+
+TYPE 5: ODD-EVEN SHIFT CODING
+  Rule: Odd-position letters shift +2, even-position -2
+  Example: MANGO:
+    M(1st letter, odd) → O (+2)
+    A(2nd, even) → Y (-2)
+    N(3rd, odd) → P (+2)
+    G(4th, even) → E (-2)
+    O(5th, odd) → Q (+2)
+    MANGO = OYPEQUQ... wait — derive carefully
+
+TYPE 6: WORD-LEVEL SUBSTITUTION
+  Rule: Entire words substituted for others
+  Example: In a code language,
+    "sky is blue" = "ra fa ma"
+    "blue birds fly" = "ma pa ta"
+    "birds sing songs" = "pa qa na"
+    What is code for "fly"?
+    "fly" appears in sentence 2 → codes: ma, pa, ta
+    "birds" appears in 2 and 3 → code: pa
+    "blue" appears in 1 and 2 → code: ma
+    So "fly" = ta
+  CUET FAVOURITE — 3-sentence elimination method
+
+TYPE 7: NUMBER-LETTER POSITION CODING
+  Rule: Each letter replaced by number (A=1...Z=26)
+  or shifted by number pattern
+  Example: FAST = 6+1+19+20 = 46
+
+CUET SIGNATURE — MULTI-RULE CODING:
+  Rule: Different shifts for consonants vs vowels
+  Vowels: shift +2; Consonants: shift -1
+  Example: CODE:
+    C(consonant, -1) → B
+    O(vowel, +2) → Q
+    D(consonant, -1) → C
+    E(vowel, +2) → G
+    CODE = BQCG
+
+DISTRIBUTION (60 questions):
+  Type 1 (forward shift): 10 questions
+  Type 2 (backward shift): 10 questions
+  Type 3 (reverse alphabet): 8 questions
+  Type 4 (position-based): 8 questions
+  Type 5 (odd-even shift): 7 questions
+  Type 6 (word substitution): 10 questions ← CUET top
+  Type 7 (number-letter): 4 questions
+  Multi-rule: 3 questions
+
+CRITICAL RULE FOR AGENT:
+  For every coding question:
+  Step 1: Derive the rule FROM the example given
+  Step 2: Verify rule on ALL letters of the example
+  Step 3: Apply SAME rule to the question word
+  Step 4: If rule is inconsistent → flag the question
+
+  NEVER assume the shift — always prove it.
+
+STUDY NOTES — 4 notes:
+  Note 1: "Rule derivation: Always take the GIVEN example,
+    compute what shift was applied to EACH letter.
+    If all shifts match → you found the rule."
+  Note 2: "Word substitution: Draw a 3-column grid.
+    Column 1: Word. Column 2: Sentences it appears in.
+    Column 3: Possible codes. Eliminate by intersection."
+  Note 3: "Reverse alphabet: Memorise formula 27 - position.
+    Or: A↔Z, B↔Y — the middle is M↔N (13↔14)."
+  Note 4: "Multi-rule coding: Identify vowels and consonants
+    FIRST, then apply their respective rules separately."
+
+FLASHCARDS — 4 flashcards:
+  BF-CD-01: "3-step rule derivation method"
+  BF-CD-02: "Word substitution — 3-sentence grid method"
+  BF-CD-03: "Reverse alphabet formula: 27 - position"
+  BF-CD-04: "Multi-rule coding — vowel vs consonant split"
+
+---
+
+=================================================================
+ZONE 3B — FILE 8: coding-symbol.data.js
+Topic: Symbol-Based Coding and Number Coding
+App Zone: "Code Corner — Symbol Station"
+=================================================================
+
+Generate 45 questions.
+
+SYMBOL CODING TYPES:
+
+TYPE 1: SHAPE/SYMBOL SUBSTITUTION
+  Letters replaced by symbols (★, ◆, ■, ▲, ●, etc.)
+  Example: If A=★, B=◆, C=■ ... what does ★◆■ spell?
+    Answer: ABC
+  Straightforward — MAH CET
+
+TYPE 2: MATHEMATICAL SYMBOL CODING
+  Symbols represent operations:
+  Example: "A $ B" means A + B
+           "A @ B" means A × B
+           "A # B" means A - B
+    If A=4, B=3, C=2:
+    A $ B @ C = (A+B) × C = 7 × 2 = 14
+
+TYPE 3: DIRECTION SYMBOL CODING
+  Symbols represent compass directions:
+  ↑=North, →=East, ↓=South, ←=West
+  Combined with distance to form direction sense questions
+
+TYPE 4: NUMBER CODING
+  Each letter given a number code (not position-based)
+  Must be derived from example:
+  Example: RATE = 4256, LATE = 3256
+    R=4, A=2, T=5, E=6 (from RATE)
+    L=3 (new from LATE)
+    Find code for TALE = T(5)A(2)L(3)E(6) = 5236
+
+TYPE 5: CONDITIONAL/MATRIX CODING
+  A matrix of letters with row/column codes:
+    Matrix:
+         Col1  Col2  Col3
+    Row1:  A     B     C
+    Row2:  D     E     F
+    Row3:  G     H     I
+  Code for each letter = row number + column number
+  A = 11, B = 12, C = 13, D = 21...
+
+DISTRIBUTION (45 questions):
+  Type 1 (symbol sub): 10 questions
+  Type 2 (math symbol): 12 questions ← MAH CET top
+  Type 3 (direction symbol): 8 questions
+  Type 4 (number coding): 10 questions
+  Type 5 (matrix coding): 5 questions
+
+STUDY NOTES — 3 notes:
+  Note 1: "Math symbol coding: BODMAS still applies.
+    Replace symbols with operations, then calculate normally."
+  Note 2: "Number coding: Build a reference table from
+    the given example. Add new letters from subsequent
+    examples. Never guess a code."
+  Note 3: "Matrix coding: Row × 10 + Column gives a
+    unique 2-digit code for each cell."
+
+FLASHCARDS — 3 flashcards:
+  BF-SC-01: "Math symbol coding — BODMAS with substitution"
+  BF-SC-02: "Number coding — build reference table first"
+  BF-SC-03: "Matrix coding — row-column address system"
+
+---
+
+=================================================================
+ZONE 4A — FILE 9: relations-blood.data.js
+Topic: Blood Relations and Family Trees
+App Zone: "Relations Roundabout — Family Hub"
+=================================================================
+
+Generate 60 questions.
+
+BLOOD RELATIONS FRAMEWORK:
+
+GENERATION CHART:
+  Generation +2: Grandfather, Grandmother
+  Generation +1: Father, Mother, Uncle, Aunt
+  Generation  0: Self, Siblings, Cousins (same level)
+  Generation -1: Son, Daughter, Nephew, Niece
+  Generation -2: Grandson, Granddaughter
+
+RELATION TABLE (Critical for exam):
+  Father's/Mother's Father = Grandfather (Paternal/Maternal)
+  Father's/Mother's Mother = Grandmother
+  Father's/Mother's Brother = Uncle (Paternal/Maternal uncle)
+  Father's/Mother's Sister = Aunt
+  Uncle's/Aunt's Son = Cousin
+  Uncle's/Aunt's Daughter = Cousin
+  Brother's Son = Nephew
+  Brother's Daughter = Niece
+  Sister's Son = Nephew
+  Sister's Daughter = Niece
+  Son's Wife = Daughter-in-law
+  Daughter's Husband = Son-in-law
+  Brother's Wife = Sister-in-law
+  Sister's Husband = Brother-in-law
+  Husband's/Wife's Brother = Brother-in-law
+  Husband's/Wife's Sister = Sister-in-law
+  Husband's/Wife's Father = Father-in-law
+  Husband's/Wife's Mother = Mother-in-law
+
+GENDER TRAP LIST (most missed questions):
+  Child = could be son OR daughter (no gender indicated)
+  Parent = could be father OR mother
+  Sibling = could be brother OR sister
+  Cousin = could be male OR female
+  Spouse = husband OR wife
+  // Always note when gender is EXPLICITLY stated vs implied
+
+BLOOD RELATIONS QUESTION TYPES:
+
+TYPE 1: DIRECT RELATION (MAH CET speed)
+  "A is the father of B. B is the sister of C.
+   How is A related to C?"
+  Answer: Father
+  speedTarget: 20 seconds — draw mini tree instantly
+
+TYPE 2: CODED RELATION (MAH CET + CUET)
+  "A + B means A is the father of B.
+   A - B means A is the mother of B.
+   A × B means A is the brother of B.
+   A ÷ B means A is the sister of B.
+   If P + Q × R ÷ S, how is S related to P?"
+  Decode: P is father of Q; Q is brother of R;
+    R is sister of S → P is grandfather of S
+  CUET loves 4-element chains — medium-hard
+
+TYPE 3: CONVERSATION/DIALOGUE TYPE
+  "Pointing to a photograph, Rahul says,
+   'This person's mother is the only daughter of
+   my mother's mother.' How is Rahul related to
+   the person in photograph?"
+  Decode chain backwards:
+  "My mother's mother" = Rahul's maternal grandmother
+  "Only daughter of maternal grandmother" = Rahul's mother
+  "This person's mother = Rahul's mother"
+  → This person is Rahul's sibling (brother or sister)
+  Rahul is brother or sibling of person in photo
+
+TYPE 4: FAMILY TREE PUZZLE (CUET — 4-5 Q set)
+  A complete family described over 5–7 clues.
+  Questions ask multiple relationships from same tree.
+  Example scenario (6-person family):
+    "In a family of 6, P is married to Q.
+     R is the son of S. T is the daughter of P.
+     U is the brother of T. Q is the mother of R.
+     S is the father of U."
+  Q1: How is R related to T?
+  Q2: How is U related to S?
+  Q3: How many females are in the family?
+  Q4: How is P related to R?
+  Q5: Who is T's grandfather?
+
+TYPE 5: CODED SYMBOL FAMILY (CUET advanced)
+  Same as Type 2 but with symbols (★, ◆) instead of words:
+  "P ★ Q" means P is mother of Q
+  "P ◆ Q" means P is sibling of Q
+  Decode the chain first, then solve
+
+DISTRIBUTION (60 questions):
+  Type 1 (direct): 15 questions
+  Type 2 (coded relation): 15 questions
+  Type 3 (dialogue/conversation): 12 questions
+  Type 4 (family tree puzzle sets): 15 (3 sets × 5Q)
+  Type 5 (coded symbol): 3 questions
+
+BLOOD RELATIONS FLASHCARDS — 4 flashcards:
+  BF-BR-01: "Generation Chart — +2 to -2"
+  BF-BR-02: "Complete Relation Table — 20 relationships"
+  BF-BR-03: "Gender trap list — 6 gender-neutral terms"
+  BF-BR-04: "Coded relation: decode → draw → solve"
+
+STUDY NOTES — 4 notes:
+  Note 1: "Draw the family tree BEFORE answering.
+    Never solve blood relations in your head — draw it."
+  Note 2: "Gender trap: When gender is not stated,
+    the answer may be 'Cannot be determined'."
+  Note 3: "Coded relations: First write out what each
+    symbol/sign means, THEN decode the chain."
+  Note 4: "Dialogue type: Start from the person speaking,
+    work outward along the chain to find the link."
+
+---
+
+=================================================================
+ZONE 4B — FILE 10: relations-direction.data.js
+Topic: Direction Sense and Distance Problems
+App Zone: "Relations Roundabout — Compass Court"
+=================================================================
+
+Generate 60 questions.
+
+DIRECTION SENSE FUNDAMENTALS:
+
+COMPASS RULES:
+  8 directions: N, NE, E, SE, S, SW, W, NW
+  Turning RIGHT from any direction:
+    N → E → S → W → N (clockwise)
+  Turning LEFT from any direction:
+    N → W → S → E → N (anticlockwise)
+  OPPOSITE directions:
+    N↔S, E↔W, NE↔SW, NW↔SE
+
+SHADOW AND SUN RULES (CUET-specific):
+  Morning (sunrise in East):
+    Shadow falls WEST (opposite to Sun)
+    Person facing shadow = person facing WEST
+    Person's face points EAST
+  Evening (sunset in West):
+    Shadow falls EAST
+    Person facing shadow = person facing EAST
+    Person's face points WEST
+  Noon: No shadow (Sun directly overhead)
+  // This is a HIGH YIELD CUET topic — generates 3-4 Qs
+
+DISPLACEMENT CALCULATION:
+  When path is not straight — use Pythagoras:
+  If person walks 3m East then 4m North:
+  Shortest distance from start = √(3² + 4²) = 5m
+  This is a 3-4-5 Pythagorean triple — exam favourite
+
+COMMON PYTHAGOREAN TRIPLES FOR EXAM:
+  3-4-5
+  5-12-13
+  8-15-17
+  6-8-10 (= 3-4-5 doubled)
+  Memorise these — avoid calculator need in exam
+
+DIRECTION QUESTION TYPES:
+
+TYPE 1: FINAL DIRECTION (MAH CET speed)
+  "A walks North 3km, turns right, walks 4km,
+   turns right, walks 3km. What direction is he
+   facing and how far from start?"
+  speedTarget: 40 seconds
+
+TYPE 2: FINAL POSITION (MAH CET + CUET)
+  "A starts at point X, walks 5km East, turns left
+   and walks 3km, turns right and walks 2km.
+   Where is A relative to starting point?"
+  Requires drawing and displacement calculation
+
+TYPE 3: RELATIVE POSITION (CUET multi-person)
+  "A is 10m North of B. C is 5m East of B.
+   D is 10m South of C. Where is D relative to A?"
+  Requires coordinate system — mark all on grid
+
+TYPE 4: SHADOW/SUN DIRECTION (CUET signature)
+  "At 6 AM, A's shadow falls to his West.
+   Which direction is A facing?"
+  Sun is East at 6 AM → Shadow is West
+  A faces the shadow → A faces West
+  A's face = towards shadow direction
+  Wait: shadow falls BEHIND you. If shadow is West,
+  Sun is East, A faces EAST (not West)
+  // Agent must verify shadow logic before writing
+
+TYPE 5: DISPLACEMENT + DIRECTION COMBINED
+  "A walks 3km West, turns right, walks 4km North.
+   What is the shortest distance from start and
+   in what direction is A from start?"
+  Answer: 5km (3-4-5 triple), direction = NW
+
+DISTRIBUTION (60 questions):
+  Type 1 (final direction): 15 questions
+  Type 2 (final position): 15 questions
+  Type 3 (relative position): 12 questions
+  Type 4 (shadow/sun): 10 questions ← high CUET yield
+  Type 5 (displacement + direction): 8 questions
+
+DIRECTION FLASHCARDS — 4 flashcards:
+  BF-DS-01: "8-direction compass — always draw before solving"
+  BF-DS-02: "Shadow logic: Sun in East → shadow points West"
+  BF-DS-03: "Pythagorean triples: 3-4-5, 5-12-13, 8-15-17"
+  BF-DS-04: "Turning rules: Right = clockwise, Left = anticlockwise"
+
+STUDY NOTES — 4 notes:
+  Note 1: "ALWAYS draw the path on paper. Direction sense
+    problems solved mentally lead to 40% error rate."
+  Note 2: "Shadow: Sun and shadow are always OPPOSITE.
+    If shadow falls West, Sun is East, you face East."
+  Note 3: "Displacement: When the path makes an L-shape,
+    use Pythagoras. Look for 3-4-5 first."
+  Note 4: "Multi-person directions: Use a coordinate grid.
+    Assign starting person to origin (0,0). Plot others."
+
+---
+
+=================================================================
+ZONE 5A — FILE 11: logic-syllogism.data.js
+Topic: Syllogisms and Logical Deductions
+App Zone: "Logic Lab — Syllogism Studio"
+=================================================================
+
+Generate 75 questions.
+
+SYLLOGISM FUNDAMENTALS:
+
+STATEMENT TYPES:
+  Universal Positive: "All A are B" (A⊆B)
+  Universal Negative: "No A is B" (A∩B=∅)
+  Particular Positive: "Some A are B" (A∩B≠∅)
+  Particular Negative: "Some A are not B" (A∩B≠A)
+
+VALID CONCLUSION RULES (CUET logic):
+
+  Rule 1: All + All → All
+    "All A are B" + "All B are C" → "All A are C" ✓
+
+  Rule 2: All + No → No
+    "All A are B" + "No B is C" → "No A is C" ✓
+
+  Rule 3: All + Some → Some
+    "All A are B" + "Some B are C" → "Some A are C" ✗
+    TRAP: This conclusion is NOT valid
+    (Some B = C does not mean the A-part of B is C)
+
+  Rule 4: Some + All → Some
+    "Some A are B" + "All B are C" → "Some A are C" ✓
+
+  Rule 5: Some + No → Some not
+    "Some A are B" + "No B is C" → "Some A are not C" ✓
+
+  Rule 6: Some + Some → No definite conclusion ✗
+    "Some A are B" + "Some B are C" → NOTHING definite
+
+  Rule 7: No + All → Some not (reverse)
+    "No A is B" + "All B are C" → "Some C are not A" ✓
+
+COMPLEMENTARY PAIRS (CUET TRAP):
+  "All A are B" and "Some A are not B" = complementary
+  Exactly one must be true — use this to eliminate
+  "Either conclusion 1 or conclusion 2 follows" questions
+
+VENN DIAGRAM METHOD vs FORMULA METHOD:
+  MAH CET: Use Venn diagrams — draw circles, check visually
+  CUET: Use formula rules — faster for 2-statement, required
+    for 3-statement chains
+
+SYLLOGISM QUESTION FORMATS:
+
+FORMAT 1: Two statements, two conclusions (standard)
+  Statements:
+    I. All dogs are animals.
+    II. All animals have hearts.
+  Conclusions:
+    I. All dogs have hearts.
+    II. Some animals are dogs.
+  Which follows?
+  Answer: Both I and II follow (All+All→All, and
+    "All dogs are animals" reverses to "Some animals are dogs")
+
+FORMAT 2: Three statements (CUET hard)
+  Statements:
+    I. All A are B.
+    II. No B is C.
+    III. Some C are D.
+  Conclusions:
+    I. No A is C.
+    II. Some D are not B.
+    III. Some C are not A.
+  CUET tests 3-chain syllogisms — requires systematic approach
+
+FORMAT 3: "Either...or" conclusion (CUET trap)
+  When neither conclusion follows individually,
+  but they are complementary pairs — then
+  "Either I or II follows" is the answer
+  This is the #1 missed syllogism question type
+
+FORMAT 4: Possibility cases (CUET advanced)
+  "It is possible that some A are C" type conclusions
+  Rule: Possibility is valid unless there's a
+    definite contradiction
+  "All A are B, No B is C → Is it possible some A are C?"
+  Answer: No — because "No A is C" is definite conclusion
+
+DISTRIBUTION (75 questions):
+  Format 1 (2-statement, 2-conclusion): 30 questions
+  Format 2 (3-statement): 20 questions
+  Format 3 (either-or): 15 questions
+  Format 4 (possibility): 10 questions
+
+STUDY NOTES — 5 notes:
+  Note 1: "Memorise the 7 rules as a table. Do not try
+    to derive them in the exam — you will run out of time."
+  Note 2: "All + Some trap: 'All A=B' and 'Some B=C'
+    does NOT mean 'Some A=C'. This is the #1 wrong answer."
+  Note 3: "Either-or: When neither conclusion follows alone,
+    check if they are COMPLEMENTARY. If yes, either-or is
+    correct. Complementary = one universal, one particular,
+    same subject and predicate, opposite quality."
+  Note 4: "3-statement chains: Solve first two statements,
+    get intermediate conclusion, combine with third."
+  Note 5: "Possibility questions: A conclusion is possible
+    unless a definite contradicting conclusion exists."
+
+FLASHCARDS — 5 flashcards:
+  BF-SY-01: "7 Syllogism rules table — memorise completely"
+  BF-SY-02: "All + Some trap — why it fails"
+  BF-SY-03: "Either-or — complementary pair test"
+  BF-SY-04: "3-statement chain — intermediate conclusion"
+  BF-SY-05: "Possibility cases — only one disqualifier"
+
+---
+
+=================================================================
+ZONE 5B — FILE 12: logic-venn.data.js
+Topic: Venn Diagrams and Set Relationships
+App Zone: "Logic Lab — Venn Vault"
+=================================================================
+
+Generate 45 questions.
+
+VENN DIAGRAM QUESTION TYPES:
+
+TYPE 1: WHICH DIAGRAM BEST REPRESENTS (MAH CET)
+  Three words given — choose correct Venn relationship:
+  Example: "Dog, Animal, Mammal"
+  Answer: Nested circles — Dog⊂Mammal⊂Animal
+
+  Common Relationships:
+    All A are B, No C is B:
+      A inside B, C outside B entirely
+
+    Some A are B, Some B are C, No A is C:
+      A and B overlap, B and C overlap,
+      A and C do NOT overlap
+
+    All A are B, All A are C, Some B are C:
+      A inside B, A inside C, B and C overlap
+      (A is in the intersection of B and C)
+
+  GENERATE 15 questions of this type
+  For each: text description of the Venn diagram
+  Because visual diagrams need developer rendering,
+  describe the diagram structure in the explanation:
+    "The correct answer is Option B, which shows
+     Circle A entirely inside Circle B, and Circle C
+     overlapping with Circle B but not touching Circle A."
+
+TYPE 2: DATA INTERPRETATION FROM VENN (CUET)
+  A set with numbers given:
+  "In a class of 100 students:
+   60 like cricket, 50 like football, 30 like both.
+   How many like only cricket? Only football?
+   Neither? At least one?"
+
+  KEY FORMULAS:
+    n(A∪B) = n(A) + n(B) - n(A∩B)
+    Only A = n(A) - n(A∩B)
+    Only B = n(B) - n(A∩B)
+    Neither = Total - n(A∪B)
+    At least one = n(A∪B)
+
+  THREE-SET FORMULA (CUET):
+    n(A∪B∪C) = n(A) + n(B) + n(C)
+              - n(A∩B) - n(B∩C) - n(A∩C)
+              + n(A∩B∩C)
+
+  GENERATE 20 questions of this type
+  Include: 10 two-set, 10 three-set problems
+
+TYPE 3: LOGICAL VENN (CUET)
+  Conclusions drawn from Venn diagrams:
+  "All teachers are graduates. Some graduates are doctors.
+   Which Venn shows correct relationship between
+   Teachers (T), Graduates (G), Doctors (D)?"
+
+DISTRIBUTION (45 questions):
+  Type 1 (which diagram): 15 questions
+  Type 2 (data from Venn): 20 questions
+  Type 3 (logical Venn): 10 questions
+
+STUDY NOTES — 3 notes:
+  Note 1: "Formula for two sets: A∪B = A + B - A∩B.
+    Memorise this — it generates 30% of Venn questions."
+  Note 2: "Three-set formula: Add three sets, subtract
+    three pairs, add back the triple intersection."
+  Note 3: "Diagram type: First check if one group is
+    fully inside another. If 'All A are B', A is inside B."
+
+FLASHCARDS — 3 flashcards:
+  BF-VN-01: "Two-set formula — 5 derived quantities"
+  BF-VN-02: "Three-set formula — complete"
+  BF-VN-03: "7 diagram types — text description of each"
+
+---
+
+=================================================================
+ZONE 5C — FILE 13: logic-statement.data.js
+Topic: Statement-Assumption, Statement-Conclusion,
+       Cause and Effect, Course of Action
+App Zone: "Logic Lab — Analytical Corner"
+=================================================================
+
+Generate 60 questions.
+
+ANALYTICAL LOGIC SUB-TYPES:
+
+SUB-TYPE 1: STATEMENT AND ASSUMPTION (25 questions)
+  An ASSUMPTION is something taken for granted.
+  It is implicit — not stated — but must be true
+  for the statement to make sense.
+
+  Rule for valid assumption:
+    → Neither too broad (covers more than statement implies)
+    → Nor too narrow (ignores key part of statement)
+    → Must be necessary (without it, statement fails)
+    → Must not be a direct restatement of statement
+
+  Example:
+    Statement: "Buy this medicine and get rid of cold."
+    Assumption I: "The medicine is effective for cold."
+    Assumption II: "Cold is a common ailment."
+    Analysis:
+      I: Valid — for the claim to make sense, the medicine
+         must actually work. Implicit. Necessary.
+      II: Invalid — whether cold is common or rare does
+         not affect whether THIS medicine works.
+    Answer: Only Assumption I is implicit.
+
+  Common Traps:
+    → Assumption too general: "People want to be healthy"
+      — valid for health ads but too vague for specific claims
+    → Assumption that negates premise: Always invalid
+    → Future prediction as assumption: Usually invalid
+
+SUB-TYPE 2: STATEMENT AND CONCLUSION (15 questions)
+  Conclusion must FOLLOW LOGICALLY from the statement.
+  Not what is likely — what MUST be true if statement is true.
+
+  Example:
+    Statement: "All the children in this class
+      who scored above 80% received a certificate."
+    Conclusion I: "Some children in the class received
+      a certificate."
+    Conclusion II: "No child in the class scored below 80%."
+    Analysis:
+      I: Valid — if some scored above 80%, some got certs.
+      II: Invalid — statement says nothing about
+          what happened to those below 80%.
+    Answer: Only Conclusion I follows.
+
+SUB-TYPE 3: CAUSE AND EFFECT (10 questions)
+  Two events given — determine relationship:
+    (A) Statement I is cause, II is effect
+    (B) Statement II is cause, I is effect
+    (C) Both are effects of common cause
+    (D) Both are independent — no causal link
+    (E) Both are effects of independent causes
+
+  Example:
+    I: "Heavy rains lashed Mumbai on Monday."
+    II: "Several train services in Mumbai were cancelled
+        on Monday."
+    Answer: (A) — Rains caused cancellations.
+
+SUB-TYPE 4: COURSE OF ACTION (10 questions)
+  Problem stated — evaluate proposed courses of action.
+  A course of action is valid if:
+    → It directly addresses the problem stated
+    → It is practical and implementable
+    → It does not create a new bigger problem
+
+  Example:
+    Statement: "Several students failed the board exam."
+    Course I: "All failed students should be expelled."
+    Course II: "Provide remedial classes to failed students."
+    Analysis:
+      I: Invalid — doesn't address root cause, harsh
+      II: Valid — addresses problem constructively
+    Answer: Only Course II follows.
+
+DISTRIBUTION (60 questions):
+  Statement-Assumption: 25 questions
+  Statement-Conclusion: 15 questions
+  Cause and Effect: 10 questions
+  Course of Action: 10 questions
+
+STUDY NOTES — 4 notes:
+  Note 1: "Assumption test: Ask — 'Can the statement be
+    made if this assumption is false?' If NO → assumption
+    is implicit. If YES → it is not necessary."
+  Note 2: "Conclusion test: Ask — 'Does this HAVE to be
+    true if the statement is true?' If YES → follows.
+    If it merely MIGHT be true → does not follow."
+  Note 3: "Cause-Effect: Time sequence matters — cause
+    always precedes effect. If simultaneous → common cause."
+  Note 4: "Course of Action: Reject if it is too extreme,
+    doesn't solve the specific problem, or punishes
+    rather than remedies."
+
+FLASHCARDS — 4 flashcards:
+  BF-SA-01: "Assumption validity test — 4 checkpoints"
+  BF-SA-02: "Conclusion validity — MUST be true vs MIGHT"
+  BF-SA-03: "Cause-Effect — 5 possible relationships"
+  BF-SA-04: "Course of Action — 3 validity criteria"
+
+---
+
+=================================================================
+ZONE 6A — FILE 14: visual-mirror-water.data.js
+Topic: Mirror Images, Water Images, Embedded Figures
+App Zone: "Visual Vault — Reflection Room"
+=================================================================
+
+Generate 60 questions.
+
+VISUAL REASONING PRINCIPLES:
+
+MIRROR IMAGE RULES:
+  Left-Right Mirror (vertical axis):
+    → Left and right are swapped
+    → Up and down remain same
+    → Letters: B, C, D, E, J, K look different
+      Symmetric letters (unchanged): A, H, I, M, O, T, U, V, W, X, Y
+  Up-Down Mirror (horizontal axis) = Water Image:
+    → Up and down are swapped
+    → Left and right remain same
+
+  CLOCK IN MIRROR:
+    Original 3:00 → Mirror shows 9:00
+    Formula: Mirror time = 11:60 - original time
+    Example: Original 4:20 → Mirror: 11:60 - 4:20 = 7:40
+
+  LETTER IN MIRROR:
+    "BOAT" in left-right mirror: letters individually
+    mirrored AND order of letters in word reverses
+    Wait — actually in a LEFT-RIGHT mirror:
+    The ORDER of letters reverses AND each letter
+    is individually mirrored.
+    B → reversed B-shape
+    BOAT in mirror = TAOB with each letter mirrored
+
+  // Agent: For all visual questions, describe the
+  // visual in text using ASCII/emoji approximations
+  // and provide asset reference for developer to render
+  // Format: visualAssetRef: "mirror-q-001.svg"
+  // Description: "Original figure: Arrow pointing right (→).
+  //   Options: A) Arrow left (←) B) Arrow up (↑)
+  //   C) Arrow right rotated 90° (↓) D) Arrow right (→)
+  //   Correct mirror: Option A — left-right flip"
+
+QUESTION TYPES:
+
+TYPE 1: LETTER/WORD MIRROR (MAH CET)
+  "Which is the mirror image of 'BOARD'?"
+  speedTarget: 20 seconds
+  Tip: Check each letter individually for symmetry
+
+TYPE 2: FIGURE MIRROR (MAH CET + CUET)
+  Arrow, shape, or pattern — choose correct mirror image
+  Text description: "A triangle pointing upper-right
+  with a dot at bottom-left"
+  Mirror: "Triangle pointing upper-left, dot at bottom-right"
+
+TYPE 3: CLOCK MIRROR (MAH CET)
+  "The mirror image of a clock showing 4:45 is..."
+  Formula: 11:60 - 4:45 = 7:15
+  speedTarget: 30 seconds
+
+TYPE 4: WATER IMAGE (reflection in water = up-down flip)
+  "Which is the water image of the letter 'p'?"
+  Answer: 'd' (p flipped upside down)
+  'b' flipped = 'q'; 'd' flipped = 'p'
+
+TYPE 5: EMBEDDED FIGURES (CUET)
+  "Which of the 4 options is hidden in the larger figure?"
+  Describe in text: "The main figure is a hexagon with
+  an internal star pattern. Option A (triangle) is embedded
+  at coordinates top-right. Option B (diamond) is..."
+
+DISTRIBUTION (60 questions):
+  Letter/Word mirror: 15 questions
+  Figure mirror: 15 questions
+  Clock mirror: 10 questions
+  Water image: 10 questions
+  Embedded figures: 10 questions
+
+CRITICAL DEVELOPER NOTE IN DATA:
+  All visual questions must include:
+  1. visualAssetRef: "filename.svg" (placeholder)
+  2. textDescription: Full text description of figure
+  3. optionDescriptions: Text description of each option
+  This allows developer to render proper visual assets later.
+
+STUDY NOTES — 4 notes:
+  Note 1: "Mirror reflex: Cover the question, visualise
+    the flip. For letters — check if symmetric first."
+  Note 2: "Clock formula: 11:60 minus original time.
+    Always gives correct mirror time. No exceptions."
+  Note 3: "Water image = upside down (not mirrored sideways).
+    p→d, b→q, A→inverted-A, M→W"
+  Note 4: "Embedded figures: Rotate the option mentally.
+    The embedded figure may be rotated in the main figure."
+
+FLASHCARDS — 4 flashcards:
+  BF-MR-01: "Symmetric letters — unchanged in mirror"
+  BF-MR-02: "Clock mirror formula: 11:60 - time"
+  BF-MR-03: "Water image letter pairs: p↔d, b↔q"
+  BF-MR-04: "Embedded figures — always check rotations"
+
+---
+
+=================================================================
+ZONE 6B — FILE 15: visual-paper-pattern.data.js
+Topic: Paper Folding, Cutting, Pattern Completion
+App Zone: "Visual Vault — Pattern Lab"
+=================================================================
+
+Generate 45 questions.
+
+VISUAL SPATIAL TYPES:
+
+TYPE 1: PAPER FOLDING AND CUTTING
+  Paper folded → hole punched → unfolded.
+  Where are the holes on unfolded paper?
+  Rule: Each fold creates a mirror image of punched holes.
+  If folded once (left half onto right):
+    Hole on right side → mirror hole on left side
+  If folded twice:
+    Hole in one quadrant → appears in all 4 quadrants
+    (or 2, depending on fold axis)
+
+  Text description format:
+  "Square paper. Fold 1: fold right half onto left
+   (fold line = vertical centre). Fold 2: fold bottom
+   half onto top (fold line = horizontal centre).
+   Hole punched: top-right quadrant of folded paper.
+   Question: Which option shows correct holes after
+   unfolding? [Describe 4 options in text]"
+
+TYPE 2: PAPER CUTTING SHAPES
+  Paper folded then cut along a line.
+  What shape results when unfolded?
+  Rule: Cut creates symmetric shape along fold axis.
+  Triangle cut from once-folded paper → diamond when unfolded
+
+TYPE 3: PATTERN COMPLETION (CUET/MAH CET)
+  3×3 matrix with 8 figures given, 1 missing.
+  Find the rule across rows and columns.
+  Rules can be:
+    → Number of sides increases +1 per row
+    → Rotation of 90° per column
+    → Shading alternates: empty, half, full
+    → Inner figure changes each column
+
+  Text description format:
+  "3×3 matrix. Row 1: Triangle, Square, Pentagon.
+   Row 2: Filled-Triangle, Filled-Square, Filled-Pentagon.
+   Row 3: Dotted-Triangle, Dotted-Square, ?.
+   Answer: Dotted-Pentagon (shape matches column, shading
+   matches row)"
+
+TYPE 4: FIGURE SERIES (CUET)
+  4 figures given in sequence, find 5th.
+  Rule: Rotation, reflection, addition of elements.
+  "Figure 1: Star with 4 points. Figure 2: Star with 5.
+   Figure 3: Star with 6. Figure 4: ?
+   Answer: Star with 7 points."
+
+TYPE 5: CUBES AND DICE (CUET)
+  Cube with different symbols on 6 faces.
+  Rules: Opposite faces on a standard die:
+    1 opposite 6, 2 opposite 5, 3 opposite 4
+  Questions: "If face A is on top and face B faces you,
+    which face is at the bottom?"
+
+  DICE RULES:
+    Adjacent faces can be in any arrangement.
+    Opposite faces are fixed (sum = 7 for standard die).
+    If given an unfolded net of cube:
+    Use corner-folding method to identify opposites.
+
+DISTRIBUTION (45 questions):
+  Paper folding: 12 questions
+  Paper cutting: 8 questions
+  Pattern completion: 12 questions
+  Figure series: 8 questions
+  Cubes and dice: 5 questions
+
+STUDY NOTES — 3 notes:
+  Note 1: "Paper folding: Each fold doubles the number
+    of holes. One fold = 2 holes. Two folds = 4 holes.
+    Always unfold mentally in REVERSE order."
+  Note 2: "Pattern matrix: Check ROW rule first, then
+    COLUMN rule. The answer must satisfy BOTH."
+  Note 3: "Dice: Opposite faces sum to 7 (standard die).
+    Net of cube — use L-shape method to find opposites."
+
+FLASHCARDS — 3 flashcards:
+  BF-PP-01: "Paper folding: n folds = 2ⁿ holes"
+  BF-PP-02: "Pattern matrix: row rule + column rule = answer"
+  BF-PP-03: "Dice opposite faces: 1-6, 2-5, 3-4"
+
+---
+
+=================================================================
+AGGREGATE FILES
+=================================================================
+
+FILE 16: logic-plaza-study-notes.data.js
+  Compile ALL study notes from Files 1–15.
+  Total: minimum 60 study notes
+  Schema: same as static-gk-study-notes.data.js
+    with logicZone field added.
+
+FILE 17: logic-plaza-flashcards.data.js
+  Compile ALL flashcards from Files 1–15.
+  Total: minimum 60 flashcards
+  Schema: same as static-gk-flashcards.data.js
+    with logicZone field added.
+  Include: memoryHook for each flashcard
+  Include: likelyQuestion for each flashcard
+
+FILE 18: index.js
+  Export all 18 files
+  Organise exports by zone:
+    ZONE_1_ARRANGEMENTS: [...files 1-3]
+    ZONE_2_SERIES: [...files 4-6]
+    ZONE_3_CODING: [...files 7-8]
+    ZONE_4_RELATIONS: [...files 9-10]
+    ZONE_5_ANALYTICAL: [...files 11-13]
+    ZONE_6_VISUAL: [...files 14-15]
+    AGGREGATES: [file 16, file 17]
+
+---
+
+## QUALITY GATES
+
+GATE 1 — PUZZLE ACCURACY:
+  [ ] Every puzzle set has EXACTLY ONE valid solution
+  [ ] No two constraints contradict each other
+  [ ] Every constraint is USED in solving (no dead clues)
+  [ ] One and only one answer per question
+  [ ] Step-by-step solution provided for every puzzle
+
+GATE 2 — SERIES ACCURACY:
+  [ ] Every series rule verified by testing against ALL
+      given terms (not just first 2)
+  [ ] Wrong-term questions: the wrong term is clearly
+      identified and the correct term stated
+  [ ] Alphanumeric: both letter AND number rules verified
+
+GATE 3 — CODING ACCURACY:
+  [ ] Every coding rule derived from example given,
+      not assumed
+  [ ] Rule verified on EVERY letter of the example word
+  [ ] Word substitution: answer verified by elimination,
+      not guessing
+
+GATE 4 — LOGIC ACCURACY:
+  [ ] Every syllogism conclusion checked against all 7 rules
+  [ ] Complementary pair test applied to either-or questions
+  [ ] Venn formulas: n(A∪B) = n(A) + n(B) - n(A∩B) applied
+  [ ] Assumption test: "Without this, does statement fail?"
+
+GATE 5 — VISUAL ACCURACY:
+  [ ] Every visual question has textDescription field
+  [ ] Every visual question has visualAssetRef field
+  [ ] Clock mirror: 11:60 formula verified for each answer
+  [ ] Paper fold: hole count = 2ⁿ for n folds verified
+
+GATE 6 — SCHEMA COMPLIANCE:
+  [ ] logicZone field on every question
+  [ ] cognitiveType field on every question
+  [ ] difficultyProfile object on puzzle sets
+  [ ] puzzleSetId linking all questions in a set
+  [ ] speedTarget appropriate for exam type
+  [ ] ID prefixes per zone:
+      la: linear arrangement
+      ca: circular arrangement
+      fl: floor arrangement
+      ns: number series
+      as: alphabet series
+      an: alphanumeric series
+      cd: coding-decoding letter
+      sc: coding symbol
+      br: blood relations
+      ds: direction sense
+      sy: syllogism
+      vn: venn diagram
+      sa: statement-assumption
+      mr: mirror-water
+      pp: paper-pattern
+
+GATE 7 — COVERAGE (minimum question counts):
+  File 1 (linear): 60 questions (12 sets × 5)
+  File 2 (circular): 60 questions (12 sets × 5)
+  File 3 (floor): 45 questions (9 sets × 5)
+  File 4 (number series): 75 questions
+  File 5 (alphabet series): 60 questions
+  File 6 (alphanumeric): 45 questions
+  File 7 (coding-letter): 60 questions
+  File 8 (coding-symbol): 45 questions
+  File 9 (blood relations): 60 questions
+  File 10 (direction sense): 60 questions
+  File 11 (syllogism): 75 questions
+  File 12 (Venn diagram): 45 questions
+  File 13 (statement): 60 questions
+  File 14 (mirror-water): 60 questions
+  File 15 (paper-pattern): 45 questions
+  ─────────────────────────────────────
+  TOTAL minimum: 855 questions
+
+---
+
+## OUTPUT SEQUENCE
+
+STEP 1: Plan Artifact
+  → List all 18 files with question counts by type
+  → List any logical rules needing verification
+  → Confirm puzzle set counts
+  WAIT for human approval
+
+STEP 2–4: Zone 1 — Arrangements (Files 1, 2, 3)
+  → File 1: Sets 1-6 → WAIT; Sets 7-12 → WAIT
+  → File 2: Sets 1-6 → WAIT; Sets 7-12 → WAIT
+  → File 3: Sets 1-5 → WAIT; Sets 6-9 → WAIT
+
+STEP 5–7: Zone 2 — Series (Files 4, 5, 6)
+  → File 4: Types 1-5 (38Q) → WAIT; Types 6-10 (37Q) → WAIT
+  → File 5: Types 1-3 (37Q) → WAIT; Types 4-6 (23Q) → WAIT
+  → File 6: All types → WAIT
+
+STEP 8–9: Zone 3 — Coding (Files 7, 8)
+  → File 7: Types 1-4 (38Q) → WAIT; Types 5-8 (22Q) → WAIT
+  → File 8: All types → WAIT
+
+STEP 10–11: Zone 4 — Relations (Files 9, 10)
+  → File 9: Types 1-3 (42Q) → WAIT; Types 4-5 (18Q) → WAIT
+  → File 10: Types 1-3 (42Q) → WAIT; Types 4-5 (18Q) → WAIT
+
+STEP 12–14: Zone 5 — Analytical (Files 11, 12, 13)
+  → File 11: Formats 1-2 (50Q) → WAIT; Formats 3-4 (25Q) → WAIT
+  → File 12: All types → WAIT
+  → File 13: All sub-types → WAIT
+
+STEP 15–16: Zone 6 — Visual (Files 14, 15)
+  → File 14: All types → WAIT
+  → File 15: All types → WAIT
+
+STEP 17–18: Aggregate files 16, 17
+STEP 19: index.js with zone exports
+
+---
+
+## ANTI-HALLUCINATION RULES
+
+1. SERIES: Every answer must be verified by testing
+   the derived rule against ALL given terms.
+   Never publish a series rule that fails on any term.
+
+2. SYLLOGISM: Never mark "All + Some → Some" as valid.
+   This is the #1 hallucination in AI-generated logic.
+   Rule: Some B are C + All A are B ≠ Some A are C
+   (Unless all A are B AND some of those A-B overlap C)
+
+3. CODING: Never assume the shift — always derive it.
+   If "CAT = XZW" is given, compute C→X, A→Z, T→W
+   and verify they follow the SAME rule before using.
+
+4. ARRANGEMENTS: Every puzzle must be tested by the agent
+   before writing questions. Place all N people, verify
+   all constraints are satisfied, then write questions
+   about that specific arrangement.
+
+5. BLOOD RELATIONS: Never assume gender unless explicitly
+   stated. "Child" is not "son". "Sibling" is not
+   "brother". When gender is ambiguous — the answer
+   may be "Cannot be determined".
+
+6. DIRECTION: Shadow logic:
+   Sun in East (morning) → shadow falls WEST.
+   A person's shadow is BEHIND them.
+   If shadow is West → sun is East → person faces East.
+   Do NOT write questions where shadow logic is reversed.
+
+7. CLOCK MIRROR: Formula is 11:60 - original time.
+   Test: 3:00 → 11:60 - 3:00 = 8:60 = 9:00. Correct.
+   Test: 6:00 → 11:60 - 6:00 = 5:60 = 6:00. Correct
+   (6:00 is symmetric).
+   Always verify before publishing.
+
+8. VISUAL QUESTIONS: Every visual question must have
+   a textDescription. Never publish a visual question
+   with only a visualAssetRef and no text backup.
+   The app must be usable even if images fail to load.
+
+9. PUZZLE UNIQUENESS: Before writing any puzzle set,
+   verify in your reasoning that the puzzle has
+   EXACTLY ONE valid solution. If multiple solutions
+   exist — add one more constraint and re-verify.
+```
+
+---
+
+## Complete Deliverable Summary
+
+| Zone | File | Questions | Study Notes | Flashcards |
+|---|---|---|---|---|
+| Arrangement — Linear | 1 | 60 | 4 | 4 |
+| Arrangement — Circular | 2 | 60 | 4 | 4 |
+| Arrangement — Floor | 3 | 45 | 3 | 3 |
+| Series — Number | 4 | 75 | 5 | 5 |
+| Series — Alphabet | 5 | 60 | 4 | 4 |
+| Series — Alphanumeric | 6 | 45 | 3 | 3 |
+| Coding — Letter | 7 | 60 | 4 | 4 |
+| Coding — Symbol | 8 | 45 | 3 | 3 |
+| Relations — Blood | 9 | 60 | 4 | 4 |
+| Relations — Direction | 10 | 60 | 4 | 4 |
+| Logic — Syllogism | 11 | 75 | 5 | 5 |
+| Logic — Venn | 12 | 45 | 3 | 3 |
+| Logic — Statement | 13 | 60 | 4 | 4 |
+| Visual — Mirror/Water | 14 | 60 | 4 | 4 |
+| Visual — Paper/Pattern | 15 | 45 | 3 | 3 |
+| **Totals** | **15 + 3 support** | **855** | **57** | **57** |
+
+The anti-hallucination rules at the end are the most important section — especially rules 2 (syllogism), 4 (puzzle uniqueness), and 6 (shadow logic), which are the three places AI content generators most reliably produce wrong answers in reasoning modules.

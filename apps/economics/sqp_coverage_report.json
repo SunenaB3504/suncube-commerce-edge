@@ -1,0 +1,66 @@
+{
+    "unit1-national-income": {
+        "total_questions": 17,
+        "covered_questions": 16,
+        "total_marks": 51,
+        "covered_marks": 45,
+        "marks_coverage_percent": 88.2,
+        "question_coverage_percent": 94.1
+    },
+    "unit2-money-banking": {
+        "total_questions": 14,
+        "covered_questions": 14,
+        "total_marks": 41,
+        "covered_marks": 41,
+        "marks_coverage_percent": 100.0,
+        "question_coverage_percent": 100.0
+    },
+    "unit3-income-determination": {
+        "total_questions": 22,
+        "covered_questions": 22,
+        "total_marks": 48,
+        "covered_marks": 48,
+        "marks_coverage_percent": 100.0,
+        "question_coverage_percent": 100.0
+    },
+    "unit4-govt-budget": {
+        "total_questions": 9,
+        "covered_questions": 9,
+        "total_marks": 36,
+        "covered_marks": 36,
+        "marks_coverage_percent": 100.0,
+        "question_coverage_percent": 100.0
+    },
+    "unit5-bop-forex": {
+        "total_questions": 11,
+        "covered_questions": 11,
+        "total_marks": 22,
+        "covered_marks": 22,
+        "marks_coverage_percent": 100.0,
+        "question_coverage_percent": 100.0
+    },
+    "unit6-ied-intro": {
+        "total_questions": 0,
+        "covered_questions": 0,
+        "total_marks": 0,
+        "covered_marks": 0,
+        "marks_coverage_percent": 0,
+        "question_coverage_percent": 0
+    },
+    "unit7-ied-challenges": {
+        "total_questions": 18,
+        "covered_questions": 18,
+        "total_marks": 55,
+        "covered_marks": 55,
+        "marks_coverage_percent": 100.0,
+        "question_coverage_percent": 100.0
+    },
+    "unit8-ied-comparison": {
+        "total_questions": 8,
+        "covered_questions": 8,
+        "total_marks": 18,
+        "covered_marks": 18,
+        "marks_coverage_percent": 100.0,
+        "question_coverage_percent": 100.0
+    }
+}

@@ -1,0 +1,50 @@
+Chapterwise Gap Analysis
+--------------------------------------------------
+Unit 1:
+  Source PDF: 29 pages, ~10291 words
+  App Content: 14 topics, 53 flashcards, 1 cheat sheet sections, 12 SQP questions
+--------------------------------------------------
+Unit 2:
+  Source PDF: 39 pages, ~12921 words
+  App Content: 10 topics, 50 flashcards, 1 cheat sheet sections, 9 SQP questions
+--------------------------------------------------
+Unit 3:
+  Source PDF: 22 pages, ~7077 words
+  App Content: 8 topics, 50 flashcards, 1 cheat sheet sections, 10 SQP questions
+--------------------------------------------------
+Unit 4:
+  Source PDF: 18 pages, ~6376 words
+  App Content: 9 topics, 18 flashcards, 1 cheat sheet sections, 9 SQP questions
+--------------------------------------------------
+Unit 5:
+  Source PDF: 30 pages, ~9338 words
+  App Content: 10 topics, 50 flashcards, 1 cheat sheet sections, 9 SQP questions
+--------------------------------------------------
+Unit 6:
+  Source PDF: 30 pages, ~10434 words
+  App Content: 8 topics, 50 flashcards, 1 cheat sheet sections, 9 SQP questions
+--------------------------------------------------
+Unit 7:
+  Source PDF: 32 pages, ~10880 words
+  App Content: 8 topics, 50 flashcards, 1 cheat sheet sections, 9 SQP questions
+--------------------------------------------------
+Unit 8:
+  Source PDF: 14 pages, ~3815 words
+  App Content: 6 topics, 50 flashcards, 1 cheat sheet sections, 8 SQP questions
+--------------------------------------------------
+Unit 9:
+  Source PDF: 27 pages, ~10227 words
+  App Content: 6 topics, 50 flashcards, 1 cheat sheet sections, 9 SQP questions
+--------------------------------------------------
+Unit 10:
+  Source PDF: 47 pages, ~17578 words
+  App Content: 13 topics, 50 flashcards, 1 cheat sheet sections, 6 SQP questions
+--------------------------------------------------
+Unit 11:
+  Source PDF: 16 pages, ~5210 words
+  App Content: 11 topics, 50 flashcards, 1 cheat sheet sections, 9 SQP questions
+--------------------------------------------------
+Unit 12:
+  Source PDF: 0 pages, ~0 words
+  App Content: 8 topics, 50 flashcards, 1 cheat sheet sections, 10 SQP questions
+--------------------------------------------------

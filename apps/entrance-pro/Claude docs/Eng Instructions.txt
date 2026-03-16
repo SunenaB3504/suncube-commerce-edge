@@ -1,0 +1,365 @@
+Here's a comprehensive, production-ready prompt you can paste directly into Google Antigravity's Agent Manager:
+
+---
+
+## Antigravity Agent Prompt — Synthetic English Content Generator
+
+```
+## MISSION
+You are a Content Generation Agent for the Commerce Prep Pro project.
+Your task is to generate synthetic English subject content for MH CET BBA 
+entrance exam preparation — covering Reading Comprehension, Grammar & Usage, 
+and Vocabulary — and save it as schema-validated .data.js files.
+
+---
+
+## MANDATORY FIRST STEPS (Do not skip)
+1. Read @RULES.md fully
+2. Read @DATA_SCHEMA.md fully
+3. Read @src/config/subjects.config.js to understand subject/chapter IDs
+4. Read @src/data/accountancy/ratio-analysis.data.js as the reference 
+   data file format
+5. Output a Plan Artifact listing all files you will create and 
+   the question type distribution for each
+6. WAIT for human approval before writing any content
+
+---
+
+## FILES TO CREATE
+
+### File 1: src/data/english/comprehension.data.js
+### File 2: src/data/english/grammar.data.js  
+### File 3: src/data/english/vocabulary.data.js
+### File 4: src/data/english/index.js (re-exports all three)
+
+---
+
+## CONTENT SPECIFICATIONS
+
+=== FILE 1: comprehension.data.js ===
+
+Generate 4 original passages. For each passage generate 5 MCQ questions.
+Total: 20 questions minimum.
+
+PASSAGE RULES:
+- Length: 150-200 words each
+- Tone: Formal, informative
+- Reading level: Class 11-12 (not too simple, not research-level academic)
+- Each passage must be on a DIFFERENT theme from this list:
+  Theme A: Indian entrepreneurship and startups
+  Theme B: Environmental sustainability and green business
+  Theme C: Digital economy and fintech in India
+  Theme D: Women in business and corporate leadership
+
+QUESTION DISTRIBUTION PER PASSAGE (5 questions):
+  Q1: Main idea / central theme of the passage
+  Q2: Vocabulary in context — ask meaning of ONE word used in passage
+  Q3: Inference — what can be concluded / implied
+  Q4: Author's tone or purpose
+  Q5: Direct factual detail retrieval from passage
+
+QUESTION RULES:
+- type must be "case-study"
+- Each question must include the full passage text in the "passage" field
+- Distractors must be plausible — not obviously wrong
+- Correct answer must be unambiguously supported by the passage text
+- explanation must cite the specific sentence/phrase from the passage 
+  that justifies the correct answer
+
+SELF-CHECK BEFORE SAVING:
+- Is the correct answer clearly supported by passage text? 
+- Are all 3 distractors plausible but clearly wrong on re-reading?
+- Does the explanation reference the passage directly?
+- Are all 5 question types covered per passage?
+
+---
+
+=== FILE 2: grammar.data.js ===
+
+Generate 20 grammar MCQ questions across these 8 topics (2-3 per topic):
+
+TOPICS:
+  1. Tenses — identify correct tense or complete sentence
+  2. Subject-Verb Agreement — singular/plural mismatch detection
+  3. Articles — correct use of a / an / the / no article
+  4. Prepositions — correct preposition in context
+  5. Active and Passive Voice — convert or identify voice
+  6. Direct and Indirect Speech — convert or identify
+  7. Spotting Errors — one sentence with 4 underlined parts, 
+     identify the part with grammatical error
+  8. Sentence Rearrangement — 4 jumbled sentences, find correct order
+
+QUESTION TYPE MAPPING:
+- Topics 1-6: type = "mcq"
+- Topic 7 (Spotting Errors): type = "mcq" 
+  (options are A/B/C/D referring to underlined parts)
+- Topic 8 (Rearrangement): type = "mcq"
+  (options are different ordering sequences like BACD, ABCD, CDAB, DCBA)
+
+GRAMMAR QUESTION RULES:
+- Each question must test ONE specific grammar rule — stated in explanation
+- Name the grammar rule being tested in the explanation field
+- Distractors must represent common student errors, not random wrong answers
+- Difficulty: 10 easy + 7 medium + 3 hard
+- All sentences should use commerce/business/general knowledge themes
+  (avoid trivial sentences like "Ram went to school")
+
+EXAMPLE of a good distractor strategy for Subject-Verb Agreement:
+  Sentence: "The quality of the products __ very poor."
+  Correct: "is" (subject = quality, singular)
+  Distractor 1: "are" (common error — student looks at "products" not "quality")
+  Distractor 2: "were" (tense confusion)
+  Distractor 3: "have been" (aspect confusion)
+
+SELF-CHECK BEFORE SAVING:
+- Is exactly ONE option correct with no ambiguity?
+- Does the explanation name the specific grammar rule?
+- Do distractors represent real student errors?
+- Are all 8 grammar topics represented?
+
+---
+
+=== FILE 3: vocabulary.data.js ===
+
+Select 10 words from the SEED LIST below.
+For each word, generate a FAMILY of 4 questions = 40 questions total.
+
+SEED WORD LIST (pick 10):
+  Prudent, Incentive, Volatile, Deficit, Surplus, Arbitrary,
+  Autonomy, Lucrative, Pragmatic, Eloquent, Ambiguous, Viable,
+  Consensus, Cumulative, Leverage, Resilient, Complacent,
+  Diligent, Formidable, Concise
+
+QUESTION FAMILY PER WORD (4 questions):
+
+  Q-TYPE A (Direct Meaning):
+  "The word [WORD] in the sentence '[USE WORD IN A SENTENCE]' 
+   most nearly means:"
+  Options: correct synonym + 3 plausible distractors
+
+  Q-TYPE B (Synonym):
+  "Which of the following is closest in meaning to [WORD]?"
+  Options: correct synonym + 3 near-synonyms that are subtly different
+
+  Q-TYPE C (Antonym):
+  "Which of the following is OPPOSITE in meaning to [WORD]?"
+  Options: correct antonym + 3 distractors
+
+  Q-TYPE D (Fill in the Blank):
+  "The CEO was known for her _____ approach — she never made 
+   decisions without careful analysis of data."
+  (Blank should be filled by the target word)
+  Options: target word + 3 contextually plausible but incorrect words
+
+VOCABULARY RULES:
+- All sentences must use professional/business context
+- For Q-TYPE B (Synonym), distractors should be near-synonyms 
+  (words that are related but not equivalent) — not random words
+- difficulty: 
+    Q-TYPE A and D = "easy"
+    Q-TYPE B = "medium"  
+    Q-TYPE C = "medium"
+- explanation must define the word AND explain why distractors are wrong
+
+SELF-CHECK BEFORE SAVING:
+- Is the Fill-in-the-blank sentence natural and unambiguous?
+- Are synonym distractors genuinely close but distinguishably wrong?
+- Is the antonym unambiguous?
+- Does explanation define the word clearly?
+
+---
+
+## SCHEMA REMINDER (from DATA_SCHEMA.md)
+Every question object must have:
+  id, type, difficulty, question, options (array of 4),
+  correct (index 0-3), explanation, examTags
+
+case-study questions additionally need:
+  passage (full passage text)
+
+vocabulary/grammar questions:
+  subject: "English"
+  examTags: ["MH-CET"]
+
+---
+
+## FILE STRUCTURE TEMPLATE
+
+// src/data/english/comprehension.data.js
+
+export const comprehensionData = {
+  subject: "English",
+  chapter: "Reading Comprehension",
+  examTags: ["MH-CET"],
+  flashcards: [
+    {
+      id: "comp-fc-001",
+      term: "Main Idea Question",
+      definition: "Asks what the passage is primarily about — look for the idea 
+                   that ALL paragraphs support",
+      formula: null,
+      example: "The passage mainly discusses / The central theme of the passage is"
+    },
+    {
+      id: "comp-fc-002",
+      term: "Inference Question",
+      definition: "Asks what can be concluded — answer not directly stated 
+                   but logically follows from passage",
+      formula: null,
+      example: "It can be inferred from the passage that / 
+                The author implies that"
+    },
+    {
+      id: "comp-fc-003",
+      term: "Vocabulary in Context",
+      definition: "Tests meaning of a word AS USED in the passage — 
+                   not dictionary meaning in isolation",
+      formula: null,
+      example: "The word 'X' in paragraph 2 most nearly means"
+    },
+    {
+      id: "comp-fc-004",
+      term: "Author's Tone",
+      definition: "The attitude or feeling the author expresses — 
+                   detected through word choice",
+      formula: null,
+      example: "Tones: critical, appreciative, neutral, cautionary, 
+                optimistic, sarcastic"
+    },
+    {
+      id: "comp-fc-005",
+      term: "Factual Detail Question",
+      definition: "Answer is directly and explicitly stated in the passage — 
+                   locate and match",
+      formula: null,
+      example: "According to the passage / The author states that"
+    }
+  ],
+  questions: [
+    // 20 questions generated per spec above
+  ]
+};
+
+---
+
+## QUALITY GATES (Agent must verify before outputting each file)
+
+GATE 1 — CONTENT QUALITY:
+  [ ] Every passage is original (not copied from any source)
+  [ ] Passages are factually accurate (no false claims about India/economy)
+  [ ] No culturally insensitive, religious, or political content
+  [ ] No personally identifiable or real individual's name used as subject
+      (use fictional names like "Priya", "Arjun", "Meera" for examples)
+
+GATE 2 — QUESTION QUALITY:
+  [ ] Every question has exactly ONE unambiguously correct answer
+  [ ] No trick questions — correct answer is fair and findable
+  [ ] Explanations are complete and educational (teach, don't just confirm)
+  [ ] Distractors represent real student errors/misconceptions
+
+GATE 3 — SCHEMA COMPLIANCE:
+  [ ] All required fields present per DATA_SCHEMA.md
+  [ ] correct field is a valid index (0, 1, 2, or 3)
+  [ ] options array has exactly 4 items
+  [ ] examTags is ["MH-CET"] for all English questions
+  [ ] IDs are unique within the file (comp-q-001 through comp-q-020)
+  [ ] Minimum question counts met: comp=20, grammar=20, vocab=40
+
+GATE 4 — LANGUAGE QUALITY:
+  [ ] No grammatical errors in question stems or options
+  [ ] No spelling mistakes
+  [ ] Consistent Indian English conventions (not American English)
+  [ ] Passage sentences are varied in length (not all the same structure)
+
+---
+
+## OUTPUT SEQUENCE (Follow this order strictly)
+
+STEP 1: Output Plan Artifact
+  - List all 4 files to be created
+  - For comprehension: state the 4 passage themes and 
+    question type breakdown
+  - For grammar: state which 2-3 questions cover each of the 8 topics
+  - For vocabulary: list the 10 words selected from seed list
+  - WAIT for human approval
+
+STEP 2: Generate comprehension.data.js
+  - Output passage 1 with its 5 questions → WAIT for review
+  - Output passages 2, 3, 4 with questions → WAIT for review
+  - Complete file with flashcards and export → WAIT for approval
+
+STEP 3: Generate grammar.data.js
+  - Output questions grouped by topic (8 groups) → WAIT for review
+  - Assemble complete file → WAIT for approval
+
+STEP 4: Generate vocabulary.data.js
+  - Output 5 word families (20 questions) → WAIT for review
+  - Output remaining 5 word families → WAIT for review
+  - Assemble complete file → WAIT for approval
+
+STEP 5: Generate index.js
+  - Re-export all three data objects
+  - Confirm all exports match the variable names in the data files
+
+---
+
+## ANTI-HALLUCINATION RULES FOR THIS AGENT
+
+1. PASSAGES: Do not reference real news events, real companies by name, 
+   or real statistics unless they are well-established facts 
+   (e.g. "India is the world's most populous country" is fine; 
+   "Company X reported 40% growth in 2024" is not)
+
+2. GRAMMAR: Every grammar rule cited in explanation must be a real, 
+   named grammar rule. Do not invent rule names.
+
+3. VOCABULARY: Every word meaning, synonym, and antonym must be 
+   verifiable in a standard dictionary. Do not use obscure or 
+   contested meanings.
+
+4. NEVER invent question IDs that conflict with other data files.
+   English file IDs use prefixes: comp-, gram-, vocab-
+
+5. If uncertain about the correct answer to your own question, 
+   FLAG IT with a comment:
+   // REVIEW NEEDED: answer may be ambiguous
+   Do not silently include a questionable question.
+
+6. If the JSON structure becomes complex, output it in sections 
+   and confirm structure before proceeding to content.
+```
+
+---
+
+## How to Use This in Antigravity
+
+**Step 1 — Before pasting the prompt**, attach these context files using `@`:
+```
+@RULES.md  @DATA_SCHEMA.md  @src/config/subjects.config.js  
+@src/data/accountancy/ratio-analysis.data.js
+```
+
+**Step 2 — Paste the full prompt** into Agent Manager
+
+**Step 3 — Set agent policy** to **Review-Driven Development** so it pauses at every WAIT checkpoint
+
+**Step 4 — After each WAIT**, review the output against the Quality Gates checklist before typing `approve` to continue
+
+**Step 5 — After all files are created**, run this verification prompt in a new agent:
+```
+@src/data/english/comprehension.data.js
+@src/data/english/grammar.data.js
+@src/data/english/vocabulary.data.js
+@DATA_SCHEMA.md
+
+Audit all three files against DATA_SCHEMA.md.
+Report:
+- Any missing required fields
+- Any correct index out of range (not 0-3)
+- Any question with fewer than 4 options
+- Any duplicate IDs
+- Question count per file (must meet minimums)
+Do NOT fix anything yet — report only.
+```
+
+This gives you a complete, auditable, hallucination-resistant synthetic content pipeline for the English subject module.

@@ -1,0 +1,210 @@
+src/data/unit1-national-income/flashcards.ts(10,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(16,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(22,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(28,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(34,5): error TS2322: Type '"Circular Flow"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(40,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(46,5): error TS2322: Type '"Aggregates"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(52,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(58,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(64,5): error TS2322: Type '"Aggregates"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(149,5): error TS2322: Type '"Circular Flow"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(155,5): error TS2322: Type '"Circular Flow"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(173,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(185,5): error TS2322: Type '"Aggregates"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(251,5): error TS2322: Type '"Aggregates"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(311,5): error TS2322: Type '"History"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(317,5): error TS2322: Type '"History"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(323,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/sqp.ts(25,5): error TS2322: Type '"Calculation"' is not assignable to type '"MCQ" | "SA" | "LA" | "Case" | "Assertion-Reason"'.
+src/data/unit1-national-income/sqp.ts(62,5): error TS2322: Type '"Calculation"' is not assignable to type '"MCQ" | "SA" | "LA" | "Case" | "Assertion-Reason"'.
+src/data/unit1-national-income/sqp.ts(103,5): error TS2322: Type '"Calculation"' is not assignable to type '"MCQ" | "SA" | "LA" | "Case" | "Assertion-Reason"'.
+src/data/unit1-national-income/sqp.ts(114,5): error TS2322: Type '"Calculation"' is not assignable to type '"MCQ" | "SA" | "LA" | "Case" | "Assertion-Reason"'.
+src/data/unit1-national-income/sqp.ts(199,5): error TS2322: Type '"Calculation"' is not assignable to type '"MCQ" | "SA" | "LA" | "Case" | "Assertion-Reason"'.
+src/data/unit1-national-income/sqp.ts(210,5): error TS2322: Type '"Calculation"' is not assignable to type '"MCQ" | "SA" | "LA" | "Case" | "Assertion-Reason"'.
+src/data/unit2-money-banking/flashcards.ts(303,5): error TS2322: Type '"Functions"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit2-money-banking/flashcards.ts(309,5): error TS2322: Type '"Demand for Money"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit2-money-banking/flashcards.ts(315,5): error TS2322: Type '"Demand for Money"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit2-money-banking/flashcards.ts(321,5): error TS2322: Type '"Equations"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit2-money-banking/flashcards.ts(327,5): error TS2322: Type '"Demand for Money"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit2-money-banking/flashcards.ts(333,5): error TS2322: Type '"RBI Functions"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit2-money-banking/flashcards.ts(339,5): error TS2322: Type '"Money Supply"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit2-money-banking/sqp.ts(55,5): error TS2322: Type '"Calculation"' is not assignable to type '"MCQ" | "SA" | "LA" | "Case" | "Assertion-Reason"'.
+src/data/unit3-income-determination/flashcards.ts(309,5): error TS2322: Type '"Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit3-income-determination/flashcards.ts(315,5): error TS2322: Type '"Analysis"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit3-income-determination/flashcards.ts(321,5): error TS2322: Type '"Investment"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit3-income-determination/flashcards.ts(327,5): error TS2322: Type '"Consumption"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit3-income-determination/sqp.ts(25,5): error TS2322: Type '"Calculation"' is not assignable to type '"MCQ" | "SA" | "LA" | "Case" | "Assertion-Reason"'.
+src/data/unit3-income-determination/sqp.ts(51,5): error TS2322: Type '"Calculation"' is not assignable to type '"MCQ" | "SA" | "LA" | "Case" | "Assertion-Reason"'.
+src/data/unit3-income-determination/sqp.ts(114,5): error TS2322: Type '"Calculation"' is not assignable to type '"MCQ" | "SA" | "LA" | "Case" | "Assertion-Reason"'.
+src/data/unit3-income-determination/sqp.ts(125,5): error TS2322: Type '"Calculation"' is not assignable to type '"MCQ" | "SA" | "LA" | "Case" | "Assertion-Reason"'.
+src/data/unit4-govt-budget/flashcards.ts(309,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(315,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(321,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(327,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(333,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(339,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(345,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(351,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(357,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(363,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/sqp.ts(30,5): error TS2820: Type '"BOARD"' is not assignable to type '"SQP" | "Board" | "Term-1"'. Did you mean '"Board"'?
+src/data/unit4-govt-budget/sqp.ts(63,5): error TS2820: Type '"BOARD"' is not assignable to type '"SQP" | "Board" | "Term-1"'. Did you mean '"Board"'?
+src/data/unit4-govt-budget/sqp.ts(74,5): error TS2820: Type '"BOARD"' is not assignable to type '"SQP" | "Board" | "Term-1"'. Did you mean '"Board"'?
+src/data/unit5-bop-forex/flashcards.ts(9,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(15,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(21,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(27,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(33,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(39,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(45,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(51,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(57,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(63,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(69,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(75,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(81,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(87,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(93,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(99,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(105,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(111,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(117,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(123,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(129,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(135,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(141,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(147,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(153,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(159,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(165,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(171,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(177,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(183,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(189,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(195,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(201,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(207,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(213,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(219,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(225,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(231,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(237,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(243,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(249,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(255,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(261,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(267,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(273,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(279,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(285,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(291,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(297,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(303,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(309,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(315,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(321,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(327,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(333,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(339,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(345,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(351,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(357,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(363,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit5-bop-forex/flashcards.ts(369,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(9,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(15,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(21,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(27,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(33,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(39,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(45,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(51,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(57,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(63,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(69,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(75,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(81,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(87,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(93,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(99,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(105,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(111,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(117,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(123,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(129,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(135,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(141,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(147,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(153,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(159,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(165,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(171,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(177,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(183,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(189,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(195,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(201,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(207,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(213,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(219,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(225,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(231,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(237,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(243,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(249,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(255,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(261,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(267,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(273,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(279,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(285,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(291,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(297,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(303,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(309,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(315,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(321,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(327,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(333,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(339,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(345,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(351,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(357,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(363,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(369,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(375,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(381,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(387,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit6-ied-intro/flashcards.ts(393,5): error TS2353: Object literal may only specify known properties, and 'aiExplanation' does not exist in type 'Flashcard'.
+src/data/unit7-ied-challenges/flashcards.ts(316,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(322,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(328,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(334,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(340,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(346,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(352,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(358,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(364,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(370,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(376,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(382,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(388,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(394,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(400,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(406,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(412,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(418,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(424,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit7-ied-challenges/flashcards.ts(430,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit8-ied-comparison/flashcards.ts(318,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit8-ied-comparison/flashcards.ts(324,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit8-ied-comparison/flashcards.ts(330,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit8-ied-comparison/flashcards.ts(336,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit8-ied-comparison/flashcards.ts(342,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit8-ied-comparison/flashcards.ts(348,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit8-ied-comparison/flashcards.ts(354,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit8-ied-comparison/flashcards.ts(360,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit8-ied-comparison/flashcards.ts(366,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit8-ied-comparison/flashcards.ts(372,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/main.tsx(4,17): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.

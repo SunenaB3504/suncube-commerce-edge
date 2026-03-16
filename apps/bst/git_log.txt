@@ -1,0 +1,12 @@
+195325e feat(data): implement complete chapterwise gap remediation
+41cb0fe fix: correct mermaid syntax error in mind maps
+63fbfc2 chore: setup gh-pages
+591b3b8 feat(data): implement objective batch 3 through 7 for SQP data expansion
+11327b1 feat(data): implement blueprint batch 2 flashcard expansion
+cc9964d feat(ui): implement blueprint batch 1 core functional gaps
+e1f1097 docs: add App Feature Blueprint
+8b1456f feat: implement unit 1 data layer and compliance report
+cedbf42 Chore: Add generated artifacts (GAP Analysis, Dumps) to .gitignore
+b3440cd Refactor Project: Complete Content Upgrade for Units 1-12 to Gold Standard (Unit 10 Reconstructed)
+356300d Branding: Updated README and confirmed Purple Theme transition
+792a51d Initial commit

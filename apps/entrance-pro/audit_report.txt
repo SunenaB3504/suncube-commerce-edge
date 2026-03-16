@@ -1,0 +1,91 @@
+| Subject | Module | Practical Examples | Quiz Questions |
+|:---|:---|:---:|:---:|
+| Accountancy | cash-flow | 4 | 8 |
+| Accountancy | computerized-accounting | 4 | 6 |
+| Accountancy | debentures | 6 | 11 |
+| Accountancy | dissolution | 5 | 11 |
+| Accountancy | financial-analysis | 5 | 8 |
+| Accountancy | financial-statements | 5 | 10 |
+| Accountancy | npo | 5 | 6 |
+| Accountancy | partnership-admission | 6 | 15 |
+| Accountancy | partnership-basics | 7 | 15 |
+| Accountancy | partnership-retirement-death | 6 | 12 |
+| Accountancy | ratio-analysis | 5 | 8 |
+| Accountancy | share-capital | 6 | 12 |
+| Business Studies | business-environment | 0 | 2 |
+| Business Studies | consumer-protection | 0 | 1 |
+| Business Studies | controlling | 0 | 1 |
+| Business Studies | directing | 0 | 1 |
+| Business Studies | financial-management | 0 | 1 |
+| Business Studies | financial-markets | 0 | 1 |
+| Business Studies | marketing | 0 | 1 |
+| Business Studies | nature-management | 0 | 5 |
+| Business Studies | organising | 0 | 1 |
+| Business Studies | planning | 0 | 1 |
+| Business Studies | principles-management | 0 | 5 |
+| Business Studies | staffing | 0 | 1 |
+| Computer Awareness | abbreviations | 30 | 60 |
+| Computer Awareness | ai-and-tech | 30 | 40 |
+| Computer Awareness | cybersecurity | 30 | 30 |
+| Computer Awareness | hardware | 30 | 45 |
+| Computer Awareness | internet-and-networking | 30 | 45 |
+| Computer Awareness | number-systems | 30 | 30 |
+| Computer Awareness | software-and-os | 30 | 45 |
+| Economics | bop-forex | 0 | 0 |
+| Economics | consumer-behaviour | 0 | 0 |
+| Economics | govt-budget | 0 | 0 |
+| Economics | ied-challenges | 0 | 0 |
+| Economics | ied-comparison | 0 | 0 |
+| Economics | ied-development | 0 | 0 |
+| Economics | income-determination | 0 | 0 |
+| Economics | market-structures | 0 | 0 |
+| Economics | micro-intro | 0 | 0 |
+| Economics | money-banking | 0 | 0 |
+| Economics | national-income | 0 | 0 |
+| Economics | producer-supply | 0 | 0 |
+| English Language | comprehension | 11 | 20 |
+| English Language | grammar | 12 | 20 |
+| English Language | literature-poetry | 0 | 15 |
+| English Language | reading-strategies | 0 | 15 |
+| English Language | vocabulary | 11 | 40 |
+| English Language | writing-skills | 0 | 15 |
+| General Aptitude (GAT) | logical-reasoning | 80 | 83 |
+| General Aptitude (GAT) | quantitative | 111 | 142 |
+| GK & Current Affairs | ca-2025-updates | 0 | 0 |
+| GK & Current Affairs | ca-briefing-flashcards | 0 | 0 |
+| GK & Current Affairs | ca-study-notes | 0 | 0 |
+| GK & Current Affairs | current-affairs | 50 | 0 |
+| GK & Current Affairs | general-knowledge | 4 | 0 |
+| GK & Current Affairs | general-science | 4 | 0 |
+| Reasoning & Aptitude | arrangements-circular | 10 | 60 |
+| Reasoning & Aptitude | arrangements-floor | 10 | 45 |
+| Reasoning & Aptitude | arrangements-linear | 11 | 60 |
+| Reasoning & Aptitude | coding-letter-shift | 10 | 60 |
+| Reasoning & Aptitude | coding-symbol | 10 | 45 |
+| Reasoning & Aptitude | logic-plaza-flashcards | 0 | 0 |
+| Reasoning & Aptitude | logic-plaza-study-notes | 0 | 0 |
+| Reasoning & Aptitude | logic-statement | 10 | 60 |
+| Reasoning & Aptitude | logic-syllogism | 10 | 69 |
+| Reasoning & Aptitude | logic-venn | 10 | 45 |
+| Reasoning & Aptitude | relations-blood | 10 | 60 |
+| Reasoning & Aptitude | relations-direction | 10 | 60 |
+| Reasoning & Aptitude | series-alphabet | 10 | 60 |
+| Reasoning & Aptitude | series-alphanumeric | 10 | 45 |
+| Reasoning & Aptitude | series-number | 10 | 75 |
+| Reasoning & Aptitude | visual-mirror-water | 10 | 60 |
+| Reasoning & Aptitude | visual-paper-pattern | 10 | 45 |
+| Static GK | business-brands-taglines | 0 | 60 |
+| Static GK | business-founders-hq | 0 | 60 |
+| Static GK | culture-dance-music | 0 | 45 |
+| Static GK | geography-national-parks | 0 | 60 |
+| Static GK | geography-rivers-dams | 0 | 60 |
+| Static GK | geography-states-capitals | 0 | 45 |
+| Static GK | history-battles | 0 | 65 |
+| Static GK | history-freedom | 0 | 75 |
+| Static GK | polity-articles | 0 | 45 |
+| Static GK | polity-constitution | 0 | 60 |
+| Static GK | science-biology | 0 | 60 |
+| Static GK | science-physics-inventions | 0 | 60 |
+| Static GK | science-space-missions | 0 | 45 |
+| Static GK | static-gk-flashcards | 0 | 0 |
+| Static GK | static-gk-study-notes | 0 | 0 |

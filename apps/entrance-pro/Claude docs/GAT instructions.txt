@@ -1,0 +1,960 @@
+This is exceptional strategic insight. Let me now produce a unified, dual-exam optimised prompt that embeds all of this psychometric architecture.
+
+---
+
+## Antigravity Agent Prompt — GAT Unified Content Generator (CUET + MH CET)
+
+```
+## MISSION
+You are a Content Generation Agent for the Commerce Prep Pro project.
+Your task is to generate a UNIFIED General Aptitude question bank that
+simultaneously prepares students for BOTH:
+
+  PRIMARY TARGET:  CUET GAT (Section III) — Analytical Superset
+  SECONDARY TARGET: MAH BBA CET (GA + Reasoning sections)
+
+The core strategy: Build to CUET's analytical depth. A student who
+masters CUET GAT will find MAH CET's GA and Reasoning sections
+significantly easier, provided speed training is layered on top.
+
+This is not two separate banks. It is ONE bank where every question
+is tagged by exam, cognitive demand, and time pressure level so the
+quiz engine can serve the right question mix for the right exam.
+
+---
+
+## MANDATORY FIRST STEPS (Do not skip)
+1. Read @RULES.md fully
+2. Read @DATA_SCHEMA.md fully
+3. Read @src/config/subjects.config.js
+4. Read @src/data/accountancy/ratio-analysis.data.js as format reference
+5. Output a Plan Artifact with full question count matrix
+6. WAIT for human approval before writing any content
+
+---
+
+## DUAL EXAM CONFIGURATION
+
+CUET_GAT_CONFIG = {
+  name: "CUET General Aptitude Test (Section III)",
+  totalQuestions: 60,
+  questionsToAttempt: 50,
+  timeMinutes: 60,
+  secondsPerQuestion: 72,           // 3600 ÷ 50
+  marksPerCorrect: 5,
+  negativeMarking: true,
+  negativeMarksPerWrong: 1,
+  totalMarks: 250,
+  designPhilosophy: "Analytical Depth — tests WHY and HOW",
+  sectionWeights: {
+    quantitative: "30%",            // Grade 8-10 Math
+    generalKnowledge: "25%",        // Current Affairs + Static GK
+    logicalReasoning: "30%",        // Multi-constraint logic
+    generalScience: "15%"           // Conceptual science
+  }
+}
+
+MAHCET_BBA_CONFIG = {
+  name: "MAH BBA CET (GA + Reasoning)",
+  totalQuestions: 100,
+  questionsToAttempt: 100,
+  timeMinutes: 120,
+  secondsPerQuestion: 72,           // same speed — key insight
+  marksPerCorrect: 1,
+  negativeMarking: false,
+  totalMarks: 100,
+  designPhilosophy: "Surface Recall + Speed — tests WHAT",
+  sectionWeights: {
+    english: "40%",                 // handled by English module
+    reasoning: "30%",               // puzzles, speed logic
+    generalKnowledge: "15%",        // fact retrieval
+    computerBasics: "15%"           // handled by separate module
+  }
+}
+
+---
+
+## FILES TO CREATE
+
+File 1: src/data/general-aptitude/quantitative.data.js
+File 2: src/data/general-aptitude/general-knowledge.data.js
+File 3: src/data/general-aptitude/logical-reasoning.data.js
+File 4: src/data/general-aptitude/general-science.data.js
+File 5: src/data/general-aptitude/index.js
+
+---
+
+## EXTENDED QUESTION SCHEMA FOR THIS MODULE
+
+Every question in this module carries TWO additional metadata fields
+beyond the standard schema:
+
+  cognitiveType:
+    "recall"        → Single-step, fact retrieval (MAH CET style)
+    "application"   → Apply a formula or rule to new data
+    "synthesis"     → Combine TWO concepts to reach answer (CUET style)
+    "chronological" → Arrange events/steps in correct sequence
+
+  timePresure:
+    "standard"      → Solvable in 60–90 seconds
+    "speed"         → Must be solved under 45 seconds (MAH CET drill)
+    "deep"          → Requires 90–120 seconds (CUET synthesis)
+
+  examTags: ["CUET"] | ["MH-CET"] | ["CUET", "MH-CET"]
+
+These fields allow the quiz engine to:
+  → In CUET mode: prioritise "synthesis" + "deep" questions
+  → In MAH CET mode: prioritise "recall" + "speed" questions
+  → In unified prep mode: mix all types with a timer per question
+
+---
+
+=================================================================
+=== FILE 1: quantitative.data.js
+    Target: CUET (30%) + MAH CET (basic arithmetic component)
+=================================================================
+
+Generate 60 questions: 40 CUET-depth + 20 MAH CET speed.
+Minimum: 60 questions.
+
+--- PART A: CUET-DEPTH QUESTIONS (40 questions) ---
+cognitiveType: "synthesis" or "application"
+timePresure: "deep" or "standard"
+examTags: ["CUET"] or ["CUET","MH-CET"]
+
+TOPIC 1: BODMAS / Simplification (3 questions)
+  → Include one "trap" question where order of operations
+    is deliberately ambiguous if read left-to-right
+  → Distractor strategy: include answer for wrong order
+    as one of the options
+  cognitiveType: "application"
+
+TOPIC 2: Fractions — Comparison and Operations (3 questions)
+  → Use 5 fractions with uncommon denominators
+  → One question: find difference of greatest and smallest
+  cognitiveType: "application"
+
+TOPIC 3: LCM and HCF (3 questions)
+  → Word problem format: "sum of LCM and HCF is X,
+    LCM is N times HCF, one number is Y, find other"
+  → Embed the formula: LCM × HCF = Product of two numbers
+  cognitiveType: "synthesis"
+
+TOPIC 4: Age Problems (3 questions)
+  → Always two time points: present AND future/past
+  → Require two simultaneous equations to solve
+  → Do NOT use single-variable shortcut problems
+  cognitiveType: "synthesis"
+
+TOPIC 5: Percentage — Marks and Pass/Fail (3 questions)
+  → Include: "Student scores X, fails by Y%. Find max marks."
+  → Trap: make "fails by 10%" mean 10% of max marks
+    short of passing — not 10% of passing marks
+  → State in explanation which interpretation is correct
+    and why
+  cognitiveType: "synthesis"
+
+TOPIC 6: Weighted Averages (3 questions)
+  → Two groups with different sizes and different averages
+  → Find combined class average
+  → One question: given combined average, find group size
+  cognitiveType: "synthesis"
+
+TOPIC 7: Ratio — Three-Term Chains (3 questions)
+  → Give A:B and B:C, derive A:B:C, then find individual
+    values from total
+  → Distractor: include answer if student uses wrong
+    common ratio link
+  cognitiveType: "synthesis"
+
+TOPIC 8: CUET Signature — Successive Discounts (3 questions)
+  CRITICAL CUET TEMPLATE:
+  → "A shopkeeper offers 50% + 50% discount on ₹800.
+    What is the selling price?"
+  → Correct: 800 × 0.5 × 0.5 = ₹200
+  → Trap distractor: ₹0 (linguistic slip: 50+50=100% off)
+  → Trap distractor 2: ₹400 (only first discount applied)
+  → ALWAYS include the "100% off" trap as an option
+  → explanation: "Successive discounts are NEVER additive.
+    Use: Final Price = MP × (1–d1) × (1–d2)"
+  cognitiveType: "synthesis"
+  examTags: ["CUET", "MH-CET"]
+
+TOPIC 9: Profit, Loss and Marked Price (3 questions)
+  → Combine discount% AND profit% in same problem
+  → Question must require finding MP from SP and profit
+    simultaneously
+  cognitiveType: "synthesis"
+
+TOPIC 10: Simple Interest — Dual Scenario (3 questions)
+  → Give SI amount at year X and year Y
+  → Student must find annual SI first, then principal
+  → Do NOT give rate and time separately
+  cognitiveType: "synthesis"
+
+TOPIC 11: CUET Signature — Geometric-Arithmetic Hybrid (3 Qs)
+  CRITICAL CUET TEMPLATE:
+  → Problem type A: Square with diagonal expressed as
+    algebraic expressions: "(4k+6) cm and (7k-3) cm"
+    Student must equate, solve for k, then find area
+    (Area = d²/2)
+  → Problem type B: Cylinder where height is NOT given —
+    must be derived from volume and radius first, THEN
+    find curved surface area
+  → Problem type C: Area between four touching circles
+    in a square arrangement
+  cognitiveType: "synthesis"
+  examTags: ["CUET"]
+
+TOPIC 12: Pipes and Cisterns — Midpoint Variant (2 questions)
+  → Half-tank filled by 1 tap, then additional taps opened
+  → Do NOT use simple "two taps fill together" format
+  cognitiveType: "synthesis"
+
+TOPIC 13: Trains — Crossing Tunnel vs. Pole (2 questions)
+  CUET RECURRING THEME:
+  → "Train crosses 350m tunnel in 36s at 80km/h.
+    Find length of train."
+  → Distractor: include answer if student forgets to add
+    tunnel length to train length
+  → Include one: train crossing a POLE (tunnel length = 0)
+  → explanation: "When crossing tunnel: distance =
+    train length + tunnel length.
+    When crossing pole: distance = train length only."
+  cognitiveType: "application"
+
+TOPIC 14: Statistics — Mean + Mode Combined (2 questions)
+  → Single problem with two unknowns: solve mean equation
+    to get k, solve mode condition to get p, then find k–2p
+  → This is a CUET synthesis signature pattern
+  cognitiveType: "synthesis"
+
+TOPIC 15: Similar Triangles — BPT (2 questions)
+  → State: "DE ∥ BC, AD=6, DB=4, AE=9, find EC"
+  → One question: verify the theorem (which is true?)
+  → Explain Basic Proportionality Theorem in flashcard
+  cognitiveType: "application"
+
+TOPIC 16: Trigonometry — Compound Expressions (2 questions)
+  → Give sin A = 4/5, find (3 – tan A)(2 + cos A)
+  → Student must derive all trig values from one given value
+  → Include identity sin²A + cos²A = 1 in solution_steps
+  cognitiveType: "synthesis"
+
+TOPIC 17: Boats and Streams (2 questions)
+  → Give boat speed + current + total time (to + fro)
+  → Student solves: d/(u+v) + d/(u-v) = T for d
+  → Do NOT directly give upstream/downstream time separately
+  cognitiveType: "synthesis"
+
+--- PART B: MAH CET SPEED QUESTIONS (20 questions) ---
+cognitiveType: "recall" or "application"
+timePresure: "speed"                    // must solve < 45 sec
+examTags: ["MH-CET"]
+
+Generate 20 questions (4 each from 5 topics):
+
+  SPEED TOPIC 1: BODMAS drill (4 questions)
+    → Simple 5-term expressions, no algebra
+    → Student must solve in under 20 seconds
+    → Four options must be: correct + common errors
+
+  SPEED TOPIC 2: Percentage quick-fire (4 questions)
+    → "What is 15% of 240?" style
+    → "A price increases from 200 to 250. % increase = ?"
+    → No multi-step reasoning
+
+  SPEED TOPIC 3: Ratio quick-fire (4 questions)
+    → "A:B = 3:4, A = 18, find B"
+    → Direct proportion only
+
+  SPEED TOPIC 4: Simple profit/loss (4 questions)
+    → Single discount or single profit — not combined
+    → "CP = 400, SP = 460. Profit % = ?"
+
+  SPEED TOPIC 5: Perfect squares / odd one out (4 questions)
+    MAH CET SIGNATURE:
+    → "Find the odd one out: 81, 64, 49, 45"
+    → Correct: 45 (not a perfect square)
+    → Trap: 64 (student overthinks: only even, or perfect cube)
+    → explanation: "All others are perfect squares.
+      9²=81, 8²=64, 7²=49. 45 is not a perfect square."
+    → Always include the "overthinking trap" as a distractor
+
+QUANTITATIVE RULES (All questions):
+- type: "numerical" for all quant questions
+- Every answer verified by manual calculation
+- solution_steps: minimum 3 steps (CUET) / minimum 1 step (MAH CET speed)
+- Use π = 22/7 explicitly wherever needed
+- Indian number formatting: ₹, paise, lakh, crore
+- All answers must be clean integers or simple fractions
+- Difficulty: CUET questions = medium/hard; MAH CET = easy/medium
+
+FLASHCARDS FOR QUANTITATIVE (12 flashcards):
+  - BODMAS rule with example
+  - Successive discount formula: MP × (1–d1) × (1–d2)
+  - LCM × HCF = Product of two numbers
+  - SI formula: PRT/100
+  - Cylinder: V = πr²h, CSA = 2πrh
+  - Square: Area = d²/2 (d = diagonal)
+  - Basic Proportionality Theorem (BPT)
+  - Trig identities: sin²+cos²=1, tan=sin/cos
+  - Upstream/Downstream: (u+v) and (u-v)
+  - Weighted average formula
+  - Trains: distance = train + tunnel length (NOT just tunnel)
+  - Percentage fail formula: marks = passing% × max marks
+
+---
+
+=================================================================
+=== FILE 2: general-knowledge.data.js
+    Target: CUET (25%) + MAH CET (15%)
+=================================================================
+
+Generate 75 questions. Tag each with cognitiveType.
+  CUET: "chronological", "synthesis", "application" types
+  MAH CET: "recall" types (full form, direct fact retrieval)
+
+--- CATEGORY A: Indian Polity and Constitution (15 questions) ---
+
+  CUET-style (10 questions) — cognitiveType: "synthesis"
+    → Match-column: Article number ↔ provision
+    → Sequence: "Arrange these Constitutional Amendments
+      in correct chronological order: 42nd, 44th, 52nd, 73rd"
+    → Multi-statement: "Which of the following statements
+      about the Election Commission are correct?
+      (A) Gets power from Article 324
+      (B) The CEC cannot be removed like a SC judge..."
+    → Question must require knowing BOTH the fact AND
+      its constitutional context
+
+  MAH CET-style (5 questions) — cognitiveType: "recall"
+    → "Which article gives power to the Election Commission?"
+    → "What is the full form of CAG?"
+    → Direct retrieval, no context needed
+
+--- CATEGORY B: Modern Indian History (15 questions) ---
+
+  CUET RECURRING THEME — High Priority:
+  Focus: Indian National Congress + Gandhi-led movements
+
+  CUET Chronological Sequence Template (5 questions):
+    → "Arrange in correct chronological order:
+      (A) Dandi March  (B) Swadeshi Movement
+      (C) Non-Cooperation Movement  (D) Home Rule League"
+    → Each sequence question must have a UNIQUE event set
+    → Distractors: place events that are 2–5 years apart
+      in wrong order — exploit proximity confusion
+    → explanation: list each event with exact year
+
+  CUET Synthesis (5 questions):
+    → Match-column: Movement ↔ Year ↔ Key Figure
+    → "Which of the following statements about the
+      Salt Satyagraha are INCORRECT?"
+    → Cause-effect: "The Rowlatt Act (1919) led to..."
+
+  MAH CET Recall (5 questions):
+    → "In which year was the Indian National Congress founded?"
+    → "Who gave the slogan 'Do or Die'?"
+    → "Which session of INC declared Purna Swaraj?"
+    → Direct single-fact retrieval
+
+--- CATEGORY C: Geography — India and World (15 questions) ---
+
+  CUET Static Landmarks — High Priority:
+    → Nicknames of cities:
+      Pink City = Jaipur, Golden City = Jaisalmer,
+      City of Joy = Kolkata, Manchester of India = Ahmedabad,
+      Silicon Valley of India = Bengaluru
+    → Rivers and dams:
+      Bhakra Nangal = Sutlej, Sardar Sarovar = Narmada,
+      Tehri Dam = Bhagirathi/Bhilangana
+    → Mountain passes: Banihal (Jammu-Srinagar),
+      Nathu La (Sikkim-Tibet), Rohtang (Manali-Lahaul)
+    → Glaciers: Zemu = Sikkim, Siachen = Ladakh,
+      Gangotri = Uttarakhand
+
+  Include 3 CUET chronological geography questions:
+    → "Arrange the following states in order of their
+      formation after India's independence:
+      (A) Nagaland  (B) Haryana  (C) Sikkim  (D) Goa"
+
+  Include 3 MAH CET recall questions:
+    → "Zemu Glacier is in which state?"
+    → "Jhulaghat Bridge connects India to which country?"
+    → "QUAD member not from Asia?"
+
+--- CATEGORY D: Current Affairs 2022–2024 (15 questions) ---
+
+  ANTI-HALLUCINATION PROTOCOL FOR THIS CATEGORY:
+  Only use facts from the following VERIFIED list.
+  Do NOT generate any current affairs fact not on this list.
+  If you need more questions, generate from the verified
+  list below — do not invent new facts.
+
+  VERIFIED FACTS LIST:
+  → Padma Vibhushan 2024: Konidela Chiranjeevi (Actor)
+  → Padma Bhushan 2024: M. Fathima Beevi, Sitaram Jindal
+  → Mithun Chakraborty: Padma Bhushan 2024
+     (NOT Padma Shri — this is a TRICK answer from actual paper)
+  → Jaya Verma Sinha: First woman Chairman, Railway Board 2023
+  → Devendra Jhajharia: First para-athlete, Padma Bhushan
+  → Agni-5 MIRV: Multiple Independently Targetable
+    Re-Entry Vehicle
+  → India's first 3D-printed Post Office: Bengaluru
+  → Ramon Magsaysay Award 2023: Dr. Ravi Kannan R.
+  → 16th Finance Commission Chairman: Dr. Arvind Panagariya
+  → QUAD members: India, USA, Japan, Australia
+    (China is NOT a QUAD member)
+  → Mission Antyodaya: Annual survey at gram panchayat level
+    to monitor rural development progress
+  → Jhulaghat Suspension Bridge: India–Nepal
+
+  DISTRACTOR STRATEGY FOR CURRENT AFFAIRS:
+  → For awards: use other real award recipients from same year
+    as distractors
+  → For appointments: use other real officials in similar roles
+  → NEVER put a real person with a wrong award in option (1)
+    — spread traps across all four option positions
+
+--- CATEGORY E: General Science — Conceptual (15 questions) ---
+
+  CUET RECURRING THEME — This is NOT rote science.
+  CUET tests the WHY and HOW of science, not just WHAT.
+
+  PHYSICS — WHY/HOW questions (5 questions):
+    → "Water boils at a lower temperature at high altitudes
+      BECAUSE..." (atmospheric pressure decreases)
+    → "Why does a ship made of steel float while a steel
+      ball sinks?" (density vs displaced water)
+    → "Ozone layer absorbs which type of radiation?"
+      (UV rays — include this, it's a CUET recurring theme)
+    → Laws of Motion application:
+      "A passenger in a bus falls forward when bus brakes
+      suddenly. This demonstrates..."
+    → Sound: "Thunder is heard after lightning because..."
+
+  CHEMISTRY — Conceptual (5 questions):
+    → Acids/Bases: "When ocean becomes more acidic, pH..."
+      (goes DOWN — acidic < 7)
+    → "Diamond is a bad conductor of electricity BECAUSE..."
+      (no free electrons, despite being pure carbon)
+    → "Graphite conducts electricity BECAUSE..."
+      (delocalised electrons between layers)
+    → Distinguish: conductor vs insulator with reason
+    → pH scale: identify acidic/basic/neutral correctly
+
+  BIOLOGY — Disease + Reason (5 questions):
+    → "Kwashiorkor is caused by deficiency of..."
+      (proteins — NOT calories, that is Marasmus)
+    → "Night Blindness is caused by deficiency of..."
+      (Vitamin A — NOT Vitamin D, which causes Rickets)
+    → "Goitre is caused by deficiency of..." (Iodine)
+    → Include one: "Which pair of disease-deficiency
+      is INCORRECTLY matched?" (synthesis type)
+    → "A person on a diet of only rice is at risk of..."
+      (Beriberi — Vitamin B1 deficiency)
+
+  SCIENCE QUESTION RULES:
+  - Always state the REASON in the correct answer and explanation
+  - Distractors must be conceptually plausible wrong reasons
+    (not random wrong answers)
+  - cognitiveType: "synthesis" for all science questions
+  - examTags: ["CUET"] for all science questions
+  - MAH CET does not have this section — no MH-CET tags here
+
+GK FLASHCARDS (15 flashcards):
+  - City nicknames: Pink, Golden, City of Joy, Silicon Valley
+  - Deficiency diseases: table format (disease → nutrient)
+  - Mountain passes and their connections
+  - QUAD: India, USA, Japan, Australia
+  - Article 324 (Election Commission)
+  - pH scale: acidic < 7, neutral = 7, basic > 7
+  - Conductors vs Insulators with reason (Diamond, Graphite)
+  - Gandhi movements chronology: 1920 NCM, 1930 Dandi,
+    1942 Quit India
+  - Major dams and their rivers
+  - Padma Awards hierarchy: Vibhushan > Bhushan > Shri
+  - First woman appointments: Railway Board, etc.
+  - MIRV full form
+  - Mission Antyodaya objective
+  - Glaciers and states
+  - Boiling point altitude relationship
+
+---
+
+=================================================================
+=== FILE 3: logical-reasoning.data.js
+    Target: CUET (30%) + MAH CET (30%)
+=================================================================
+
+Generate 72 questions. Mix of CUET multi-constraint
+and MAH CET speed-pattern types.
+
+CUET SIGNATURE TEMPLATES — Must include:
+
+TEMPLATE 1: Complex Alphanumeric Series (8 questions)
+  CUET RECURRING PATTERN — THREE simultaneous rules:
+  → "A1X, B4P, E25J, J100F, ?"
+    Rule 1 (Letters ascending): A→B(+1)→E(+3)→J(+5)→O(+5)
+    Rule 2 (Numbers): 1²→2²→5²→10²→?
+    Rule 3 (Letters descending): X→P→J→F→?
+  → Each question must have THREE discoverable rules
+  → explanation must identify ALL THREE rules explicitly
+  → Distractors: change only ONE of the three elements
+    to exploit partial rule-finding
+  cognitiveType: "synthesis"
+  timePresure: "deep"
+  examTags: ["CUET"]
+
+TEMPLATE 2: Circular Seating — Multi-Constraint (8 questions)
+  CUET RECURRING PATTERN:
+  → 5–6 people, circular arrangement, facing centre
+  → Minimum 5 constraints given
+  → Question asks: "Who is to the immediate right of X?"
+    OR "Who is sitting between X and Y?"
+  → Generate the arrangement by working out constraints
+    BEFORE writing the question — verify your arrangement
+  → Distractors: people who are 2 seats away (proximity trap)
+  → explanation: draw out the circular arrangement as text:
+    "Final arrangement clockwise: M – U – H – S – E – K"
+  cognitiveType: "synthesis"
+  timePresure: "deep"
+  examTags: ["CUET"]
+
+TEMPLATE 3: Coding — Multi-Step Shift (6 questions)
+  → MERCURY → NGUGZXF: shift pattern is not uniform
+    Identify shift per position, apply to new word
+  → Each question must use a DIFFERENT shift rule
+    (not all +1 across the board)
+  → Three rule types to vary across 6 questions:
+    Type A: Fixed shift (all letters +N)
+    Type B: Alternating shift (+1, +2, +1, +2...)
+    Type C: Position-based shift (+1, +2, +3, +4...)
+  → explanation: show the rule applied to each letter
+  cognitiveType: "synthesis"
+  examTags: ["CUET"]
+
+TEMPLATE 4: Blood Relations — Symbolic Chain (6 questions)
+  → Define: % = sister, + = son, × = husband, – = brother
+  → Question: "Which expression means A is son-in-law of G?"
+  → Generate chains of 4–5 symbols
+  → Trace reading direction clearly in explanation
+  → Distractors: chains that give nephew, brother-in-law, etc.
+  cognitiveType: "synthesis"
+  examTags: ["CUET", "MH-CET"]
+
+TEMPLATE 5: Word Coding — Three Statement (6 questions)
+  → Three statements, 3 words each, decode one word
+  → "ki ru pi = nobody like cruel,
+     ki mi cha = king was cruel,
+     ru pi cha = nobody like king → 'was' = ?"
+  → Intersection method required
+  → explanation: show which statements to compare and why
+  cognitiveType: "application"
+  examTags: ["CUET", "MH-CET"]
+
+TEMPLATE 6: Syllogism — Three Premises (6 questions)
+  → Include at least 2 questions with THREE premises
+    (harder than standard two-premise syllogism)
+  → "No keyboard is a mouse. All mouses are computers.
+     All computers are laptops."
+  → Two conclusions given; which follows?
+  → explanation: Venn diagram text representation
+  cognitiveType: "synthesis"
+  examTags: ["CUET"]
+
+TEMPLATE 7: Calendar — Odd Days Method (6 questions)
+  → "26 Jan 2020 was Sunday. What day was 16 March 2020?"
+  → Show odd days count in solution_steps
+  → Include one leap year question
+  → Distractors: off by one day (Monday/Wednesday trap)
+  cognitiveType: "application"
+  examTags: ["CUET", "MH-CET"]
+
+TEMPLATE 8: Clock Angles — Standard + Mirror (6 questions)
+  → Formula: |30H – 5.5M| degrees
+  → Include: "quarter past 3", "half past 9", "quarter to 7"
+  → Mirror clock: "Clock in mirror shows quarter to seven.
+    Actual time = ?" (Method: subtract from 11:60)
+  → Distractors: use formula with H and M swapped
+  cognitiveType: "application"
+  examTags: ["CUET", "MH-CET"]
+
+TEMPLATE 9: Data Sufficiency (6 questions)
+  → Always 4 options: Only I / Only II /
+    Both together / Either alone
+  → Topics: relationships, number properties, rankings
+  → "How many sisters does Sunny have?
+     I. Sunny is only son.
+     II. Parents have 3 children.
+     → Together: 2 sisters (3 – 1 = 2)"
+  cognitiveType: "synthesis"
+  examTags: ["CUET"]
+
+TEMPLATE 10: Direction and Distance (6 questions)
+  → Multi-leg journey: S → W → S → ? direction from start
+  → Use Pythagoras to find distance
+  → "17 km, South-West" style answers
+  → Distractors: correct distance, wrong direction (NW vs SW)
+  cognitiveType: "application"
+  examTags: ["CUET", "MH-CET"]
+
+TEMPLATE 11: Number Series (4 questions)
+  → Difference series: 3, 6, 10.5, 17, 26, ?
+    (Differences: 3, 4.5, 6.5, 9, 12.5 — increasing by 1.5,
+    2, 2.5, 3.5 — second differences +0.5, +0.5, +1.0)
+  → Square series: differences of perfect squares
+  → Geometric series with fractional ratio
+  → Distractor: next term if wrong difference assumed
+  cognitiveType: "application"
+  examTags: ["CUET", "MH-CET"]
+
+MAH CET SPEED REASONING (8 questions)
+  cognitiveType: "recall"
+  timePresure: "speed"
+  examTags: ["MH-CET"]
+
+  Speed Type 1: Ranking (2 questions)
+    → "Anjali's rank is 3× Anita's. 4 students rank worse
+      than Anjali in class of 40. Anita's rank = ?"
+    → Must solve in under 30 seconds with shortcut method
+    → explanation: shortcut → Anjali = 40–4 = 36th,
+      Anita = 36÷3 = 12th
+
+  Speed Type 2: Simple Analogy (2 questions)
+    → "NEGI : MVTR :: SING : ?"
+    → State letter shift rule in explanation
+    → No multi-layer rules — single consistent shift
+
+  Speed Type 3: Odd One Out (2 questions)
+    MAH CET SIGNATURE:
+    → "Which is the odd one out: 81, 64, 49, 45?"
+    → Correct: 45 (not a perfect square)
+    → Trap distractor: 64 (only even number)
+    → explanation: "Speed trap — do not overthink.
+      Check each: 9²=81 ✓, 8²=64 ✓, 7²=49 ✓, 45=? ✗"
+
+  Speed Type 4: Linear Seating — Quick (2 questions)
+    → 4–5 people, linear row, 3 constraints
+    → Solvable in under 45 seconds
+    → No circular arrangement (save those for CUET)
+
+REASONING FLASHCARDS (10 flashcards):
+  - Clock angle formula: |30H – 5.5M|
+  - Mirror clock: subtract from 11:60
+  - Odd days: Jan=3, Feb=0(reg)/1(leap), Mar=3...
+  - Leap year rule: div by 4 (not century unless div by 400)
+  - Syllogism: All A→B + All B→C = All A→C
+  - BFS for blood relations: trace each symbol left to right
+  - Alphanumeric series: always check 3 sequences separately
+  - Circular seating: fix one person, place others relative
+  - Data sufficiency: test I alone, then II alone, then both
+  - Direction shortcut: draw compass, track each leg
+
+---
+
+=================================================================
+=== FILE 4: general-science.data.js
+    Target: CUET ONLY (15%)
+    This entire section is examTags: ["CUET"]
+=================================================================
+
+Generate 45 conceptual science questions.
+ALL questions: cognitiveType: "synthesis"
+
+CRITICAL RULE FOR THIS FILE:
+  Every question must test the REASON, not just the FACT.
+  Wrong: "What is the pH of pure water?" (recall)
+  Right: "Why does pure water have a pH of 7?" (synthesis)
+  If you cannot write the WHY version, skip the question.
+
+PHYSICS — 15 questions (3 per theme):
+
+  Theme P1: Atmospheric Pressure Effects
+    → Water boiling point at altitude (pressure decreases →
+      boiling point decreases)
+    → Ear pain in aircraft (pressure difference)
+    → Cooking in pressure cooker (increased pressure →
+      higher boiling point → faster cooking)
+
+  Theme P2: Laws of Motion — Everyday Applications
+    → Passenger lurches forward when bus brakes
+      (Newton's 1st: inertia of motion)
+    → Seat belts in cars (inertia)
+    → Recoil of gun when fired (Newton's 3rd)
+
+  Theme P3: Light — Reflection and Refraction
+    → Apparent depth of water (refraction)
+    → Why sky is blue (Rayleigh scattering)
+    → Ozone layer absorbs UV radiation
+      (CUET RECURRING — include this)
+
+  Theme P4: Sound
+    → Why thunder heard after lightning (speed difference)
+    → Echo conditions (distance > 17m)
+    → Ultrasound frequency range
+
+  Theme P5: Electricity — Conductors/Insulators
+    → Diamond: bad conductor BECAUSE no free electrons
+    → Graphite: good conductor BECAUSE delocalised electrons
+    → Why metals conduct electricity (free electron sea model)
+
+CHEMISTRY — 15 questions (3 per theme):
+
+  Theme C1: Acids, Bases and pH
+    → Ocean acidification: pH goes DOWN (more acidic = lower pH)
+    → "Which of following is correctly matched:
+      Lemon juice–Acidic / Soap–Basic / Blood–Neutral?"
+    → pH of common substances: include both acidic and basic
+
+  Theme C2: States of Matter
+    → Dry ice sublimation (solid → gas directly)
+    → Why gases are compressible but liquids are not
+    → Evaporation vs boiling: which requires external heat?
+
+  Theme C3: Chemical Reactions — Everyday
+    → Rusting: requires both oxygen AND water
+    → Why lemon removes rust stains (acid dissolves iron oxide)
+    → Baking soda + acid → CO₂ gas (why cake rises)
+
+  Theme C4: Carbon Chemistry
+    → Diamond vs Graphite: same element, different structure
+    → Why carbon forms so many compounds (tetravalency)
+    → Difference between organic and inorganic compounds
+
+  Theme C5: Periodic Table — Conceptual
+    → Why noble gases are inert (complete outer shell)
+    → Alkali metals react with water (very reactive)
+    → Atomic number vs mass number distinction
+
+BIOLOGY — 15 questions (3 per theme):
+
+  Theme B1: Deficiency Diseases — Must Distinguish
+    → Kwashiorkor (protein) vs Marasmus (calorie)
+    → Night Blindness (Vit A) vs Rickets (Vit D)
+    → Goitre (Iodine) vs Anaemia (Iron)
+    → Include: "Which pair is INCORRECTLY matched?"
+      (CUET synthesis signature)
+
+  Theme B2: Human Body Systems
+    → Why does heart beat faster during exercise?
+      (oxygen demand increases)
+    → Insulin: produced by pancreas, regulates blood sugar
+    → Dialysis: replaces kidney function — why?
+
+  Theme B3: Photosynthesis — Conceptual
+    → Why do leaves appear green? (reflect green, absorb red/blue)
+    → Stomata: open during day (CO₂ in), close at night
+    → Why plants need both light AND dark reactions?
+
+  Theme B4: Cell Biology
+    → Mitochondria: "powerhouse" — WHY? (ATP production)
+    → Osmosis: why wilted plants revive in water
+    → Difference: plant cell vs animal cell (cell wall, vacuole)
+
+  Theme B5: Ecosystem
+    → Food chain: energy lost at each trophic level (10% rule)
+    → Why biodiversity loss disrupts ecosystems
+    → Greenhouse gases: CO₂, CH₄, N₂O — which is NOT one?
+      (Oxygen is NOT a greenhouse gas)
+
+SCIENCE FLASHCARDS (10 flashcards):
+  - Deficiency diseases table (all 8 key ones)
+  - pH scale with examples
+  - Diamond vs Graphite: structure and conductivity
+  - Newton's three laws with everyday examples
+  - Boiling point vs altitude relationship
+  - Photosynthesis equation
+  - Conductors: free electrons; Insulators: no free electrons
+  - Greenhouse gases list
+  - Ozone: absorbs UV (CUET favourite)
+  - Human glands: Pancreas (insulin), Thyroid (thyroxine)
+
+SCIENCE QUESTION RULES:
+  - ALL questions: cognitiveType: "synthesis"
+  - ALL questions: examTags: ["CUET"]
+  - explanation must state the REASON, not just the fact
+  - Distractors must be plausible wrong reasons
+    (not random wrong facts)
+  - Difficulty: 10 easy + 20 medium + 15 hard
+
+---
+
+## DISTRACTOR QUALITY STANDARD — GAT EDITION
+
+CUET GAT uses "Calculation Echo" distractors.
+Every CUET question must follow this rule:
+
+  Option 1: Correct answer
+  Option 2: Answer from most common mistake at Step 2
+  Option 3: Answer from most common mistake at Step 1
+             (or formula misremembered)
+  Option 4: Answer that looks "round" and feels right
+             (psychological anchor trap)
+
+Example — Successive Discount question:
+  MP = ₹800, discounts = 50% + 50%
+  Option 1: ₹200   ← Correct (800 × 0.5 × 0.5)
+  Option 2: ₹400   ← Only first discount applied
+  Option 3: ₹0     ← "50+50=100% off" linguistic trap
+  Option 4: ₹320   ← 800 × 0.6 × 0.67 (wrong formula attempt)
+
+This distractor architecture must be applied to all
+quantitative and reasoning questions in CUET sections.
+
+---
+
+## SPEED TRAINING METADATA
+
+For the quiz engine to implement timed practice:
+
+  Every question tagged timePresure: "speed" must include:
+    speedTarget: 45           // seconds
+
+  Every question tagged timePresure: "standard" must include:
+    speedTarget: 90           // seconds
+
+  Every question tagged timePresure: "deep" must include:
+    speedTarget: 120          // seconds
+
+This allows the app to:
+  1. In CUET Drill mode: show timer counting DOWN from
+     speedTarget; highlight if student exceeded time
+  2. In MAH CET Drill mode: enforce 72 seconds for ALL
+     questions regardless of type
+  3. In Analysis mode: show student their average time
+     per cognitiveType to identify weak patterns
+
+---
+
+## QUALITY GATES
+
+GATE 1 — MATHEMATICAL ACCURACY:
+  [ ] Every quant answer verified by manual calculation
+  [ ] Successive discount questions verified:
+      800 × 0.5 × 0.5 = 200 (NOT zero, NOT 400)
+  [ ] Hybrid geometry: diagonals equated before area computed
+  [ ] Train problems: tunnel + train length both included
+  [ ] All solution_steps show complete working
+
+GATE 2 — FACTUAL ACCURACY:
+  [ ] Only verified GK facts used (no invented current affairs)
+  [ ] Uncertain facts flagged with // VERIFY comment
+  [ ] Mithun Chakraborty = Padma BHUSHAN (not Shri) — verified
+  [ ] QUAD = India, USA, Japan, Australia (China NOT included)
+  [ ] pH decreases when ocean becomes more acidic
+
+GATE 3 — REASONING VALIDITY:
+  [ ] Alphanumeric series: ALL THREE rules verified to hold
+      for every term in the series
+  [ ] Circular seating: arrangement drawn out and verified
+      before writing constraints
+  [ ] Syllogism: conclusions verified by Venn diagram logic
+  [ ] Coding: rule applied to answer word and verified
+
+GATE 4 — COGNITIVE TAGGING:
+  [ ] Every question has cognitiveType field
+  [ ] Every question has timePresure field
+  [ ] Every question has speedTarget field
+  [ ] examTags correctly assigned:
+      General Science = ["CUET"] only
+      Speed Arithmetic = ["MH-CET"] only
+      Most Reasoning = ["CUET", "MH-CET"]
+
+GATE 5 — SCHEMA COMPLIANCE:
+  [ ] All required fields present per DATA_SCHEMA.md
+  [ ] correct field is valid index 0–3
+  [ ] options array has exactly 4 items
+  [ ] IDs unique: quant-, gk-, lr-, sci- prefixes
+  [ ] Minimum counts: quant=60, gk=75, lr=72, sci=45
+      Total = 252 questions
+
+---
+
+## OUTPUT SEQUENCE
+
+STEP 1: Plan Artifact
+  List all 5 files with:
+  - Question count per file
+  - CUET vs MH-CET split per file
+  - cognitiveType distribution (recall/application/synthesis)
+  WAIT for human approval
+
+STEP 2: quantitative.data.js
+  → Part A Topics 1–9 (CUET depth, 27 Qs) → WAIT
+  → Part A Topics 10–17 (CUET depth, 13 Qs) → WAIT
+  → Part B Speed questions (MAH CET, 20 Qs) → WAIT
+  → Assemble with flashcards → WAIT
+
+STEP 3: general-knowledge.data.js
+  → Categories A + B (Polity + History, 30 Qs) → WAIT
+  → Categories C + D (Geography + CA, 30 Qs) → WAIT
+  → Category E (Science, 15 Qs) → WAIT
+  → Assemble with flashcards → WAIT
+
+STEP 4: logical-reasoning.data.js
+  → Templates 1–5 (34 Qs) → WAIT
+  → Templates 6–11 + MAH CET speed (38 Qs) → WAIT
+  → Assemble with flashcards → WAIT
+
+STEP 5: general-science.data.js
+  → Physics themes P1–P3 (9 Qs) → WAIT
+  → Physics themes P4–P5 + Chemistry C1–C3 (18 Qs) → WAIT
+  → Chemistry C4–C5 + Biology B1–B5 (18 Qs) → WAIT
+  → Assemble with flashcards → WAIT
+
+STEP 6: index.js
+  → Re-export all four data objects
+  → Confirm variable names match exactly
+
+---
+
+## ANTI-HALLUCINATION RULES
+
+1. SUCCESSIVE DISCOUNTS: Always compute step by step.
+   Never add percentages. Verify: 50%+50% ≠ 100% off.
+
+2. CURRENT AFFAIRS: Use only the VERIFIED FACTS LIST above.
+   Write zero current affairs questions outside that list.
+   Flag any doubt with // VERIFY before the question.
+
+3. ALPHANUMERIC SERIES: Before writing the question,
+   write out all 6 terms of the series yourself and
+   verify all three rules hold for every single term.
+
+4. CIRCULAR SEATING: Before writing constraints, draw
+   the final circular arrangement as a text diagram and
+   verify every constraint is satisfied. THEN write clues.
+
+5. SCIENCE REASONS: Every explanation must state the
+   mechanism, not just the conclusion.
+   Wrong: "Diamond is a bad conductor."
+   Right: "Diamond is a bad conductor because all four
+   valence electrons are covalently bonded, leaving no
+   free electrons to carry charge."
+
+6. NEVER generate questions about:
+   → Specific stock prices, company revenues, or GDP figures
+   → Any political opinion or election result prediction
+   → Any unverified appointment after 2024
+   → Any military operation with casualty figures
+```
+
+---
+
+## Summary: What This Prompt Adds Over the Previous Version
+
+| Feature | Previous Prompt | This Prompt |
+|---|---|---|
+| Exam awareness | Single exam | Dual-tagged (CUET + MH CET) |
+| Cognitive typing | None | recall / application / synthesis |
+| Speed metadata | None | speedTarget per question |
+| Successive discounts | Not covered | Signature template with trap |
+| Science file | Embedded in GK | Separate 45-question WHY-focused file |
+| Distractor design | Generic | Calculation Echo architecture |
+| Alphanumeric series | Single rule | Three simultaneous rules (CUET pattern) |
+| Current affairs guard | General caution | Explicit verified-only facts list |
+| MAH CET speed drills | None | 20 quant + 8 reasoning speed questions |
+
+Would you like me to now generate the corrected `mocktest.config.js` patch file that implements the dual-exam configuration and the `speedTarget` timer logic?

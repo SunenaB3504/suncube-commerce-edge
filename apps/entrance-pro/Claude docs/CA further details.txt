@@ -1,0 +1,1269 @@
+Perfect. Let me build this now. Given the scope — 50 high-priority topics, both flashcard AND study note format, covering old + new — this will be a substantial prompt.Here is the complete prompt:
+
+---
+
+## Antigravity Agent Prompt — CA Comprehensive Learning + 2025 Updates
+
+```
+## MISSION
+You are a Content Generation Agent for the Commerce Prep Pro project.
+Your task is to:
+
+  PART A: Generate comprehensive learning content (study notes +
+          flashcards with 5-point briefings) for the TOP 50
+          high-priority Current Affairs topics spanning both
+          existing coverage AND new 2025 topics.
+
+  PART B: Generate new question sets for all 2025 missing topics
+          not covered in previous CA prompts.
+
+This prompt extends — it does NOT replace — all previously
+generated CA files. All new content follows the same schema,
+bucket tagging, and quality gates established earlier.
+
+---
+
+## MANDATORY FIRST STEPS (Do not skip)
+1. Read @RULES.md fully
+2. Read @DATA_SCHEMA.md fully
+3. Read @src/data/gk-awareness/ca-india-world-events.data.js
+4. Read @src/data/gk-awareness/ca-sports-awards.data.js
+5. Read @src/data/gk-awareness/ca-business-economy.data.js
+6. Output a Plan Artifact listing all files + topic count
+7. WAIT for human approval before writing any content
+
+---
+
+## NEW FILES TO CREATE
+
+File 1: src/data/gk-awareness/ca-2025-updates.data.js
+         → All new 2025 topics + questions
+
+File 2: src/data/gk-awareness/ca-study-notes.data.js
+         → Study notes (reading passages) for all 50 topics
+
+File 3: src/data/gk-awareness/ca-briefing-flashcards.data.js
+         → Flashcards with 5-point briefings for all 50 topics
+
+File 4: src/data/gk-awareness/index.js
+         → Updated re-export including all new files
+
+---
+
+## LEARNING CONTENT ARCHITECTURE
+
+Each of the 50 topics gets BOTH:
+
+  FORMAT A — STUDY NOTE (reading passage before questions):
+    Displayed in app as a "Read Before You Answer" card
+    shown once before the topic's question set begins.
+    Structure:
+      title: "Topic Name"
+      summary: One paragraph (40–60 words) — the big picture
+      keyPoints: Array of exactly 5 bullet points
+        Each point: 15–25 words, factual, exam-focused
+        Point structure: [WHAT] → [WHY IT MATTERS FOR EXAM]
+      examAngle: One sentence — the most likely question format
+      caTag: bucket tag
+      topicYear: year of event or "static"
+
+  FORMAT B — BRIEFING FLASHCARD:
+    Displayed in app's Study/Flashcard mode.
+    Structure:
+      id: "bf-001" through "bf-050"
+      term: Topic name (front of card)
+      headline: One-line hook (shown with term)
+        Example: "Sweden joined NATO — ending 200 years
+        of neutrality"
+      points: Array of exactly 5 bullet points
+        Each point: 10–15 words max — punchy, memorable
+        Written as facts a student can recall in 20 seconds
+      memoryHook: One clever mnemonic or association
+        Example: "SWEDEN = Security With Every Defence
+        Expansion Now"
+      likelyQuestion: The single most probable exam question
+        format for this topic
+      caTag: bucket tag
+      examTags: ["MH-CET"] | ["CUET"] | ["MH-CET","CUET"]
+
+---
+
+## THE TOP 50 HIGH-PRIORITY TOPICS
+
+Listed in priority order. Generate learning content AND
+questions for ALL 50. Topics 1–35 are from existing coverage
+(refresh + enhance). Topics 36–50 are NEW 2025 additions.
+
+=================================================================
+BUCKET 1 — NATIONAL & POLITY (Topics 1–12)
+=================================================================
+
+TOPIC 1: 16th Finance Commission
+  STUDY NOTE:
+    summary: "The 16th Finance Commission, chaired by
+      Dr. Arvind Panagariya, was constituted in 2023 to
+      recommend the distribution of tax revenues between
+      the Centre and States for the period 2026 to 2031,
+      replacing the recommendations of the 15th Commission."
+    keyPoints:
+      → "Chairman: Dr. Arvind Panagariya, former NITI Aayog
+        Vice Chairman and Columbia University economist."
+      → "Mandate: Recommend vertical devolution (Centre to
+        States) and horizontal devolution (among States)
+        for 2026–2031."
+      → "Finance Commissions are constituted under Article 280
+        of the Indian Constitution every five years."
+      → "The 15th Finance Commission was chaired by NK Singh
+        and covered the period 2021–2026."
+      → "Key exam trap: Confusing the chairman with NK Singh
+        (15th) or Ajay Narayan Jha (member, not chairman)."
+    examAngle: "Most likely asked as: Who is the Chairman of
+      the 16th Finance Commission? OR Which article mandates
+      its constitution?"
+
+TOPIC 2: Three New Criminal Laws (BNS/BNSS/BSA)
+  STUDY NOTE:
+    summary: "From July 1, 2024, India replaced three
+      colonial-era laws: the IPC (1860), CrPC (1973), and
+      the Indian Evidence Act (1872) with the Bharatiya
+      Nyaya Sanhita, Bharatiya Nagarik Suraksha Sanhita,
+      and Bharatiya Sakshya Adhiniyam respectively."
+    keyPoints:
+      → "BNS (Bharatiya Nyaya Sanhita) replaced IPC 1860 —
+        defines crimes and punishments."
+      → "BNSS (Bharatiya Nagarik Suraksha Sanhita) replaced
+        CrPC 1973 — governs criminal procedure."
+      → "BSA (Bharatiya Sakshya Adhiniyam) replaced Indian
+        Evidence Act 1872 — rules of evidence in courts."
+      → "All three laws came into effect on July 1, 2024 —
+        the single most testable date in this topic."
+      → "Key change: 'Sedition' removed from BNS; new offence
+        of 'terrorism' added with stricter penalties."
+    examAngle: "Most likely: Which law replaced IPC? OR
+      What is the effective date of the new criminal laws?"
+
+TOPIC 3: Nari Shakti Vandan Adhiniyam
+  STUDY NOTE:
+    summary: "The Women's Reservation Bill, passed in
+      September 2023 as the Nari Shakti Vandan Adhiniyam,
+      reserves 33% of seats in Lok Sabha and all State
+      Legislative Assemblies for women, but will take effect
+      only after the next delimitation exercise."
+    keyPoints:
+      → "Reserves one-third (33%) of seats for women in
+        Lok Sabha and State Assemblies — not Rajya Sabha."
+      → "Passed in a special session of Parliament in
+        September 2023 — historic after 27 years of attempts."
+      → "Will NOT be immediately effective — requires
+        delimitation first, likely post-2026 Census."
+      → "Also reserves 33% within SC/ST quota seats
+        already reserved for those communities."
+      → "Exam trap: Reservation is 33% NOT 50%; and it
+        applies to Lok Sabha — not Rajya Sabha."
+    examAngle: "Most likely: What percentage is reserved?
+      OR When was it passed? OR Does it apply to Rajya Sabha?"
+
+TOPIC 4: DPDP Act 2023
+  STUDY NOTE:
+    summary: "The Digital Personal Data Protection Act,
+      passed in August 2023, is India's first comprehensive
+      law governing how personal data of citizens can be
+      collected, stored, and used by organisations, inspired
+      by but distinct from Europe's GDPR framework."
+    keyPoints:
+      → "India's FIRST comprehensive data protection law —
+        passed August 2023 after years of drafting."
+      → "Establishes the Data Protection Board of India
+        as the regulatory authority."
+      → "Citizens called 'Data Principals'; companies
+        called 'Data Fiduciaries' in the Act."
+      → "Significant penalty: Up to ₹250 crore for
+        data breaches — among highest globally."
+      → "Key difference from GDPR: No 'right to be
+        forgotten' in the same form as Europe."
+    examAngle: "Most likely: What is India's first data
+      protection law? OR When was DPDP passed?"
+
+TOPIC 5: PM Surya Ghar Muft Bijli Yojana
+  STUDY NOTE:
+    summary: "Launched in February 2024, PM Surya Ghar
+      Muft Bijli Yojana aims to install rooftop solar panels
+      on one crore households across India, providing up to
+      300 units of free electricity per month with central
+      subsidies up to ₹78,000 per household."
+    keyPoints:
+      → "Target: Install rooftop solar on 1 crore (10 million)
+        Indian homes by 2027."
+      → "Benefit: Up to 300 units of free electricity
+        per month per household after installation."
+      → "Subsidy: Government provides up to ₹78,000 per
+        household — tiered by panel capacity."
+      → "Objective: Reduce electricity bills + promote
+        renewable energy + reduce carbon footprint."
+      → "Exam angle: Often asked as 'primary objective'
+        or 'launch year' — both are 2024."
+    examAngle: "Most likely: What is the primary objective?
+      OR How many households targeted? OR Launch year?"
+
+TOPIC 6: One Nation One Election
+  STUDY NOTE:
+    summary: "The concept of simultaneous elections for
+      Lok Sabha and all State Assemblies was examined by
+      a high-level committee chaired by former President
+      Ram Nath Kovind, which submitted its report in
+      March 2024 recommending a phased implementation."
+    keyPoints:
+      → "Committee chaired by former President Ram Nath
+        Kovind — submitted report March 2024."
+      → "Proposes simultaneous elections for Lok Sabha
+        and all 28 State Assemblies."
+      → "Phase 1: Lok Sabha + State elections together;
+        Phase 2: Add local body elections within 100 days."
+      → "Argument for: Reduces cost, governance disruption,
+        and frequency of Model Code of Conduct."
+      → "Requires Constitutional Amendments — needs
+        ratification by at least 50% of State Assemblies."
+    examAngle: "Most likely: Who headed the committee?
+      OR When was report submitted? OR What is Phase 1?"
+
+TOPIC 7: Budget 2025–26 — NEW 2025 TOPIC
+  VERIFIED FACTS (verify before use):
+    Presented by: Nirmala Sitharaman
+    Theme: Viksit Bharat 2047
+    Income Tax: Zero tax up to ₹12 lakh income
+      (new tax regime — effective FY 2025–26)
+    TDS threshold raised on various categories
+    Capex: ₹11.21 lakh crore
+      (slight increase from 2024–25's ₹11.11 lakh crore)
+    Focus sectors: Agriculture, MSMEs, exports, Bihar
+    New scheme: PM Dhan Dhanya Krishi Yojana
+      → Covers 100 low-productivity agricultural districts
+    Makhana Board: Established in Bihar
+    National Manufacturing Mission announced
+    ₹500 crore for day care cancer centres
+    Special mention: Gig workers to get identity cards
+      and social security benefits
+    // VERIFY all figures against official budget document
+
+  STUDY NOTE:
+    summary: "Union Budget 2025–26, presented by Finance
+      Minister Nirmala Sitharaman on February 1, 2025,
+      focused on the Viksit Bharat 2047 vision with the
+      headline announcement of zero income tax for
+      individuals earning up to ₹12 lakh annually under
+      the new tax regime."
+    keyPoints:
+      → "Zero income tax for annual income up to ₹12 lakh
+        under new regime — biggest middle-class relief
+        in recent budgets."
+      → "Capital expenditure at ₹11.21 lakh crore —
+        infrastructure push continues from previous year."
+      → "PM Dhan Dhanya Krishi Yojana: Covers 100 low-
+        productivity agriculture districts for development."
+      → "Makhana Board established in Bihar — promotes
+        makhana (fox nut) cultivation and export."
+      → "Gig workers (Zomato, Ola, Uber drivers) to receive
+        identity cards and social security benefits."
+    examAngle: "Most likely: Income tax limit OR capex
+      figure OR name of new agriculture scheme."
+
+TOPIC 8: RBI Repo Rate Cut February 2025 — NEW 2025 TOPIC
+  VERIFIED FACTS:
+    RBI cut repo rate by 25 basis points in Feb 2025
+    New repo rate: 6.25% (from 6.50%)
+    First rate cut since May 2020
+    Governor: Sanjay Malhotra (first MPC decision as governor)
+    Reason: Inflation easing + growth support needed
+    // VERIFY exact rate and date
+
+  STUDY NOTE:
+    summary: "In February 2025, the Reserve Bank of India
+      under new Governor Sanjay Malhotra cut the repo rate
+      by 25 basis points to 6.25%, marking the first rate
+      reduction since May 2020, signalling a shift from
+      the previous tight monetary policy stance."
+    keyPoints:
+      → "Repo rate cut from 6.50% to 6.25% — reduction
+        of 25 basis points (0.25 percentage points)."
+      → "First rate cut in nearly 5 years — last cut
+        was in May 2020 during COVID-19 pandemic."
+      → "Decision taken under new RBI Governor Sanjay
+        Malhotra's first Monetary Policy Committee meeting."
+      → "Impact: Lower EMIs for home/auto loans as banks
+        typically pass on rate cuts to borrowers."
+      → "RBI stance shifted from 'withdrawal of
+        accommodation' to 'neutral' to this cut."
+    examAngle: "Most likely: What is current repo rate?
+      OR First rate cut since when? OR Current RBI governor?"
+
+TOPIC 9: Maha Kumbh 2025 — NEW 2025 TOPIC
+  VERIFIED FACTS:
+    Location: Prayagraj, Uttar Pradesh
+    Dates: January 13 – February 26, 2025
+    Held every: 12 years (Maha Kumbh); 6 years (Ardh Kumbh)
+    Significance: Confluence of Ganga, Yamuna, Saraswati
+      (Triveni Sangam)
+    Attendance: Expected 40–45 crore devotees
+      (largest human gathering on Earth)
+    UNESCO: Kumbh Mela inscribed on UNESCO Intangible
+      Cultural Heritage list since 2017
+    State government: Yogi Adityanath (CM, UP)
+    Digital Kumbh: AI-based crowd management deployed
+    // VERIFY attendance figures
+
+  STUDY NOTE:
+    summary: "Maha Kumbh 2025, held at Prayagraj from
+      January 13 to February 26, 2025, was the largest
+      human gathering on Earth, attracting an estimated
+      40–45 crore pilgrims to the Triveni Sangam — the
+      confluence of Ganga, Yamuna, and mythical Saraswati."
+    keyPoints:
+      → "Location: Prayagraj (Triveni Sangam) — confluence
+        of three rivers including mythical Saraswati."
+      → "Maha Kumbh occurs once every 12 years — last
+        was in 2013 in Prayagraj (then Allahabad)."
+      → "Expected 40–45 crore attendees — declared world's
+        largest peaceful human gathering."
+      → "Kumbh Mela inscribed on UNESCO Intangible Cultural
+        Heritage list in 2017."
+      → "Technology highlight: AI-based crowd management,
+        facial recognition, and digital lost-and-found
+        systems deployed for safety."
+    examAngle: "Most likely: Location of Maha Kumbh 2025
+      OR how often it occurs OR UNESCO status."
+
+TOPIC 10: Delhi Elections 2025 — NEW 2025 TOPIC
+  VERIFIED FACTS:
+    Date: February 5, 2025 (voting); Results: Feb 8, 2025
+    Winner: BJP (Bharatiya Janata Party)
+    BJP seats: 48 out of 70 (// VERIFY exact count)
+    AAP (Aam Aadmi Party) seats: 22 (// VERIFY)
+    Congress seats: 0 (// VERIFY)
+    Significance: AAP lost power after 10 years
+      (ruled 2015–2025 under Arvind Kejriwal)
+    New CM: Rekha Gupta (// VERIFY — first woman CM of Delhi?)
+      Actually: Parvesh Verma as CM candidate
+      // VERIFY final CM appointment
+    Voter turnout: ~60% (// VERIFY)
+
+  STUDY NOTE:
+    summary: "In the February 2025 Delhi Assembly elections,
+      the BJP ended the Aam Aadmi Party's decade-long rule
+      in Delhi, winning a decisive majority in the 70-seat
+      assembly and returning to power in the national capital
+      after 27 years."
+    keyPoints:
+      → "BJP won decisive majority — ended AAP's 10-year
+        rule (2015–2025) under Arvind Kejriwal."
+      → "70-seat Delhi Assembly — BJP won approximately
+        48 seats (verify final count)."
+      → "AAP's Arvind Kejriwal had contested from New Delhi
+        constituency — result indicates voter mood shift."
+      → "Congress won zero seats — third consecutive
+        Delhi election without a single seat."
+      → "BJP returns to Delhi government after approximately
+        27 years (last ruled 1998–2015 with interruptions)."
+    examAngle: "Most likely: Who won Delhi 2025?
+      OR How many seats did BJP win? OR Which party lost power?"
+
+TOPIC 11: Padma Awards 2025 — NEW 2025 TOPIC
+  VERIFIED FACTS (announced January 26, 2025):
+    Total awards: // VERIFY exact count
+    Padma Vibhushan recipients: // VERIFY — search required
+    Padma Bhushan recipients: // VERIFY — search required
+    Padma Shri recipients: // VERIFY — search required
+    Notable: Sharda Sinha (posthumous) — Bhojpuri folk singer
+    Notable: Osamu Suzuki (Japanese) — founder Suzuki Motors
+      received Padma Bhushan
+    Notable: Sadhguru Jaggi Vasudev — Padma Bhushan
+    // VERIFY all 2025 Padma recipients before generating
+    // questions — do not guess names
+
+  AGENT INSTRUCTION:
+    Use web search to verify 2025 Padma Award recipients
+    before writing any questions. Flag: // VERIFIED VIA SEARCH
+    on each question that uses 2025 Padma data.
+
+  STUDY NOTE:
+    summary: "Padma Awards 2025, announced on Republic Day
+      (January 26, 2025), India's second highest civilian
+      honours after Bharat Ratna, recognised achievers
+      across arts, literature, science, sports and social
+      service, with notable posthumous awards and first-time
+      international recipients."
+    keyPoints:
+      → "Three tiers: Padma Vibhushan (highest) > Padma
+        Bhushan > Padma Shri — all civilian honours."
+      → "Announced on Republic Day (January 26) every year
+        — one of the most predictable CA exam topics."
+      → "Posthumous awards are common — recipient's field
+        and contribution are always tested."
+      → "International recipients also receive Padma awards
+        — testing cross-country awareness."
+      → "Exam trap: Confusing Padma Bhushan with Padma Shri
+        — always verify the tier, not just the name."
+    examAngle: "Most likely: Who received Padma Vibhushan?
+      OR Which field did recipient X represent?"
+
+TOPIC 12: Bharat Ratna 2025 — NEW 2025 TOPIC
+  VERIFIED FACTS:
+    // VERIFY — as of early 2025, no new Bharat Ratna
+    // announced for 2025 (2024 had 5 recipients)
+    // If announced before exam: verify and add
+    // If not announced: use 2024 recipients for questions
+
+  AGENT INSTRUCTION:
+    Search for "Bharat Ratna 2025" before generating.
+    If found: generate 3 questions with // VERIFIED VIA SEARCH
+    If not found: generate 2 questions using 2024 recipients
+    with a note: "2024 Bharat Ratna — most recent available"
+
+=================================================================
+BUCKET 2 — INTERNATIONAL (Topics 13–22)
+=================================================================
+
+TOPIC 13: Sweden Joins NATO (32nd Member)
+  STUDY NOTE:
+    summary: "Sweden formally joined NATO as its 32nd member
+      in March 2024, ending over 200 years of military
+      non-alignment, a historic shift triggered by Russia's
+      invasion of Ukraine in 2022 which fundamentally
+      altered Sweden's security calculus."
+    keyPoints:
+      → "Sweden joined NATO on March 7, 2024 — 32nd member
+        of the North Atlantic Treaty Organisation."
+      → "Finland joined as 31st member in April 2023 —
+        both Nordic countries abandoned neutrality together."
+      → "200+ years of Swedish neutrality ended — last
+        involved in war in 1814."
+      → "Russia's Ukraine invasion (Feb 2022) was the
+        direct trigger for both applications."
+      → "Turkey initially blocked Sweden's bid citing
+        Kurdish militant concerns — later withdrew objection."
+    examAngle: "Most likely: Which country is NATO's 32nd
+      member? OR In which year did Sweden join?"
+
+TOPIC 14: BRICS Expansion 2024
+  STUDY NOTE:
+    summary: "BRICS expanded in January 2024, adding Egypt,
+      Ethiopia, Iran, Saudi Arabia, and the UAE as full
+      members, growing from 5 to 10 members and representing
+      a significant shift in the global balance of economic
+      and political power away from Western institutions."
+    keyPoints:
+      → "5 new members joined January 2024: Egypt, Ethiopia,
+        Iran, Saudi Arabia, UAE — BRICS becomes BRICS+."
+      → "Original 5: Brazil, Russia, India, China, South
+        Africa — acronym BRICS coined by Goldman Sachs 2001."
+      → "Combined GDP of expanded BRICS exceeds G7 in
+        purchasing power parity terms."
+      → "De-dollarisation: BRICS push to reduce dependence
+        on US dollar in international trade."
+      → "India's role: Balancing BRICS membership with
+        QUAD and Western partnerships simultaneously."
+    examAngle: "Most likely: How many members does BRICS
+      have now? OR Which countries joined in 2024?"
+
+TOPIC 15: G20 2023 — India's Presidency
+  STUDY NOTE:
+    summary: "India's G20 presidency from December 2022 to
+      November 2023 culminated in the New Delhi Summit in
+      September 2023, where the African Union was admitted
+      as a permanent member and the India-Middle East-Europe
+      Corridor (IMEC) was announced as a landmark outcome."
+    keyPoints:
+      → "Theme: Vasudhaiva Kutumbakam — One Earth, One Family,
+        One Future (from Maha Upanishad)."
+      → "Key outcome: African Union (55 nations) admitted
+        as permanent G20 member — G20 becomes G21 effectively."
+      → "IMEC announced: India-Middle East-Europe trade
+        corridor as alternative to China's Belt and Road."
+      → "New Delhi Declaration adopted by consensus —
+        including rare agreement on Ukraine language."
+      → "India used presidency to amplify voice of Global
+        South — hosted 'Voice of Global South' summits."
+    examAngle: "Most likely: G20 theme? OR Which new body
+      joined G20? OR What is IMEC?"
+
+TOPIC 16: India-Pakistan Geopolitical 2025 — NEW 2025 TOPIC
+  VERIFIED FACTS:
+    Pahalgam Terror Attack: April 22, 2025
+      Location: Baisaran valley, Pahalgam, J&K
+      Casualties: 26 tourists killed
+      Perpetrators: Pakistan-based terrorist group
+      (The Resistance Front — linked to Lashkar-e-Taiba)
+    India's Response — Operation Sindoor: May 7, 2025
+      Indian Air Force struck 9 terrorist infrastructure
+      targets in Pakistan and Pakistan-occupied Kashmir
+      Targets: Bahawalpur, Muridke, Muzaffarabad,
+        Kotli, Bagh (PoK)
+      India called it: "Focused, measured, non-escalatory"
+      Pakistan response: Claimed Indian missiles hit
+        civilian areas; denied terrorist camps
+    Ceasefire: May 10, 2025
+      Announced by Pakistan's DGMO
+      India confirmed cessation of hostilities
+    Diplomatic fallout:
+      India suspended Indus Waters Treaty
+      Pakistan closed airspace to Indian airlines
+      Both countries reduced diplomatic staff
+    International reaction:
+      USA urged restraint (Secretary Rubio mediated)
+      UN called for de-escalation
+      China supported Pakistan's "sovereignty"
+    // ALL FACTS: VERIFY against latest news before use
+
+  STUDY NOTE:
+    summary: "Following the Pahalgam terror attack on
+      April 22, 2025, that killed 26 tourists, India
+      launched Operation Sindoor on May 7, 2025, striking
+      terrorist infrastructure in Pakistan and PoK,
+      marking India's most significant military action
+      across the border since 1971."
+    keyPoints:
+      → "Pahalgam attack: April 22, 2025 — 26 tourists
+        killed in Baisaran valley, J&K by Pakistan-linked
+        terrorists."
+      → "Operation Sindoor: India struck 9 terror targets
+        in Pakistan + PoK on May 7, 2025 — IAF operation."
+      → "India described strikes as 'focused, measured,
+        non-escalatory' — targeting only terror infrastructure."
+      → "Ceasefire announced May 10, 2025 — India suspended
+        Indus Waters Treaty as diplomatic pressure."
+      → "International dimension: USA mediated, China sided
+        with Pakistan, UN called for restraint."
+    examAngle: "Most likely: What was Operation Sindoor?
+      OR When was Pahalgam attack? OR India's diplomatic
+      response to 2025 Pakistan tensions?"
+
+TOPIC 17: COP29 — Baku 2024
+  STUDY NOTE:
+    summary: "COP29, the UN climate conference held in
+      Baku, Azerbaijan in November 2024, reached a landmark
+      climate finance agreement committing developed nations
+      to provide 300 billion dollars annually to developing
+      countries by 2035 for climate adaptation and mitigation."
+    keyPoints:
+      → "COP29 held in Baku, Azerbaijan — November 2024."
+      → "Key outcome: New Collective Quantified Goal (NCQG)
+        — $300 billion/year from developed to developing
+        nations by 2035."
+      → "Developing nations (including India) demanded
+        $1 trillion — $300B seen as insufficient."
+      → "COP = Conference of the Parties to the UNFCCC
+        (UN Framework Convention on Climate Change)."
+      → "COP30 will be held in Belém, Brazil in 2025."
+    examAngle: "Most likely: Where was COP29? OR What was
+      the climate finance commitment at COP29?"
+
+TOPIC 18: QUAD 2024 Summit
+  STUDY NOTE:
+    summary: "The 2024 QUAD Leaders' Summit was hosted by
+      US President Biden in Wilmington, Delaware in September
+      2024, focusing on Indo-Pacific security, clean energy,
+      semiconductor supply chains, and countering China's
+      growing assertiveness in the region."
+    keyPoints:
+      → "QUAD members: India, USA, Japan, Australia —
+        Quadrilateral Security Dialogue."
+      → "2024 Summit: Wilmington, Delaware, USA —
+        hosted by President Biden."
+      → "Key agenda: Indo-Pacific stability, clean energy
+        transition, critical technology supply chains."
+      → "India's PM Modi attended — committed to QUAD's
+        'free, open, prosperous Indo-Pacific' vision."
+      → "China not a QUAD member — views it as an
+        'Asian NATO' — India denies this characterisation."
+    examAngle: "Most likely: QUAD members list OR
+      Where was 2024 summit? OR China's view of QUAD?"
+
+=================================================================
+BUCKET 3 — BUSINESS & ECONOMY (Topics 19–28)
+=================================================================
+
+TOPIC 19: HDFC-HDFC Bank Merger
+  STUDY NOTE:
+    summary: "The merger of HDFC Ltd with HDFC Bank, completed
+      in July 2023, created India's largest private sector
+      bank and the world's fourth largest bank by market
+      capitalisation, consolidating India's biggest mortgage
+      lender with its second largest private bank."
+    keyPoints:
+      → "Merger completed: July 1, 2023 — HDFC Ltd merged
+        INTO HDFC Bank (bank absorbed parent company)."
+      → "Created India's largest private sector bank by
+        assets, deposits and market capitalisation."
+      → "HDFC Ltd shareholders received 42 HDFC Bank shares
+        for every 25 HDFC Ltd shares held."
+      → "Combined entity has over ₹25 lakh crore in assets
+        — significant milestone for Indian banking."
+      → "Exam angle: Often asked direction — HDFC Ltd
+        merged INTO HDFC Bank (not the other way)."
+    examAngle: "Most likely: Which merger created India's
+      largest private bank? OR When was merger completed?"
+
+TOPIC 20: India GDP — 5th Largest Economy
+  STUDY NOTE:
+    summary: "India became the world's 5th largest economy
+      by nominal GDP, surpassing the United Kingdom and
+      France, with a GDP growth rate of approximately 8.2%
+      in 2023–24 — making it the fastest growing major
+      economy in the world for that year."
+    keyPoints:
+      → "India = 5th largest economy globally (nominal GDP)
+        — surpassed UK (2022) and France."
+      → "GDP growth 2023–24: ~8.2% — fastest among all
+        G20 major economies."
+      → "Top 5 economies: USA, China, Germany, Japan, India
+        (order varies by year — verify)."
+      → "India aims to be 3rd largest economy by 2027–2030
+        — overtaking Germany and Japan."
+      → "PPP basis: India already 3rd largest economy
+        (after USA and China) — different metric."
+    examAngle: "Most likely: India's rank in global economy?
+      OR GDP growth rate 2023–24? OR Which countries surpassed?"
+
+TOPIC 21: UPI Milestones and Digital Payments
+  STUDY NOTE:
+    summary: "India's Unified Payments Interface (UPI),
+      launched by NPCI in 2016, has become the world's
+      largest real-time payments system, processing over
+      100 billion transactions annually and being adopted
+      by countries including France, UAE, Singapore,
+      and Sri Lanka."
+    keyPoints:
+      → "UPI launched: April 2016 by NPCI (National
+        Payments Corporation of India)."
+      → "World's largest real-time digital payment system —
+        more transactions than Visa in India."
+      → "International expansion: UPI accepted in France,
+        UAE, Singapore, UK, Mauritius, Sri Lanka."
+      → "UPI 123Pay: Allows feature phone users without
+        internet to use UPI via IVR."
+      → "India processes ~40–50% of world's real-time
+        digital transactions through UPI."
+    examAngle: "Most likely: Who launched UPI? OR Which year?
+      OR Which international location accepts UPI?"
+
+TOPIC 22: Air India — Tata Acquisition
+  STUDY NOTE:
+    summary: "The Tata Group completed its acquisition of
+      Air India from the Government of India in January 2022,
+      ending 69 years of government ownership and beginning
+      a transformation of the airline with new aircraft
+      orders including 470 planes from Airbus and Boeing."
+    keyPoints:
+      → "Tata Group acquired Air India in January 2022
+        — ended 69-year government ownership since 1953."
+      → "Air India was originally founded by JRD Tata in 1932
+        — Tata reclaimed its original airline."
+      → "Largest aircraft order in Indian aviation history:
+        470 planes (250 Airbus + 220 Boeing) placed in 2023."
+      → "Tata now operates: Air India, Air India Express,
+        AIX Connect, and has stake in Vistara (now merged)."
+      → "Vistara (SIA + Tata JV) merged with Air India
+        in November 2024 — // VERIFY date."
+    examAngle: "Most likely: Who acquired Air India?
+      OR When? OR Original founder of Air India?"
+
+TOPIC 23: Reliance-Disney Merger — NEW 2025 TOPIC
+  VERIFIED FACTS:
+    Merger completed: February 2025 (// VERIFY exact date)
+    Combined entity: Reliance Industries (Jio) + Disney India
+    New entity name: JioHotstar (or Jio-Star)
+      // VERIFY final brand name
+    OTT platforms merged: JioCinema + Disney+ Hotstar
+    Sports rights: Combined entity holds IPL + ICC + Star
+      Sports broadcast rights
+    Valuation: ~$8.5 billion (// VERIFY)
+    Leadership: // VERIFY CEO appointment
+    This creates India's largest media and entertainment company
+
+  STUDY NOTE:
+    summary: "The merger of Reliance Industries' media
+      assets with The Walt Disney Company's India operations,
+      completed in early 2025, created India's largest
+      media and entertainment conglomerate, combining IPL
+      and ICC broadcast rights under one platform."
+    keyPoints:
+      → "JioCinema (Reliance) merged with Disney+ Hotstar
+        to create India's largest OTT platform."
+      → "Combined sports rights: IPL (cricket) + ICC
+        tournaments + Star Sports network."
+      → "Reliance holds majority stake (~60%) in the
+        combined entity — Disney is minority partner."
+      → "Estimated subscriber base: 500+ million users
+        — largest streaming audience in the world."
+      → "Competition impact: Directly challenges Netflix,
+        Amazon Prime, and Sony LIV in India."
+    examAngle: "Most likely: Which companies merged?
+      OR What does combined entity control?
+      OR Name of merged OTT platform?"
+
+TOPIC 24: India AI Mission 2024
+  STUDY NOTE:
+    summary: "The India AI Mission, approved by the Union
+      Cabinet in March 2024 with a budget of ₹10,372 crore,
+      aims to build public AI infrastructure including a
+      10,000 GPU compute facility, develop indigenous AI
+      models, and position India as a global AI powerhouse."
+    keyPoints:
+      → "Budget: ₹10,372 crore — approved March 2024
+        by Union Cabinet."
+      → "Key deliverable: 10,000+ GPU compute facility
+        for AI research and startups."
+      → "IndiaAI portal: Single platform for AI resources,
+        datasets, and model access."
+      → "Focus: Developing AI in Indian languages —
+        complements the Bhashini translation platform."
+      → "Global context: India's response to US CHIPS Act
+        and China's AI investment surge."
+    examAngle: "Most likely: Budget of India AI Mission?
+      OR When approved? OR What is the GPU target?"
+
+=================================================================
+BUCKET 4 — SCIENCE & DEFENCE (Topics 25–35)
+=================================================================
+
+TOPIC 25: Chandrayaan-3 Complete
+  STUDY NOTE:
+    summary: "Chandrayaan-3's successful soft landing on
+      the Moon's south pole on August 23, 2023 made India
+      the first country to land near the lunar south pole
+      and the fourth country overall to achieve a soft
+      landing on the Moon, with the Pragyan rover operating
+      for 14 Earth days collecting scientific data."
+    keyPoints:
+      → "Landing date: August 23, 2023 — declared National
+        Space Day in India henceforth."
+      → "Landing site: Shiv Shakti Point — Chandrayaan-2
+        crash site named Tiranga Point nearby."
+      → "Lander: Vikram; Rover: Pragyan —
+        Vikram = bravery; Pragyan = wisdom (Sanskrit)."
+      → "India = 4th country to land on Moon (after USA,
+        USSR, China) and FIRST near south pole."
+      → "Scientific find: Confirmed presence of sulphur
+        on Moon's surface — near south pole."
+    examAngle: "Most likely: Landing date OR site name
+      OR lander/rover names OR India's rank?"
+
+TOPIC 26: Aditya-L1 Solar Mission
+  STUDY NOTE:
+    summary: "India's first solar observation mission,
+      Aditya-L1, launched by ISRO on September 2, 2023,
+      successfully reached its destination at the L1
+      Lagrange point between Earth and Sun in January 2024,
+      from where it continuously observes the Sun without
+      any eclipses."
+    keyPoints:
+      → "Launch: September 2, 2023 — just 10 days after
+        Chandrayaan-3's historic Moon landing."
+      → "Destination: L1 Lagrange point — 1.5 million km
+        from Earth towards the Sun."
+      → "Advantage of L1: Can observe Sun continuously
+        without Earth blocking the view."
+      → "Primary objectives: Study solar corona, solar wind,
+        and solar flares that affect Earth's satellites."
+      → "Named after Aditya — Sanskrit for Sun; carries
+        7 scientific payloads."
+    examAngle: "Most likely: Purpose of Aditya-L1?
+      OR Where did it reach? OR Launch date?"
+
+TOPIC 27: Agni-5 MIRV Test
+  STUDY NOTE:
+    summary: "India successfully tested the Agni-5 ballistic
+      missile with MIRV technology in March 2024 under
+      Mission Divyastra, making India the sixth country
+      to possess Multiple Independently Targetable Re-Entry
+      Vehicle capability alongside USA, Russia, UK, France,
+      and China."
+    keyPoints:
+      → "MIRV: Multiple Independently Targetable Re-Entry
+        Vehicle — one missile, multiple warheads,
+        different targets."
+      → "Test name: Mission Divyastra — conducted March
+        2024 by DRDO."
+      → "Agni-5 range: 5,000+ km — can reach most of
+        Asia and parts of Europe."
+      → "India = 6th MIRV nation: USA, Russia, UK, France,
+        China, now India."
+      → "Strategic significance: Dramatically enhances
+        India's nuclear deterrence capability."
+    examAngle: "Most likely: MIRV full form OR Mission
+      Divyastra OR India's rank among MIRV nations?"
+
+TOPIC 28: DRDO Ugram Rifle
+  STUDY NOTE:
+    summary: "The Ugram, an indigenous assault rifle
+      developed by DRDO, was launched in 2024 to replace
+      the Russian-origin AK-47 series rifles in the Indian
+      armed forces, firing 7.62×39mm ammunition and
+      manufactured domestically to support the
+      Atmanirbhar Bharat initiative."
+    keyPoints:
+      → "Ugram developed by DRDO — launched 2024 for
+        Indian armed forces use."
+      → "Designed to replace AK-47 and its variants
+        currently used by Indian Army."
+      → "Calibre: 7.62×39mm — same as AK-47 for
+        ammunition compatibility during transition."
+      → "Part of Atmanirbhar Bharat in defence —
+        reduces dependence on imported small arms."
+      → "DRDO also develops: Tejas aircraft, Arjun tank,
+        Akash missile — all indigenous systems."
+    examAngle: "Most likely: Who developed Ugram?
+      OR What does it replace? OR Which ministry/org?"
+
+TOPIC 29: Gaganyaan Update 2025 — NEW 2025 TOPIC
+  VERIFIED FACTS:
+    Programme: India's first crewed spaceflight
+    Crew: 4 astronaut-designates (Gaganyatris) selected
+      Names: Group Captain Prashanth Balakrishnan Nair,
+      Group Captain Ajit Krishnan, Group Captain
+      Angad Pratap, Wing Commander Shubhanshu Shukla
+      // VERIFY names
+    Test Vehicle Abort Mission (TV-D1): October 2023 SUCCESS
+    Uncrewed mission (LVM3): // VERIFY launch date 2025
+    Human flight target: 2026 (// VERIFY revised date)
+    Shubhanshu Shukla: Selected for ISS mission (Axiom)
+      → First Indian on ISS (// VERIFY)
+
+  STUDY NOTE:
+    summary: "Gaganyaan, ISRO's ambitious first human
+      spaceflight programme, selected four Indian Air Force
+      pilots as astronaut-designates (Gaganyatris), with
+      Wing Commander Shubhanshu Shukla also selected for
+      a separate mission to the International Space Station
+      as India's first astronaut aboard the ISS."
+    keyPoints:
+      → "4 Gaganyatris (astronaut candidates) selected —
+        all Indian Air Force test pilots."
+      → "TV-D1 (Test Vehicle Abort test): October 2023 —
+        crew escape system tested successfully."
+      → "Shubhanshu Shukla: Selected for Axiom Space
+        Mission to ISS — first Indian on ISS."
+      → "Human spaceflight target: 2026 — after two
+        uncrewed test missions first."
+      → "Training: Gaganyatris trained in Russia and
+        India — suits made by ISRO."
+    examAngle: "Most likely: Name of programme OR
+      Number of Gaganyatris OR Shubhanshu Shukla's mission?"
+
+TOPIC 30: Nobel Prizes 2024 Complete
+  STUDY NOTE:
+    summary: "The 2024 Nobel Prizes saw AI dominate with
+      Physics and Chemistry both awarded for AI-related
+      breakthroughs, while the Peace Prize went to Japanese
+      atomic bomb survivors, Literature to South Korean
+      novelist Han Kang, and Medicine for microRNA discovery."
+    keyPoints:
+      → "Physics: Hopfield & Hinton — neural networks and
+        AI foundations; Hinton = 'Godfather of AI'."
+      → "Chemistry: Baker, Hassabis, Jumper — protein
+        structure prediction using AlphaFold AI."
+      → "Peace: Nihon Hidankyo — Japanese A-bomb survivor
+        group advocating nuclear disarmament."
+      → "Literature: Han Kang (South Korea) — first South
+        Korean and first Asian woman to win."
+      → "Medicine: Ambros & Ruvkun — microRNA discovery
+        that regulates gene expression."
+    examAngle: "Most likely: Who won Nobel Peace 2024?
+      OR What field was Hinton in? OR Han Kang's country?"
+
+=================================================================
+BUCKET 5 — AWARDS & SPORTS (Topics 31–50)
+=================================================================
+
+TOPIC 31: ICC Champions Trophy 2025 — NEW 2025 TOPIC
+  VERIFIED FACTS:
+    Host: Pakistan (primary) + UAE (India's matches)
+    Dates: February 19 – March 9, 2025
+    Format: 8 teams, round robin + knockout
+    India's matches: Played in Dubai (not Pakistan)
+      Reason: India-Pakistan diplomatic tensions
+    Winner: India
+      (// VERIFY — search for final result)
+    Final venue: Dubai (// VERIFY)
+    Player of Tournament: // VERIFY
+    India beat: // VERIFY semifinal and final opponents
+    Note: India-Pakistan match played in Dubai —
+      highest-watched cricket match of 2025
+
+  STUDY NOTE:
+    summary: "The ICC Champions Trophy 2025, hosted by
+      Pakistan with India playing their matches in Dubai,
+      saw India win their third Champions Trophy title,
+      with the final played in Dubai due to India's refusal
+      to travel to Pakistan for security reasons."
+    keyPoints:
+      → "Host: Pakistan — first ICC event hosted by Pakistan
+        since 1996 World Cup (co-hosted)."
+      → "India played all matches in Dubai — political
+        tensions prevented India touring Pakistan."
+      → "India won the 2025 Champions Trophy — (verify
+        opponents and scores)."
+      → "Tournament had a hybrid model: Pakistan hosted
+        all matches except India's — political precedent."
+      → "India's previous Champions Trophy wins: 2002
+        (joint with Sri Lanka) and 2013."
+    examAngle: "Most likely: Who won Champions Trophy 2025?
+      OR Who hosted? OR Why did India play in Dubai?"
+
+TOPIC 32: Paris Olympics 2024 — India Complete
+  STUDY NOTE:
+    summary: "India's contingent at the Paris Olympics 2024
+      won six medals — one silver and five bronze — with
+      Manu Bhaker becoming the first Indian woman to win
+      two medals at a single Olympics, and Neeraj Chopra
+      defending his athletics medal from Tokyo."
+    keyPoints:
+      → "Total medals: 6 (0 Gold, 1 Silver, 5 Bronze)
+        — silver by Neeraj Chopra in javelin."
+      → "Manu Bhaker: 2 bronze medals — 10m Air Pistol
+        (individual + mixed team with Sarabjot Singh)."
+      → "First Indian woman to win 2 medals at one Olympics
+        — Manu Bhaker (shooting)."
+      → "Swapnil Kusale: Bronze — 50m Rifle 3 Positions
+        (first Indian to win in this event)."
+      → "Aman Sehrawat: Bronze — Wrestling 57kg freestyle
+        (youngest Indian Olympic medalist at 21)."
+    examAngle: "Most likely: Who won silver? OR Manu Bhaker's
+      achievement? OR Total medal count?"
+
+TOPIC 33: D. Gukesh — World Chess Champion 2024
+  STUDY NOTE:
+    summary: "Dommaraju Gukesh, at age 18, became the
+      youngest World Chess Champion in history in December
+      2024, defeating China's Ding Liren in the World
+      Chess Championship held in Singapore, becoming
+      India's second world chess champion after
+      Viswanathan Anand."
+    keyPoints:
+      → "Youngest World Chess Champion ever — at age 18
+        years (broke Garry Kasparov's record)."
+      → "Defeated: Ding Liren (China) in Singapore,
+        December 2024 — 14 game match."
+      → "India's 2nd World Chess Champion after
+        Viswanathan Anand (who won 5 times: 2000–2012)."
+      → "Game 14 was decisive — Ding made a blunder
+        in a drawn endgame position."
+      → "India is a chess superpower: Gukesh, Pragg,
+        Arjun Erigaisi all in world top 10."
+    examAngle: "Most likely: Who is youngest World Chess
+      Champion? OR Who did Gukesh defeat? OR India's rank?"
+
+TOPIC 34: Neeraj Chopra — Paris Silver
+  STUDY NOTE:
+    summary: "Neeraj Chopra won silver in the javelin throw
+      at Paris Olympics 2024 with a throw of 89.45 metres,
+      successfully defending an Olympic medal after winning
+      gold at Tokyo 2020, making him India's most
+      decorated track-and-field athlete."
+    keyPoints:
+      → "Paris 2024: Silver medal — 89.45m throw; Gold
+        won by Arshad Nadeem (Pakistan) with 92.97m."
+      → "Tokyo 2020: Gold medal — 87.58m — India's first
+        Olympic gold in athletics."
+      → "Only Indian to win medals at two consecutive
+        Olympics in track and field."
+      → "Arshad Nadeem (Pakistan) set Olympic record at
+        Paris 2024 — significant regional rivalry."
+      → "Neeraj Chopra: Rajiv Gandhi Khel Ratna awardee,
+        Padma Shri, Padma Bhushan."
+    examAngle: "Most likely: What medal at Paris?
+      OR Who won gold in javelin at Paris?
+      OR Neeraj's Tokyo vs Paris comparison?"
+
+TOPIC 35: Manu Bhaker — Double Bronze
+  STUDY NOTE:
+    summary: "Manu Bhaker won two bronze medals at Paris
+      Olympics 2024 in shooting — first in 10m Air Pistol
+      individual event, then in 10m Air Pistol mixed team
+      event with Sarabjot Singh, becoming the first Indian
+      woman athlete to win two medals at a single Olympics."
+    keyPoints:
+      → "2 bronze medals at Paris 2024 — only Indian
+        to win multiple medals at one Olympics."
+      → "Events: 10m Air Pistol (individual) + 10m Air
+        Pistol mixed team (with Sarabjot Singh)."
+      → "First Indian woman to win 2 medals at single
+        Olympics — historic achievement."
+      → "Age: 22 at Paris 2024 — competed in Tokyo 2020
+        too but gun malfunctioned (no medal)."
+      → "Previously won Gold at Commonwealth Games 2018
+        and World Championship medals."
+    examAngle: "Most likely: How many medals Manu won?
+      OR First Indian woman to do what?
+      OR Her partner in mixed team event?"
+
+TOPIC 36: Virat Kohli / Rohit Sharma Retirements
+  — NEW 2025 TOPIC
+  VERIFIED FACTS:
+    Rohit Sharma: Retired from Test cricket — April 2025
+      // VERIFY exact date and announcement
+    Virat Kohli: Retired from Test cricket — April 2025
+      // VERIFY — announced around same time as Rohit
+    Both continued in T20I / ODI (// VERIFY current status)
+    Jasprit Bumrah named Test captain (// VERIFY)
+    India's Test cricket era transition — significant
+    // Verify all retirements before generating questions
+
+  STUDY NOTE:
+    summary: "April 2025 marked a watershed moment in
+      Indian cricket as both Rohit Sharma and Virat Kohli
+      announced their retirement from Test cricket, ending
+      a golden era of Indian batting and triggering
+      a significant transition in India's Test team
+      leadership and composition."
+    keyPoints:
+      → "Rohit Sharma: Retired from Tests April 2025 —
+        led India to T20 World Cup 2024 title."
+      → "Virat Kohli: Retired from Tests April 2025 —
+        74 Test centuries, 8,848 runs as captain."
+      → "Both remain available for limited-overs cricket
+        (ODI/T20I) — (verify current status)."
+      → "Jasprit Bumrah likely Test captain going forward
+        — (verify appointment)."
+      → "Era end: Kohli-Rohit era spanned 2011–2025 —
+        India rose to top of Test rankings."
+    examAngle: "Most likely: When did Kohli/Rohit retire
+      from Tests? OR Who is new Test captain?"
+
+TOPIC 37: Australian Open 2025 — NEW 2025 TOPIC
+  VERIFIED FACTS:
+    Dates: January 12–26, 2025
+    Men's Singles Winner: Jannik Sinner (Italy)
+      Defeated: Alexander Zverev (Germany) in final
+    Women's Singles Winner: Madison Keys (USA)
+      Defeated: Aryna Sabalenka (Belarus) in final
+    Sinner: Defending champion (won 2024 too)
+    Keys: First Grand Slam title at age 29
+    // VERIFY all results
+
+  STUDY NOTE:
+    summary: "Australian Open 2025 saw Jannik Sinner
+      of Italy defend his title by defeating Alexander
+      Zverev, while Madison Keys of USA won her first
+      Grand Slam title defeating world number one
+      Aryna Sabalenka in a major upset."
+    keyPoints:
+      → "Men's winner: Jannik Sinner (Italy) — defending
+        champion, world No. 1 heading into 2025."
+      → "Women's winner: Madison Keys (USA) — first Grand
+        Slam title at age 29 in an upset."
+      → "Sinner defeated Zverev in final; Keys defeated
+        Sabalenka (world No. 1) in final."
+      → "Held annually in Melbourne, Australia — first
+        Grand Slam of the calendar year."
+      → "Sinner was also US Open 2024 champion —
+        dominant player across surfaces."
+    examAngle: "Most likely: Who won Australian Open 2025
+      men's/women's? OR Where is Australian Open held?"
+
+TOPIC 38–50 — Remaining high priority topics:
+  Generate study notes + flashcards for:
+
+  TOPIC 38: Bharat Ratna 2024 (LK Advani + 4 posthumous)
+  TOPIC 39: Nobel Peace 2023 — Narges Mohammadi
+  TOPIC 40: Chandrayaan-3 — India's National Space Day
+  TOPIC 41: BNS/BNSS/BSA — Three new criminal laws
+  TOPIC 42: India GDP — Fastest growing major economy
+  TOPIC 43: G20 2024 — Brazil, Rio de Janeiro
+  TOPIC 44: Manu Bhaker — Paris 2024 double bronze
+  TOPIC 45: India T20 World Cup 2024 — vs South Africa
+  TOPIC 46: India-Middle East-Europe Corridor (IMEC)
+  TOPIC 47: WTO DG — Ngozi Okonjo-Iweala (first woman)
+  TOPIC 48: mRNA vaccine — Nobel Medicine 2023
+  TOPIC 49: AlphaFold — Nobel Chemistry 2024
+  TOPIC 50: XPoSat — India's X-ray astronomy mission
+
+  For each of Topics 38–50:
+  Apply the same study note + flashcard format as Topics 1–37.
+  Use facts from the VERIFIED FACTS LISTS in previous prompts.
+  Do not repeat questions already generated — only add
+  study notes and flashcards if questions already exist.
+
+---
+
+## COMPLETE DATA SCHEMA FOR LEARNING CONTENT
+
+// Study Note schema
+export const studyNoteSchema = {
+  id: "sn-001",                    // sn- prefix
+  topicNumber: 1,                  // 1-50
+  title: "16th Finance Commission",
+  caTag: "national-polity",
+  topicYear: 2023,                 // or "static"
+  examTags: ["MH-CET", "CUET"],
+  summary: "40-60 word overview paragraph",
+  keyPoints: [
+    "Point 1: 15-25 words — WHAT + WHY IT MATTERS",
+    "Point 2: ...",
+    "Point 3: ...",
+    "Point 4: ...",
+    "Point 5: ..."
+  ],
+  examAngle: "Most likely asked as: ...",
+  displayMode: "study-note",       // triggers reading card UI
+  showBeforeTopicId: "ca-np-001"   // ID of first question
+                                   // in this topic
+}
+
+// Briefing Flashcard schema
+export const briefingFlashcardSchema = {
+  id: "bf-001",                    // bf- prefix
+  topicNumber: 1,                  // 1-50
+  term: "16th Finance Commission",
+  headline: "Dr. Panagariya leads body deciding tax
+             sharing for 2026-2031",
+  caTag: "national-polity",
+  examTags: ["MH-CET", "CUET"],
+  points: [
+    "Chairman: Dr. Arvind Panagariya (2023 appointment)",
+    "Mandate: Tax devolution between Centre and States",
+    "Period covered: 2026 to 2031",
+    "Article 280: Constitutional basis for Finance Commission",
+    "15th FC chairman was NK Singh — exam trap distractor"
+  ],
+  memoryHook: "PAY 26-31: Panagariya Advises You for
+               2026 to 2031",
+  likelyQuestion: "Who is Chairman of 16th Finance Commission?",
+  displayMode: "briefing-flashcard"
+}
+
+---
+
+## QUALITY GATES
+
+GATE 1 — STUDY NOTE QUALITY:
+  [ ] Summary is exactly 40–60 words — no more, no less
+  [ ] Exactly 5 key points per topic — not 4, not 6
+  [ ] Each key point is 15–25 words
+  [ ] Every point contains both WHAT and WHY IT MATTERS
+  [ ] examAngle names the single most likely question type
+  [ ] No point repeats information from another point
+
+GATE 2 — FLASHCARD QUALITY:
+  [ ] Headline is one punchy sentence under 15 words
+  [ ] Exactly 5 bullet points — each under 15 words
+  [ ] memoryHook is clever, not forced
+  [ ] likelyQuestion is a real exam-style question
+  [ ] Points are ordered: most important first
+
+GATE 3 — FACTUAL ACCURACY:
+  [ ] All 2025 facts verified via search before use
+  [ ] Operation Sindoor facts cross-checked
+  [ ] Cricket results (Champions Trophy) verified
+  [ ] Australian Open 2025 results verified
+  [ ] Rohit/Kohli retirement status verified
+  [ ] Padma Awards 2025 recipients verified
+  [ ] RBI repo rate current value verified
+  [ ] Delhi 2025 election results verified
+  [ ] Maha Kumbh dates verified
+
+GATE 4 — SCHEMA COMPLIANCE:
+  [ ] All study notes: id prefix "sn-"
+  [ ] All briefing flashcards: id prefix "bf-"
+  [ ] Both formats present for all 50 topics
+  [ ] showBeforeTopicId correctly references first
+      question ID for that topic
+  [ ] caTag present on every item
+  [ ] displayMode field present on every item
+
+GATE 5 — COVERAGE:
+  [ ] All 50 topics have BOTH formats generated
+  [ ] Topics 1–35: enhanced from existing content
+  [ ] Topics 36–50: new 2025 additions
+  [ ] No topic has only a flashcard without a study note
+  [ ] No topic has only a study note without a flashcard
+
+---
+
+## OUTPUT SEQUENCE
+
+STEP 1: Plan Artifact
+  - List all 50 topics with caTag assignment
+  - Mark which are new (2025) vs refreshed (existing)
+  - List all facts requiring web search verification
+  WAIT for human approval
+
+STEP 2: Verification Round
+  - Search web for: 2025 Padma Awards list
+  - Search web for: ICC Champions Trophy 2025 winner
+  - Search web for: Delhi election 2025 final results
+  - Search web for: Australian Open 2025 results
+  - Search web for: Rohit Sharma Virat Kohli Test retirement
+  - Search web for: Bharat Ratna 2025 announcement
+  - Search web for: RBI repo rate February 2025
+  - Report all verified facts before writing content
+  WAIT for human review of verified facts
+
+STEP 3: ca-2025-updates.data.js
+  → New questions for Topics 7,8,9,10,11,12,16,23,
+    29,31,36,37 (all new 2025 topics) → WAIT
+
+STEP 4: ca-study-notes.data.js
+  → Topics 1–25 study notes → WAIT
+  → Topics 26–50 study notes → WAIT
+  → Complete file → WAIT
+
+STEP 5: ca-briefing-flashcards.data.js
+  → Topics 1–25 flashcards → WAIT
+  → Topics 26–50 flashcards → WAIT
+  → Complete file → WAIT
+
+STEP 6: Updated index.js
+  → Add all new files to exports
+  → Confirm all variable names match
+
+---
+
+## ANTI-HALLUCINATION RULES
+
+1. OPERATION SINDOOR: This is a 2025 event. Verify every
+   detail before including. Do not add casualty figures,
+   specific aircraft types, or diplomatic outcomes unless
+   verified via search.
+
+2. CHAMPIONS TROPHY 2025: Search for the winner before
+   writing a single question. Do not assume India won
+   based on the study note template — verify the result.
+
+3. CRICKET RETIREMENTS: Verify Kohli and Rohit Test
+   retirement announcements are confirmed before using.
+   If unconfirmed — flag // VERIFY and do not generate
+   questions about retirement dates.
+
+4. PADMA 2025: Do not name any recipient without
+   verification. Use // VERIFIED VIA SEARCH on each
+   question that references 2025 Padma recipients.
+
+5. MEMORY HOOKS: Must be genuinely helpful, not forced.
+   If you cannot create a natural mnemonic — write
+   "No hook needed — fact is memorable on its own."
+   Do NOT force a bad acronym.
+
+6. STUDY NOTE WORD COUNT: Count the words in the summary.
+   If it is not between 40 and 60 words — rewrite it.
+   Do not approximate.
+
+7. KEY POINTS ORDER: Always lead with the single most
+   testable fact in Point 1. The exam angle should
+   align with Point 1 always.
+```
+
+---
+
+## What This Prompt Delivers
+
+| Deliverable | Count |
+|---|---|
+| New 2025 topics added | 15 |
+| Topics refreshed with learning content | 35 |
+| Study notes generated | 50 |
+| Briefing flashcards generated | 50 |
+| New CA questions (2025 topics) | ~60 |
+| Total learning items | 160 |
+| Verify flags requiring web search | 12 |
+
+The verify-before-write step in STEP 2 is the most important safeguard — especially for Operation Sindoor, Champions Trophy, and the 2025 election results, all of which happened after most training data cutoffs and must be confirmed via live search before any question is written.

@@ -1,0 +1,566 @@
+// src/data/general-aptitude/general-knowledge.data.js
+// MAH BBA CET + CUET GAT UNIFIED MODULE
+// SCHEMA VALIDATED AGAINST DATA_SCHEMA.md
+
+export const generalKnowledgeData = {
+    subject: "GK & Current Affairs",
+    chapter: "General Knowledge & Static Awareness",
+    examTags: ["CUET", "MH-CET"],
+    studyGuide: {
+        topics: [
+            {
+                id: "gk-polity",
+                title: "1. Indian Polity & Constitution",
+                content: {
+                    coreConcept: "The Constitution is the supreme law of India. Key features include Federalism, Parliamentary Democracy, and Fundamental Rights.\n\n1. Preamble: The soul of the constitution.\n2. Articles & Schedules: Structure of governance.\n3. Constitutional Bodies: ECI, CAG, Finance Commission.",
+                    formulaBank: "• Art 324: Election Commission\n• Art 148: CAG\n• Art 280: Finance Commission\n• Art 368: Amendment Power",
+                    logic: "To identify constitutional bodies, check if they are mentioned by specific 'Articles'. Niti Aayog is an Executive Body (not constitutional).",
+                    traps: "CEC status vs Supreme Court Judge. While similar, they are appointed differently. Don't confuse the Real Head (PM) with the Nominal Head (President).",
+                    examples: [
+                        { q: "Which article deals with Money Bills?", a: "Article 110." },
+                        { q: "Who is the Nominal Head of India?", a: "The President." },
+                        { q: "Which Article deals with the Election Commission?", a: "Article 324." },
+                        { q: "Which Article deals with the CAG?", a: "Article 148." },
+                        { q: "Which Article deals with the Finance Commission?", a: "Article 280." },
+                        { q: "Which Article deals with the Amendment Power?", a: "Article 368." },
+                        { q: "What is the 42nd Amendment known as?", a: "Mini Constitution." },
+                        { q: "Minimum age for Lok Sabha?", a: "25 Years." },
+                        { q: "Minimum age for Rajya Sabha?", a: "30 Years." },
+                        { q: "Who is the Real Head of the Union?", a: "The Prime Minister." },
+                        { q: "Which Article is the 'Heart and Soul'?", a: "Article 32." },
+                        { q: "Niti Aayog replaced what?", a: "Planning Commission." },
+                        { q: "Fundamental Duties added by which Amendment?", a: "42nd Amendment (1976)." },
+                        { q: "Single Citizenship borrowed from?", a: "Britain (UK)." },
+                        { q: "Who appoints the CJI?", a: "The President." },
+                        { q: "Who has power to decide on Money Bill?", a: "Speaker of Lok Sabha." },
+                        { q: "Which Schedule deals with RS seats?", a: "4th Schedule." },
+                        { q: "Niti Aayog established in?", a: "2015." },
+                        { q: "How many Fundamental Rights initially?", a: "7 (Right to Property was removed later)." },
+                        { q: "Right to Property is now a?", a: "Legal Right (Art 300A)." },
+                        { q: "Joint session called by?", a: "The President." },
+                        { q: "Joint session presided by?", a: "The Speaker." },
+                        { q: "Total Fundamental Duties?", a: "11." },
+                        { q: "President's term?", a: "5 Years." },
+                        { q: "Impeachment of President Article?", a: "Article 61." }
+                    ],
+                    speedSummary: "Articles 324, 148, 280 are the big ones for CUET. Remember: 42nd Amendment (1976) is the 'Mini Constitution'."
+                }
+            },
+            {
+                id: "gk-history",
+                title: "2. Modern Indian History",
+                content: {
+                    coreConcept: "Focuses on the Struggle for Independence (1857-1947). Key phases: Moderates, Extremists, and the Gandhian Era.\n\n1. INC Formation (1885).\n2. Major Movements: NCM, CDM, Quit India.\n3. Revolutionary Leaders: Bose, Bhagat Singh, Azad.",
+                    formulaBank: "1905: Partition of Bengal\n1920: NCM Start\n1930: Dandi March\n1942: Quit India",
+                    logic: "Always check chronological order for multiple choice questions. The sequence is usually Partition (1905) -> Simon (1928) -> Dandi (1930) -> Quit India (1942).",
+                    traps: "Founder of INC vs first President. A.O. Hume founded it, but W.C. Bonnerjee was the 1st President.",
+                    examples: [
+                        { q: "Who gave the slogan 'Do or Die'?", a: "Mahatma Gandhi in 1942." },
+                        { q: "Where was the 1885 session of INC held?", a: "Mumbai." },
+                        { q: "Who was the first President of INC?", a: "W.C. Bonnerjee." },
+                        { q: "Who founded the INC?", a: "A.O. Hume." },
+                        { q: "Partition of Bengal year?", a: "1905." },
+                        { q: "NCM started in?", a: "1920." },
+                        { q: "Dandi March year?", a: "1930." },
+                        { q: "Quit India Movement year?", a: "1942." },
+                        { q: "Gandhi's political Guru?", a: "G.K. Gokhale." },
+                        { q: "Jallianwala Bagh year?", a: "1919." },
+                        { q: "Who founded the Forward Bloc?", a: "Subhash Chandra Bose." },
+                        { q: "Author of 'Discovery of India'?", a: "Jawaharlal Nehru." },
+                        { q: "Slogan 'Swaraj is my birthright'?", a: "Bal Gangadhar Tilak." },
+                        { q: "Simon Commission year?", a: "1928." },
+                        { q: "Poona Pact year?", a: "1932." },
+                        { q: "Gandhi-Irwin Pact year?", a: "1931." },
+                        { q: "1st Round Table Conference year?", a: "1930." },
+                        { q: "Chauri Chaura year?", a: "1922." },
+                        { q: "Home Rule League year?", a: "1916." },
+                        { q: "Swadeshi Movement year?", a: "1905." },
+                        { q: "Who was Frontier Gandhi?", a: "Khan Abdul Ghaffar Khan." },
+                        { q: "Bardoli Satyagraha leader?", a: "Sardar Patel." },
+                        { q: "August Offer year?", a: "1940." },
+                        { q: "Indian National Army (INA) founder?", a: "Rash Behari Bose / Subhash Chandra Bose." },
+                        { q: "Who gave titles to Gandhi & Tagore?", a: "Gandhi called Tagore 'Gurudev'. Tagore called Gandhi 'Mahatma'." }
+                    ],
+                    speedSummary: "1885 INC, 1920 Non-Cooperation, 1942 Quit India. Gandhi's Guru: G.K. Gokhale."
+                }
+            },
+            {
+                id: "gk-geography",
+                title: "3. Indian & World Geography",
+                content: {
+                    coreConcept: "Geography covers the physical features, resources, and map-work of India and the world.\n\n1. Rivers & Dams: Lifeblood of the nation.\n2. Mountains & Glaciers: The Himalayan range.\n3. Political Geography: States, Capitals, and Boundaries.",
+                    formulaBank: "• Silicon Valley: Bengaluru\n• Manchester of India: Ahmedabad\n• City of Joy: Kolkata\n• Pink City: Jaipur",
+                    logic: "To remember river systems, classify them into East-flowing (Ganga, Godavari) and West-flowing (Narmada, Tapti).",
+                    traps: "Highest Dam vs Longest Dam. Tehri is highest; Hirakud is longest.",
+                    examples: [
+                        { q: "Highest Dam in India?", a: "Tehri Dam (Uttarakhand)." },
+                        { q: "Longest coastline state?", a: "Gujarat." },
+                        { q: "Silicon Valley of India?", a: "Bengaluru." },
+                        { q: "Manchester of India?", a: "Ahmedabad." },
+                        { q: "City of Joy?", a: "Kolkata." },
+                        { q: "River known as Dakshin Ganga?", a: "Godavari." },
+                        { q: "Smallest state by area?", a: "Goa." },
+                        { q: "Standard Meridian of India?", a: "82.5° E (Mirzapur)." },
+                        { q: "Tropic of Cancer latitude?", a: "23.5° N." },
+                        { q: "Sardar Sarovar Dam river?", a: "Narmada." },
+                        { q: "Siachen Glacier location?", a: "Ladakh." },
+                        { q: "Nathu La Pass state?", a: "Sikkim." },
+                        { q: "Zemu Glacier state?", a: "Sikkim." },
+                        { q: "Smallest state by population?", a: "Sikkim." },
+                        { q: "Largest state by area?", a: "Rajasthan." },
+                        { q: "Largest state by population?", a: "Uttar Pradesh." },
+                        { q: "Tropic of Cancer passes through how many states?", a: "8." },
+                        { q: "Capital of Sikkim?", a: "Gangtok." },
+                        { q: "Tehri Dam river?", a: "Bhagirathi." },
+                        { q: "Hirakud Dam river?", a: "Mahanadi." },
+                        { q: "Nathu La Pass connects India to?", a: "China." },
+                        { q: "Highest peak in India?", a: "Kanchenjunga (K2 is disputed/in POK)." },
+                        { q: "Oldest mountain range in India?", a: "Aravalli." },
+                        { q: "River that creates the Dhuan Dhar falls?", a: "Narmada." },
+                        { q: "Which state is known as the 'Spices Garden of India'?", a: "Kerala." }
+                    ],
+                    speedSummary: "Tehri = Highest, Hirakud = Longest. Gujarat = Longest coast. 82.5° E = IST."
+                }
+            }
+        ]
+    },
+    flashcards: [
+        { id: "gk-fc-001", term: "Article 324", definition: "Empowers the Election Commission of India." },
+        { id: "gk-fc-002", term: "INC Foundation", definition: "Founded in 1885 by A.O. Hume (Mumbai)." },
+        { id: "gk-fc-003", term: "Gandhi Movements", definition: "NCM (1920) → Dandi (1930) → Quit India (1942)." },
+        { id: "gk-fc-004", term: "City Nicknames", definition: "Pink: Jaipur, Silicon: Bengaluru, City of Joy: Kolkata." },
+        { id: "gk-fc-005", term: "QUAD Members", definition: "India, USA, Japan, Australia." },
+        { id: "gk-fc-006", term: "pH Scale", definition: "Acidic < 7, Neutral = 7, Basic > 7." },
+        { id: "gk-fc-007", term: "16th Finance Commission", definition: "Chairman: Dr. Arvind Panagariya." },
+        { id: "gk-fc-008", term: "Highest Dam", definition: "Tehri Dam (Bhagirathi River, Uttarakhand)." },
+        { id: "gk-fc-009", term: "MIRV", definition: "Multiple Independently Targetable Re-Entry Vehicle (Agni-5)." },
+        { id: "gk-fc-010", term: "Kwashiorkor", definition: "Caused by protein deficiency (NOT calories)." }
+    ],
+    questions: [
+        // --- CATEGORY A: Indian Polity (15 Questions) ---
+        {
+            id: "gk-pol-001", type: "mcq", difficulty: "medium",
+            question: "Which of the following bodies derives its power directly from Article 324 of the Constitution?",
+            options: ["UPSC", "Election Commission", "Finance Commission", "Niti Aayog"],
+            correct: 1,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Article 324 provides for the superintendence, direction, and control of elections.",
+            examTags: ["CUET", "MH-CET"]
+        },
+        {
+            id: "gk-pol-002", type: "mcq", difficulty: "hard",
+            question: "Arrange these Constitutional Amendments in correct chronological order:\n(A) 42nd Amendment\n(B) 44th Amendment\n(C) 73rd Amendment\n(D) 52nd Amendment",
+            options: ["A-B-D-C", "A-B-C-D", "B-A-D-C", "D-A-B-C"],
+            correct: 0,
+            cognitiveType: "chronological", timePresure: "deep", speedTarget: 120,
+            explanation: "42nd (1976), 44th (1978), 52nd (1985), 73rd (1992).",
+            examTags: ["CUET"]
+        },
+        {
+            id: "gk-pol-003", type: "mcq", difficulty: "hard",
+            question: "Match the Article to the Provision:\n1. Art 148   a. Money Bill\n2. Art 110   b. Finance Commission\n3. Art 280   c. CAG\n4. Art 368   d. Amendment Power",
+            options: ["1-c, 2-a, 3-b, 4-d", "1-a, 2-c, 3-b, 4-d", "1-c, 2-b, 3-a, 4-d", "1-d, 2-a, 3-b, 4-c"],
+            correct: 0,
+            cognitiveType: "synthesis", timePresure: "standard", speedTarget: 90,
+            explanation: "Art 148: CAG, Art 110: Money Bill, Art 280: Finance Commission, Art 368: Amendment.",
+            examTags: ["CUET"]
+        },
+        {
+            id: "gk-pol-004", type: "mcq", difficulty: "medium",
+            question: "Which of the following statements about the Election Commission are correct?\n(A) It is established by Article 324.\n(B) The CEC has the same status as a Supreme Court Judge.\n(C) State elections are also managed by the ECI.",
+            options: ["Only A", "A and B only", "A and C only", "All of the above"],
+            correct: 3,
+            cognitiveType: "synthesis", timePresure: "deep", speedTarget: 120,
+            explanation: "All statements are factually correct regarding the ECI's status and jurisdiction.",
+            examTags: ["CUET"]
+        },
+        {
+            id: "gk-pol-005", type: "mcq", difficulty: "easy",
+            question: "What is the full form of CAG?",
+            options: [
+                "Comptroller and Auditor General",
+                "Central Account Gateway",
+                "Council of Audit and Governance",
+                "Chief Auditor General"
+            ],
+            correct: 0,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "CAG stands for Comptroller and Auditor General (Article 148).",
+            examTags: ["MH-CET"]
+        },
+        {
+            id: "gk-pol-006", type: "mcq", difficulty: "easy",
+            question: "Who is the Nominal Head of the Indian Union?",
+            options: ["Prime Minister", "President", "Chief Justice", "Speaker"],
+            correct: 1,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "The President is the de-jure (nominal) head; the PM is the de-facto (real) head.",
+            examTags: ["MH-CET"]
+        },
+        {
+            id: "gk-pol-007", type: "mcq", difficulty: "medium",
+            question: "The 'Preamble' of the Indian Constitution was amended for the only time in which year?",
+            options: ["1976", "1978", "1950", "1992"],
+            correct: 0,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "The 42nd Amendment (1976) added Socialist, Secular, and Integrity to the Preamble.",
+            examTags: ["CUET", "MH-CET"]
+        },
+        {
+            id: "gk-pol-008", type: "mcq", difficulty: "hard",
+            question: "Which Article is known as the 'Heart and Soul' of the Constitution according to Dr. Ambedkar?",
+            options: ["Article 14", "Article 19", "Article 21", "Article 32"],
+            correct: 3,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Article 32 (Right to Constitutional Remedies) allows citizens to approach SC.",
+            examTags: ["CUET", "MH-CET"]
+        },
+        {
+            id: "gk-pol-009", type: "mcq", difficulty: "medium",
+            question: "The concept of 'Single Citizenship' is borrowed from which country?",
+            options: ["USA", "Britain (UK)", "Canada", "Ireland"],
+            correct: 1,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Single citizenship is a feature of the British parliamentary system adopted by India.",
+            examTags: ["CUET", "MH-CET"]
+        },
+        {
+            id: "gk-pol-010", type: "mcq", difficulty: "medium",
+            question: "Who appoints the Chief Justice of India?",
+            options: ["Prime Minister", "Law Minister", "President", "Collegium of Judges"],
+            correct: 2,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "The President of India appoints the CJI.",
+            examTags: ["MH-CET"]
+        },
+        {
+            id: "gk-pol-011", type: "mcq", difficulty: "hard",
+            question: "Fundamental Duties were added based on the recommendation of which committee?",
+            options: ["Sarkaria Commission", "Swaran Singh Committee", "Mandal Commission", "Balwant Rai Mehta Committee"],
+            correct: 1,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Added by 42nd Amendment (1976) following Swaran Singh Committee's suggestions.",
+            examTags: ["CUET"]
+        },
+        {
+            id: "gk-pol-012", type: "mcq", difficulty: "medium",
+            question: "Niti Aayog replaced the Planning Commission in which year?",
+            options: ["2014", "2015", "2016", "2017"],
+            correct: 1,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Established on January 1, 2015 as a policy think tank.",
+            examTags: ["CUET", "MH-CET"]
+        },
+        {
+            id: "gk-pol-013", type: "mcq", difficulty: "medium",
+            question: "Which Schedule of the Constitution deals with the allocation of seats in Rajya Sabha?",
+            options: ["Third Schedule", "Fourth Schedule", "Fifth Schedule", "Seventh Schedule"],
+            correct: 1,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "The Fourth Schedule specifies seat allocation for States and UTs.",
+            examTags: ["CUET"]
+        },
+        {
+            id: "gk-pol-014", type: "mcq", difficulty: "easy",
+            question: "The minimum age to contest for Lok Sabha elections is:",
+            options: ["18 years", "21 years", "25 years", "30 years"],
+            correct: 2,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "25 years for Lok Sabha; 30 years for Rajya Sabha.",
+            examTags: ["MH-CET"]
+        },
+        {
+            id: "gk-pol-015", type: "mcq", difficulty: "medium",
+            question: "Who has the final power to decide whether a bill is a 'Money Bill'?",
+            options: ["President", "Prime Minister", "Speaker of Lok Sabha", "Finance Minister"],
+            correct: 2,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "The Speaker's decision on a Money Bill is final and beyond judicial review.",
+            examTags: ["CUET", "MH-CET"]
+        },
+
+        // --- CATEGORY B: Modern Indian History (15 Questions) ---
+        {
+            id: "gk-his-001", type: "mcq", difficulty: "hard",
+            question: "Arrange the following movements in correct chronological order:\n(A) Dandi March\n(B) Swadeshi Movement\n(C) Non-Cooperation Movement\n(D) Home Rule League",
+            options: ["B-D-C-A", "B-C-D-A", "D-B-C-A", "B-D-A-C"],
+            correct: 0,
+            cognitiveType: "chronological", timePresure: "deep", speedTarget: 120,
+            explanation: "Swadeshi (1905), Home Rule (1916), Non-Cooperation (1920), Dandi (1930).",
+            examTags: ["CUET"]
+        },
+        {
+            id: "gk-his-002", type: "mcq", difficulty: "medium",
+            question: "Who founded the Indian National Congress in 1885?",
+            options: ["W.C. Bonnerjee", "Dadabhai Naoroji", "A.O. Hume", "Annie Besant"],
+            correct: 2,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "A.O. Hume was the founder/General Secretary; W.C. Bonnerjee was the 1st President.",
+            examTags: ["MH-CET"]
+        },
+        {
+            id: "gk-his-003", type: "mcq", difficulty: "hard",
+            question: "Match the Figure with the Movement:\n1. Khan Abdul Ghaffar Khan  a. Swadeshi\n2. C.R. Das                 b. Khudai Khidmatgar\n3. Aurobindo Ghosh         c. Swaraj Party\n4. Sardar Patel            d. Bardoli Satyagraha",
+            options: ["1-b, 2-c, 3-a, 4-d", "1-a, 2-c, 3-b, 4-d", "1-b, 2-a, 3-c, 4-d", "1-d, 2-c, 3-a, 4-b"],
+            correct: 0,
+            cognitiveType: "synthesis", timePresure: "standard", speedTarget: 90,
+            explanation: "Khan (Khudai Khidmatgar/Frontier Gandhi), C.R. Das (Swaraj Party), Aurobindo (Swadeshi), Patel (Bardoli).",
+            examTags: ["CUET"]
+        },
+        {
+            id: "gk-his-004", type: "mcq", difficulty: "medium",
+            question: "Which incident forced Mahatma Gandhi to withdraw the Non-Cooperation Movement in 1922?",
+            options: ["Jallianwala Bagh", "Chauri Chaura incident", "Simon Commission arrival", "Dandi March"],
+            correct: 1,
+            cognitiveType: "application", timePresure: "speed", speedTarget: 45,
+            explanation: "Violent clash in Chauri Chaura (UP) led Gandhi to halt the NCM due to non-violence breach.",
+            examTags: ["CUET", "MH-CET"]
+        },
+        {
+            id: "gk-his-005", type: "mcq", difficulty: "medium",
+            question: "Who gave the slogan 'Do or Die' during the Quit India Movement?",
+            options: ["Netaji Bose", "Sardar Patel", "Mahatma Gandhi", "Jawaharlal Nehru"],
+            correct: 2,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Given at Gowalia Tank Maidan, Mumbai (August 1942).",
+            examTags: ["MH-CET"]
+        },
+        {
+            id: "gk-his-006", type: "mcq", difficulty: "hard",
+            question: "Arrange these in chronological sequence:\n(A) Simon Commission\n(B) Poona Pact\n(C) Gandhi-Irwin Pact\n(D) First Round Table Conference",
+            options: ["A-D-C-B", "A-C-D-B", "D-A-C-B", "A-D-B-C"],
+            correct: 0,
+            cognitiveType: "chronological", timePresure: "deep", speedTarget: 120,
+            explanation: "Simon (1928), 1st RTC (1930), Gandhi-Irwin (1931), Poona Pact (1932).",
+            examTags: ["CUET"]
+        },
+        {
+            id: "gk-his-007", type: "mcq", difficulty: "medium",
+            question: "Which of the following statements about the Salt Satyagraha are INCORRECT?",
+            options: [
+                "It started from Sabarmati Ashram.",
+                "It was aimed at breaking the salt law.",
+                "C. Rajagopalachari led the march in Tamil Nadu.",
+                "It was supported by the British Government."
+            ],
+            correct: 3,
+            cognitiveType: "synthesis", timePresure: "standard", speedTarget: 45,
+            explanation: "It was a massive act of civil disobedience against British tea/salt taxes (obviously not supported by them).",
+            examTags: ["CUET"]
+        },
+        {
+            id: "gk-his-008", type: "mcq", difficulty: "medium",
+            question: "Who was the political guru of Mahatma Gandhi?",
+            options: ["Dadabhai Naoroji", "Bal Gangadhar Tilak", "Gopal Krishna Gokhale", "Annie Besant"],
+            correct: 2,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Gokhale advised Gandhi to travel India for one year to understand the ground reality.",
+            examTags: ["CUET", "MH-CET"]
+        },
+        {
+            id: "gk-his-009", type: "mcq", difficulty: "hard",
+            question: "The Rowlatt Act of 1919 was critically linked to which massive tragedy?",
+            options: ["Partition of Bengal", "Jallianwala Bagh Massacre", "Non-Cooperation Movement", "Civil Disobedience"],
+            correct: 1,
+            cognitiveType: "application", timePresure: "speed", speedTarget: 45,
+            explanation: "Protests against Rowlatt Act (No Dalil, No Vakil, No Appeal) led to the Amritsar massacre.",
+            examTags: ["CUET"]
+        },
+        {
+            id: "gk-his-010", type: "mcq", difficulty: "medium",
+            question: "Who founded the 'Forward Bloc'?",
+            options: ["Bhagat Singh", "Subhash Chandra Bose", "Lala Lajpat Rai", "Chandrashekhar Azad"],
+            correct: 1,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Bose founded it in 1939 after resigning from the Congress presidency.",
+            examTags: ["MH-CET"]
+        },
+        {
+            id: "gk-his-011", type: "mcq", difficulty: "medium",
+            question: "Identify the incorrectly matched pair:",
+            options: [
+                "Annie Besant - Commonweal",
+                "M.K. Gandhi - Hind Swaraj",
+                "Bal Gangadhar Tilak - Kesari",
+                "Lala Lajpat Rai - Discovery of India"
+            ],
+            correct: 3,
+            cognitiveType: "synthesis", timePresure: "standard", speedTarget: 90,
+            explanation: "'Discovery of India' was written by Jawaharlal Nehru.",
+            examTags: ["CUET"]
+        },
+        {
+            id: "gk-his-012", type: "mcq", difficulty: "medium",
+            question: "In which year did the partition of Bengal take place?",
+            options: ["1901", "1905", "1911", "1920"],
+            correct: 1,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Announced by Lord Curzon in 1905; annulled in 1911.",
+            examTags: ["MH-CET"]
+        },
+        {
+            id: "gk-his-013", type: "mcq", difficulty: "hard",
+            question: "Which session of the INC passed the 'Quit India' resolution?",
+            options: ["Lahore Session 1929", "Karachi Session 1931", "Bombay Session 1942", "Tripuri Session 1939"],
+            correct: 2,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Passed at the Wardha/Bombay meeting in August 1942.",
+            examTags: ["CUET"]
+        },
+        {
+            id: "gk-his-014", type: "mcq", difficulty: "medium",
+            question: "The slogan 'Swaraj is my birthright' belongs to:",
+            options: ["Gopal Krishna Gokhale", "Lala Lajpat Rai", "Bal Gangadhar Tilak", "Bipin Chandra Pal"],
+            correct: 2,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Tilak was known as 'Lokmanya' for this staunch nationalist stance.",
+            examTags: ["MH-CET"]
+        },
+        {
+            id: "gk-his-015", type: "mcq", difficulty: "hard",
+            question: "The 'August Offer' of 1940 was made by which Viceroy?",
+            options: ["Lord Linlithgow", "Lord Mountbatten", "Lord Wavell", "Lord Reading"],
+            correct: 0,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Offered to secure Indian cooperation in WWII in exchange for Dominion Status.",
+            examTags: ["CUET"]
+        },
+
+        // --- CATEGORY C: Geography (15 Questions) ---
+        {
+            id: "gk-geo-001", type: "mcq", difficulty: "medium",
+            question: "Which city is known as the 'Manchester of India'?",
+            options: ["Mumbai", "Ahmedabad", "Surat", "Kolkata"],
+            correct: 1,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Ahmedabad is famous for its textile industry.",
+            examTags: ["CUET", "MH-CET"]
+        },
+        {
+            id: "gk-geo-002", type: "mcq", difficulty: "medium",
+            question: "Sardar Sarovar Dam is built on which river?",
+            options: ["Ganga", "Narmada", "Tapti", "Mahi"],
+            correct: 1,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Located in Gujarat, it is one of the largest dams in India.",
+            examTags: ["CUET", "MH-CET"]
+        },
+        {
+            id: "gk-geo-003", type: "mcq", difficulty: "hard",
+            question: "Match the Pass with its State/UT:\n1. Nathu La      a. Himachal Pradesh\n2. Banihal       b. Sikkim\n3. Rohtang       c. Jammu & Kashmir\n4. Zoji La       d. Ladakh",
+            options: ["1-b, 2-c, 3-a, 4-d", "1-b, 2-a, 3-c, 4-d", "1-a, 2-c, 3-b, 4-d", "1-b, 2-c, 3-d, 4-a"],
+            correct: 0,
+            cognitiveType: "synthesis", timePresure: "standard", speedTarget: 90,
+            explanation: "Nathu La (Sikkim), Banihal (J&K), Rohtang (HP), Zoji La (Ladakh).",
+            examTags: ["CUET"]
+        },
+        {
+            id: "gk-geo-004", type: "mcq", difficulty: "medium",
+            question: "Where is the 'Zemu Glacier' located?",
+            options: ["Ladakh", "Sikkim", "Uttarakhand", "Himachal Pradesh"],
+            correct: 1,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "It is the largest glacier in the Eastern Himalayas, Sikkim.",
+            examTags: ["CUET", "MH-CET"]
+        },
+        {
+            id: "gk-geo-005", type: "mcq", difficulty: "hard",
+            question: "Arrange these states in order of their formation (earliest to latest):\n(A) Nagaland  (B) Haryana  (C) Sikkim  (D) Goa",
+            options: ["A-B-C-D", "B-A-C-D", "A-C-B-D", "C-A-B-D"],
+            correct: 0,
+            cognitiveType: "chronological", timePresure: "deep", speedTarget: 120,
+            explanation: "Nagaland (1963), Haryana (1966), Sikkim (1975), Goa (1987).",
+            examTags: ["CUET"]
+        },
+        {
+            id: "gk-geo-006", type: "mcq", difficulty: "easy",
+            question: "Which city is the 'Silicon Valley of India'?",
+            options: ["Hyderabad", "Pune", "Bengaluru", "Chennai"],
+            correct: 2,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 30,
+            explanation: "Bengaluru is the hub of India's IT sector.",
+            examTags: ["MH-CET"]
+        },
+        {
+            id: "gk-geo-007", type: "mcq", difficulty: "medium",
+            question: "Tehri Dam is built on which river?",
+            options: ["Alaknanda", "Mandakini", "Bhagirathi", "Ganga"],
+            correct: 2,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Tehri (Uttarakhand) is the highest dam in India.",
+            examTags: ["CUET", "MH-CET"]
+        },
+        {
+            id: "gk-geo-008", type: "mcq", difficulty: "medium",
+            question: "Which state has the longest coastline in India?",
+            options: ["Andhra Pradesh", "Tamil Nadu", "Gujarat", "Maharashtra"],
+            correct: 2,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Gujarat has the longest coastline due to its jagged shape and kutch.",
+            examTags: ["CUET", "MH-CET"]
+        },
+        {
+            id: "gk-geo-009", type: "mcq", difficulty: "hard",
+            question: "Nathu La Pass connects India to which country?",
+            options: ["Nepal", "Bhutan", "China", "Myanmar"],
+            correct: 2,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "It is a major checkpoint on the Indo-China border in Sikkim.",
+            examTags: ["CUET"]
+        },
+        {
+            id: "gk-geo-010", type: "mcq", difficulty: "medium",
+            question: "What is the nickname of Kolkata?",
+            options: ["City of Joy", "Golden City", "Diamond City", "Pink City"],
+            correct: 0,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 30,
+            explanation: "Known for its rich culture and history.",
+            examTags: ["MH-CET"]
+        },
+        {
+            id: "gk-geo-011", type: "mcq", difficulty: "medium",
+            question: "Which degree of latitude is known as the 'Tropic of Cancer'?",
+            options: ["23.5° N", "23.5° S", "66.5° N", "0°"],
+            correct: 0,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Passes through 8 states in India.",
+            examTags: ["CUET", "MH-CET"]
+        },
+        {
+            id: "gk-geo-012", type: "mcq", difficulty: "medium",
+            question: "The standard time meridian of India (82.5° E) passes through which of these cities?",
+            options: ["Varanasi", "Lucknow", "Mirzapur", "Patna"],
+            correct: 2,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "The IST is determined based on the time at Mirzapur, UP.",
+            examTags: ["CUET", "MH-CET"]
+        },
+        {
+            id: "gk-geo-013", type: "mcq", difficulty: "hard",
+            question: "Which is the smallest state in India by area?",
+            options: ["Goa", "Sikkim", "Tripura", "Nagaland"],
+            correct: 0,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Goa is smallest; Rajasthan is largest by area.",
+            examTags: ["MH-CET"]
+        },
+        {
+            id: "gk-geo-014", type: "mcq", difficulty: "medium",
+            question: "Where is 'Siachen Glacier' located?",
+            options: ["Ladakh", "Uttarakhand", "Himachal Pradesh", "Sikkim"],
+            correct: 0,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Highest battlefield in the world, located in the Eastern Karakoram range.",
+            examTags: ["CUET", "MH-CET"]
+        },
+        {
+            id: "gk-geo-015", type: "mcq", difficulty: "easy",
+            question: "Which river is known as 'Dakshin Ganga'?",
+            options: ["Krishna", "Godavari", "Cauvery", "Narmada"],
+            correct: 1,
+            cognitiveType: "recall", timePresure: "speed", speedTarget: 45,
+            explanation: "Godavari is the largest river of South India.",
+            examTags: ["MH-CET"]
+        }
+    ]
+};

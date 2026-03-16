@@ -1,0 +1,84 @@
+diff --git a/data/unit11/sqp.ts b/data/unit11/sqp.ts
+index 89e0fc4..e077084 100644
+--- a/data/unit11/sqp.ts
++++ b/data/unit11/sqp.ts
+@@ -10,7 +10,7 @@ export const sqp: SQPQuestion[] = [
+     question: `Management of 'Product' mix involves evaluating certain decisions. Name any two.`,
+     answer: `The correct approach involves identifying the core concept and outlining at least three distinct points of explanation or differentiation as required by the CBSE marking scheme. \n1. Primary Point: Defines the core subject clearly with an example.\n2. Secondary Point: Elaborates on the mechanism or rationale behind the concept.\n3. Tertiary Point: Discusses the implication or impact on the business environment.`,
+       markingScheme: `Product Mix Decisions: 1. Branding (giving a name, sign, or symbol to the product). 2. Packaging (designing the wrapper or container for the product). 3. Labelling (designing the label to be put on the package). (Any two points with explanation).`,
+-      aiExplanation: `For a 3-mark question, always provide three distinct points. Start by defining the concept briefly. Then, list the points in a structured manner, preferably using bullet points or a table if it's a difference question.`
++      aiExplanation: `[Mark Justification - 3 Marks Total]:\n• 1 Mark for identifying the decisions.\n• 1 Mark for each valid explanation.\n\n*Comprehensive Revision Points (Product Mix Decisions):*\n• **1. Branding:** Giving a name, sign, symbol etc., to a product to differentiate it from competitors. Helps in product identification and advertising.\n• **2. Packaging:** Designing and developing the wrapper or container for the product. It acts as a silent salesman.\n• **3. Labelling:** Designing the label to be printed on the package. It provides information about the product, its contents, date of manufacture, etc.`s a difference question.`
+     },
+ 
+     { 
+@@ -21,7 +21,7 @@ export const sqp: SQPQuestion[] = [
+         type: 'LA',
+         question: 'A company decides to launch a massive promotional campaign offering free gifts to clear its stock. Which element of promotion mix is used?',
+         answer: 'Sales Promotion',
+-        aiExplanation: `For 5 or 6 mark long-answer questions, structure is critical. Start with a short introduction. Then use well-defined headings for each of the 5 or 6 points. Underline the headings and provide 2-3 sentences of explanation for each point. End with a concluding sentence if applicable.`
++        aiExplanation: `[Mark Justification - 6 Marks Total]:\n• 1 Mark for identifying 'Sales Promotion'.\n• 1 Mark for each valid explanation point of its tools.\n\n*Comprehensive Revision Points (Sales Promotion):*\n• **Concept:** Short-term incentives designed to encourage buyers to make immediate purchase.\n• **Common Tools:**\n• **Rebate:** Offering products at special prices.\n• **Discount:** Offering products at less than list price.\n• **Refunds:** Refunding a part of the price on showing proof of purchase.\n• **Product Combinations:** Offering another product as a gift alongside.\n• **Quantity Gift:** Offering an extra quantity of the product.\n• **Instant Draws/Contests:** Scratch cards or lucky draws.`Sales Promotion'.\n• 1 Mark for each valid explanation point of its tools.\n\n*Comprehensive Revision Points (Sales Promotion):*\n• **Concept:** Short-term incentives designed to encourage buyers to make immediate purchase.\n• **Common Tools:**\n• **Rebate:** Offering products at special prices.\n• **Discount:** Offering products at less than list price.\n• **Refunds:** Refunding a part of the price on showing proof of purchase.\n• **Product Combinations:** Offering another product as a gift alongside.\n• **Quantity Gift:** Offering an extra quantity of the product.\n• **Instant Draws/Contests:** Scratch cards or lucky draws.`
+     },
+     { 
+     id: '2024-25-q2',
+@@ -31,7 +31,7 @@ export const sqp: SQPQuestion[] = [
+         type: 'MCQ',
+         question: 'Identify the marketing function which involves defining the work into graphic designing, bill payments, etc., to make the product attractive?',
+         answer: 'Product Designing and Development',
+-        aiExplanation: 'Product Design involves making the product attractive to the target customer through features, shape, and style.'
++        aiExplanation: `Product Design involves making the product attractive to the target customer through features, shape, and style.\n\n[Mark Justification]: 1 Mark awarded for the direct, correct identification of the concept, feature, or specific term. No partial credit.`
+     },
+     { 
+     id: '2024-25-q34b',
+@@ -41,7 +41,7 @@ export const sqp: SQPQuestion[] = [
+         type: 'LA',
+         question: 'Explain the factors affecting the price of a product.',
+         answer: 'Cost, Utility/Demand, Competition, Govt Regulation, Objectives',
+-        aiExplanation: `For 5 or 6 mark long-answer questions, structure is critical. Start with a short introduction. Then use well-defined headings for each of the 5 or 6 points. Underline the headings and provide 2-3 sentences of explanation for each point. End with a concluding sentence if applicable.`
++        aiExplanation: `[Mark Justification - 6 Marks Total]:\n• 1 Mark for defining pricing.\n• 1 Mark for each factor explained.\n\n*Comprehensive Revision Points (Factors affecting Price Determination):*\n• **1. Product Cost:** Sets the lower limit of the price. Includes fixed, variable, and semi-variable costs.\n• **2. The Utility and Demand:** Sets the upper limit. Inelastic demand = Higher prices. Elastic demand = Lower prices.\n• **3. Extent of Competition:** Less competition = Higher price. Severe competition = Lower price matching competitors.\n• **4. Government and Legal Regulations:** Govt can declare a product as essential and regulate its price.\n• **5. Pricing Objectives:** E.g., obtaining market share leadership (low price), surviving (low price), or attaining product quality leadership (high price).`
+     },
+     { 
+     id: '2023-24-q12',
+@@ -51,7 +51,7 @@ export const sqp: SQPQuestion[] = [
+         type: 'MCQ',
+         question: 'Which function of marketing involves identifying needs, opportunities, and threats (SWOT analysis)?',
+         answer: 'Gathering and Analysing Market Information',
+-        aiExplanation: 'This function is the starting point of marketing where the marketer analyses the market environment.'
++        aiExplanation: `This function is the starting point of marketing where the marketer analyses the market environment.\n\n[Mark Justification]: 1 Mark awarded for the direct, correct identification of the concept, feature, or specific term. No partial credit.`
+     },
+     { 
+     id: '2023-24-q20',
+@@ -61,7 +61,7 @@ export const sqp: SQPQuestion[] = [
+         type: 'MCQ',
+         question: 'A label on a package describes the contents and usage instructions. Which function of labelling is highlighted?',
+         answer: 'Describe the product and specify its contents',
+-        aiExplanation: 'One of the key functions of labelling is to provide information about the contents and usage of the product.'
++        aiExplanation: `One of the key functions of labelling is to provide information about the contents and usage of the product.\n\n[Mark Justification]: 1 Mark awarded for the direct, correct identification of the concept, feature, or specific term. No partial credit.`
+     },
+     { 
+     id: '2022-23-q12',
+@@ -71,7 +71,7 @@ export const sqp: SQPQuestion[] = [
+         type: 'MCQ',
+         question: 'Which marketing management philosophy believes that profit can be maximised through sales volume?',
+         answer: 'Selling Concept',
+-        aiExplanation: 'The Selling Concept focuses on aggressive selling and promotion to increase sales volume.'
++        aiExplanation: `The Selling Concept focuses on aggressive selling and promotion to increase sales volume.\n\n[Mark Justification]: 1 Mark awarded for the direct, correct identification of the concept, feature, or specific term. No partial credit.`
+     },
+     { 
+     id: '2022-23-q34',
+@@ -81,7 +81,7 @@ export const sqp: SQPQuestion[] = [
+         type: 'LA',
+         question: 'A company appoints an on-ground sales team to deliver products to small shops in rural areas. Which element of marketing mix is this?',
+         answer: 'Place / Physical Distribution',
+-        aiExplanation: `For 5 or 6 mark long-answer questions, structure is critical. Start with a short introduction. Then use well-defined headings for each of the 5 or 6 points. Underline the headings and provide 2-3 sentences of explanation for each point. End with a concluding sentence if applicable.`
++        aiExplanation: `[Mark Justification - 6 Marks Total]:\n• 1 Mark for identifying 'Place/Physical Distribution Mix'.\n• 1 Mark for each valid point/component explained.\n\n*Comprehensive Revision Points (Place Mix / Physical Distribution):*\n• **Concept:** Making the goods available at the right place, in right quantity, at the right time.\n• **Major Components:**\n• **Order Processing:** Accurate and speedy processing of orders from customers to factory.\n• **Transportation:** Physical movement of goods from place of production to place of consumption.\n• **Warehousing:** Storing goods systematically to create time utility.\n• **Inventory Control:** Maintaining adequate level of inventory. Higher inventory means better service but higher cost of capital tied up.`Place/Physical Distribution Mix'.\n• 1 Mark for each valid point/component explained.\n\n*Comprehensive Revision Points (Place Mix / Physical Distribution):*\n• **Concept:** Making the goods available at the right place, in right quantity, at the right time.\n• **Major Components:**\n• **Order Processing:** Accurate and speedy processing of orders from customers to factory.\n• **Transportation:** Physical movement of goods from place of production to place of consumption.\n• **Warehousing:** Storing goods systematically to create time utility.\n• **Inventory Control:** Maintaining adequate level of inventory. Higher inventory means better service but higher cost of capital tied up.`
+     },
+     { 
+     id: '2022-23-q15',
+@@ -91,6 +91,6 @@ export const sqp: SQPQuestion[] = [
+         type: 'MCQ',
+         question: 'Providing a name, sign, or symbol to a product is known as?',
+         answer: 'Branding',
+-        aiExplanation: 'Branding is the process of giving a distinct identity to the product.'
++        aiExplanation: `Branding is the process of giving a distinct identity to the product.\n\n[Mark Justification]: 1 Mark awarded for the direct, correct identification of the concept, feature, or specific term. No partial credit.`
+     }
+ ];

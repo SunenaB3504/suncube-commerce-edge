@@ -1,0 +1,806 @@
+Let me do a systematic gap analysis against your five bucket framework before updating anything.
+
+---
+
+## Gap Analysis — Current CA Coverage vs. Five Bucket Framework
+
+| Bucket | Covered? | Gaps Found |
+|---|---|---|
+| National & Polity | ✅ Partial | Finance Commission chairman missing; Bills/Acts weak |
+| International | ✅ Partial | NATO membership missing; bilateral treaties absent |
+| Business & Economy | ✅ Partial | PM Surya Ghar missing; Budget 2024-25 highlights absent |
+| Science & Defence | ✅ Partial | DRDO Ugram rifle missing; AI milestones absent |
+| Awards & Sports | ✅ Partial | Para-athlete Padma Bhushan missing; Grand Slams absent |
+
+**Verdict: All five buckets exist but none are complete.** Here is the fully updated prompt section:
+
+---
+
+## Updated CA Section — Five Bucket Architecture
+
+```
+## CURRENT AFFAIRS TAGGING SYSTEM
+
+Every CA question must carry a mandatory "caTag" field
+in addition to all existing metadata fields.
+
+  caTag:
+    "national-polity"     → Bills, schemes, appointments,
+                            constitutional changes
+    "international"       → Summits, treaties, alliances,
+                            global org memberships
+    "business-economy"    → RBI rates, budget, mergers,
+                            startup news, trade deals
+    "science-defence"     → ISRO, DRDO, AI, space, weapons,
+                            technology milestones
+    "awards-sports"       → Nobel, Padma, Bharat Ratna,
+                            Olympics, cricket, Grand Slams
+
+This tag powers the app's CA filter — students can
+practise bucket-by-bucket, identify weak areas, and
+track performance per category over time.
+
+---
+
+=================================================================
+=== BUCKET 1: National & Polity
+    caTag: "national-polity"
+=================================================================
+
+VERIFIED FACTS — National & Polity 2024–2026:
+
+APPOINTMENTS:
+  16th Finance Commission:
+    Chairman: Dr. Arvind Panagariya
+    Appointed: 2023
+    Mandate: Recommend tax devolution 2026–2031
+    // This is a HIGH PRIORITY question —
+    // appears in both CUET GAT and MAH CET
+
+  Election Commission:
+    Chief Election Commissioner: // VERIFY current holder
+    Sushil Chandra served until 2022
+    Rajiv Kumar: CEC since 2022
+    // VERIFY before using — position changes
+
+  NHRC Chairman: // VERIFY current holder
+  UPSC Chairman: // VERIFY current holder
+  CAG of India: // VERIFY current holder
+  CBI Director: // VERIFY current holder
+
+  RBI Governor: Sanjay Malhotra (December 2024)
+  Previous: Shaktikanta Das (2018–2024)
+
+  Supreme Court:
+    50th Chief Justice: Sanjiv Khanna
+    // VERIFY — CJI changes every few months
+    // Safer to ask: "Who was the first woman judge
+    // of the Supreme Court?" = M. Fathima Beevi
+
+BILLS AND ACTS PASSED 2023–2024:
+  Nari Shakti Vandan Adhiniyam (Women's Reservation):
+    → Reserves 33% seats in Lok Sabha and State
+      Assemblies for women
+    → Passed: September 2023
+    → Will be effective after next delimitation
+
+  Criminal Law Reform Acts (replacing IPC, CrPC, Evidence):
+    → Bharatiya Nyaya Sanhita (BNS): Replaced IPC
+    → Bharatiya Nagarik Suraksha Sanhita (BNSS):
+      Replaced CrPC
+    → Bharatiya Sakshya Adhiniyam (BSA):
+      Replaced Indian Evidence Act
+    → Effective from: July 1, 2024
+
+  Telecommunications Act 2023:
+    → Replaced Indian Telegraph Act (1885)
+    → Passed: December 2023
+
+  Digital Personal Data Protection Act (DPDP):
+    → Passed: August 2023
+    → India's first comprehensive data protection law
+
+GOVERNMENT SCHEMES 2024–2025:
+  PM Surya Ghar Muft Bijli Yojana:
+    → Objective: Install rooftop solar panels on
+      1 crore homes, provide 300 units free electricity
+    → Launched: February 2024
+    → Subsidy: Up to ₹78,000 per household
+    // HIGH PRIORITY — example question in framework
+
+  PM Vishwakarma Yojana:
+    → Support traditional artisans and craftspeople
+    → Launched: September 17, 2023
+
+  One Nation One Election:
+    → Concept: Simultaneous elections for Lok Sabha
+      and State Assemblies
+    → High Level Committee: Former President Ram Nath Kovind
+    → Report submitted: March 2024
+
+  Amrit Bharat Station Scheme:
+    → Modernisation of 1,309 railway stations
+
+QUESTION PATTERNS (20 questions):
+
+  Appointments (6 questions):
+    → "Who is the Chairman of the 16th Finance Commission?"
+      (Dr. Arvind Panagariya)
+      caTag: "national-polity"
+      // HIGH PRIORITY — appears in CUET GAT paper
+    → "The 16th Finance Commission will recommend
+      devolution for which period?" (2026–2031)
+    → "Which Act replaced the Indian Penal Code (IPC)
+      from July 2024?" (Bharatiya Nyaya Sanhita — BNS)
+    → "The three new criminal law codes replaced IPC,
+      CrPC, and which third law?"
+      (Indian Evidence Act → BSA)
+    → "Nari Shakti Vandan Adhiniyam reserves what
+      percentage of seats for women?" (33%)
+    → "When did Nari Shakti Vandan Adhiniyam pass?"
+      (September 2023)
+
+  Schemes (8 questions):
+    → "What is the primary objective of PM Surya Ghar
+      Muft Bijli Yojana?"
+      (Rooftop solar + 300 units free electricity
+      to 1 crore homes)
+      caTag: "national-polity"
+      // EXACT example from framework
+    → "PM Surya Ghar was launched in which year?" (2024)
+    → "PM Vishwakarma Yojana targets which group?"
+      (Traditional artisans and craftspeople)
+    → "India's first comprehensive data protection law is..."
+      (Digital Personal Data Protection Act — DPDP, 2023)
+    → "The DPDP Act was passed in which month and year?"
+      (August 2023)
+    → "One Nation One Election committee was headed by..."
+      (Former President Ram Nath Kovind)
+    → "Amrit Bharat Station Scheme aims to modernise
+      how many railway stations?" (1,309)
+    → "The Telecommunications Act 2023 replaced which
+      colonial-era law?" (Indian Telegraph Act, 1885)
+
+  Bills and Constitutional (6 questions):
+    → "Which law replaced CrPC from July 1, 2024?"
+      (Bharatiya Nagarik Suraksha Sanhita — BNSS)
+    → "BNS stands for..." (Bharatiya Nyaya Sanhita)
+    → "How many criminal laws were replaced in July 2024?"
+      (Three — BNS, BNSS, BSA)
+    → "The Women's Reservation Bill ensures 33% seats
+      in which bodies?" (Lok Sabha + State Assemblies)
+    → "India's data protection law DPDP was modelled
+      loosely on which global regulation?"
+      (GDPR — Europe — but note in explanation India's
+      version has key differences)
+    → "The 16th Finance Commission was constituted
+      to cover which five-year period?" (2026–2031)
+
+---
+
+=================================================================
+=== BUCKET 2: International
+    caTag: "international"
+=================================================================
+
+VERIFIED FACTS — International 2023–2025:
+
+NATO EXPANSION:
+  31st member: Finland (April 2023)
+  32nd member: Sweden (March 2024)
+  // HIGH PRIORITY — exact example from framework
+
+QUAD:
+  Members: India, USA, Japan, Australia
+  2024 Summit: Hosted by USA (Wilmington, Delaware)
+  Host: President Biden
+
+G20:
+  2023: India (New Delhi) — Theme: "Vasudhaiva Kutumbakam"
+  2024: Brazil (Rio de Janeiro)
+  2025: South Africa
+
+G7 2024: Italy (Puglia)
+
+BRICS EXPANSION 2024:
+  New members joining: Egypt, Ethiopia, Iran,
+    Saudi Arabia, UAE
+  India's BRICS Presidency: // VERIFY year
+  De-dollarisation discussions ongoing
+
+BILATERAL TREATIES AND VISITS:
+  India-USA:
+    → iCET (Initiative on Critical and Emerging Technology)
+    → Defence: MQ-9B Predator drones deal (2023)
+  India-Russia:
+    → Continued oil imports despite Western sanctions
+  India-Middle East-Europe Corridor (IMEC):
+    → Announced at G20 2023
+    → Connecting India to Europe via Middle East
+    → Competitor to China's Belt and Road Initiative
+
+GLOBAL ORGANISATIONS:
+  UN Security Council permanent members:
+    USA, UK, France, Russia, China (P5)
+    India is NOT a permanent member
+  WHO Director General: Tedros Adhanom Ghebreyesus
+  IMF Managing Director: Kristalina Georgieva
+  WTO Director General: Ngozi Okonjo-Iweala
+    (first woman, first African to hold this post)
+  World Bank President: Ajay Banga (Indian-American)
+    // VERIFY current holder
+
+CLIMATE:
+  COP28: Dubai, UAE (2023) — "Loss and Damage" fund agreed
+  COP29: Baku, Azerbaijan (2024)
+  Paris Agreement target: Limit warming to 1.5°C
+
+GEOPOLITICAL EVENTS:
+  Russia-Ukraine: Since February 2022 (ongoing)
+  Israel-Hamas: Since October 7, 2023 (ongoing)
+    // State facts only — no opinion questions
+  Sudan conflict: // VERIFY
+  Taiwan Strait tensions: ongoing
+
+QUESTION PATTERNS (20 questions):
+
+  NATO and Alliances (5 questions):
+    → "Which country became NATO's 32nd member?"
+      (Sweden — March 2024)
+      caTag: "international"
+      // EXACT example from framework
+    → "Which country became NATO's 31st member?"
+      (Finland — April 2023)
+    → "In which year did Sweden join NATO?" (2024)
+    → "QUAD members are..." (India, USA, Japan, Australia)
+    → "The 2024 QUAD Summit was hosted by which country?"
+      (USA — Wilmington, Delaware)
+
+  G20 and Summits (5 questions):
+    → "India hosted G20 under which theme?"
+      (Vasudhaiva Kutumbakam — One Earth One Family One Future)
+    → "G20 2024 was held in..." (Rio de Janeiro, Brazil)
+    → "G7 2024 was hosted by..." (Italy)
+    → "IMEC corridor connects India to which continent
+      via the Middle East?" (Europe)
+    → "BRICS added how many new members in 2024?" (5)
+
+  Global Leaders and Organisations (5 questions):
+    → "Who is the first woman Director General of WTO?"
+      (Ngozi Okonjo-Iweala)
+    → "World Bank President Ajay Banga is of which
+      nationality origin?" (Indian-American)
+    → "COP28 was held in which city?" (Dubai, UAE)
+    → "The Paris Agreement aims to limit global
+      temperature rise to..." (1.5°C)
+    → "COP29 was held in..." (Baku, Azerbaijan)
+
+  Bilateral and Geopolitical (5 questions):
+    → "iCET is an initiative between India and..."
+      (USA — Initiative on Critical and Emerging Technology)
+    → "Russia-Ukraine war began in which year?" (2022)
+    → "IMEC was announced at which global summit?"
+      (G20 2023, New Delhi)
+    → "Which Indian-American heads the World Bank?"
+      (Ajay Banga)
+    → "Which country did India sign the MQ-9B Predator
+      drone deal with?" (USA — 2023)
+
+---
+
+=================================================================
+=== BUCKET 3: Business & Economy
+    caTag: "business-economy"
+=================================================================
+
+VERIFIED FACTS — Business & Economy 2024–2025:
+
+RBI MONETARY POLICY:
+  Current Repo Rate: // VERIFY — changes with MPC meetings
+    As of early 2025: 6.25% (reduced from 6.5%)
+    // SAFER: Ask what repo rate DOES rather than its value
+  RBI Governor: Sanjay Malhotra (since December 2024)
+  MPC (Monetary Policy Committee): 6 members
+    3 from RBI + 3 external members
+  RBI's inflation target: 4% (±2% band: 2%–6%)
+
+UNION BUDGET 2024–25 HIGHLIGHTS:
+  Presented by: Nirmala Sitharaman (Finance Minister)
+  Record consecutive budget: 7th straight by same FM
+  Theme: Viksit Bharat (Developed India by 2047)
+  Key announcements:
+    → New tax regime: Standard deduction ₹75,000
+    → Abolition of Angel Tax for startups
+    → ₹11.11 lakh crore capital expenditure
+    → PM Surya Ghar Muft Bijli Yojana announced
+    → MUDRA loan limit raised to ₹20 lakh (from ₹10 lakh)
+    → 3 crore new houses under PM Awas Yojana
+  LTCG tax: Increased from 10% to 12.5% on equity
+
+MAJOR MERGERS AND ACQUISITIONS 2024:
+  HDFC + HDFC Bank: Completed merger (July 2023)
+    → Created India's largest private sector bank
+  Air India (Tata Group acquisition): Completed 2022
+  // VERIFY any 2024 mergers before adding
+
+STARTUP AND BUSINESS NEWS:
+  India unicorn count: 100+ unicorns
+    // VERIFY exact current count
+  Reliance + Disney merger:
+    → JioCinema + Disney+ Hotstar combined
+    → Creates India's largest OTT platform
+    // VERIFY completion status
+  NPCI UPI milestones:
+    → UPI crossed 100 crore transactions/day
+    // VERIFY latest milestone
+
+ECONOMIC INDICATORS:
+  India GDP growth 2023–24: ~8.2% (fastest major economy)
+  India GDP rank: 5th largest economy globally
+    (surpassed UK and France)
+  India Inflation: // VERIFY current figure
+  India Forex Reserves: // VERIFY — changes monthly
+    Do NOT include specific figures — too volatile
+
+PM SURYA GHAR SCHEME:
+  → Rooftop solar for 1 crore households
+  → 300 units free electricity per month
+  → Subsidy up to ₹78,000
+  → Launched: February 2024
+  // Appears in both National Polity AND Business buckets
+  // Tag with both: use "national-polity" as primary,
+  // "business-economy" as secondary
+
+QUESTION PATTERNS (20 questions):
+
+  RBI and Monetary Policy (6 questions):
+    → "What is RBI's official inflation target?" (4%)
+    → "The Monetary Policy Committee (MPC) consists
+      of how many members?" (6)
+    → "What does RBI do to REDUCE inflation?"
+      (Increases repo rate)
+    → "The repo rate is the rate at which..."
+      (RBI lends to commercial banks)
+    → "Which FM has presented the most consecutive
+      Union Budgets?" (Nirmala Sitharaman — 7)
+    → "The Union Budget 2024–25 theme was..."
+      (Viksit Bharat / Developed India by 2047)
+
+  Budget Highlights (6 questions):
+    → "Capital expenditure in Budget 2024–25 was..."
+      (₹11.11 lakh crore)
+    → "Angel Tax abolition in Budget 2024 benefits..."
+      (startups)
+    → "MUDRA loan limit was raised to how much in 2024?"
+      (₹20 lakh — from ₹10 lakh)
+    → "Standard deduction in new tax regime was
+      increased to..." (₹75,000)
+    → "LTCG tax on equity was raised from 10% to..."
+      (12.5%)
+    → "India's capital expenditure in Budget 2024–25
+      crossed which milestone?" (₹11 lakh crore)
+
+  Mergers and Economy (5 questions):
+    → "Which merger created India's largest private
+      sector bank?" (HDFC + HDFC Bank, July 2023)
+    → "Air India was acquired by which conglomerate?"
+      (Tata Group — 2022)
+    → "India's GDP growth rate in 2023–24 was
+      approximately..." (8.2%)
+    → "India is currently the ___ largest economy
+      in the world" (5th)
+    → "Reliance and Disney merged to create which
+      OTT platform?" (Combined JioCinema + Disney+ Hotstar)
+
+  Business GK (3 questions):
+    → "India surpassed which country to become the
+      5th largest economy?" (UK)
+    → "UPI was launched in India in which year?" (2016)
+    → "BSE (Bombay Stock Exchange) is Asia's ___ stock
+      exchange" (oldest — established 1875)
+
+---
+
+=================================================================
+=== BUCKET 4: Science & Defence
+    caTag: "science-defence"
+=================================================================
+
+VERIFIED FACTS — Science & Defence 2023–2025:
+
+ISRO MISSIONS:
+  Chandrayaan-3:
+    → Launch: July 14, 2023
+    → Landing: August 23, 2023 (Moon south pole)
+    → India = 4th country to land on Moon
+    → Lander: Vikram; Rover: Pragyan
+    → Landing site named: Shiv Shakti Point
+    → Crash site of Chandrayaan-2 named: Tiranga Point
+
+  Aditya-L1:
+    → Launch: September 2, 2023
+    → Purpose: Study the Sun
+    → Reached L1 Lagrange point: January 2024
+    → First Indian solar observatory mission
+
+  Gaganyaan (upcoming):
+    → India's first human spaceflight mission
+    → Crew: 3 astronauts
+    → Target: // VERIFY current launch date
+
+  XPoSat:
+    → Launch: January 1, 2024
+    → Purpose: Study X-ray polarisation of cosmic sources
+    → Only second such mission in world (after NASA's IXPE)
+
+DRDO LAUNCHES:
+  Ugram (Indigenous Assault Rifle):
+    → Developed by: DRDO
+    → Purpose: Replace AK-47 in armed forces
+    → Calibre: 7.62×39 mm
+    // HIGH PRIORITY — exact example from framework
+
+  Agni-5 with MIRV:
+    → Successfully tested: March 2024
+    → MIRV: Multiple Independently Targetable
+      Re-Entry Vehicle
+    → Can carry multiple nuclear warheads
+    → India joined exclusive MIRV club:
+      USA, Russia, UK, France, China
+
+  Tapas BH UAV:
+    → Medium altitude long endurance drone
+    → Made in India under Atmanirbhar Bharat
+
+  HELIOS (High Energy Laser Integrated Optical-dazzler
+  and Surveillance system):
+    → Directed energy weapon
+    // VERIFY latest DRDO projects
+
+  LCA Tejas MK2:
+    → Indigenous fighter aircraft development
+    → DRDO + HAL collaboration
+
+AI AND TECHNOLOGY MILESTONES 2024:
+  India AI Mission:
+    → Budget: ₹10,372 crore
+    → Approved: March 2024
+    → Objective: Build AI infrastructure,
+      10,000 GPU compute facility
+  Bhashini:
+    → India's AI-powered language translation platform
+    → Covers 22 scheduled languages
+  ChatGPT and Generative AI:
+    → OpenAI CEO: Sam Altman
+    → ChatGPT launched: November 2022
+    → GPT-4 launched: March 2023
+  Nobel Physics 2024: Hopfield and Hinton
+    → Awarded for foundational work in AI/neural networks
+    → Hinton called "Godfather of AI"
+
+SPACE GLOBALLY:
+  Artemis Programme (NASA):
+    → Goal: Return humans to Moon
+    → Artemis I: Unmanned (2022)
+    → Artemis II: Crewed lunar flyby (planned)
+  SpaceX Starship:
+    → World's largest rocket
+    → Multiple test flights 2023–2024
+  James Webb Space Telescope:
+    → Operational since 2022
+    → Deepest images of universe
+
+QUESTION PATTERNS (20 questions):
+
+  ISRO (7 questions):
+    → "Name the lander and rover of Chandrayaan-3"
+      (Vikram and Pragyan)
+    → "The Chandrayaan-3 landing site was named..."
+      (Shiv Shakti Point)
+    → "What was the purpose of Aditya-L1 mission?"
+      (Study the Sun — first Indian solar observatory)
+    → "Aditya-L1 reached which orbital point?" (L1 Lagrange)
+    → "XPoSat was launched on..." (January 1, 2024)
+    → "XPoSat studies..." (X-ray polarisation of cosmic sources)
+    → "India's first human spaceflight mission is named..."
+      (Gaganyaan)
+
+  DRDO (6 questions):
+    → "Which organisation developed the 'Ugram'
+      indigenous assault rifle?"
+      (DRDO)
+      caTag: "science-defence"
+      // EXACT example from framework
+    → "Ugram is designed to replace which rifle
+      in the Indian armed forces?" (AK-47)
+    → "Agni-5 was tested with which advanced technology
+      in 2024?" (MIRV — Multiple Independently Targetable
+      Re-Entry Vehicle)
+    → "MIRV stands for..."
+      (Multiple Independently Targetable Re-Entry Vehicle)
+    → "By testing MIRV, India joined a club of how many
+      countries?" (5 — USA, Russia, UK, France, China + India = 6)
+      // VERIFY exact number
+    → "LCA stands for..." (Light Combat Aircraft)
+
+  AI and Technology (4 questions):
+    → "India AI Mission was approved with a budget of..."
+      (₹10,372 crore — March 2024)
+    → "Geoffrey Hinton is known as the..."
+      (Godfather of AI)
+    → "Hinton won the Nobel Prize in which category?"
+      (Physics — 2024)
+    → "Bhashini is India's AI platform for..."
+      (Language translation across 22 scheduled languages)
+
+  Global Science (3 questions):
+    → "James Webb Space Telescope was launched by..."
+      (NASA — operational from 2022)
+    → "Starship rocket is developed by..." (SpaceX)
+    → "The Artemis programme aims to..."
+      (Return humans to the Moon)
+
+---
+
+=================================================================
+=== BUCKET 5: Awards & Sports
+    caTag: "awards-sports"
+=================================================================
+
+VERIFIED FACTS — Awards & Sports 2023–2025:
+
+PADMA AWARDS 2024:
+  First para-athlete Padma Bhushan:
+    Devendra Jhajharia
+    // HIGH PRIORITY — exact example from framework
+    // Javelin para-athlete, multiple Paralympic gold medals
+  M. Fathima Beevi: Padma Bhushan
+    (First woman judge of Supreme Court of India)
+  Mithun Chakraborty: Padma Bhushan (NOT Padma Shri)
+  Konidela Chiranjeevi: Padma Vibhushan
+  Vyjayanthimala: Padma Vibhushan
+
+BHARAT RATNA 2024:
+  LK Advani, MS Swaminathan (posthumous),
+  Chaudhary Charan Singh (posthumous),
+  PV Narasimha Rao (posthumous),
+  Karpoori Thakur (posthumous)
+
+NOBEL PRIZES 2024:
+  Peace: Nihon Hidankyo
+    (Japanese atomic bomb survivor organisation)
+  Literature: Han Kang (South Korea)
+    (First South Korean and first Asian woman)
+  Physics: John Hopfield and Geoffrey Hinton
+    (AI and neural networks)
+  Chemistry: David Baker, Demis Hassabis, John Jumper
+    (protein structure prediction — AlphaFold)
+  Medicine: Victor Ambros and Gary Ruvkun
+    (microRNA discovery)
+  Economics: Daron Acemoglu, Simon Johnson,
+    James Robinson (institutions and prosperity)
+
+NOBEL PRIZES 2023:
+  Peace: Narges Mohammadi (Iran, women's rights)
+  Literature: Jon Fosse (Norway)
+  Physics: Attosecond pulses research
+    (Agostini, L'Huillier, Krausz)
+  Medicine: Katalin Karikó and Drew Weissman
+    (mRNA vaccine technology — COVID-19 link)
+
+CRICKET 2024:
+  ICC T20 World Cup 2024:
+    → Winner: India (vs South Africa in final)
+    → Host: USA and West Indies
+    → Player of Tournament: // VERIFY
+    → India's first T20 WC since 2007
+  ICC ODI World Cup 2023:
+    → Winner: Australia (vs India in final)
+    → Host: India
+
+OLYMPICS — PARIS 2024:
+  Neeraj Chopra: Silver (Javelin) — Gold was Tokyo 2020
+  Manu Bhaker:
+    → Bronze in 10m Air Pistol (individual)
+    → Bronze in 10m Air Pistol mixed team (with Sarabjot Singh)
+    → First Indian woman to win 2 medals in single Olympics
+  Swapnil Kusale: Bronze (50m Rifle 3 positions)
+  Aman Sehrawat: Bronze (Wrestling 57kg)
+  India total medals: 6 (0G, 1S, 5B)
+  // VERIFY final count
+
+GRAND SLAMS 2024:
+  Australian Open 2024: // VERIFY winners
+  French Open 2024:
+    Men: Carlos Alcaraz
+    Women: Iga Swiatek
+    // VERIFY
+  Wimbledon 2024:
+    Men: Carlos Alcaraz (vs Djokovic)
+    Women: Barbora Krejčíková
+    // VERIFY
+  US Open 2024:
+    Men: Jannik Sinner
+    Women: Aryna Sabalenka
+    // VERIFY
+
+CHESS 2024:
+  World Chess Champion 2024: D. Gukesh
+    → Youngest world chess champion ever
+    → Defeated Ding Liren (China)
+    → India's second world champion after Viswanathan Anand
+
+PARA-ATHLETES:
+  Devendra Jhajharia:
+    → First para-athlete to receive Padma Bhushan
+    → Javelin thrower, multiple Paralympic gold medals
+    // HIGH PRIORITY — exact example from framework
+
+QUESTION PATTERNS (25 questions):
+
+  Padma Awards (5 questions):
+    → "Who was the first para-athlete to receive the
+      Padma Bhushan award in India?"
+      (Devendra Jhajharia)
+      caTag: "awards-sports"
+      // EXACT example from framework
+    → "M. Fathima Beevi received Padma Bhushan 2024.
+      She is known for being..."
+      (First woman judge of the Supreme Court of India)
+    → "Mithun Chakraborty received which Padma award
+      in 2024?" (Padma Bhushan — NOT Padma Shri)
+    → "Which actor received the Padma Vibhushan in 2024?"
+      (Konidela Chiranjeevi)
+    → "Vyjayanthimala received which award in 2024?"
+      (Padma Vibhushan)
+
+  Nobel Prizes (6 questions):
+    → "The Nobel Peace Prize 2024 was awarded to..."
+      (Nihon Hidankyo)
+    → "Han Kang won Nobel Literature 2024 — which
+      country is she from?" (South Korea)
+    → "Geoffrey Hinton received Nobel Physics 2024 for
+      work in..." (AI and neural networks)
+    → "The 2023 Nobel Peace Prize was awarded to..."
+      (Narges Mohammadi)
+    → "Katalin Karikó won Nobel Medicine 2023 for
+      which technology?" (mRNA vaccine technology)
+    → "Nobel Chemistry 2024 was awarded for work on..."
+      (protein structure prediction — AlphaFold)
+
+  Cricket (5 questions):
+    → "India won the ICC T20 World Cup 2024 by defeating..."
+      (South Africa)
+    → "The ICC T20 World Cup 2024 was jointly hosted by..."
+      (USA and West Indies)
+    → "Who won the ICC ODI World Cup 2023?" (Australia)
+    → "After how many years did India win the T20 WC
+      in 2024?" (17 years — last in 2007)
+    → "Which Indian captain led the 2024 T20 WC win?"
+      (Rohit Sharma — // VERIFY)
+
+  Olympics (5 questions):
+    → "Who became the first Indian woman to win two
+      medals at a single Olympics?" (Manu Bhaker)
+    → "Neeraj Chopra won which medal at Paris Olympics 2024?"
+      (Silver — Gold was at Tokyo 2020)
+    → "Manu Bhaker won medals in which sport at Paris 2024?"
+      (Shooting — 10m Air Pistol)
+    → "How many total medals did India win at Paris 2024?"
+      (6 — 0 Gold, 1 Silver, 5 Bronze — // VERIFY)
+    → "India's Paris 2024 silver medalist was..."
+      (Neeraj Chopra — Javelin)
+
+  Chess and Other Sports (4 questions):
+    → "D. Gukesh became the youngest world chess
+      champion in which year?" (2024)
+    → "Whom did D. Gukesh defeat to win the World
+      Chess Championship?" (Ding Liren — China)
+    → "Who won Wimbledon men's singles 2024?"
+      (Carlos Alcaraz)
+    → "Jannik Sinner won which Grand Slam in 2024?"
+      (US Open)
+
+---
+
+## UPDATED SCHEMA FOR CA QUESTIONS
+
+Every CA question must now include:
+
+  caTag: "national-polity" | "international" |
+         "business-economy" | "science-defence" |
+         "awards-sports"
+
+  caYear: 2023 | 2024 | 2025 | "static"
+    // Allows app to refresh only recent year questions
+
+  verifiedAsOf: "YYYY-MM"
+    // For any fact that could change
+
+  refreshPriority: "high" | "medium" | "low"
+    // high = appointment/rate (changes often)
+    // medium = award/event (annual cycle)
+    // low = founding year/static fact (never changes)
+
+Example question object:
+  {
+    id: "ca-np-001",
+    type: "mcq",
+    difficulty: "easy",
+    question: "Who is the Chairman of the 16th Finance Commission?",
+    options: [
+      "Dr. Arvind Panagariya",
+      "Ajay Narayan Jha",
+      "NK Singh",
+      "Sushil Chandra"
+    ],
+    correct: 0,
+    explanation: "Dr. Arvind Panagariya was appointed Chairman
+      of the 16th Finance Commission in 2023. The Commission
+      will recommend tax devolution between Centre and States
+      for the period 2026–2031.",
+    examTags: ["MH-CET", "CUET"],
+    caTag: "national-polity",
+    caYear: 2024,
+    cognitiveType: "recall",
+    timePresure: "speed",
+    speedTarget: 20,
+    negativeMarking: false,
+    verifiedAsOf: "2024-12",
+    refreshPriority: "low"
+  }
+
+---
+
+## COMPLETE QUESTION COUNT BY BUCKET
+
+Bucket 1 — National & Polity:     20 questions
+Bucket 2 — International:         20 questions
+Bucket 3 — Business & Economy:    20 questions
+Bucket 4 — Science & Defence:     20 questions
+Bucket 5 — Awards & Sports:       25 questions
+                                   ───────────
+Total new CA questions:            105 questions
+
+Combined with original CA files:   300 + 105 = 405 total
+
+---
+
+## VERIFY FLAGS SUMMARY
+// All items below must be verified before finalising
+
+  [ ] CJI current holder (changes every few months)
+  [ ] Repo rate current value (changes with MPC meetings)
+  [ ] India Paris 2024 medal count (6 — verify final tally)
+  [ ] Wimbledon 2024 winners (Alcaraz / Krejčíková — verify)
+  [ ] US Open 2024 (Sinner / Sabalenka — verify)
+  [ ] French Open 2024 (Alcaraz / Swiatek — verify)
+  [ ] IPL 2024 winner (KKR — verify)
+  [ ] India unicorn count (100+ — verify exact)
+  [ ] Reliance-Disney merger completion status
+  [ ] Gaganyaan launch date (still pending)
+  [ ] BRICS new members formal admission status
+  [ ] Rohit Sharma as T20 WC 2024 captain (verify)
+  [ ] World Bank President current (Ajay Banga — verify)
+  [ ] UPSC/NHRC/CBI current appointments (all verify)
+  [ ] Maharashtra scheme names and amounts (all verify)
+```
+
+---
+
+## What This Adds to the Previous Prompt
+
+| Gap Identified | Now Covered |
+|---|---|
+| Finance Commission Chairman | ✅ Dr. Arvind Panagariya |
+| NATO 32nd member | ✅ Sweden (March 2024) |
+| PM Surya Ghar scheme | ✅ Full details + objective |
+| DRDO Ugram rifle | ✅ AK-47 replacement context |
+| First para-athlete Padma Bhushan | ✅ Devendra Jhajharia |
+| New criminal laws (BNS/BNSS/BSA) | ✅ July 2024 |
+| Manu Bhaker Paris 2024 | ✅ Two bronze medals |
+| D. Gukesh chess champion | ✅ Youngest ever |
+| Nobel Chemistry 2024 (AlphaFold) | ✅ Protein structure |
+| RBI Governor updated | ✅ Sanjay Malhotra not Shaktikanta Das |
+| caTag field for app filtering | ✅ All 5 buckets tagged |
+| refreshPriority for content updates | ✅ High/Medium/Low |

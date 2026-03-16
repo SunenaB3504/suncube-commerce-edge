@@ -1,0 +1,112 @@
+import { SQPQuestion } from '../../types';
+
+export const SQP_QUESTIONS: SQPQuestion[] = [
+    {
+        id: 'u6-ch1-q18-sqp-2023',
+        year: '2022-23',
+        paperType: 'SQP',
+        marks: 1,
+        type: 'MCQ',
+        questionNumber: '18',
+        question: 'Identify, which of the following indicates the adverse impact of British rule in India.',
+        optionA: 'Introduction of communication networks in India',
+        optionB: 'Change in composition of India’s foreign trade',
+        optionC: 'Introduction of modern administrative system in India',
+        optionD: 'Introduction of railways in India',
+        answer: 'B',
+        aiExplanation: 'Teacher\'s Voice: Most things the British introduced (like railways, telegraphs, and administrative systems) had some positive side effects for India. However, the change in the composition of our foreign trade was purely destructive—India was reduced to a mere exporter of cheap raw materials (like cotton) and an importer of expensive finished British factory goods.'
+    },
+    {
+        id: 'u6-ch1-q28b-sqp-2024',
+        year: '2023-24',
+        paperType: 'SQP',
+        marks: 3,
+        type: 'SA',
+        questionNumber: '28 (B) OR',
+        question: 'The pre-independent India’s occupational structure experienced growing regional variation. Explain.',
+        markingScheme: 'Regional variation in occupational structure during British rule:\n1. Decline in agriculture: Parts of the Madras Presidency, Bombay, and Bengal witnessed a decisive decline in the dependence of the workforce on agriculture with a commensurate increase in the manufacturing and services sectors.\n2. Increase in agriculture: Conversely, there had been a notable increase in the share of workforce primarily in agriculture in states such as Orissa, Rajasthan, and Punjab.',
+        aiExplanation: 'Teacher\'s Voice: **Here is how to lock in your 3 M!**\n\nThe British impact on jobs wasn\'t the same everywhere.\nPoint 1 (1.5 marks): In the main commercial hubs (Madras, Bombay, Bengal Presidencies), factory jobs and service sector roles slowly grew, pulling people away from farming.\nPoint 2 (1.5 marks): At the exact same time, deeper inland in states like Orissa, Rajasthan, and Punjab, local handicrafts were destroyed, forcing the migration of artisans back into agriculture.'
+    },
+    {
+        id: 'u6-ch1-q1-board-2023',
+        year: '2022-23',
+        paperType: 'Board',
+        marks: 1,
+        type: 'MCQ',
+        questionNumber: '1',
+        question: 'Which of the following researchers estimated India\'s national income during the colonial period and his estimates were considered very significant?',
+        optionA: 'Dadabhai Naoroji',
+        optionB: 'William Digby',
+        optionC: 'V.K.R.V. Rao',
+        optionD: 'RC Desai',
+        answer: 'C',
+        aiExplanation: 'Teacher\'s Voice: While many tried, V.K.R.V. Rao\'s methodology was considered the most scientific and robust during the colonial era.'
+    },
+    {
+        id: 'u6-ch1-q30-sqp-2025',
+        year: '2024-25',
+        paperType: 'SQP',
+        marks: 4,
+        type: 'SA',
+        questionNumber: '30',
+        question: '"During the British rule, even though the agricultural sector of the Indian economy remained stagnant, there was some evidence of change." Justify the given statement.',
+        markingScheme: 'Justification for change in agriculture:\n1. Commercialisation: Shift from subsistence to cash crops (Indigo, Cotton).\n2. Market orientation: Farmers started producing for the market rather than self-consumption.\n3. Infrastructure: Development of railways helped in movement of agricultural surplus.',
+        aiExplanation: 'Teacher\'s Voice: The key word is "change" vs "progress". Agriculture changed (became commercial), but it didn\'t progress (productivity stayed low, farmers stayed poor).'
+    },
+    {
+        id: 'u6-ch1-q2-board-2024',
+        year: '2023-24',
+        paperType: 'Board',
+        marks: 1,
+        type: 'MCQ',
+        questionNumber: '2',
+        question: 'The main reason for the decline of India\'s handicraft industry during the British rule was:',
+        optionA: 'Lack of raw materials',
+        optionB: 'High cost of production',
+        optionC: 'Discriminatory tariff policy',
+        optionD: 'Introduction of steam engines',
+        answer: 'C',
+        aiExplanation: 'Teacher\'s Voice: This is the "Examiner\'s Favourite". Always look for the Discriminatory Tariff Policy when handicrafts are mentioned.'
+    },
+    {
+        id: 'u6-ch1-q3-board-2024',
+        year: '2023-24',
+        paperType: 'Board',
+        marks: 1,
+        type: 'MCQ',
+        questionNumber: '3',
+        question: 'Which year is known as the Great Divide in the demographic history of India?',
+        optionA: '1901',
+        optionB: '1911',
+        optionC: '1921',
+        optionD: '1931',
+        answer: 'C',
+        aiExplanation: 'Teacher\'s Voice: 1921 — when we finally entered the second stage of demographic transition.'
+    },
+    {
+        id: 'u6-ch1-q4-board-2025',
+        year: '2024-25',
+        paperType: 'Board',
+        marks: 1,
+        type: 'MCQ',
+        questionNumber: '4',
+        question: 'Under the British rule, the Suez Canal was opened in the year:',
+        optionA: '1850',
+        optionB: '1869',
+        optionC: '1881',
+        optionD: '1907',
+        answer: 'B',
+        aiExplanation: 'Teacher\'s Voice: 1869 — the same year Mahatma Gandhi was born! Easy to remember now, right?'
+    },
+    {
+        id: 'u6-ch1-q31-sqp-2026',
+        year: '2025-26',
+        paperType: 'SQP',
+        marks: 4,
+        type: 'SA',
+        questionNumber: '31',
+        question: 'State the reasons for the "Drain of Wealth" from India during the colonial period.',
+        markingScheme: '1. Administrative expenses of the British government in India.\n2. Expenses on wars fought by the British government.\n3. Payments for invisible items (services) like shipping and insurance.\n4. Remittances of British officials to their home country.',
+        aiExplanation: 'Teacher\'s Voice: The "Drain" was basically India paying for its own colonization. We exported more than we imported, but the surplus never came back to us in the form of gold or money; it was spent by the British for their own benefit.'
+    }
+];

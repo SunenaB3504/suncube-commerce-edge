@@ -1,0 +1,49 @@
+src/App.tsx(59,42): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/components/MockExamSimulator.tsx(199,91): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/components/SQPArchives.tsx(61,73): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/components/TheoryView.tsx(218,97): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/data/unit1-national-income/flashcards.ts(8,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(15,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(22,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(29,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(36,5): error TS2322: Type '"Circular Flow"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(43,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(50,5): error TS2322: Type '"Aggregates"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(57,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(64,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(71,5): error TS2322: Type '"Aggregates"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(169,5): error TS2322: Type '"Circular Flow"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(176,5): error TS2322: Type '"Circular Flow"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(197,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(211,5): error TS2322: Type '"Aggregates"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(288,5): error TS2322: Type '"Aggregates"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(358,5): error TS2322: Type '"History"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(365,5): error TS2322: Type '"History"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit1-national-income/flashcards.ts(372,5): error TS2322: Type '"Basic Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit2-money-banking/flashcards.ts(351,5): error TS2322: Type '"Functions"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit2-money-banking/flashcards.ts(358,5): error TS2322: Type '"Demand for Money"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit2-money-banking/flashcards.ts(365,5): error TS2322: Type '"Demand for Money"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit2-money-banking/flashcards.ts(372,5): error TS2322: Type '"Equations"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit2-money-banking/flashcards.ts(379,5): error TS2322: Type '"Demand for Money"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit2-money-banking/flashcards.ts(386,5): error TS2322: Type '"RBI Functions"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit2-money-banking/flashcards.ts(393,5): error TS2322: Type '"Money Supply"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit3-income-determination/flashcards.ts(358,5): error TS2322: Type '"Concepts"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit3-income-determination/flashcards.ts(365,5): error TS2322: Type '"Analysis"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit3-income-determination/flashcards.ts(372,5): error TS2322: Type '"Investment"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit3-income-determination/flashcards.ts(379,5): error TS2322: Type '"Consumption"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(309,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(315,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(321,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(327,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(333,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(339,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(345,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(351,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(357,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit4-govt-budget/flashcards.ts(363,5): error TS2322: Type '"Master"' is not assignable to type '"Definition" | "Classification" | "Calculation" | "True/False" | "Theory" | "Technical" | "Application"'.
+src/data/unit5-bop-forex/topics.ts(90,9): error TS2322: Type '"key_relationship"' is not assignable to type '"list" | "concept" | "comparison" | "context" | "warning" | "tip" | undefined'.
+src/data/unit5-bop-forex/topics.ts(110,9): error TS2322: Type '"key_relationship"' is not assignable to type '"list" | "concept" | "comparison" | "context" | "warning" | "tip" | undefined'.
+src/data/unit6-ied-intro/sqp.ts(57,5): error TS2322: Type '"Matching"' is not assignable to type '"MCQ" | "SA" | "LA" | "Case" | "Assertion-Reason"'.
+src/data/unit6-ied-intro/sqp.ts(117,5): error TS2322: Type '"Matching"' is not assignable to type '"MCQ" | "SA" | "LA" | "Case" | "Assertion-Reason"'.
+src/data/unit7-ch5-rural/index.ts(3,10): error TS2305: Module '"./sqp"' has no exported member 'SQP'.
+src/main.tsx(4,17): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.

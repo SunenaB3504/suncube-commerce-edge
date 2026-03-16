@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+@import "@suncube/ui/theme.css";
+
+@layer base {
+  body {
+    @apply antialiased bg-brand-slate text-white;
+  }
+}
+
+@layer utilities {
+  /* 3D Transform Utilities for Flashcards */
+  .preserve-3d { 
+    transform-style: preserve-3d; 
+  }
+  .perspective { 
+    perspective: 1000px; 
+  }
+  .backface-hidden { 
+    backface-visibility: hidden; 
+  }
+  .rotate-y-180 { 
+    transform: rotateY(180deg); 
+  }
+  .rotate-y-0 { 
+    transform: rotateY(0deg); 
+  }
+  
+  /* Additional Animation Utilities */
+  .perspective-1000 { perspective: 1000px; }
+  .transform-style-3d { transform-style: preserve-3d; }
+  .transition-transform-700 { transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+  .emerald-gradient { background: linear-gradient(135deg, #064E3B 0%, #065F46 100%); }
+}

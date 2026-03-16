@@ -1,0 +1,613 @@
+data/unit10/sqp.ts(60,932): error TS1005: ',' expected.
+data/unit10/sqp.ts(60,945): error TS1005: ',' expected.
+data/unit10/sqp.ts(60,949): error TS1005: ',' expected.
+data/unit10/sqp.ts(60,964): error TS1005: ':' expected.
+data/unit10/sqp.ts(60,973): error TS1005: ',' expected.
+data/unit10/sqp.ts(60,977): error TS1005: ',' expected.
+data/unit10/sqp.ts(60,1132): error TS1002: Unterminated string literal.
+data/unit10/sqp.ts(61,3): error TS1005: ':' expected.
+data/unit10/sqp.ts(70,856): error TS1005: ',' expected.
+data/unit10/sqp.ts(70,858): error TS1005: ',' expected.
+data/unit10/sqp.ts(70,869): error TS1005: ',' expected.
+data/unit10/sqp.ts(70,877): error TS1005: ',' expected.
+data/unit10/sqp.ts(70,878): error TS1003: Identifier expected.
+data/unit10/sqp.ts(73,1): error TS1160: Unterminated template literal.
+data/unit11/sqp.ts(13,629): error TS1005: ',' expected.
+data/unit11/sqp.ts(13,631): error TS1005: ',' expected.
+data/unit11/sqp.ts(13,642): error TS1005: ',' expected.
+data/unit11/sqp.ts(13,650): error TS1005: ',' expected.
+data/unit11/sqp.ts(13,651): error TS1003: Identifier expected.
+data/unit11/sqp.ts(24,31): error TS1005: ']' expected.
+data/unit11/sqp.ts(24,45): error TS1005: ',' expected.
+data/unit11/sqp.ts(24,49): error TS1005: ',' expected.
+data/unit11/sqp.ts(24,55): error TS1005: ',' expected.
+data/unit11/sqp.ts(24,61): error TS1005: ',' expected.
+data/unit11/sqp.ts(24,62): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,64): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,66): error TS1134: Variable declaration expected.
+data/unit11/sqp.ts(24,68): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,77): error TS1005: '(' expected.
+data/unit11/sqp.ts(24,89): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,107): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,109): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,113): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,122): error TS1005: '(' expected.
+data/unit11/sqp.ts(24,127): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,133): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,145): error TS1005: ')' expected.
+data/unit11/sqp.ts(24,151): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,154): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,164): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,166): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,183): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,206): error TS1005: ',' expected.
+data/unit11/sqp.ts(24,216): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,217): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,218): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,220): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,222): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,231): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,232): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,246): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,257): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,266): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,269): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,279): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,286): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,289): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,294): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,313): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,315): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,317): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,326): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,332): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,334): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,336): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,338): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,346): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,347): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,359): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,368): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,371): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,386): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,388): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,390): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,400): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,401): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,413): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,422): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,425): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,430): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,435): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,446): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,448): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,450): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,459): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,460): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,473): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,475): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,480): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,483): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,487): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,493): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,496): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,504): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,510): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,522): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,524): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,526): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,536): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,549): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,561): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,582): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,597): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,599): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,601): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,612): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,617): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,629): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,632): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,638): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,647): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,650): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,662): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,664): error TS1127: Invalid character.
+data/unit11/sqp.ts(24,666): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,676): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,690): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,691): error TS1109: Expression expected.
+data/unit11/sqp.ts(24,702): error TS1005: ';' expected.
+data/unit11/sqp.ts(24,708): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,711): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(24,723): error TS1003: Identifier expected.
+data/unit11/sqp.ts(25,5): error TS1128: Declaration or statement expected.
+data/unit11/sqp.ts(25,6): error TS1128: Declaration or statement expected.
+data/unit11/sqp.ts(28,13): error TS1005: ';' expected.
+data/unit11/sqp.ts(29,18): error TS1005: ';' expected.
+data/unit11/sqp.ts(30,14): error TS1005: ';' expected.
+data/unit11/sqp.ts(31,13): error TS1005: ';' expected.
+data/unit11/sqp.ts(32,17): error TS1005: ';' expected.
+data/unit11/sqp.ts(33,15): error TS1005: ';' expected.
+data/unit11/sqp.ts(34,22): error TS1005: ';' expected.
+data/unit11/sqp.ts(35,6): error TS1128: Declaration or statement expected.
+data/unit11/sqp.ts(38,13): error TS1005: ';' expected.
+data/unit11/sqp.ts(39,18): error TS1005: ';' expected.
+data/unit11/sqp.ts(40,14): error TS1005: ';' expected.
+data/unit11/sqp.ts(41,13): error TS1005: ';' expected.
+data/unit11/sqp.ts(42,17): error TS1005: ';' expected.
+data/unit11/sqp.ts(43,15): error TS1005: ';' expected.
+data/unit11/sqp.ts(44,22): error TS1005: ';' expected.
+data/unit11/sqp.ts(44,829): error TS1109: Expression expected.
+data/unit11/sqp.ts(44,830): error TS1128: Declaration or statement expected.
+data/unit11/sqp.ts(47,13): error TS1005: ';' expected.
+data/unit11/sqp.ts(48,18): error TS1005: ';' expected.
+data/unit11/sqp.ts(49,14): error TS1005: ';' expected.
+data/unit11/sqp.ts(50,13): error TS1005: ';' expected.
+data/unit11/sqp.ts(51,17): error TS1005: ';' expected.
+data/unit11/sqp.ts(52,15): error TS1005: ';' expected.
+data/unit11/sqp.ts(53,22): error TS1005: ';' expected.
+data/unit11/sqp.ts(54,6): error TS1128: Declaration or statement expected.
+data/unit11/sqp.ts(57,13): error TS1005: ';' expected.
+data/unit11/sqp.ts(58,18): error TS1005: ';' expected.
+data/unit11/sqp.ts(59,14): error TS1005: ';' expected.
+data/unit11/sqp.ts(60,13): error TS1005: ';' expected.
+data/unit11/sqp.ts(61,17): error TS1005: ';' expected.
+data/unit11/sqp.ts(62,15): error TS1005: ';' expected.
+data/unit11/sqp.ts(63,22): error TS1005: ';' expected.
+data/unit11/sqp.ts(64,6): error TS1128: Declaration or statement expected.
+data/unit11/sqp.ts(67,13): error TS1005: ';' expected.
+data/unit11/sqp.ts(68,18): error TS1005: ';' expected.
+data/unit11/sqp.ts(69,14): error TS1005: ';' expected.
+data/unit11/sqp.ts(70,13): error TS1005: ';' expected.
+data/unit11/sqp.ts(71,17): error TS1005: ';' expected.
+data/unit11/sqp.ts(72,15): error TS1005: ';' expected.
+data/unit11/sqp.ts(73,22): error TS1005: ';' expected.
+data/unit11/sqp.ts(74,6): error TS1128: Declaration or statement expected.
+data/unit11/sqp.ts(77,13): error TS1005: ';' expected.
+data/unit11/sqp.ts(78,18): error TS1005: ';' expected.
+data/unit11/sqp.ts(79,14): error TS1005: ';' expected.
+data/unit11/sqp.ts(80,13): error TS1005: ';' expected.
+data/unit11/sqp.ts(81,17): error TS1005: ';' expected.
+data/unit11/sqp.ts(82,15): error TS1005: ';' expected.
+data/unit11/sqp.ts(83,22): error TS1005: ';' expected.
+data/unit11/sqp.ts(83,797): error TS1005: ';' expected.
+data/unit11/sqp.ts(83,810): error TS1434: Unexpected keyword or identifier.
+data/unit11/sqp.ts(83,1473): error TS1002: Unterminated string literal.
+data/unit11/sqp.ts(84,6): error TS1128: Declaration or statement expected.
+data/unit11/sqp.ts(87,13): error TS1005: ';' expected.
+data/unit11/sqp.ts(88,18): error TS1005: ';' expected.
+data/unit11/sqp.ts(89,14): error TS1005: ';' expected.
+data/unit11/sqp.ts(90,13): error TS1005: ';' expected.
+data/unit11/sqp.ts(91,17): error TS1005: ';' expected.
+data/unit11/sqp.ts(92,15): error TS1005: ';' expected.
+data/unit11/sqp.ts(93,22): error TS1005: ';' expected.
+data/unit11/sqp.ts(95,1): error TS1128: Declaration or statement expected.
+data/unit12/sqp.ts(38,564): error TS1005: ',' expected.
+data/unit12/sqp.ts(38,566): error TS1005: ',' expected.
+data/unit12/sqp.ts(38,577): error TS1005: ',' expected.
+data/unit12/sqp.ts(38,585): error TS1005: ',' expected.
+data/unit12/sqp.ts(38,586): error TS1003: Identifier expected.
+data/unit12/sqp.ts(46,16): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,19): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,21): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,30): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,33): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,37): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,47): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,52): error TS1005: ':' expected.
+data/unit12/sqp.ts(46,56): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,62): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,65): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,69): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,75): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,93): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,97): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,104): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,108): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,113): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,118): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,122): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,127): error TS1005: ',' expected.
+data/unit12/sqp.ts(46,134): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,14): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,19): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,22): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,24): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,38): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,48): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,55): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,65): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,70): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,79): error TS1127: Invalid character.
+data/unit12/sqp.ts(47,81): error TS1127: Invalid character.
+data/unit12/sqp.ts(47,98): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,107): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,111): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,117): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,125): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,138): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,152): error TS1003: Identifier expected.
+data/unit12/sqp.ts(47,163): error TS1005: ',' expected.
+data/unit12/sqp.ts(47,177): error TS1127: Invalid character.
+data/unit12/sqp.ts(47,515): error TS1002: Unterminated string literal.
+data/unit12/sqp.ts(48,7): error TS1005: ',' expected.
+data/unit12/sqp.ts(48,20): error TS1005: ',' expected.
+data/unit12/sqp.ts(49,20): error TS1005: ',' expected.
+data/unit12/sqp.ts(49,633): error TS1135: Argument expression expected.
+data/unit12/sqp.ts(49,634): error TS1128: Declaration or statement expected.
+data/unit12/sqp.ts(52,9): error TS1005: ';' expected.
+data/unit12/sqp.ts(53,14): error TS1005: ';' expected.
+data/unit12/sqp.ts(54,9): error TS1005: ';' expected.
+data/unit12/sqp.ts(55,10): error TS1005: ';' expected.
+data/unit12/sqp.ts(56,13): error TS1005: ';' expected.
+data/unit12/sqp.ts(57,12): error TS1005: ';' expected.
+data/unit12/sqp.ts(58,12): error TS1005: ';' expected.
+data/unit12/sqp.ts(59,12): error TS1005: ';' expected.
+data/unit12/sqp.ts(60,12): error TS1005: ';' expected.
+data/unit12/sqp.ts(61,11): error TS1005: ';' expected.
+data/unit12/sqp.ts(62,18): error TS1005: ';' expected.
+data/unit12/sqp.ts(63,18): error TS1005: ';' expected.
+data/unit12/sqp.ts(64,4): error TS1128: Declaration or statement expected.
+data/unit12/sqp.ts(68,9): error TS1005: ';' expected.
+data/unit12/sqp.ts(69,14): error TS1005: ';' expected.
+data/unit12/sqp.ts(70,9): error TS1005: ';' expected.
+data/unit12/sqp.ts(71,10): error TS1005: ';' expected.
+data/unit12/sqp.ts(72,13): error TS1005: ';' expected.
+data/unit12/sqp.ts(73,11): error TS1005: ';' expected.
+data/unit12/sqp.ts(74,20): error TS1005: ';' expected.
+data/unit12/sqp.ts(75,20): error TS1005: ';' expected.
+data/unit12/sqp.ts(75,763): error TS1005: ';' expected.
+data/unit12/sqp.ts(75,765): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(75,785): error TS1003: Identifier expected.
+data/unit12/sqp.ts(86,31): error TS1005: ']' expected.
+data/unit12/sqp.ts(86,49): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,55): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,60): error TS1128: Declaration or statement expected.
+data/unit12/sqp.ts(86,61): error TS1128: Declaration or statement expected.
+data/unit12/sqp.ts(86,62): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,64): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,68): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,77): error TS1005: '(' expected.
+data/unit12/sqp.ts(86,82): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,88): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,102): error TS1005: ')' expected.
+data/unit12/sqp.ts(86,109): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,111): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,128): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,153): error TS1005: ',' expected.
+data/unit12/sqp.ts(86,163): error TS1005: ',' expected.
+data/unit12/sqp.ts(86,166): error TS1005: ',' expected.
+data/unit12/sqp.ts(86,176): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,177): error TS1109: Expression expected.
+data/unit12/sqp.ts(86,178): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,180): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,182): error TS1109: Expression expected.
+data/unit12/sqp.ts(86,192): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,199): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,219): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,245): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,247): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,249): error TS1109: Expression expected.
+data/unit12/sqp.ts(86,259): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,267): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,271): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,281): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,294): error TS1005: '(' expected.
+data/unit12/sqp.ts(86,296): error TS1005: ')' expected.
+data/unit12/sqp.ts(86,310): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,315): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,326): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,328): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,330): error TS1109: Expression expected.
+data/unit12/sqp.ts(86,340): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,347): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,351): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,357): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,366): error TS1005: '(' expected.
+data/unit12/sqp.ts(86,370): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,382): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,386): error TS1005: ')' expected.
+data/unit12/sqp.ts(86,394): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,403): error TS1005: '(' expected.
+data/unit12/sqp.ts(86,407): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,415): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,417): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,419): error TS1109: Expression expected.
+data/unit12/sqp.ts(86,429): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,433): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,435): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,446): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,453): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,456): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,473): error TS1005: '(' expected.
+data/unit12/sqp.ts(86,477): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,482): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,485): error TS1005: ')' expected.
+data/unit12/sqp.ts(86,501): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,503): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,505): error TS1109: Expression expected.
+data/unit12/sqp.ts(86,515): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,527): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,531): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,538): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,544): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,553): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,557): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,561): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,564): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,581): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,588): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,590): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,592): error TS1109: Expression expected.
+data/unit12/sqp.ts(86,602): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,611): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,615): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,625): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,631): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,636): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,642): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,654): error TS1005: '(' expected.
+data/unit12/sqp.ts(86,659): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,661): error TS1127: Invalid character.
+data/unit12/sqp.ts(86,663): error TS1109: Expression expected.
+data/unit12/sqp.ts(86,673): error TS1005: ';' expected.
+data/unit12/sqp.ts(86,679): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,691): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,694): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(86,710): error TS1003: Identifier expected.
+data/unit12/sqp.ts(95,31): error TS1005: ']' expected.
+data/unit12/sqp.ts(95,49): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,55): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,60): error TS1128: Declaration or statement expected.
+data/unit12/sqp.ts(95,61): error TS1128: Declaration or statement expected.
+data/unit12/sqp.ts(95,62): error TS1127: Invalid character.
+data/unit12/sqp.ts(95,64): error TS1127: Invalid character.
+data/unit12/sqp.ts(95,68): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,77): error TS1005: '(' expected.
+data/unit12/sqp.ts(95,89): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,93): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,99): error TS1127: Invalid character.
+data/unit12/sqp.ts(95,101): error TS1127: Invalid character.
+data/unit12/sqp.ts(95,105): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,114): error TS1005: '(' expected.
+data/unit12/sqp.ts(95,125): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,129): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,142): error TS1127: Invalid character.
+data/unit12/sqp.ts(95,144): error TS1127: Invalid character.
+data/unit12/sqp.ts(95,161): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,184): error TS1005: ',' expected.
+data/unit12/sqp.ts(95,187): error TS1005: ',' expected.
+data/unit12/sqp.ts(95,196): error TS1005: ',' expected.
+data/unit12/sqp.ts(95,206): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,207): error TS1109: Expression expected.
+data/unit12/sqp.ts(95,208): error TS1127: Invalid character.
+data/unit12/sqp.ts(95,210): error TS1127: Invalid character.
+data/unit12/sqp.ts(95,212): error TS1109: Expression expected.
+data/unit12/sqp.ts(95,222): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,223): error TS1109: Expression expected.
+data/unit12/sqp.ts(95,232): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,235): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,254): error TS1127: Invalid character.
+data/unit12/sqp.ts(95,256): error TS1127: Invalid character.
+data/unit12/sqp.ts(95,258): error TS1109: Expression expected.
+data/unit12/sqp.ts(95,267): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,268): error TS1109: Expression expected.
+data/unit12/sqp.ts(95,275): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,284): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,288): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,290): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,296): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,299): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,307): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,317): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,321): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,324): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,327): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,329): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,334): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,343): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,352): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,368): error TS1127: Invalid character.
+data/unit12/sqp.ts(95,370): error TS1127: Invalid character.
+data/unit12/sqp.ts(95,372): error TS1109: Expression expected.
+data/unit12/sqp.ts(95,384): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,385): error TS1109: Expression expected.
+data/unit12/sqp.ts(95,391): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,398): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,401): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,407): error TS1435: Unknown keyword or identifier. Did you mean 'out'?
+data/unit12/sqp.ts(95,413): error TS1435: Unknown keyword or identifier. Did you mean 'this'?
+data/unit12/sqp.ts(95,417): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,424): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,428): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,432): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,440): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,450): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,460): error TS1109: Expression expected.
+data/unit12/sqp.ts(95,465): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,468): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,470): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,478): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,481): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,489): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,497): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,503): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,506): error TS1435: Unknown keyword or identifier. Did you mean 'this'?
+data/unit12/sqp.ts(95,523): error TS1127: Invalid character.
+data/unit12/sqp.ts(95,525): error TS1127: Invalid character.
+data/unit12/sqp.ts(95,527): error TS1109: Expression expected.
+data/unit12/sqp.ts(95,537): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,538): error TS1109: Expression expected.
+data/unit12/sqp.ts(95,546): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,555): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,569): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,573): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,578): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,590): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,601): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,605): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,612): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,615): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(95,640): error TS1005: ';' expected.
+data/unit12/sqp.ts(95,650): error TS1003: Identifier expected.
+data/unit12/sqp.ts(96,6): error TS1128: Declaration or statement expected.
+data/unit12/sqp.ts(99,13): error TS1005: ';' expected.
+data/unit12/sqp.ts(100,18): error TS1005: ';' expected.
+data/unit12/sqp.ts(101,14): error TS1005: ';' expected.
+data/unit12/sqp.ts(102,13): error TS1005: ';' expected.
+data/unit12/sqp.ts(103,17): error TS1005: ';' expected.
+data/unit12/sqp.ts(104,15): error TS1005: ';' expected.
+data/unit12/sqp.ts(105,22): error TS1005: ';' expected.
+data/unit12/sqp.ts(105,656): error TS1005: ';' expected.
+data/unit12/sqp.ts(105,660): error TS1005: '(' expected.
+data/unit12/sqp.ts(105,662): error TS1005: ';' expected.
+data/unit12/sqp.ts(105,667): error TS1005: ';' expected.
+data/unit12/sqp.ts(105,671): error TS1005: ')' expected.
+data/unit12/sqp.ts(105,1213): error TS1002: Unterminated string literal.
+data/unit12/sqp.ts(106,6): error TS1128: Declaration or statement expected.
+data/unit12/sqp.ts(109,13): error TS1005: ';' expected.
+data/unit12/sqp.ts(110,18): error TS1005: ';' expected.
+data/unit12/sqp.ts(111,14): error TS1005: ';' expected.
+data/unit12/sqp.ts(112,13): error TS1005: ';' expected.
+data/unit12/sqp.ts(113,17): error TS1005: ';' expected.
+data/unit12/sqp.ts(114,15): error TS1005: ';' expected.
+data/unit12/sqp.ts(115,22): error TS1005: ';' expected.
+data/unit12/sqp.ts(115,889): error TS1005: ';' expected.
+data/unit12/sqp.ts(115,1187): error TS1005: ';' expected.
+data/unit12/sqp.ts(115,1189): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1199): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1207): error TS1127: Invalid character.
+data/unit12/sqp.ts(115,1209): error TS1127: Invalid character.
+data/unit12/sqp.ts(115,1211): error TS1109: Expression expected.
+data/unit12/sqp.ts(115,1216): error TS1005: ';' expected.
+data/unit12/sqp.ts(115,1226): error TS1005: ';' expected.
+data/unit12/sqp.ts(115,1235): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1247): error TS1109: Expression expected.
+data/unit12/sqp.ts(115,1260): error TS1005: ';' expected.
+data/unit12/sqp.ts(115,1270): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1275): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1278): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1285): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1291): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1295): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1318): error TS1127: Invalid character.
+data/unit12/sqp.ts(115,1320): error TS1127: Invalid character.
+data/unit12/sqp.ts(115,1322): error TS1109: Expression expected.
+data/unit12/sqp.ts(115,1327): error TS1005: ';' expected.
+data/unit12/sqp.ts(115,1347): error TS1109: Expression expected.
+data/unit12/sqp.ts(115,1353): error TS1005: ';' expected.
+data/unit12/sqp.ts(115,1356): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1360): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1366): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1371): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1374): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1378): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1387): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1390): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1395): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1400): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1403): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1607): error TS1005: ';' expected.
+data/unit12/sqp.ts(115,1619): error TS1109: Expression expected.
+data/unit12/sqp.ts(115,1627): error TS1005: ';' expected.
+data/unit12/sqp.ts(115,1632): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1636): error TS1434: Unexpected keyword or identifier.
+data/unit12/sqp.ts(115,1645): error TS1005: '(' expected.
+data/unit12/sqp.ts(115,1649): error TS1005: ';' expected.
+data/unit12/sqp.ts(115,1657): error TS1005: ';' expected.
+data/unit12/sqp.ts(115,1660): error TS1005: ')' expected.
+data/unit12/sqp.ts(115,1672): error TS1003: Identifier expected.
+data/unit12/sqp.ts(117,1): error TS1128: Declaration or statement expected.
+data/unit9/sqp.ts(57,855): error TS1005: ',' expected.
+data/unit9/sqp.ts(57,861): error TS1005: ',' expected.
+data/unit9/sqp.ts(57,873): error TS1005: ',' expected.
+data/unit9/sqp.ts(57,878): error TS1005: ',' expected.
+data/unit9/sqp.ts(57,1597): error TS1002: Unterminated string literal.
+data/unit9/sqp.ts(58,5): error TS1005: ',' expected.
+data/unit9/sqp.ts(58,6): error TS1128: Declaration or statement expected.
+data/unit9/sqp.ts(61,13): error TS1005: ';' expected.
+data/unit9/sqp.ts(62,18): error TS1005: ';' expected.
+data/unit9/sqp.ts(63,14): error TS1005: ';' expected.
+data/unit9/sqp.ts(64,13): error TS1005: ';' expected.
+data/unit9/sqp.ts(65,17): error TS1005: ';' expected.
+data/unit9/sqp.ts(66,15): error TS1005: ';' expected.
+data/unit9/sqp.ts(67,22): error TS1005: ';' expected.
+data/unit9/sqp.ts(68,6): error TS1128: Declaration or statement expected.
+data/unit9/sqp.ts(71,13): error TS1005: ';' expected.
+data/unit9/sqp.ts(72,18): error TS1005: ';' expected.
+data/unit9/sqp.ts(73,14): error TS1005: ';' expected.
+data/unit9/sqp.ts(74,13): error TS1005: ';' expected.
+data/unit9/sqp.ts(75,17): error TS1005: ';' expected.
+data/unit9/sqp.ts(76,15): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,22): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,750): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,756): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(77,782): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,789): error TS1127: Invalid character.
+data/unit9/sqp.ts(77,791): error TS1127: Invalid character.
+data/unit9/sqp.ts(77,793): error TS1109: Expression expected.
+data/unit9/sqp.ts(77,805): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,825): error TS1005: ',' expected.
+data/unit9/sqp.ts(77,835): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,836): error TS1109: Expression expected.
+data/unit9/sqp.ts(77,848): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,859): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(77,867): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(77,870): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(77,882): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,893): error TS1003: Identifier expected.
+data/unit9/sqp.ts(77,902): error TS1005: ',' expected.
+data/unit9/sqp.ts(77,904): error TS1005: ',' expected.
+data/unit9/sqp.ts(77,923): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,927): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(77,940): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(77,947): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(77,950): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(77,952): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(77,962): error TS1127: Invalid character.
+data/unit9/sqp.ts(77,964): error TS1127: Invalid character.
+data/unit9/sqp.ts(77,966): error TS1109: Expression expected.
+data/unit9/sqp.ts(77,979): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,999): error TS1005: ',' expected.
+data/unit9/sqp.ts(77,1007): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,1008): error TS1109: Expression expected.
+data/unit9/sqp.ts(77,1021): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,1026): error TS1005: '(' expected.
+data/unit9/sqp.ts(77,1030): error TS1005: ')' expected.
+data/unit9/sqp.ts(77,1037): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(77,1061): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,1073): error TS1127: Invalid character.
+data/unit9/sqp.ts(77,1075): error TS1127: Invalid character.
+data/unit9/sqp.ts(77,1077): error TS1109: Expression expected.
+data/unit9/sqp.ts(77,1087): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,1097): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(77,1115): error TS1109: Expression expected.
+data/unit9/sqp.ts(77,1123): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,1129): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(77,1132): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(77,1150): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,1165): error TS1005: ';' expected.
+data/unit9/sqp.ts(77,1169): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(77,1180): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(77,1208): error TS1005: ',' expected.
+data/unit9/sqp.ts(77,1220): error TS1003: Identifier expected.
+data/unit9/sqp.ts(78,6): error TS1128: Declaration or statement expected.
+data/unit9/sqp.ts(81,13): error TS1005: ';' expected.
+data/unit9/sqp.ts(82,18): error TS1005: ';' expected.
+data/unit9/sqp.ts(83,14): error TS1005: ';' expected.
+data/unit9/sqp.ts(84,13): error TS1005: ';' expected.
+data/unit9/sqp.ts(85,17): error TS1005: ';' expected.
+data/unit9/sqp.ts(86,15): error TS1005: ';' expected.
+data/unit9/sqp.ts(87,22): error TS1005: ';' expected.
+data/unit9/sqp.ts(88,6): error TS1128: Declaration or statement expected.
+data/unit9/sqp.ts(91,13): error TS1005: ';' expected.
+data/unit9/sqp.ts(92,18): error TS1005: ';' expected.
+data/unit9/sqp.ts(93,14): error TS1005: ';' expected.
+data/unit9/sqp.ts(94,13): error TS1005: ';' expected.
+data/unit9/sqp.ts(95,17): error TS1005: ';' expected.
+data/unit9/sqp.ts(96,15): error TS1005: ';' expected.
+data/unit9/sqp.ts(97,22): error TS1005: ';' expected.
+data/unit9/sqp.ts(97,953): error TS1005: ';' expected.
+data/unit9/sqp.ts(97,956): error TS1434: Unexpected keyword or identifier.
+data/unit9/sqp.ts(97,1803): error TS1002: Unterminated string literal.
+data/unit9/sqp.ts(99,1): error TS1128: Declaration or statement expected.

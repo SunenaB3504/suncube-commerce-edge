@@ -1,0 +1,60 @@
+Unit 1 | ID: bulk_101 | Marks: 3
+Q: Saurabh decided to start a chocolates manufacturing business. He set the target of earning 10% profit on sales in the first year. Name the function of management involved.
+A: The correct approach involves identifying the core concept and outlining at least three distinct points of explanation or differentiation as required by the CBSE marking scheme. \n1. Primary Point: Defines the core subject clearly with an example.\n2. Secondary Point: Elaborates on the mechanism or rationale behind the concept.\n3. Tertiary Point: Discusses the implication or impact on the business environment.
+----------------------------------------
+Unit 1 | ID: 2025-26-q22 | Marks: 3
+Q: Differentiate between Top Level and Middle Level Management.
+A: The correct approach involves identifying the core concept and outlining at least three distinct points of explanation or differentiation as required by the CBSE marking scheme. \n1. Primary Point: Defines the core subject clearly with an example.\n2. Secondary Point: Elaborates on the mechanism or rationale behind the concept.\n3. Tertiary Point: Discusses the implication or impact on the business environment.
+----------------------------------------
+Unit 1 | ID: 2024-25-q22 | Marks: 3
+Q: Adopting eco-friendly methods of production helps achieve which objective of management?
+A: The correct approach involves identifying the core concept and outlining at least three distinct points of explanation or differentiation as required by the CBSE marking scheme. \n1. Primary Point: Defines the core subject clearly with an example.\n2. Secondary Point: Elaborates on the mechanism or rationale behind the concept.\n3. Tertiary Point: Discusses the implication or impact on the business environment.
+----------------------------------------
+Unit 2 | ID: 2025-26-q18 | Marks: 4
+Q: State the principle of Scientific Management that emphasizes a "Mental Revolution" between management and workers.
+A: Harmony, Not Discord
+----------------------------------------
+Unit 2 | ID: 2025-26-q25 | Marks: 4
+Q: Identify the improved communication route suggested by Fayol when an employee needs to contact a peer in an emergency, bypassing the scalar chain.
+A: Gang Plank
+----------------------------------------
+Unit 2 | ID: 2024-25-q23 | Marks: 4
+Q: Explain why management principles are considered "Flexible" and "Contingent".
+A: Flexible: They can be modified by the manager. Contingent: Their application depends on the prevailing situation.
+----------------------------------------
+Unit 2 | ID: 2023-24-q24 | Marks: 4
+Q: Distinguish between Unity of Command and Unity of Direction.
+A: Command = One Boss (Individual focus). Direction = One Head, One Plan (Group focus/Coordination).
+----------------------------------------
+Unit 3 | ID: bulk_103 | Marks: 3
+Q: Identify the dimension of business environment illustrated by: 'Increase in the life expectancy of people'.
+A: The correct approach involves identifying the core concept and outlining at least three distinct points of explanation or differentiation as required by the CBSE marking scheme. \n1. Primary Point: Defines the core subject clearly with an example.\n2. Secondary Point: Elaborates on the mechanism or rationale behind the concept.\n3. Tertiary Point: Discusses the implication or impact on the business environment.
+----------------------------------------
+Unit 3 | ID: 2025-26-q23 | Marks: 4
+Q: Identify the importance of business environment highlighted: WhatsApp was the first mobile chat app to offer free messaging, capturing a huge user base.
+A: Identification of opportunities and getting the First Mover Advantage
+----------------------------------------
+Unit 3 | ID: 2024-25-q24 | Marks: 4
+Q: The trend of health and fitness has created a demand for gyms and organic food. Identify the dimension.
+A: Social Environment
+----------------------------------------
+Unit 3 | ID: 2023-24-q25 | Marks: 4
+Q: Managers must examine environment changes to develop suitable courses of action. Which importance is this?
+A: Coping with Rapid Changes
+----------------------------------------
+Unit 3 | ID: 2022-23-q22 | Marks: 3
+Q: State two features of Demonetization.
+A: 1. Tax Administration Measure. 2. Channelizing savings into formal financial system.
+----------------------------------------
+Unit 4 | ID: 2025-26-q24 | Marks: 4
+Q: In the planning process, assumptions about the future are made. Identify and explain this step.
+A: Developing Premises
+----------------------------------------
+Unit 4 | ID: 2024-25-q25 | Marks: 4
+Q: Identify the type of plan which is a comprehensive plan for achieving objectives, including resource allocation.
+A: Strategy
+----------------------------------------
+Unit 4 | ID: 2023-24-q26 | Marks: 6
+Q: In which step of the planning process are the positive and negative aspects of each proposal weighed?
+A: Evaluating Alternative Courses
+----------------------------------------

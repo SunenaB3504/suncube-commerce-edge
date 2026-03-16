@@ -1,0 +1,1275 @@
+Here is the complete production prompt:
+
+---
+
+## Antigravity Agent Prompt — Computer Awareness Content Generator (MAH BBA CET)
+
+```
+## MISSION
+You are a Content Generation Agent for the Commerce Prep Pro project.
+Your task is to generate a Computer Awareness question bank for the
+MAH BBA CET entrance exam — covering Hardware, Memory, CPU, OS,
+MS Office, Internet, Networking, Cybersecurity, Abbreviations, and
+Number Systems — and save it as schema-validated .data.js files.
+
+This is a SPEED-RECALL module. Every question is designed for
+immediate response (30–45 seconds maximum). There is NO negative
+marking. Questions are rated Very Easy to Easy.
+
+---
+
+## MANDATORY FIRST STEPS (Do not skip)
+1. Read @RULES.md fully
+2. Read @DATA_SCHEMA.md fully
+3. Read @src/config/subjects.config.js
+4. Read @src/data/accountancy/ratio-analysis.data.js as format reference
+5. Output a Plan Artifact with question count per topic
+6. WAIT for human approval before writing any content
+
+---
+
+## EXAM CONFIGURATION
+
+MAHCET_COMPUTER_CONFIG = {
+  name: "MAH BBA CET — Computer Awareness",
+  questionsInExam: 15,
+  questionsToAttempt: 15,          // attempt ALL (no choice)
+  marksPerCorrect: 1,
+  negativeMarking: false,          // NO negative marking
+  negativeMarksPerWrong: 0,
+  difficultyProfile: "Very Easy to Easy",
+  secondsPerQuestion: 40,          // speed-recall target
+  designPhilosophy: "Speed-Recall — tests WHAT, not WHY"
+}
+
+---
+
+## FILES TO CREATE
+
+File 1: src/data/computer-awareness/hardware.data.js
+File 2: src/data/computer-awareness/software-and-os.data.js
+File 3: src/data/computer-awareness/internet-and-networking.data.js
+File 4: src/data/computer-awareness/cybersecurity.data.js
+File 5: src/data/computer-awareness/abbreviations.data.js
+File 6: src/data/computer-awareness/number-systems.data.js
+File 7: src/data/computer-awareness/index.js
+
+---
+
+## EXTENDED QUESTION SCHEMA FOR THIS MODULE
+
+Every question carries these additional metadata fields:
+
+  cognitiveType:
+    "recall"        → Direct fact retrieval (definition, name)
+    "identification"→ Identify which item belongs/doesn't belong
+                      to a category (NOT an input device?)
+    "functional"    → What does X do? Which unit performs Y?
+    "acronym"       → Full form or expansion of abbreviation
+
+  psychometricTemplate:
+    "identification"→ "Which of the following is NOT an X?"
+    "functional"    → "Which unit/protocol/software performs Y?"
+    "acronym"       → "What does the letter X in ABC stand for?"
+
+  timePresure: "speed"             // ALL questions in this module
+  speedTarget: 40                  // seconds (all questions)
+  examTags: ["MH-CET"]            // ALL questions — this section
+                                   // is MAH CET ONLY
+  negativeMarking: false           // reminder at question level
+
+These allow the quiz engine to:
+  → Enforce 40-second countdown in Computer Awareness drill
+  → Show "You answered in X seconds" feedback
+  → Never deduct marks regardless of wrong answer
+  → Encourage guessing when unsure (no penalty)
+
+---
+
+=================================================================
+=== FILE 1: hardware.data.js
+    Topics: Input/Output Devices, Memory Hierarchy, CPU
+=================================================================
+
+Generate 45 questions across 3 hardware topics (15 per topic).
+Minimum: 45 questions.
+
+--- TOPIC 1: Input and Output Devices (15 questions) ---
+
+psychometricTemplate: "identification" for 10 questions
+psychometricTemplate: "functional" for 5 questions
+
+INPUT DEVICES (must know these cold):
+  Mouse, Keyboard, Scanner, Microphone, Webcam,
+  Joystick, Touchscreen, Barcode Reader, OMR Reader,
+  Light Pen, Trackball, Digitizer, Biometric Scanner
+
+OUTPUT DEVICES (must know these cold):
+  Monitor, Printer, Plotter, Speaker, Projector,
+  Headphones, Braille Reader (output for visually impaired)
+
+BOTH INPUT AND OUTPUT:
+  Touchscreen (input + output), Modem (input + output)
+
+QUESTION PATTERNS — Generate all of these:
+
+  Pattern A (8 questions) — NOT an output/input:
+    → "Which of the following is NOT an output device?"
+      Options must include 3 clear output devices +
+      1 input device as the correct "odd one out"
+    → Rotate: some ask "NOT output", some ask "NOT input"
+    → Trap distractors: include Plotter (often mistaken
+      as input) and Scanner (often mistaken as output)
+    → explanation: classify ALL four options by type
+
+  Pattern B (4 questions) — Identify the category:
+    → "Which of the following is an INPUT device?"
+      Options: 3 output + 1 input
+    → "Which pair contains ONLY output devices?"
+      Options: mixed pairs, one pair is all output
+
+  Pattern C (3 questions) — Functional:
+    → "Which device converts physical documents to
+      digital format?" (Scanner)
+    → "Which device is used to produce large-scale
+      engineering drawings?" (Plotter)
+    → "Which device can function as BOTH input and output?"
+      (Touchscreen / Modem)
+
+TRAP DISTRACTORS FOR THIS TOPIC:
+  → Plotter: students often confuse with printer
+    (both produce physical output — plotter does large
+    format vector graphics)
+  → Touchscreen: correctly tagged as BOTH
+  → Modem: both input and output — correct trap question
+
+--- TOPIC 2: Memory Hierarchy (15 questions) ---
+
+MEMORY TYPES — Master List:
+  RAM (Random Access Memory):
+    → Volatile (data lost on power off)
+    → Primary memory, directly accessed by CPU
+    → Types: DRAM, SRAM
+  ROM (Read Only Memory):
+    → Non-volatile (data retained after power off)
+    → Stores BIOS/firmware
+    → Types: PROM, EPROM, EEPROM
+  Cache Memory:
+    → Fastest memory in hierarchy
+    → Sits between CPU and RAM
+    → L1 (fastest, smallest), L2, L3 levels
+  Secondary Storage:
+    → Non-volatile: HDD, SSD, CD, DVD, USB Drive
+    → SSD: faster than HDD, no moving parts
+  Virtual Memory:
+    → Part of secondary storage used as RAM extension
+    → Slower than actual RAM
+  Registers:
+    → Inside CPU, fastest and smallest
+    → Hold data currently being processed
+
+MEMORY HIERARCHY (slowest to fastest):
+  Secondary → RAM → Cache → Registers
+
+QUESTION PATTERNS:
+
+  Volatile vs Non-volatile (5 questions):
+    → "Which memory loses data when power is switched off?"
+      (RAM — Volatile)
+    → "Which of the following is NON-volatile memory?"
+      (ROM / SSD / HDD — all non-volatile)
+    → "BIOS is stored in which type of memory?" (ROM)
+    → Trap: "Is cache volatile or non-volatile?" (Volatile)
+    → "Which memory retains data without power supply?"
+
+  Memory Speed Hierarchy (5 questions):
+    → "Which is the fastest memory in a computer?" (Cache/Registers)
+    → "Arrange in order of speed: RAM, Cache, HDD, Registers"
+    → "Which memory acts as a bridge between CPU and RAM?"
+      (Cache)
+    → "SSD is faster than HDD because..."
+      (No moving parts, electronic storage)
+    → "Virtual memory is actually part of..." (Secondary storage)
+
+  Identification Template (5 questions):
+    → "Which of the following is PRIMARY memory?"
+      (RAM — not HDD, not SSD, not DVD)
+    → "Which is NOT a type of ROM?"
+      (DRAM — that is RAM, not ROM)
+    → "Which storage device has NO moving parts?"
+      (SSD — correct; HDD has spinning disk)
+    → "Which memory is directly accessed by the CPU?"
+      (RAM / Cache / Registers — primary memory)
+    → "Which of the following is used to store the
+      operating system permanently?" (ROM / SSD)
+
+--- TOPIC 3: CPU Architecture (15 questions) ---
+
+CPU COMPONENTS — Master List:
+  ALU (Arithmetic Logic Unit):
+    → Performs arithmetic: +, –, ×, ÷
+    → Performs logical comparisons: AND, OR, NOT, >, <, =
+    → This is THE most tested CPU component in MAH CET
+  CU (Control Unit):
+    → Directs operations of the processor
+    → Does NOT process data — only coordinates
+    → Fetches, decodes and executes instructions
+  MU (Memory Unit):
+    → Temporary storage inside CPU
+  Registers:
+    → Small, ultra-fast storage locations inside CPU
+    → Types: Accumulator, Program Counter, Instruction Register
+  Buses:
+    → Data Bus: carries data between components
+    → Address Bus: carries memory addresses
+    → Control Bus: carries control signals
+
+QUESTION PATTERNS:
+
+  ALU Questions (6 questions) — HIGHEST PRIORITY:
+    → "Which unit of the CPU performs logical comparisons?"
+      (ALU) — this is the #1 most tested question
+    → "Which part of the CPU performs arithmetic operations?"
+      (ALU)
+    → "ALU stands for..." (Arithmetic Logic Unit)
+    → "Which CPU unit executes calculations like addition
+      and subtraction?" (ALU)
+    → "What does the 'L' in ALU stand for?" (Logic)
+    → "Which of the following is NOT a function of ALU?"
+      (Fetching instructions — that is CU's job)
+
+  CU vs ALU Distinction (5 questions):
+    → "Which CPU unit coordinates and directs all
+      computer operations?" (CU — not ALU)
+    → "Decoding of instructions is done by..." (CU)
+    → "Which unit does NOT process data but controls
+      the flow of data?" (CU)
+    → "The fetch-decode-execute cycle is managed by..." (CU)
+    → Match: ALU ↔ calculations; CU ↔ coordination
+
+  Registers and Bus (4 questions):
+    → "Which register stores the address of the next
+      instruction to be executed?" (Program Counter)
+    → "Which bus carries data between CPU and memory?"
+      (Data Bus)
+    → "Accumulator is a type of..." (Register)
+    → "Which is the fastest storage inside a computer?"
+      (Registers — faster than cache)
+
+HARDWARE FLASHCARDS (15 flashcards):
+  - Input devices complete list
+  - Output devices complete list
+  - Devices that are BOTH input and output
+  - RAM: volatile, primary, CPU-accessible
+  - ROM: non-volatile, stores BIOS
+  - Memory speed order: Registers > Cache > RAM > Secondary
+  - Cache: bridge between CPU and RAM
+  - SSD vs HDD: no moving parts vs spinning disk
+  - Virtual memory: secondary storage used as RAM
+  - ALU: arithmetic + logical operations
+  - CU: fetch-decode-execute, coordinates operations
+  - Registers: fastest, smallest, inside CPU
+  - Data Bus vs Address Bus vs Control Bus
+  - Volatile memory: RAM, Cache (lose data on power off)
+  - Non-volatile: ROM, SSD, HDD (retain data)
+
+SELF-CHECK BEFORE SAVING:
+  [ ] All input/output classifications verified
+  [ ] Plotter correctly tagged as OUTPUT device
+  [ ] Touchscreen tagged as BOTH input and output
+  [ ] ALU function distinguished from CU function
+  [ ] Memory speed hierarchy correct in all questions
+  [ ] Cache correctly identified as volatile memory
+
+---
+
+=================================================================
+=== FILE 2: software-and-os.data.js
+    Topics: OS Types, MS Office, Software Categories
+=================================================================
+
+Generate 45 questions across 3 topics (15 per topic).
+Minimum: 45 questions.
+
+--- TOPIC 1: Operating Systems (15 questions) ---
+
+OS TYPES — Master List:
+  System Software (includes OS):
+    → Windows, macOS, Linux, Android, iOS, Unix
+  Application Software (NOT OS):
+    → MS Word, MS Excel, MS PowerPoint, Tally,
+      Adobe Photoshop, VLC Media Player, Chrome
+  Utility Software:
+    → Antivirus, Disk Defragmenter, File Compression
+      (WinZip, 7-Zip), Disk Cleanup
+
+MOST TESTED CONCEPT:
+  "MS Excel is APPLICATION software, NOT an OS"
+  This exact trap is repeated across multiple MAH CET years.
+  Generate AT LEAST 3 variations of this trap.
+
+QUESTION PATTERNS:
+
+  Categorisation (8 questions):
+    → "Which of the following is an OPERATING SYSTEM?"
+      Options: MS Excel, Chrome, Linux, MS Word
+      (Linux is OS; others are application software)
+    → "Which is NOT an operating system?"
+      Options: Android, Windows, MS Excel, macOS
+      (MS Excel — this is the #1 trap)
+    → "MS Excel is an example of..."
+      Options: OS / System Software / Application Software /
+      Utility Software
+      (Application Software)
+    → "Which of the following is SYSTEM software?"
+      Options: Chrome / Tally / Windows / MS Word
+      (Windows)
+    → "Antivirus software is categorised as..."
+      (Utility Software — not application, not OS)
+    → "Which pair contains ONLY application software?"
+      Options: mix of OS, utility, and application
+    → "MS PowerPoint belongs to which category?"
+      (Application Software)
+    → "Linux is an example of which type of software?"
+      (Open-source Operating System)
+
+  OS Functions (4 questions):
+    → "Which function is performed by an OS?"
+      (Memory management — not formula calculation)
+    → "Which of the following is NOT a function of OS?"
+      (Spell checking — that is word processor function)
+    → "Process management in a computer is handled by..."
+      (Operating System)
+    → "GUI stands for..." (Graphical User Interface)
+
+  OS Types (3 questions):
+    → "Which OS is open-source?" (Linux)
+    → "Android is developed by..." (Google)
+    → "Which is a mobile operating system?"
+      Options: Windows XP, Linux, iOS, MS DOS
+      (iOS)
+
+--- TOPIC 2: MS Office Productivity (15 questions) ---
+
+THIS IS HIGH YIELD — MS Office questions appear in nearly
+every MAH CET paper. Cover Excel, Word, and PowerPoint.
+
+MS EXCEL — Master List of tested formulas:
+  =SUM(A1:A10)     → adds range of cells
+  =AVERAGE(A1:A10) → calculates mean
+  =MAX(A1:A10)     → finds largest value
+  =MIN(A1:A10)     → finds smallest value
+  =COUNT(A1:A10)   → counts numeric cells
+  =IF(condition, value_if_true, value_if_false)
+  =VLOOKUP(value, table, column, match_type)
+  Cell reference: A1 = column A, row 1
+  $ sign: $A$1 = absolute reference
+  Charts: Insert tab → Chart
+  Keyboard shortcut: Ctrl+S = Save,
+    Ctrl+Z = Undo, Ctrl+Y = Redo,
+    F2 = Edit cell, F5 = Go To
+
+MS WORD — Key functions:
+  Ctrl+B = Bold, Ctrl+I = Italic,
+  Ctrl+U = Underline, Ctrl+P = Print,
+  Ctrl+F = Find, Ctrl+H = Find and Replace
+  Mail Merge: combining template with data source
+  Page Layout: margins, orientation, size
+  .docx = Word file extension
+
+MS POWERPOINT — Key functions:
+  Slide Transition vs Animation (distinction is tested)
+  Slide Transition: effect when moving between slides
+  Animation: effect applied to object ON a slide
+  F5 = Start slideshow from beginning
+  Shift+F5 = Start from current slide
+  .pptx = PowerPoint file extension
+  Normal / Slide Sorter / Reading / Slideshow views
+
+QUESTION PATTERNS:
+
+  Excel Formulas (6 questions):
+    → "Which formula calculates the sum of cells A1 to A10?"
+      (=SUM(A1:A10))
+    → "Which function returns TRUE or FALSE based on
+      a condition?" (IF function)
+    → "What does =AVERAGE(B1:B5) calculate?"
+    → "The $ symbol in $A$1 means..." (Absolute reference)
+    → "Which shortcut key edits the active cell in Excel?"
+      (F2)
+    → "To count only numeric values in a range, use..."
+      (=COUNT — not =COUNTA which counts all)
+
+  Word Processing (5 questions):
+    → "Which shortcut finds and replaces text in Word?"
+      (Ctrl+H)
+    → "Mail Merge is used to..."
+      (create personalised letters from a data source)
+    → "What is the file extension for MS Word 2016 files?"
+      (.docx)
+    → "Which tab contains the Mail Merge option in Word?"
+      (Mailings tab)
+    → "Ctrl+Z in MS Word performs..." (Undo)
+
+  PowerPoint (4 questions):
+    → "What is the difference between Slide Transition
+      and Animation?"
+      (Transition = between slides; Animation = on slide)
+    → "Which key starts a slideshow from the beginning?"
+      (F5)
+    → "Which view shows all slides as thumbnails?"
+      (Slide Sorter view)
+    → "A PowerPoint file is saved with which extension?"
+      (.pptx)
+
+--- TOPIC 3: Software Categories and Concepts (15 questions) ---
+
+ADDITIONAL SOFTWARE CONCEPTS:
+
+  Types of Software:
+    Freeware: free, no modification allowed (Skype classic)
+    Shareware: trial period, then paid (WinRAR)
+    Open Source: free + modifiable (Linux, VLC)
+    Proprietary: paid, closed source (MS Office, Photoshop)
+
+  Programming Concepts:
+    Compiler: translates entire program at once
+    Interpreter: translates line by line (Python uses this)
+    Assembler: converts assembly language to machine code
+    Source Code vs Machine Code (binary)
+
+  File Types and Extensions:
+    .exe = executable file
+    .jpg/.jpeg = image
+    .mp3 = audio
+    .mp4 = video
+    .pdf = Portable Document Format
+    .html = web page
+    .xlsx = Excel, .docx = Word, .pptx = PowerPoint
+    .zip = compressed file
+
+QUESTION PATTERNS (15 questions):
+
+  Software types (5 questions):
+    → "WinRAR is an example of which type of software?"
+      (Shareware)
+    → "Which type of software can be freely used and
+      modified by anyone?" (Open Source)
+    → "Linux is an example of..." (Open Source OS)
+    → "Which type of software requires a license key
+      and cannot be modified?" (Proprietary)
+    → "VLC Media Player is..." (Open Source freeware)
+
+  Language translators (4 questions):
+    → "Which translator converts entire program at once?"
+      (Compiler)
+    → "Python uses which type of language translator?"
+      (Interpreter)
+    → "Which converts assembly language to machine code?"
+      (Assembler)
+    → "Machine code uses which number system?" (Binary/Base-2)
+
+  File extensions (6 questions):
+    → "Which file extension indicates an executable file?"
+      (.exe)
+    → "PDF stands for..." (Portable Document Format)
+    → "Which extension is used for web pages?" (.html)
+    → "A file with .xlsx extension is created by..."
+      (MS Excel)
+    → "Which format compresses multiple files into one?"
+      (.zip)
+    → "JPEG is used for storing..." (Images/photographs)
+
+SOFTWARE FLASHCARDS (15 flashcards):
+  - OS examples: Windows, macOS, Linux, Android, iOS
+  - Application software examples (NOT OS)
+  - MS Excel: 6 key formulas with syntax
+  - Absolute vs relative cell reference
+  - MS Word shortcuts: B, I, U, P, F, H, Z
+  - PowerPoint: Transition vs Animation distinction
+  - F5 = slideshow start; Shift+F5 = current slide
+  - File extensions table: docx, xlsx, pptx, pdf, exe
+  - Compiler vs Interpreter vs Assembler
+  - Freeware vs Shareware vs Open Source vs Proprietary
+  - Linux = open source; Windows = proprietary
+  - GUI = Graphical User Interface
+  - Utility software examples: Antivirus, Defragmenter
+  - Mail Merge purpose and location (Mailings tab)
+  - OS functions: memory/process/file management
+
+---
+
+=================================================================
+=== FILE 3: internet-and-networking.data.js
+    Topics: Internet Protocols, Networking Basics, WWW
+=================================================================
+
+Generate 45 questions across 3 topics (15 per topic).
+Minimum: 45 questions.
+
+--- TOPIC 1: Internet Protocols (15 questions) ---
+
+PROTOCOLS — Master List:
+  HTTP  (HyperText Transfer Protocol):
+    → Used for transferring web pages
+    → NOT secure — data is unencrypted
+  HTTPS (HyperText Transfer Protocol Secure):
+    → Secure version of HTTP
+    → Uses SSL/TLS encryption
+    → Bank websites, login pages use HTTPS
+  FTP   (File Transfer Protocol):
+    → Used for transferring files between computers
+    → NOT for web browsing
+  SMTP  (Simple Mail Transfer Protocol):
+    → Used for SENDING emails
+  POP3  (Post Office Protocol 3):
+    → Used for RECEIVING emails (downloads to device)
+  IMAP  (Internet Message Access Protocol):
+    → Used for RECEIVING emails (stays on server)
+  TCP/IP (Transmission Control Protocol/Internet Protocol):
+    → Foundation of internet communication
+    → TCP ensures data delivery; IP handles addressing
+  DNS   (Domain Name System):
+    → Converts domain names to IP addresses
+    → "Phone book of the internet"
+  IP Address:
+    → Unique address of device on network
+    → IPv4: 4 sets of numbers (192.168.1.1)
+    → IPv6: newer, longer format
+  URL   (Uniform Resource Locator):
+    → Complete web address (https://www.google.com)
+  WWW   (World Wide Web):
+    → Collection of websites/web pages
+    → NOT the same as the internet
+    → Invented by Tim Berners-Lee (1989)
+
+QUESTION PATTERNS (15 questions):
+
+  Protocol identification (6 questions):
+    → "Which protocol is used for SECURE data transfer
+      on the web?" (HTTPS)
+    → "FTP is primarily used for..." (File transfer)
+    → "Which protocol converts domain names to IP addresses?"
+      (DNS)
+    → "SMTP is used for..." (Sending emails)
+    → "What is the difference between HTTP and HTTPS?"
+      (HTTPS is encrypted/secure)
+    → "Which protocol is used to RECEIVE emails and
+      keeps them on the server?" (IMAP — not POP3)
+
+  WWW and Internet distinction (4 questions):
+    → "WWW was invented by..." (Tim Berners-Lee)
+    → "Which of the following is NOT the same as
+      the Internet?" (WWW — subset of internet)
+    → "URL stands for..." (Uniform Resource Locator)
+    → "What does the 'S' in HTTPS stand for?" (Secure)
+
+  TCP/IP and addressing (5 questions):
+    → "TCP/IP stands for..."
+      (Transmission Control Protocol/Internet Protocol)
+    → "An IP address uniquely identifies..."
+      (a device on a network)
+    → "IPv4 addresses consist of how many sets of numbers?"
+      (4 sets — e.g., 192.168.1.1)
+    → "Which layer of TCP/IP handles logical addressing?"
+      (IP — Internet Protocol layer)
+    → "DNS is called the 'phone book of the internet'
+      because..." (it maps names to IP addresses)
+
+--- TOPIC 2: Networking Basics (15 questions) ---
+
+NETWORK TYPES — Master List:
+  LAN (Local Area Network):
+    → Small geographic area: office, school, home
+    → High speed, privately owned
+  MAN (Metropolitan Area Network):
+    → City-wide network
+    → Connects multiple LANs
+  WAN (Wide Area Network):
+    → Large geographic area: countries, continents
+    → Internet is the largest WAN
+  PAN (Personal Area Network):
+    → Very short range: Bluetooth devices
+  WLAN (Wireless LAN):
+    → WiFi network
+
+NETWORK TRANSMISSION TYPES:
+  Unicast:   One sender → One receiver
+  Broadcast: One sender → ALL receivers on network
+  Multicast: One sender → SPECIFIC GROUP of receivers
+    → "Multicasting = sending to a group of stations"
+    → This exact definition appears in MAH CET papers
+
+NETWORK DEVICES:
+  Router:  Connects different networks, directs traffic
+  Switch:  Connects devices within same network (smarter than hub)
+  Hub:     Connects devices, sends to ALL (dumb device)
+  Modem:   Converts digital ↔ analog signals (for internet)
+  Bridge:  Connects two similar networks
+  Gateway: Connects two different types of networks
+  Repeater: Boosts signal over long distances
+
+TOPOLOGY TYPES:
+  Star Topology:   All devices connect to central hub/switch
+  Bus Topology:    All devices on single cable
+  Ring Topology:   Devices in circular connection
+  Mesh Topology:   Every device connected to every other
+
+QUESTION PATTERNS (15 questions):
+
+  Network type identification (5 questions):
+    → "Which network covers a small geographic area
+      like an office?" (LAN)
+    → "The Internet is an example of..." (WAN)
+    → "Bluetooth devices form which type of network?"
+      (PAN)
+    → "Which covers a city-sized area?" (MAN)
+    → "WiFi is an example of..." (WLAN)
+
+  Transmission type (4 questions):
+    → "Multicasting refers to sending data to..."
+      (a specific group of stations — NOT all, NOT one)
+    → "Broadcasting sends data to..."
+      (ALL devices on the network)
+    → "One-to-one data transmission is called..."
+      (Unicast)
+    → "Which transmission type does email use?"
+      (Unicast — one sender to one recipient)
+
+  Network devices (6 questions):
+    → "Which device connects different networks and
+      directs internet traffic?" (Router)
+    → "Which device sends incoming data to ALL connected
+      devices?" (Hub — not switch)
+    → "A Switch is smarter than a Hub because..."
+      (it sends data only to intended recipient)
+    → "Which device converts digital signals to analog
+      for telephone lines?" (Modem)
+    → "Which topology uses a central connecting device?"
+      (Star Topology)
+    → "Repeater is used to..." (boost/regenerate signal)
+
+--- TOPIC 3: WWW and Cloud Computing (15 questions) ---
+
+WWW CONCEPTS:
+  Web Browser:    Chrome, Firefox, Safari, Edge
+  Search Engine:  Google, Bing, DuckDuckGo
+                  (NOT the same as a web browser)
+  Web Server:     Hosts websites
+  Web Page:       Single document on web (HTML)
+  Website:        Collection of web pages
+  Homepage:       First/main page of a website
+  Hyperlink:      Clickable link to another page/resource
+  Cookie:         Small file stored by browser
+                  (remembers login, preferences)
+  Cache (browser):Stores copies of pages for faster loading
+
+CLOUD COMPUTING:
+  SaaS (Software as a Service):  Gmail, Google Docs
+  PaaS (Platform as a Service):  Google App Engine
+  IaaS (Infrastructure as a Service): AWS, Azure
+  Cloud storage examples: Google Drive, Dropbox, OneDrive
+
+EMAIL CONCEPTS:
+  CC  (Carbon Copy):  Visible to all recipients
+  BCC (Blind Carbon Copy): Hidden from other recipients
+  Attachment: file sent with email
+  Spam: unwanted bulk email
+
+QUESTION PATTERNS (15 questions):
+
+  Browser vs Search Engine (3 questions):
+    → "Google is a..." (Search Engine — not a browser)
+    → "Chrome is a..." (Web Browser — not a search engine)
+    → "Which of the following is a web BROWSER?"
+      Options: Google, Bing, Firefox, Yahoo
+      (Firefox — others are search engines)
+
+  WWW concepts (5 questions):
+    → "A cookie in web context is used for..."
+      (storing user preferences/login info)
+    → "What is a hyperlink?"
+      (clickable text/image linking to another resource)
+    → "Homepage refers to..."
+      (the first/main page of a website)
+    → "Browser cache stores..."
+      (copies of web pages for faster loading)
+    → "CC in an email means..."
+      (Carbon Copy — visible to all recipients)
+
+  Cloud computing (4 questions):
+    → "Gmail is an example of which cloud model?"
+      (SaaS — Software as a Service)
+    → "Google Drive is an example of..."
+      (Cloud Storage)
+    → "Which cloud model provides virtual machines
+      and storage?" (IaaS)
+    → "BCC differs from CC because..."
+      (BCC recipients are hidden from others)
+
+  Web server and hosting (3 questions):
+    → "A web server's primary function is to..."
+      (host and serve web pages to users)
+    → "HTML stands for..."
+      (HyperText Markup Language)
+    → "Which file extension is used for web pages?"
+      (.html or .htm)
+
+INTERNET/NETWORKING FLASHCARDS (15 flashcards):
+  - HTTP vs HTTPS: unsecured vs secured
+  - SMTP = send email; POP3/IMAP = receive email
+  - DNS = domain name to IP address converter
+  - LAN/MAN/WAN/PAN comparison table
+  - Unicast / Broadcast / Multicast definitions
+  - Router vs Switch vs Hub distinction
+  - Star / Bus / Ring / Mesh topology
+  - WWW inventor: Tim Berners-Lee (1989)
+  - Browser (Chrome) vs Search Engine (Google)
+  - Cookie: stores user data in browser
+  - SaaS / PaaS / IaaS with one example each
+  - CC vs BCC in email
+  - TCP = ensures delivery; IP = addressing
+  - URL = complete web address
+  - Modem = digital ↔ analog converter
+
+---
+
+=================================================================
+=== FILE 4: cybersecurity.data.js
+    Topics: Malware Types, Security Concepts, Safe Practices
+=================================================================
+
+Generate 30 questions across 2 topics (15 per topic).
+Minimum: 30 questions.
+
+--- TOPIC 1: Malware and Threats (15 questions) ---
+
+MALWARE TYPES — Master List:
+  Virus:
+    → Attaches to files, spreads when file is shared
+    → Requires human action to spread
+    → Can corrupt/delete files
+  Worm:
+    → Self-replicating, spreads WITHOUT human action
+    → Travels through networks automatically
+    → Key distinction from virus: NO human trigger needed
+  Trojan Horse:
+    → Disguises as legitimate software
+    → Does NOT self-replicate
+    → Creates backdoor for attacker
+  Spyware:
+    → Secretly monitors user activity
+    → Collects passwords, browsing history
+    → User does NOT know it is running
+  Ransomware:
+    → Encrypts user's files
+    → Demands payment (ransom) to restore access
+    → WannaCry is a famous example
+  Adware:
+    → Displays unwanted advertisements
+    → Often bundled with free software
+  Keylogger:
+    → Records every keystroke
+    → Used to steal passwords and credit card numbers
+  Rootkit:
+    → Hides deep in OS, gives attacker admin access
+    → Very difficult to detect and remove
+  Phishing:
+    → Fake emails/websites to steal credentials
+    → Social engineering attack (not a program)
+  Denial of Service (DoS):
+    → Floods server with requests to make it crash
+
+QUESTION PATTERNS (15 questions):
+
+  Malware identification (6 questions):
+    → "Which malware spreads WITHOUT any human action?"
+      (Worm — not Virus which needs human to share file)
+    → "A Trojan Horse differs from a virus because..."
+      (it does not self-replicate; disguises as legitimate)
+    → "Which malware secretly records your keystrokes?"
+      (Keylogger)
+    → "Ransomware attacks a computer by..."
+      (encrypting files and demanding payment)
+    → "Which malware monitors user activity without
+      their knowledge?" (Spyware)
+    → "WannaCry is an example of which type of malware?"
+      (Ransomware)
+
+  Distinction questions (5 questions):
+    → "What is the KEY difference between a Virus
+      and a Worm?" (Worm spreads automatically; Virus needs
+      human action)
+    → "Phishing is BEST described as..."
+      (a social engineering attack using fake emails)
+    → "Which of the following is NOT a type of malware?"
+      Options: Firewall, Spyware, Worm, Adware
+      (Firewall — it is a SECURITY tool, not malware)
+    → "Adware is primarily designed to..."
+      (display unwanted advertisements)
+    → "A Trojan creates a ___ for attackers."
+      (backdoor)
+
+  Attack types (4 questions):
+    → "DoS attack stands for..." (Denial of Service)
+    → "Which attack involves fake websites that
+      look like real ones to steal login details?"
+      (Phishing)
+    → "Social engineering attacks target..."
+      (human psychology — not software vulnerabilities)
+    → "Which malware type is hardest to detect because
+      it hides within the OS?" (Rootkit)
+
+--- TOPIC 2: Security Tools and Safe Practices (15 questions) ---
+
+SECURITY CONCEPTS:
+  Firewall:
+    → Monitors and filters incoming/outgoing network traffic
+    → Blocks unauthorised access
+    → Can be hardware OR software
+    → Does NOT remove existing viruses
+      (that is antivirus's job)
+  Antivirus:
+    → Detects and removes malware
+    → Must be updated regularly
+    → Examples: Norton, Kaspersky, Windows Defender
+  Encryption:
+    → Converts data to unreadable format
+    → Decryption reverses the process
+    → HTTPS uses encryption
+  SSL/TLS:
+    → Protocols for encrypted communication
+    → Padlock symbol in browser = SSL active
+  Two-Factor Authentication (2FA):
+    → Two verification steps to login
+    → Password + OTP (One Time Password)
+  VPN (Virtual Private Network):
+    → Creates encrypted tunnel for internet traffic
+    → Hides user's IP address
+  Backup:
+    → Copy of data for recovery after attack/failure
+    → Best practice: 3-2-1 rule
+      (3 copies, 2 different media, 1 offsite)
+  Password Safety:
+    → Strong: 8+ characters, mixed case, numbers, symbols
+    → Never share, reuse, or write down
+
+QUESTION PATTERNS (15 questions):
+
+  Firewall questions (4 questions):
+    → "What is the PRIMARY function of a firewall?"
+      (Monitor and filter network traffic)
+    → "A firewall can be..." (hardware OR software — both)
+    → "Which of the following is NOT done by a firewall?"
+      (Removing existing viruses — that is antivirus)
+    → "Firewall protects against..."
+      (unauthorised network access)
+
+  Encryption (4 questions):
+    → "HTTPS uses which security protocol?"
+      (SSL/TLS)
+    → "What does a padlock icon in a browser indicate?"
+      (SSL/TLS encryption is active — secure connection)
+    → "Encryption converts data into..."
+      (unreadable/ciphertext format)
+    → "2FA stands for..." (Two-Factor Authentication)
+
+  Safe practices (4 questions):
+    → "VPN primarily helps by..."
+      (encrypting internet traffic and hiding IP address)
+    → "Which is the BEST practice for password security?"
+      (Use unique, complex password for each account)
+    → "Regular antivirus updates are important because..."
+      (new malware is released daily; old definitions miss it)
+    → "2FA adds security by requiring..."
+      (a second verification step beyond password)
+
+  General identification (3 questions):
+    → "Which of the following is a SECURITY tool
+      (not a threat)?"
+      Options: Worm, Spyware, Firewall, Ransomware
+      (Firewall)
+    → "SSL stands for..."
+      (Secure Sockets Layer)
+    → "The best defence against Ransomware is..."
+      (regular data backups)
+
+CYBERSECURITY FLASHCARDS (10 flashcards):
+  - Virus vs Worm: human trigger vs automatic spread
+  - Trojan: disguised, no self-replication, creates backdoor
+  - Ransomware: encrypts files, demands payment
+  - Spyware: silent monitor; Keylogger: records keystrokes
+  - Phishing: fake emails/sites — social engineering
+  - Firewall: filters traffic; does NOT remove viruses
+  - Antivirus: detects and removes malware
+  - SSL/TLS: encryption for web; padlock = active
+  - 2FA: two verification steps
+  - VPN: encrypted tunnel, hides IP address
+
+---
+
+=================================================================
+=== FILE 5: abbreviations.data.js
+    Topic: Full forms — rapid recall
+=================================================================
+
+Generate 60 questions.
+ALL questions: psychometricTemplate: "acronym"
+ALL questions: speedTarget: 25    // fastest section — 25 sec
+
+MASTER ABBREVIATIONS LIST (generate questions for ALL):
+
+  HARDWARE:
+  RAM   → Random Access Memory
+  ROM   → Read Only Memory
+  CPU   → Central Processing Unit
+  ALU   → Arithmetic Logic Unit
+  CU    → Control Unit
+  HDD   → Hard Disk Drive
+  SSD   → Solid State Drive
+  GPU   → Graphics Processing Unit
+  USB   → Universal Serial Bus
+  HDMI  → High Definition Multimedia Interface
+  UPS   → Uninterruptible Power Supply
+
+  SOFTWARE AND OS:
+  OS    → Operating System
+  GUI   → Graphical User Interface
+  API   → Application Programming Interface
+  PDF   → Portable Document Format
+  JPEG  → Joint Photographic Experts Group
+  PNG   → Portable Network Graphics
+  GIF   → Graphics Interchange Format
+  HTML  → HyperText Markup Language
+  CSS   → Cascading Style Sheets
+  URL   → Uniform Resource Locator
+
+  INTERNET AND NETWORKING:
+  HTTP  → HyperText Transfer Protocol
+  HTTPS → HyperText Transfer Protocol Secure
+  FTP   → File Transfer Protocol
+  DNS   → Domain Name System
+  IP    → Internet Protocol
+  TCP   → Transmission Control Protocol
+  ISP   → Internet Service Provider
+  LAN   → Local Area Network
+  WAN   → Wide Area Network
+  MAN   → Metropolitan Area Network
+  PAN   → Personal Area Network
+  WiFi  → Wireless Fidelity
+  WWW   → World Wide Web
+  SMTP  → Simple Mail Transfer Protocol
+  POP3  → Post Office Protocol (version 3)
+  IMAP  → Internet Message Access Protocol
+  VPN   → Virtual Private Network
+
+  SECURITY:
+  SSL   → Secure Sockets Layer
+  TLS   → Transport Layer Security
+  2FA   → Two-Factor Authentication
+  DoS   → Denial of Service
+  DDoS  → Distributed Denial of Service
+  OTP   → One Time Password
+
+  GENERAL TECH:
+  AI    → Artificial Intelligence
+  ML    → Machine Learning
+  IoT   → Internet of Things
+  AR    → Augmented Reality
+  VR    → Virtual Reality
+  EVM   → Electronic Voting Machine
+  ATM   → Automated Teller Machine
+  PIN   → Personal Identification Number
+  CAPTCHA → Completely Automated Public Turing test
+            to tell Computers and Humans Apart
+  QR    → Quick Response (code)
+  BIOS  → Basic Input Output System
+  VIRUS → Vital Information Resources Under Siege
+          (this is a backronym — note in explanation)
+
+QUESTION PATTERNS (3 templates, 20 questions each):
+
+  Template A — "What does X stand for?" (20 questions):
+    → "RAM stands for..." (Random Access Memory)
+    → "What does the 'J' in JPEG stand for?" (Joint)
+    → "What does the 'S' in HTTPS stand for?" (Secure)
+    → Distractors: plausible wrong expansions
+      (e.g., for RAM: "Rapid Access Memory",
+      "Read Access Memory", "Random Application Memory")
+
+  Template B — "Which abbreviation represents X?" (20 questions):
+    → "Which abbreviation is used for the protocol
+      that secures web transactions?" (HTTPS)
+    → "The 'phone book of the internet' is known as..."
+      (DNS)
+    → "Which term refers to a network limited to
+      a single building?" (LAN)
+
+  Template C — "What does the letter X in ABC mean?" (20 questions):
+    → "What does the 'P' in JPEG stand for?"
+      (Photographic — this exact question is in MAH CET)
+    → "What does the 'U' in URL stand for?" (Uniform)
+    → "What does the 'T' in HTTP stand for?" (Transfer)
+    → "What does the 'A' in ALU stand for?" (Arithmetic)
+
+ABBREVIATION FLASHCARDS (20 flashcards):
+  → Grouped by category (Hardware / Software /
+    Internet / Security / General)
+  → Each card: abbreviation on front, full form + 
+    one-line definition on back
+  → JPEG special note: "P = Photographic (not Picture)"
+  → VIRUS special note: backronym, not original meaning
+  → WiFi special note: "does NOT stand for
+    Wireless Fidelity officially — common misconception"
+
+---
+
+=================================================================
+=== FILE 6: number-systems.data.js
+    Topic: Binary, Decimal, Hexadecimal conversions
+=================================================================
+
+Generate 30 questions. All require working shown in
+solution_steps. examTags: ["MH-CET"]
+
+NUMBER SYSTEMS — Master Reference:
+
+  Binary (Base-2):    Digits: 0, 1
+  Octal (Base-8):     Digits: 0–7
+  Decimal (Base-10):  Digits: 0–9  (normal numbers)
+  Hexadecimal (Base-16): Digits: 0–9 and A(10) B(11) C(12)
+                         D(13) E(14) F(15)
+
+CONVERSION METHODS (state these in solution_steps):
+
+  Binary → Decimal:
+    → Multiply each bit by 2^position, sum all
+    → 1011₂ = 1×8 + 0×4 + 1×2 + 1×1 = 11₁₀
+
+  Decimal → Binary:
+    → Divide by 2 repeatedly, read remainders bottom-up
+    → 13₁₀ = 1101₂
+
+  Hexadecimal → Decimal:
+    → Multiply each digit by 16^position
+    → 1F₁₆ = 1×16 + 15×1 = 31₁₀
+
+  Decimal → Hexadecimal:
+    → Divide by 16, use A-F for remainders 10-15
+
+  Binary → Hexadecimal:
+    → Group binary digits in sets of 4 from right
+    → Convert each group to hex digit
+    → 11110001₂ = F1₁₆
+
+QUESTION PATTERNS (30 questions — 3 per conversion type):
+
+  Group 1: Binary to Decimal (6 questions)
+    → "Convert 1010₂ to decimal" (10)
+    → "What is 11111111₂ in decimal?" (255)
+    → "1101₂ = ?" (13)
+    → "Convert 10000₂ to decimal" (16)
+    → "What is 1011₂ + 1₂ in decimal?" (12)
+    → "Which decimal number equals 11001₂?" (25)
+
+  Group 2: Decimal to Binary (6 questions)
+    → "Convert 7 to binary" (111)
+    → "What is 25 in binary?" (11001)
+    → "Convert 64 to binary" (1000000)
+    → "What is 15 in binary?" (1111)
+    → "Convert 100 to binary" (1100100)
+    → "Which binary equals decimal 18?" (10010)
+
+  Group 3: Hexadecimal to Decimal (4 questions)
+    → "Convert A₁₆ to decimal" (10)
+    → "What is F₁₆ in decimal?" (15)
+    → "Convert 1F₁₆ to decimal" (31)
+    → "What is 2A₁₆ in decimal?" (42)
+
+  Group 4: Decimal to Hexadecimal (4 questions)
+    → "Convert 16 to hexadecimal" (10₁₆)
+    → "What is 255 in hexadecimal?" (FF₁₆)
+    → "Convert 26 to hexadecimal" (1A₁₆)
+    → "What is 31 in hexadecimal?" (1F₁₆)
+
+  Group 5: Conceptual Number System (6 questions)
+    → "How many digits does the binary system use?" (2)
+    → "What is the base of the hexadecimal system?" (16)
+    → "Which letter represents 12 in hexadecimal?" (C)
+    → "The decimal value of F in hexadecimal is..." (15)
+    → "In which number system is 19 NOT a valid digit?"
+      (Binary AND Octal AND Hexadecimal —
+      19 is valid only in Decimal and above base-19)
+    → "Computer memory addresses are often shown in
+      which number system?" (Hexadecimal)
+
+  Group 6: Binary Arithmetic (4 questions)
+    → "1₂ + 1₂ = ?" (10₂)
+    → "1111₂ + 0001₂ = ?" (10000₂)
+    → "What is the result of 1010₂ + 0101₂?" (1111₂)
+    → "1000₂ – 0001₂ = ?" (0111₂)
+
+NUMBER SYSTEM RULES:
+  - type: "numerical" for conversion questions
+  - solution_steps: show EVERY division/multiplication step
+  - Distractors: off-by-one positional errors
+    (e.g., for binary 1010 = 10, distractor 12 = read as 1×8+0+1×2+0 wait — or 8+4=12 wrong)
+  - Include the base notation in questions: 1010₂, 25₁₀
+  - speedTarget: 60 for conversions (slightly more time allowed)
+
+NUMBER SYSTEM FLASHCARDS (5 flashcards):
+  - Place value table: Binary positions (1,2,4,8,16,32,64,128)
+  - Hex digits: A=10, B=11, C=12, D=13, E=14, F=15
+  - Binary to Decimal method with example
+  - Decimal to Binary method (repeated division)
+  - Common conversions: 255=FF=11111111
+
+---
+
+## QUALITY GATES
+
+GATE 1 — CLASSIFICATION ACCURACY:
+  [ ] Every input/output device classified correctly
+  [ ] Plotter confirmed as OUTPUT (not input)
+  [ ] Touchscreen confirmed as BOTH input and output
+  [ ] MS Excel confirmed as APPLICATION (not OS)
+  [ ] Linux confirmed as OS (not application)
+  [ ] Firewall confirmed as SECURITY tool (not malware)
+
+GATE 2 — DEFINITION PRECISION:
+  [ ] Worm: spreads WITHOUT human action (key distinction)
+  [ ] Virus: requires human action to spread
+  [ ] Multicast: specific GROUP (not all, not one)
+  [ ] DNS: domain name to IP address (not IP to name)
+  [ ] SMTP: SENDING email (not receiving)
+  [ ] POP3/IMAP: RECEIVING email
+
+GATE 3 — ABBREVIATION ACCURACY:
+  [ ] JPEG: J=Joint, P=Photographic, E=Experts, G=Group
+  [ ] RAM: Random Access Memory (not Rapid)
+  [ ] HTTPS: S=Secure (not Safe, not Socket)
+  [ ] PDF: Portable Document Format
+  [ ] ALU: Arithmetic Logic Unit (not Algorithmic)
+  [ ] GUI: Graphical User Interface
+
+GATE 4 — MATHEMATICAL ACCURACY:
+  [ ] Every binary-decimal conversion manually verified
+  [ ] 1010₂ = 10₁₀ (not 12, not 8)
+  [ ] FF₁₆ = 255₁₀ (verified: 15×16 + 15 = 255)
+  [ ] solution_steps shows every multiplication step
+  [ ] Binary arithmetic: 1+1=10 (carry) confirmed
+
+GATE 5 — SCHEMA COMPLIANCE:
+  [ ] All required fields present per DATA_SCHEMA.md
+  [ ] ALL questions: examTags: ["MH-CET"]
+  [ ] ALL questions: cognitiveType field present
+  [ ] ALL questions: psychometricTemplate field present
+  [ ] ALL questions: speedTarget field present
+  [ ] ALL questions: negativeMarking: false field present
+  [ ] ID prefixes: hw-, sw-, net-, sec-, abbr-, num-
+  [ ] Minimum counts per file:
+      hardware=45, software=45, networking=45,
+      cybersecurity=30, abbreviations=60, numbers=30
+      TOTAL = 255 questions
+
+---
+
+## OUTPUT SEQUENCE
+
+STEP 1: Plan Artifact
+  - List all 7 files with question counts
+  - Confirm all 10 recurring themes are covered
+  - Confirm all 3 psychometric templates are represented
+  - Show speed target per file (25s / 40s / 60s)
+  WAIT for human approval
+
+STEP 2: hardware.data.js
+  → Input/Output Devices (15 Qs) → WAIT
+  → Memory Hierarchy (15 Qs) → WAIT
+  → CPU Architecture (15 Qs) → WAIT
+  → Assemble with flashcards → WAIT
+
+STEP 3: software-and-os.data.js
+  → OS types (15 Qs) → WAIT
+  → MS Office (15 Qs) → WAIT
+  → Software categories (15 Qs) → WAIT
+  → Assemble with flashcards → WAIT
+
+STEP 4: internet-and-networking.data.js
+  → Protocols (15 Qs) → WAIT
+  → Networking basics (15 Qs) → WAIT
+  → WWW and cloud (15 Qs) → WAIT
+  → Assemble with flashcards → WAIT
+
+STEP 5: cybersecurity.data.js
+  → Malware types (15 Qs) → WAIT
+  → Security tools (15 Qs) → WAIT
+  → Assemble with flashcards → WAIT
+
+STEP 6: abbreviations.data.js
+  → Template A: "X stands for" (20 Qs) → WAIT
+  → Template B: "Which abbreviation" (20 Qs) → WAIT
+  → Template C: "Letter X means" (20 Qs) → WAIT
+  → Assemble with flashcards → WAIT
+
+STEP 7: number-systems.data.js
+  → Binary ↔ Decimal (12 Qs) → WAIT
+  → Hex conversions + conceptual (10 Qs) → WAIT
+  → Binary arithmetic (4 Qs) → WAIT
+  → Assemble with flashcards → WAIT
+
+STEP 8: index.js
+  → Re-export all six data objects
+  → Confirm all variable names match files exactly
+
+---
+
+## ANTI-HALLUCINATION RULES
+
+1. ABBREVIATIONS: Every expansion must be exact.
+   JPEG = Joint Photographic Experts Group (not Picture).
+   If uncertain about any expansion — FLAG IT:
+   // VERIFY: [abbreviation] — do not guess.
+
+2. CLASSIFICATIONS: Every device, software, and protocol
+   must be classified using the Master Lists above.
+   Do NOT introduce new items not on the master lists
+   without flagging them: // NEW ITEM: verify category.
+
+3. NUMBER CONVERSIONS: Run every conversion manually
+   before writing the question. Show your work in
+   solution_steps. A wrong conversion answer invalidates
+   the entire question.
+
+4. BINARY ARITHMETIC: Remember carry rules.
+   1 + 1 = 10 in binary (not 2, not 11).
+   Verify every binary arithmetic answer step by step.
+
+5. MALWARE vs SECURITY TOOLS: Never classify a security
+   tool (Firewall, Antivirus, VPN) as malware.
+   Never classify malware as a security tool.
+   The Firewall-is-not-malware distinction is
+   a favourite MAH CET trap question.
+
+6. SPEED TARGETS: This entire module is speed-recall.
+   Every question must be answerable in 40 seconds or less
+   by a well-prepared student. If your question requires
+   calculation of more than 2 steps, it is too hard
+   for this module — simplify or move to GAT file.
+```
+
+---
+
+## Module Summary
+
+| File | Questions | Avg Speed | Negative Marking |
+|---|---|---|---|
+| hardware.data.js | 45 | 40s | None |
+| software-and-os.data.js | 45 | 40s | None |
+| internet-and-networking.data.js | 45 | 40s | None |
+| cybersecurity.data.js | 30 | 40s | None |
+| abbreviations.data.js | 60 | 25s | None |
+| number-systems.data.js | 30 | 60s | None |
+| **Total** | **255** | | |
+
+This gives your son a **255-question bank** covering every recurring MAH CET Computer Awareness theme, with speed targets built in so the quiz engine can train him to the 40-second-per-question rhythm the exam demands.
