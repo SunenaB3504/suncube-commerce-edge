@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "@suncube/ui/theme.css";
+
+@layer base {
+  body {
+    @apply antialiased bg-brand-slate text-white;
+    background-image: radial-gradient(circle at top right, rgba(16, 185, 129, 0.05), transparent),
+                      radial-gradient(circle at bottom left, rgba(245, 158, 11, 0.05), transparent);
+  }
+}
