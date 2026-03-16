@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Morning Comprehensive Eco Cheat Sheet</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+
+        .page {
+            max-width: 210mm;
+            margin: 20px auto;
+            background: white;
+            padding: 15mm;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+                min-height: auto;
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .block {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .unit-header {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        .title-banner {
+            text-align: center;
+            border-bottom: 4px solid #312e81;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .title-banner h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #1e1b4b;
+        }
+
+        .title-banner p {
+            color: #64748b;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+
+        .unit-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            page-break-after: avoid;
+            break-after: avoid;
+        }
+
+        .unit-header.critical {
+            background: #b91c1c;
+            color: white;
+        }
+
+        .unit-header.high-yield {
+            background: #d97706;
+            color: white;
+        }
+
+        .unit-header.standard {
+            background: #1e1b4b;
+            color: white;
+        }
+
+        .unit-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+
+        .unit-header .marks {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-weight: 900;
+        }
+
+        .grid-2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .grid-2>* {
+            flex: 1 1 calc(50% - 20px);
+            min-width: 280px;
+            box-sizing: border-box;
+        }
+
+        .full-width {
+            flex: 1 1 100% !important;
+        }
+
+        .block {
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 6px solid;
+            background: #ffffff;
+        }
+
+        .block h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 900;
+        }
+
+        .block ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .block li {
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .keyword {
+            font-weight: 900;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .formula {
+            font-family: monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: block;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            border: 1px dashed rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .blue {
+            background-color: #eff6ff;
+            border-left-color: #2563eb;
+            color: #1e3a8a;
+        }
+
+        .blue h3 {
+            color: #1d4ed8;
+        }
+
+        .green {
+            background-color: #ecfdf5;
+            border-left-color: #059669;
+            color: #064e3b;
+        }
+
+        .green h3 {
+            color: #047857;
+        }
+
+        .amber {
+            background-color: #fffbeb;
+            border-left-color: #d97706;
+            color: #78350f;
+        }
+
+        .amber h3 {
+            color: #b45309;
+        }
+
+        .red {
+            background-color: #fef2f2;
+            border-left-color: #dc2626;
+            color: #7f1d1d;
+        }
+
+        .red h3 {
+            color: #b91c1c;
+        }
+
+        .purple {
+            background-color: #faf5ff;
+            border-left-color: #9333ea;
+            color: #581c87;
+        }
+
+        .purple h3 {
+            color: #7e22ce;
+        }
+
+        .teal {
+            background-color: #f0fdfa;
+            border-left-color: #0d9488;
+            color: #134e4a;
+        }
+
+        .teal h3 {
+            color: #0f766e;
+        }
+
+        .indigo {
+            background-color: #e0e7ff;
+            border-left-color: #4f46e5;
+            color: #312e81;
+        }
+
+        .indigo h3 {
+            color: #3730a3;
+        }
+
+        .rose {
+            background-color: #fff1f2;
+            border-left-color: #e11d48;
+            color: #881337;
+        }
+
+        .rose h3 {
+            color: #be123c;
+        }
+
+        .footer {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+            margin-top: 40px;
+            padding-bottom: 15px;
+        }
+
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4f46e5;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 900;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            font-family: inherit;
+        }
+
+        .print-btn:hover {
+            background-color: #4338ca;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .print-btn {
+                top: auto;
+                bottom: 20px;
+                right: 50%;
+                transform: translateX(50%);
+                width: calc(100% - 40px);
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .print-btn:hover {
+                transform: translateX(50%) translateY(-2px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="downloadPDF()" class="print-btn no-print">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download as PDF
+    </button>
+
+    <div id="cheat-sheet-content">
+    <!-- UNIT 1: PAGE 1 -->
+    <div class="page">
+        <div class="title-banner">
+            <h1>Economics Master Printable</h1>
+            <p>Exam Morning Intensive Review Matrix</p>
+        </div>
+        <div class="unit-header critical">
+            <h2>UNIT 1 - Part 1: National Income Core [🔥 CRITICAL]</h2>
+            <span class="marks">12.75 Marks</span>
+        </div>
+        <div class="grid-2">
+            <div class="block blue full-width">
+                <h3>📖 Circular Flow & Aggregates</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">Generation Phase:</span> Value Added (Primary, Secondary, Tertiary sectors).
+                        </li>
+                        <li><span class="keyword">Distribution Phase:</span> Payments (CoE, OS, MI).</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Disposition Phase:</span> Expenditure (C + G + I + X-M).</li>
+                        <li><span class="keyword">GDP Deflator:</span> (Nominal / Real) × 100. Measures price level % change.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block red">
+                <h3>🎯 Flow vs Stock Traps</h3>
+                <ul>
+                    <li><span class="keyword">FLOW:</span> Measured over a period of time (Investment, Income,
+                        Depreciation).</li>
+                    <li><span class="keyword">STOCK:</span> Measured at a specific point in time (Wealth, Capital, Money
+                        Supply).</li>
+                </ul>
+            </div>
+            <div class="block amber">
+                <h3>🚨 GDP & Welfare Exception</h3>
+                <ul>
+                    <li><span class="keyword">Externalities:</span> Positive (public parks) or negative (pollution)
+                        effects not in GDP.</li>
+                    <li><span class="keyword">Non-monetary Exch:</span> Barter systems understate the actual GDP
+                        welfare.</li>
+                </ul>
+            </div>
+            <div class="block red">
+                <h3>🎯 NI Examiner Traps</h3>
+                <ul>
+                    <li><span class="keyword">Machine Trap:</span> If a firm buys a machine, it is
+                        <strong>Final/Investment</strong>, NOT Intermediate count.
+                    </li>
+                    <li><span class="keyword">Pension Trap:</span> <strong>Old Age</strong> = Transfer (Exclude).
+                        <strong>Retirement</strong> = Factor Income (Include).
+                    </li>
+                    <li><span class="keyword">Inventory Trap:</span> Change in stock is <strong>investment</strong> even if unsold.</li>
+                </ul>
+            </div>
+            <div class="block green full-width">
+                <h3>🧮 Conversion Rules Ecosystem</h3>
+                <span class="formula">GROSS to NET = Subtract Depreciation (Consumption of Fixed Capital)</span>
+                <span class="formula">DOMESTIC to NATIONAL = Add NFIA (Factor Income from Abroad - Paid to
+                    Abroad)</span>
+                <span class="formula">MARKET PRICE (MP) to FACTOR COST (FC) = Subtract NIT (Indirect Taxes -
+                    Subsidies)</span>
+            </div>
+        </div>
+        <div class="footer">Page 1 • Unit 1 (Part 1) • CBSE Class 12 Economics Master</div>
+    </div>
+
+    <!-- UNIT 1: PAGE 2 -->
+    <div class="page">
+        <div class="unit-header critical">
+            <h2>UNIT 1 - Part 2: Measurements [🔥 CRITICAL]</h2>
+        </div>
+        <div class="grid-2">
+            <div class="block purple full-width">
+                <h3>📊 Measurement Methods</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">1. Value Added Method:</span><br>GVA(MP) = Value of Output -
+                            Intermediate Consumption.<br>Yields: <strong>GDP(MP)</strong></li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">2. Income Method:</span><br>CoE + Operating Surplus + Mixed
+                            Income.<br>Yields: <strong>NDP(FC)</strong> (Domestic Income)</li>
+                    </ul>
+                </div>
+                <ul>
+                    <li><span class="keyword">3. Expenditure Method:</span><br>PFCE + GFCE + GDCF (Fixed Cap + Change in
+                        Stock) + Net Exports.<br>Yields: <strong>GDP(MP)</strong></li>
+                </ul>
+            </div>
+            <div class="block teal full-width">
+                <h3>🔍 Precautions during Measurement</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><strong>Value Added:</strong> Do NOT include sale of second-hand goods, but DO include
+                            commission earned on them.</li>
+                        <li><strong>Income:</strong> Exclude transfer payments (gifts, subsidies). Include imputed rent
+                            of owner-occupied houses.</li>
+                    </ul>
+                    <ul>
+                        <li><strong>Expenditure:</strong> Exclude expenditure on shares/bonds (financial assets, not
+                            production).</li>
+                        <li><strong>Windfall gains:</strong> Lotteries are abruptly excluded from National Income.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block indigo full-width" style="padding: 10px 20px;">
+                <h3 style="margin-bottom: 5px; font-size: 1rem;">🔤 Essential Abbreviations</h3>
+                <div class="grid-2" style="grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 5px;">
+                    <div><span class="keyword">GDP/GNP:</span> Gross Domestic/National Product</div>
+                    <div><span class="keyword">NDP/NNP:</span> Net Domestic/National Product</div>
+                    <div><span class="keyword">NFIA:</span> Net Factor Income from Abroad</div>
+                    <div><span class="keyword">NIT:</span> Net Indirect Taxes (Ind. Taxes - Subsidies)</div>
+                    <div><span class="keyword">CFC:</span> Consumption of Fixed Capital (Depreciation)</div>
+                </div>
+            </div>
+            <div class="block red">
+                <h3>🚨 Capital Loss vs Depreciation</h3>
+                <ul>
+                    <li><span class="keyword">Depreciation:</span> Expected wear/tear. Part of production.</li>
+                    <li><span class="keyword">Capital Loss:</span> Unforeseen (Natural Calamity, Fire). <strong>Not</strong> part of Depreciation.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">Page 2 • Unit 1 (Part 2) • CBSE Class 12 Economics Master</div>
+    </div>
+
+    <!-- UNIT 2: PAGE 1 -->
+    <div class="page">
+        <div class="unit-header high-yield">
+            <h2>UNIT 2 - Part 1: Money & Credit [🟡 HIGH YIELD]</h2>
+            <span class="marks">10.25 Marks</span>
+        </div>
+        <div class="grid-2">
+            <div class="block blue full-width">
+                <h3>💰 Functions & Supply of Money</h3>
+                <ul>
+                    <li><span class="keyword">Primary:</span> Medium of Exchange (solves double coincidence of wants),
+                        Measure of Value.</li>
+                    <li><span class="keyword">M1:</span> C + DD + Other deposits with RBI. <strong>M3:</strong> M1 + Net
+                        Time Deposits. <strong>NDTL:</strong> Net Demand and Time Liabilities.</li>
+                    <li><span class="keyword">High Powered Money (H):</span> C (with public) + R (Reserves with banks).
+                        The base of the economy.</li>
+                </ul>
+            </div>
+            <div class="block indigo full-width">
+                <h3>🏦 Commercial Banks & Credit Creation Process</h3>
+                <p>Banks create credit mathematically based on initial deposits and the legal reserve ratio.</p>
+                <div class="grid-2">
+                    <ul>
+                        <li><strong>Two Assumptions:</strong> All banks are treated as a single unit. All transactions
+                            are routed through banks.</li>
+                        <li><strong>Process:</strong> Banks keep a fraction (LRR) of deposits and lend the rest. The
+                            loan is deposited back into the banking system, creating secondary deposits.</li>
+                    </ul>
+                    <div>
+                        <span class="formula">Credit Multiplier = 1 / LRR</span>
+                        <span class="formula">Total Credit = Initial Deposit × Multiplier</span>
+                    </div>
+                </div>
+            </div>
+            <div class="block red full-width">
+                <h3>🎯 SQP Traps: Money & Banking</h3>
+                <div class="grid-2">
+                    <p><strong>The Inverse Relation Trap:</strong> Higher Legal Reserve Ratio (LRR/CRR) logically means
+                        <strong>Lower</strong> Credit Creation, because Multiplier = 1 / LRR.
+                    </p>
+                    <p><strong>The Coin Trap:</strong> RBI does NOT issue ₹1 notes or coins. The <strong>Ministry of Finance</strong> does.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Page 3 • Unit 2 (Part 1) • CBSE Class 12 Economics Master</div>
+    </div>
+
+    <!-- UNIT 2: PAGE 2 -->
+    <div class="page">
+        <div class="unit-header high-yield">
+            <h2>UNIT 2 - Part 2: Reserve Bank of India</h2>
+        </div>
+        <div class="grid-2">
+            <div class="block purple full-width">
+                <h3>👑 Functions of Central Bank (RBI)</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">Currency Authority:</span> Sole right to issue fiat money. Uniformity.
+                        </li>
+                        <li><span class="keyword">Banker to Gov:</span> Manages govt accounts, acts as advisor.</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Banker's Bank:</span> Keeps reserves of commercial banks.</li>
+                        <li><span class="keyword">Lender of Last Resort:</span> Rescues banks facing bankruptcy.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block green">
+                <h3>🎛️ Quantitative Tools</h3>
+                <p>Controls TOTAL volume of credit.</p>
+                <ul>
+                    <li><strong>Repo Rate:</strong> Rate RBI lends to banks. (Increase = Less Money).</li>
+                    <li><strong>OMO (Open Market Ops):</strong> RBI <strong>Sale</strong> = Absorbs cash.</li>
+                    <li><strong>LRR (CRR + SLR):</strong> Defines legal minimum reserves.</li>
+                </ul>
+            </div>
+            <div class="block amber">
+                <h3>🎯 Qualitative Tools</h3>
+                <p>Controls FLOW/DIRECTION of credit.</p>
+                <ul>
+                    <li><strong>Margin Requirement:</strong> Diff between loan amount & security value.</li>
+                    <li><strong>Moral Suasion:</strong> Advice to banks.</li>
+                    <li><strong>Selective Credit Control:</strong> Quotas for specific sectors.</li>
+                </ul>
+            </div>
+            <div class="block indigo full-width" style="padding: 10px 20px;">
+                <h3 style="margin-bottom: 5px; font-size: 1rem;">🔤 Essential Abbreviations</h3>
+                <div class="grid-2" style="grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 5px;">
+                    <div><span class="keyword">LRR:</span> Legal Reserve Ratio (Minimum reserves banks must keep)</div>
+                    <div><span class="keyword">CRR:</span> Cash Reserve Ratio (Fraction of deposits kept with RBI)</div>
+                    <div><span class="keyword">SLR:</span> Statutory Liquidity Ratio (Fraction kept with themselves)
+                    </div>
+                    <div><span class="keyword">OMO:</span> Open Market Operations (Buying/selling govt securities)</div>
+                </div>
+            </div>
+            <div class="block red full-width">
+                <h3>🚨 SQP Examiner Traps</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">The Coin Trap:</span> RBI does NOT issue ₹1 notes or coins. The
+                            <strong>Ministry of Finance</strong> does.</li>
+                        <li><span class="keyword">Interest Rate Inverse Trap:</span> Bond prices and Interest rates move
+                            in <strong>opposite</strong> directions (i ↑, Bond Price ↓).</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">CBDC Vulnerabilities:</span> Purely digital CBDC introduces cyber
+                            vulnerabilities requiring robust preparedness.</li>
+                        <li><span class="keyword">Routine Inspections:</span> Part of the RBI's
+                            <strong>Supervisory/Regulatory</strong> body function.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Page 4 • Unit 2 (Part 2) • CBSE Class 12 Economics Master</div>
+    </div>
+
+    <!-- UNIT 3: PAGE 1 -->
+    <div class="page">
+        <div class="unit-header critical">
+            <h2>UNIT 3 - Part 1: AD, AS & Equilibrium [🔥 CRITICAL]</h2>
+            <span class="marks">12.00 Marks</span>
+        </div>
+        <div class="grid-2">
+            <div class="block blue full-width">
+                <h3>📈 Aggregate Demand & Supply</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">AD (AD = C + I):</span> Total planned expenditure.</li>
+                        <li><span class="keyword">C-Function:</span> C = c̅ + bY. (c̅ is autonomous, b is MPC).</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">AS (AS = Y = C + S):</span> Total planned production (National
+                            Income).</li>
+                        <li><span class="keyword">S-Function:</span> S = -c̅ + (1-b)Y.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block teal">
+                <h3>Propensities</h3>
+                <ul>
+                    <li><span class="keyword">APC</span> = C/Y. Can be > 1.</li>
+                    <li><span class="keyword">APS</span> = S/Y. Can be negative.</li>
+                    <li><span class="keyword">MPC (b)</span> = ∆C/∆Y.</li>
+                    <li><span class="keyword">MPS (1-b)</span> = ∆S/∆Y.</li>
+                </ul>
+                <span class="formula" style="font-size:0.9rem;">APC + APS = 1 (Income = C + S) | MPC + MPS = 1</span>
+            </div>
+            <div class="block amber">
+                <h3>⚖️ Equilibrium Mechanics</h3>
+                <p>Equilibrium occurs where planned AD = planned AS.</p>
+                <ul>
+                    <li><strong>Equilibrium:</strong> AD = AS (45° line) | <strong>S = I Appr.</strong></li>
+                    <li><strong>Effective Demand:</strong> Level of AD where it is exactly met by AS. All output is sold.</li>
+                    <li><strong>Mechanism (AD > AS):</strong> Stocks fall → Firms increase output/employment.</li>
+                    <li><strong>Mechanism (AS > AD):</strong> Stocks rise → Firms cut output/employment.</li>
+                    <li><strong>Break-even:</strong> Level where <strong>C = Y</strong> and <strong>S = 0</strong> (APC = 1).</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">Page 5 • Unit 3 (Part 1) • CBSE Class 12 Economics Master</div>
+    </div>
+
+    <!-- UNIT 3: PAGE 2 -->
+    <div class="page">
+        <div class="unit-header critical">
+            <h2>UNIT 3 - Part 2: Multiplier & Deficient Demand</h2>
+        </div>
+        <div class="grid-2">
+            <div class="block green full-width">
+                <h3>⚙️ Investment Multiplier (k)</h3>
+                <div class="grid-2">
+                    <div>
+                        <span class="formula">k = ∆Y / ∆I</span>
+                        <span class="formula">k = 1 / (1 - MPC)</span>
+                        <span class="formula">k = 1 / MPS</span>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>Direct relationship with MPC.</li>
+                            <li>Inverse relationship with MPS.</li>
+                            <li>Min value is 1 (MPC=0). Max is infinity (MPC=1).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="block red">
+                <h3>🚨 Paradox of Thrift Trap</h3>
+                <p>If everyone decides to save more (Thrift), AD falls. This leads to lower production and ultimately 
+                    the <strong>Total Savings fall</strong> because total income crashed! 
+                    <br><strong>Key:</strong> Individual virtue can be a collective disaster.</p>
+            </div>
+            <div class="block purple full-width">
+                <h3>📉 Deficient vs Excess Demand Remedies</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><strong>Deficient (Deflationary):</strong> AD &lt; AS at full employment.</li>
+                        <li><span class="keyword">Fiscal:</span> Increase Govt Spending, Decrease Taxes.</li>
+                        <li><span class="keyword">Monetary:</span> Decrease Repo, Decrease CRR, Buy bonds.</li>
+                    </ul>
+                    <ul>
+                        <li><strong>Excess (Inflationary):</strong> AD > AS at full employment.</li>
+                        <li><span class="keyword">Fiscal:</span> Decrease Govt Spending, Increase Taxes.</li>
+                        <li><span class="keyword">Monetary:</span> Increase Repo, Increase CRR, Sell bonds.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block indigo full-width" style="padding: 10px 20px;">
+                <h3 style="margin-bottom: 5px; font-size: 1rem;">🔤 Essential Abbreviations</h3>
+                <div class="grid-2" style="grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 5px;">
+                    <div><span class="keyword">AD/AS:</span> Aggregate Demand / Aggregate Supply</div>
+                    <div><span class="keyword">APC/APS:</span> Average Propensity to Consume / Save</div>
+                    <div><span class="keyword">MPC/MPS:</span> Marginal Propensity to Consume / Save</div>
+                    <div><span class="keyword">c̅:</span> Autonomous Consumption (Survival consumption at zero income)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Page 6 • Unit 3 (Part 2) • CBSE Class 12 Economics Master</div>
+    </div>
+
+    <!-- UNIT 4: PAGE 1 -->
+    <div class="page">
+        <div class="unit-header high-yield">
+            <h2>UNIT 4 - Part 1: Government Budget [🟡 HIGH YIELD]</h2>
+            <span class="marks">9.00 Marks</span>
+        </div>
+        <div class="grid-2">
+            <div class="block blue full-width">
+                <h3>📜 Budget Concepts & Objectives</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><strong>Public Goods:</strong> Non-rivalrous & Non-excludable (Streetlights, Defence). 
+                            Suffers from <strong>Free Rider Problem</strong>.</li>
+                        <li><strong>Sin Taxes:</strong> Heavy taxes on alcohol/tobacco (Allocation Function).</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Redistribution:</span> Progressive taxation (Equity). 
+                            <span class="keyword">Stability:</span> Managing AD via budget moves.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block teal">
+                <h3>💸 Receipts</h3>
+                <ul>
+                    <li><span class="keyword">Revenue:</span> Neither creates liability nor reduces asset. (Taxes, Fees,
+                        Fines).</li>
+                    <li><span class="keyword">Capital:</span> Creates liability (Borrowings) OR reduces asset
+                        (Disinvestment, Recovery of Loans).</li>
+                </ul>
+            </div>
+            <div class="block amber">
+                <h3>💳 Expenditures</h3>
+                <ul>
+                    <li><span class="keyword">Revenue:</span> No asset created, no liability reduced. (Salaries,
+                        Pensions, Subsidies).</li>
+                    <li><span class="keyword">Capital:</span> Creates asset (Building roads, shares) OR reduces
+                        liability (Repaying loan).</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">Page 7 • Unit 4 (Part 1) • CBSE Class 12 Economics Master</div>
+    </div>
+
+    <!-- UNIT 4: PAGE 2 -->
+    <div class="page">
+        <div class="unit-header high-yield">
+            <h2>UNIT 4 - Part 2: Deficits & Taxes</h2>
+        </div>
+        <div class="grid-2">
+            <div class="block red full-width">
+                <h3>🔥 The Three Deficits</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">1. Revenue Deficit:</span> Rev Exp - Rev Receipts. Implies govt cannot
+                            meet its day-to-day regular expenses.</li>
+                        <li><span class="keyword">2. Fiscal Deficit:</span> Total Exp - Total Receipts (excl
+                            borrowings). It rigidly is identical to <strong>Total Borrowing Requirements</strong>.</li>
+                    </ul>
+                    <div>
+                        <span class="formula" style="font-size:0.9rem;">Fiscal = Rev Deficit + Cap Exp - Non-debt Cap
+                            Receipts</span>
+                        <div
+                            style="background: rgba(255,255,255,0.8); padding: 10px; border-radius: 8px; margin-top: 10px;">
+                            <p style="margin:0;"><strong>3. Primary Deficit (Sins of the Past Trap):</strong> Measures
+                                current year's overspending purely without historical debt baggage.
+                                <br><code>Formula = Fiscal Deficit - Interest Payments</code>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block purple full-width">
+                <h3>⚖️ Tax Structure</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">Direct Taxes:</span> Burden cannot be shifted. Imposed directly on
+                            income/wealth of individuals. (e.g., Income Tax, Corporate Tax).</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Indirect Taxes:</span> Burden can be brutally shifted. Imposed on
+                            goods and services. (e.g., GST, Customs Duty).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block indigo full-width" style="padding: 10px 20px;">
+                <h3 style="margin-bottom: 5px; font-size: 1rem;">🔤 Essential Abbreviations</h3>
+                <div class="grid-2" style="grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 5px;">
+                    <div><span class="keyword">PSU:</span> Public Sector Undertaking</div>
+                    <div><span class="keyword">GST:</span> Goods and Services Tax (Key Indirect Tax)</div>
+                    <div><span class="keyword">Rev. Deficit:</span> Revenue Deficit (Revenue Exp - Revenue Receipts)
+                    </div>
+                    <div><span class="keyword">Fiscal Deficit:</span> Total Borrowing Requirements</div>
+                </div>
+            </div>
+            <div class="block amber full-width">
+                <h3>🎯 SQP Examiner Traps</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">Deficit Drivers:</span> When citing case studies, aggressively extract
+                            terms like "astronomical tax collections", "massive dividends", and "restrained revenue
+                            expenditure".</li>
+                        <li><span class="keyword">Allocation vs Redistribution:</span> Subsidising beneficial
+                            Khadi/solar projects optimally allocates/redirects resources. The "Robin Hood" approach
+                            redistributes income equitably.</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Autonomous vs Accommodating:</span> Profit motive (Autonomous) vs Gap-filling (Accommodating - ORT).</li>
+                        <li><span class="keyword">Primary Deficit = 0:</span> Means borrowing only to pay interest (Sins of the past).</li>
+                        <li><span class="keyword">PMGKAY (Food Scheme):</span> Represents <strong>Redistribution of Income</strong> objective.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Page 8 • Unit 4 (Part 2) • CBSE Class 12 Economics Master</div>
+    </div>
+
+    <!-- UNIT 5: PAGE 1 -->
+    <div class="page">
+        <div class="unit-header standard">
+            <h2>UNIT 5 - Part 1: Balance of Payments</h2>
+            <span class="marks">5.50 Marks</span>
+        </div>
+        <div class="grid-2">
+            <div class="block indigo full-width">
+                <h3>🌍 Balance of Payments Accounts</h3>
+                <p>A systematic record of all economic transactions between residents of a country and the rest of the
+                    world.</p>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">Current Account:</span> Export/Import of Goods (Visible Trade/BoT),
+                            Services (Invisible), Current transfers (Unilateral). Does not impact asset/liability
+                            status.</li>
+                        <li><span class="keyword">Capital Account:</span> FDI, FPI, Borrowings (Commercial, External
+                            Assistance), Official Reserve Transactions. Impacts asset/liability status.</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Autonomous Items:</span> Undertaken for profit motive (Above the
+                            line). Cause of BoP imbalance.</li>
+                        <li><span class="keyword">Accommodating Items:</span> Undertaken strictly to cover BoP deficit
+                            (Below the line). E.g. utilizing Forex reserves.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block teal">
+                <h3>🚢 Balance of Trade vs BoP</h3>
+                <ul>
+                    <li><span class="keyword">BoT:</span> Difference between Export and Import of <strong>Goods</strong>
+                        only. Narrow concept.</li>
+                    <li><span class="keyword">BoP:</span> Much broader concept entirely encompassing Goods, Services,
+                        and Capital flows.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">Page 9 • Unit 5 (Part 1) • CBSE Class 12 Economics Master</div>
+    </div>
+
+    <!-- UNIT 5: PAGE 2 -->
+    <div class="page">
+        <div class="unit-header standard">
+            <h2>UNIT 5 - Part 2: Foreign Exchange</h2>
+        </div>
+        <div class="grid-2">
+            <div class="block blue full-width">
+                <h3>💱 Foreign Exchange Rate Systems</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">NEER:</span> Trade-weighted average of nominal exchange rates.</li>
+                        <li><span class="keyword">REER:</span> NEER adjusted for inflation differences (Competitiveness
+                            indicator).</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Autonomous Items:</span> Profit-driven (Above the line). Cause of
+                            imbalance.</li>
+                        <li><span class="keyword">Accommodating Items:</span> Gap-filling (Below the line). Utilizing
+                            reserves.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block amber full-width">
+                <h3>🎯 Currency "Apple" Rule Traps</h3>
+                <p>Always treat the US Dollar ($) like an Apple. If price moves ₹70 → ₹80, Apples get more expensive, meaning ₹ value has fallen.</p>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">Depreciation (Market):</span> ₹70 → ₹85. Rupee weaker. Exports cheaper (Benefit).</li>
+                        <li><span class="keyword">Appreciation (Market):</span> ₹70 → ₹60. Rupee stronger. Imports cheaper.</li>
+                        <li><span class="keyword">Devaluation:</span> Deliberate fall in ₹ value by Govt (Fixed system).</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">REER:</span> Real Effective Exchange Rate. Adjusted for inflation. The true indicator of <strong>Competitiveness</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block indigo full-width" style="padding: 10px 20px;">
+                <h3 style="margin-bottom: 5px; font-size: 1rem;">🔤 Essential Abbreviations</h3>
+                <div class="grid-2" style="grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 5px;">
+                    <div><span class="keyword">BoP:</span> Balance of Payments (Overall record of transactions)</div>
+                    <div><span class="keyword">BoT:</span> Balance of Trade (Only visible goods)</div>
+                    <div><span class="keyword">FDI/FPI:</span> Foreign Direct / Portfolio Investment</div>
+                    <div><span class="keyword">Forex:</span> Foreign Exchange (Foreign currency reserves)</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Page 10 • Unit 5 (Part 2) • CBSE Class 12 Economics Master</div>
+    </div>
+
+    <!-- UNIT 6: PAGE 1 -->
+    <div class="page">
+        <div class="unit-header critical">
+            <h2>UNIT 6 - Part 1: IED Intro (1947-1990) [🔥 CRITICAL]</h2>
+            <span class="marks">14.25 Marks</span>
+        </div>
+        <div class="grid-2">
+            <div class="block rose full-width">
+                <h3>🕰️ Agriculture & Industry (1947-1990)</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">1947 Metrics:</span> Literacy < 16%, Life Exp <strong>32 yrs</strong>, IMR 218/1000.</li>
+                        <li><span class="keyword">Land Reforms:</span> Ceilings & Intermediaries. Tricky: Big landlords used <strong>loophole</strong> "self-cultivators".</li>
+                        <li><span class="keyword">Self-Reliance:</span> Objective to reduce dependence/foreign interference.</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">IPR 1956:</span> Sch A (Exclusively Govt), B (Mixed/Govt lead), C (Private Lic Raj).</li>
+                        <li><span class="keyword">Karve Committee:</span> Promoted SSI (1955) for jobs and rural stability.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block blue full-width">
+                <h3>Trade Policy: Import Substitution</h3>
+                <ul>
+                    <li><span class="keyword">Inward Looking Policy:</span> Aimed to ruthlessly protect domestic
+                        industries from foreign competition.</li>
+                    <li><span class="keyword">Tools used:</span> <strong>Tariffs</strong> (Tax on imports to make them
+                        expensive) and <strong>Quotas</strong> (Strict limit on quantities imported).</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">Page 11 • Unit 6 (Part 1) • CBSE Class 12 Economics Master</div>
+    </div>
+
+    <!-- UNIT 6: PAGE 2 -->
+    <div class="page">
+        <div class="unit-header critical">
+            <h2>UNIT 6 - Part 2: Economic Reforms 1991</h2>
+        </div>
+        <div class="grid-2">
+            <div class="block amber full-width">
+                <h3>🚪 The 1991 LPG Reforms</h3>
+                <p>Triggered by severe BoP crisis, high inflation, and rapidly dwindling forex reserves (barely 2 weeks
+                    of import cover).</p>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">Liberalisation:</span> Abolishing industrial licensing (except 5
+                            hazardous ones), financial sector deregulation, tax slab reductions.</li>
+                        <li><span class="keyword">Privatisation:</span> Disinvestment (sale of equity of PSUs).
+                            Improving efficiency via Maharatna/Navratna status.</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Globalisation:</span> Integration with world economy. Reducing
+                            tariffs, dismantling quotas, increasing FDI limits, devaluation of Rupee.</li>
+                        <li><span class="keyword">Outsourcing:</span> India emerged as a BPO destination (Cheap skilled
+                            labor, English).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block red full-width">
+                <h3>🎯 SQP Traps & Organizations</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">WTO (1995):</span> Successor to GATT. Rules-based trading regime.
+                            India is a founding member.</li>
+                        <li><span class="keyword">Demonetization (2016):</span> Aimed to definitively curb black money,
+                            fake currency, and promote digital transactions.</li>
+                    </ul>
+                    <div style="background: rgba(255,255,255,0.8); padding: 10px; border-radius: 8px;">
+                        <p style="margin:0;"><strong>🔥 Chronology Master Trap:</strong> Great Leap Forward (1958) →
+                            China Reforms (1978) → Pakistan Reforms (1988) → India Reforms (1991) → WTO (1995) →
+                            Demonetization (2016) → GST (2017).</p>
+                    </div>
+                </div>
+            </div>
+            <div class="block indigo full-width" style="padding: 10px 20px;">
+                <h3 style="margin-bottom: 5px; font-size: 1rem;">🔤 Essential Abbreviations</h3>
+                <div class="grid-2" style="grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 5px;">
+                    <div><span class="keyword">LPG:</span> Liberalisation, Privatisation, Globalisation (1991)</div>
+                    <div><span class="keyword">WTO:</span> World Trade Organization (Rules-based trading body)</div>
+                    <div><span class="keyword">GATT:</span> General Agreement on Tariffs and Trade (Predecessor to WTO)
+                    </div>
+                    <div><span class="keyword">IPR:</span> Industrial Policy Resolution (E.g., 1956 classification)
+                    </div>
+                    <div><span class="keyword">HYV:</span> High Yielding Variety (Seeds defining Green Revolution)</div>
+                    <div><span class="keyword">SSI:</span> Small Scale Industries (Promoted for employment)</div>
+                </div>
+            </div>
+            <div class="block red full-width">
+                <h3>🚨 SQP Specific Highlights</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">License Raj & Equality:</span> Licenses forcefully pushed factories to
+                            deeply poor countryside areas via tax holidays, attempting Regional Equality.</li>
+                        <li><span class="keyword">Disinvestment Woes (1991):</span> Assets were wildly sold at deeply
+                            "undervalued" bargain prices purely to plug regular budget deficit holes.</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Globalisation's Ugly Side:</span> It tragically brutally widened
+                            inequality. Immense benefits were exclusively captured by high-income IT/Service sectors,
+                            whilst agriculture was terribly undervalued.</li>
+                        <li><span class="keyword">Land Ceiling Loopholes:</span> Landlords craftily delayed via lengthy
+                            court cases and falsely registered lands to distant relatives/loyal servants.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Page 12 • Unit 6 (Part 2) • CBSE Class 12 Economics Master</div>
+    </div>
+
+    <!-- UNIT 7: PAGE 1 -->
+    <div class="page">
+        <div class="unit-header critical">
+            <h2>UNIT 7 - Part 1: Human Capital & Rural Dev [🔥 CRITICAL]</h2>
+            <span class="marks">13.75 Marks</span>
+        </div>
+        <div class="grid-2">
+            <div class="block green full-width">
+                <h3>🧠 Human Capital Formation (HCF)</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">Sources:</span> Education (highest ROI), Health (preventive/curative),
+                            On-the-job training, Migration, Information.</li>
+                        <li><span class="keyword">HCF vs HD:</span> Human Capital treats man as a <em>means</em> to an
+                            end (productivity). Human Development treats man as an <em>end</em> in himself (better
+                            life).</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Education Sector:</span> Massive disparity. Regulated by UGC
+                            (Universities), NCERT (Schools), AICTE (Technical).</li>
+                        <li><span class="bold">Right to Education (RTE)</span> made free/compulsory for 6-14 years.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block amber full-width">
+                <h3>🌾 Rural Development</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">Rural Credit:</span> Transition from moneylenders to Institutional
+                            Sources. <strong>NABARD (1982)</strong> is the apex <strong>REFINANCING</strong> agency.
+                            <strong>Kudumbashree (Kerala)</strong>: Largest informal bank in Asia.
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Agri Marketing:</span> Regulated markets, MSP, Buffer stocks. 
+                            <strong>Organic vs Conv:</strong> Organic (Health/Labor focus) vs Conventional (Yield/Chemical focus).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Page 13 • Unit 7 (Part 1) • CBSE Class 12 Economics Master</div>
+    </div>
+
+    <!-- UNIT 7: PAGE 2 -->
+    <div class="page">
+        <div class="unit-header critical">
+            <h2>UNIT 7 - Part 2: Employment & Sustainability</h2>
+        </div>
+        <div class="grid-2">
+            <div class="block blue full-width">
+                <h3>💼 Employment Dynamics</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">Self-Employed vs Hired:</span> Majority of Indians are heavily
+                            self-employed.</li>
+                        <li><span class="keyword">Regular vs Casual:</span> Casual wage labourers are increasing.
+                            <strong>52-25-23 Rule:</strong> Self-employed (52%), Regular (25%), Casual (23%).
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Casualisation:</span> Transition of workforce from heavily regular
+                            salaried employment abruptly to casual wage work.</li>
+                        <li><span class="keyword">Informalisation:</span> 94% workforce in informal sector. 
+                            <strong>ILO Role:</strong> Pushed for modernization of informal sector enterprises.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block teal full-width">
+                <h3>🌿 Sustainable Development & Environment</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">Environ Functions:</span> Resources, Waste Assimilation, Life
+                            Sustenance, <strong>Aesthetic Services</strong>. <strong>Appiko Movement (1983)</strong>
+                            (Karnataka).</li>
+                        <li><span class="keyword">Carrying Capacity:</span> Extraction < Regeneration; Waste <
+                                Absorptive capacity. <strong>Herman Daly's Rules</strong> for sustainability.</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Global Warming:</span> Greenhouse gases/CFCs. <strong>Montreal
+                                Protocol (1987)</strong> for Ozone.</li>
+                        <li><span class="keyword">Sustainable Dev:</span> Meeting present needs without compromising future (Brundtland).
+                            <strong>Edward Barbier:</strong> Increasing material standard of living of the poor.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block indigo full-width" style="padding: 10px 20px;">
+                <h3 style="margin-bottom: 5px; font-size: 1rem;">🔤 Essential Abbreviations</h3>
+                <div class="grid-2" style="grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 5px;">
+                    <div><span class="keyword">NABARD:</span> National Bank for Agriculture and Rural Development</div>
+                    <div><span class="keyword">SHG:</span> Self Help Group (Microcredit system for rural poor)</div>
+                    <div><span class="keyword">HCF:</span> Human Capital Formation (Focus on skills/productivity)</div>
+                    <div><span class="keyword">MSP:</span> Minimum Support Price (Govt price floor for crops)</div>
+                    <div><span class="keyword">RTE:</span> Right to Education (Free/compulsory for 6-14 years)</div>
+                    <div><span class="keyword">CFCs:</span> Chlorofluorocarbons (Ozone depleting compounds)</div>
+                </div>
+            </div>
+            <div class="block red full-width">
+                <h3>🔥 High-Yield Focus Areas</h3>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">Human Capital:</span> Intangible, Imperfectly Mobile, Inseparable (charactertistics). 6% GDP target.</li>
+                        <li><span class="keyword">Employment:</span> 545M workforce. <strong>Jobless Growth:</strong> GDP rises, jobs don't.</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Environment:</span> <strong>Supply-Demand Reversal</strong> (Plenty to Scarcity). CPCB (1974) Air/Water.</li>
+                        <li><span class="keyword">Rural Banking:</span> Commercial + RRB + Cooperative + Land Dev Banks.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Page 14 • Unit 7 (Part 2) • CBSE Class 12 Economics Master</div>
+    </div>
+
+    <!-- UNIT 8: PAGE 1 -->
+    <div class="page">
+        <div class="unit-header standard">
+            <h2>UNIT 8 - Part 1: Comparative Demographics</h2>
+            <span class="marks">4.50 Marks</span>
+        </div>
+        <div class="grid-2">
+            <div class="block purple full-width">
+                <h3>📊 Demographic Indicators</h3>
+                <p>Comparing India, China, and Pakistan comprehensively.</p>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">Population Size:</span> India officially surpassed China.</li>
+                        <li><span class="keyword">Growth Rate:</span> <strong>Pakistan (2.1%)</strong> > India (1.03%) >
+                            China (0.46%).</li>
+                        <li><span class="keyword">Density:</span> <strong>India (441/sq km)</strong> > Pak (245) > China
+                            (148 - Lowest density).</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Sex Ratio:</span> Low in all three due to son preference.</li>
+                        <li><span class="keyword">Urbanisation:</span> China (60%) > Pak (37%) > India (35%).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block indigo full-width">
+                <h3>📜 Historical Policy Context</h3>
+                <ul>
+                    <li><span class="keyword">China 4-2-1:</span> Population problem (Elderly > Young) due to <strong>One Child Norm</strong>.</li>
+                    <li><span class="keyword">Liberty Indicators:</span> Measure democratic participation (Political/social rights).</li>
+                    <li><span class="keyword">GLF (1958):</span> Backyard Furnaces + 26k Communes. Reforms in 1978.</li>
+                    <li><span class="keyword">HDI:</span> High (China), Medium (India/Pak). REER is for competitiveness.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">Page 15 • Unit 8 (Part 1) • CBSE Class 12 Economics Master</div>
+    </div>
+
+    <!-- UNIT 8: PAGE 2 -->
+    <div class="page">
+        <div class="unit-header standard">
+            <h2>UNIT 8 - Part 2: Sectoral Growth & HDI</h2>
+        </div>
+        <div class="grid-2">
+            <div class="block red full-width">
+                <h3>🏭 Sectoral Contribution & Impatient Leap Trap</h3>
+                <p>The structural transformation trajectory vividly dictates how nations develop.</p>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">China (Classic):</span> Rapidly shifted from Agriculture abruptly to
+                            Manufacturing. Industry drives their GDP.</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">India & Pak (Impatient Leap):</span> Brutally skipped the intensive
+                            industrial phase seamlessly jumping directly emphatically into the Service sector. This
+                            causes 'jobless growth' concerns.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block amber full-width">
+                <h3>🏆 Human Development Index (HDI)</h3>
+                <p>Composite index published heavily by UNDP to definitively rank countries safely.</p>
+                <div class="grid-2">
+                    <ul>
+                        <li><span class="keyword">Components:</span> Life Expectancy, Education (Mean/Expected years),
+                            Gross National Income (GNI) specifically per capita.</li>
+                        <li><span class="keyword">Ranking:</span> China securely ranks highest, India deeply follows,
+                            Pakistan trails.</li>
+                    </ul>
+                    <ul>
+                        <li><span class="keyword">Health Indicators:</span> China brilliantly outperforms explicitly in
+                            Infant Mortality Rate (IMR), Maternal Mortality Rate (MMR), strictly safely providing better
+                            sanitation thoroughly.</li>
+                        <li><span class="keyword">Liberty Indicators:</span> Specifically lacking in China securely due
+                            to political safely constraints reliably.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block indigo full-width" style="padding: 10px 20px;">
+                <h3 style="margin-bottom: 5px; font-size: 1rem;">🔤 Essential Abbreviations</h3>
+                <div class="grid-2" style="grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 5px;">
+                    <div><span class="keyword">GLF:</span> Great Leap Forward (1958 rapid industrialization in China)
+                    </div>
+                    <div><span class="keyword">HDI:</span> Human Development Index (UNDP metric for wellbeing)</div>
+                    <div><span class="keyword">IMR:</span> Infant Mortality Rate (Deaths per 1000 live births)</div>
+                    <div><span class="keyword">MMR:</span> Maternal Mortality Rate (Deaths per 100,000 live births)
+                    </div>
+                    <div><span class="keyword">GNI:</span> Gross National Income (Total output)</div>
+                    <div><span class="keyword">UNDP:</span> United Nations Development Programme</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Page 16 • Unit 8 (Part 2) • CBSE Class 12 Economics Master</div>
+    </div>
+</div>
+
+    <script>
+        function downloadPDF() {
+            const btn = document.querySelector('.print-btn');
+            const originalText = btn.innerHTML;
+
+            // Show loading state
+            btn.innerHTML = '<svg class="animate-spin" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg> Generating PDF...';
+            btn.style.pointerEvents = 'none';
+            btn.style.opacity = '0.8';
+
+            const element = document.getElementById('cheat-sheet-content');
+
+            const opt = {
+                margin: 0,
+                filename: 'CBSE_Class12_Economics_Exam_Morning_Cheat_Sheet.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 1.5, 
+                    useCORS: true, 
+                    logging: false,
+                    letterRendering: true
+                },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', compress: true },
+                pagebreak: { mode: 'css', avoid: ['.block', '.unit-header', '.footer'] }
+            };
+
+            // Run html2pdf
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Success
+                btn.innerHTML = originalText;
+                btn.style.pointerEvents = 'auto';
+                btn.style.opacity = '1';
+            }).catch(err => {
+                console.error('PDF Generation Error:', err);
+                // Fallback to native print if library fails
+                btn.innerHTML = 'Using Browser Print...';
+                setTimeout(() => {
+                    window.print();
+                    btn.innerHTML = originalText;
+                    btn.style.pointerEvents = 'auto';
+                    btn.style.opacity = '1';
+                }, 1000);
+            });
+        }
+    </script>
+</body>
+
+</html>
