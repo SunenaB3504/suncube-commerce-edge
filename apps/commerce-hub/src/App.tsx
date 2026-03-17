@@ -9,7 +9,7 @@ const subjects = [
     description: 'Master the Numerical Engine with partial credit logic and balance sheet accuracy.',
     Icon: Briefcase,
     color: 'emerald',
-    href: '/accounts/'
+    href: 'accounts/'
   },
   {
     id: 'economics',
@@ -17,7 +17,7 @@ const subjects = [
     description: 'Explore the Logic-to-Graph Engine. Understand market dynamics and macro trends.',
     Icon: TrendingUp,
     color: 'amber',
-    href: '/economics/'
+    href: 'economics/'
   },
   {
     id: 'bst',
@@ -25,7 +25,7 @@ const subjects = [
     description: 'Deep dive into Case Study patterns and keyword-heavy management logic.',
     Icon: BookOpen,
     color: 'emerald',
-    href: '/bst/'
+    href: 'bst/'
   },
   {
     id: 'english',
@@ -33,7 +33,7 @@ const subjects = [
     description: 'Refine your Narrative Engine. Standardized Writing Boxes for perfect drafts.',
     Icon: Languages,
     color: 'amber',
-    href: '/english/'
+    href: 'english/'
   },
   {
     id: 'phys-ed',
@@ -41,7 +41,7 @@ const subjects = [
     description: 'Street-Smart Fitness hacks. Pattern recognition for anatomy and fixtures.',
     Icon: Trophy,
     color: 'emerald',
-    href: '/phys-ed/'
+    href: 'phys-ed/'
   },
   {
     id: 'entrance-pro',
@@ -49,7 +49,7 @@ const subjects = [
     description: 'Speed-Logic DNA. Crack CUET and MH CET with advanced skip logic.',
     Icon: Zap,
     color: 'amber',
-    href: '/entrance-pro/'
+    href: 'entrance-pro/'
   }
 ];
 

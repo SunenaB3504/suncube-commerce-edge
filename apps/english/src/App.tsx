@@ -17,104 +17,52 @@ function App() {
   const [showCheatSheet, setShowCheatSheet] = useState(false);
   const [showSQP, setShowSQP] = useState(false);
 
-  if (selectedContent) {
-    return (
-      <div className="min-h-screen bg-slate-50 font-sans p-8 md:p-12 lg:p-16">
+  const renderContent = () => {
+    if (selectedContent) {
+      return (
         <div className="max-w-7xl mx-auto">
           <ForensicView
             content={selectedContent}
             onBack={() => setSelectedContent(null)}
           />
         </div>
-      </div>
-    );
-  }
+      );
+    }
 
-  if (selectedWriting) {
-    return (
-      <div className="min-h-screen bg-slate-50 font-sans p-8 md:p-12 lg:p-16">
+    if (selectedWriting) {
+      return (
         <div className="max-w-7xl mx-auto">
           <WritingView
             skeleton={selectedWriting}
             onBack={() => setSelectedWriting(null)}
           />
         </div>
-      </div>
-    );
-  }
+      );
+    }
 
-  if (showCheatSheet) {
-    return (
-      <div className="min-h-screen bg-slate-50 font-sans p-8 md:p-12 lg:p-16">
+    if (showCheatSheet) {
+      return (
         <div className="max-w-7xl mx-auto">
           <CheatSheetView
             onBack={() => setShowCheatSheet(false)}
           />
         </div>
-      </div>
-    );
-  }
+      );
+    }
 
-  if (showSQP) {
-    return (
-      <div className="min-h-screen bg-slate-50 font-sans p-8 md:p-12 lg:p-16">
+    if (showSQP) {
+      return (
         <div className="max-w-7xl mx-auto">
           <SQPView
             sqps={allSQPs}
             onBack={() => setShowSQP(false)}
           />
         </div>
-      </div>
-    );
-  }
+      );
+    }
 
-  return (
-    <div className="min-h-screen bg-slate-50 font-sans">
-      <nav className="bg-royal-900 text-white p-4 shadow-lg sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <h1 className="text-xl font-bold flex items-center gap-2">
-            <BookOpen className="text-royal-300" />
-            XII English Core <span className="text-royal-400 font-light hidden sm:inline">| Literature Forensics</span>
-          </h1>
-          <div className="flex gap-4 sm:gap-6 text-sm font-medium items-center">
-            <button
-              onClick={() => {
-                setSelectedContent(null);
-                setSelectedWriting(null);
-                setShowCheatSheet(false);
-                setShowSQP(false);
-              }}
-              className="hover:text-royal-300 transition-colors"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => {
-                setSelectedContent(null);
-                setSelectedWriting(null);
-                setShowCheatSheet(false);
-                setShowSQP(true);
-              }}
-              className="hover:text-royal-300 transition-colors flex items-center gap-1"
-            >
-              <Layout size={14} className="text-amber-400" /> SQP Vault
-            </button>
-            <button
-              onClick={() => {
-                setSelectedContent(null);
-                setSelectedWriting(null);
-                setShowCheatSheet(true);
-                setShowSQP(false);
-              }}
-              className="bg-amber-500 text-royal-900 px-3 py-1 rounded-full font-bold hover:bg-amber-400 transition-colors shadow-lg"
-            >
-              Morning Review
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      <main className="max-w-7xl mx-auto p-8">
+    return (
+      <div className="max-w-7xl mx-auto">
         <header className="mb-12">
           <div className="flex items-center gap-2 text-royal-600 font-bold mb-2 uppercase tracking-widest text-xs">
             <Library size={14} /> Academic Session 2025-26
@@ -216,6 +164,66 @@ function App() {
             ))}
           </div>
         </section>
+      </div>
+    );
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-50 font-sans">
+      <nav className="bg-royal-900 text-white p-4 shadow-lg sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <h1 className="text-xl font-bold flex items-center gap-2">
+            <BookOpen className="text-royal-300" />
+            XII English Core <span className="text-royal-400 font-light hidden sm:inline">| Literature Forensics</span>
+          </h1>
+          <div className="flex gap-4 sm:gap-6 text-sm font-medium items-center">
+            <a 
+              href="/suncube-commerce-edge/" 
+              className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition-all border border-white/10"
+              title="Back to Suncube Hub"
+            >
+               <Library size={16} className="rotate-180" />
+               <span className="hidden sm:inline font-bold uppercase tracking-wider text-[10px]">Return to Hub</span>
+            </a>
+            <button
+              onClick={() => {
+                setSelectedContent(null);
+                setSelectedWriting(null);
+                setShowCheatSheet(false);
+                setShowSQP(false);
+              }}
+              className="hover:text-royal-300 transition-colors"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => {
+                setSelectedContent(null);
+                setSelectedWriting(null);
+                setShowCheatSheet(false);
+                setShowSQP(true);
+              }}
+              className="hover:text-royal-300 transition-colors flex items-center gap-1"
+            >
+              <Layout size={14} className="text-amber-400" /> SQP Vault
+            </button>
+            <button
+              onClick={() => {
+                setSelectedContent(null);
+                setSelectedWriting(null);
+                setShowCheatSheet(true);
+                setShowSQP(false);
+              }}
+              className="bg-amber-500 text-royal-900 px-3 py-1 rounded-full font-bold hover:bg-amber-400 transition-colors shadow-lg"
+            >
+              Morning Review
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <main className="p-8">
+        {renderContent()}
       </main>
     </div>
   );

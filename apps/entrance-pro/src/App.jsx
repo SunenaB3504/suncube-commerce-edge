@@ -25,12 +25,17 @@ const App = () => {
             {/* Navigation */}
             <nav className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300">
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-                    <Link to="/" className="flex items-center gap-2" onClick={closeMobileMenu}>
-                        <span className="text-2xl">🚀</span>
-                        <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-                            Commerce Prep Pro
-                        </span>
-                    </Link>
+                    <div className="flex items-center gap-6">
+                        <a href="/suncube-commerce-edge/" className="text-slate-400 hover:text-blue-600 transition-colors" title="Back to Suncube Hub">
+                            🏠
+                        </a>
+                        <Link to="/" className="flex items-center gap-2" onClick={closeMobileMenu}>
+                            <span className="text-2xl">🚀</span>
+                            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
+                                Commerce Prep Pro
+                            </span>
+                        </Link>
+                    </div>
 
                     {/* Desktop Nav */}
                     <div className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">

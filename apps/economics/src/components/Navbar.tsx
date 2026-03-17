@@ -6,11 +6,16 @@ export const Navbar: React.FC<{ activeView: string, setActiveView: (v: string) =
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100 px-6 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-indigo-900 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-200">
-            <BookOpen className="w-6 h-6 text-amber-400" />
+        <div className="flex items-center gap-6">
+          <a href="/suncube-commerce-edge/" className="p-2 text-gray-400 hover:text-indigo-600 transition-colors" title="Back to Suncube Hub">
+            <Library className="w-5 h-5 rotate-180" />
+          </a>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-indigo-900 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-200">
+              <BookOpen className="w-6 h-6 text-amber-400" />
+            </div>
+            <span className="font-black text-xl tracking-tighter text-gray-900 uppercase">ECON <span className="text-indigo-600">Master</span></span>
           </div>
-          <span className="font-black text-xl tracking-tighter text-gray-900 uppercase">ECON <span className="text-indigo-600">Master</span></span>
         </div>
 
         {!isDashboard && (

@@ -10,12 +10,17 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ activeView, setActiveView, isDashboard }) => (
   <nav className="sticky top-0 z-50 purple-gradient text-white shadow-xl px-6 py-4 print:hidden">
     <div className="max-w-7xl mx-auto flex items-center justify-between">
-      <div
-        className="flex items-center gap-2 cursor-pointer"
-        onClick={() => setActiveView('dashboard')}
-      >
-        <Briefcase className="w-8 h-8 text-amber-400" />
-        <span className="text-xl font-bold tracking-tight">Business<span className="text-amber-400">Master</span></span>
+      <div className="flex items-center gap-6">
+        <a href="/suncube-commerce-edge/" className="text-white/60 hover:text-amber-300 transition-colors" title="Back to Suncube Hub">
+          <Archive className="w-6 h-6 rotate-180" />
+        </a>
+        <div
+          className="flex items-center gap-2 cursor-pointer"
+          onClick={() => setActiveView('dashboard')}
+        >
+          <Briefcase className="w-8 h-8 text-amber-400" />
+          <span className="text-xl font-bold tracking-tight">Business<span className="text-amber-400">Master</span></span>
+        </div>
       </div>
       <div className="hidden md:flex items-center gap-8 font-medium">
         {[
