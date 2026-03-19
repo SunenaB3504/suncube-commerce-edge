@@ -1,9 +1,10 @@
-
 import React, { useState } from 'react';
 import { Zap, Map as MapIcon, ClipboardCheck, Star, ChevronLeft, ChevronRight, Download } from 'lucide-react';
 import mermaid from 'mermaid';
 import html2pdf from 'html2pdf.js';
 import { Chapter, Flashcard, MindMapNode } from '../types';
+import { HackerCard } from '@suncube/ui';
+import { BST_HACKS } from '@suncube/shared-logic';
 
 const FlashcardComp: React.FC<{ card: Flashcard; isActive?: boolean }> = ({ card, isActive = true }) => {
   const [flipped, setFlipped] = useState(false);
@@ -18,28 +19,28 @@ const FlashcardComp: React.FC<{ card: Flashcard; isActive?: boolean }> = ({ card
       >
         {/* Front - Question */}
         <div
-          className="absolute inset-0 bg-white border-3 border-purple-100 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-xl group-hover:shadow-2xl group-hover:border-purple-400 transition-all backface-hidden"
+          className="absolute inset-0 bg-white/5 border border-white/10 rounded-[2.5rem] p-8 flex flex-col items-center justify-center text-center shadow-2xl group-hover:border-brand-amber/50 transition-all backface-hidden backdrop-blur-xl"
         >
           <div className="flex items-center gap-2 mb-3">
             <span className="text-2xl">📝</span>
-            <span className="text-xs font-black text-purple-600 tracking-widest uppercase">{card.category}</span>
+            <span className="text-[10px] font-black text-brand-amber tracking-[0.3em] uppercase">Core Inquiry</span>
           </div>
-          <p className="text-lg md:text-xl font-bold text-gray-900 leading-tight">{card.question}</p>
-          <div className="mt-6 flex items-center gap-2 text-gray-400 text-xs font-bold uppercase tracking-widest animate-bounce">
+          <p className="text-lg md:text-xl font-black text-white leading-tight uppercase tracking-tighter">{card.question}</p>
+          <div className="mt-8 flex items-center gap-2 text-slate-500 text-[10px] font-black uppercase tracking-widest animate-pulse">
             <span>✨ Tap to Reveal</span>
           </div>
         </div>
 
         {/* Back - Answer */}
         <div
-          className="absolute inset-0 bg-gradient-to-br from-purple-600 via-purple-700 to-purple-800 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-xl rotate-y-180 backface-hidden"
+          className="absolute inset-0 bg-brand-amber rounded-[2.5rem] p-8 flex flex-col items-center justify-center text-center shadow-2xl rotate-y-180 backface-hidden"
         >
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-2xl">✅</span>
-            <span className="text-xs font-black text-amber-300 tracking-widest uppercase">Answer</span>
+            <span className="text-2xl text-slate-950">✅</span>
+            <span className="text-[10px] font-black text-slate-950 tracking-[0.3em] uppercase">Solution</span>
           </div>
-          <p className="text-lg md:text-xl font-medium text-white leading-relaxed italic">"{card.answer}"</p>
-          <div className="mt-6 text-amber-300 text-xs font-bold uppercase tracking-widest">Tap to flip back</div>
+          <p className="text-lg md:text-xl font-black text-slate-950 leading-relaxed uppercase tracking-tight italic">"{card.answer}"</p>
+          <div className="mt-8 text-slate-800 text-[10px] font-black uppercase tracking-widest">Tap to flip back</div>
         </div>
       </div>
     </div>
@@ -160,19 +161,19 @@ const SlidingFlashcards: React.FC<SlidingFlashcardsProps> = ({ chapter }) => {
 };
 
 export const RevisionHQ: React.FC<{ chapter: Chapter }> = ({ chapter }) => {
-  const [activeTab, setActiveTab] = useState<'cards' | 'map' | 'cheat'>('cards');
+  const [activeTab, setActiveTab] = useState<'hacks' | 'cards' | 'map' | 'cheat'>('hacks');
 
   React.useEffect(() => {
     mermaid.initialize({
       startOnLoad: true,
       theme: 'base',
       themeVariables: {
-        primaryColor: '#581c87',
-        primaryTextColor: '#fff',
-        primaryBorderColor: '#3b0764',
-        lineColor: '#d8b4fe',
-        secondaryColor: '#f3e8ff',
-        tertiaryColor: '#fff',
+        primaryColor: '#fbbf24',
+        primaryTextColor: '#020617',
+        primaryBorderColor: '#fbbf24',
+        lineColor: '#fbbf24',
+        secondaryColor: '#1e293b',
+        tertiaryColor: '#020617',
       },
       flowchart: {
         curve: 'basis'
@@ -207,9 +208,9 @@ export const RevisionHQ: React.FC<{ chapter: Chapter }> = ({ chapter }) => {
     let output = 'graph LR\n';
 
     // Define exact styles matching the blueprint
-    output += `classDef root fill:#4c1d95,stroke:#2e1065,stroke-width:4px,color:#fff,font-weight:bold,border-radius:10px;\n`;
-    output += `classDef child fill:#7e22ce,stroke:#581c87,stroke-width:2px,color:#fff,font-weight:bold,border-radius:8px;\n`;
-    output += `classDef leaf fill:#faf5ff,stroke:#d8b4fe,stroke-width:1px,color:#6b21a8,border-radius:6px;\n\n`;
+    output += `classDef root fill:#fbbf24,stroke:#fbbf24,stroke-width:4px,color:#020617,font-weight:bold,border-radius:10px;\n`;
+    output += `classDef child fill:#1e293b,stroke:#fbbf24,stroke-width:2px,color:#fbbf24,font-weight:bold,border-radius:8px;\n`;
+    output += `classDef leaf fill:#020617,stroke:#334155,stroke-width:1px,color:#94a3b8,border-radius:6px;\n\n`;
 
     output += `root["${root.label}"]:::root\n`;
 
@@ -232,22 +233,31 @@ export const RevisionHQ: React.FC<{ chapter: Chapter }> = ({ chapter }) => {
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-8 duration-700">
-      <div className="flex justify-center gap-4 mb-8 flex-wrap">
+      <div className="flex justify-center gap-4 mb-8 bg-white/5 p-2 rounded-2xl border border-white/10 shadow-xl w-fit mx-auto backdrop-blur-md">
         {[
-          { id: 'cards' as const, label: 'Flashcards', icon: Zap },
-          { id: 'map' as const, label: 'Mind Map', icon: MapIcon },
-          { id: 'cheat' as const, label: 'Cheat Sheet', icon: ClipboardCheck }
+          { id: 'hacks' as const, label: 'Hacks', icon: Zap },
+          { id: 'cards' as const, label: 'Cards', icon: Zap },
+          { id: 'map' as const, label: 'Flow', icon: MapIcon },
+          { id: 'cheat' as const, label: 'Cram', icon: ClipboardCheck }
         ].map(tab => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`px-6 py-3 rounded-full font-black text-sm flex items-center gap-2 transition-all ${activeTab === tab.id ? 'bg-amber-400 text-amber-950 shadow-xl scale-105' : 'bg-purple-900 text-purple-100 opacity-60 hover:opacity-100'}`}
+            className={`px-6 py-3 rounded-xl font-black text-xs uppercase tracking-widest flex items-center gap-2 transition-all ${activeTab === tab.id ? 'bg-brand-amber text-slate-950 shadow-xl scale-105' : 'text-slate-400 hover:bg-white/5 hover:text-brand-amber'}`}
           >
-            <tab.icon className="w-4 h-4" />
+            <tab.icon className={`w-4 h-4 ${activeTab === tab.id ? 'text-slate-950 fill-slate-950' : ''}`} />
             {tab.label}
           </button>
         ))}
       </div>
+
+      {activeTab === 'hacks' && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {BST_HACKS.map(hack => (
+            <HackerCard key={hack.id} {...hack} />
+          ))}
+        </div>
+      )}
 
       {activeTab === 'cards' && (
         <div className="flex justify-center py-8">
@@ -256,10 +266,10 @@ export const RevisionHQ: React.FC<{ chapter: Chapter }> = ({ chapter }) => {
       )}
 
       {activeTab === 'map' && (
-        <div className="bg-white p-12 rounded-3xl border border-gray-100 shadow-sm flex flex-col items-center overflow-x-auto min-h-[60vh]">
+        <div className="bg-white/5 p-12 rounded-[3.5rem] border border-white/10 shadow-2xl flex flex-col items-center overflow-x-auto min-h-[60vh] backdrop-blur-md">
           <div className="text-center mb-8 min-w-[300px]">
-            <h3 className="text-3xl font-black text-purple-900">{chapter.name}</h3>
-            <div className="h-1 w-24 bg-amber-400 mx-auto mt-4 rounded-full" />
+            <h3 className="text-3xl font-black text-white uppercase tracking-tighter">{chapter.name}</h3>
+            <div className="h-1.5 w-24 bg-brand-amber mx-auto mt-4 rounded-full shadow-[0_0_10px_rgba(251,191,36,0.5)]" />
           </div>
           <div className="mermaid w-full flex justify-center text-center">
             {generateMermaidString(chapter.mindMap)}
@@ -278,17 +288,17 @@ export const RevisionHQ: React.FC<{ chapter: Chapter }> = ({ chapter }) => {
               Download Morning Cheat Sheet
             </button>
           </div>
-          <div id="cheat-sheet-content" className="grid md:grid-cols-2 gap-8 bg-gray-50 p-4">
+          <div id="cheat-sheet-content" className="grid md:grid-cols-2 gap-8 bg-brand-slate p-8">
             {/* Header for PDF only */}
-            <div className="hidden pdf-only col-span-2 text-center mb-8 border-b-4 border-purple-900 pb-6">
-              <h1 className="text-4xl font-black text-purple-900 uppercase tracking-tighter">EXAM MORNING CHEAT SHEET</h1>
-              <h2 className="text-xl font-bold text-gray-600 mt-2">{chapter.name}</h2>
+            <div className="hidden pdf-only col-span-2 text-center mb-8 border-b-8 border-brand-amber pb-8">
+              <h1 className="text-5xl font-black text-white uppercase tracking-tighter">SUNCUBE AI: MORNING PROTOCOL</h1>
+              <h2 className="text-xl font-bold text-brand-amber mt-2 uppercase tracking-widest">{chapter.name}</h2>
             </div>
 
             {chapter.cheatSheet.map((section, i) => (
-              <div key={i} className="bg-white rounded-3xl p-8 border-2 border-purple-100 shadow-sm pdf-no-break">
-                <h4 className="text-xl font-black text-amber-600 mb-6 flex items-center gap-2 uppercase tracking-tight pb-3 border-b border-gray-100">
-                  <Star className="w-5 h-5 fill-amber-600" />
+              <div key={i} className="bg-white/5 rounded-[2.5rem] p-8 border border-white/10 shadow-2xl backdrop-blur-md pdf-no-break">
+                <h4 className="text-xl font-black text-brand-amber mb-6 flex items-center gap-2 uppercase tracking-tighter pb-4 border-b border-white/5">
+                  <Star className="w-5 h-5 fill-brand-amber" />
                   {section.title}
                 </h4>
                 <ul className="space-y-4">
@@ -298,7 +308,7 @@ export const RevisionHQ: React.FC<{ chapter: Chapter }> = ({ chapter }) => {
                       <span className="leading-relaxed">
                         {p.split(/(\*\*.*?\*\*)/).map((part, k) => (
                           part.startsWith('**') && part.endsWith('**') ? (
-                            <strong key={k} className="font-extrabold text-gray-900 bg-purple-50 px-1 rounded">
+                            <strong key={k} className="font-black text-slate-950 bg-brand-amber px-1.5 rounded uppercase text-[10px]">
                               {part.slice(2, -2)}
                             </strong>
                           ) : (

@@ -25,7 +25,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20 font-sans">
+    <div className="min-h-screen bg-brand-slate pb-20 font-sans text-white">
       <Navbar
         activeView={activeView}
         setActiveView={setActiveView}
@@ -38,11 +38,11 @@ export default function App() {
             <div className="mb-12 animate-in fade-in slide-in-from-top-4 duration-700">
               <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8">
                 <div>
-                  <h1 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight leading-tight">
+                  <h1 className="text-4xl md:text-5xl font-black text-white tracking-tighter leading-tight uppercase">
                     Premium Exam Prep <br />
-                    <span className="text-indigo-700">CBSE Class 12 Economics</span>
+                    <span className="text-brand-amber text-5xl md:text-6xl">ECONOMICS</span>
                   </h1>
-                  <p className="mt-4 text-lg text-gray-500 font-medium max-w-2xl">
+                  <p className="mt-4 text-lg text-slate-400 font-bold max-w-2xl border-l-4 border-brand-amber pl-4 uppercase tracking-tight">
                     Master Macroeconomics and Indian Economic Development with visual theory, verified sample papers, and AI-driven insights.
                   </p>
                 </div>
@@ -50,18 +50,18 @@ export default function App() {
                 <div className="flex flex-col gap-3 w-full lg:w-auto lg:self-center">
                   <button
                     onClick={() => setActiveView('simulator')}
-                    className="w-full flex-shrink-0 flex items-center justify-center gap-3 bg-gradient-to-r from-indigo-900 to-indigo-700 hover:from-indigo-800 hover:to-indigo-600 text-white px-8 py-5 rounded-2xl font-black shadow-lg shadow-indigo-200 transition-all group"
+                    className="w-full flex-shrink-0 flex items-center justify-center gap-3 bg-brand-amber text-slate-950 px-8 py-5 rounded-2xl font-black shadow-xl shadow-brand-amber/10 hover:bg-amber-300 transition-all group uppercase tracking-widest"
                   >
-                    <Star className="w-6 h-6 text-amber-400 group-hover:rotate-12 transition-transform" />
-                    Launch Mock Exam Simulator
+                    <Star className="w-6 h-6 text-slate-950 group-hover:rotate-12 transition-transform fill-slate-950" />
+                    Launch Mock Simulator
                   </button>
                   <a
                     href={`${import.meta.env.BASE_URL}Exam_Morning_Eco_Cheat_Sheet.html`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 bg-white hover:bg-indigo-50 text-indigo-900 border-2 border-indigo-100 font-bold px-6 py-3 rounded-xl transition-colors"
+                    className="w-full flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-brand-amber border border-white/10 font-black px-6 py-3 rounded-xl transition-all uppercase text-xs tracking-widest"
                   >
-                    🖨️ Print Exam Morning Cheat Sheet
+                    🖨️ Download Cheat Sheet
                   </a>
                 </div>
               </div>
@@ -83,24 +83,24 @@ export default function App() {
               <div>
                 <button
                   onClick={handleBackToDashboard}
-                  className="text-[10px] font-black text-indigo-700 hover:text-indigo-900 transition-colors flex items-center gap-1 mb-2 uppercase tracking-widest"
+                  className="text-[10px] font-black text-brand-amber hover:text-amber-300 transition-colors flex items-center gap-1 mb-2 uppercase tracking-[0.2em]"
                 >
-                  <ChevronRight className="w-3 h-3 rotate-180" /> Back to Dashboard
+                  <ChevronRight className="w-3 h-3 rotate-180" /> Back to Base
                 </button>
-                <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">{selectedChapter?.name}</h1>
-                <p className="text-gray-500 font-medium mt-1 text-sm italic">
-                  Master Verification Status: <span className="text-indigo-600 font-bold">100% Curriculum Compliant</span>
+                <h1 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase">{selectedChapter?.name}</h1>
+                <p className="text-slate-400 font-bold mt-1 text-xs uppercase tracking-widest">
+                  Intelligence Status: <span className="text-brand-emerald font-black">CURRICULUM SYNCED</span>
                 </p>
               </div>
-              <div className="flex items-center gap-4 bg-white p-4 rounded-2xl border border-gray-100 shadow-sm">
+              <div className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 shadow-xl backdrop-blur-md">
                 <div className="flex flex-col items-end">
-                  <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Weightage Rank</span>
+                  <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Weightage</span>
                   <div className="flex gap-1 mt-1">
-                    {[1, 2, 3, 4, 5].map(i => <div key={i} className="h-1.5 w-6 rounded-full bg-amber-400" />)}
+                    {[1, 2, 3, 4, 5].map(i => <div key={i} className="h-1 w-6 rounded-full bg-brand-amber/20" />)}
                   </div>
                 </div>
-                <div className="h-10 w-px bg-gray-200 mx-2" />
-                <Star className="w-8 h-8 text-amber-400 fill-amber-400 animate-pulse" />
+                <div className="h-10 w-px bg-white/10 mx-2" />
+                <Star className="w-8 h-8 text-brand-amber fill-brand-amber animate-pulse" />
               </div>
             </div>
 
