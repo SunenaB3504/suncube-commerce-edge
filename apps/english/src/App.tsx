@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BookOpen, Search, Zap, Library, Music, Book, PenTool, Layout } from 'lucide-react';
+import { BookOpen, Search, Zap, Library, Music, Book, PenTool, Layout, ChevronRight, Star } from 'lucide-react';
 import { flamingoChapters } from './data/chapters/flamingo';
 import { vistasChapters } from './data/chapters/vistas';
 import { flamingoPoems } from './data/poems/flamingo';
@@ -20,7 +20,7 @@ function App() {
   const renderContent = () => {
     if (selectedContent) {
       return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
           <ForensicView
             content={selectedContent}
             onBack={() => setSelectedContent(null)}
@@ -31,7 +31,7 @@ function App() {
 
     if (selectedWriting) {
       return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
           <WritingView
             skeleton={selectedWriting}
             onBack={() => setSelectedWriting(null)}
@@ -42,7 +42,7 @@ function App() {
 
     if (showCheatSheet) {
       return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
           <CheatSheetView
             onBack={() => setShowCheatSheet(false)}
           />
@@ -52,7 +52,7 @@ function App() {
 
     if (showSQP) {
       return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
           <SQPView
             sqps={allSQPs}
             onBack={() => setShowSQP(false)}
@@ -62,44 +62,55 @@ function App() {
     }
 
     return (
-      <div className="max-w-7xl mx-auto">
-        <header className="mb-12">
-          <div className="flex items-center gap-2 text-royal-600 font-bold mb-2 uppercase tracking-widest text-xs">
-            <Library size={14} /> Academic Session 2025-26
-          </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Strategic Forensic Audit <span className="text-royal-600 block">Class XII English Core</span>
-          </h2>
-          <p className="text-slate-600 max-w-2xl text-lg leading-relaxed">
-            A high-fidelity analysis engine mapping chapter motifs, character psychology, and <span className="text-royal-600 font-bold">verbatim</span> Board marking schemes.
-          </p>
+      <div className="max-w-7xl mx-auto py-12">
+        <header className="mb-20 relative overflow-hidden p-12 rounded-[3rem] bg-white/5 border border-white/10 backdrop-blur-3xl group">
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand-emerald/10 rounded-full blur-[100px] group-hover:bg-brand-emerald/20 transition-all duration-1000" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-amber/10 rounded-full blur-[100px] group-hover:bg-brand-amber/20 transition-all duration-1000" />
+          
+          <div className="relative z-10">
+            <div className="flex items-center gap-3 text-brand-emerald font-black mb-6 uppercase tracking-[0.3em] text-[10px]">
+              <div className="p-2 bg-brand-emerald/10 rounded-lg">
+                 <Library size={16} />
+              </div>
+              Academic Session 2025-26
+            </div>
+            <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight leading-[0.9]">
+              English <span className="text-brand-emerald">Edge</span> <br/>
+              <span className="text-white/40 text-4xl md:text-5xl tracking-tighter">Forensic Audit v2.0</span>
+            </h2>
+            <p className="text-slate-400 max-w-2xl text-xl leading-relaxed font-medium mb-12">
+              A high-fidelity analysis engine mapping chapter motifs, character psychology, and <span className="text-brand-emerald font-bold">verbatim</span> Board marking schemes.
+            </p>
 
-          <div className="mt-8 flex gap-4">
-            <button
-              onClick={() => setShowSQP(true)}
-              className="flex items-center gap-3 px-6 py-3 bg-white border border-slate-200 rounded-2xl font-bold text-slate-900 hover:shadow-xl hover:-translate-y-1 transition-all group"
-            >
-              <div className="h-8 w-8 bg-amber-50 text-amber-600 rounded-lg flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-colors">
-                <Layout size={18} />
-              </div>
-              Explore SQP Vault
-            </button>
-            <button
-              onClick={() => setShowCheatSheet(true)}
-              className="flex items-center gap-3 px-6 py-3 bg-white border border-slate-200 rounded-2xl font-bold text-slate-900 hover:shadow-xl hover:-translate-y-1 transition-all group"
-            >
-              <div className="h-8 w-8 bg-royal-50 text-royal-600 rounded-lg flex items-center justify-center group-hover:bg-royal-600 group-hover:text-white transition-colors">
-                <Zap size={18} />
-              </div>
-              Quick Review
-            </button>
+            <div className="flex flex-wrap gap-6">
+              <button
+                onClick={() => setShowSQP(true)}
+                className="flex items-center gap-4 px-8 py-5 bg-brand-emerald text-brand-slate rounded-2xl font-black uppercase tracking-widest text-xs hover:shadow-glow-emerald hover:-translate-y-1 transition-all"
+              >
+                <Layout size={20} />
+                Explore SQP Vault
+              </button>
+              <button
+                onClick={() => setShowCheatSheet(true)}
+                className="flex items-center gap-4 px-8 py-5 bg-white/5 border border-white/10 text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-white/10 hover:-translate-y-1 transition-all"
+              >
+                <Zap size={20} className="text-brand-amber fill-brand-amber" />
+                Quick Review
+              </button>
+            </div>
           </div>
         </header>
 
-        <section className="mb-20">
-          <h3 className="text-2xl font-black text-slate-900 mb-10 flex items-center gap-4">
-            <Zap className="text-amber-500" /> Flamingo Prose
-          </h3>
+        <section className="mb-24">
+          <div className="flex items-center justify-between mb-12">
+            <h3 className="text-2xl font-black text-white flex items-center gap-4 uppercase tracking-tighter">
+               <div className="p-3 bg-brand-amber/10 rounded-2xl">
+                <Zap className="text-brand-amber fill-brand-amber w-6 h-6" />
+               </div>
+               Flamingo Prose
+            </h3>
+            <div className="h-px bg-white/10 flex-1 mx-8 hidden md:block" />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {flamingoChapters.map(chapter => (
               <ProjectCard
@@ -112,10 +123,16 @@ function App() {
           </div>
         </section>
 
-        <section className="mb-20">
-          <h3 className="text-2xl font-black text-slate-900 mb-10 flex items-center gap-4">
-            <Music className="text-royal-500" /> Flamingo Poetry
-          </h3>
+        <section className="mb-24">
+          <div className="flex items-center justify-between mb-12">
+            <h3 className="text-2xl font-black text-white flex items-center gap-4 uppercase tracking-tighter">
+               <div className="p-3 bg-brand-emerald/10 rounded-2xl">
+                <Music className="text-brand-emerald w-6 h-6" />
+               </div>
+               Flamingo Poetry
+            </h3>
+            <div className="h-px bg-white/10 flex-1 mx-8 hidden md:block" />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {flamingoPoems.map(poem => (
               <ProjectCard
@@ -128,10 +145,16 @@ function App() {
           </div>
         </section>
 
-        <section className="mb-20">
-          <h3 className="text-2xl font-black text-slate-900 mb-10 flex items-center gap-4">
-            <Book className="text-emerald-600" /> Vistas (Supplementary Reader)
-          </h3>
+        <section className="mb-24">
+          <div className="flex items-center justify-between mb-12">
+            <h3 className="text-2xl font-black text-white flex items-center gap-4 uppercase tracking-tighter">
+               <div className="p-3 bg-indigo-500/10 rounded-2xl">
+                <Book className="text-indigo-400 w-6 h-6" />
+               </div>
+               Vistas (Supplementary)
+            </h3>
+            <div className="h-px bg-white/10 flex-1 mx-8 hidden md:block" />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {vistasChapters.map(chapter => (
               <ProjectCard
@@ -144,22 +167,34 @@ function App() {
           </div>
         </section>
 
-        <section className="mb-20">
-          <h3 className="text-2xl font-black text-slate-900 mb-10 flex items-center gap-4">
-            <PenTool className="text-indigo-600" /> Writing Authority
-          </h3>
+        <section className="mb-24">
+          <div className="flex items-center justify-between mb-12">
+            <h3 className="text-2xl font-black text-white flex items-center gap-4 uppercase tracking-tighter">
+               <div className="p-3 bg-brand-amber/10 rounded-2xl">
+                <PenTool className="text-brand-amber w-6 h-6" />
+               </div>
+               Writing Authority
+            </h3>
+            <div className="h-px bg-white/10 flex-1 mx-8 hidden md:block" />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {writingSkeletons.map(skeleton => (
               <div
                 key={skeleton.id}
                 onClick={() => setSelectedWriting(skeleton)}
-                className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer group"
+                className="bg-white/5 backdrop-blur-xl p-8 rounded-[2rem] border border-white/10 shadow-xl hover:shadow-brand-amber/10 hover:border-brand-amber/40 hover:-translate-y-1 transition-all cursor-pointer group relative overflow-hidden"
               >
-                <div className="h-12 w-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                  <PenTool size={24} />
+                <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                   <PenTool size={64} className="text-brand-amber" />
                 </div>
-                <h4 className="text-lg font-black text-slate-900 uppercase tracking-tight mb-2">{skeleton.id.replace('-', ' ')}</h4>
-                <p className="text-xs text-slate-500 font-medium leading-relaxed">{skeleton.format.split('|')[0]}</p>
+                <div className="h-14 w-14 bg-brand-amber/10 text-brand-amber rounded-2xl flex items-center justify-center mb-8 border border-brand-amber/20 group-hover:bg-brand-amber group-hover:text-brand-slate transition-colors">
+                  <PenTool size={28} />
+                </div>
+                <h4 className="text-lg font-black text-white uppercase tracking-tight mb-3 truncate">{skeleton.id.replace('-', ' ')}</h4>
+                <p className="text-[10px] text-slate-500 font-black uppercase tracking-widest leading-relaxed mb-6 group-hover:text-slate-300 transition-colors">{skeleton.format.split('|')[0]}</p>
+                <div className="flex items-center gap-2 text-brand-amber text-[10px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0">
+                  Open Framework <ChevronRight size={14} />
+                </div>
               </div>
             ))}
           </div>
@@ -169,33 +204,33 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans">
-      <nav className="bg-royal-900 text-white p-4 shadow-lg sticky top-0 z-50">
+    <div className="min-h-screen bg-brand-slate font-sans text-slate-200 selection:bg-brand-emerald selection:text-brand-slate">
+      <nav className="bg-brand-slate/80 backdrop-blur-xl border-b border-white/5 p-5 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <h1 className="text-xl font-bold flex items-center gap-2">
-            <BookOpen className="text-royal-300" />
-            XII English Core <span className="text-royal-400 font-light hidden sm:inline">| Literature Forensics</span>
+          <h1 
+            className="text-xl font-black flex items-center gap-3 cursor-pointer group"
+            onClick={() => {
+              setSelectedContent(null);
+              setSelectedWriting(null);
+              setShowCheatSheet(false);
+              setShowSQP(false);
+            }}
+          >
+            <div className="p-2 bg-brand-emerald/10 rounded-lg group-hover:bg-brand-emerald group-hover:rotate-12 transition-all">
+              <BookOpen size={20} className="text-brand-emerald group-hover:text-brand-slate" />
+            </div>
+            <span className="tracking-tighter uppercase">XII English <span className="text-brand-emerald">Edge</span></span>
           </h1>
-          <div className="flex gap-4 sm:gap-6 text-sm font-medium items-center">
+          <div className="flex gap-4 sm:gap-8 text-[10px] font-black uppercase tracking-[0.2em] items-center">
             <a 
               href="/suncube-commerce-edge/" 
-              className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition-all border border-white/10"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 transition-all border border-white/10 text-slate-400 hover:text-white"
               title="Back to Suncube Hub"
             >
-               <Library size={16} className="rotate-180" />
-               <span className="hidden sm:inline font-bold uppercase tracking-wider text-[10px]">Return to Hub</span>
+               <Library size={14} className="text-brand-emerald" />
+               <span className="hidden sm:inline">Hub</span>
             </a>
-            <button
-              onClick={() => {
-                setSelectedContent(null);
-                setSelectedWriting(null);
-                setShowCheatSheet(false);
-                setShowSQP(false);
-              }}
-              className="hover:text-royal-300 transition-colors"
-            >
-              Home
-            </button>
+            
             <button
               onClick={() => {
                 setSelectedContent(null);
@@ -203,9 +238,9 @@ function App() {
                 setShowCheatSheet(false);
                 setShowSQP(true);
               }}
-              className="hover:text-royal-300 transition-colors flex items-center gap-1"
+              className="text-slate-400 hover:text-white transition-colors flex items-center gap-2"
             >
-              <Layout size={14} className="text-amber-400" /> SQP Vault
+              <Layout size={14} className="text-brand-amber" /> SQP Vault
             </button>
             <button
               onClick={() => {
@@ -214,15 +249,16 @@ function App() {
                 setShowCheatSheet(true);
                 setShowSQP(false);
               }}
-              className="bg-amber-500 text-royal-900 px-3 py-1 rounded-full font-bold hover:bg-amber-400 transition-colors shadow-lg"
+              className="bg-brand-amber text-brand-slate px-5 py-2.5 rounded-xl font-black hover:shadow-glow-amber transition-all flex items-center gap-2"
             >
+              <Star size={14} className="fill-brand-slate" />
               Morning Review
             </button>
           </div>
         </div>
       </nav>
 
-      <main className="p-8">
+      <main className="p-4 md:p-8">
         {renderContent()}
       </main>
     </div>
@@ -236,24 +272,37 @@ function ProjectCard({ content, type, onOpen }: { content: ChapterForensics | Po
     : content.milestones[0].event;
 
   return (
-    <div className="bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all group flex flex-col justify-between h-full">
-      <div>
-        <div className="flex justify-between items-start mb-6">
-          <span className="px-4 py-1.5 bg-royal-100 text-royal-700 text-[10px] font-black rounded-full uppercase tracking-[0.2em]">
+    <div className="bg-white/5 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/10 shadow-xl hover:shadow-brand-emerald/5 hover:border-brand-emerald/40 hover:-translate-y-2 transition-all duration-500 group flex flex-col justify-between h-full relative overflow-hidden">
+      <div className="absolute top-0 right-0 p-12 opacity-[0.03] group-hover:opacity-[0.07] group-hover:scale-125 transition-all duration-700 pointer-events-none">
+         <BookOpen size={180} />
+      </div>
+      
+      <div className="relative z-10">
+        <div className="flex justify-between items-start mb-10">
+          <span className={`px-4 py-1.5 text-[10px] font-black rounded-full uppercase tracking-[0.2em] border shadow-sm ${
+            type === 'Prose' ? 'bg-brand-amber/10 text-brand-amber border-brand-amber/20' : 
+            type === 'Poetry' ? 'bg-brand-emerald/10 text-brand-emerald border-brand-emerald/20' : 
+            'bg-indigo-500/10 text-indigo-400 border-indigo-500/20'
+          }`}>
             {type}
           </span>
-          <Zap className="text-slate-200 group-hover:text-amber-500 transition-all duration-500 h-6 w-6" />
+          <div className="p-2 bg-white/5 rounded-lg border border-white/10 group-hover:bg-brand-amber group-hover:border-brand-amber group-hover:rotate-12 transition-all duration-500">
+            <Zap className="text-slate-600 group-hover:text-brand-slate h-4 w-4 transition-colors" />
+          </div>
         </div>
-        <h3 className="text-2xl font-black text-slate-900 mb-1 group-hover:text-royal-600 transition-colors">{content.title}</h3>
-        <p className="text-sm font-bold text-royal-500 mb-4 italic">by {content.author}</p>
-        <p className="text-slate-500 text-sm leading-relaxed mb-8 line-clamp-3 font-medium">
+        
+        <h3 className="text-3xl font-black text-white mb-2 leading-none tracking-tight group-hover:text-brand-emerald transition-colors">{content.title}</h3>
+        <p className="text-[10px] font-black text-slate-500 mb-6 uppercase tracking-widest italic flex items-center gap-2 opacity-60">
+           Audit by <span className="text-brand-amber">{content.author}</span>
+        </p>
+        <p className="text-slate-400 text-sm leading-relaxed mb-10 line-clamp-3 font-medium group-hover:text-slate-300 transition-colors">
           {summaryText}
         </p>
       </div>
 
       <button
         onClick={onOpen}
-        className="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-royal-700 active:scale-95 transition-all shadow-lg shadow-slate-200"
+        className="relative z-10 w-full py-5 bg-white/5 text-white border border-white/10 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] flex items-center justify-center gap-3 hover:bg-brand-emerald hover:text-brand-slate hover:border-brand-emerald hover:shadow-glow-emerald transition-all active:scale-95"
       >
         Deep Audit <Search className="h-4 w-4" />
       </button>

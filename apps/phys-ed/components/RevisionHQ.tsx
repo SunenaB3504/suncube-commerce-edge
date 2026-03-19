@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Zap, Map as MapIcon, ClipboardCheck, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Zap, Map as MapIcon, ClipboardCheck, Star, ChevronLeft, ChevronRight, Info, Activity } from 'lucide-react';
 import { Chapter, Flashcard } from '../types';
 
 const FlashcardComp: React.FC<{ card: Flashcard; isActive?: boolean }> = ({ card, isActive = true }) => {
@@ -8,36 +8,36 @@ const FlashcardComp: React.FC<{ card: Flashcard; isActive?: boolean }> = ({ card
   return (
     <div 
       onClick={() => setFlipped(!flipped)}
-      className={`relative h-80 cursor-pointer group w-full transition-all duration-300 perspective-1000 ${isActive ? 'scale-100 opacity-100' : 'scale-75 opacity-40'}`}
+      className={`relative h-80 cursor-pointer group w-full transition-all duration-500 perspective-1000 ${isActive ? 'scale-100 opacity-100' : 'scale-75 opacity-20'}`}
     >
       {/* Flip animation container */}
       <div 
-        className={`relative w-full h-full transition-transform duration-500 preserve-3d ${flipped ? 'rotate-y-180' : 'rotate-y-0'}`}
+        className={`relative w-full h-full transition-transform duration-700 preserve-3d ${flipped ? 'rotate-y-180' : 'rotate-y-0'}`}
       >
         {/* Front - Question */}
         <div 
-          className="absolute inset-0 bg-white border-3 border-emerald-100 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-xl group-hover:shadow-2xl group-hover:border-emerald-400 transition-all backface-hidden"
+          className="absolute inset-0 bg-white/10 backdrop-blur-2xl border-2 border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-2xl group-hover:shadow-emerald-500/10 group-hover:border-brand-emerald/40 transition-all backface-hidden"
         >
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-2xl">📝</span>
-            <span className="text-xs font-black text-emerald-600 tracking-widest uppercase">{card.category}</span>
+          <div className="flex items-center gap-2 mb-4 bg-white/5 px-3 py-1 rounded-full border border-white/10">
+            <span className="text-xl">📝</span>
+            <span className="text-[10px] font-black text-brand-emerald tracking-[0.2em] uppercase">{card.category}</span>
           </div>
-          <p className="text-lg md:text-xl font-bold text-gray-900 leading-tight">{card.question}</p>
-          <div className="mt-6 flex items-center gap-2 text-gray-400 text-xs font-bold uppercase tracking-widest animate-bounce">
-            <span>✨ Tap to Reveal</span>
+          <p className="text-xl md:text-2xl font-black text-white leading-tight mb-6">{card.question}</p>
+          <div className="mt-auto flex items-center gap-2 text-slate-500 text-[10px] font-black uppercase tracking-widest animate-pulse">
+             Tap to Reveal <Zap className="w-3 h-3 text-brand-amber fill-brand-amber" />
           </div>
         </div>
 
         {/* Back - Answer */}
         <div 
-          className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-800 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-xl rotate-y-180 backface-hidden"
+          className="absolute inset-0 bg-gradient-to-br from-brand-emerald to-emerald-900 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-2xl rotate-y-180 backface-hidden border-2 border-white/20"
         >
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-2xl">✅</span>
-            <span className="text-xs font-black text-amber-300 tracking-widest uppercase">Answer</span>
+          <div className="flex items-center gap-2 mb-4 bg-black/20 px-3 py-1 rounded-full border border-white/10">
+            <span className="text-xl">✅</span>
+            <span className="text-[10px] font-black text-brand-amber tracking-[0.2em] uppercase">Answer</span>
           </div>
-          <p className="text-lg md:text-xl font-medium text-white leading-relaxed italic">"{card.answer}"</p>
-          <div className="mt-6 text-amber-300 text-xs font-bold uppercase tracking-widest">Tap to flip back</div>
+          <p className="text-xl md:text-2xl font-bold text-white leading-relaxed italic mb-8">"{card.answer}"</p>
+          <div className="mt-auto text-brand-slate/60 text-[10px] font-black uppercase tracking-widest bg-white/10 px-4 py-2 rounded-full">Tap to flip back</div>
         </div>
       </div>
     </div>
@@ -74,37 +74,43 @@ const SlidingFlashcards: React.FC<SlidingFlashcardsProps> = ({ chapter }) => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto">
       {/* Progress indicator */}
-      <div className="mb-8 text-center">
-        <p className="text-sm font-black text-emerald-600 uppercase tracking-widest mb-3">
-          Card {currentIndex + 1} of {totalCards}
-        </p>
-        <progress 
-          value={currentIndex + 1} 
-          max={totalCards} 
-          className="w-full h-2 rounded-full overflow-hidden appearance-none [&::-webkit-progress-bar]:bg-gray-200 [&::-webkit-progress-bar]:rounded-full [&::-webkit-progress-value]:bg-emerald-500 [&::-webkit-progress-value]:rounded-full [&::-webkit-progress-value]:transition-all [&::-webkit-progress-value]:duration-300 [&::-moz-progress-bar]:bg-emerald-500"
-        />
+      <div className="mb-12 text-center">
+        <div className="flex items-center justify-between mb-3 px-1">
+          <p className="text-[10px] font-black text-brand-emerald uppercase tracking-[0.2em]">
+            Card {currentIndex + 1} <span className="text-slate-600">of</span> {totalCards}
+          </p>
+          <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">
+             {Math.round(((currentIndex + 1) / totalCards) * 100)}% Complete
+          </p>
+        </div>
+        <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden border border-white/5">
+          <div 
+             className="h-full bg-brand-emerald shadow-[0_0_15px_rgba(16,185,129,0.5)] transition-all duration-500 ease-out rounded-full"
+             style={{ width: `${((currentIndex + 1) / totalCards) * 100}%` }}
+          />
+        </div>
       </div>
 
       {/* Flashcard display */}
-      <div className="relative h-96 mb-8 flex items-center justify-center perspective">
-        <div className="relative w-full h-full flex items-center justify-center px-12">
+      <div className="relative h-96 mb-12 flex items-center justify-center perspective">
+        <div className="relative w-full h-full flex items-center justify-center">
           {/* Left card (blurred) */}
           {getVisibleCards()[0] !== currentIndex && (
-            <div className="absolute left-0 opacity-30 scale-75 pointer-events-none">
+            <div className="absolute left-0 opacity-10 scale-75 -translate-x-1/4 pointer-events-none transition-all duration-500">
               <FlashcardComp card={cards[getVisibleCards()[0]]} isActive={false} />
             </div>
           )}
           
           {/* Center card (active) */}
-          <div className="z-10 w-full">
+          <div className="z-10 w-full max-w-lg transition-all duration-500">
             <FlashcardComp card={cards[currentIndex]} isActive={true} />
           </div>
           
           {/* Right card (blurred) */}
           {getVisibleCards()[2] !== currentIndex && (
-            <div className="absolute right-0 opacity-30 scale-75 pointer-events-none">
+            <div className="absolute right-0 opacity-10 scale-75 translate-x-1/4 pointer-events-none transition-all duration-500">
               <FlashcardComp card={cards[getVisibleCards()[2]]} isActive={false} />
             </div>
           )}
@@ -112,17 +118,17 @@ const SlidingFlashcards: React.FC<SlidingFlashcardsProps> = ({ chapter }) => {
       </div>
 
       {/* Navigation buttons */}
-      <div className="flex items-center justify-between gap-4 mb-8">
+      <div className="flex items-center justify-between gap-6 mb-12">
         <button
           onClick={handlePrev}
-          className="p-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white transition-all hover:scale-110 active:scale-95 shadow-lg"
+          className="p-5 rounded-2xl bg-white/5 border border-white/10 text-white hover:bg-brand-emerald hover:text-brand-slate hover:border-brand-emerald transition-all duration-300 shadow-xl"
           aria-label="Previous card"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
 
         {/* Category filter pills */}
-        <div className="flex flex-wrap gap-2 justify-center flex-1">
+        <div className="flex flex-wrap gap-2 justify-center flex-1 bg-white/5 p-2 rounded-2xl border border-white/5">
           {Array.from(new Set(cards.map(c => c.category))).map(cat => (
             <button
               key={cat}
@@ -130,10 +136,10 @@ const SlidingFlashcards: React.FC<SlidingFlashcardsProps> = ({ chapter }) => {
                 const index = cards.findIndex(c => c.category === cat);
                 setCurrentIndex(index);
               }}
-              className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-tight transition-all ${
+              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${
                 cards[currentIndex].category === cat
-                  ? 'bg-amber-400 text-amber-950 shadow-md scale-105'
-                  : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+                   ? 'bg-brand-amber text-brand-slate shadow-glow-amber'
+                   : 'text-slate-500 hover:text-white hover:bg-white/5'
               }`}
             >
               {cat}
@@ -143,16 +149,17 @@ const SlidingFlashcards: React.FC<SlidingFlashcardsProps> = ({ chapter }) => {
 
         <button
           onClick={handleNext}
-          className="p-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white transition-all hover:scale-110 active:scale-95 shadow-lg"
+          className="p-5 rounded-2xl bg-white/5 border border-white/10 text-white hover:bg-brand-emerald hover:text-brand-slate hover:border-brand-emerald transition-all duration-300 shadow-xl"
           aria-label="Next card"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
       </div>
 
-      {/* Keyboard shortcut hint */}
-      <div className="text-center text-xs text-gray-400 font-medium">
-        💡 Use arrow buttons or keyboard (← →) to navigate
+      <div className="text-center">
+        <span className="text-[10px] font-black text-slate-600 uppercase tracking-[0.2em] flex items-center justify-center gap-2">
+           Swift Scanning Mode Active <Activity className="w-3 h-3 text-brand-emerald" />
+        </span>
       </div>
     </div>
   );
@@ -167,7 +174,7 @@ export const RevisionHQ: React.FC<{ chapter: Chapter }> = ({ chapter }) => {
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-8 duration-700">
-      <div className="flex justify-center gap-4 mb-8 flex-wrap">
+      <div className="flex justify-center gap-2 mb-12 flex-wrap bg-white/5 p-1.5 rounded-2xl border border-white/5 w-fit mx-auto">
         {[
           { id: 'cards' as const, label: 'Flashcards', icon: Zap },
           { id: 'gallery' as const, label: 'Swift Scan', icon: Star },
@@ -177,41 +184,52 @@ export const RevisionHQ: React.FC<{ chapter: Chapter }> = ({ chapter }) => {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`px-6 py-3 rounded-full font-black text-sm flex items-center gap-2 transition-all ${activeTab === tab.id ? 'bg-amber-400 text-amber-950 shadow-xl scale-105' : 'bg-emerald-900 text-emerald-100 opacity-60 hover:opacity-100'}`}
+            className={`px-6 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest flex items-center gap-2 transition-all duration-300 ${activeTab === tab.id ? 'bg-brand-emerald text-brand-slate shadow-lg shadow-emerald-500/20' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
           >
-            <tab.icon className="w-4 h-4" />
+            <tab.icon className={`w-4 h-4 ${activeTab === tab.id ? 'text-brand-slate' : 'text-slate-500'}`} />
             {tab.label}
           </button>
         ))}
       </div>
 
       {activeTab === 'gallery' && (
-        <div className="grid gap-8">
-          <div className="bg-amber-100 p-6 rounded-3xl border-2 border-amber-200 text-center">
-            <h3 className="text-2xl font-black text-amber-900 mb-2">🚀 60-Second "Swift Scan"</h3>
-            <p className="text-amber-800 font-bold">All high-impact hacks for {chapter.name} in one place.</p>
+        <div className="grid gap-12 animate-in fade-in zoom-in-95 duration-500">
+          <div className="bg-brand-amber/10 p-8 rounded-3xl border border-brand-amber/20 relative overflow-hidden group">
+            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:scale-110 transition-transform duration-700">
+               <Zap className="w-32 h-32 text-brand-amber" />
+            </div>
+            <h3 className="text-2xl font-black text-white mb-2 uppercase tracking-tighter">🚀 60-Second "Swift Scan"</h3>
+            <p className="text-slate-400 font-bold text-lg">All high-impact hacks for {chapter.name} curated into a single visual feed.</p>
           </div>
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {allHacks.length > 0 ? allHacks.map((hack, i) => (
-              <div key={i} className="bg-white rounded-3xl p-6 border-2 border-emerald-100 shadow-sm hover:shadow-xl transition-all hover:translate-y-[-4px]">
-                <div className="flex items-center gap-2 mb-4">
-                  <Zap className="w-5 h-5 text-amber-500 fill-amber-500" />
-                  <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{hack.topicTitle}</span>
+              <div key={i} className="bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/10 hover:border-brand-emerald/40 transition-all group overflow-hidden relative">
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="p-2 bg-brand-amber/10 rounded-lg">
+                    <Zap className="w-4 h-4 text-brand-amber fill-brand-amber" />
+                  </div>
+                  <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest truncate">{hack.topicTitle}</span>
                 </div>
-                <h4 className="text-lg font-black text-emerald-900 mb-3 leading-tight">{hack.title}</h4>
-                <div className="p-4 bg-amber-50 rounded-2xl border border-amber-200 shadow-inner">
-                   <p className="text-amber-900 font-extrabold text-sm italic mb-1">Cheat Code:</p>
-                   <p className="text-gray-800 font-bold text-sm leading-relaxed">{hack.hack}</p>
+                
+                <h4 className="text-xl font-black text-white mb-6 leading-none tracking-tight group-hover:text-brand-emerald transition-colors">{hack.title}</h4>
+                
+                <div className="p-5 bg-brand-slate/50 rounded-2xl border border-white/5 shadow-inner">
+                   <p className="text-brand-amber font-black text-[10px] uppercase tracking-widest mb-3 flex items-center gap-1.5 opacity-60">
+                     <Info className="w-3 h-3" /> Cheat Code
+                   </p>
+                   <p className="text-slate-200 font-bold text-sm leading-relaxed italic group-hover:text-white transition-colors">"{hack.hack}"</p>
                 </div>
+                
                 {hack.formula && (
-                  <div className="mt-4 p-3 bg-emerald-900 text-white rounded-xl text-center">
-                    <code className="text-xs font-black font-mono">{hack.formula}</code>
+                  <div className="mt-4 p-4 bg-brand-emerald/10 text-white rounded-xl border border-brand-emerald/20 text-center">
+                    <code className="text-[10px] font-black font-mono tracking-tighter text-brand-emerald">{hack.formula}</code>
                   </div>
                 )}
               </div>
             )) : (
-              <div className="col-span-full p-12 text-center text-gray-400 font-bold">
-                No hacks available for this unit yet. Check others!
+              <div className="col-span-full py-20 text-center text-slate-600 font-black uppercase tracking-[0.3em]">
+                No hacks available for this unit yet
               </div>
             )}
           </div>
@@ -219,27 +237,27 @@ export const RevisionHQ: React.FC<{ chapter: Chapter }> = ({ chapter }) => {
       )}
 
       {activeTab === 'cards' && (
-        <div className="flex justify-center py-8">
+        <div className="flex justify-center py-4 animate-in fade-in zoom-in-95 duration-500">
           <SlidingFlashcards chapter={chapter} />
         </div>
       )}
 
       {activeTab === 'map' && (
-        <div className="bg-white p-12 rounded-3xl border border-gray-100 shadow-sm flex flex-col items-center overflow-x-auto">
-          <div className="text-center mb-12 min-w-[300px]">
-            <h3 className="text-3xl font-black text-emerald-900">{chapter.name}</h3>
-            <div className="h-1 w-24 bg-amber-400 mx-auto mt-4 rounded-full" />
+        <div className="bg-white/5 backdrop-blur-2xl p-12 rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center overflow-x-auto animate-in fade-in zoom-in-95 duration-500">
+          <div className="text-center mb-16 min-w-[300px]">
+            <h3 className="text-4xl font-black text-white tracking-tighter uppercase">{chapter.name}</h3>
+            <div className="h-1.5 w-32 bg-brand-emerald mx-auto mt-6 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
           </div>
-          <div className="flex flex-wrap justify-center gap-12 max-w-4xl min-w-[600px]">
+          <div className="flex flex-wrap justify-center gap-16 max-w-5xl min-w-[600px]">
             {chapter.mindMap.children?.map(node => (
-              <div key={node.id} className="flex flex-col items-center gap-4">
-                <div className="px-8 py-4 bg-emerald-900 text-white rounded-2xl font-bold shadow-lg text-sm text-center">
+              <div key={node.id} className="flex flex-col items-center gap-6">
+                <div className="px-8 py-4 bg-brand-emerald text-brand-slate rounded-2xl font-black shadow-xl text-xs text-center uppercase tracking-widest border-2 border-brand-emerald/20">
                   {node.label}
                 </div>
-                <div className="w-0.5 h-8 bg-emerald-200" />
-                <div className="grid gap-2">
+                <div className="w-0.5 h-10 bg-brand-emerald/30 border-r border-dashed border-brand-emerald/50" />
+                <div className="grid gap-3">
                   {node.children?.map(child => (
-                    <div key={child.id} className="px-4 py-2 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-bold border border-emerald-100 text-center">
+                    <div key={child.id} className="px-5 py-3 bg-white/5 text-slate-300 rounded-xl text-[10px] font-black border border-white/10 text-center uppercase tracking-tighter hover:border-brand-emerald/30 hover:text-white transition-all cursor-default">
                       {child.label}
                     </div>
                   ))}
@@ -251,17 +269,19 @@ export const RevisionHQ: React.FC<{ chapter: Chapter }> = ({ chapter }) => {
       )}
 
       {activeTab === 'cheat' && (
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 animate-in fade-in zoom-in-95 duration-500">
           {chapter.cheatSheet.map((section, i) => (
-            <div key={i} className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
-              <h4 className="text-xl font-black text-amber-600 mb-6 flex items-center gap-2 uppercase tracking-tight">
-                <Star className="w-5 h-5 fill-amber-600" />
+            <div key={i} className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-xl group hover:border-brand-amber/30 transition-all">
+              <h4 className="text-xl font-black text-brand-amber mb-6 flex items-center gap-3 uppercase tracking-tighter border-b border-brand-amber/10 pb-4">
+                <div className="p-2 bg-brand-amber/10 rounded-lg">
+                   <Star className="w-5 h-5 fill-brand-amber" />
+                </div>
                 {section.title}
               </h4>
               <ul className="space-y-4">
                 {section.points.map((p, j) => (
-                  <li key={j} className="flex gap-3 text-gray-700 font-medium text-sm">
-                    <span className="text-emerald-500 font-black">•</span>
+                  <li key={j} className="flex gap-4 text-slate-400 font-medium text-sm leading-relaxed group-hover:text-slate-200 transition-colors">
+                    <span className="text-brand-emerald font-black mt-1">•</span>
                     {p}
                   </li>
                 ))}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useTransition } from 'react';
 import { WritingSkeleton } from '../types';
-import { Layout, PenTool, Sparkles, ArrowLeft, ArrowRight, ShieldCheck, Volume2, VolumeX } from 'lucide-react';
+import { Layout, PenTool, Sparkles, ArrowLeft, ArrowRight, ShieldCheck, Volume2, VolumeX, Activity, Star, Award } from 'lucide-react';
 import { SuncubeWritingBox } from './SuncubeWritingBox';
 
 interface Props {
@@ -43,54 +43,74 @@ export function WritingView({ skeleton, onBack }: Props) {
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 pb-20">
       <title>{`${skeleton.id.replace('-', ' ').toUpperCase()} | Writing Authority`}</title>
       <meta name="description" content={`Standard format and examples for ${skeleton.id.replace('-', ' ')}`} />
+      
       <button
         onClick={onBack}
-        className="mb-8 flex items-center gap-2 text-brand-amber font-semibold hover:text-amber-300 transition-colors group"
+        className="mb-10 flex items-center gap-3 text-brand-amber font-black uppercase tracking-[0.2em] text-[10px] hover:text-white transition-all group"
       >
-        <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" /> Back to Library
+        <div className="p-2 bg-brand-amber/10 rounded-lg group-hover:bg-brand-amber group-hover:text-brand-slate transition-colors">
+          <ArrowLeft className="h-4 w-4" />
+        </div>
+        Back to Library
       </button>
 
-      <header className="mb-12">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="p-3 bg-brand-amber text-slate-950 rounded-2xl shadow-lg ring-2 ring-brand-amber/20">
-            <PenTool size={32} />
+      <header className="mb-16 relative overflow-hidden">
+        <div className="absolute top-0 right-0 p-20 opacity-[0.02] pointer-events-none">
+           <PenTool size={300} className="text-brand-amber" />
+        </div>
+        
+        <div className="flex items-center gap-6 mb-10 relative z-10">
+          <div className="p-5 bg-brand-amber text-brand-slate rounded-[2rem] shadow-glow-amber ring-4 ring-brand-amber/10 transform -rotate-3 group-hover:rotate-0 transition-transform">
+            <PenTool size={40} />
           </div>
           <div>
-            <h1 className="text-5xl font-black text-white tracking-tight uppercase">{skeleton.id.replace('-', ' ')}</h1>
-            <div className="flex items-center gap-2 mt-1">
-              <span className="bg-brand-emerald/10 text-brand-emerald px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border border-brand-emerald/20">
-                Writing Authority v2.0
-              </span>
-              <span className="text-slate-500 text-xs font-mono">ID: {skeleton.id.toUpperCase()}</span>
+            <h1 className="text-6xl font-black text-white tracking-tighter uppercase leading-none">{skeleton.id.replace('-', ' ')}</h1>
+            <div className="flex items-center gap-3 mt-4">
+              <div className="flex items-center gap-2 bg-brand-emerald/10 text-brand-emerald px-4 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] border border-brand-emerald/20 shadow-lg shadow-emerald-500/10">
+                <ShieldCheck size={14} /> Writing Authority v2.0
+              </div>
+              <span className="text-slate-500 text-[10px] font-black uppercase tracking-widest bg-white/5 px-3 py-1.5 rounded-lg border border-white/5">ID: {skeleton.id.toUpperCase()}</span>
             </div>
           </div>
         </div>
-        <div className="bg-white/5 p-6 rounded-3xl border border-white/10 backdrop-blur-sm shadow-xl">
-          <p className="text-[10px] font-black text-brand-amber uppercase tracking-widest mb-2">Standard Format Blueprint</p>
-          <p className="text-xl font-bold text-white font-mono tracking-tight">{skeleton.format}</p>
+        
+        <div className="bg-white/5 backdrop-blur-3xl p-8 rounded-[2.5rem] border border-white/10 shadow-2xl relative group overflow-hidden">
+          <div className="absolute inset-0 bg-brand-amber opacity-0 group-hover:opacity-[0.02] transition-opacity" />
+          <p className="text-[10px] font-black text-brand-amber uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
+             <div className="w-1.5 h-1.5 rounded-full bg-brand-amber shadow-glow-amber" /> Standard Format Blueprint
+          </p>
+          <div className="text-2xl font-black text-white font-mono tracking-tight bg-brand-slate/50 p-6 rounded-2xl border border-white/5 shadow-inner leading-relaxed">
+            {skeleton.format}
+          </div>
         </div>
       </header>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* Blueprint Flow */}
-        <div className="lg:col-span-2 space-y-8">
-          <section className="bg-white/5 rounded-[2.5rem] p-10 border border-white/10 shadow-2xl overflow-hidden relative backdrop-blur-sm">
-            <div className="absolute -right-20 -top-20 opacity-[0.02] rotate-12 pointer-events-none text-white">
-              <Layout size={400} />
+        <div className="lg:col-span-2 space-y-10">
+          <section className="bg-white/5 backdrop-blur-3xl rounded-[3.5rem] p-12 border border-white/10 shadow-2xl overflow-hidden relative group">
+            <div className="absolute -right-20 -top-20 opacity-[0.02] rotate-12 pointer-events-none text-white group-hover:opacity-[0.06] transition-opacity duration-1000">
+              <Layout size={500} />
             </div>
-            <h2 className="text-3xl font-black text-white mb-10 flex items-center gap-3">
-              <Layout className="text-brand-amber" /> Structure Protocol
+            
+            <h2 className="text-4xl font-black text-white mb-16 flex items-center gap-4 uppercase tracking-tighter relative z-10">
+              <div className="p-3 bg-brand-amber/10 rounded-2xl text-brand-amber shadow-glow-amber">
+                <Layout className="w-8 h-8" />
+              </div>
+              Structure Protocol
             </h2>
-            <div className="space-y-12 relative">
+            
+            <div className="space-y-16 relative z-10">
               {skeleton.blueprint.map((step, idx) => (
-                <div key={idx} className="relative pl-12 group">
+                <div key={idx} className="relative pl-16 group/step">
                   {idx !== skeleton.blueprint.length - 1 && (
-                  <div className="absolute left-[1.125rem] top-10 bottom-[-2.5rem] w-0.5 bg-gradient-to-b from-brand-amber/20 to-transparent" />
+                  <div className="absolute left-[1.85rem] top-14 bottom-[-4rem] w-1 bg-gradient-to-b from-brand-amber/30 to-transparent" />
                   )}
-                  <div className="absolute left-0 top-0 h-9 w-9 bg-brand-slate border-2 border-brand-amber/30 rounded-xl flex items-center justify-center font-black text-brand-amber text-sm shadow-[0_0_15px_rgba(251,191,36,0.1)]">
+                  <div className="absolute left-0 top-0 h-14 w-14 bg-brand-slate border-2 border-brand-amber/30 rounded-2xl flex items-center justify-center font-black text-brand-amber text-xl shadow-[0_0_25px_rgba(251,191,36,0.15)] group-hover/step:scale-110 group-hover/step:border-brand-amber transition-all">
                     {idx + 1}
                   </div>
-                  <div className="space-y-4">
+                  
+                  <div className="space-y-6">
                     {step.section.startsWith('Example: ') ? (
                       <SuncubeWritingBox
                         type={step.section.startsWith('Example: ') ? 'Example' : undefined}
@@ -100,30 +120,33 @@ export function WritingView({ skeleton, onBack }: Props) {
                         onSpeak={() => handleSpeak(`${step.section}. ${step.content}`, idx)}
                       />
                     ) : (
-                      <>
-                        <div className="flex justify-between items-center">
-                          <h3 className="text-xl font-black text-white uppercase tracking-tight">{step.section}</h3>
+                      <div className="group/bubble">
+                        <div className="flex justify-between items-center mb-4">
+                          <h3 className="text-2xl font-black text-white uppercase tracking-tighter group-hover/step:text-brand-amber transition-colors">{step.section}</h3>
                           <button
                             onClick={() => handleSpeak(`${step.section}. ${step.content}`, idx)}
-                            className={`p-2 rounded-xl transition-all ${speakingIdx === idx
-                                ? 'bg-brand-amber/20 text-brand-amber ring-2 ring-brand-amber/40 scale-110'
-                                : 'text-slate-500 hover:text-brand-amber hover:bg-white/5 opacity-0 group-hover:opacity-100'
+                            className={`p-3 rounded-xl transition-all shadow-xl ${speakingIdx === idx
+                                ? 'bg-brand-amber text-brand-slate ring-4 ring-brand-amber/20 scale-110'
+                                : 'bg-white/5 text-slate-500 hover:text-brand-amber hover:bg-brand-amber/10 opacity-0 group-hover/step:opacity-100'
                               }`}
                             title="Narration Hearing"
                           >
-                            {speakingIdx === idx ? <VolumeX size={18} /> : <Volume2 size={18} />}
+                            {speakingIdx === idx ? <VolumeX size={20} /> : <Volume2 size={20} />}
                           </button>
                         </div>
-                        <p className="text-slate-300 font-medium leading-relaxed bg-brand-slate/50 p-4 rounded-2xl italic border border-white/5">
-                          {step.content}
-                        </p>
-                      </>
+                        <div className="bg-brand-slate/50 p-8 rounded-[2rem] border border-white/5 shadow-inner group-hover/bubble:border-brand-amber/20 transition-all">
+                           <p className="text-slate-300 text-lg font-bold leading-relaxed italic">
+                             "{step.content}"
+                           </p>
+                        </div>
+                      </div>
                     )}
+                    
                     {step.keyPhrases.length > 0 && (
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-3">
                         {step.keyPhrases.map((phrase, pIdx) => (
-                          <div key={pIdx} className="flex items-center gap-2 px-4 py-2 bg-brand-slate/40 border border-white/10 rounded-xl text-slate-300 text-xs font-bold shadow-sm group hover:border-brand-amber/50 transition-colors cursor-default">
-                            <ArrowRight size={12} className="text-brand-amber/40 group-hover:translate-x-1 transition-transform" />
+                          <div key={pIdx} className="flex items-center gap-3 px-5 py-2.5 bg-brand-slate/60 border border-white/5 rounded-xl text-slate-300 text-[10px] font-black uppercase tracking-[0.2em] shadow-lg group/phrase hover:border-brand-amber/40 transition-all cursor-default">
+                            <Star size={12} className="text-brand-amber/40 group-hover/phrase:fill-brand-amber group-hover/phrase:scale-125 transition-all" />
                             {phrase}
                           </div>
                         ))}
@@ -136,30 +159,39 @@ export function WritingView({ skeleton, onBack }: Props) {
           </section>
         </div>
 
-        {/* Vocabulary Upgrades */}
-
-        {/* Vocabulary Upgrades */}
-        <div className="space-y-8">
-          <section className="bg-gradient-to-br from-brand-slate to-indigo-950/20 rounded-[2.5rem] p-8 text-white border border-white/10 shadow-2xl relative overflow-hidden backdrop-blur-sm">
-            <div className="absolute top-0 right-0 p-6 opacity-[0.03]">
-              <Sparkles size={100} />
+        {/* Sidebar */}
+        <div className="space-y-10">
+          <section className="bg-gradient-to-br from-brand-slate to-indigo-950/40 rounded-[3rem] p-10 text-white border border-white/10 shadow-2xl relative overflow-hidden group">
+            <div className="absolute top-0 right-0 p-8 opacity-[0.02] group-hover:opacity-[0.08] transition-opacity duration-700">
+              <Sparkles size={150} className="text-brand-amber" />
             </div>
-            <h3 className="text-xl font-black flex items-center gap-2 mb-8 uppercase tracking-widest italic">
-              <Sparkles className="text-brand-amber" /> Vocabulary Upgrades
+            
+            <h3 className="text-sm font-black flex items-center gap-3 mb-10 uppercase tracking-[0.3em] text-brand-amber border-b border-white/5 pb-4 relative z-10">
+              <div className="p-2 bg-brand-amber/10 rounded-lg shadow-glow-amber">
+                <Sparkles size={16} />
+              </div>
+              Vocabulary Upgrades
             </h3>
-            <div className="space-y-6">
+            
+            <div className="space-y-8 relative z-10">
               {skeleton.vocabularyUpgrades.map((item, i) => (
-                <div key={i} className="group">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] font-black text-royal-400 uppercase tracking-widest">Base Level</span>
-                    <span className="text-[10px] font-black text-amber-400 uppercase tracking-widest">Advanced</span>
+                <div key={i} className="group/vocab">
+                  <div className="flex items-center justify-between mb-3 px-1">
+                    <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest flex items-center gap-2">
+                       <div className="w-1 h-1 rounded-full bg-slate-700" /> Base Level
+                    </span>
+                    <span className="text-[10px] font-black text-brand-amber uppercase tracking-widest flex items-center gap-2">
+                       <Award size={10} className="text-brand-amber" /> Advanced
+                    </span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="flex-1 bg-white/5 p-3 rounded-xl border border-white/5 text-xs font-medium line-through decoration-brand-amber/30">
+                  <div className="flex items-center gap-4 group/row">
+                    <div className="flex-1 bg-white/5 p-4 rounded-xl border border-white/5 text-[10px] font-black uppercase tracking-widest text-slate-400 line-through decoration-brand-amber/40 transition-all group-hover/vocab:bg-white/10">
                       {item.basic}
                     </div>
-                    <ArrowRight size={16} className="text-brand-amber/30 shrink-0" />
-                    <div className="flex-1 bg-brand-amber/10 p-3 rounded-xl border border-brand-amber/20 text-xs font-black text-brand-amber group-hover:bg-brand-amber/20 transition-all">
+                    <div className="p-2 bg-brand-amber/10 rounded-lg group-hover/row:scale-125 transition-transform">
+                       <ArrowRight size={14} className="text-brand-amber" />
+                    </div>
+                    <div className="flex-1 bg-brand-amber/10 p-4 rounded-xl border border-brand-amber/20 text-[10px] font-black uppercase tracking-widest text-brand-amber shadow-glow-amber/5 group-hover/vocab:bg-brand-amber group-hover/vocab:text-brand-slate transition-all">
                       {item.advanced}
                     </div>
                   </div>
@@ -168,18 +200,31 @@ export function WritingView({ skeleton, onBack }: Props) {
             </div>
           </section>
 
-          <section className="bg-white/5 rounded-[2.5rem] p-8 border border-white/10 shadow-xl backdrop-blur-sm">
-            <h3 className="text-xl font-black text-white mb-6 flex items-center gap-2 uppercase tracking-widest">
-              <ShieldCheck className="text-brand-emerald" /> Scoring Audit
-            </h3>
-            <div className="space-y-4">
-              <div className="p-4 bg-brand-emerald/10 rounded-2xl border border-brand-emerald/20">
-                <p className="text-[10px] font-black text-brand-emerald uppercase mb-1">Format Compliance</p>
-                <p className="text-xs text-brand-emerald/70 font-medium leading-relaxed">Ensure all structural markers (dates, headings, signatures) are correctly aligned to the 2026 schema.</p>
+          <section className="bg-white/5 backdrop-blur-xl rounded-[3rem] p-10 border border-white/5 shadow-2xl group relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-8 opacity-[0.02] group-hover:opacity-[0.06] transition-opacity">
+               <ShieldCheck size={120} className="text-brand-emerald" />
+            </div>
+            
+            <h3 className="text-sm font-black text-white mb-10 flex items-center gap-3 uppercase tracking-[0.3em] border-b border-white/5 pb-4 relative z-10">
+              <div className="p-2 bg-brand-emerald/10 rounded-lg shadow-glow-emerald">
+                <ShieldCheck size={16} className="text-brand-emerald" />
               </div>
-              <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
-                <p className="text-[10px] font-black text-slate-300 uppercase mb-1">Lexical Value</p>
-                <p className="text-xs text-slate-400 font-medium leading-relaxed">Integrated advanced vocabulary correlates directly to 'Expression' marks in the rubrics.</p>
+              Scoring Audit
+            </h3>
+            
+            <div className="space-y-6 relative z-10">
+              <div className="p-6 bg-brand-emerald/5 rounded-2xl border border-brand-emerald/10 hover:border-brand-emerald/40 transition-all group/audit">
+                <p className="text-[10px] font-black text-brand-emerald uppercase tracking-[0.25em] mb-3 flex items-center gap-2">
+                  <Activity size={12} /> Format Compliance
+                </p>
+                <p className="text-xs text-slate-300 font-bold leading-relaxed group-hover/audit:text-white transition-colors">Ensure all structural markers (dates, headings, signatures) are correctly aligned to the 2026 schema.</p>
+              </div>
+              
+              <div className="p-6 bg-white/5 rounded-2xl border border-white/5 hover:border-brand-amber/40 transition-all group/audit2">
+                <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.25em] mb-3 flex items-center gap-2 group-hover/audit2:text-brand-amber transition-colors">
+                  <Star size={12} className="text-brand-amber" /> Lexical Value
+                </p>
+                <p className="text-xs text-slate-400 font-bold leading-relaxed group-hover/audit2:text-slate-200 transition-colors">Integrated advanced vocabulary correlates directly to 'Expression' marks in the rubrics.</p>
               </div>
             </div>
           </section>

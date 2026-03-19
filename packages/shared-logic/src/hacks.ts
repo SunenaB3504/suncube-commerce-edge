@@ -64,3 +64,47 @@ export const ECONOMICS_HACKS: HackerHack[] = [
     advice: 'Current = "What we produce/consume". Capital = "What we own/owe".'
   }
 ];
+
+export const ENGLISH_HACKS: HackerHack[] = [
+  {
+    id: 'eng-ltr-format',
+    category: 'ShortCut',
+    title: 'Letter to Editor: Key Phrases',
+    description: 'Start with: "Through the columns of your esteemed newspaper, I would like to draw the attention..."',
+    advice: 'Use this opening to bag 1 mark for format instantly.'
+  },
+  {
+    id: 'eng-inv-card',
+    category: 'PatternRecognition',
+    title: 'Formal Invitation Pattern',
+    description: 'Formal invitations follow the 3rd person rule (e.g., "The Principal and Staff of X School request the pleasure of your company").',
+    advice: 'Never use "I" or "We" in a formal card invitation.'
+  }
+];
+
+export const PHYSED_HACKS: HackerHack[] = [
+  {
+    id: 'pe-fix-formula',
+    category: 'ShortCut',
+    title: 'Knockout Fixtures (Upper Half)',
+    description: 'Number of teams in Upper Half = (N + 1) / 2 where N is odd.',
+    advice: 'Upper Half always gets the extra team if the total count is odd.'
+  },
+  {
+    id: 'pe-yog-contra',
+    category: 'CommonError',
+    title: 'Yoga Contraindications',
+    description: 'Avoid forward bending asanas (Paschimottanasana) in case of Slip Disc.',
+    advice: 'Slip Disc = NO forward bend. High BP = NO headstand.'
+  }
+];
+
+export const ENTRANCE_HACKS: HackerHack[] = [
+  {
+    id: 'ent-skp-logic',
+    category: 'ShortCut',
+    title: 'The T-10 Skip Logic',
+    description: 'If you spend more than 45 seconds on a logic puzzle without a breakthrough, skip and flag.',
+    advice: 'Entrance exams are won by what you SKIP as much as what you SOLVE.'
+  }
+];
