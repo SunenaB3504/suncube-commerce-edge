@@ -2,7 +2,7 @@ import React from 'react';
 import { WritingBox } from '@suncube/ui';
 
 interface SuncubeWritingBoxProps {
-  type: 'Notice' | 'Letter' | 'Invite' | 'Example';
+  type?: 'Notice' | 'Letter' | 'Invite' | 'Example';
   title: string;
   content: string;
   isSpeaking?: boolean;

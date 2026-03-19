@@ -5,5 +5,6 @@ export interface HackerHack {
   category: HackerHackCategory;
   title: string;
   description: string;
-  advice?: string;
+  points?: string[];
+  advice: string;
 }

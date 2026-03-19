@@ -26,68 +26,68 @@ const App = () => {
             <nav className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300">
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-6">
-                        <a href="/suncube-commerce-edge/" className="text-slate-400 hover:text-blue-600 transition-colors" title="Back to Suncube Hub">
+                        <a href="/suncube-commerce-edge/" className="text-slate-500 hover:text-brand-amber transition-colors" title="Back to Suncube Hub">
                             🏠
                         </a>
                         <Link to="/" className="flex items-center gap-2" onClick={closeMobileMenu}>
                             <span className="text-2xl">🚀</span>
-                            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-                                Commerce Prep Pro
+                            <span className="text-xl font-black bg-gradient-to-r from-brand-amber to-amber-200 bg-clip-text text-transparent uppercase tracking-tight">
+                                Entrance Prep Pro
                             </span>
                         </Link>
                     </div>
 
                     {/* Desktop Nav */}
-                    <div className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-                        <Link to="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</Link>
-                        <Link to="/analytics" className="flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <div className="hidden md:flex items-center gap-6 text-sm font-bold uppercase tracking-widest text-slate-400">
+                        <Link to="/" className="hover:text-brand-amber transition-colors">Home</Link>
+                        <Link to="/analytics" className="flex items-center gap-1.5 hover:text-brand-amber transition-colors">
                             <span>📊</span> Analytics
                         </Link>
-                        <Link to="/mocks" className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        <Link to="/mocks" className="px-4 py-2 bg-brand-amber text-slate-950 rounded-lg hover:bg-amber-300 transition-all font-black shadow-lg shadow-brand-amber/10">
                             Mock Tests
                         </Link>
-                        <div className="flex items-center gap-2 px-3 py-1 bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 rounded-full border border-orange-100 dark:border-orange-800/50">
+                        <div className="flex items-center gap-2 px-3 py-1 bg-brand-amber/10 text-brand-amber rounded-full border border-brand-amber/20 shadow-inner">
                             <span className="text-lg">🔥</span>
-                            <span className="font-bold">{streak} Day Streak</span>
+                            <span className="font-black">{streak} Day Streak</span>
                         </div>
-                        <div className="flex items-center gap-1.5 px-3 py-1 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full border border-red-100 dark:border-red-800/50">
+                        <div className="flex items-center gap-1.5 px-3 py-1 bg-brand-emerald/10 text-brand-emerald rounded-full border border-brand-emerald/20 shadow-inner">
                             <span>🎯</span>
-                            <span className="font-bold">{cuetDays}d</span>
+                            <span className="font-black">{cuetDays}d Left</span>
                         </div>
                     </div>
 
                     {/* Mobile Hamburger Button */}
                     <button
-                        className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors gap-1"
+                        className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg bg-white/5 border border-white/10 transition-colors gap-1"
                         onClick={() => setMobileMenuOpen(prev => !prev)}
                         aria-label="Toggle menu"
                         aria-expanded={mobileMenuOpen}
                     >
-                        <span className={`block w-5 h-0.5 bg-slate-700 dark:bg-slate-300 transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
-                        <span className={`block w-5 h-0.5 bg-slate-700 dark:bg-slate-300 transition-all duration-300 ${mobileMenuOpen ? 'opacity-0 scale-x-0' : ''}`} />
-                        <span className={`block w-5 h-0.5 bg-slate-700 dark:bg-slate-300 transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+                        <span className={`block w-5 h-0.5 bg-brand-amber transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+                        <span className={`block w-5 h-0.5 bg-brand-amber transition-all duration-300 ${mobileMenuOpen ? 'opacity-0 scale-x-0' : ''}`} />
+                        <span className={`block w-5 h-0.5 bg-brand-amber transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
                     </button>
                 </div>
 
                 {/* Mobile Slide-down Menu */}
                 <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'max-h-64 border-t border-slate-100 dark:border-slate-800' : 'max-h-0'}`}>
                     <div className="container mx-auto px-4 py-3 flex flex-col gap-2 text-sm font-medium">
-                        <Link to="/" onClick={closeMobileMenu} className="py-2.5 px-3 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-2">
+                        <Link to="/" onClick={closeMobileMenu} className="py-2.5 px-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-brand-amber transition-colors flex items-center gap-2">
                             🏠 <span>Home</span>
                         </Link>
-                        <Link to="/analytics" onClick={closeMobileMenu} className="py-2.5 px-3 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-2">
+                        <Link to="/analytics" onClick={closeMobileMenu} className="py-2.5 px-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-brand-amber transition-colors flex items-center gap-2">
                             📊 <span>Analytics</span>
                         </Link>
-                        <Link to="/mocks" onClick={closeMobileMenu} className="py-2.5 px-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
+                        <Link to="/mocks" onClick={closeMobileMenu} className="py-2.5 px-3 rounded-xl bg-brand-amber text-slate-950 font-black hover:bg-amber-300 transition-colors flex items-center justify-center gap-2 shadow-lg">
                             🧪 <span>Mock Tests</span>
                         </Link>
-                        <div className="py-2.5 px-3 rounded-xl bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 border border-orange-100 dark:border-orange-800/50 flex items-center gap-2">
+                        <div className="py-2.5 px-3 rounded-xl bg-brand-amber/10 text-brand-amber border border-brand-amber/20 flex items-center gap-2">
                             <span className="text-base">🔥</span>
-                            <span className="font-bold">{streak} Day Streak</span>
+                            <span className="font-black">{streak} Day Streak</span>
                         </div>
-                        <div className="py-2.5 px-3 rounded-xl bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 border border-red-100 dark:border-red-800/50 flex items-center gap-2">
+                        <div className="py-2.5 px-3 rounded-xl bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20 flex items-center gap-2">
                             <span>🎯</span>
-                            <span className="font-bold">CUET: {cuetDays} days left</span>
+                            <span className="font-black">CUET: {cuetDays} days left</span>
                         </div>
                     </div>
                 </div>
@@ -110,31 +110,34 @@ const App = () => {
             </main>
 
             {/* Footer */}
-            <footer className="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 py-12 transition-colors duration-300">
-                <div className="container mx-auto px-4">
+            <footer className="bg-brand-slate border-t border-white/5 py-12 transition-colors duration-300 overflow-hidden relative">
+                <div className="absolute -bottom-20 -right-20 opacity-5 pointer-events-none">
+                    <span className="text-[200px] font-black uppercase tracking-tighter text-white">SUNCUBE</span>
+                </div>
+                <div className="container mx-auto px-4 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left mb-8">
                         <div>
-                            <h4 className="font-bold text-slate-800 dark:text-slate-200 mb-4">Quick Links</h4>
-                            <div className="flex flex-col gap-2 text-sm text-slate-500 dark:text-slate-400">
-                                <Link to="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</Link>
-                                <Link to="/analytics" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Analytics</Link>
-                                <Link to="/mocks" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Mock Tests</Link>
+                            <h4 className="font-black uppercase text-[10px] tracking-widest text-brand-amber mb-4">Quick Protocols</h4>
+                            <div className="flex flex-col gap-2 text-sm font-bold text-slate-400">
+                                <Link to="/" className="hover:text-brand-amber transition-colors">Home Base</Link>
+                                <Link to="/analytics" className="hover:text-brand-amber transition-colors">Performance Audit</Link>
+                                <Link to="/mocks" className="hover:text-brand-amber transition-colors">Mock Deployments</Link>
                             </div>
                         </div>
                         <div>
-                            <h4 className="font-bold text-slate-800 dark:text-slate-200 mb-4">Exam Target</h4>
-                            <div className="text-sm text-slate-500 dark:text-slate-400">
+                            <h4 className="font-black uppercase text-[10px] tracking-widest text-brand-emerald mb-4">Exam Target</h4>
+                            <div className="text-sm text-slate-400">
                                 <div className="text-2xl mb-2">🎯</div>
-                                <div className="font-bold text-slate-700 dark:text-slate-300">CUET UG 2026</div>
-                                <div>Expected: May 2026</div>
-                                <div className="mt-3 inline-block px-3 py-1 bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-500 rounded-full text-xs font-bold border border-amber-100 dark:border-amber-800/50">
-                                    {cuetDays} days left
+                                <div className="font-black text-white text-lg tracking-tight uppercase">CUET UG 2026</div>
+                                <div>Standard Board Calendar</div>
+                                <div className="mt-3 inline-block px-4 py-1.5 bg-brand-emerald/10 text-brand-emerald rounded-full text-[10px] font-black uppercase tracking-widest border border-brand-emerald/20 shadow-xl">
+                                    {cuetDays} Days Remaining
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="text-center text-slate-400 dark:text-slate-500 text-sm border-t border-slate-100 dark:border-slate-800 pt-8">
-                        &copy; 2026 Commerce Prep Pro. Focused on CUET &amp; MH-CET success.
+                    <div className="text-center text-slate-500 text-[10px] font-black uppercase tracking-widest border-t border-white/5 pt-8">
+                        &copy; 2026 Suncube Arts Prep. Optimized for CUET &amp; Boards.
                     </div>
                 </div>
             </footer>
