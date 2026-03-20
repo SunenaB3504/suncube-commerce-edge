@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: './',
+  base: '/suncube-commerce-edge/',
   build: {
     outDir: 'dist',
     emptyOutDir: true,

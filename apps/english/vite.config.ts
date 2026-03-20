@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  base: '/suncube-commerce-edge/english/',
   plugins: [react(), tailwindcss()],
   server: {
     port: 5180,

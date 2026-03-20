@@ -12,7 +12,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeView, setActiveView, isDas
     <div className="max-w-7xl mx-auto flex items-center justify-between">
       <div className="flex items-center gap-8">
         <a 
-          href="../" 
+          href="/suncube-commerce-edge/" 
           className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-brand-emerald hover:border-brand-emerald/30 transition-all group" 
           title="Return to Suncube Hub"
         >
