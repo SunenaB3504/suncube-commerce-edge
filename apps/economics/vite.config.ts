@@ -4,6 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/suncube-commerce-edge/economics/',
+  base: './',
   plugins: [react(), tailwindcss()],
 })
