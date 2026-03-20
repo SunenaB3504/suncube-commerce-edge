@@ -28,7 +28,7 @@ const App = () => {
                 <div className="container mx-auto px-6 flex items-center justify-between">
                     <div className="flex items-center gap-8">
                         <a 
-                            href="/suncube-commerce-edge/" 
+                            href="../" 
                             className="w-10 h-10 bg-white/5 hover:bg-white text-slate-400 hover:text-brand-slate rounded-xl flex items-center justify-center transition-all border border-white/5 active:scale-95 group"
                             title="Abort to Mission Hub"
                         >

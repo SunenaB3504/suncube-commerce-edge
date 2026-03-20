@@ -38,7 +38,7 @@ const App: React.FC = () => {
       {/* Sidebar - Desktop */}
       <aside className="hidden md:flex flex-col w-80 bg-brand-slate border-r border-white/5 p-6 fixed h-full shadow-2xl overflow-y-auto">
         <a 
-          href="/suncube-commerce-edge/" 
+          href="../" 
           className="flex items-center gap-2 text-slate-500 hover:text-brand-amber transition-colors mb-6 group"
         >
           <X className="w-4 h-4 text-slate-600 group-hover:text-brand-amber/50" />
@@ -99,7 +99,7 @@ const App: React.FC = () => {
         {/* Mobile Header */}
         <header className="md:hidden bg-brand-slate border-b border-white/5 p-4 sticky top-0 z-50 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <a href="/suncube-commerce-edge/" className="p-2 text-slate-500 hover:text-brand-amber">
+            <a href="../" className="p-2 text-slate-500 hover:text-brand-amber">
               <X className="w-5 h-5" />
             </a>
             <div className="flex items-center gap-2">

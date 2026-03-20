@@ -7,7 +7,7 @@ export const Navbar: React.FC<{ activeView: string, setActiveView: (v: string) =
     <nav className="sticky top-0 z-50 bg-brand-slate/80 backdrop-blur-xl border-b border-white/5 px-6 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-6">
-          <a href="/suncube-commerce-edge/" className="p-2.5 bg-white/5 rounded-xl text-brand-emerald hover:bg-brand-emerald hover:text-brand-slate transition-all border border-white/5" title="Back to Suncube Hub">
+          <a href="../" className="p-2.5 bg-white/5 rounded-xl text-brand-emerald hover:bg-brand-emerald hover:text-brand-slate transition-all border border-white/5" title="Back to Suncube Hub">
             <Library className="w-5 h-5" />
           </a>
           <div 

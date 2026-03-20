@@ -223,7 +223,7 @@ function App() {
           </h1>
           <div className="flex gap-4 sm:gap-8 text-[10px] font-black uppercase tracking-[0.2em] items-center">
             <a 
-              href="/suncube-commerce-edge/" 
+              href="../" 
               className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 transition-all border border-white/10 text-slate-400 hover:text-white"
               title="Back to Suncube Hub"
             >
