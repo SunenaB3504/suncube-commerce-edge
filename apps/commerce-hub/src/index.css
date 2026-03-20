@@ -1,10 +1,19 @@
 @import "tailwindcss";
-@import "@suncube/ui/theme.css";
+
+@theme {
+  --color-brand-slate: #020617;
+  --color-brand-emerald: #10b981;
+  --color-brand-amber: #f59e0b;
+  --color-brand-rose: #f43f5e;
+  --color-brand-indigo: #6366f1;
+  
+  --shadow-glow-emerald: 0 0 20px rgba(16, 185, 129, 0.4);
+  --shadow-glow-amber: 0 0 20px rgba(245, 158, 11, 0.4);
+}
 
 @layer base {
   body {
     @apply antialiased bg-brand-slate text-white;
-    background-image: radial-gradient(circle at top right, rgba(16, 185, 129, 0.05), transparent),
-                      radial-gradient(circle at bottom left, rgba(245, 158, 11, 0.05), transparent);
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
 }
