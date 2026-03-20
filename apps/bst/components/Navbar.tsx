@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, BookOpen, Lightbulb, Archive, Menu, Target, Printer } from 'lucide-react';
+import { Briefcase, BookOpen, Lightbulb, Archive, Menu, Target, Printer, LayoutGrid, Zap } from 'lucide-react';
 
 interface NavbarProps {
   activeView: string;
@@ -8,67 +8,74 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ activeView, setActiveView, isDashboard }) => (
-  <nav className="sticky top-0 z-50 purple-gradient text-white shadow-xl px-6 py-4 print:hidden">
+  <nav className="sticky top-0 z-50 bg-brand-slate/80 border-b border-white/5 backdrop-blur-3xl px-8 py-5 print:hidden">
     <div className="max-w-7xl mx-auto flex items-center justify-between">
-      <div className="flex items-center gap-6">
-        <a href="/suncube-commerce-edge/" className="text-white/60 hover:text-amber-300 transition-colors" title="Back to Suncube Hub">
-          <Archive className="w-6 h-6 rotate-180" />
+      <div className="flex items-center gap-8">
+        <a 
+          href="/suncube-commerce-edge/" 
+          className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-brand-emerald hover:border-brand-emerald/30 transition-all group" 
+          title="Return to Suncube Hub"
+        >
+          <LayoutGrid size={18} className="group-hover:rotate-90 transition-transform duration-500" />
         </a>
         <div
-          className="flex items-center gap-2 cursor-pointer"
+          className="flex items-center gap-3 cursor-pointer group"
           onClick={() => setActiveView('dashboard')}
         >
-          <Briefcase className="w-8 h-8 text-amber-400" />
-          <span className="text-xl font-bold tracking-tight">Business<span className="text-amber-400">Master</span></span>
+          <div className="p-2 bg-brand-emerald/10 rounded-xl border border-brand-emerald/20 shadow-glow-emerald/5 group-hover:scale-110 transition-transform">
+             <Briefcase size={24} className="text-brand-emerald" />
+          </div>
+          <span className="text-2xl font-black tracking-tighter uppercase italic text-white group-hover:text-brand-emerald transition-colors">
+            Business<span className="text-brand-emerald">Master</span>
+          </span>
         </div>
       </div>
-      <div className="hidden md:flex items-center gap-8 font-medium">
-        {[
-          { id: 'theory', label: 'Theory Master', icon: BookOpen },
-          { id: 'revision', label: 'Revision HQ', icon: Lightbulb },
-          { id: 'archives', label: 'SQP Archives', icon: Archive }
-        ].map(item => (
-          <button
-            key={item.id}
-            onClick={() => !isDashboard && setActiveView(item.id)}
-            className={`flex items-center gap-2 transition-all hover:text-amber-300 ${activeView === item.id ? 'text-amber-400 border-b-2 border-amber-400' : ''} ${isDashboard ? 'opacity-50 cursor-not-allowed' : ''}`}
-            disabled={isDashboard}
-          >
-            <item.icon className="w-4 h-4" />
-            {item.label}
-          </button>
-        ))}
 
-        <div className="w-px h-6 bg-white/20 mx-2 hidden lg:block" />
+      <div className="hidden lg:flex items-center gap-10">
+        <div className="flex items-center gap-8 font-black text-[10px] uppercase tracking-[0.2em]">
+          {[
+            { id: 'theory', label: 'Forensic Theory', icon: BookOpen },
+            { id: 'revision', label: 'Revision HQ', icon: Lightbulb },
+            { id: 'archives', label: 'Exam Archives', icon: Archive }
+          ].map(item => (
+            <button
+              key={item.id}
+              onClick={() => !isDashboard && setActiveView(item.id)}
+              className={`flex items-center gap-2 transition-all group ${activeView === item.id ? 'text-brand-emerald' : 'text-slate-500 hover:text-white'} ${isDashboard ? 'opacity-30 cursor-not-allowed' : ''}`}
+              disabled={isDashboard}
+            >
+              <item.icon size={14} className={`${activeView === item.id ? 'fill-current' : 'group-hover:scale-110 transition-transform'}`} />
+              {item.label}
+              {activeView === item.id && (
+                <div className="absolute -bottom-7 left-0 right-0 h-0.5 bg-brand-emerald shadow-glow-emerald" />
+              )}
+            </button>
+          ))}
+        </div>
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="w-px h-8 bg-white/5 mx-2" />
+
+        <div className="flex items-center gap-4">
           <button
             onClick={() => setActiveView('morning-review')}
-            className={`flex items-center gap-2 transition-all px-4 py-2 rounded-full font-bold shadow-md hover:scale-105 active:scale-95 ${activeView === 'morning-review' ? 'bg-purple-100 text-purple-900 border border-purple-300' : 'bg-white/10 hover:bg-white/20 border border-white/30 text-white hover:border-white/50'}`}
+            className={`flex items-center gap-3 transition-all px-6 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest shadow-2xl hover:scale-105 active:scale-95 border ${activeView === 'morning-review' ? 'bg-brand-amber text-brand-slate border-brand-amber shadow-glow-amber' : 'bg-white/5 border-white/10 text-slate-400 hover:text-white hover:border-brand-amber/30'}`}
           >
-            <Printer className="w-4 h-4" />
-            Morning Review
-          </button>
-
-          <button
-            onClick={() => setActiveView('non-mcq')}
-            className={`flex items-center gap-2 transition-all px-4 py-2 rounded-full font-bold shadow-md hover:scale-105 active:scale-95 ${activeView === 'non-mcq' ? 'bg-teal-400 text-purple-900 border border-teal-400' : 'bg-white/10 hover:bg-white/20 border border-white/30 text-white hover:border-white/50'}`}
-          >
-            <BookOpen className="w-4 h-4" />
-            Subjective Qs
+            <Printer size={14} />
+            Review Sheet
           </button>
 
           <button
             onClick={() => setActiveView('mcq-test')}
-            className={`flex items-center gap-2 transition-all px-4 py-2 rounded-full font-bold shadow-md hover:scale-105 active:scale-95 ${activeView === 'mcq-test' ? 'bg-amber-400 text-purple-900 border border-amber-400' : 'bg-white/10 hover:bg-white/20 border border-white/30 text-white hover:border-white/50'}`}
+            className={`flex items-center gap-3 transition-all px-6 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest shadow-2xl hover:scale-105 active:scale-95 border ${activeView === 'mcq-test' ? 'bg-brand-emerald text-brand-slate border-brand-emerald shadow-glow-emerald' : 'bg-white/5 border-white/10 text-slate-400 hover:text-white hover:border-brand-emerald/30'}`}
           >
-            <Target className="w-4 h-4" />
-            MCQ Challenge
+            <Zap size={14} className="fill-current" />
+            MCQ Engine
           </button>
         </div>
       </div>
-      <button className="md:hidden" aria-label="Open Menu">
-        <Menu className="w-6 h-6" />
+
+      <button className="lg:hidden p-3 bg-white/5 rounded-xl border border-white/10 text-slate-400 hover:text-white" aria-label="Open Menu">
+        <Menu size={24} />
       </button>
     </div>
   </nav>

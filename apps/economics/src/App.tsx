@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Star, ChevronRight } from 'lucide-react';
+import { Star, ChevronRight, Zap, Library, BookOpen } from 'lucide-react';
 import { ALL_UNITS } from './data';
 import { Chapter } from './types';
 import { Navbar } from './components/Navbar';
@@ -32,42 +32,53 @@ export default function App() {
         isDashboard={activeView === 'dashboard'}
       />
 
-      <main className="max-w-7xl mx-auto px-6 pt-10">
+      <main className="max-w-7xl mx-auto px-6 pt-12">
         {activeView === 'dashboard' ? (
           <>
-            <div className="mb-12 animate-in fade-in slide-in-from-top-4 duration-700">
-              <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8">
-                <div>
-                  <h1 className="text-4xl md:text-5xl font-black text-white tracking-tighter leading-tight uppercase">
-                    Premium Exam Prep <br />
-                    <span className="text-brand-amber text-5xl md:text-6xl">ECONOMICS</span>
-                  </h1>
-                  <p className="mt-4 text-lg text-slate-400 font-bold max-w-2xl border-l-4 border-brand-amber pl-4 uppercase tracking-tight">
-                    Master Macroeconomics and Indian Economic Development with visual theory, verified sample papers, and AI-driven insights.
-                  </p>
-                </div>
+            <div className="mb-20 animate-in fade-in slide-in-from-top-4 duration-1000">
+              <div className="relative overflow-hidden p-12 rounded-[3.5rem] bg-white/5 border border-white/10 backdrop-blur-3xl group">
+                <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand-amber/10 rounded-full blur-[100px] group-hover:bg-brand-amber/20 transition-all duration-1000" />
+                <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-emerald/10 rounded-full blur-[100px] group-hover:bg-brand-emerald/20 transition-all duration-1000" />
+                
+                <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-12">
+                  <div className="max-w-3xl">
+                    <div className="flex items-center gap-3 text-brand-amber font-black mb-8 uppercase tracking-[0.4em] text-[10px]">
+                      <div className="p-2 bg-brand-amber/10 rounded-lg shrink-0">
+                         <Star size={16} className="fill-brand-amber" />
+                      </div>
+                      Academic Forensic Unit 2025-26
+                    </div>
+                    <h1 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter leading-[0.85] uppercase">
+                      Premium Prep <br />
+                      <span className="text-brand-amber">ECONOMICS</span>
+                    </h1>
+                    <p className="text-slate-400 text-xl leading-relaxed font-medium mb-0 max-w-2xl border-l-2 border-white/10 pl-8">
+                      Master Macroeconomics and Indian Economic Development with <span className="text-white">visual theory</span>, verified sample papers, and AI-driven strategic insights.
+                    </p>
+                  </div>
 
-                <div className="flex flex-col gap-3 w-full lg:w-auto lg:self-center">
-                  <button
-                    onClick={() => setActiveView('simulator')}
-                    className="w-full flex-shrink-0 flex items-center justify-center gap-3 bg-brand-amber text-slate-950 px-8 py-5 rounded-2xl font-black shadow-xl shadow-brand-amber/10 hover:bg-amber-300 transition-all group uppercase tracking-widest"
-                  >
-                    <Star className="w-6 h-6 text-slate-950 group-hover:rotate-12 transition-transform fill-slate-950" />
-                    Launch Mock Simulator
-                  </button>
-                  <a
-                    href={`${import.meta.env.BASE_URL}Exam_Morning_Eco_Cheat_Sheet.html`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-brand-amber border border-white/10 font-black px-6 py-3 rounded-xl transition-all uppercase text-xs tracking-widest"
-                  >
-                    🖨️ Download Cheat Sheet
-                  </a>
+                  <div className="flex flex-col gap-4 min-w-[300px]">
+                    <button
+                      onClick={() => setActiveView('simulator')}
+                      className="w-full flex items-center justify-center gap-4 bg-brand-amber text-brand-slate px-10 py-6 rounded-[1.5rem] font-black shadow-glow-amber hover:-translate-y-1 transition-all group uppercase tracking-widest text-sm"
+                    >
+                      <Star className="w-5 h-5 text-brand-slate group-hover:rotate-12 transition-transform fill-current" />
+                      Launch Simulator
+                    </button>
+                    <a
+                      href={`${import.meta.env.BASE_URL}Exam_Morning_Eco_Cheat_Sheet.html`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 text-white border border-white/10 font-black px-8 py-4 rounded-[1.25rem] transition-all uppercase text-[10px] tracking-[0.2em]"
+                    >
+                      <Zap size={14} className="text-brand-emerald fill-brand-emerald" /> Morning Review
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {ALL_UNITS.map(unit => (
                 <ChapterCard
                   key={unit.id}
@@ -78,29 +89,38 @@ export default function App() {
             </div>
           </>
         ) : (
-          <div>
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10 border-b border-gray-200 pb-8 animate-in fade-in slide-in-from-left-4 duration-500">
+          <div className="animate-in fade-in duration-700">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-16 border-b border-white/5 pb-12">
               <div>
                 <button
                   onClick={handleBackToDashboard}
-                  className="text-[10px] font-black text-brand-amber hover:text-amber-300 transition-colors flex items-center gap-1 mb-2 uppercase tracking-[0.2em]"
+                  className="flex items-center gap-3 text-brand-emerald font-black uppercase tracking-[0.2em] text-[10px] hover:text-white transition-all group mb-6"
                 >
-                  <ChevronRight className="w-3 h-3 rotate-180" /> Back to Base
+                  <div className="p-2 bg-brand-emerald/10 rounded-lg group-hover:bg-brand-emerald group-hover:text-brand-slate transition-all">
+                    <ChevronRight className="w-4 h-4 rotate-180" />
+                  </div>
+                  Back to Command Center
                 </button>
-                <h1 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase">{selectedChapter?.name}</h1>
-                <p className="text-slate-400 font-bold mt-1 text-xs uppercase tracking-widest">
-                  Intelligence Status: <span className="text-brand-emerald font-black">CURRICULUM SYNCED</span>
-                </p>
+                <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-none">{selectedChapter?.name}</h1>
+                <div className="flex items-center gap-3 mt-4">
+                   <div className="w-2 h-2 rounded-full bg-brand-emerald animate-pulse" />
+                   <p className="text-slate-500 font-black text-[10px] uppercase tracking-[0.3em]">
+                    Forensic Status: <span className="text-brand-emerald">Synced</span>
+                   </p>
+                </div>
               </div>
-              <div className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 shadow-xl backdrop-blur-md">
-                <div className="flex flex-col items-end">
-                  <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Weightage</span>
-                  <div className="flex gap-1 mt-1">
-                    {[1, 2, 3, 4, 5].map(i => <div key={i} className="h-1 w-6 rounded-full bg-brand-amber/20" />)}
+              
+              <div className="flex items-center gap-6 bg-white/5 p-6 rounded-[2rem] border border-white/10 backdrop-blur-3xl shadow-2xl">
+                <div className="flex flex-col items-end gap-2">
+                  <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Board Weightage</span>
+                  <div className="flex gap-1.5">
+                    {[1, 2, 3, 4, 5].map(i => <div key={i} className="h-1.5 w-6 rounded-full bg-brand-amber shadow-glow-amber opacity-80" />)}
                   </div>
                 </div>
-                <div className="h-10 w-px bg-white/10 mx-2" />
-                <Star className="w-8 h-8 text-brand-amber fill-brand-amber animate-pulse" />
+                <div className="h-12 w-px bg-white/10" />
+                <div className="p-3 bg-brand-amber/10 rounded-2xl">
+                  <Star className="w-8 h-8 text-brand-amber fill-brand-amber animate-pulse" />
+                </div>
               </div>
             </div>
 
@@ -109,7 +129,7 @@ export default function App() {
             )}
 
             {selectedChapter && activeView !== 'simulator' && (
-              <div className="min-h-[60vh]">
+              <div className="min-h-[60vh] pb-20">
                 {activeView === 'theory' && <TheoryView chapter={selectedChapter} />}
                 {activeView === 'revision' && <RevisionHQ chapter={selectedChapter} />}
                 {activeView === 'archives' && <SQPArchives chapter={selectedChapter} />}

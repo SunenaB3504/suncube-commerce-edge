@@ -3,7 +3,7 @@ import { getAllMCQs, MCQWithUnit } from '../../utils/mcqAggregator';
 import { QuizResult } from '../../types';
 import { QuestionCard } from './QuestionCard';
 import { QuizResults } from './QuizResults';
-import { ChevronRight, Target, BrainCircuit, Activity } from 'lucide-react';
+import { ChevronRight, Target, BrainCircuit, Activity, ShieldCheck, Sparkles, Cpu, ArrowRight } from 'lucide-react';
 
 interface QuizMasterProps {
     onBack: () => void;
@@ -47,7 +47,7 @@ export const QuizMaster: React.FC<QuizMasterProps> = ({ onBack }) => {
         let totalScore = 0;
         const unitScoreMap: Record<number, { unitName: string; totalFields: number; correctFields: number }> = {};
 
-        mcqData.forEach((q, index) => {
+        mcqData.forEach((q) => {
             // Create unit entry if empty
             if (!unitScoreMap[q.unitId]) {
                 unitScoreMap[q.unitId] = { unitName: q.unitName, totalFields: 0, correctFields: 0 };
@@ -85,53 +85,60 @@ export const QuizMaster: React.FC<QuizMasterProps> = ({ onBack }) => {
 
     if (currentQuestionIndex === -1) {
         return (
-            <div className="max-w-4xl mx-auto py-12 px-6 animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <div className="max-w-5xl mx-auto py-12 px-6 animate-in fade-in slide-in-from-bottom-8 duration-1000">
                 <button
                     onClick={onBack}
-                    className="text-xs font-black text-purple-700 hover:text-purple-900 transition-colors flex items-center gap-1 mb-8 uppercase tracking-widest"
+                    className="group text-[10px] font-black text-slate-500 hover:text-brand-emerald transition-all flex items-center gap-2 mb-12 uppercase tracking-[0.4em]"
                 >
-                    <ChevronRight className="w-4 h-4 rotate-180" /> Back to Dashboard
+                    <ChevronRight size={14} className="rotate-180 group-hover:-translate-x-1 transition-transform" /> 
+                    Return to Mission Hub
                 </button>
 
-                <div className="bg-white rounded-3xl p-10 md:p-14 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col items-center text-center relative overflow-hidden">
-                    {/* Decorative Blooms */}
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-purple-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2" />
-                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-100 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2" />
+                <div className="bg-white/[0.02] rounded-[4rem] p-12 md:p-20 border border-white/5 flex flex-col items-center text-center relative overflow-hidden backdrop-blur-3xl shadow-2xl group">
+                    {/* Background Gradients */}
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-brand-emerald/10 rounded-full blur-[100px] -mr-32 -mt-32 opacity-50 group-hover:opacity-100 transition-opacity duration-1000" />
+                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-amber/10 rounded-full blur-[100px] -ml-32 -mb-32 opacity-50 group-hover:opacity-100 transition-opacity duration-1000" />
 
-                    <div className="relative z-10">
-                        <div className="w-20 h-20 bg-purple-100 text-purple-700 rounded-2xl flex items-center justify-center mb-8 mx-auto shadow-inner">
-                            <BrainCircuit className="w-10 h-10" />
+                    <div className="relative z-10 w-full">
+                        <div className="w-24 h-24 bg-brand-emerald/10 text-brand-emerald rounded-3xl flex items-center justify-center mb-10 mx-auto border border-brand-emerald/20 shadow-glow-emerald/5 group-hover:scale-110 transition-transform duration-700">
+                            <BrainCircuit size={48} />
                         </div>
 
-                        <h1 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight mb-4">
-                            Ultimate MCQ Challenge
+                        <span className="text-[10px] font-black text-brand-emerald uppercase tracking-[0.5em] mb-4 block">End-to-End Diagnostic</span>
+                        <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-8 uppercase italic selection:bg-brand-emerald selection:text-brand-slate">
+                            Universal <span className="text-brand-emerald">Logic</span> Engine
                         </h1>
-                        <p className="text-xl text-gray-500 font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
-                            Test your knowledge across the entire CBSE Class 12 Business Studies curriculum. We have assembled all {mcqData.length} multiple choice questions.
+                        <p className="text-xl text-slate-400 font-medium max-w-2xl mx-auto mb-16 leading-relaxed italic uppercase tracking-tight">
+                            Execute a forensic assessment across the entire Business Studies domain. <span className="text-brand-amber">{mcqData.length} Neural Nodes</span> await analysis.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-                            <div className="flex items-center gap-3 bg-gray-50 px-6 py-4 rounded-xl">
-                                <Target className="w-6 h-6 text-emerald-500" />
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto mb-16">
+                            <div className="flex items-center gap-5 bg-white/5 px-8 py-6 rounded-3xl border border-white/5 hover:border-brand-emerald/30 transition-all group/item">
+                                <div className="p-3 bg-brand-emerald/10 rounded-xl text-brand-emerald">
+                                   <Target size={24} />
+                                </div>
                                 <div className="text-left">
-                                    <div className="text-sm text-gray-500 font-bold uppercase tracking-wider">Total Questions</div>
-                                    <div className="text-2xl font-black text-gray-900">{mcqData.length}</div>
+                                    <div className="text-[10px] text-slate-500 font-black uppercase tracking-widest">Target Resolution</div>
+                                    <div className="text-3xl font-black text-white italic tracking-tighter">{mcqData.length} NODES</div>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-3 bg-gray-50 px-6 py-4 rounded-xl">
-                                <Activity className="w-6 h-6 text-blue-500" />
+                            <div className="flex items-center gap-5 bg-white/5 px-8 py-6 rounded-3xl border border-white/5 hover:border-brand-amber/30 transition-all group/item">
+                                <div className="p-3 bg-brand-amber/10 rounded-xl text-brand-amber">
+                                   <Activity size={24} />
+                                </div>
                                 <div className="text-left">
-                                    <div className="text-sm text-gray-500 font-bold uppercase tracking-wider">Real-time Analytics</div>
-                                    <div className="text-2xl font-black text-gray-900">Unit-wise</div>
+                                    <div className="text-[10px] text-slate-500 font-black uppercase tracking-widest">Diagnostic Stream</div>
+                                    <div className="text-3xl font-black text-white italic tracking-tighter">REAL-TIME</div>
                                 </div>
                             </div>
                         </div>
 
                         <button
                             onClick={handleStartQuiz}
-                            className="bg-purple-700 hover:bg-purple-800 text-white font-bold text-lg px-12 py-5 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 w-full sm:w-auto"
+                            className="group relative bg-brand-emerald hover:bg-white text-brand-slate font-black text-sm uppercase tracking-[0.3em] px-16 py-7 rounded-[2.5rem] shadow-glow-emerald/20 hover:shadow-glow-emerald/40 transition-all transform hover:-translate-y-2 active:scale-95 flex items-center gap-4 mx-auto"
                         >
-                            Start Full Mock Test
+                            Initialize Final Protocol
+                            <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                         </button>
                     </div>
                 </div>
@@ -140,18 +147,26 @@ export const QuizMaster: React.FC<QuizMasterProps> = ({ onBack }) => {
     }
 
     return (
-        <div className="max-w-3xl mx-auto py-8 px-4 animate-in fade-in">
-            {/* Progress Bar */}
-            <div className="mb-8">
-                <div className="flex justify-between text-sm font-bold text-gray-500 uppercase tracking-widest mb-3">
-                    <span>Question {currentQuestionIndex + 1} of {mcqData.length}</span>
-                    <span className="text-purple-700">{Math.round((currentQuestionIndex / mcqData.length) * 100)}% Complete</span>
+        <div className="max-w-4xl mx-auto py-12 px-6 animate-in fade-in duration-1000">
+            {/* High-Performance Progress Bar */}
+            <div className="mb-16 space-y-4">
+                <div className="flex justify-between items-end">
+                    <div className="flex flex-col">
+                       <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Synapse Progress</span>
+                       <span className="text-xs font-black text-white mt-1 uppercase italic">{currentQuestionIndex + 1} / {mcqData.length} Nodes Resolved</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-4 py-1.5 bg-brand-emerald/10 border border-brand-emerald/20 rounded-full">
+                       <Cpu size={12} className="text-brand-emerald" />
+                       <span className="text-[10px] font-black text-brand-emerald uppercase tracking-widest">{Math.round((currentQuestionIndex / mcqData.length) * 100)}% EFFICIENCY</span>
+                    </div>
                 </div>
-                <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
+                <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
                     <div
-                        className="h-full bg-purple-600 transition-all duration-500 ease-out"
+                        className="h-full bg-brand-emerald shadow-glow-emerald transition-all duration-700 ease-out relative"
                         style={{ width: `${((currentQuestionIndex) / mcqData.length) * 100}%` }}
-                    />
+                    >
+                       <div className="absolute inset-0 bg-white/20 animate-pulse" />
+                    </div>
                 </div>
             </div>
 

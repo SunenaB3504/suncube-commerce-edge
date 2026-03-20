@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { getAllNonMCQs, NonMCQWithUnit } from '../../utils/nonMcqAggregator';
-import { ChevronRight, BrainCircuit, BookType, Layers } from 'lucide-react';
+import { ChevronRight, BrainCircuit, BookType, Layers, Sparkles, ArrowRight, ShieldCheck, Microscope } from 'lucide-react';
 import { NonMCQViewer } from './NonMCQViewer';
 
 interface NonMCQMasterProps {
@@ -30,53 +30,55 @@ export const NonMCQMaster: React.FC<NonMCQMasterProps> = ({ onBack }) => {
     }
 
     return (
-        <div className="max-w-4xl mx-auto py-12 px-6 animate-in fade-in slide-in-from-bottom-8 duration-700">
+        <div className="max-w-5xl mx-auto py-12 px-6 animate-in fade-in slide-in-from-bottom-8 duration-1000">
             <button
                 onClick={onBack}
-                className="text-xs font-black text-teal-700 hover:text-teal-900 transition-colors flex items-center gap-1 mb-8 uppercase tracking-widest"
+                className="group text-[10px] font-black text-slate-500 hover:text-brand-emerald transition-all flex items-center gap-2 mb-12 uppercase tracking-[0.4em]"
             >
-                <ChevronRight className="w-4 h-4 rotate-180" /> Back to Dashboard
+                <ChevronRight size={14} className="rotate-180 group-hover:-translate-x-1 transition-transform" /> 
+                Return to Mission Hub
             </button>
 
-            <div className="bg-white rounded-3xl p-10 md:p-14 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col items-center text-center relative overflow-hidden">
-                {/* Decorative Blooms */}
-                <div className="absolute top-0 left-0 w-64 h-64 bg-teal-100 rounded-full blur-3xl opacity-40 -translate-y-1/2 -translate-x-1/2" />
-                <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-40 translate-y-1/2 translate-x-1/2" />
+            <div className="bg-white/[0.02] rounded-[4rem] p-12 md:p-20 border border-white/5 flex flex-col items-center text-center relative overflow-hidden backdrop-blur-3xl shadow-2xl group">
+                {/* Background Gradients */}
+                <div className="absolute top-0 left-0 w-96 h-96 bg-brand-emerald/10 rounded-full blur-[100px] -ml-32 -mt-32 opacity-50 group-hover:opacity-100 transition-opacity duration-1000" />
+                <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-amber/10 rounded-full blur-[100px] -mr-32 -mb-32 opacity-50 group-hover:opacity-100 transition-opacity duration-1000" />
 
                 <div className="relative z-10 w-full">
-                    <div className="w-20 h-20 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center mb-8 mx-auto shadow-inner border border-teal-100">
-                        <BookType className="w-10 h-10" />
+                    <div className="w-24 h-24 bg-brand-emerald/10 text-brand-emerald rounded-3xl flex items-center justify-center mb-10 mx-auto border border-brand-emerald/20 shadow-glow-emerald/5 group-hover:scale-110 transition-transform duration-700">
+                        <Microscope size={48} />
                     </div>
 
-                    <h1 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight mb-4">
-                        Subjective Mastery
+                    <span className="text-[10px] font-black text-brand-emerald uppercase tracking-[0.5em] mb-4 block">Case Study Laboratory</span>
+                    <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-8 uppercase italic selection:bg-brand-emerald selection:text-brand-slate">
+                        Subjective <span className="text-brand-emerald">Mastery</span>
                     </h1>
-                    <p className="text-xl text-gray-500 font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
-                        Master the art of scoring in Long & Short Answer questions. We have compiled all <strong className="text-teal-700">{nonMcqData.length}</strong> subjective questions across the curriculum with detailed AI Strategies.
+                    <p className="text-xl text-slate-400 font-medium max-w-2xl mx-auto mb-16 leading-relaxed italic uppercase tracking-tight">
+                        Deconstruct complex business scenarios. Master the art of scoring in Long & Short Answer questions with <span className="text-brand-emerald">{nonMcqData.length}</span> curated Forensic Analysis nodes.
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
                         {/* Batch 1 Card */}
                         <div
                             onClick={() => setActiveBatch('batch1')}
-                            className="bg-white border-2 border-gray-100 hover:border-teal-400 rounded-2xl p-6 cursor-pointer transition-all hover:shadow-xl group text-left relative overflow-hidden"
+                            className="group/card relative bg-white/[0.03] border border-white/5 hover:border-brand-emerald/40 rounded-[2.5rem] p-10 cursor-pointer transition-all hover:shadow-glow-emerald/10 overflow-hidden text-left"
                         >
-                            <div className="absolute right-0 top-0 w-24 h-24 bg-teal-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110" />
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="p-2 bg-teal-100 text-teal-700 rounded-lg">
-                                    <Layers className="w-5 h-5" />
+                            <div className="absolute right-0 top-0 w-32 h-32 bg-brand-emerald/5 rounded-bl-[4rem] -z-10 transition-all group-hover/card:scale-110 group-hover/card:bg-brand-emerald/10" />
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="p-3 bg-brand-emerald/10 text-brand-emerald rounded-xl border border-brand-emerald/20">
+                                    <Layers size={24} />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900">Batch 1</h3>
+                                <h3 className="text-2xl font-black text-white italic uppercase tracking-tighter">Alpha Batch</h3>
                             </div>
-                            <p className="text-gray-500 font-medium text-sm mb-4">
-                                First half of the curriculum covering foundational theory and applications.
+                            <p className="text-slate-400 font-medium text-sm mb-8 leading-relaxed uppercase tracking-tight italic">
+                                Foundational theory. Deconstruct management principles and organizational structures.
                             </p>
-                            <div className="flex items-center justify-between mt-auto">
-                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-gray-100 text-gray-800">
-                                    {batch1.length} Questions
-                                </span>
-                                <div className="text-teal-600 opacity-0 group-hover:opacity-100 transition-opacity flex items-center text-sm font-bold">
-                                    Start <ChevronRight className="w-4 h-4 ml-1" />
+                            <div className="flex items-center justify-between">
+                                <div className="px-4 py-1.5 bg-white/5 rounded-full border border-white/10 text-[10px] font-black text-slate-500 uppercase tracking-widest group-hover/card:border-brand-emerald/30 group-hover/card:text-brand-emerald transition-colors">
+                                    {batch1.length} ANALYSIS NODES
+                                </div>
+                                <div className="text-brand-emerald opacity-0 group-hover/card:opacity-100 transition-all flex items-center text-[10px] font-black uppercase tracking-widest translate-x-4 group-hover/card:translate-x-0">
+                                    Initialize <ArrowRight size={14} className="ml-2" />
                                 </div>
                             </div>
                         </div>
@@ -84,24 +86,24 @@ export const NonMCQMaster: React.FC<NonMCQMasterProps> = ({ onBack }) => {
                         {/* Batch 2 Card */}
                         <div
                             onClick={() => setActiveBatch('batch2')}
-                            className="bg-white border-2 border-gray-100 hover:border-blue-400 rounded-2xl p-6 cursor-pointer transition-all hover:shadow-xl group text-left relative overflow-hidden"
+                            className="group/card relative bg-white/[0.03] border border-white/5 hover:border-brand-amber/40 rounded-[2.5rem] p-10 cursor-pointer transition-all hover:shadow-glow-amber/10 overflow-hidden text-left"
                         >
-                            <div className="absolute right-0 top-0 w-24 h-24 bg-blue-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110" />
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="p-2 bg-blue-100 text-blue-700 rounded-lg">
-                                    <BrainCircuit className="w-5 h-5" />
+                            <div className="absolute right-0 top-0 w-32 h-32 bg-brand-amber/5 rounded-bl-[4rem] -z-10 transition-all group-hover/card:scale-110 group-hover/card:bg-brand-amber/10" />
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="p-3 bg-brand-amber/10 text-brand-amber rounded-xl border border-brand-amber/20">
+                                    <BrainCircuit size={24} />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900">Batch 2</h3>
+                                <h3 className="text-2xl font-black text-white italic uppercase tracking-tighter">Omega Batch</h3>
                             </div>
-                            <p className="text-gray-500 font-medium text-sm mb-4">
-                                Second half emphasizing advanced concepts and case-based analysis.
+                            <p className="text-slate-400 font-medium text-sm mb-8 leading-relaxed uppercase tracking-tight italic">
+                                Advanced dynamics. Strategic analysis of financial markets and consumer psychology.
                             </p>
-                            <div className="flex items-center justify-between mt-auto">
-                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-gray-100 text-gray-800">
-                                    {batch2.length} Questions
-                                </span>
-                                <div className="text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity flex items-center text-sm font-bold">
-                                    Start <ChevronRight className="w-4 h-4 ml-1" />
+                            <div className="flex items-center justify-between">
+                                <div className="px-4 py-1.5 bg-white/5 rounded-full border border-white/10 text-[10px] font-black text-slate-500 uppercase tracking-widest group-hover/card:border-brand-amber/30 group-hover/card:text-brand-amber transition-colors">
+                                    {batch2.length} ANALYSIS NODES
+                                </div>
+                                <div className="text-brand-amber opacity-0 group-hover/card:opacity-100 transition-all flex items-center text-[10px] font-black uppercase tracking-widest translate-x-4 group-hover/card:translate-x-0">
+                                    Initialize <ArrowRight size={14} className="ml-2" />
                                 </div>
                             </div>
                         </div>
