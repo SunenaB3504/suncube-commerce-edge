@@ -1,137 +1,157 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useAppContext } from '../store/AppContext';
+import { Zap, ChevronLeft, RotateCcw, ShieldCheck, Flame, Sparkles, AlertCircle, Rocket } from 'lucide-react';
 import { getSubjectById, getChapterById } from '../config/subjects.config';
+import { useAppContext } from '../store/AppContext';
 
 const SpeedScrollFlashcards = () => {
     const { subjectId, chapterId } = useParams();
     const navigate = useNavigate();
-    const { loadChapterData } = useAppContext();
-
+    const { recordXP, loadChapterData } = useAppContext();
+    
     const [flashcards, setFlashcards] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const containerRef = useRef(null);
+    const [showAnswer, setShowAnswer] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    const [sessionXP, setSessionXP] = useState(0);
 
     const subject = getSubjectById(subjectId);
     const chapter = getChapterById(subjectId, chapterId);
 
     useEffect(() => {
         const fetchContent = async () => {
-            setLoading(true);
+            setIsLoading(true);
             const data = await loadChapterData(subjectId, chapterId);
             if (data && data.flashcards) {
                 setFlashcards(data.flashcards);
             }
-            // Trigger MathJax typesetting
-            if (window.MathJax) {
-                setTimeout(() => window.MathJax.typesetPromise(), 500);
-            }
-            setLoading(false);
+            setIsLoading(false);
         };
         fetchContent();
     }, [subjectId, chapterId, loadChapterData]);
 
-    const handleScroll = () => {
-        if (!containerRef.current) return;
-        const scrollPos = containerRef.current.scrollTop;
-        const cardHeight = window.innerHeight - 64; // Header height
-        const newIndex = Math.round(scrollPos / cardHeight);
-        if (newIndex !== currentIndex && newIndex >= 0 && newIndex < flashcards.length) {
-            setCurrentIndex(newIndex);
+    const handleNext = useCallback(() => {
+        if (currentIndex < flashcards.length - 1) {
+            setCurrentIndex(prev => prev + 1);
+            setShowAnswer(false);
+            const xpGain = 5;
+            setSessionXP(prev => prev + xpGain);
+            recordXP(xpGain);
         }
-    };
+    }, [currentIndex, flashcards.length, recordXP]);
 
-    if (loading) return <div className="h-screen flex items-center justify-center text-slate-400 font-medium">Loading Speed-Scroll...</div>;
+    if (isLoading) return (
+        <div className="h-screen bg-brand-slate flex flex-col items-center justify-center gap-6">
+            <div className="w-16 h-16 border-4 border-brand-amber/20 border-t-brand-amber rounded-full animate-spin"></div>
+            <div className="text-[10px] font-black text-slate-500 uppercase tracking-[0.5em] animate-pulse">Arming Rapid-Fire Logic...</div>
+        </div>
+    );
 
-    if (!flashcards || flashcards.length === 0) {
-        return (
-            <div className="container mx-auto px-4 py-32 text-center">
-                <h1 className="text-2xl font-bold text-slate-800 mb-4">No flashcards available for this chapter</h1>
-                <button onClick={() => navigate(-1)} className="text-blue-600 hover:underline">Go Back</button>
-            </div>
-        );
-    }
+    if (!flashcards || flashcards.length === 0) return (
+        <div className="h-screen bg-brand-slate flex flex-col items-center justify-center p-8 text-center">
+            <AlertCircle size={64} className="text-brand-rose mb-6 opacity-20" />
+            <h2 className="text-2xl font-black text-white italic uppercase tracking-tighter mb-4">No Neural Data Found</h2>
+            <button onClick={() => navigate(-1)} className="px-8 py-3 bg-white/5 text-slate-400 rounded-2xl hover:bg-white/10 transition-all font-black text-[10px] uppercase tracking-widest border border-white/5 italic">Return to Base</button>
+        </div>
+    );
+
+    const currentCard = flashcards[currentIndex];
+    const progress = ((currentIndex + 1) / flashcards.length) * 100;
 
     return (
-        <div className="h-screen bg-slate-950 flex flex-col overflow-hidden text-white">
-            <header className="h-16 border-b border-white/10 flex items-center justify-between px-6 bg-slate-950 shrink-0 z-50">
-                <div className="flex items-center gap-4">
-                    <button onClick={() => navigate(-1)} className="text-white/40 hover:text-white transition-colors">✕</button>
-                    <div className="h-4 w-px bg-white/10"></div>
-                    <div className="flex flex-col">
-                        <span className="text-[10px] font-black text-orange-500 uppercase tracking-widest">Speed Scroll Mode</span>
-                        <h2 className="font-bold text-sm truncate max-w-[150px]">{chapter.name}</h2>
+        <div className="min-h-screen bg-brand-slate text-slate-100 flex flex-col selection:bg-brand-amber/30">
+            <header className="h-20 border-b border-white/5 flex items-center justify-between px-8 bg-brand-slate/50 backdrop-blur-xl shrink-0 z-50">
+                <div className="flex items-center gap-6">
+                    <button 
+                        onClick={() => navigate(-1)} 
+                        className="w-10 h-10 bg-white/5 hover:bg-brand-amber/20 text-slate-500 hover:text-brand-amber rounded-xl flex items-center justify-center transition-all border border-white/5 active:scale-90"
+                    >
+                        <ChevronLeft size={18} />
+                    </button>
+                    <div>
+                        <h2 className="font-black text-white uppercase text-[10px] tracking-[0.3em] italic">{chapter?.name}</h2>
+                        <p className="text-[8px] font-black text-slate-500 uppercase tracking-[0.5em] italic">{subject?.name} // SPEED-SCROLL</p>
                     </div>
                 </div>
 
-                <div className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-black text-white/60 text-center uppercase tracking-widest">
-                    {currentIndex + 1} / {flashcards.length}
-                </div>
-
-                <div className="flex items-center gap-3">
-                     <div className="hidden sm:flex flex-col items-end mr-4">
-                        <span className="text-[9px] font-bold text-white/30 uppercase tracking-tighter">Latency</span>
-                        <span className="text-[10px] font-black text-green-400 uppercase tracking-widest">⚡ ZERO</span>
-                     </div>
+                <div className="flex items-center gap-8">
+                    <div className="flex items-center gap-3 px-6 py-2 bg-white/5 border border-white/10 rounded-2xl">
+                        <Flame size={16} className="text-brand-amber animate-pulse" />
+                        <span className="text-sm font-black text-white italic tracking-tighter">+{sessionXP} XP</span>
+                    </div>
                 </div>
             </header>
 
-            <main 
-                ref={containerRef}
-                onScroll={handleScroll}
-                className="flex-grow overflow-y-scroll snap-y snap-mandatory scrollbar-hide"
-            >
-                {flashcards.map((card, idx) => (
-                    <FlashcardSlide 
-                        key={idx} 
-                        card={card} 
-                        idx={idx} 
-                        total={flashcards.length}
-                    />
-                ))}
-            </main>
-            <style dangerouslySetInnerHTML={{ __html: `
-                .scrollbar-hide::-webkit-scrollbar { display: none; }
-                .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-            `}} />
-        </div>
-    );
-};
-
-const FlashcardSlide = ({ card, idx, total, ref }) => {
-    return (
-        <div 
-            ref={ref}
-            className="h-[calc(100vh-64px)] w-full flex flex-col items-center justify-center p-8 snap-start relative border-b border-white/5"
-        >
-            <div className="w-full max-w-2xl bg-white/5 rounded-[3rem] p-12 lg:p-16 border border-white/10 backdrop-blur-xl shadow-2xl relative group overflow-hidden transition-all hover:bg-white/[0.07]">
-                {/* Accent Gradient */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-500 opacity-50"></div>
-                
-                <div className="text-[11px] font-black text-orange-500 uppercase tracking-[0.3em] mb-10 bg-orange-500/10 inline-block px-3 py-1 rounded">Flash Fact</div>
-                
-                <h2 className="text-3xl lg:text-4xl font-black text-white mb-12 leading-tight tracking-tight">
-                    {card.term || card.question}
-                </h2>
-
-                <div className="bg-white/5 rounded-3xl p-8 border border-white/5 leading-relaxed text-slate-300 text-lg lg:text-xl shadow-inner italic">
-                    {card.definition || card.answer}
-                </div>
-
-                {card.example && (
-                    <div className="mt-8 text-sm text-slate-500 border-l-2 border-slate-700 pl-4 py-1 font-medium">
-                        <span className="text-[10px] font-black text-slate-400 block mb-1 uppercase tracking-widest">Example</span>
-                        {card.example}
+            <main className="flex-grow flex flex-col items-center justify-center p-8 lg:p-12">
+                <div className="w-full max-w-2xl">
+                    <div className="mb-12">
+                        <div className="flex justify-between items-end mb-4">
+                            <div className="flex items-center gap-3">
+                                <div className="w-2 h-2 bg-brand-amber rounded-full animate-pulse"></div>
+                                <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] italic">NEURAL STATUS: {currentIndex + 1} / {flashcards.length}</span>
+                            </div>
+                            <span className="text-lg font-black text-white italic tracking-tighter">{Math.round(progress)}%</span>
+                        </div>
+                        <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
+                            <div 
+                                className="h-full bg-brand-amber transition-all duration-500 shadow-glow-amber/50"
+                                style={{ width: `${progress}%` }}
+                            ></div>
+                        </div>
                     </div>
-                )}
 
-                {/* Nav Indicator */}
-                <div className="absolute right-8 bottom-8 flex flex-col items-center gap-2 opacity-20 group-hover:opacity-100 transition-opacity">
-                    <span className="text-[10px] font-black text-white uppercase tracking-widest rotate-90 origin-right translate-x-4">SWIPE</span>
-                    <div className="w-px h-12 bg-white/20"></div>
+                    <div 
+                        className="group perspective-1000 cursor-pointer"
+                        onClick={() => setShowAnswer(!showAnswer)}
+                    >
+                        <div className={`relative w-full h-[450px] transition-all duration-700 transform-style-3d ${showAnswer ? 'rotate-y-180' : ''}`}>
+                            <div className="absolute inset-0 backface-hidden bg-white/[0.03] border border-white/10 backdrop-blur-3xl rounded-[3rem] p-12 flex flex-col justify-center items-center text-center group-hover:bg-white/[0.05] transition-all overflow-hidden">
+                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-amber/20 to-transparent"></div>
+                                <Sparkles size={32} className="text-brand-amber/20 mb-10" />
+                                <div className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em] mb-4 italic">LOGIC UNIT</div>
+                                <h3 className="text-3xl lg:text-4xl font-black text-white leading-tight italic tracking-tighter">
+                                    {currentCard.term || currentCard.question}
+                                </h3>
+                                <div className="mt-12 text-[10px] font-black text-brand-amber uppercase tracking-[0.4em] animate-pulse italic">TAP TO REVEAL LOGIC</div>
+                            </div>
+
+                            <div className="absolute inset-0 backface-hidden rotate-y-180 bg-brand-emerald/5 border border-brand-emerald/20 backdrop-blur-3xl rounded-[3rem] p-12 flex flex-col justify-center items-center text-center overflow-hidden">
+                                <div className="absolute inset-0 bg-gradient-to-br from-brand-emerald/10 to-transparent opacity-30"></div>
+                                <ShieldCheck size={32} className="text-brand-emerald mb-10" />
+                                <div className="text-[10px] font-black text-brand-emerald uppercase tracking-[0.4em] mb-4 italic">NEURAL SECURED</div>
+                                <p className="text-2xl lg:text-3xl font-black text-white leading-snug italic tracking-tighter relative z-10">
+                                    {currentCard.definition || currentCard.answer}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="mt-16 flex items-center justify-center gap-8">
+                        {currentIndex < flashcards.length - 1 ? (
+                            <button 
+                                onClick={(e) => { e.stopPropagation(); handleNext(); }}
+                                className="group flex items-center gap-4 px-12 py-6 bg-brand-amber hover:bg-white text-brand-slate rounded-[2.5rem] font-black text-xs uppercase tracking-[0.4em] transition-all shadow-glow-amber/20 hover:shadow-glow-amber-strong active:scale-95 italic"
+                            >
+                                SECURE & NEXT <Zap size={14} className="group-hover:scale-125 transition-transform" />
+                            </button>
+                        ) : (
+                            <button 
+                                onClick={() => navigate(`/subject/${subjectId}`)}
+                                className="group flex items-center gap-4 px-12 py-6 bg-brand-emerald hover:bg-white text-brand-slate rounded-[2.5rem] font-black text-xs uppercase tracking-[0.4em] transition-all shadow-glow-emerald/20 hover:shadow-glow-emerald-strong active:scale-95 italic"
+                            >
+                                MISSION COMPLETE <Rocket size={14} className="group-hover:scale-125 transition-transform" />
+                            </button>
+                        )}
+                    </div>
+                    
+                    <button 
+                        onClick={(e) => { e.stopPropagation(); setCurrentIndex(0); setShowAnswer(false); setSessionXP(0); }}
+                        className="mt-8 mx-auto flex items-center gap-2 text-slate-600 hover:text-brand-rose transition-all text-[10px] font-black uppercase tracking-widest italic"
+                    >
+                        <RotateCcw size={12} /> RE-INITIALIZE SESSION
+                    </button>
                 </div>
-            </div>
+            </main>
         </div>
     );
 };

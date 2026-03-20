@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { LayoutGrid, BarChart3, FlaskConical, Flame, Target, Rocket, Menu, X, Home as HomeIcon, ChevronRight } from 'lucide-react';
 import Home from './pages/Home.jsx';
 import SubjectDashboard from './pages/SubjectDashboard.jsx';
 import QuizPage from './pages/QuizPage.jsx';
@@ -21,80 +22,96 @@ const App = () => {
     const closeMobileMenu = () => setMobileMenuOpen(false);
 
     return (
-        <div className="min-h-screen flex flex-col transition-colors duration-300">
+        <div className="min-h-screen flex flex-col bg-brand-slate text-slate-100 selection:bg-brand-amber/30 selection:text-white">
             {/* Navigation */}
-            <nav className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300">
-                <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-                    <div className="flex items-center gap-6">
-                        <a href="/suncube-commerce-edge/" className="text-slate-500 hover:text-brand-amber transition-colors" title="Back to Suncube Hub">
-                            🏠
+            <nav className="fixed top-0 left-0 right-0 z-50 bg-brand-slate/80 backdrop-blur-xl border-b border-white/5 h-20 flex items-center shadow-2xl">
+                <div className="container mx-auto px-6 flex items-center justify-between">
+                    <div className="flex items-center gap-8">
+                        <a 
+                            href="/suncube-commerce-edge/" 
+                            className="w-10 h-10 bg-white/5 hover:bg-white text-slate-400 hover:text-brand-slate rounded-xl flex items-center justify-center transition-all border border-white/5 active:scale-95 group"
+                            title="Abort to Mission Hub"
+                        >
+                            <HomeIcon size={18} className="group-hover:rotate-[-10deg] transition-transform" />
                         </a>
-                        <Link to="/" className="flex items-center gap-2" onClick={closeMobileMenu}>
-                            <span className="text-2xl">🚀</span>
-                            <span className="text-xl font-black bg-gradient-to-r from-brand-amber to-amber-200 bg-clip-text text-transparent uppercase tracking-tight">
-                                Entrance Prep Pro
+                        <Link to="/" className="flex items-center gap-3 group" onClick={closeMobileMenu}>
+                            <div className="p-2 bg-brand-amber/10 rounded-xl group-hover:scale-110 transition-transform">
+                                <Rocket size={24} className="text-brand-amber" />
+                            </div>
+                            <span className="text-2xl font-black italic tracking-tighter uppercase text-white group-hover:text-brand-amber transition-colors">
+                                Alpha <span className="text-brand-amber">Prep</span>
                             </span>
                         </Link>
                     </div>
 
                     {/* Desktop Nav */}
-                    <div className="hidden md:flex items-center gap-6 text-sm font-bold uppercase tracking-widest text-slate-400">
-                        <Link to="/" className="hover:text-brand-amber transition-colors">Home</Link>
-                        <Link to="/analytics" className="flex items-center gap-1.5 hover:text-brand-amber transition-colors">
-                            <span>📊</span> Analytics
-                        </Link>
-                        <Link to="/mocks" className="px-4 py-2 bg-brand-amber text-slate-950 rounded-lg hover:bg-amber-300 transition-all font-black shadow-lg shadow-brand-amber/10">
-                            Mock Tests
-                        </Link>
-                        <div className="flex items-center gap-2 px-3 py-1 bg-brand-amber/10 text-brand-amber rounded-full border border-brand-amber/20 shadow-inner">
-                            <span className="text-lg">🔥</span>
-                            <span className="font-black">{streak} Day Streak</span>
-                        </div>
-                        <div className="flex items-center gap-1.5 px-3 py-1 bg-brand-emerald/10 text-brand-emerald rounded-full border border-brand-emerald/20 shadow-inner">
-                            <span>🎯</span>
-                            <span className="font-black">{cuetDays}d Left</span>
+                    <div className="hidden md:flex items-center gap-10">
+                        <nav className="flex items-center gap-8 text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">
+                            <Link to="/" className="hover:text-white transition-colors">Command Center</Link>
+                            <Link to="/analytics" className="hover:text-brand-indigo transition-colors flex items-center gap-2">
+                                <BarChart3 size={14} /> Performance Audit
+                            </Link>
+                        </nav>
+                        
+                        <div className="h-8 w-px bg-white/5 mx-2"></div>
+                        
+                        <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-2 px-4 py-1.5 bg-brand-amber/10 border border-brand-amber/20 rounded-full">
+                                <Flame size={14} className="text-brand-amber animate-pulse" />
+                                <span className="text-[10px] font-black text-brand-amber uppercase tracking-widest">{streak} DAY STREAK</span>
+                            </div>
+                            <div className="flex items-center gap-2 px-4 py-1.5 bg-brand-emerald/10 border border-brand-emerald/20 rounded-full">
+                                <Target size={14} className="text-brand-emerald" />
+                                <span className="text-[10px] font-black text-brand-emerald uppercase tracking-widest">{cuetDays}d TILL DEPLOY</span>
+                            </div>
+                            
+                            <Link 
+                                to="/mocks" 
+                                className="px-6 py-2.5 bg-brand-amber hover:bg-white text-brand-slate rounded-xl transition-all font-black text-[10px] uppercase tracking-[0.2em] shadow-glow-amber/20 hover:shadow-glow-amber/40 active:scale-95 flex items-center gap-2"
+                            >
+                                <FlaskConical size={14} /> Execute Mock
+                            </Link>
                         </div>
                     </div>
 
                     {/* Mobile Hamburger Button */}
                     <button
-                        className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg bg-white/5 border border-white/10 transition-colors gap-1"
+                        className="md:hidden w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex flex-col items-center justify-center gap-1.5 transition-all active:scale-95"
                         onClick={() => setMobileMenuOpen(prev => !prev)}
-                        aria-label="Toggle menu"
-                        aria-expanded={mobileMenuOpen}
                     >
-                        <span className={`block w-5 h-0.5 bg-brand-amber transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
-                        <span className={`block w-5 h-0.5 bg-brand-amber transition-all duration-300 ${mobileMenuOpen ? 'opacity-0 scale-x-0' : ''}`} />
-                        <span className={`block w-5 h-0.5 bg-brand-amber transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+                        {mobileMenuOpen ? <X size={24} className="text-brand-amber" /> : <Menu size={24} className="text-brand-amber" />}
                     </button>
                 </div>
 
                 {/* Mobile Slide-down Menu */}
-                <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'max-h-64 border-t border-slate-100 dark:border-slate-800' : 'max-h-0'}`}>
-                    <div className="container mx-auto px-4 py-3 flex flex-col gap-2 text-sm font-medium">
-                        <Link to="/" onClick={closeMobileMenu} className="py-2.5 px-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-brand-amber transition-colors flex items-center gap-2">
-                            🏠 <span>Home</span>
+                <div className={`fixed inset-0 top-20 bg-brand-slate/95 backdrop-blur-2xl z-[49] md:hidden transition-all duration-500 ease-in-out ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none translate-y-4'}`}>
+                    <div className="container mx-auto px-6 py-12 flex flex-col gap-6">
+                        <Link to="/" onClick={closeMobileMenu} className="p-6 rounded-3xl bg-white/5 border border-white/5 text-white font-black text-sm uppercase tracking-widest flex items-center justify-between group active:bg-white/10">
+                            Command Center <ChevronRight size={18} className="text-brand-amber group-hover:translate-x-2 transition-transform" />
                         </Link>
-                        <Link to="/analytics" onClick={closeMobileMenu} className="py-2.5 px-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-brand-amber transition-colors flex items-center gap-2">
-                            📊 <span>Analytics</span>
+                        <Link to="/analytics" onClick={closeMobileMenu} className="p-6 rounded-3xl bg-white/5 border border-white/5 text-white font-black text-sm uppercase tracking-widest flex items-center justify-between group active:bg-white/10">
+                            Performance Audit <ChevronRight size={18} className="text-brand-indigo group-hover:translate-x-2 transition-transform" />
                         </Link>
-                        <Link to="/mocks" onClick={closeMobileMenu} className="py-2.5 px-3 rounded-xl bg-brand-amber text-slate-950 font-black hover:bg-amber-300 transition-colors flex items-center justify-center gap-2 shadow-lg">
-                            🧪 <span>Mock Tests</span>
+                        <Link to="/mocks" onClick={closeMobileMenu} className="p-8 rounded-[2.5rem] bg-brand-amber text-brand-slate font-black text-sm uppercase tracking-[0.2em] flex items-center justify-center gap-3 shadow-glow-amber/20 active:scale-95 transition-all">
+                            <FlaskConical size={20} /> Execute Mock Deployment
                         </Link>
-                        <div className="py-2.5 px-3 rounded-xl bg-brand-amber/10 text-brand-amber border border-brand-amber/20 flex items-center gap-2">
-                            <span className="text-base">🔥</span>
-                            <span className="font-black">{streak} Day Streak</span>
-                        </div>
-                        <div className="py-2.5 px-3 rounded-xl bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20 flex items-center gap-2">
-                            <span>🎯</span>
-                            <span className="font-black">CUET: {cuetDays} days left</span>
+                        
+                        <div className="grid grid-cols-2 gap-4 mt-6">
+                            <div className="p-6 rounded-3xl bg-brand-amber/5 border border-brand-amber/10 flex flex-col items-center gap-3">
+                                <Flame size={24} className="text-brand-amber animate-pulse" />
+                                <span className="text-[10px] font-black text-brand-amber uppercase tracking-widest text-center">{streak} DAY STREAK</span>
+                            </div>
+                            <div className="p-6 rounded-3xl bg-brand-emerald/5 border border-brand-emerald/10 flex flex-col items-center gap-3">
+                                <Target size={24} className="text-brand-emerald" />
+                                <span className="text-[10px] font-black text-brand-emerald uppercase tracking-widest text-center">{cuetDays}d TILL DEPLOY</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </nav>
 
             {/* Main Content */}
-            <main className="flex-grow">
+            <main className="flex-grow pt-20">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/subject/:subjectId" element={<SubjectDashboard />} />
@@ -110,34 +127,50 @@ const App = () => {
             </main>
 
             {/* Footer */}
-            <footer className="bg-brand-slate border-t border-white/5 py-12 transition-colors duration-300 overflow-hidden relative">
-                <div className="absolute -bottom-20 -right-20 opacity-5 pointer-events-none">
-                    <span className="text-[200px] font-black uppercase tracking-tighter text-white">SUNCUBE</span>
+            <footer className="bg-brand-slate border-t border-white/5 py-20 overflow-hidden relative mt-auto">
+                <div className="absolute -bottom-20 -right-20 opacity-5 pointer-events-none select-none">
+                    <span className="text-[250px] font-black uppercase tracking-tighter text-white italic">ALPHA</span>
                 </div>
-                <div className="container mx-auto px-4 relative z-10">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left mb-8">
+                <div className="container mx-auto px-6 relative z-10">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center md:text-left mb-16">
+                        <div className="space-y-6">
+                            <div className="flex items-center gap-3 justify-center md:justify-start">
+                                <div className="p-2 bg-brand-amber/10 rounded-xl">
+                                    <Rocket size={20} className="text-brand-amber" />
+                                </div>
+                                <span className="text-xl font-black italic tracking-tighter uppercase text-white">
+                                    Alpha <span className="text-brand-amber">Prep</span>
+                                </span>
+                            </div>
+                            <p className="text-xs font-medium text-slate-500 leading-relaxed uppercase tracking-tight italic">
+                                High-performance speed-logic engine for CUET & MH-CET aspirants. Engineered for cognitive dominance.
+                            </p>
+                        </div>
+                        
                         <div>
-                            <h4 className="font-black uppercase text-[10px] tracking-widest text-brand-amber mb-4">Quick Protocols</h4>
-                            <div className="flex flex-col gap-2 text-sm font-bold text-slate-400">
-                                <Link to="/" className="hover:text-brand-amber transition-colors">Home Base</Link>
-                                <Link to="/analytics" className="hover:text-brand-amber transition-colors">Performance Audit</Link>
-                                <Link to="/mocks" className="hover:text-brand-amber transition-colors">Mock Deployments</Link>
+                            <h4 className="font-black uppercase text-[10px] tracking-[0.4em] text-brand-amber mb-8 italic">Quick Protocols</h4>
+                            <div className="flex flex-col gap-4 text-[10px] font-black uppercase tracking-widest text-slate-500">
+                                <Link to="/" className="hover:text-white transition-colors">Command Center</Link>
+                                <Link to="/analytics" className="hover:text-brand-indigo transition-colors underline decoration-brand-indigo/30 underline-offset-8">Performance Audit</Link>
+                                <Link to="/mocks" className="hover:text-brand-amber transition-colors underline decoration-brand-amber/30 underline-offset-8">Mock Deployments</Link>
                             </div>
                         </div>
+                        
                         <div>
-                            <h4 className="font-black uppercase text-[10px] tracking-widest text-brand-emerald mb-4">Exam Target</h4>
-                            <div className="text-sm text-slate-400">
-                                <div className="text-2xl mb-2">🎯</div>
-                                <div className="font-black text-white text-lg tracking-tight uppercase">CUET UG 2026</div>
-                                <div>Standard Board Calendar</div>
-                                <div className="mt-3 inline-block px-4 py-1.5 bg-brand-emerald/10 text-brand-emerald rounded-full text-[10px] font-black uppercase tracking-widest border border-brand-emerald/20 shadow-xl">
+                            <h4 className="font-black uppercase text-[10px] tracking-[0.4em] text-brand-emerald mb-8 italic">Mission Timeline</h4>
+                            <div className="bg-white/[0.02] border border-white/5 rounded-3xl p-6 relative overflow-hidden group">
+                                <div className="absolute -right-4 -top-4 text-4xl opacity-10 group-hover:scale-125 transition-transform duration-700">🎯</div>
+                                <div className="font-black text-white text-lg tracking-tight uppercase italic mb-1">CUET UG 2026</div>
+                                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4">Standard Board Calendar</div>
+                                <div className="inline-block px-4 py-1.5 bg-brand-emerald/10 text-brand-emerald rounded-full text-[10px] font-black uppercase tracking-widest border border-brand-emerald/20 shadow-glow-emerald/10 italic">
                                     {cuetDays} Days Remaining
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="text-center text-slate-500 text-[10px] font-black uppercase tracking-widest border-t border-white/5 pt-8">
-                        &copy; 2026 Suncube Arts Prep. Optimized for CUET &amp; Boards.
+                    <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 text-[10px] font-black uppercase tracking-[0.5em] italic">
+                        <span>&copy; 2026 SUNCUBE ARTS PREP</span>
+                        <span className="text-white/20">AESTHETIC STRENGTH // COGNITIVE ACCURACY</span>
                     </div>
                 </div>
             </footer>

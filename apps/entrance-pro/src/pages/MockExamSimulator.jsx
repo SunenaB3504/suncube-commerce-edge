@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Timer, Flag, AlertTriangle, CheckCircle2, ChevronLeft, ChevronRight, X, Trophy, Target, BarChart3, Clock, Zap, ShieldAlert, FlaskConical } from 'lucide-react';
 import { useAppContext } from '../store/AppContext';
 
 const MockExamSimulator = () => {
@@ -58,6 +59,34 @@ const MockExamSimulator = () => {
 
     const config = examConfigs[type] || examConfigs['cuet-general'];
 
+    const submitExam = useCallback(() => {
+        setIsActive(false);
+        const correctCount = questions.reduce((acc, q, idx) => {
+            return acc + (answers[idx] === q.correct ? 1 : 0);
+        }, 0);
+
+        const score = questions.reduce((acc, q, idx) => {
+            if (answers[idx] === undefined) return acc;
+            return acc + (answers[idx] === q.correct ? config.correctMark : config.penaltyMark);
+        }, 0);
+
+        const totalAnswered = Object.keys(answers).length;
+        const accuracy = totalAnswered > 0 ? Math.round((correctCount / totalAnswered) * 100) : 0;
+        const totalPossible = (config.limit ? config.limit : config.total) * config.correctMark;
+
+        const result = {
+            type: config.name,
+            date: new Date().toISOString(),
+            score: score,
+            totalPossible: totalPossible,
+            accuracy: accuracy,
+            duration: config.duration - timeLeft
+        };
+
+        recordMockResult(result);
+        setShowResults(result);
+    }, [questions, answers, config, timeLeft, recordMockResult]);
+
     useEffect(() => {
         loadMockQuestions();
     }, [type]);
@@ -100,7 +129,6 @@ const MockExamSimulator = () => {
                 }
             }
 
-            // Shuffle and sample
             const shuffled = allData.sort(() => 0.5 - Math.random());
             const sampled = shuffled.slice(0, config.total);
 
@@ -119,14 +147,13 @@ const MockExamSimulator = () => {
         const isAlreadyAnswered = answers[currentIndex] !== undefined;
 
         if (config.limit && currentAnswersCount >= config.limit && !isAlreadyAnswered) {
-            alert(`CUET Limit Reached! You can only attempt ${config.limit} questions. Deselect an answer to pick another.`);
             return;
         }
 
         setAnswers(prev => {
             const next = { ...prev };
             if (next[currentIndex] === optionIdx) {
-                delete next[currentIndex]; // Toggle off
+                delete next[currentIndex];
             } else {
                 next[currentIndex] = optionIdx;
             }
@@ -142,149 +169,160 @@ const MockExamSimulator = () => {
         );
     };
 
-    const submitExam = () => {
-        setIsActive(false);
-        const correctCount = questions.reduce((acc, q, idx) => {
-            return acc + (answers[idx] === q.correct ? 1 : 0);
-        }, 0);
-
-        const score = questions.reduce((acc, q, idx) => {
-            if (answers[idx] === undefined) return acc;
-            return acc + (answers[idx] === q.correct ? config.correctMark : config.penaltyMark);
-        }, 0);
-
-        const totalAnswered = Object.keys(answers).length;
-        const accuracy = totalAnswered > 0 ? Math.round((correctCount / totalAnswered) * 100) : 0;
-        const totalPossible = (config.limit ? config.limit : config.total) * config.correctMark;
-
-        const result = {
-            type: config.name,
-            date: new Date().toISOString(),
-            score: score,
-            totalPossible: totalPossible,
-            accuracy: accuracy,
-            duration: config.duration - timeLeft
-        };
-
-        recordMockResult(result);
-        setShowResults(result);
-    };
-
-    if (isLoading) return <div className="h-screen flex items-center justify-center text-slate-400">Loading Exam Engine...</div>;
-
-    if (showResults) {
-        return (
-            <div className="h-screen bg-slate-50 flex items-center justify-center p-4">
-                <div className="bg-white rounded-3xl shadow-xl p-8 max-w-md w-full text-center border border-slate-200">
-                    <div className="w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-6">🏆</div>
-                    <h2 className="text-3xl font-bold text-slate-900 mb-2">Exam Complete!</h2>
-                    <p className="text-slate-500 mb-8">Great job finishing the {config.name}.</p>
-
-                    <div className="grid grid-cols-2 gap-4 mb-8">
-                        <div className="bg-slate-50 p-4 rounded-2xl">
-                            <div className="text-xs font-bold text-slate-400 uppercase mb-1">Score</div>
-                            <div className="text-2xl font-bold text-blue-600">{showResults.score} <span className="text-sm font-medium text-slate-400">/ {showResults.totalPossible}</span></div>
-                        </div>
-                        <div className="bg-slate-50 p-4 rounded-2xl">
-                            <div className="text-xs font-bold text-slate-400 uppercase mb-1">Accuracy</div>
-                            <div className="text-2xl font-bold text-green-600">{showResults.accuracy}%</div>
-                        </div>
-                    </div>
-
-                    <button
-                        onClick={() => navigate('/mocks')}
-                        className="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-slate-800 transition-all shadow-lg"
-                    >
-                        Back to Dashboard
-                    </button>
-                </div>
-            </div>
-        );
-    }
-
     const formatTime = (seconds) => {
         const m = Math.floor(seconds / 60);
         const s = seconds % 60;
         return `${m}:${s.toString().padStart(2, '0')}`;
     };
 
+    if (isLoading) return (
+        <div className="h-screen bg-brand-slate flex flex-col items-center justify-center gap-6">
+            <div className="w-16 h-16 border-4 border-brand-amber/20 border-t-brand-amber rounded-full animate-spin"></div>
+            <div className="text-[10px] font-black text-slate-500 uppercase tracking-[0.5em] animate-pulse">Initializing Alpha Engine...</div>
+        </div>
+    );
+
+    if (showResults) {
+        return (
+            <div className="min-h-screen bg-brand-slate flex items-center justify-center p-6 lg:p-12 overflow-y-auto">
+                <div className="bg-white/5 border border-white/5 backdrop-blur-3xl rounded-[3rem] p-12 lg:p-16 max-w-2xl w-full text-center relative overflow-hidden group">
+                    <div className="absolute -top-24 -left-24 w-64 h-64 bg-brand-emerald/10 blur-[100px] rounded-full group-hover:bg-brand-emerald/20 transition-all duration-700"></div>
+                    
+                    <div className="relative z-10">
+                        <div className="w-24 h-24 bg-brand-emerald/10 text-brand-emerald rounded-[2rem] flex items-center justify-center mx-auto mb-10 shadow-glow-emerald/20 border border-brand-emerald/20">
+                            <Trophy size={48} />
+                        </div>
+                        
+                        <h2 className="text-4xl lg:text-5xl font-black text-white mb-4 italic tracking-tighter uppercase">Mission <span className="text-brand-emerald">Secure</span></h2>
+                        <p className="text-slate-500 text-xs font-black uppercase tracking-[0.3em] mb-12 italic">Performance Audit Complete // {config.name}</p>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+                            <div className="bg-white/[0.03] border border-white/5 p-8 rounded-[2rem] flex flex-col items-center gap-3 group/stat hover:bg-white/[0.05] transition-all">
+                                <BarChart3 size={24} className="text-brand-indigo" />
+                                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Logic Score</div>
+                                <div className="text-4xl font-black text-white italic tracking-tighter">
+                                    {showResults.score} <span className="text-sm text-slate-600 font-medium">/ {showResults.totalPossible}</span>
+                                </div>
+                            </div>
+                            <div className="bg-white/[0.03] border border-white/5 p-8 rounded-[2rem] flex flex-col items-center gap-3 group/stat hover:bg-white/[0.05] transition-all">
+                                <Target size={24} className="text-brand-emerald" />
+                                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Accuracy</div>
+                                <div className="text-4xl font-black text-white italic tracking-tighter">{showResults.accuracy}%</div>
+                            </div>
+                            <div className="bg-white/[0.03] border border-white/5 p-8 rounded-[2rem] flex flex-col items-center gap-3 group/stat hover:bg-white/[0.05] transition-all sm:col-span-2">
+                                <Clock size={24} className="text-brand-amber" />
+                                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Time Deployed</div>
+                                <div className="text-4xl font-black text-white italic tracking-tighter">{formatTime(showResults.duration)} <span className="text-sm text-slate-600 font-medium">/ {formatTime(config.duration)}</span></div>
+                            </div>
+                        </div>
+
+                        <button
+                            onClick={() => navigate('/mocks')}
+                            className="w-full py-6 bg-brand-emerald hover:bg-white text-brand-slate rounded-[2rem] font-black text-xs uppercase tracking-[0.4em] transition-all shadow-glow-emerald/20 hover:shadow-glow-emerald/40 active:scale-95 italic"
+                        >
+                            Return to Operational Hub
+                        </button>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
     const currentQuestion = questions[currentIndex];
 
     return (
-        <div className="h-screen flex flex-col bg-white overflow-hidden">
-            <title>{config.name} | Entrance Prep Pro</title>
-            <meta name="description" content={`Simulate your ${config.name} under real exam conditions.`} />
-            {/* Header */}
-            <header className="h-16 border-b border-slate-100 flex items-center justify-between px-6 bg-white shrink-0">
-                <div className="flex items-center gap-4">
-                    <button onClick={() => { if (confirm('Abort exam? Progress will be lost.')) navigate('/mocks') }} className="text-slate-400 hover:text-slate-900 transition-colors">✕</button>
-                    <div className="h-4 w-px bg-slate-100"></div>
-                    <h2 className="font-bold text-slate-900 truncate max-w-[200px]">{config.name}</h2>
+        <div className="h-screen flex flex-col bg-brand-slate text-slate-100 overflow-hidden selection:bg-brand-amber/30">
+            <title>{config.name} | Suncube Alpha</title>
+            
+            {/* High-Intensity Header */}
+            <header className="h-20 border-b border-white/5 flex items-center justify-between px-8 bg-brand-slate/80 backdrop-blur-xl shrink-0 z-50">
+                <div className="flex items-center gap-6">
+                    <button 
+                        onClick={() => { if (confirm('Abort mission? Operational data will be lost.')) navigate('/mocks') }} 
+                        className="w-10 h-10 bg-white/5 hover:bg-brand-rose/20 text-slate-500 hover:text-brand-rose rounded-xl flex items-center justify-center transition-all border border-white/5 active:scale-90"
+                    >
+                        <X size={18} />
+                    </button>
+                    <div className="h-6 w-px bg-white/5"></div>
+                    <div>
+                        <h2 className="font-black text-white uppercase text-[10px] tracking-[0.3em] italic">{config.name}</h2>
+                        <p className="text-[8px] font-black text-slate-500 uppercase tracking-[0.5em] italic">ALPHA SIMULATION LIVE</p>
+                    </div>
                 </div>
 
-                <div className={`px-4 py-2 rounded-xl font-mono font-bold text-lg ${timeLeft < 300 ? 'bg-red-50 text-red-600 animate-pulse' : 'bg-slate-50 text-slate-900'}`}>
-                    ⏱️ {formatTime(timeLeft)}
+                <div className={`px-8 py-2.5 rounded-2xl font-black text-xl italic tracking-tighter border-2 flex items-center gap-3 transition-all ${timeLeft < 300 ? 'bg-brand-rose/10 text-brand-rose border-brand-rose/40 animate-pulse shadow-glow-rose/20' : 'bg-white/5 text-brand-amber border-brand-amber/20'}`}>
+                    <Timer size={20} className={timeLeft < 300 ? 'animate-spin-slow' : ''} />
+                    {formatTime(timeLeft)}
                 </div>
 
                 <button
-                    onClick={() => { if (confirm('Finish and submit?')) submitExam() }}
-                    className="px-6 py-2 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition-all text-sm shadow-md"
+                    onClick={() => { if (confirm('Secure logic and submit?')) submitExam() }}
+                    className="px-8 py-2.5 bg-brand-amber hover:bg-white text-brand-slate rounded-xl font-black text-[10px] uppercase tracking-[0.3em] transition-all shadow-glow-amber/20 hover:shadow-glow-amber/40 active:scale-95 italic"
                 >
-                    Submit
+                    SECURE LOGIC
                 </button>
             </header>
 
             <div className="flex-grow flex overflow-hidden">
-                {/* Main Content */}
+                {/* Simulator Interface */}
                 <div className="flex-grow overflow-y-auto p-12 lg:p-24 flex flex-col items-center">
-                    <div className="max-w-2xl w-full">
-                        <div className="flex items-center justify-between mb-8">
-                            <div className="flex items-center gap-3">
-                                <span className="px-3 py-1 bg-slate-100 text-slate-500 rounded-md text-xs font-bold uppercase tracking-wider">
-                                    Question {currentIndex + 1} of {questions.length}
-                                </span>
+                    <div className="max-w-3xl w-full">
+                        <div className="flex items-center justify-between mb-12">
+                            <div className="flex items-center gap-4">
+                                <div className="px-4 py-1.5 bg-white/5 text-slate-400 rounded-xl text-[10px] font-black uppercase tracking-widest border border-white/5 italic">
+                                    UNIT {currentIndex + 1} OF {questions.length}
+                                </div>
                                 {config.limit && (
-                                    <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-bold uppercase tracking-wider">
-                                        Attempted: {Object.keys(answers).length}/{config.limit}
-                                    </span>
+                                    <div className="px-4 py-1.5 bg-brand-indigo/10 text-brand-indigo rounded-xl text-[10px] font-black uppercase tracking-widest border border-brand-indigo/20 italic">
+                                        ATTEMPTED: {Object.keys(answers).length} / {config.limit}
+                                    </div>
                                 )}
                             </div>
                             
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-3">
                                 <button 
                                     onClick={toggleMarkForReview}
-                                    className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-[10px] font-black tracking-widest transition-all border ${markedForReview.includes(currentIndex) ? 'bg-orange-500 text-white border-orange-500 shadow-md' : 'bg-white text-slate-400 border-slate-200 hover:border-orange-300 hover:text-orange-500'}`}
+                                    className={`flex items-center gap-2 px-6 py-2 rounded-xl text-[9px] font-black tracking-[0.2em] transition-all border italic ${markedForReview.includes(currentIndex) ? 'bg-brand-amber text-brand-slate border-brand-amber shadow-glow-amber/20' : 'bg-white/5 text-slate-500 border-white/5 hover:border-brand-amber/30 hover:text-brand-amber'}`}
                                 >
-                                    🚩 {markedForReview.includes(currentIndex) ? 'MARKED' : 'MARK FOR REVIEW'}
+                                    <Flag size={12} fill={markedForReview.includes(currentIndex) ? "currentColor" : "none"} /> 
+                                    {markedForReview.includes(currentIndex) ? 'MARKED FOR AUDIT' : 'MARK FOR AUDIT'}
                                 </button>
                                 
                                 {secondsOnQuestion > 45 && (
-                                    <div className="bg-red-50 text-red-600 px-3 py-1.5 rounded-full text-[10px] font-black tracking-widest animate-pulse border border-red-100 flex items-center gap-1.5">
-                                        ⚠️ TIME SUCKER
+                                    <div className="bg-brand-rose/10 text-brand-rose px-4 py-2 rounded-xl text-[9px] font-black tracking-[0.2em] animate-pulse border border-brand-rose/20 flex items-center gap-2 italic">
+                                        <AlertTriangle size={12} /> TIME SUCKER DETECTED
                                     </div>
                                 )}
                             </div>
                         </div>
 
-                        <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-12 leading-tight">
-                            {currentQuestion.question}
-                        </h3>
+                        <div className="relative group/q mb-16 px-8 py-4 bg-white/[0.02] rounded-[2rem] border-l-4 border-brand-amber transition-all hover:bg-white/[0.04]">
+                            <h3 className="text-3xl lg:text-4xl font-black text-white leading-tight italic tracking-tighter">
+                                {currentQuestion.question}
+                            </h3>
+                        </div>
 
-                        <div className="space-y-4">
+                        <div className="grid grid-cols-1 gap-5">
                             {currentQuestion.options.map((option, idx) => (
                                 <button
                                     key={idx}
                                     onClick={() => handleAnswer(idx)}
-                                    className={`w-full p-6 text-left rounded-2xl border-2 transition-all group relative overflow-hidden flex items-center justify-between ${answers[currentIndex] === idx
-                                            ? 'border-blue-600 bg-blue-50/50'
-                                            : 'border-slate-100 hover:border-slate-300 hover:bg-slate-50'
+                                    className={`w-full p-8 text-left rounded-3xl border-2 transition-all group/opt relative overflow-hidden flex items-center justify-between active:scale-[0.99] ${answers[currentIndex] === idx
+                                            ? 'border-brand-amber bg-brand-amber/10 shadow-glow-amber/10'
+                                            : 'border-white/5 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.05]'
                                         }`}
                                 >
-                                    <span className={`text-lg font-medium ${answers[currentIndex] === idx ? 'text-blue-700' : 'text-slate-700'}`}>
+                                    <span className={`text-xl font-bold italic tracking-tight ${answers[currentIndex] === idx ? 'text-white' : 'text-slate-400 group-hover/opt:text-slate-200'} transition-all`}>
                                         {option}
                                     </span>
-                                    {answers[currentIndex] === idx && (
-                                        <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-xs">✓</div>
+                                    {answers[currentIndex] === idx ? (
+                                        <div className="w-8 h-8 bg-brand-amber text-brand-slate rounded-[0.75rem] flex items-center justify-center shadow-glow-amber/40 scale-110 transition-transform">
+                                            <CheckCircle2 size={20} />
+                                        </div>
+                                    ) : (
+                                        <div className="w-8 h-8 rounded-[0.75rem] border border-white/10 group-hover/opt:border-white/30 transition-all opacity-0 group-hover/opt:opacity-100 flex items-center justify-center">
+                                            <div className="w-2 h-2 rounded-full bg-white/20"></div>
+                                        </div>
                                     )}
                                 </button>
                             ))}
@@ -292,21 +330,27 @@ const MockExamSimulator = () => {
                     </div>
                 </div>
 
-                {/* Sidebar Navigation */}
-                <div className="w-80 border-l border-slate-100 bg-slate-50/50 shrink-0 overflow-y-auto p-6 hidden xl:block">
-                    <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Navigaton</h3>
-                    <div className="grid grid-cols-5 gap-2">
+                {/* Audit Navigation Sidebar */}
+                <div className="w-96 border-l border-white/5 bg-white/[0.01] backdrop-blur-md shrink-0 overflow-y-auto p-10 hidden xl:flex flex-col">
+                    <div className="flex items-center gap-3 mb-10">
+                        <div className="p-2 bg-brand-indigo/10 rounded-xl">
+                            <FlaskConical size={18} className="text-brand-indigo" />
+                        </div>
+                        <h3 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em] italic">AUDIT MAP</h3>
+                    </div>
+                    
+                    <div className="grid grid-cols-5 gap-3 mb-12">
                         {questions.map((_, idx) => (
                             <button
                                 key={idx}
                                 onClick={() => setCurrentIndex(idx)}
-                                className={`h-10 rounded-lg text-xs font-bold transition-all border ${currentIndex === idx
-                                        ? 'bg-blue-600 text-white border-blue-600 shadow-md ring-2 ring-blue-100'
+                                className={`h-12 rounded-xl text-[10px] font-black transition-all border flex items-center justify-center active:scale-90 ${currentIndex === idx
+                                        ? 'bg-brand-amber text-brand-slate border-brand-amber shadow-glow-amber/40 scale-110 z-10'
                                         : markedForReview.includes(idx)
-                                            ? 'bg-orange-500 text-white border-orange-500'
+                                            ? 'bg-brand-rose/20 text-brand-rose border-brand-rose/40 animate-pulse'
                                             : answers[idx] !== undefined
-                                                ? 'bg-green-100 text-green-700 border-green-200'
-                                                : 'bg-white text-slate-400 border-slate-200 hover:border-slate-400'
+                                                ? 'bg-brand-emerald/10 text-brand-emerald border-brand-emerald/30'
+                                                : 'bg-white/5 text-slate-600 border-white/5 hover:border-white/20 hover:text-white'
                                     }`}
                             >
                                 {idx + 1}
@@ -314,38 +358,53 @@ const MockExamSimulator = () => {
                         ))}
                     </div>
 
-                    <div className="mt-12 p-6 bg-white rounded-2xl border border-slate-200">
-                        <h4 className="font-bold text-slate-900 mb-2">Instructions</h4>
-                        <ul className="text-xs text-slate-500 space-y-2">
-                            <li>• Correct: +{config.correctMark} Points</li>
-                            <li>• Wrong: {config.penaltyMark} Point(s)</li>
-                            <li>• Unattempted: 0 Points</li>
-                            {config.limit && config.limit < config.total && <li>• Limit: Only {config.limit} attempts allowed</li>}
-                        </ul>
+                    <div className="mt-auto space-y-6">
+                        <div className="p-8 bg-white/[0.03] rounded-[2rem] border border-white/5 relative overflow-hidden group/instr">
+                            <div className="absolute -right-4 -top-4 opacity-5 group-hover/instr:opacity-20 transition-all">
+                                <ShieldAlert size={64} />
+                            </div>
+                            <h4 className="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-4 italic">PROTOCOL GUIDELINES</h4>
+                            <ul className="text-[9px] font-black text-slate-500 space-y-3 uppercase tracking-widest italic">
+                                <li className="flex items-center gap-2 group-hover/instr:text-slate-400"><div className="w-1.5 h-1.5 rounded-full bg-brand-emerald"></div> CORRECT: +{config.correctMark} DEPLOYED</li>
+                                <li className="flex items-center gap-2 group-hover/instr:text-slate-400"><div className="w-1.5 h-1.5 rounded-full bg-brand-rose"></div> PENALTY: {config.penaltyMark} REMOVED</li>
+                                <li className="flex items-center gap-2 group-hover/instr:text-slate-400"><div className="w-1.5 h-1.5 rounded-full bg-white/20"></div> SKIP: 0 NEUTRAL</li>
+                                {config.limit && config.limit < config.total && (
+                                    <li className="flex items-center gap-2 text-brand-amber"><div className="w-1.5 h-1.5 rounded-full bg-brand-amber"></div> LIMIT: {config.limit} MAX</li>
+                                )}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            {/* Bottom Nav (Mobile/Tablet and Main Nav) */}
-            <footer className="h-20 border-t border-slate-100 bg-white shrink-0 flex items-center justify-center px-6 gap-4">
+            {/* Tactical Control Bar */}
+            <footer className="h-24 border-t border-white/5 bg-brand-slate shrink-0 flex items-center justify-center px-8 gap-12 z-50">
                 <button
                     disabled={currentIndex === 0}
                     onClick={() => setCurrentIndex(prev => prev - 1)}
-                    className="p-4 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 disabled:opacity-30 disabled:pointer-events-none transition-all"
+                    className="w-16 h-16 rounded-full bg-white/5 text-slate-400 hover:bg-white hover:text-brand-slate disabled:opacity-0 disabled:pointer-events-none transition-all flex items-center justify-center shadow-xl active:scale-90"
                 >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
+                    <ChevronLeft size={32} />
                 </button>
 
-                <div className="text-sm font-bold text-slate-400">
-                    {currentIndex + 1} / {questions.length}
+                <div className="flex flex-col items-center gap-2">
+                    <div className="text-2xl font-black text-white italic tracking-tighter">
+                        {currentIndex + 1} <span className="text-slate-700 mx-2 text-xl">/</span> {questions.length}
+                    </div>
+                    <div className="w-48 h-1 bg-white/5 rounded-full overflow-hidden border border-white/5">
+                        <div 
+                            className="h-full bg-brand-amber transition-all duration-500 shadow-glow-amber/50" 
+                            style={{ width: `${((currentIndex + 1) / questions.length) * 100}%` }}
+                        ></div>
+                    </div>
                 </div>
 
                 <button
                     disabled={currentIndex === questions.length - 1}
                     onClick={() => setCurrentIndex(prev => prev + 1)}
-                    className="p-4 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 disabled:opacity-30 disabled:pointer-events-none transition-all"
+                    className="w-16 h-16 rounded-full bg-white/5 text-slate-400 hover:bg-white hover:text-brand-slate disabled:opacity-0 disabled:pointer-events-none transition-all flex items-center justify-center shadow-xl active:scale-90"
                 >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
+                    <ChevronRight size={32} />
                 </button>
             </footer>
         </div>

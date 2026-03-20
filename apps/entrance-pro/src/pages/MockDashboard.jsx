@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../store/AppContext';
-import Badges from '../components/profile/Badges';
+import { Rocket, Target, Zap, Clock, ShieldCheck, FlaskConical, ChevronRight, BarChart3, AlertCircle } from 'lucide-react';
 
 const MockDashboard = () => {
     const navigate = useNavigate();
@@ -12,119 +12,165 @@ const MockDashboard = () => {
             id: 'cuet-bstudies',
             name: 'Business Studies Mock',
             description: 'CUET Domain Subject. 50 questions, attempt any 40.',
-            icon: '🏢',
+            icon: Target,
             duration: 45,
             questionCount: 50,
             limit: 40,
-            color: 'from-blue-500 to-indigo-600'
+            color: 'text-brand-indigo',
+            bg: 'bg-brand-indigo/10',
+            border: 'border-brand-indigo/20'
         },
         {
             id: 'cuet-english',
             name: 'English Language Mock',
             description: 'CUET Section IA. 50 questions, attempt any 40.',
-            icon: '📝',
+            icon: Rocket,
             duration: 45,
             questionCount: 50,
             limit: 40,
-            color: 'from-violet-500 to-purple-600'
+            color: 'text-brand-emerald',
+            bg: 'bg-brand-emerald/10',
+            border: 'border-brand-emerald/20'
         },
         {
             id: 'cuet-general',
             name: 'CUET General Test',
             description: 'Section III simulator. 60 questions, attempt any 50.',
-            icon: '📜',
+            icon: FlaskConical,
             duration: 60,
             questionCount: 60,
             limit: 50,
-            color: 'from-teal-500 to-emerald-600'
+            color: 'text-brand-amber',
+            bg: 'bg-brand-amber/10',
+            border: 'border-brand-amber/20'
         },
         {
             id: 'mhcet-full',
             name: 'MH-CET BBA Full Mock',
             description: 'Comprehensive speed-drill simulator. 100 questions, no negative marking.',
-            icon: '⚡',
+            icon: Zap,
             duration: 90,
             questionCount: 100,
             limit: 100,
-            color: 'from-orange-500 to-red-600'
+            color: 'text-brand-rose',
+            bg: 'bg-brand-rose/10',
+            border: 'border-brand-rose/20'
         }
     ];
 
     return (
-        <div className="container mx-auto px-4 py-8 max-w-5xl">
-            <header className="mb-12">
-                <h1 className="text-3xl font-bold text-slate-900 mb-2">Exam Simulator</h1>
-                <p className="text-slate-600">Prepare for the real deal with our timed mock tests.</p>
-            </header>
+        <div className="min-h-screen bg-brand-slate text-slate-100 flex flex-col selection:bg-brand-amber/30 pb-20">
+            <div className="container mx-auto px-6 py-12 lg:py-20 max-w-7xl">
+                {/* Header */}
+                <div className="mb-20">
+                    <div className="flex items-center gap-3 mb-4">
+                        <div className="w-2 h-2 bg-brand-amber rounded-full animate-pulse"></div>
+                        <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.5em] italic">WAR ROOM // MOCK SECTOR</span>
+                    </div>
+                    <h1 className="text-5xl lg:text-7xl font-black text-white italic tracking-tighter uppercase leading-none mb-4">Tactical <span className="text-brand-amber">Command</span></h1>
+                    <p className="text-slate-500 text-xs font-black uppercase tracking-[0.3em] italic">Select your deployment objective and initialize high-intensity simulation.</p>
+                </div>
 
-            <div className="mb-12">
-                <Badges />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-                {mockTypes.map((mock) => (
-                    <div
-                        key={mock.id}
-                        className="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all group pointer-events-auto cursor-pointer"
-                        onClick={() => navigate(`/mock-exam/${mock.id}`)}
-                    >
-                        <div className={`h-32 bg-gradient-to-br ${mock.color} flex items-center justify-center text-5xl group-hover:scale-110 transition-transform`}>
-                            {mock.icon}
-                        </div>
-                        <div className="p-6">
-                            <h3 className="text-xl font-bold text-slate-900 mb-2">{mock.name}</h3>
-                            <p className="text-sm text-slate-500 mb-6 leading-relaxed">
+                {/* Mock Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+                    {mockTypes.map((mock) => (
+                        <div
+                            key={mock.id}
+                            className="group bg-white/[0.03] border border-white/5 p-10 rounded-[3rem] hover:bg-white/[0.05] hover:border-white/10 transition-all cursor-pointer relative overflow-hidden flex flex-col h-full shadow-2xl"
+                            onClick={() => navigate(`/mock-exam/${mock.id}`)}
+                        >
+                            <div className={`absolute -right-12 -top-12 w-48 h-48 opacity-5 group-hover:opacity-10 transition-opacity duration-700 blur-[60px] rounded-full ${mock.bg.replace('10', '40')}`}></div>
+                            
+                            <div className={`w-14 h-14 ${mock.bg} ${mock.border} border rounded-2xl flex items-center justify-center mb-8`}>
+                                <mock.icon size={24} className={mock.color} />
+                            </div>
+                            
+                            <h3 className="text-2xl font-black text-white italic tracking-tight uppercase group-hover:text-brand-amber transition-colors mb-4">{mock.name}</h3>
+                            <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest leading-relaxed mb-10 italic">
                                 {mock.description}
                             </p>
-                            <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-400">
-                                <span>{mock.questionCount} Questions</span>
-                                <span>{mock.duration} Mins</span>
+                            
+                            <div className="mt-auto flex items-center justify-between">
+                                <div className="flex flex-col">
+                                    <span className="text-[9px] font-black text-slate-600 uppercase tracking-widest italic">INTENSITY</span>
+                                    <span className="text-sm font-black text-white italic tracking-tighter">{mock.duration} MINS</span>
+                                </div>
+                                <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center group-hover:bg-brand-amber group-hover:text-brand-slate transition-all">
+                                    <ChevronRight size={18} />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
 
-            {mockResults.length > 0 && (
-                <section>
-                    <h2 className="text-2xl font-bold text-slate-900 mb-6">Recent Performance</h2>
-                    <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-                        <table className="w-full text-left">
-                            <thead className="bg-slate-50 border-b border-slate-200">
-                                <tr>
-                                    <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Test Type</th>
-                                    <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Date</th>
-                                    <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Score</th>
-                                    <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Accuracy</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-100">
-                                {mockResults.map((result, idx) => (
-                                    <tr key={idx} className="hover:bg-slate-50 transition-colors">
-                                        <td className="px-6 py-4 font-medium text-slate-900">{result.type}</td>
-                                        <td className="px-6 py-4 text-slate-500">{new Date(result.date).toLocaleDateString()}</td>
-                                        <td className="px-6 py-4">
-                                            <span className="font-bold text-blue-600">{result.score}</span>
-                                            <span className="text-slate-400 text-xs ml-1">/{result.totalPossible}</span>
-                                        </td>
-                                        <td className="px-6 py-4">
-                                            <div className="flex items-center gap-2">
-                                                <div className="w-16 h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                                                    <div
-                                                        className="h-full bg-green-500"
-                                                        style={{ width: `${result.accuracy}%` }}
-                                                    />
-                                                </div>
-                                                <span className="text-sm font-medium text-slate-700">{result.accuracy}%</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                {/* Performance Analytics Integration */}
+                <div className="bg-white/[0.02] border border-white/5 p-12 lg:p-16 rounded-[4rem] backdrop-blur-3xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-emerald/20 to-transparent"></div>
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+                        <div className="max-w-xl text-center md:text-left">
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-emerald/10 border border-brand-emerald/20 rounded-full text-brand-emerald text-[9px] font-black uppercase tracking-widest mb-6 italic">
+                                <BarChart3 size={14} /> LIVE PERFORMANCE METRICS
+                            </div>
+                            <h2 className="text-4xl font-black text-white italic uppercase tracking-tighter mb-4 leading-none">Cognitive <span className="text-brand-emerald">Telemetry</span></h2>
+                            <p className="text-slate-500 text-xs font-black uppercase tracking-widest italic leading-relaxed">
+                                Review your previous deployment data to identify logical vulnerabilities and optimize exam-day protocols.
+                            </p>
+                        </div>
+                        <button 
+                            onClick={() => navigate('/analytics')}
+                            className="px-12 py-5 bg-brand-emerald hover:bg-white text-brand-slate rounded-[2rem] font-black text-xs uppercase tracking-[0.3em] transition-all shadow-glow-emerald/20 italic whitespace-nowrap"
+                        >
+                            Open Audit Center
+                        </button>
                     </div>
-                </section>
-            )}
+
+                    {mockResults.length > 0 ? (
+                        <div className="mt-16 overflow-x-auto">
+                            <table className="w-full">
+                                <thead>
+                                    <tr className="border-b border-white/5 text-[9px] font-black text-slate-600 uppercase tracking-[0.4em] italic">
+                                        <th className="text-left py-6 px-4">MISSION CODE</th>
+                                        <th className="text-left py-6 px-4">SCORE</th>
+                                        <th className="text-left py-6 px-4">ACCURACY</th>
+                                        <th className="text-right py-6 px-4">TIMESTAMP</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-white/5">
+                                    {mockResults.slice(0, 3).map((result, idx) => (
+                                        <tr key={idx} className="group hover:bg-white/[0.01] transition-all">
+                                            <td className="py-8 px-4 text-sm font-black text-white uppercase tracking-tight italic">{result.type}</td>
+                                            <td className="py-8 px-4">
+                                                <div className="text-xl font-black text-brand-amber italic tracking-tighter">
+                                                    {result.score} / {result.totalPossible || result.total}
+                                                </div>
+                                            </td>
+                                            <td className="py-8 px-4">
+                                                <div className="flex items-center gap-4">
+                                                    <div className="w-24 h-1.5 bg-white/5 rounded-full overflow-hidden border border-white/5">
+                                                        <div 
+                                                            className="h-full bg-brand-emerald shadow-glow-emerald/30" 
+                                                            style={{ width: `${result.accuracy}%` }}
+                                                        ></div>
+                                                    </div>
+                                                    <span className="text-xs font-black text-white italic tracking-tighter">{result.accuracy}%</span>
+                                                </div>
+                                            </td>
+                                            <td className="py-8 px-4 text-right text-[10px] font-black text-slate-600 uppercase tracking-widest italic">
+                                                {new Date(result.date).toLocaleDateString()}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    ) : (
+                        <div className="mt-16 p-20 border border-dashed border-white/10 rounded-[3rem] text-center flex flex-col items-center">
+                            <AlertCircle size={40} className="text-slate-700 mb-6 opacity-20" />
+                            <div className="text-[10px] font-black text-slate-700 uppercase tracking-[0.5em] italic">NO PREVIOUS DATA STREAMS DETECTED</div>
+                        </div>
+                    )}
+                </div>
+            </div>
         </div>
     );
 };
