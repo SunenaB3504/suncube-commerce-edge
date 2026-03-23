@@ -24,7 +24,7 @@ export const SQPView: React.FC<SQPViewProps> = ({ sqps, onBack }) => {
                         <div className="p-2 bg-brand-emerald/10 rounded-lg group-hover:bg-brand-emerald group-hover:text-brand-slate transition-colors">
                           <ChevronLeft className="h-4 w-4" />
                         </div>
-                        Back to Command Center
+                        Back to Library
                     </button>
                     <h2 className="text-5xl font-black text-white tracking-tight flex items-center gap-5 uppercase leading-none">
                         <div className="p-4 bg-brand-amber/10 rounded-[1.5rem] shadow-glow-amber">
