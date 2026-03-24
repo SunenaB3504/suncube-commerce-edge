@@ -50,7 +50,7 @@ export const logicalReasoningData = {
                 title: "2. Circular Seating",
                 content: {
                     coreConcept: "Arranging people around a circle. The primary rule depends on direction: Facing Centre vs Facing Away.",
-                    formulaBank: "1. Facing Centre: Clockwise = Left | Anti-clockwise = Right\n2. Facing Away: Clockwise = Right | Anti-clockwise = Left",
+                    formulaBank: "1. Facing Centre: Clockwise = Left | Anti-clockwise = Right\n  🏢 Real Life: Sitting around a dining table. The person seated to your left is clockwise from you.\n2. Facing Away: Clockwise = Right | Anti-clockwise = Left\n  🏢 Real Life: Sitting in a circle playing musical chairs (facing out). Clockwise movement goes to your right.",
                     logic: "Step-by-Step Arrangement:\n1. Fix the first person (usually at 6 o'clock position).\n2. Place people with 'definite' positions first (e.g., 'A is 2nd to the left of B').\n3. Leave 'indefinite' clues for the end.\n4. Always verify the final circle against all constraints.",
                     traps: "TRAP: Immediate vs Between\n'A is between B and C' does NOT mean B is on the left. It could be B-A-C or C-A-B. Both are valid until another clue clarifies.",
                     examples: [
@@ -88,7 +88,7 @@ export const logicalReasoningData = {
                 title: "3. Coding & Decoding",
                 content: {
                     coreConcept: "Translating words into codes based on a specific rule (shift, reverse, or substitution).",
-                    formulaBank: "1. Forward Shift (+n)\n2. Backward Shift (-n)\n3. Opposites (A=Z, B=Y...) Rule: Position + Reverse = 27.\n4. EJOTY Rule: E=5, J=10, O=15, T=20, Y=25 for fast position mapping.",
+                    formulaBank: "1. Forward Shift (+n)\n2. Backward Shift (-n)\n3. Opposites (A=Z, B=Y...) Rule: Position + Reverse = 27.\n4. EJOTY Rule: E=5, J=10, O=15, T=20, Y=25 for fast position mapping.\n  🏢 Real Life: Like stepping stones across a river (5, 10, 15). Instead of counting every stone from the start, just jump to the nearest known stone and count from there.",
                     logic: "Pattern Recognition:\n1. Write the word and code one below the other.\n2. Calculate the difference (shift) for each letter. Use EJOTY to speed up finding letter positions.\n3. If shifts are same, it's a 'Fixed Shift'. If they change (1, 2, 3), it's 'Incremental'.\n4. Opposite Check: If a letter is F(6), its opposite is 27-6=21 (U).",
                     traps: "TRAP: Cross-Coding\nSometimes 'CAT' is coded not as 'DBU' (+1), but letters are swapped (e.g., TAC). Always check for anagrams first.",
                     examples: [
@@ -126,7 +126,7 @@ export const logicalReasoningData = {
                 title: "4. Blood Relations",
                 content: {
                     coreConcept: "Determining relationships between people, often presented in a complex family description or symbolic chain.",
-                    formulaBank: "1. Male = [+]\n2. Female = [-]\n3. Married couple = [⇔]\n4. Siblings = [—]\n5. Generations = [Vertical lines]",
+                    formulaBank: "1. Male = [+]\n2. Female = [-]\n3. Married couple = [⇔]\n4. Siblings = [—]\n5. Generations = [Vertical lines]\n  🏢 Real Life: Think of it like a corporate org chart. Grandparents are the CEO at the top, parents are managers below them, and children are the base level employees.",
                     logic: "Generation Tree Method:\n1. Use standard symbols to draw the tree.\n2. Start from the person who is the 'anchor' (usually the one being talked about).\n3. Move vertical for parent-child, horizontal for siblings.",
                     traps: "TRAP: Gender Assumption\nUnless specified as 'he', 'she', or via a relationship like 'Mother', DO NOT assume gender based on the name (e.g., Sunny could be male or female).",
                     examples: [
@@ -164,7 +164,7 @@ export const logicalReasoningData = {
                 title: "5. Syllogisms",
                 content: {
                     coreConcept: "Syllogism tests deductive reasoning based on given premises. You must assume the premises are 100% true, even if they defy common logic (e.g., 'All cats are dogs').",
-                    formulaBank: "1. All A are B [A ⊂ B]\n2. Some A are B [A ∩ B ≠ ∅]\n3. No A is B [A ∩ B = ∅]\n4. Some A are not B",
+                    formulaBank: "1. All A are B [A ⊂ B]\n  🏢 Real Life: If 'All BMWs are Cars', BMW is a smaller circle entirely inside the 'Car' circle.\n2. Some A are B [A ∩ B ≠ ∅]\n  🏢 Real Life: 'Some students are athletes'. The circles overlap, but not completely.\n3. No A is B [A ∩ B = ∅]\n4. Some A are not B",
                     logic: "Venn Diagram Method:\n1. Draw the first premise completely.\n2. Overlap the second premise in the 'most possible' way.\n3. A conclusion is 'Follows' ONLY if it is true in EVERY possible Venn diagram you can draw.",
                     traps: "TRAP: The 'Possibility' vs 'Certainty'\nIf a conclusion says 'Some A are B', it must be true. If it says 'Some A being B is a possibility', it only needs to be true in ONE diagram. Don't confuse the two.",
                     examples: [
@@ -202,7 +202,7 @@ export const logicalReasoningData = {
                 title: "6. Clocks & Calendars",
                 content: {
                     coreConcept: "Calculating angles in clocks and identifying days in calendars using the 'Odd Days' method.",
-                    formulaBank: "1. Clock Angle: θ = |30H - 5.5M|\n2. Mirror Image: Subtract time from 11:60\n3. Leap Year: Divisible by 4 (Century years by 400)",
+                    formulaBank: "1. Clock Angle: θ = |30H - 5.5M|\n  🏢 Real Life: The hour hand moves slowly while the car (minute hand) speeds ahead. This formula finds the exact gap between them.\n2. Mirror Image: Subtract time from 11:60\n3. Leap Year: Divisible by 4 (Century years by 400)",
                     logic: "Calendar Odd Days:\nOrdinary Year = 1 Odd Day. Leap Year = 2 Odd Days.\nMonths: Jan(3), Feb(0/1), Mar(3), Apr(2), May(3), Jun(2)... (Divide total days by 7, remainder is odd days).",
                     traps: "TRAP: The Century Leap Year\nYear 1900 was NOT a leap year because it's a century not divisible by 400. Year 2000 WAS a leap year. Students often miss this.",
                     examples: [
@@ -240,7 +240,7 @@ export const logicalReasoningData = {
                 title: "7. Direction & Distance",
                 content: {
                     coreConcept: "Tracking movement in space (North, South, East, West) and finding the displacement from the starting point.",
-                    formulaBank: "1. Main: N, S, E, W\n2. Sub: NE, NW, SE, SW\n3. Distance: √ (x² + y²) [Pythagoras Theorem]",
+                    formulaBank: "1. Main: N, S, E, W\n2. Sub: NE, NW, SE, SW\n3. Distance: √ (x² + y²) [Pythagoras Theorem]\n  🏢 Real Life: Walking through a city grid. If you walk 3 blocks East and 4 blocks North, a drone flying directly to your destination travels exactly 5 blocks (diagonal).",
                     logic: "The Compass Reset:\nEvery time a person turns 'Right' or 'Left', imagine yourself at that spot facing their current direction. Right of North is East, but Right of South is West.\nPythagorean Triples Shortcut:\nSkip calculating √(a²+b²) by memorizing base triples: 3-4-5, 5-12-13, 8-15-17. If you move 60m North and 80m East, recognize it as a 6-8-10 multiple of the 3-4-5 triple. Distance is 100m. No calculation needed!",
                     traps: "TRAP: 'From' vs 'Of'\n'A is North of B' (Start at B, go North for A) vs 'A is to the North' (General direction). Always identify the reference point clearly.",
                     examples: [
@@ -278,7 +278,7 @@ export const logicalReasoningData = {
                 title: "8. Number Series & Analogies",
                 content: {
                     coreConcept: "Identifying the pattern in a sequence of numbers or letters. Patterns can be arithmetic, geometric, or based on properties like prime numbers or squares.",
-                    formulaBank: "1. Common Differences: +2, +4, +6... or +1, +3, +5...\n2. Prime Series: 2, 3, 5, 7, 11, 13, 17, 19, 23...\n3. Fibonacci: 1, 1, 2, 3, 5, 8, 13...",
+                    formulaBank: "1. Common Differences: +2, +4, +6... or +1, +3, +5...\n2. Prime Series: 2, 3, 5, 7, 11, 13, 17, 19, 23...\n3. Fibonacci: 1, 1, 2, 3, 5, 8, 13...\n  🏢 Real Life (Fibonacci): Like a virus replicating. The current number of cases is the sum of the cases from the past two days.",
                     logic: "The Difference Audit:\n1. If numbers increase slowly, check for addition.\n2. If numbers increase rapidly, check for multiplication or squares.\n3. If the pattern isn't obvious, check for 'Alternative Series' (e.g., two series merged into one).",
                     traps: "TRAP: The Prime '1' Trap\nMany students include '1' as a prime number. Remember: 1 is neither prime nor composite. The first prime number is 2.",
                     examples: [
@@ -316,7 +316,7 @@ export const logicalReasoningData = {
                 title: "9. Venn Diagrams & Set Theory",
                 content: {
                     coreConcept: "Visualizing overlapping relationships between different groups. The total population is the sum of unique sections, not overlapping totals.",
-                    formulaBank: "1. Two-Set Formula: n(A∪B) = n(A) + n(B) − n(A∩B)\n2. Three-Set Formula: n(A∪B∪C) = n(A)+n(B)+n(C) − n(A∩B)−n(B∩C)−n(A∩C) + n(A∩B∩C)\n3. n(only A) = n(A) − n(A∩B)",
+                    formulaBank: "1. Two-Set Formula: n(A∪B) = n(A) + n(B) − n(A∩B)\n  🏢 Real Life: If 10 kids play soccer and 10 play tennis, but 3 play both, you don't have 20 kids total. You have 17. You must subtract the double-counted 3.\n2. Three-Set Formula: n(A∪B∪C) = n(A)+n(B)+n(C) − n(A∩B)−n(B∩C)−n(A∩C) + n(A∩B∩C)\n3. n(only A) = n(A) − n(A∩B)",
                     logic: "Inside-Out Solving Method:\nAlways fill a Venn diagram from the center outward. Find the 'All Three' or 'Both' intersection first, then subtract that value from the pairs, then subtract the pairs from the singles. This prevents double-counting.",
                     traps: "TRAP: The 'Only' Distinction\nIf a question says '30 people like Cricket', that includes people who like Cricket AND Football. If it says '30 people like ONLY Cricket', that excludes the overlap. Read VERY carefully.",
                     examples: [
