@@ -12,7 +12,7 @@ export const logicalReasoningData = {
                 title: "1. Alphanumeric Series",
                 content: {
                     coreConcept: "These series combine letters and numbers. CUET specifically uses triple-layer rules where the letter, number, and position all follow independent sequences.",
-                    formulaBank: "1. A-Z Positions (EJOTY): E=5, J=10, O=15, T=20, Y=25\n2. Reverse Positions: Sum = 27 (A=1, Z=26; 1+26=27)\n3. Prime Number Sequences: 2, 3, 5, 7, 11, 13...",
+                    formulaBank: "1. A-Z Positions (EJOTY): E=5, J=10, O=15, T=20, Y=25\n  🏢 Real Life: Like remembering milestones on a highway. If you know J is 10, K is just one step past it (11).\n2. Reverse Positions: Sum = 27 (A=1, Z=26; 1+26=27)\n  🏢 Real Life: Two ends of a see-saw. If B is position 2, its opposite Y is 25. Together they always sum to 27.\n3. Prime Number Sequences: 2, 3, 5, 7, 11, 13...\n  🏢 Real Life: The 'un-splitable' numbers. Often used to create sudden unpredictable jumps in logic.",
                     logic: "The Triple-Layer Audit:\nWhen you see a term like 'A4X', break it down:\n1. First element (A): Check for +1, +2, +3... shift.\n2. Middle element (4): Check for square, cube, or prime sequence.\n3. Last element (X): Check for reverse alphabetical shift.",
                     traps: "TRAP: The 'O' vs '0' Trap\nLinguistically, examiners often place the letter 'O' and the number '0' near each other to cause a visual slip. Always verify the context – is it a letter sequence or a number sequence?",
                     examples: [
