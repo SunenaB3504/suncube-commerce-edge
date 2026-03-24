@@ -88,8 +88,8 @@ export const logicalReasoningData = {
                 title: "3. Coding & Decoding",
                 content: {
                     coreConcept: "Translating words into codes based on a specific rule (shift, reverse, or substitution).",
-                    formulaBank: "1. Forward Shift (+n)\n2. Backward Shift (-n)\n3. Opposites (A=Z, B=Y...)",
-                    logic: "Pattern Recognition:\n1. Write the word and code one below the other.\n2. Calculate the difference (shift) for each letter.\n3. If shifts are same, it's a 'Fixed Shift'. If they change (1, 2, 3), it's 'Incremental'.",
+                    formulaBank: "1. Forward Shift (+n)\n2. Backward Shift (-n)\n3. Opposites (A=Z, B=Y...) Rule: Position + Reverse = 27.\n4. EJOTY Rule: E=5, J=10, O=15, T=20, Y=25 for fast position mapping.",
+                    logic: "Pattern Recognition:\n1. Write the word and code one below the other.\n2. Calculate the difference (shift) for each letter. Use EJOTY to speed up finding letter positions.\n3. If shifts are same, it's a 'Fixed Shift'. If they change (1, 2, 3), it's 'Incremental'.\n4. Opposite Check: If a letter is F(6), its opposite is 27-6=21 (U).",
                     traps: "TRAP: Cross-Coding\nSometimes 'CAT' is coded not as 'DBU' (+1), but letters are swapped (e.g., TAC). Always check for anagrams first.",
                     examples: [
                         { q: "If CAT is DBU, find DOG.", a: "EPH. (+1 shift for all letters.)" },
@@ -241,7 +241,7 @@ export const logicalReasoningData = {
                 content: {
                     coreConcept: "Tracking movement in space (North, South, East, West) and finding the displacement from the starting point.",
                     formulaBank: "1. Main: N, S, E, W\n2. Sub: NE, NW, SE, SW\n3. Distance: √ (x² + y²) [Pythagoras Theorem]",
-                    logic: "The Compass Reset:\nEvery time a person turns 'Right' or 'Left', imagine yourself at that spot facing their current direction. Right of North is East, but Right of South is West.",
+                    logic: "The Compass Reset:\nEvery time a person turns 'Right' or 'Left', imagine yourself at that spot facing their current direction. Right of North is East, but Right of South is West.\nPythagorean Triples Shortcut:\nSkip calculating √(a²+b²) by memorizing base triples: 3-4-5, 5-12-13, 8-15-17. If you move 60m North and 80m East, recognize it as a 6-8-10 multiple of the 3-4-5 triple. Distance is 100m. No calculation needed!",
                     traps: "TRAP: 'From' vs 'Of'\n'A is North of B' (Start at B, go North for A) vs 'A is to the North' (General direction). Always identify the reference point clearly.",
                     examples: [
                         { q: "Walk 3km North, then 4km East. Distance from start?", a: "5km. (√(3² + 4²) = 5)" },
@@ -309,6 +309,24 @@ export const logicalReasoningData = {
                         { q: "17:60 :: 20:?", a: "69. (3n + 9)" }
                     ],
                     speedSummary: "- Memorize squares up to 30 and cubes up to 12.\n- Always check the difference between terms first."
+                }
+            },
+            {
+                id: "venn-diagrams-logic",
+                title: "9. Venn Diagrams & Set Theory",
+                content: {
+                    coreConcept: "Visualizing overlapping relationships between different groups. The total population is the sum of unique sections, not overlapping totals.",
+                    formulaBank: "1. Two-Set Formula: n(A∪B) = n(A) + n(B) − n(A∩B)\n2. Three-Set Formula: n(A∪B∪C) = n(A)+n(B)+n(C) − n(A∩B)−n(B∩C)−n(A∩C) + n(A∩B∩C)\n3. n(only A) = n(A) − n(A∩B)",
+                    logic: "Inside-Out Solving Method:\nAlways fill a Venn diagram from the center outward. Find the 'All Three' or 'Both' intersection first, then subtract that value from the pairs, then subtract the pairs from the singles. This prevents double-counting.",
+                    traps: "TRAP: The 'Only' Distinction\nIf a question says '30 people like Cricket', that includes people who like Cricket AND Football. If it says '30 people like ONLY Cricket', that excludes the overlap. Read VERY carefully.",
+                    examples: [
+                        { q: "Class of 100 students: 60 like Cricket, 50 like Football, 30 like both. How many like at least one?", a: "80. (60 + 50 - 30 = 80.)" },
+                        { q: "From same data, how many like ONLY Cricket?", a: "30. (Total Cricket 60 - Both 30 = 30.)" },
+                        { q: "From same data, how many like neither?", a: "20. (Total 100 - At least one 80 = 20.)" },
+                        { q: "Survey of 200: H=80, E=70, M=60. H&E=30, E&M=20, H&M=25. All three=10. How many read exactly two?", a: "45. (H&E only = 30-10=20. E&M only = 20-10=10. H&M only = 25-10=15. Sum = 45.)" },
+                        { q: "From same data, how many read none?", a: "55. (At least one = 80+70+60 - 30-20-25 + 10 = 145. 200 - 145 = 55.)" }
+                    ],
+                    speedSummary: "- Two-Set questions take 5 seconds using the n(A∪B) formula.\n- Three-Set questions take 30 seconds if you draw a quick 3-circle diagram and fill from the center."
                 }
             }
         ]

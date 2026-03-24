@@ -615,6 +615,24 @@ export const quantitativeData = {
                     ],
                     speedSummary: "- Plug and Play: Substitution is your fastest friend in Algebra.\n- Memorize: $(x+y)^2$, $(x-y)^2$, and $(x+y)(x-y)$."
                 }
+            },
+            {
+                id: "vedic-math-shortcuts",
+                title: "17. Advanced Speed Math (Vedic Math)",
+                content: {
+                    coreConcept: "1. The Hacker Mindset: Vedic Mathematics allows you to bypass traditional long-form calculation by recognizing structural patterns in numbers.\n2. Digital Roots (Navashesh): Every number can be reduced to a single digit by summing its digits. The digital root of a product MUST equal the product of the digital roots of its factors.\n3. Base Multiplication (Nikhilam Sutra): Numbers close to a base (like 50 or 100) can be multiplied instantly using their deviations from that base.",
+                    formulaBank: "1. Multiplication by 11: ab × 11 = a | (a+b) | b. (Carry over if a+b > 9).\n2. Squaring numbers ending in 5: (n5)² → n(n+1) | 25.\n3. Squaring near 50: (50+d)² → (25+d) | d².\n4. Multiply near 100: Left part = Either number ± other's deviation; Right part = Product of deviations.",
+                    logic: "The Digital Root Check:\nInstead of calculating 167 × 43, check the roots. DR(167)=5, DR(43)=7. Expected DR is 5×7=35 → 8. Any option whose digits don't sum to 8 is WRONG.\nThe Nikhilam Method:\nFor 94 × 97, deviations from 100 are -6 and -3. Left: 94-3=91. Right: (-6)×(-3)=18. Answer: 9118.",
+                    traps: "TRAP 1: The 'Factor of 9' Blindspot\nDigital Root checks are generally fail-safe, but they cannot detect errors if the difference between a wrong option and the right answer is exactly 9 or a multiple of 9.\n\nTRAP 2: Deviation Padding\nIn Nikhilam multiplication near 100, the right part MUST have 2 digits. If deviations are -2 and -3, the product is 6, but you MUST write 06. For near 50, pad to 2 digits as well.",
+                    examples: [
+                        { q: "Evaluate 88 × 85 using Nikhilam Sutra.", a: "7480. (Deviations: -12, -15. Left: 88-15=73. Right: (-12)*(-15)=180. Carry 1 to left: 74 | 80.)" },
+                        { q: "Square 75 instantly without a calculator.", a: "5625. (7 * 8 = 56, append 25.)" },
+                        { q: "Multiply 78 × 11.", a: "858. (7 | 7+8=15 | 8 -> Carry the 1 -> 858.)" },
+                        { q: "Find the square of 54.", a: "2916. (Deviation +4. Left: 25+4=29. Right: 4²=16.)" },
+                        { q: "Verify if 167 × 43 = 7181 using Digital Roots.", a: "Correct. (DR(167)=5, DR(43)=7. 5*7=35 -> 8. DR(7181) = 7+1+8+1 = 17 -> 8. Match!)" }
+                    ],
+                    speedSummary: "- (n5)² gives instant elimination of generic square options.\n- Digital Roots rule: DR(A × B) = DR(A) × DR(B)."
+                }
             }
         ]
     },
