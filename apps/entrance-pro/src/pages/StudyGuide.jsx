@@ -267,6 +267,23 @@ const StudyGuide = () => {
                                     </section>
                                 )}
 
+                                {/* Hacker Logic / Street-Smart */}
+                                {topic.content?.logic && (
+                                    <section className="bg-brand-emerald/5 border border-brand-emerald/20 rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden group">
+                                        <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-brand-emerald/10 blur-[60px] rounded-full group-hover:scale-125 transition-transform duration-700"></div>
+                                        <div className="flex items-center gap-4 mb-10">
+                                            <div className="p-3 bg-brand-emerald/10 rounded-2xl border border-brand-emerald/20 text-brand-emerald">
+                                                <Zap size={20} />
+                                            </div>
+                                            <h3 className="text-2xl font-black text-white italic tracking-tighter uppercase">Street-Smart Logic</h3>
+                                        </div>
+                                        <div className="bg-brand-slate/50 border border-emerald-900/30 p-8 rounded-[2rem] text-brand-emerald/90 text-lg leading-relaxed whitespace-pre-wrap italic relative z-10">
+                                            <div className="text-[10px] font-black text-brand-emerald uppercase tracking-[0.4em] mb-4">⚡ HACKER DETECTED</div>
+                                            {topic.content.logic}
+                                        </div>
+                                    </section>
+                                )}
+
                                 {/* Examiner Traps */}
                                 {(topic.content?.traps || topic.examAngle) && (
                                     <section className="bg-brand-rose/5 border border-brand-rose/20 rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden">
@@ -277,7 +294,7 @@ const StudyGuide = () => {
                                             </div>
                                             <h3 className="text-2xl font-black text-white italic tracking-tighter uppercase">Evasion Tactics</h3>
                                         </div>
-                                        <div className="bg-brand-slate/50 border border-brand-rose/30 p-8 rounded-[2rem] text-slate-200 text-lg leading-relaxed italic relative z-10">
+                                        <div className="bg-brand-slate/50 border border-brand-rose/30 p-8 rounded-[2rem] text-slate-200 text-lg leading-relaxed italic whitespace-pre-wrap relative z-10">
                                             <div className="text-[10px] font-black text-brand-rose uppercase tracking-[0.4em] mb-4">⚠️ THREAT DETECTED</div>
                                             {topic.content?.traps || topic.examAngle}
                                         </div>
