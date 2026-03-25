@@ -38,3 +38,7 @@ Thumbs.db
 
 # Suncube Deployment
 deployment_root/
+
+# Local Deploy Artifacts
+sandbox/
+deployment_root/
