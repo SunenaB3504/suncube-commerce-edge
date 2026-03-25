@@ -9,7 +9,7 @@ export const relationsDirectionData = {
         title: "1. Direction & Distance Logic",
         content: {
           coreConcept: "Direction sense involves tracking movements across North, South, East, and West.",
-          formulaBank: "- Main Directions: N, S, E, W.\n- Cardinal Directions: NE, NW, SE, SW.\n- Pythagoras: Distance = √(x² + y²).",
+          formulaBank: "- Main Directions: N, S, E, W.\n  🏢 Real Life: Like using a GPS to find your way in a new city.\n- Cardinal Directions: NE, NW, SE, SW.\n  🏢 Real Life: Like the diagonal shortcuts you take across a square park.\n- Pythagoras: Distance = √(x² + y²).\n  🏢 Real Life: Like the 'As the crow flies' distance vs. walking along the streets.",
           logic: "1. Draw a small compass on your rough sheet.\n2. Always start from a fixed 'Point A'.\n3. Remember: Turning RIGHT while facing South takes you WEST.",
           traps: "The Final Direction vs Direction from Start: 'Which way is he facing now?' vs 'In which direction is he from the starting point?' - READ CAREFULLY.\nRotation: 90 degrees vs 45 degrees turns.",
           examples: [

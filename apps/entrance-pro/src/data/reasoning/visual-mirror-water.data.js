@@ -9,7 +9,7 @@ export const visualMirrorWaterData = {
         title: "1. Mirror and Water Images",
         content: {
           coreConcept: "Visual reasoning involves identifying reflections across vertical (Mirror) and horizontal (Water) axes.",
-          formulaBank: "- Mirror Image: Left <-> Right inversion. Top/Bottom stay same.\n- Water Image: Top <-> Bottom inversion. Left/Right stay same.\n- Clocks: Mirror Time = 11:60 - Time | Water Time = 18:30 - Time.",
+          formulaBank: "- Mirror Image: Left <-> Right inversion. Top/Bottom stay same.\n  🏢 Real Life: Like looking at your reflection while combing your hair; your right hand looks like a left hand.\n- Water Image: Top <-> Bottom inversion. Left/Right stay same.\n  🏢 Real Life: Like seeing a mountain's reflection in a still lake; the peak points downwards.\n- Clocks: Mirror Time = 11:60 - Time | Water Time = 18:30 - Time.",
           logic: "1. Focus on one small part of the image (e.g., a dot or a line).\n2. Reflect that part alone and eliminate wrong options.\n3. The part 'closest' to the mirror line remains 'closest' in the reflection.",
           traps: "Symmetric characters: Letters like O, H, I look same in mirror. Non-vocalic characters like J, L are the keys to elimination.",
           examples: [

@@ -9,7 +9,7 @@ export const arrangementsLinearData = {
         title: "1. Linear Arrangement Basics",
         content: {
           coreConcept: "Linear arrangement involves placing objects or people in a straight line. The orientation (facing North or South) is critical for determining Left and Right directions.\n\n- Facing North (Standard): Left is West, Right is East.\n- Facing South: Left is East, Right is West.",
-          formulaBank: "- Immediate Neighbor: Person exactly to the left or right.\n- Extremes: Term used for the ends of the row (1st and last positions).\n- Between: If C is between A and B, it doesn't always mean exactly middle unless specified.",
+          formulaBank: "- Immediate Neighbor: Person exactly to the left or right.\n  🏢 Real Life: The person sitting next to you in a movie theater row.\n- Extremes: Term used for the ends of the row (1st and last positions).\n  🏢 Real Life: The aisle seats at the far left and right ends of a row.\n- Between: If C is between A and B, it doesn't always mean exactly middle unless specified.",
           logic: "1. Always start with 'fixed' clues (e.g., 'X is at the extreme end').\n2. Draw a line with marked positions (1, 2, 3...) to visualize.\n3. Case Analysis: If two positions are possible, draw two diagrams and eliminate the one that contradicts future clues.",
           traps: "The 'Only' Trap: 'A is the only neighbor of B' means B is at an extreme end.\nThe Direction Trap: Forgetting that Left/Right flips when facing South.",
           examples: [
@@ -32,7 +32,7 @@ export const arrangementsLinearData = {
         title: "2. Dual Rows & Attributes",
         content: {
           coreConcept: "Dual row arrangements involve two parallel lines facing each other. Usually, Row 1 faces South and Row 2 faces North.",
-          formulaBank: "Opposite: If A in Row 1 faces B in Row 2, they occupy the same vertical position index.",
+          formulaBank: "Opposite: If A in Row 1 faces B in Row 2, they occupy the same vertical position index.\n  🏢 Real Life: Like two teams lining up to shake hands after a basketball game; you face the person directly across from you.",
           logic: "1. Focus on the relationship between the rows.\n2. 'Diagonal' positions: If A is diagonally opposite B, they are at opposite ends of different rows.",
           traps: "Thinking 'Left' is the same for both rows. People in Row 1 (South) have their Left toward the right of the screen.",
           examples: [

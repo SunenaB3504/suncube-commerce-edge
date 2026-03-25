@@ -9,7 +9,7 @@ export const logicVennData = {
         title: "1. Geometric Venn Diagrams",
         content: {
           coreConcept: "Venn diagrams represent relationships between sets (objects, classes, groups).",
-          formulaBank: "- Type 1: Relationship identification (e.g., Doctors, Humans, Females).\n- Type 2: Number identification (e.g., 'How many doctors are neither females nor humans?').",
+          formulaBank: "- Type 1: Relationship identification (e.g., Doctors, Humans, Females).\n  🏢 Real Life: Visualizing your friend circle. Some are school friends, some are gym friends, and the overlap is friends who go to your school AND your gym.\n- Type 2: Number identification (e.g., 'How many doctors are neither females nor humans?').",
           logic: "1. Identify the relationship: Is one group a proper subset of another?\n2. Use the 'Universal' group as the largest circle if applicable.",
           traps: "Common sense vs Statement: Sometimes the groups overlap in reality but the question implies they are disjoint (or vice versa).",
           examples: [

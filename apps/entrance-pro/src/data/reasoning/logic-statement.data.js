@@ -9,7 +9,7 @@ export const logicStatementData = {
         title: "1. Statement, Assumptions & Conclusions",
         content: {
           coreConcept: "Critical reasoning involves analyzing statements to find implicit assumptions or mandatory outcomes.",
-          formulaBank: "- Assumption: Something taken for granted (must be true for the statement to exist).\n- Conclusion: A direct logical derivation from the statement.",
+          formulaBank: "- Assumption: Something taken for granted (must be true for the statement to exist).\n  🏢 Real Life: If someone says 'Grab your umbrella', the assumption is that it's raining or going to rain.\n- Conclusion: A direct logical derivation from the statement.\n  🏢 Real Life: Seeing a wet umbrella in the hallway and concluding that it rained outside.",
           logic: "1. Don't use external knowledge; stick strictly to the statement.\n2. Assumption check: If the assumption is removed, does the statement crumble? If yes, it's a valid assumption.",
           traps: "Restatement Trap: A conclusion that is just the statement rephrased is sometimes considered 'weak' or invalid in some exam formats.\nExtreme words: Words like 'Only', 'Always', 'Every' often make an assumption or conclusion invalid unless stated.",
           examples: [

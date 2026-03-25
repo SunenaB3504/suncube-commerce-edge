@@ -9,7 +9,7 @@ export const seriesAlphanumericData = {
         title: "1. Alphanumeric & Symbol Series",
         content: {
           coreConcept: "Mixed series combine letters, numbers, and sometimes symbols. They usually follow independent rules for each component.",
-          formulaBank: "- Split & Solve: Analyze letters and numbers as two separate problems.\n- Symbol Position: Often fixed or alternating.",
+          formulaBank: "- Split & Solve: Analyze letters and numbers as two separate problems.\n  🏢 Real Life: Like separating your laundry into whites and colors before washing.\n- Symbol Position: Often fixed or alternating.\n  🏢 Real Life: Like the fixed positions of players in a cricket field.",
           logic: "1. Identify if the letter sequence is independent of the number sequence.\n2. Check for relationships between the letter and the adjacent number (e.g., A1, B2).",
           traps: "Mixing the rules: Applying a letter shift rule to a number sequence.\nIgnoring symbols: Symbols often mark the start of a repeating pattern block.",
           examples: [

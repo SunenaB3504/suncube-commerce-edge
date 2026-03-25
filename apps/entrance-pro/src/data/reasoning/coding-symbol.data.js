@@ -9,7 +9,7 @@ export const codingSymbolData = {
         title: "1. Symbol & Direct Substitution",
         content: {
           coreConcept: "In symbol coding, letters are replaced by specific symbols ($, #, @) or numbers based on a fixed mapping.",
-          formulaBank: "- Direct Mapping: If A=@ and B=$, then AB=@$.",
+          formulaBank: "- Direct Mapping: If A=@ and B=$, then AB=@$.\n  🏢 Real Life: Like using emojis in texting where a 'fire' emoji directly means 'awesome' or 'hot'.",
           logic: "1. Find the common letters in multiple given words to identify their symbols.\n2. Ensure the mapping is consistent across all examples given.",
           traps: "Complex rules: Sometimes the symbol represents the 'number of vowels' rather than the letter itself.\nPositional symbols: The symbol for 'A' might change if it's at the start or end of a word.",
           examples: [

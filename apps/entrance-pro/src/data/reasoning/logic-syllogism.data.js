@@ -9,7 +9,7 @@ export const logicSyllogismData = {
         title: "1. Syllogisms & Logical Venn",
         content: {
           coreConcept: "Syllogisms test deductive reasoning based on given premises.\n\n- All A are B: A is a subset of B.\n- Some A are B: Intersection of A and B is non-empty.\n- No A is B: A and B are disjoint sets.",
-          formulaBank: "- Only a Few: Means 'Some are' AND 'Some are not'.\n- At least: Same as 'Some'.",
+          formulaBank: "- Only a Few: Means 'Some are' AND 'Some are not'.\n  🏢 Real Life: 'Only a few students passed' means some passed, but definitely some failed.\n- At least: Same as 'Some'.\n  🏢 Real Life: 'At least one person is here' means someone is here.",
           logic: "1. Draw the minimum possible Venn diagram representing the statements.\n2. Check if the conclusion is DEFINITELY true in ALL possible diagrams.\n3. If it fails in even one valid diagram, the definite conclusion is false.",
           traps: "Possibility vs Definite: 'Some A can be B' (Possibility) vs 'Some A are B' (Definite).\nConclusion outside scope: Conclusions mentioning elements not in the statements.",
           examples: [

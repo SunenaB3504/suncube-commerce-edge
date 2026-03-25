@@ -9,7 +9,7 @@ export const arrangementsFloorData = {
         title: "1. Floor & Matrix Puzzles",
         content: {
           coreConcept: "Floor puzzles involve arranging people across different levels of a building. Usually, ground floor is 1, top floor is n.\n\n- Matrix puzzles add attributes (colors, hobbies) to the people on each floor.",
-          formulaBank: "- Immediate Above/Below: Floors n+1 or n-1.\n- Gap: 'Two floors between A and B' means |floorA - floorB| = 3.",
+          formulaBank: "- Immediate Above/Below: Floors n+1 or n-1.\n  🏢 Real Life: Think of a classic elevator panel. Floor 4 is immediately above Floor 3.\n- Gap: 'Two floors between A and B' means |floorA - floorB| = 3.\n  🏢 Real Life: If you live on floor 1 and your friend is on floor 4, the 'gap' is Floor 2 and 3 (Two floors in between).",
           logic: "1. Create a table with Floor numbers 1 to n.\n2. Fill in 'definite' clues (e.g., 'X lives on the 3rd floor').\n3. Use 'connecting' clues to link floors with attributes.",
           traps: "Odd/Even Trap: 'A lives on an even-numbered floor' - check how many even floors exist first.\nTop/Bottom confusion: Always read if 1 is top or bottom.",
           examples: [

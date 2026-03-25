@@ -9,7 +9,7 @@ export const arrangementsCircularData = {
         title: "1. Circular Arrangement Basics",
         content: {
           coreConcept: "Circular arrangement involves placing objects or people around a circular table. The orientation (facing Center or Outward) is the most important factor.\n\n- Facing Center: Left is Clockwise, Right is Anti-Clockwise.\n- Facing Outward: Left is Anti-Clockwise, Right is Clockwise.",
-          formulaBank: "- Opposite Positions: Only exist for even number of people (n=4, 6, 8...). For n=8, person at pos 1 is opposite pos 5.\n- Immediate Neighbors: People on either side of an individual.",
+          formulaBank: "- Opposite Positions: Only exist for even number of people (n=4, 6, 8...). For n=8, person at pos 1 is opposite pos 5.\n  🏢 Real Life: Think of cutting a pizza into 8 equal slices; the slice exactly across the pie is the 'opposite' position.\n- Immediate Neighbors: People on either side of an individual.\n  🏢 Real Life: The people sitting on your immediate left or right at a round dinner table.",
           logic: "1. Start by placing the first person anywhere (usually at the bottom/pos 6 o'clock).\n2. Relative to that person, fill in other 'fixed' clues.\n3. Case Analysis: For people facing outward, visualize yourself sitting at the table to avoid direction errors.",
           traps: "The 'Opposite' Trap: Assuming people are opposite in an odd-numbered group.\nThe Direction Swap: Forgetting that Left/Right flips when the facing direction changes.",
           examples: [

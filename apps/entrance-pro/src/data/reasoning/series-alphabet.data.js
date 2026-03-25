@@ -9,7 +9,7 @@ export const seriesAlphabetData = {
         title: "1. Alphabet Sequence & Mapping",
         content: {
           coreConcept: "Alphabet series use the position of letters (1-26) to form sequences.",
-          formulaBank: "- EJOTY: 5, 10, 15, 20, 25.\n- Reverse Pairs: Letter + its reverse = 27 (e.g., A=1, Z=26; 1+26=27).",
+          formulaBank: "- EJOTY: 5, 10, 15, 20, 25.\n  🏢 Real Life: Like remembering 'E-J-O-T-Y' as milestones on a 26-mile marathon.\n- Reverse Pairs: Letter + its reverse = 27 (e.g., A=1, Z=26; 1+26=27).\n  🏢 Real Life: Like a mirror where 'A' sees 'Z', and 'B' sees 'Y'.",
           logic: "1. Convert letters to numbers using a reference sheet.\n2. Solve as a number series.\n3. Convert final number back to letter.",
           traps: "Circular Alphabet: Thinking the series ends at Z. It restarts (X, Y, Z, A, B...).\nBackward Jumps: -2, -3 shifts can be tricky near 'A'.",
           examples: [

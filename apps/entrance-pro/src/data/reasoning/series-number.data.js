@@ -9,7 +9,7 @@ export const seriesNumberData = {
         title: "1. Common Number Patterns",
         content: {
           coreConcept: "Number series are sequences following a specific mathematical rule. Identifying the speed of growth is the first step.",
-          formulaBank: "- Arithmetic: constant addition (d).\n- Geometric: constant multiplication (r).\n- Squares/Cubes: n², n³, n²±1, n³±1.\n- Fibonacci: a + b = c.",
+          formulaBank: "- Arithmetic: constant addition (d).\n  🏢 Real Life: Like a staircase where every step is the same height.\n- Geometric: constant multiplication (r).\n  🏢 Real Life: Like a viral video where views triple every hour.\n- Squares/Cubes: n², n³, n²±1, n³±1.\n  🏢 Real Life: Like a growing garden where the number of flowers increases exponentially.\n- Fibonacci: a + b = c.\n  🏢 Real Life: Like a family tree where each child is the sum of two parents' traits.",
           logic: "1. Check Difference: If growth is slow.\n2. Check Multiplication: If growth is fast.\n3. Alternating Series: Check odd and even positions separately.",
           traps: "The 'Missing' vs 'Wrong' Term: READ the question carefully to see if it wants the next term or the one that doesn't fit.\nMultiple Rules: Sometimes a series uses +1, x2, +3, x4...",
           examples: [

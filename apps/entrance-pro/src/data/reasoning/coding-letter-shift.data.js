@@ -9,7 +9,7 @@ export const codingLetterShiftData = {
         title: "1. Letter-Shift Coding Patterns",
         content: {
           coreConcept: "Letter coding involves shifting characters forward or backward in the alphabet sequence.",
-          formulaBank: "- Forward Shift: A (+1) -> B.\n- Backward Shift: C (-2) -> A.\n- Pattern: Can be constant (+2, +2) or arithmetic (+1, +2, +3).",
+          formulaBank: "- Forward Shift: A (+1) -> B.\n  🏢 Real Life: Like moving your appointment to the next day on a calendar.\n- Backward Shift: C (-2) -> A.\n  🏢 Real Life: Like rewinding a playlist by two tracks.\n- Pattern: Can be constant (+2, +2) or arithmetic (+1, +2, +3).",
           logic: "1. Write the original word and the coded word one below the other.\n2. Calculate the numerical gap for each letter pair.\n3. Verify the pattern on at least 3 letters before applying to the answer.",
           traps: "Opposite Letters: Sometimes 'coding' is just replacing A with Z, B with Y.\nMid-word Reversal: The first half of the word might shift +1, while the second half shifts -1.",
           examples: [
