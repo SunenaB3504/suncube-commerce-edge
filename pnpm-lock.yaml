@@ -301,6 +301,9 @@ importers:
       canvas-confetti:
         specifier: ^1.9.2
         version: 1.9.4
+      lucide-react:
+        specifier: ^0.563.0
+        version: 0.563.0(react@19.2.4)
       react:
         specifier: ^19.0.0
         version: 19.2.4
