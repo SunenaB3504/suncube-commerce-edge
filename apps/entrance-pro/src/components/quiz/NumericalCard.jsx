@@ -44,21 +44,7 @@ const NumericalCard = ({ question, selectedAnswer, onAnswer, isSubmitted }) => {
                 })}
             </div>
 
-            {isSubmitted && question.solution_steps && (
-                <div className="mt-8 space-y-4 animate-in fade-in slide-in-from-top-4 duration-500">
-                    <h4 className="text-xs font-black uppercase tracking-widest text-slate-400">Step-by-Step Solution</h4>
-                    <div className="space-y-3">
-                        {question.solution_steps.map((step, idx) => (
-                            <div key={idx} className="flex gap-4 items-start">
-                                <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-[10px] font-black shrink-0 mt-0.5">
-                                    {idx + 1}
-                                </div>
-                                <p className="text-slate-700 text-sm font-medium pt-0.5">{step}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            )}
+
         </div>
     );
 };

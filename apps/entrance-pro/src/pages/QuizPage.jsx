@@ -150,6 +150,16 @@ const QuizPage = () => {
                     <div className="bg-white/[0.03] border border-white/5 backdrop-blur-3xl rounded-[3rem] p-12 lg:p-16 mb-8 shadow-2xl relative overflow-hidden group">
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-amber/20 to-transparent"></div>
                         <Sparkles size={24} className="text-brand-amber/20 mb-8" />
+                        
+                        {q?.passage && (
+                            <div className="mb-8 p-6 bg-brand-slate/50 border border-white/10 rounded-3xl max-h-[300px] overflow-y-auto custom-scrollbar shadow-inner">
+                                <h4 className="text-xs font-black uppercase tracking-[0.3em] text-brand-emerald mb-3 italic">Case Study / Passage</h4>
+                                <p className="text-slate-300 leading-relaxed text-sm italic font-medium whitespace-pre-wrap">
+                                    {q.passage}
+                                </p>
+                            </div>
+                        )}
+
                         <h3 className="text-3xl lg:text-4xl font-black text-white leading-tight italic tracking-tighter mb-4">
                             {q?.question}
                         </h3>
@@ -188,9 +198,29 @@ const QuizPage = () => {
                                 <Zap size={18} className="text-brand-indigo" />
                                 <span className="text-[10px] font-black text-brand-indigo uppercase tracking-[0.4em] italic">LOGIC REVELATION</span>
                             </div>
-                            <p className="text-slate-300 text-lg italic leading-relaxed font-medium">
-                                {q?.explanation}
-                            </p>
+                            {q?.explanation && (
+                                <p className="text-slate-300 text-lg italic leading-relaxed font-medium mb-6">
+                                    {q.explanation}
+                                </p>
+                            )}
+                            
+                            {q?.solution_steps && (
+                                <div className="space-y-4 border-t border-brand-indigo/10 pt-6">
+                                    <h4 className="text-[8px] font-black uppercase tracking-[0.4em] text-brand-indigo/60 mb-2 italic">Step-by-Step Breakdown</h4>
+                                    <div className="space-y-3">
+                                        {q.solution_steps.map((step, idx) => (
+                                            <div key={idx} className="flex gap-4 items-start group/step">
+                                                <div className="w-6 h-6 rounded-lg bg-brand-indigo/10 text-brand-indigo flex items-center justify-center text-[10px] font-black shrink-0 mt-1 border border-brand-indigo/20 group-hover/step:bg-brand-indigo group-hover/step:text-white transition-all duration-300">
+                                                    {idx + 1}
+                                                </div>
+                                                <p className="text-slate-400 text-base italic leading-relaxed group-hover/step:text-slate-200 transition-colors duration-300">
+                                                    {step}
+                                                </p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
                             <button 
                                 onClick={handleNext}
                                 className="mt-8 flex items-center gap-3 px-8 py-4 bg-brand-amber hover:bg-white text-brand-slate rounded-2xl font-black text-[10px] uppercase tracking-[0.3em] transition-all shadow-glow-amber/20 italic active:scale-95"
