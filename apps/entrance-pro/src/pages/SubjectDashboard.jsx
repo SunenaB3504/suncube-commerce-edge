@@ -92,7 +92,7 @@ const SubjectDashboard = () => {
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 relative z-10">
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 relative z-10">
                                     <button 
                                         onClick={() => navigate(`/study/${subjectId}/${chapter.id}`)}
                                         className="flex flex-col items-center gap-3 p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-brand-indigo/10 hover:border-brand-indigo/30 hover:text-brand-indigo transition-all group/btn"
@@ -106,13 +106,6 @@ const SubjectDashboard = () => {
                                     >
                                         <FlaskConical size={20} className="group-hover/btn:scale-110 transition-transform" />
                                         <span className="text-[9px] font-black uppercase tracking-widest italic">DRILL</span>
-                                    </button>
-                                    <button 
-                                        onClick={() => navigate(`/flashcards-speed/${subjectId}/${chapter.id}`)}
-                                        className="flex flex-col items-center gap-3 p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-brand-amber/10 hover:border-brand-amber/30 hover:text-brand-amber transition-all group/btn"
-                                    >
-                                        <Zap size={20} className="group-hover/btn:scale-110 transition-transform" />
-                                        <span className="text-[9px] font-black uppercase tracking-widest italic">RAPID</span>
                                     </button>
                                     <button 
                                         onClick={() => navigate(`/timed-practice/${subjectId}/${chapter.id}`)}
