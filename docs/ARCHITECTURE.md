@@ -27,6 +27,7 @@ The Suncube Commerce Edge project is a multi-app monorepo designed for high-perf
 │   ├── config/          # Shared TS/Vite/ESLint configs
 │   └── shared-logic/    # Common utilities and "Hacker Hack" schemas
 ├── docs/                # Architectural & implementation documentation
+├── scripts/             # Deployment automation scripts
 └── pnpm-workspace.yaml  # Workspace definitions
 ```
 
@@ -45,3 +46,13 @@ The design system follows a unified visual DNA:
 - **Lighthouse Score**: 90+ across all metrics.
 - **Target Profile**: Budget Android devices (Navi Mumbai commute profile).
 - **Optimizations**: Minimal JS footprint, aggressive code-splitting via Vite, and CSS-only interactions where possible.
+
+## 6. Deployment Architecture & Routing
+Since Suncube Commerce Edge compiles into static files hosted on GitHub Pages, the routing and deployment strategy must mirror the static file structure:
+- **Commerce Hub (Root Deployment)**: Acts as the `index.html` at the domain root (`/suncube-commerce-edge/`).
+- **Subject Nodes (Sub-directory Deployments)**: Each subject runs essentially as its own independent React app. Within their `vite.config.ts`, they explicitly define their `base` path to match their designated subfolder (e.g., `base: '/suncube-commerce-edge/entrance-pro/'`).
+
+During the CI/CD or manual deployment phase, a consolidation script merges `commerce-hub` to the root of a unified deployment directory, while creating dedicated subfolders for the remaining subjects to prevent bundle clashes and 404 navigation errors.
+
+## 7. Dependency Synchronization
+Because of the heavy reliance on `pnpm` workspaces, any shared libraries imported inside the `@suncube/ui` design system (such as `lucide-react`) **must** be explicitly defined in both the UI package's `peerDependencies` and its Rollup `external` configurations. Failure to externalize these shared modules will cause `npx pnpm -r build` to crash due to unresolved local imports.

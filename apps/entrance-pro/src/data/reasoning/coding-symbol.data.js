@@ -122,7 +122,7 @@ export const codingSymbolData = {
       id: "cs-q-006",
       type: "case-study",
       difficulty: "hard",
-       passage: "Rules for Coding (Same as above)",
+       passage: "Rules for Coding: 1. If the first letter is a vowel and the last is a consonant, both are coded as $. 2. If the first is a consonant and the last is a vowel, both are coded as #. 3. If both are vowels, both are coded as %. Table: A:1, B:2, E:3, T:4, R:5, I:6, S:7.",
       question: "What is the code for 'STIRE'?",
       options: ["#465#", "#7465#", "74653", "$7465$"],
       correct: 0,
