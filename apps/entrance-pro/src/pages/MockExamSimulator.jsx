@@ -297,7 +297,7 @@ const MockExamSimulator = () => {
                         </div>
 
                         <div className="relative group/q mb-16 px-12 py-10 zen-mesh-sky rounded-[3.5rem] border-l-8 border-zen-sky transition-all shadow-bold">
-                            <h3 className="text-3xl lg:text-4xl font-bold text-zen-ink leading-tight italic tracking-tighter">
+                            <h3 className="text-xl lg:text-2xl font-bold text-zen-ink leading-tight italic tracking-tighter">
                                 {currentQuestion.question}
                             </h3>
                         </div>

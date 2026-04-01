@@ -160,7 +160,7 @@ const QuizPage = () => {
                             </div>
                         )}
 
-                        <h3 className="text-3xl lg:text-4xl font-bold text-zen-ink leading-tight tracking-tighter italic">
+                        <h3 className="text-xl lg:text-2xl font-bold text-zen-ink leading-tight tracking-tighter italic">
                             {q?.question}
                         </h3>
                     </div>
