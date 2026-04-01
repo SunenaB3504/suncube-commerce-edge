@@ -152,14 +152,14 @@ const StudyGuide = () => {
                         <ChevronLeft size={18} />
                     </button>
                     <div>
-                        <h2 className="font-bold text-zen-ink uppercase text-[10px] tracking-[0.3em] italic">{chapter?.name}</h2>
-                        <p className="text-[8px] font-bold text-zen-ink/40 uppercase tracking-[0.5em] italic">LEARNING GUIDE // {subject?.name}</p>
+                        <h2 className="font-bold text-zen-ink uppercase text-[13px] tracking-[0.2em] italic">{chapter?.name}</h2>
+                        <p className="text-[10px] font-bold text-zen-ink/60 uppercase tracking-[0.4em] italic leading-relaxed">LEARNING GUIDE // {subject?.name}</p>
                     </div>
                 </div>
                 {isSpeaking && (
-                    <div className="flex items-center gap-4 bg-zen-sky/10 border border-zen-sky/20 px-4 py-2 rounded-xl animate-pulse">
-                        <Volume2 size={14} className="text-zen-sky" />
-                        <span className="text-[9px] font-bold text-zen-sky uppercase tracking-widest">NARRATION ACTIVE</span>
+                    <div className="flex items-center gap-4 bg-zen-sky/10 border border-zen-sky/30 px-5 py-2.5 rounded-xl animate-pulse">
+                        <Volume2 size={16} className="text-zen-sky" />
+                        <span className="text-[10px] font-bold text-zen-sky uppercase tracking-widest">NARRATION ACTIVE</span>
                     </div>
                 )}
             </header>
@@ -167,7 +167,7 @@ const StudyGuide = () => {
             <div className="container mx-auto px-8 py-12 max-w-7xl flex gap-12">
                 {/* Tactical Sidebar */}
                 <aside className="hidden lg:block w-72 shrink-0 h-[calc(100vh-160px)] sticky top-28 overflow-y-auto pr-4 scroller-hide">
-                    <div className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-[0.4em] mb-8 italic flex items-center justify-between">
+                    <div className="text-[11px] font-bold text-zen-ink/60 uppercase tracking-[0.3em] mb-8 italic flex items-center justify-between border-b border-zen-ink/5 pb-4">
                         <span>MODULE SYLLABUS</span>
                         <List size={14} />
                     </div>
@@ -181,7 +181,7 @@ const StudyGuide = () => {
                                     : 'bg-white border-zen-ink/10 hover:bg-zen-sky/5 hover:border-zen-sky/20'
                                     }`}
                             >
-                                <div className={`text-[9px] font-bold mb-2 uppercase tracking-widest italic ${activeTopicId === topic.id ? 'text-white/60' : 'text-zen-ink/40'}`}>
+                                <div className={`text-[10px] font-bold mb-2 uppercase tracking-widest italic ${activeTopicId === topic.id ? 'text-white/80' : 'text-zen-ink/60'}`}>
                                     UNIT {String(index + 1).padStart(2, '0')}
                                 </div>
                                 <div className="font-bold text-sm italic tracking-tight leading-tight uppercase group-hover:text-zen-sky transition-colors">
