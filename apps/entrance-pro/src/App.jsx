@@ -76,21 +76,21 @@ const App = () => {
 
                     {/* Mobile Hamburger Button */}
                     <button
-                        className="md:hidden w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex flex-col items-center justify-center gap-1.5 transition-all active:scale-95"
+                        className="md:hidden w-12 h-12 rounded-xl bg-zen-ink/5 border border-zen-ink/5 flex flex-col items-center justify-center gap-1.5 transition-all active:scale-95"
                         onClick={() => setMobileMenuOpen(prev => !prev)}
                     >
-                        {mobileMenuOpen ? <X size={24} className="text-brand-amber" /> : <Menu size={24} className="text-brand-amber" />}
+                        {mobileMenuOpen ? <X size={24} className="text-zen-sky" /> : <Menu size={24} className="text-zen-sky" />}
                     </button>
                 </div>
 
                 {/* Mobile Slide-down Menu */}
                 <div className={`fixed inset-0 top-20 bg-zen-paper/95 backdrop-blur-2xl z-[49] md:hidden transition-all duration-500 ease-in-out ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none translate-y-4'}`}>
                     <div className="container mx-auto px-6 py-12 flex flex-col gap-6">
-                        <Link to="/" onClick={closeMobileMenu} className="p-6 rounded-3xl bg-zen-ink/5 border border-zen-ink/5 text-zen-ink font-bold text-sm tracking-tight flex items-center justify-between group active:bg-zen-ink/10">
+                        <Link to="/" onClick={closeMobileMenu} className="p-6 rounded-3xl bg-white border border-zen-ink/5 text-zen-ink font-bold text-sm tracking-tight flex items-center justify-between group active:scale-[0.98] transition-all shadow-sm">
                             Dashboard <ChevronRight size={18} className="text-zen-sky group-hover:translate-x-2 transition-transform" />
                         </Link>
-                        <Link to="/analytics" onClick={closeMobileMenu} className="p-6 rounded-3xl bg-zen-ink/5 border border-zen-ink/5 text-zen-ink font-bold text-sm tracking-tight flex items-center justify-between group active:bg-zen-ink/10">
-                            Progress Trace <ChevronRight size={18} className="text-zen-ink/40 group-hover:translate-x-2 transition-transform" />
+                        <Link to="/analytics" onClick={closeMobileMenu} className="p-6 rounded-3xl bg-white border border-zen-ink/5 text-zen-ink font-bold text-sm tracking-tight flex items-center justify-between group active:scale-[0.98] transition-all shadow-sm">
+                            Progress Trace <ChevronRight size={18} className="text-zen-ink/20 group-hover:translate-x-2 transition-transform" />
                         </Link>
                         <Link to="/mocks" onClick={closeMobileMenu} className="p-8 rounded-[2.5rem] bg-zen-sky text-white font-bold text-sm tracking-widest uppercase flex items-center justify-center gap-3 shadow-soft active:scale-95 transition-all">
                             <FlaskConical size={20} /> Start Mock Test

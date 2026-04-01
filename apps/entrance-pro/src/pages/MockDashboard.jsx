@@ -59,16 +59,16 @@ const MockDashboard = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-brand-slate text-slate-100 flex flex-col selection:bg-brand-amber/30 pb-20">
+        <div className="min-h-screen bg-zen-paper text-zen-ink flex flex-col selection:bg-zen-sky/10 pb-20">
             <div className="container mx-auto px-6 py-12 lg:py-20 max-w-7xl">
                 {/* Header */}
                 <div className="mb-20">
                     <div className="flex items-center gap-3 mb-4">
-                        <div className="w-2 h-2 bg-brand-amber rounded-full animate-pulse"></div>
-                        <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.5em] italic">WAR ROOM // MOCK SECTOR</span>
+                        <div className="w-2.5 h-2.5 bg-zen-sky rounded-full animate-pulse shadow-sm shadow-zen-sky"></div>
+                        <span className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-[0.5em] italic">SIMULATION HUB // MOCK SECTOR</span>
                     </div>
-                    <h1 className="text-5xl lg:text-7xl font-black text-white italic tracking-tighter uppercase leading-none mb-4">Tactical <span className="text-brand-amber">Command</span></h1>
-                    <p className="text-slate-500 text-xs font-black uppercase tracking-[0.3em] italic">Select your deployment objective and initialize high-intensity simulation.</p>
+                    <h1 className="text-5xl lg:text-7xl font-bold text-zen-ink italic tracking-tighter uppercase leading-none mb-4">Focused <span className="text-zen-sky">Simulations</span></h1>
+                    <p className="text-zen-ink/40 text-xs font-bold uppercase tracking-[0.3em] italic">Select your practice objective and initialize a serene, focused simulation.</p>
                 </div>
 
                 {/* Mock Grid */}
@@ -76,26 +76,26 @@ const MockDashboard = () => {
                     {mockTypes.map((mock) => (
                         <div
                             key={mock.id}
-                            className="group bg-white/[0.03] border border-white/5 p-10 rounded-[3rem] hover:bg-white/[0.05] hover:border-white/10 transition-all cursor-pointer relative overflow-hidden flex flex-col h-full shadow-2xl"
+                            className="group bg-gradient-to-br from-white via-white to-zen-sky/[0.05] border border-zen-ink/5 p-10 rounded-[3rem] hover:bg-white hover:border-zen-sky/20 transition-all cursor-pointer relative overflow-hidden flex flex-col h-full shadow-soft hover:shadow-warm"
                             onClick={() => navigate(`/mock-exam/${mock.id}`)}
                         >
-                            <div className={`absolute -right-12 -top-12 w-48 h-48 opacity-5 group-hover:opacity-10 transition-opacity duration-700 blur-[60px] rounded-full ${mock.bg.replace('10', '40')}`}></div>
+                            <div className={`absolute -right-12 -top-12 w-48 h-48 opacity-10 group-hover:opacity-20 transition-opacity duration-700 blur-[60px] rounded-full`} style={{ backgroundColor: mock.color.includes('indigo') ? '#6366f1' : mock.color.includes('emerald') ? '#10b981' : mock.color.includes('amber') ? '#f59e0b' : '#f43f5e' }}></div>
                             
-                            <div className={`w-14 h-14 ${mock.bg} ${mock.border} border rounded-2xl flex items-center justify-center mb-8`}>
-                                <mock.icon size={24} className={mock.color} />
+                            <div className={`w-14 h-14 bg-white border-zen-ink/5 border rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform`}>
+                                <mock.icon size={24} className="text-zen-ink" />
                             </div>
                             
-                            <h3 className="text-2xl font-black text-white italic tracking-tight uppercase group-hover:text-brand-amber transition-colors mb-4">{mock.name}</h3>
-                            <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest leading-relaxed mb-10 italic">
+                            <h3 className="text-2xl font-bold text-zen-ink italic tracking-tight uppercase group-hover:text-zen-sky transition-colors mb-4">{mock.name}</h3>
+                            <p className="text-zen-ink/40 text-[10px] font-bold uppercase tracking-widest leading-relaxed mb-10 italic">
                                 {mock.description}
                             </p>
                             
                             <div className="mt-auto flex items-center justify-between">
                                 <div className="flex flex-col">
-                                    <span className="text-[9px] font-black text-slate-600 uppercase tracking-widest italic">INTENSITY</span>
-                                    <span className="text-sm font-black text-white italic tracking-tighter">{mock.duration} MINS</span>
+                                    <span className="text-[9px] font-bold text-zen-ink/30 uppercase tracking-widest italic">DURATION</span>
+                                    <span className="text-sm font-bold text-zen-ink italic tracking-tighter">{mock.duration} MINS</span>
                                 </div>
-                                <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center group-hover:bg-brand-amber group-hover:text-brand-slate transition-all">
+                                <div className="w-10 h-10 bg-zen-ink/5 rounded-full flex items-center justify-center group-hover:bg-zen-sky group-hover:text-white transition-all shadow-sm">
                                     <ChevronRight size={18} />
                                 </div>
                             </div>
@@ -104,23 +104,23 @@ const MockDashboard = () => {
                 </div>
 
                 {/* Performance Analytics Integration */}
-                <div className="bg-white/[0.02] border border-white/5 p-12 lg:p-16 rounded-[4rem] backdrop-blur-3xl relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-emerald/20 to-transparent"></div>
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-                        <div className="max-w-xl text-center md:text-left">
-                            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-emerald/10 border border-brand-emerald/20 rounded-full text-brand-emerald text-[9px] font-black uppercase tracking-widest mb-6 italic">
-                                <BarChart3 size={14} /> LIVE PERFORMANCE METRICS
+                <div className="bg-gradient-to-br from-white via-white to-zen-forest/[0.03] border border-zen-ink/5 p-12 lg:p-16 rounded-[4rem] backdrop-blur-3xl relative overflow-hidden shadow-soft">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-zen-forest/20 to-transparent"></div>
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
+                        <div className="max-w-xl">
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-zen-forest/10 border border-zen-forest/20 rounded-full text-zen-forest text-[9px] font-bold uppercase tracking-widest mb-6 italic">
+                                <BarChart3 size={14} /> LIVE PERFORMANCE INSIGHTS
                             </div>
-                            <h2 className="text-4xl font-black text-white italic uppercase tracking-tighter mb-4 leading-none">Cognitive <span className="text-brand-emerald">Telemetry</span></h2>
-                            <p className="text-slate-500 text-xs font-black uppercase tracking-widest italic leading-relaxed">
-                                Review your previous deployment data to identify logical vulnerabilities and optimize exam-day protocols.
+                            <h2 className="text-4xl font-bold text-zen-ink italic uppercase tracking-tighter mb-4 leading-none">Insight <span className="text-zen-forest">Analytics</span></h2>
+                            <p className="text-zen-ink/40 text-xs font-bold uppercase tracking-widest italic leading-relaxed">
+                                Review your previous simulation data to identify conceptual patterns and optimize your exam-day strategies.
                             </p>
                         </div>
                         <button 
                             onClick={() => navigate('/analytics')}
-                            className="px-12 py-5 bg-brand-emerald hover:bg-white text-brand-slate rounded-[2rem] font-black text-xs uppercase tracking-[0.3em] transition-all shadow-glow-emerald/20 italic whitespace-nowrap"
+                            className="px-12 py-5 bg-zen-forest hover:bg-zen-ink text-white rounded-[2rem] font-bold text-xs uppercase tracking-[0.3em] transition-all shadow-soft italic whitespace-nowrap active:scale-95"
                         >
-                            Open Audit Center
+                            Open Insight Center
                         </button>
                     </div>
 
@@ -128,34 +128,34 @@ const MockDashboard = () => {
                         <div className="mt-16 overflow-x-auto">
                             <table className="w-full">
                                 <thead>
-                                    <tr className="border-b border-white/5 text-[9px] font-black text-slate-600 uppercase tracking-[0.4em] italic">
-                                        <th className="text-left py-6 px-4">MISSION CODE</th>
+                                    <tr className="border-b border-zen-ink/5 text-[9px] font-bold text-zen-ink/30 uppercase tracking-[0.4em] italic">
+                                        <th className="text-left py-6 px-4">SIMULATION CODE</th>
                                         <th className="text-left py-6 px-4">SCORE</th>
                                         <th className="text-left py-6 px-4">ACCURACY</th>
                                         <th className="text-right py-6 px-4">TIMESTAMP</th>
                                     </tr>
                                 </thead>
-                                <tbody className="divide-y divide-white/5">
+                                <tbody className="divide-y divide-zen-ink/5">
                                     {mockResults.slice(0, 3).map((result, idx) => (
-                                        <tr key={idx} className="group hover:bg-white/[0.01] transition-all">
-                                            <td className="py-8 px-4 text-sm font-black text-white uppercase tracking-tight italic">{result.type}</td>
+                                        <tr key={idx} className="group hover:bg-white transition-all">
+                                            <td className="py-8 px-4 text-sm font-bold text-zen-ink uppercase tracking-tight italic">{result.type}</td>
                                             <td className="py-8 px-4">
-                                                <div className="text-xl font-black text-brand-amber italic tracking-tighter">
+                                                <div className="text-xl font-bold text-zen-ink italic tracking-tighter">
                                                     {result.score} / {result.totalPossible || result.total}
                                                 </div>
                                             </td>
                                             <td className="py-8 px-4">
                                                 <div className="flex items-center gap-4">
-                                                    <div className="w-24 h-1.5 bg-white/5 rounded-full overflow-hidden border border-white/5">
+                                                    <div className="w-24 h-1.5 bg-zen-ink/5 rounded-full overflow-hidden border border-zen-ink/5">
                                                         <div 
-                                                            className="h-full bg-brand-emerald shadow-glow-emerald/30" 
+                                                            className="h-full bg-zen-forest shadow-soft" 
                                                             style={{ width: `${result.accuracy}%` }}
                                                         ></div>
                                                     </div>
-                                                    <span className="text-xs font-black text-white italic tracking-tighter">{result.accuracy}%</span>
+                                                    <span className="text-xs font-bold text-zen-ink italic tracking-tighter">{result.accuracy}%</span>
                                                 </div>
                                             </td>
-                                            <td className="py-8 px-4 text-right text-[10px] font-black text-slate-600 uppercase tracking-widest italic">
+                                            <td className="py-8 px-4 text-right text-[10px] font-bold text-zen-ink/30 uppercase tracking-widest italic">
                                                 {new Date(result.date).toLocaleDateString()}
                                             </td>
                                         </tr>
@@ -164,9 +164,9 @@ const MockDashboard = () => {
                             </table>
                         </div>
                     ) : (
-                        <div className="mt-16 p-20 border border-dashed border-white/10 rounded-[3rem] text-center flex flex-col items-center">
-                            <AlertCircle size={40} className="text-slate-700 mb-6 opacity-20" />
-                            <div className="text-[10px] font-black text-slate-700 uppercase tracking-[0.5em] italic">NO PREVIOUS DATA STREAMS DETECTED</div>
+                        <div className="mt-16 p-20 border border-dashed border-zen-ink/10 rounded-[3rem] text-center flex flex-col items-center">
+                            <AlertCircle size={40} className="text-zen-ink/20 mb-6 opacity-20" />
+                            <div className="text-[10px] font-bold text-zen-ink/20 uppercase tracking-[0.5em] italic">NO PREVIOUS DATA STREAMS DETECTED</div>
                         </div>
                     )}
                 </div>

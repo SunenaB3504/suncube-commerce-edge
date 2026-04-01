@@ -56,7 +56,7 @@ const QuizPage = () => {
     if (isLoading) return (
         <div className="h-screen bg-zen-paper flex flex-col items-center justify-center gap-6">
             <div className="w-16 h-16 border-4 border-zen-sky/10 border-t-zen-sky rounded-full animate-spin"></div>
-            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.5em]">Preparing Practice Session...</div>
+            <div className="text-[10px] font-bold text-zen-ink/40 uppercase tracking-[0.5em] animate-pulse">Assembling Practice Session...</div>
         </div>
     );
 
@@ -70,15 +70,15 @@ const QuizPage = () => {
                         <Target size={40} />
                     </div>
                     <h2 className="text-3xl font-bold text-zen-ink mb-2 tracking-tight">Session <span className="text-zen-forest">Complete</span></h2>
-                    <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-12">Summary of Results</p>
+                    <p className="text-zen-ink/30 text-[10px] font-bold uppercase tracking-[0.3em] mb-12 italic">Performance Summary</p>
 
                     <div className="grid grid-cols-2 gap-4 mb-12 text-zen-ink">
-                        <div className="bg-zen-ink/[0.02] border border-zen-ink/5 p-6 rounded-[2rem]">
-                            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">ACCURACY</div>
+                        <div className="bg-zen-sky/5 border border-zen-ink/5 p-6 rounded-[2rem]">
+                            <div className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-widest mb-1 italic">ACCURACY</div>
                             <div className="text-3xl font-bold tracking-tight">{Math.round((score / questions.length) * 100)}%</div>
                         </div>
-                        <div className="bg-zen-ink/[0.02] border border-zen-ink/5 p-6 rounded-[2rem]">
-                            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">POINTS EARNED</div>
+                        <div className="bg-zen-sky/5 border border-zen-ink/5 p-6 rounded-[2rem]">
+                            <div className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-widest mb-1 italic">POINTS EARNED</div>
                             <div className="text-3xl font-bold text-zen-sky tracking-tight">+{score * 10}</div>
                         </div>
                     </div>
@@ -111,13 +111,13 @@ const QuizPage = () => {
                 <div className="flex items-center gap-6">
                     <button 
                         onClick={() => navigate(-1)} 
-                        className="w-10 h-10 bg-zen-ink/5 hover:bg-zen-sky/20 text-slate-400 hover:text-zen-sky rounded-xl flex items-center justify-center transition-all border border-zen-ink/5 active:scale-90"
+                        className="w-10 h-10 bg-zen-ink/5 hover:bg-zen-sky/10 text-zen-ink/40 hover:text-zen-sky rounded-xl flex items-center justify-center transition-all border border-zen-ink/5 active:scale-90"
                     >
                         <ChevronLeft size={18} />
                     </button>
                     <div>
-                        <h2 className="font-bold text-zen-ink text-[10px] tracking-widest uppercase">{chapter?.name}</h2>
-                        <p className="text-[8px] font-bold text-slate-400 uppercase tracking-[0.5em]">Practice Session // {subject?.name}</p>
+                        <h2 className="font-bold text-zen-ink text-[10px] tracking-widest uppercase italic">{chapter?.name}</h2>
+                        <p className="text-[8px] font-bold text-zen-ink/30 uppercase tracking-[0.5em] italic">LEARNING MODULE // {subject?.name}</p>
                     </div>
                 </div>
 
@@ -134,14 +134,14 @@ const QuizPage = () => {
                     <div className="mb-12">
                         <div className="flex justify-between items-end mb-4">
                             <div className="flex items-center gap-3">
-                                <div className="w-2 h-2 bg-zen-sky rounded-full"></div>
-                                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">PROGRESS: {currentIndex + 1} / {questions.length}</span>
+                                <div className="w-2 h-2 bg-zen-sky rounded-full animate-pulse shadow-sm shadow-zen-sky"></div>
+                                <span className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-[0.3em] italic">PROGRESS: {currentIndex + 1} / {questions.length}</span>
                             </div>
-                            <span className="text-lg font-bold text-zen-ink tracking-tight">{Math.round(progress)}%</span>
+                            <span className="text-lg font-bold text-zen-ink/60 tracking-tight">{Math.round(progress)}%</span>
                         </div>
                         <div className="h-1.5 w-full bg-zen-ink/5 rounded-full overflow-hidden border border-zen-ink/5">
                             <div 
-                                className="h-full bg-zen-sky transition-all duration-500 shadow-soft"
+                                className="h-full bg-gradient-to-r from-zen-sky to-zen-sky/60 transition-all duration-500 shadow-soft"
                                 style={{ width: `${progress}%` }}
                             ></div>
                         </div>
@@ -152,9 +152,9 @@ const QuizPage = () => {
                         <Sparkles size={24} className="text-zen-sky/20 mb-8" />
                         
                         {q?.passage && (
-                            <div className="mb-8 p-6 bg-zen-paper/50 border border-zen-ink/10 rounded-3xl max-h-[300px] overflow-y-auto custom-scrollbar shadow-inner">
-                                <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-zen-forest mb-3">Case Study / Passage</h4>
-                                <p className="text-slate-600 leading-relaxed text-sm font-medium whitespace-pre-wrap">
+                            <div className="mb-8 p-6 bg-gradient-to-br from-zen-sky/[0.02] to-white border border-zen-sky/10 rounded-3xl max-h-[300px] overflow-y-auto custom-scrollbar shadow-inner">
+                                <h4 className="text-[9px] font-bold uppercase tracking-[0.3em] text-zen-sky/60 mb-3 italic">REFERENCE CONTEXT</h4>
+                                <p className="text-zen-ink/70 leading-relaxed text-sm font-medium whitespace-pre-wrap italic">
                                     {q.passage}
                                 </p>
                             </div>
@@ -170,11 +170,11 @@ const QuizPage = () => {
                             const isCorrect = q.correct === idx;
                             const isSelected = selectedAnswer === idx;
                             
-                            let buttonStyles = "border-zen-ink/5 bg-zen-ink/5 hover:border-zen-sky/30 hover:bg-zen-ink/10 text-slate-500 hover:text-zen-ink";
+                            let buttonStyles = "border-zen-ink/5 bg-white hover:border-zen-sky/30 hover:bg-zen-sky/5 text-zen-ink/60 hover:text-zen-ink shadow-sm";
                             if (showExplanation) {
-                                if (isCorrect) buttonStyles = "border-zen-forest bg-zen-forest/10 text-zen-forest";
-                                else if (isSelected) buttonStyles = "border-zen-terracotta bg-zen-terracotta/10 text-zen-terracotta opacity-50";
-                                else buttonStyles = "border-zen-ink/5 bg-zen-ink/5 text-slate-300 opacity-30";
+                                if (isCorrect) buttonStyles = "border-zen-forest bg-zen-forest/10 text-zen-forest shadow-md shadow-zen-forest/5";
+                                else if (isSelected) buttonStyles = "border-zen-terracotta bg-zen-terracotta/5 text-zen-terracotta opacity-60";
+                                else buttonStyles = "border-zen-ink/5 bg-white text-zen-ink/20 opacity-40 shadow-none";
                             }
 
                             return (
@@ -199,7 +199,7 @@ const QuizPage = () => {
                                 <span className="text-[10px] font-bold text-zen-sky uppercase tracking-[0.4em]">Explanation</span>
                             </div>
                             {q?.explanation && (
-                                <p className="text-slate-600 text-lg leading-relaxed font-medium mb-6">
+                                <p className="text-zen-ink/80 text-lg leading-relaxed font-medium mb-6 italic">
                                     {q.explanation}
                                 </p>
                             )}
@@ -213,7 +213,7 @@ const QuizPage = () => {
                                                 <div className="w-6 h-6 rounded-lg bg-zen-sky/10 text-zen-sky flex items-center justify-center text-[10px] font-bold shrink-0 mt-1 border border-zen-sky/10 group-hover/step:bg-zen-sky group-hover/step:text-white transition-all duration-300">
                                                     {idx + 1}
                                                 </div>
-                                                <p className="text-slate-500 text-base leading-relaxed group-hover/step:text-slate-700 transition-colors duration-300">
+                                                <p className="text-zen-ink/60 text-base leading-relaxed group-hover/step:text-zen-ink transition-colors duration-300 italic">
                                                     {step}
                                                 </p>
                                             </div>

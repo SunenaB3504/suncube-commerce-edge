@@ -176,51 +176,51 @@ const MockExamSimulator = () => {
     };
 
     if (isLoading) return (
-        <div className="h-screen bg-brand-slate flex flex-col items-center justify-center gap-6">
-            <div className="w-16 h-16 border-4 border-brand-amber/20 border-t-brand-amber rounded-full animate-spin"></div>
-            <div className="text-[10px] font-black text-slate-500 uppercase tracking-[0.5em] animate-pulse">Initializing Alpha Engine...</div>
+        <div className="h-screen bg-zen-paper flex flex-col items-center justify-center gap-6">
+            <div className="w-16 h-16 border-4 border-zen-sky/10 border-t-zen-sky rounded-full animate-spin"></div>
+            <div className="text-[10px] font-bold text-zen-ink/40 uppercase tracking-[0.5em] animate-pulse">Initializing Zen Engine...</div>
         </div>
     );
 
     if (showResults) {
         return (
-            <div className="min-h-screen bg-brand-slate flex items-center justify-center p-6 lg:p-12 overflow-y-auto">
-                <div className="bg-white/5 border border-white/5 backdrop-blur-3xl rounded-[3rem] p-12 lg:p-16 max-w-2xl w-full text-center relative overflow-hidden group">
-                    <div className="absolute -top-24 -left-24 w-64 h-64 bg-brand-emerald/10 blur-[100px] rounded-full group-hover:bg-brand-emerald/20 transition-all duration-700"></div>
+            <div className="min-h-screen bg-zen-paper flex items-center justify-center p-6 lg:p-12 overflow-y-auto">
+                <div className="bg-white border border-zen-ink/5 rounded-[3rem] p-12 lg:p-16 max-w-2xl w-full text-center relative overflow-hidden group shadow-soft">
+                    <div className="absolute -top-24 -left-24 w-64 h-64 bg-zen-forest/10 blur-[100px] rounded-full group-hover:bg-zen-forest/20 transition-all duration-700"></div>
                     
                     <div className="relative z-10">
-                        <div className="w-24 h-24 bg-brand-emerald/10 text-brand-emerald rounded-[2rem] flex items-center justify-center mx-auto mb-10 shadow-glow-emerald/20 border border-brand-emerald/20">
+                        <div className="w-24 h-24 bg-zen-forest/10 text-zen-forest rounded-[2rem] flex items-center justify-center mx-auto mb-10 shadow-soft border border-zen-forest/20">
                             <Trophy size={48} />
                         </div>
                         
-                        <h2 className="text-4xl lg:text-5xl font-black text-white mb-4 italic tracking-tighter uppercase">Mission <span className="text-brand-emerald">Secure</span></h2>
-                        <p className="text-slate-500 text-xs font-black uppercase tracking-[0.3em] mb-12 italic">Performance Audit Complete // {config.name}</p>
+                        <h2 className="text-4xl lg:text-5xl font-bold text-zen-ink mb-4 italic tracking-tighter uppercase">Simulation <span className="text-zen-forest">Secure</span></h2>
+                        <p className="text-zen-ink/30 text-xs font-bold uppercase tracking-[0.3em] mb-12 italic">Performance Audit Complete // {config.name}</p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-                            <div className="bg-white/[0.03] border border-white/5 p-8 rounded-[2rem] flex flex-col items-center gap-3 group/stat hover:bg-white/[0.05] transition-all">
-                                <BarChart3 size={24} className="text-brand-indigo" />
-                                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Logic Score</div>
-                                <div className="text-4xl font-black text-white italic tracking-tighter">
-                                    {showResults.score} <span className="text-sm text-slate-600 font-medium">/ {showResults.totalPossible}</span>
+                            <div className="bg-gradient-to-br from-white via-white to-zen-sky/[0.05] border border-zen-ink/5 p-8 rounded-[2.5rem] flex flex-col items-center gap-3 transition-all shadow-sm hover:shadow-warm">
+                                <BarChart3 size={24} className="text-zen-sky" />
+                                <div className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-widest">Logic Score</div>
+                                <div className="text-4xl font-bold text-zen-ink italic tracking-tighter">
+                                    {showResults.score} <span className="text-sm text-zen-ink/20 font-medium">/ {showResults.totalPossible}</span>
                                 </div>
                             </div>
-                            <div className="bg-white/[0.03] border border-white/5 p-8 rounded-[2rem] flex flex-col items-center gap-3 group/stat hover:bg-white/[0.05] transition-all">
-                                <Target size={24} className="text-brand-emerald" />
-                                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Accuracy</div>
-                                <div className="text-4xl font-black text-white italic tracking-tighter">{showResults.accuracy}%</div>
+                            <div className="bg-gradient-to-br from-white via-white to-zen-forest/[0.05] border border-zen-ink/5 p-8 rounded-[2.5rem] flex flex-col items-center gap-3 transition-all shadow-sm hover:shadow-warm">
+                                <Target size={24} className="text-zen-forest" />
+                                <div className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-widest">Accuracy</div>
+                                <div className="text-4xl font-bold text-zen-ink italic tracking-tighter">{showResults.accuracy}%</div>
                             </div>
-                            <div className="bg-white/[0.03] border border-white/5 p-8 rounded-[2rem] flex flex-col items-center gap-3 group/stat hover:bg-white/[0.05] transition-all sm:col-span-2">
-                                <Clock size={24} className="text-brand-amber" />
-                                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Time Deployed</div>
-                                <div className="text-4xl font-black text-white italic tracking-tighter">{formatTime(showResults.duration)} <span className="text-sm text-slate-600 font-medium">/ {formatTime(config.duration)}</span></div>
+                            <div className="bg-gradient-to-br from-white via-white to-zen-sand/[0.05] border border-zen-ink/5 p-8 rounded-[2.5rem] flex flex-col items-center gap-3 transition-all shadow-sm hover:shadow-warm sm:col-span-2">
+                                <Clock size={24} className="text-zen-sand" />
+                                <div className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-widest">Time In Simulation</div>
+                                <div className="text-4xl font-bold text-zen-ink italic tracking-tighter">{formatTime(showResults.duration)} <span className="text-sm text-zen-ink/20 font-medium">/ {formatTime(config.duration)}</span></div>
                             </div>
                         </div>
 
                         <button
                             onClick={() => navigate('/mocks')}
-                            className="w-full py-6 bg-brand-emerald hover:bg-white text-brand-slate rounded-[2rem] font-black text-xs uppercase tracking-[0.4em] transition-all shadow-glow-emerald/20 hover:shadow-glow-emerald/40 active:scale-95 italic"
+                            className="w-full py-6 bg-zen-forest hover:bg-zen-ink text-white rounded-[2.5rem] font-bold text-xs uppercase tracking-[0.4em] transition-all shadow-soft active:scale-95 italic"
                         >
-                            Return to Operational Hub
+                            Return to Selection Hub
                         </button>
                     </div>
                 </div>
@@ -231,49 +231,49 @@ const MockExamSimulator = () => {
     const currentQuestion = questions[currentIndex];
 
     return (
-        <div className="h-screen flex flex-col bg-brand-slate text-slate-100 overflow-hidden selection:bg-brand-amber/30">
-            <title>{config.name} | Suncube Alpha</title>
+        <div className="h-screen flex flex-col bg-zen-paper text-zen-ink overflow-hidden selection:bg-zen-sky/10">
+            <title>{config.name} | Suncube Zen</title>
             
-            {/* High-Intensity Header */}
-            <header className="h-20 border-b border-white/5 flex items-center justify-between px-8 bg-brand-slate/80 backdrop-blur-xl shrink-0 z-50">
+            {/* High-Contrast Header */}
+            <header className="h-20 border-b border-zen-ink/5 flex items-center justify-between px-8 bg-white/80 backdrop-blur-xl shrink-0 z-50">
                 <div className="flex items-center gap-6">
                     <button 
-                        onClick={() => { if (confirm('Abort mission? Operational data will be lost.')) navigate('/mocks') }} 
-                        className="w-10 h-10 bg-white/5 hover:bg-brand-rose/20 text-slate-500 hover:text-brand-rose rounded-xl flex items-center justify-center transition-all border border-white/5 active:scale-90"
+                        onClick={() => { if (confirm('Abort simulation? Progress data will be lost.')) navigate('/mocks') }} 
+                        className="w-10 h-10 bg-zen-ink/5 hover:bg-zen-terracotta/20 text-zen-ink/40 hover:text-zen-terracotta rounded-xl flex items-center justify-center transition-all border border-zen-ink/5 active:scale-90"
                     >
                         <X size={18} />
                     </button>
-                    <div className="h-6 w-px bg-white/5"></div>
+                    <div className="h-6 w-px bg-zen-ink/5"></div>
                     <div>
-                        <h2 className="font-black text-white uppercase text-[10px] tracking-[0.3em] italic">{config.name}</h2>
-                        <p className="text-[8px] font-black text-slate-500 uppercase tracking-[0.5em] italic">ALPHA SIMULATION LIVE</p>
+                        <h2 className="font-bold text-zen-ink uppercase text-[10px] tracking-[0.3em] italic">{config.name}</h2>
+                        <p className="text-[8px] font-bold text-zen-ink/30 uppercase tracking-[0.5em] italic">ZEN SIMULATION LIVE</p>
                     </div>
                 </div>
 
-                <div className={`px-8 py-2.5 rounded-2xl font-black text-xl italic tracking-tighter border-2 flex items-center gap-3 transition-all ${timeLeft < 300 ? 'bg-brand-rose/10 text-brand-rose border-brand-rose/40 animate-pulse shadow-glow-rose/20' : 'bg-white/5 text-brand-amber border-brand-amber/20'}`}>
+                <div className={`px-8 py-2.5 rounded-2xl font-bold text-xl italic tracking-tighter border-2 flex items-center gap-3 transition-all ${timeLeft < 300 ? 'bg-zen-terracotta/10 text-zen-terracotta border-zen-terracotta/40 animate-pulse shadow-soft' : 'bg-white text-zen-sky border-zen-sky/20 shadow-sm'}`}>
                     <Timer size={20} className={timeLeft < 300 ? 'animate-spin-slow' : ''} />
                     {formatTime(timeLeft)}
                 </div>
 
                 <button
-                    onClick={() => { if (confirm('Secure logic and submit?')) submitExam() }}
-                    className="px-8 py-2.5 bg-brand-amber hover:bg-white text-brand-slate rounded-xl font-black text-[10px] uppercase tracking-[0.3em] transition-all shadow-glow-amber/20 hover:shadow-glow-amber/40 active:scale-95 italic"
+                    onClick={() => { if (confirm('Proceed to final evaluation?')) submitExam() }}
+                    className="px-8 py-2.5 bg-zen-sky hover:bg-zen-ink text-white rounded-xl font-bold text-[10px] uppercase tracking-[0.3em] transition-all shadow-soft active:scale-95 italic"
                 >
-                    SECURE LOGIC
+                    FINALIZE LOGIC
                 </button>
             </header>
 
             <div className="flex-grow flex overflow-hidden">
                 {/* Simulator Interface */}
-                <div className="flex-grow overflow-y-auto p-12 lg:p-24 flex flex-col items-center">
-                    <div className="max-w-3xl w-full">
+                <div className="flex-grow overflow-y-auto p-12 lg:p-24 flex flex-col items-center relative">
+                    <div className="max-w-3xl w-full relative z-10">
                         <div className="flex items-center justify-between mb-12">
                             <div className="flex items-center gap-4">
-                                <div className="px-4 py-1.5 bg-white/5 text-slate-400 rounded-xl text-[10px] font-black uppercase tracking-widest border border-white/5 italic">
+                                <div className="px-4 py-1.5 bg-zen-ink/5 text-zen-ink/40 rounded-xl text-[10px] font-bold uppercase tracking-widest border border-zen-ink/5 italic shadow-sm">
                                     UNIT {currentIndex + 1} OF {questions.length}
                                 </div>
                                 {config.limit && (
-                                    <div className="px-4 py-1.5 bg-brand-indigo/10 text-brand-indigo rounded-xl text-[10px] font-black uppercase tracking-widest border border-brand-indigo/20 italic">
+                                    <div className="px-4 py-1.5 bg-zen-sky/10 text-zen-sky rounded-xl text-[10px] font-bold uppercase tracking-widest border border-zen-sky/20 italic shadow-sm">
                                         ATTEMPTED: {Object.keys(answers).length} / {config.limit}
                                     </div>
                                 )}
@@ -282,22 +282,22 @@ const MockExamSimulator = () => {
                             <div className="flex items-center gap-3">
                                 <button 
                                     onClick={toggleMarkForReview}
-                                    className={`flex items-center gap-2 px-6 py-2 rounded-xl text-[9px] font-black tracking-[0.2em] transition-all border italic ${markedForReview.includes(currentIndex) ? 'bg-brand-amber text-brand-slate border-brand-amber shadow-glow-amber/20' : 'bg-white/5 text-slate-500 border-white/5 hover:border-brand-amber/30 hover:text-brand-amber'}`}
+                                    className={`flex items-center gap-2 px-6 py-2 rounded-xl text-[9px] font-bold tracking-[0.2em] transition-all border italic shadow-sm ${markedForReview.includes(currentIndex) ? 'bg-zen-sky text-white border-zen-sky shadow-soft' : 'bg-white text-zen-ink/40 border-zen-ink/5 hover:border-zen-sky/30 hover:text-zen-sky'}`}
                                 >
                                     <Flag size={12} fill={markedForReview.includes(currentIndex) ? "currentColor" : "none"} /> 
-                                    {markedForReview.includes(currentIndex) ? 'MARKED FOR AUDIT' : 'MARK FOR AUDIT'}
+                                    {markedForReview.includes(currentIndex) ? 'MARKED FOR REVIEW' : 'MARK FOR REVIEW'}
                                 </button>
                                 
-                                {secondsOnQuestion > 45 && (
-                                    <div className="bg-brand-rose/10 text-brand-rose px-4 py-2 rounded-xl text-[9px] font-black tracking-[0.2em] animate-pulse border border-brand-rose/20 flex items-center gap-2 italic">
-                                        <AlertTriangle size={12} /> TIME SUCKER DETECTED
+                                {secondsOnQuestion > 50 && (
+                                    <div className="bg-zen-terracotta/10 text-zen-terracotta px-4 py-2 rounded-xl text-[9px] font-bold tracking-[0.2em] animate-pulse border border-zen-terracotta/20 flex items-center gap-2 italic shadow-sm">
+                                        <AlertTriangle size={12} /> DEEP THINKING...
                                     </div>
                                 )}
                             </div>
                         </div>
 
-                        <div className="relative group/q mb-16 px-8 py-4 bg-white/[0.02] rounded-[2rem] border-l-4 border-brand-amber transition-all hover:bg-white/[0.04]">
-                            <h3 className="text-3xl lg:text-4xl font-black text-white leading-tight italic tracking-tighter">
+                        <div className="relative group/q mb-16 px-10 py-8 bg-gradient-to-br from-white via-white to-zen-sky/[0.05] rounded-[3rem] border-l-8 border-zen-sky transition-all shadow-warm">
+                            <h3 className="text-3xl lg:text-4xl font-bold text-zen-ink leading-tight italic tracking-tighter">
                                 {currentQuestion.question}
                             </h3>
                         </div>
@@ -307,21 +307,21 @@ const MockExamSimulator = () => {
                                 <button
                                     key={idx}
                                     onClick={() => handleAnswer(idx)}
-                                    className={`w-full p-8 text-left rounded-3xl border-2 transition-all group/opt relative overflow-hidden flex items-center justify-between active:scale-[0.99] ${answers[currentIndex] === idx
-                                            ? 'border-brand-amber bg-brand-amber/10 shadow-glow-amber/10'
-                                            : 'border-white/5 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.05]'
+                                    className={`w-full p-8 text-left rounded-[1.8rem] border-2 transition-all group/opt relative overflow-hidden flex items-center justify-between active:scale-[0.99] shadow-sm ${answers[currentIndex] === idx
+                                            ? 'border-zen-sky bg-zen-sky/10 shadow-soft'
+                                            : 'border-zen-ink/5 bg-white hover:border-zen-sky/30 hover:bg-zen-sky/5'
                                         }`}
                                 >
-                                    <span className={`text-xl font-bold italic tracking-tight ${answers[currentIndex] === idx ? 'text-white' : 'text-slate-400 group-hover/opt:text-slate-200'} transition-all`}>
+                                    <span className={`text-xl font-bold italic tracking-tight ${answers[currentIndex] === idx ? 'text-zen-ink' : 'text-zen-ink/60 group-hover/opt:text-zen-ink'} transition-all`}>
                                         {option}
                                     </span>
                                     {answers[currentIndex] === idx ? (
-                                        <div className="w-8 h-8 bg-brand-amber text-brand-slate rounded-[0.75rem] flex items-center justify-center shadow-glow-amber/40 scale-110 transition-transform">
+                                        <div className="w-8 h-8 bg-zen-sky text-white rounded-[0.75rem] flex items-center justify-center shadow-soft scale-110 transition-transform">
                                             <CheckCircle2 size={20} />
                                         </div>
                                     ) : (
-                                        <div className="w-8 h-8 rounded-[0.75rem] border border-white/10 group-hover/opt:border-white/30 transition-all opacity-0 group-hover/opt:opacity-100 flex items-center justify-center">
-                                            <div className="w-2 h-2 rounded-full bg-white/20"></div>
+                                        <div className="w-8 h-8 rounded-[0.75rem] border border-zen-ink/10 group-hover/opt:border-zen-sky/30 transition-all opacity-0 group-hover/opt:opacity-100 flex items-center justify-center">
+                                            <div className="w-2 h-2 rounded-full bg-zen-sky/20"></div>
                                         </div>
                                     )}
                                 </button>
@@ -331,12 +331,12 @@ const MockExamSimulator = () => {
                 </div>
 
                 {/* Audit Navigation Sidebar */}
-                <div className="w-96 border-l border-white/5 bg-white/[0.01] backdrop-blur-md shrink-0 overflow-y-auto p-10 hidden xl:flex flex-col">
+                <div className="w-96 border-l border-zen-ink/5 bg-white backdrop-blur-md shrink-0 overflow-y-auto p-10 hidden xl:flex flex-col shadow-inner">
                     <div className="flex items-center gap-3 mb-10">
-                        <div className="p-2 bg-brand-indigo/10 rounded-xl">
-                            <FlaskConical size={18} className="text-brand-indigo" />
+                        <div className="p-2 bg-zen-sky/10 rounded-xl">
+                            <FlaskConical size={18} className="text-zen-sky" />
                         </div>
-                        <h3 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em] italic">AUDIT MAP</h3>
+                        <h3 className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-[0.4em] italic">AUDIT MAP</h3>
                     </div>
                     
                     <div className="grid grid-cols-5 gap-3 mb-12">
@@ -344,13 +344,13 @@ const MockExamSimulator = () => {
                             <button
                                 key={idx}
                                 onClick={() => setCurrentIndex(idx)}
-                                className={`h-12 rounded-xl text-[10px] font-black transition-all border flex items-center justify-center active:scale-90 ${currentIndex === idx
-                                        ? 'bg-brand-amber text-brand-slate border-brand-amber shadow-glow-amber/40 scale-110 z-10'
+                                className={`h-12 rounded-xl text-[10px] font-bold transition-all border flex items-center justify-center active:scale-90 shadow-sm ${currentIndex === idx
+                                        ? 'bg-zen-sky text-white border-zen-sky shadow-soft scale-110 z-10'
                                         : markedForReview.includes(idx)
-                                            ? 'bg-brand-rose/20 text-brand-rose border-brand-rose/40 animate-pulse'
+                                            ? 'bg-zen-terracotta/10 text-zen-terracotta border-zen-terracotta/40 animate-pulse'
                                             : answers[idx] !== undefined
-                                                ? 'bg-brand-emerald/10 text-brand-emerald border-brand-emerald/30'
-                                                : 'bg-white/5 text-slate-600 border-white/5 hover:border-white/20 hover:text-white'
+                                                ? 'bg-zen-forest/10 text-zen-forest border-zen-forest/30'
+                                                : 'bg-white text-zen-ink/20 border-zen-ink/5 hover:border-zen-ink/20 hover:text-zen-ink'
                                     }`}
                             >
                                 {idx + 1}
@@ -359,17 +359,15 @@ const MockExamSimulator = () => {
                     </div>
 
                     <div className="mt-auto space-y-6">
-                        <div className="p-8 bg-white/[0.03] rounded-[2rem] border border-white/5 relative overflow-hidden group/instr">
-                            <div className="absolute -right-4 -top-4 opacity-5 group-hover/instr:opacity-20 transition-all">
-                                <ShieldAlert size={64} />
-                            </div>
-                            <h4 className="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-4 italic">PROTOCOL GUIDELINES</h4>
-                            <ul className="text-[9px] font-black text-slate-500 space-y-3 uppercase tracking-widest italic">
-                                <li className="flex items-center gap-2 group-hover/instr:text-slate-400"><div className="w-1.5 h-1.5 rounded-full bg-brand-emerald"></div> CORRECT: +{config.correctMark} DEPLOYED</li>
-                                <li className="flex items-center gap-2 group-hover/instr:text-slate-400"><div className="w-1.5 h-1.5 rounded-full bg-brand-rose"></div> PENALTY: {config.penaltyMark} REMOVED</li>
-                                <li className="flex items-center gap-2 group-hover/instr:text-slate-400"><div className="w-1.5 h-1.5 rounded-full bg-white/20"></div> SKIP: 0 NEUTRAL</li>
+                        <div className="p-8 bg-gradient-to-br from-white to-zen-sky/[0.05] rounded-[2.5rem] border border-zen-ink/5 relative overflow-hidden group/instr shadow-soft">
+                            <div className="absolute -right-4 -top-4 opacity-[0.03] group-hover/instr:opacity-10 transition-all font-bold text-9xl">🎯</div>
+                            <h4 className="text-[10px] font-bold text-zen-ink/40 uppercase tracking-widest mb-4 italic text-center">PROTOCOL GUIDELINES</h4>
+                            <ul className="text-[9px] font-bold text-zen-ink/30 space-y-3 uppercase tracking-widest italic">
+                                <li className="flex items-center gap-2 group-hover/instr:text-zen-ink/60 transition-colors"><div className="w-2 h-2 rounded-full bg-zen-forest"></div> CORRECT: +{config.correctMark} POINTS</li>
+                                <li className="flex items-center gap-2 group-hover/instr:text-zen-ink/60 transition-colors"><div className="w-2 h-2 rounded-full bg-zen-terracotta"></div> INCORRECT: {config.penaltyMark} POINTS</li>
+                                <li className="flex items-center gap-2 group-hover/instr:text-zen-ink/60 transition-colors"><div className="w-2 h-2 rounded-full bg-zen-ink/10"></div> SKIPPED: 0 POINTS</li>
                                 {config.limit && config.limit < config.total && (
-                                    <li className="flex items-center gap-2 text-brand-amber"><div className="w-1.5 h-1.5 rounded-full bg-brand-amber"></div> LIMIT: {config.limit} MAX</li>
+                                    <li className="flex items-center gap-2 text-zen-sky"><div className="w-2 h-2 rounded-full bg-zen-sky"></div> ATTEMPT LIMIT: {config.limit}</li>
                                 )}
                             </ul>
                         </div>
@@ -377,23 +375,23 @@ const MockExamSimulator = () => {
                 </div>
             </div>
 
-            {/* Tactical Control Bar */}
-            <footer className="h-24 border-t border-white/5 bg-brand-slate shrink-0 flex items-center justify-center px-8 gap-12 z-50">
+            {/* Navigation Footer */}
+            <footer className="h-24 border-t border-zen-ink/5 bg-white shrink-0 flex items-center justify-center px-8 gap-12 z-50 shadow-soft">
                 <button
                     disabled={currentIndex === 0}
                     onClick={() => setCurrentIndex(prev => prev - 1)}
-                    className="w-16 h-16 rounded-full bg-white/5 text-slate-400 hover:bg-white hover:text-brand-slate disabled:opacity-0 disabled:pointer-events-none transition-all flex items-center justify-center shadow-xl active:scale-90"
+                    className="w-16 h-16 rounded-[1.5rem] bg-zen-ink/5 text-zen-ink/40 hover:bg-zen-ink hover:text-white disabled:opacity-30 disabled:pointer-events-none transition-all flex items-center justify-center shadow-sm active:scale-90"
                 >
                     <ChevronLeft size={32} />
                 </button>
 
                 <div className="flex flex-col items-center gap-2">
-                    <div className="text-2xl font-black text-white italic tracking-tighter">
-                        {currentIndex + 1} <span className="text-slate-700 mx-2 text-xl">/</span> {questions.length}
+                    <div className="text-2xl font-bold text-zen-ink italic tracking-tighter">
+                        {currentIndex + 1} <span className="text-zen-ink/20 mx-2 text-xl font-normal">/</span> {questions.length}
                     </div>
-                    <div className="w-48 h-1 bg-white/5 rounded-full overflow-hidden border border-white/5">
+                    <div className="w-64 h-2 bg-zen-ink/5 rounded-full overflow-hidden border border-zen-ink/5 shadow-inner">
                         <div 
-                            className="h-full bg-brand-amber transition-all duration-500 shadow-glow-amber/50" 
+                            className="h-full bg-gradient-to-r from-zen-sky to-zen-sky/60 transition-all duration-500 shadow-soft" 
                             style={{ width: `${((currentIndex + 1) / questions.length) * 100}%` }}
                         ></div>
                     </div>
@@ -402,7 +400,7 @@ const MockExamSimulator = () => {
                 <button
                     disabled={currentIndex === questions.length - 1}
                     onClick={() => setCurrentIndex(prev => prev + 1)}
-                    className="w-16 h-16 rounded-full bg-white/5 text-slate-400 hover:bg-white hover:text-brand-slate disabled:opacity-0 disabled:pointer-events-none transition-all flex items-center justify-center shadow-xl active:scale-90"
+                    className="w-16 h-16 rounded-[1.5rem] bg-zen-ink/5 text-zen-ink/40 hover:bg-zen-ink hover:text-white disabled:opacity-30 disabled:pointer-events-none transition-all flex items-center justify-center shadow-sm active:scale-90"
                 >
                     <ChevronRight size={32} />
                 </button>

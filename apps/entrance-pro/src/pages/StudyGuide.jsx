@@ -126,40 +126,40 @@ const StudyGuide = () => {
     };
 
     if (isLoading) return (
-        <div className="h-screen bg-brand-slate flex flex-col items-center justify-center gap-6">
-            <div className="w-16 h-16 border-4 border-brand-indigo/20 border-t-brand-indigo rounded-full animate-spin"></div>
-            <div className="text-[10px] font-black text-slate-500 uppercase tracking-[0.5em] animate-pulse">Initializing Deep Intel Briefing...</div>
+        <div className="h-screen bg-zen-paper flex flex-col items-center justify-center gap-6">
+            <div className="w-16 h-16 border-4 border-zen-sky/10 border-t-zen-sky rounded-full animate-spin"></div>
+            <div className="text-[10px] font-bold text-zen-ink/40 uppercase tracking-[0.5em] animate-pulse">Initializing Learning Guide...</div>
         </div>
     );
 
     if (!guideData) return (
-        <div className="h-screen bg-brand-slate flex flex-col items-center justify-center p-8 text-center">
-            <AlertCircle size={64} className="text-brand-rose mb-6 opacity-20" />
-            <h2 className="text-2xl font-black text-white italic uppercase tracking-tighter mb-4">No Intel Data Detected</h2>
-            <button onClick={() => navigate(-1)} className="px-8 py-3 bg-white/5 text-slate-400 rounded-2xl hover:bg-white/10 transition-all font-black text-[10px] uppercase tracking-widest border border-white/5 italic">Return to Base</button>
+        <div className="h-screen bg-zen-paper flex flex-col items-center justify-center p-8 text-center">
+            <AlertCircle size={64} className="text-zen-terracotta mb-6 opacity-20" />
+            <h2 className="text-2xl font-bold text-zen-ink italic uppercase tracking-tighter mb-4">No Study Data Detected</h2>
+            <button onClick={() => navigate(-1)} className="px-8 py-3 bg-zen-ink/5 text-zen-ink/60 rounded-2xl hover:bg-zen-ink/10 transition-all font-bold text-[10px] uppercase tracking-widest border border-zen-ink/5 italic">Return to Base</button>
         </div>
     );
 
     return (
-        <div className="min-h-screen bg-brand-slate text-slate-100 flex flex-col selection:bg-brand-indigo/30 pb-20">
+        <div className="min-h-screen bg-zen-paper text-zen-ink flex flex-col selection:bg-zen-sky/10 pb-20">
             {/* Header / Briefing Identity */}
-            <header className="sticky top-0 z-50 bg-brand-slate/80 backdrop-blur-3xl border-b border-white/5 h-20 flex items-center justify-between px-8">
+            <header className="sticky top-0 z-50 bg-zen-paper/80 backdrop-blur-3xl border-b border-zen-ink/5 h-20 flex items-center justify-between px-8 shadow-soft">
                 <div className="flex items-center gap-6">
                     <button 
                         onClick={() => navigate(-1)} 
-                        className="w-10 h-10 bg-white/5 hover:bg-brand-indigo/20 text-slate-500 hover:text-brand-indigo rounded-xl flex items-center justify-center transition-all border border-white/5"
+                        className="w-10 h-10 bg-zen-ink/5 hover:bg-zen-sky/10 text-zen-ink/40 hover:text-zen-sky rounded-xl flex items-center justify-center transition-all border border-zen-ink/5"
                     >
                         <ChevronLeft size={18} />
                     </button>
                     <div>
-                        <h2 className="font-black text-white uppercase text-[10px] tracking-[0.3em] italic">{chapter?.name}</h2>
-                        <p className="text-[8px] font-black text-slate-500 uppercase tracking-[0.5em] italic">DEEP INTEL BRIEFING // {subject?.name}</p>
+                        <h2 className="font-bold text-zen-ink uppercase text-[10px] tracking-[0.3em] italic">{chapter?.name}</h2>
+                        <p className="text-[8px] font-bold text-zen-ink/40 uppercase tracking-[0.5em] italic">LEARNING GUIDE // {subject?.name}</p>
                     </div>
                 </div>
                 {isSpeaking && (
-                    <div className="flex items-center gap-4 bg-brand-indigo/10 border border-brand-indigo/20 px-4 py-2 rounded-xl animate-pulse">
-                        <Volume2 size={14} className="text-brand-indigo" />
-                        <span className="text-[9px] font-black text-brand-indigo uppercase tracking-widest">NARRATION ACTIVE</span>
+                    <div className="flex items-center gap-4 bg-zen-sky/10 border border-zen-sky/20 px-4 py-2 rounded-xl animate-pulse">
+                        <Volume2 size={14} className="text-zen-sky" />
+                        <span className="text-[9px] font-bold text-zen-sky uppercase tracking-widest">NARRATION ACTIVE</span>
                     </div>
                 )}
             </header>
@@ -167,8 +167,8 @@ const StudyGuide = () => {
             <div className="container mx-auto px-8 py-12 max-w-7xl flex gap-12">
                 {/* Tactical Sidebar */}
                 <aside className="hidden lg:block w-72 shrink-0 h-[calc(100vh-160px)] sticky top-28 overflow-y-auto pr-4 scroller-hide">
-                    <div className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em] mb-8 italic flex items-center justify-between">
-                        <span>MISSION SYLLABUS</span>
+                    <div className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-[0.4em] mb-8 italic flex items-center justify-between">
+                        <span>MODULE SYLLABUS</span>
                         <List size={14} />
                     </div>
                     <div className="space-y-4">
@@ -177,14 +177,14 @@ const StudyGuide = () => {
                                 key={topic.id}
                                 onClick={() => document.getElementById(topic.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                                 className={`w-full text-left p-6 rounded-[2rem] transition-all group border ${activeTopicId === topic.id
-                                    ? 'bg-brand-indigo border-brand-indigo/50 shadow-glow-indigo/20'
-                                    : 'bg-white/[0.02] border-white/5 hover:bg-white/[0.04] hover:border-white/10'
+                                    ? 'bg-zen-sky text-white border-zen-sky/50 shadow-soft'
+                                    : 'bg-white border-zen-ink/5 hover:bg-zen-sky/5 hover:border-zen-sky/10'
                                     }`}
                             >
-                                <div className={`text-[9px] font-black mb-2 uppercase tracking-widest italic ${activeTopicId === topic.id ? 'text-indigo-200' : 'text-slate-600'}`}>
+                                <div className={`text-[9px] font-bold mb-2 uppercase tracking-widest italic ${activeTopicId === topic.id ? 'text-white/60' : 'text-zen-ink/30'}`}>
                                     UNIT {String(index + 1).padStart(2, '0')}
                                 </div>
-                                <div className="font-black text-sm italic tracking-tight leading-tight uppercase">
+                                <div className="font-bold text-sm italic tracking-tight leading-tight uppercase">
                                     {topic.title.replace(/^[0-9.]+\s/, '')}
                                 </div>
                             </button>
@@ -198,17 +198,17 @@ const StudyGuide = () => {
                         <div key={topic.id} id={topic.id} className="mb-40 last:mb-0 scroll-mt-32">
                             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
                                 <div className="flex items-center gap-6">
-                                    <div className="w-16 h-16 rounded-[1.5rem] bg-brand-indigo/10 border border-brand-indigo/20 text-brand-indigo flex items-center justify-center text-2xl font-black italic shadow-glow-indigo/5">
+                                    <div className="w-16 h-16 rounded-[1.5rem] bg-gradient-to-br from-white to-zen-sky/10 border border-zen-sky/20 text-zen-sky flex items-center justify-center text-2xl font-bold italic shadow-soft">
                                         {tIdx + 1}
                                     </div>
                                     <div>
-                                        <h2 className="text-4xl lg:text-5xl font-black text-white italic tracking-tighter uppercase leading-none mb-3">
+                                        <h2 className="text-4xl lg:text-5xl font-bold text-zen-ink italic tracking-tighter uppercase leading-none mb-3">
                                             {topic.title}
                                         </h2>
                                         <div className="flex items-center gap-4">
-                                            <div className="text-brand-indigo font-black text-[9px] uppercase tracking-[0.4em] italic">INTELLIGENCE MODULE {tIdx + 1}/{guideData.topics.length}</div>
+                                            <div className="text-zen-sky font-bold text-[9px] uppercase tracking-[0.4em] italic">LEARNING MODULE {tIdx + 1}/{guideData.topics.length}</div>
                                             {heardTopicIds.includes(topic.id) && (
-                                                <div className="flex items-center gap-2 text-[9px] font-black text-brand-emerald uppercase tracking-widest italic bg-brand-emerald/10 px-2 py-0.5 rounded-full border border-brand-emerald/20">
+                                                <div className="flex items-center gap-2 text-[9px] font-bold text-zen-forest uppercase tracking-widest italic bg-zen-forest/10 px-2 py-0.5 rounded-full border border-zen-forest/20">
                                                     <ShieldCheck size={10} /> SECURED
                                                 </div>
                                             )}
@@ -218,15 +218,15 @@ const StudyGuide = () => {
                                 <div className="flex items-center gap-3">
                                     <button 
                                         onClick={() => handleSpeech(topic)}
-                                        className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all border ${speakingTopicId === topic.id ? 'bg-brand-indigo text-white border-brand-indigo/50 animate-pulse shadow-glow-indigo/20' : 'bg-white/5 text-slate-500 border-white/5 hover:bg-white/10'}`}
+                                        className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all border ${speakingTopicId === topic.id ? 'bg-zen-sky text-white border-zen-sky/50 animate-pulse shadow-soft' : 'bg-white text-zen-ink/40 border-zen-ink/10 hover:bg-zen-sky/5'}`}
                                     >
                                         <Volume2 size={20} />
                                     </button>
                                     <button 
                                         onClick={() => toggleReadStatus(topic.id)}
-                                        className={`px-6 h-12 rounded-2xl flex items-center gap-3 text-[10px] font-black uppercase tracking-widest transition-all italic border ${heardTopicIds.includes(topic.id) ? 'bg-brand-emerald/10 text-brand-emerald border-brand-emerald/30 shadow-glow-emerald/5' : 'bg-white/5 text-slate-500 border-white/5 hover:bg-white/10'}`}
+                                        className={`px-6 h-12 rounded-2xl flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest transition-all italic border ${heardTopicIds.includes(topic.id) ? 'bg-zen-forest/10 text-zen-forest border-zen-forest/30 shadow-sm' : 'bg-white text-zen-ink/40 border-zen-ink/10 hover:bg-zen-sky/5'}`}
                                     >
-                                        {heardTopicIds.includes(topic.id) ? 'MISSION COMPLETE' : 'SECURE DATA'}
+                                        {heardTopicIds.includes(topic.id) ? 'MODULE COMPLETE' : 'MARK AS READ'}
                                     </button>
                                 </div>
                             </div>
@@ -234,16 +234,16 @@ const StudyGuide = () => {
                             <div className="space-y-16">
                                 {/* Core Concept */}
                                 <section className="relative group">
-                                    <div className="absolute -left-4 top-0 w-1 h-full bg-brand-indigo/20 rounded-full group-hover:bg-brand-indigo transition-colors"></div>
-                                    <div className="bg-white/[0.03] border border-white/5 rounded-[2.5rem] p-10 lg:p-14 backdrop-blur-3xl relative overflow-hidden">
-                                        <div className="absolute -right-24 -top-24 w-64 h-64 bg-brand-indigo/5 blur-[80px] rounded-full"></div>
+                                    <div className="absolute -left-4 top-0 w-1.5 h-full bg-zen-sky/10 rounded-full group-hover:bg-zen-sky transition-colors"></div>
+                                    <div className="bg-gradient-to-br from-white via-white to-zen-sky/[0.05] border border-zen-ink/5 rounded-[2.5rem] p-10 lg:p-14 backdrop-blur-3xl relative overflow-hidden shadow-soft">
+                                        <div className="absolute -right-24 -top-24 w-64 h-64 bg-zen-sky/5 blur-[80px] rounded-full"></div>
                                         <div className="flex items-center gap-4 mb-10">
-                                            <div className="p-3 bg-brand-indigo/10 rounded-2xl border border-brand-indigo/20 text-brand-indigo">
+                                            <div className="p-3 bg-zen-sky/10 rounded-2xl border border-zen-sky/20 text-zen-sky">
                                                 <BookOpen size={20} />
                                             </div>
-                                            <h3 className="text-2xl font-black text-white italic tracking-tighter uppercase">Conceptual Core</h3>
+                                            <h3 className="text-2xl font-bold text-zen-ink italic tracking-tighter uppercase">Conceptual Core</h3>
                                         </div>
-                                        <div className="prose prose-invert max-w-none prose-p:text-slate-400 prose-p:leading-relaxed prose-strong:text-white prose-strong:font-black prose-strong:italic prose-p:text-lg">
+                                        <div className="prose prose-slate max-w-none prose-p:text-zen-ink/80 prose-p:leading-relaxed prose-strong:text-zen-ink prose-strong:font-bold prose-strong:italic prose-p:text-lg">
                                             <ReactMarkdown remarkPlugins={[remarkGfm]}>
                                                 {topic.content?.coreConcept || topic.summary || ""}
                                             </ReactMarkdown>
@@ -253,15 +253,15 @@ const StudyGuide = () => {
 
                                 {/* Formula Bank */}
                                 {topic.content?.formulaBank && (
-                                    <section className="bg-brand-amber/5 border border-brand-amber/20 rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden group">
-                                        <div className="absolute -right-12 -top-12 w-48 h-48 bg-brand-amber/10 blur-[60px] rounded-full group-hover:scale-125 transition-transform duration-700"></div>
+                                    <section className="bg-gradient-to-br from-white via-white to-zen-sand/10 border border-zen-sand/30 rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden group shadow-soft">
+                                        <div className="absolute -right-12 -top-12 w-48 h-48 bg-zen-sand/20 blur-[60px] rounded-full group-hover:scale-125 transition-transform duration-700"></div>
                                         <div className="flex items-center gap-4 mb-10">
-                                            <div className="p-3 bg-brand-amber/10 rounded-2xl border border-brand-amber/20 text-brand-amber">
+                                            <div className="p-3 bg-zen-sand/20 rounded-2xl border border-zen-sand/30 text-zen-sand">
                                                 <Target size={20} />
                                             </div>
-                                            <h3 className="text-2xl font-black text-white italic tracking-tighter uppercase">Strategic Formulas</h3>
+                                            <h3 className="text-2xl font-bold text-zen-ink italic tracking-tighter uppercase">Strategic Formulas</h3>
                                         </div>
-                                        <div className="bg-brand-slate/50 border border-white/5 p-8 rounded-[2rem] font-mono text-brand-amber text-lg leading-relaxed whitespace-pre-wrap italic">
+                                        <div className="bg-white/60 border border-zen-ink/5 p-8 rounded-[2rem] font-mono text-zen-ink/80 text-lg leading-relaxed whitespace-pre-wrap italic shadow-inner">
                                             {topic.content.formulaBank}
                                         </div>
                                     </section>
@@ -269,16 +269,16 @@ const StudyGuide = () => {
 
                                 {/* Hacker Logic / Street-Smart */}
                                 {topic.content?.logic && (
-                                    <section className="bg-brand-emerald/5 border border-brand-emerald/20 rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden group">
-                                        <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-brand-emerald/10 blur-[60px] rounded-full group-hover:scale-125 transition-transform duration-700"></div>
+                                    <section className="bg-gradient-to-br from-white via-white to-zen-forest/10 border border-zen-forest/30 rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden group shadow-soft">
+                                        <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-zen-forest/20 blur-[60px] rounded-full group-hover:scale-125 transition-transform duration-700"></div>
                                         <div className="flex items-center gap-4 mb-10">
-                                            <div className="p-3 bg-brand-emerald/10 rounded-2xl border border-brand-emerald/20 text-brand-emerald">
+                                            <div className="p-3 bg-zen-forest/20 rounded-2xl border border-zen-forest/30 text-zen-forest">
                                                 <Zap size={20} />
                                             </div>
-                                            <h3 className="text-2xl font-black text-white italic tracking-tighter uppercase">Street-Smart Logic</h3>
+                                            <h3 className="text-2xl font-bold text-zen-ink italic tracking-tighter uppercase">Street-Smart Logic</h3>
                                         </div>
-                                        <div className="bg-brand-slate/50 border border-emerald-900/30 p-8 rounded-[2rem] text-brand-emerald/90 text-lg leading-relaxed whitespace-pre-wrap italic relative z-10">
-                                            <div className="text-[10px] font-black text-brand-emerald uppercase tracking-[0.4em] mb-4">⚡ HACKER DETECTED</div>
+                                        <div className="bg-white/60 border border-zen-forest/10 p-8 rounded-[2rem] text-zen-forest/90 text-lg leading-relaxed whitespace-pre-wrap italic relative z-10 shadow-inner">
+                                            <div className="text-[10px] font-bold text-zen-forest uppercase tracking-[0.4em] mb-4">⚡ INSIGHT HACK</div>
                                             {topic.content.logic}
                                         </div>
                                     </section>
@@ -286,16 +286,16 @@ const StudyGuide = () => {
 
                                 {/* Examiner Traps */}
                                 {(topic.content?.traps || topic.examAngle) && (
-                                    <section className="bg-brand-rose/5 border border-brand-rose/20 rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden">
-                                        <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-brand-rose/10 blur-[60px] rounded-full"></div>
+                                    <section className="bg-gradient-to-br from-white via-white to-zen-terracotta/[0.03] border border-zen-terracotta/10 rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden shadow-soft">
+                                        <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-zen-terracotta/5 blur-[60px] rounded-full"></div>
                                         <div className="flex items-center gap-4 mb-10">
-                                            <div className="p-3 bg-brand-rose/10 rounded-2xl border border-brand-rose/20 text-brand-rose">
+                                            <div className="p-3 bg-zen-terracotta/10 rounded-2xl border border-zen-terracotta/20 text-zen-terracotta">
                                                 <AlertCircle size={20} />
                                             </div>
-                                            <h3 className="text-2xl font-black text-white italic tracking-tighter uppercase">Evasion Tactics</h3>
+                                            <h3 className="text-2xl font-bold text-zen-ink italic tracking-tighter uppercase">Pitfall Evasion</h3>
                                         </div>
-                                        <div className="bg-brand-slate/50 border border-brand-rose/30 p-8 rounded-[2rem] text-slate-200 text-lg leading-relaxed italic whitespace-pre-wrap relative z-10">
-                                            <div className="text-[10px] font-black text-brand-rose uppercase tracking-[0.4em] mb-4">⚠️ THREAT DETECTED</div>
+                                        <div className="bg-white/60 border border-zen-terracotta/10 p-8 rounded-[2rem] text-zen-ink/80 text-lg leading-relaxed italic whitespace-pre-wrap relative z-10 shadow-inner">
+                                            <div className="text-[10px] font-bold text-zen-terracotta uppercase tracking-[0.4em] mb-4">⚠️ ATTENTION REQUIRED</div>
                                             {topic.content?.traps || topic.examAngle}
                                         </div>
                                     </section>
