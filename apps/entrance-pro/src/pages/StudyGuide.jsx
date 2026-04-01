@@ -202,31 +202,41 @@ const StudyGuide = () => {
                                         {tIdx + 1}
                                     </div>
                                     <div>
-                                        <h2 className="text-4xl lg:text-5xl font-bold text-zen-ink italic tracking-tighter uppercase leading-none mb-3">
+                                        <h2 className="text-2xl lg:text-3xl font-bold text-zen-ink italic tracking-tighter uppercase leading-[0.9] mb-4">
                                             {topic.title}
                                         </h2>
                                         <div className="flex items-center gap-4">
-                                            <div className="text-zen-sky font-bold text-[9px] uppercase tracking-[0.4em] italic">LEARNING MODULE {tIdx + 1}/{guideData.topics.length}</div>
+                                            <div className="text-zen-sky font-bold text-[11px] uppercase tracking-[0.3em] italic">LEARNING MODULE {tIdx + 1} / {guideData.topics.length}</div>
                                             {heardTopicIds.includes(topic.id) && (
-                                                <div className="flex items-center gap-2 text-[9px] font-bold text-zen-forest uppercase tracking-widest italic bg-zen-forest/10 px-2 py-0.5 rounded-full border border-zen-forest/20">
-                                                    <ShieldCheck size={10} /> SECURED
+                                                <div className="flex items-center gap-2 text-[10px] font-bold text-zen-forest uppercase tracking-widest italic bg-white px-3 py-1 rounded-full border border-zen-forest/30 shadow-sm">
+                                                    <ShieldCheck size={12} /> SECURED
                                                 </div>
                                             )}
                                         </div>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-3">
+                                <div className="flex items-center gap-4">
                                     <button 
                                         onClick={() => handleSpeech(topic)}
-                                        className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all border shadow-sm ${speakingTopicId === topic.id ? 'bg-zen-sky text-white border-zen-sky animate-pulse shadow-bold' : 'bg-white text-zen-ink/40 border-zen-ink/10 hover:bg-zen-sky/10'}`}
+                                        className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all border shadow-sm ${speakingTopicId === topic.id ? 'bg-zen-sky text-white border-zen-sky animate-pulse shadow-bold' : 'bg-white text-zen-sky/60 border-zen-ink/10 hover:bg-zen-sky/5 hover:border-zen-sky/20'}`}
                                     >
-                                        <Volume2 size={20} />
+                                        <Volume2 size={24} />
                                     </button>
                                     <button 
                                         onClick={() => toggleReadStatus(topic.id)}
-                                        className={`px-6 h-12 rounded-2xl flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest transition-all italic border shadow-sm ${heardTopicIds.includes(topic.id) ? 'bg-zen-forest text-white border-zen-forest shadow-bold' : 'bg-white text-zen-ink/40 border-zen-ink/10 hover:bg-zen-sky/10'}`}
+                                        className={`px-8 h-14 rounded-2xl flex items-center justify-center transition-all italic border shadow-sm ${heardTopicIds.includes(topic.id) ? 'bg-zen-forest text-white border-zen-forest shadow-bold' : 'bg-white hover:bg-zen-sky/5 border-zen-ink/10 text-zen-sky/60 hover:text-zen-sky hover:border-zen-sky/20'}`}
                                     >
-                                        {heardTopicIds.includes(topic.id) ? 'SECURED' : 'MARK READ'}
+                                        {heardTopicIds.includes(topic.id) ? (
+                                            <div className="flex flex-col items-center leading-none">
+                                                <span className="text-[8px] font-bold uppercase tracking-widest opacity-80 mb-1">MODULE</span>
+                                                <span className="text-[11px] font-black uppercase tracking-tighter">SECURED</span>
+                                            </div>
+                                        ) : (
+                                            <div className="flex flex-col items-center leading-none">
+                                                <span className="text-[8px] font-bold uppercase tracking-widest opacity-60 mb-1 italic">MARK</span>
+                                                <span className="text-[11px] font-black uppercase tracking-tighter">READ</span>
+                                            </div>
+                                        )}
                                     </button>
                                 </div>
                             </div>
