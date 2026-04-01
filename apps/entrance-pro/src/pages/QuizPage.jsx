@@ -54,47 +54,47 @@ const QuizPage = () => {
     };
 
     if (isLoading) return (
-        <div className="h-screen bg-brand-slate flex flex-col items-center justify-center gap-6">
-            <div className="w-16 h-16 border-4 border-brand-amber/20 border-t-brand-amber rounded-full animate-spin"></div>
-            <div className="text-[10px] font-black text-slate-500 uppercase tracking-[0.5em] animate-pulse">Initializing Tactical Drill...</div>
+        <div className="h-screen bg-zen-paper flex flex-col items-center justify-center gap-6">
+            <div className="w-16 h-16 border-4 border-zen-sky/10 border-t-zen-sky rounded-full animate-spin"></div>
+            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.5em]">Preparing Practice Session...</div>
         </div>
     );
 
     if (isFinished) return (
-        <div className="min-h-screen bg-brand-slate flex items-center justify-center p-8 lg:p-12 overflow-y-auto">
-            <div className="bg-white/5 border border-white/5 backdrop-blur-3xl rounded-[3rem] p-12 lg:p-16 max-w-xl w-full text-center relative overflow-hidden group">
-                <div className="absolute -top-12 -left-12 w-48 h-48 bg-brand-emerald/10 blur-[80px] rounded-full group-hover:bg-brand-emerald/20 transition-all duration-700"></div>
+        <div className="min-h-screen bg-zen-paper flex items-center justify-center p-8 lg:p-12 overflow-y-auto">
+            <div className="bg-white border border-zen-ink/5 rounded-[3rem] p-12 lg:p-16 max-w-xl w-full text-center relative overflow-hidden group shadow-soft">
+                <div className="absolute -top-12 -left-12 w-48 h-48 bg-zen-forest/5 blur-[80px] rounded-full group-hover:bg-zen-forest/10 transition-all duration-700"></div>
                 
                 <div className="relative z-10">
-                    <div className="w-20 h-20 bg-brand-emerald/10 text-brand-emerald rounded-3xl flex items-center justify-center mx-auto mb-8 border border-brand-emerald/20 shadow-glow-emerald/20">
+                    <div className="w-20 h-20 bg-zen-forest/10 text-zen-forest rounded-3xl flex items-center justify-center mx-auto mb-8 border border-zen-forest/10 shadow-soft">
                         <Target size={40} />
                     </div>
-                    <h2 className="text-3xl font-black text-white mb-2 italic tracking-tighter uppercase">Drill <span className="text-brand-emerald">Secure</span></h2>
-                    <p className="text-slate-500 text-[10px] font-black uppercase tracking-[0.3em] mb-12 italic">Tactical Unit Performance Breakdown</p>
+                    <h2 className="text-3xl font-bold text-zen-ink mb-2 tracking-tight">Session <span className="text-zen-forest">Complete</span></h2>
+                    <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-12">Summary of Results</p>
 
-                    <div className="grid grid-cols-2 gap-4 mb-12">
-                        <div className="bg-white/[0.03] border border-white/5 p-6 rounded-[2rem]">
-                            <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">ACCURACY</div>
-                            <div className="text-3xl font-black text-white italic tracking-tighter">{Math.round((score / questions.length) * 100)}%</div>
+                    <div className="grid grid-cols-2 gap-4 mb-12 text-zen-ink">
+                        <div className="bg-zen-ink/[0.02] border border-zen-ink/5 p-6 rounded-[2rem]">
+                            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">ACCURACY</div>
+                            <div className="text-3xl font-bold tracking-tight">{Math.round((score / questions.length) * 100)}%</div>
                         </div>
-                        <div className="bg-white/[0.03] border border-white/5 p-6 rounded-[2rem]">
-                            <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">XP SECURED</div>
-                            <div className="text-3xl font-black text-brand-amber italic tracking-tighter">+{score * 10}</div>
+                        <div className="bg-zen-ink/[0.02] border border-zen-ink/5 p-6 rounded-[2rem]">
+                            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">POINTS EARNED</div>
+                            <div className="text-3xl font-bold text-zen-sky tracking-tight">+{score * 10}</div>
                         </div>
                     </div>
 
                     <div className="flex flex-col gap-4">
                         <button
                             onClick={() => window.location.reload()}
-                            className="w-full py-5 bg-white/5 hover:bg-white/10 text-white rounded-[1.5rem] font-black text-[10px] uppercase tracking-[0.4em] transition-all border border-white/10 italic"
+                            className="w-full py-5 bg-zen-ink/5 hover:bg-zen-ink/10 text-zen-ink rounded-[1.5rem] font-bold text-[10px] uppercase tracking-[0.4em] transition-all border border-zen-ink/5"
                         >
-                            <RotateCcw size={14} className="inline mr-2" /> Re-Initialize Drill
+                            <RotateCcw size={14} className="inline mr-2" /> Retake Practice
                         </button>
                         <button
                             onClick={() => navigate(`/subject/${subjectId}`)}
-                            className="w-full py-5 bg-brand-emerald hover:bg-white text-brand-slate rounded-[1.5rem] font-black text-[10px] uppercase tracking-[0.4em] transition-all shadow-glow-emerald/20 italic"
+                            className="w-full py-5 bg-zen-forest hover:bg-zen-ink text-white rounded-[1.5rem] font-bold text-[10px] uppercase tracking-[0.4em] transition-all shadow-soft"
                         >
-                            Return to Unit Hub
+                            Return to Topics
                         </button>
                     </div>
                 </div>
@@ -106,25 +106,25 @@ const QuizPage = () => {
     const progress = ((currentIndex + 1) / questions.length) * 100;
 
     return (
-        <div className="min-h-screen bg-brand-slate text-slate-100 flex flex-col selection:bg-brand-amber/30 pb-20">
-            <header className="h-20 border-b border-white/5 flex items-center justify-between px-8 bg-brand-slate/50 backdrop-blur-xl shrink-0 z-50">
+        <div className="min-h-screen bg-zen-paper text-zen-ink flex flex-col selection:bg-zen-sky/10 pb-20">
+            <header className="h-20 border-b border-zen-ink/5 flex items-center justify-between px-8 bg-zen-paper/50 backdrop-blur-xl shrink-0 z-50">
                 <div className="flex items-center gap-6">
                     <button 
                         onClick={() => navigate(-1)} 
-                        className="w-10 h-10 bg-white/5 hover:bg-brand-amber/20 text-slate-500 hover:text-brand-amber rounded-xl flex items-center justify-center transition-all border border-white/5 active:scale-90"
+                        className="w-10 h-10 bg-zen-ink/5 hover:bg-zen-sky/20 text-slate-400 hover:text-zen-sky rounded-xl flex items-center justify-center transition-all border border-zen-ink/5 active:scale-90"
                     >
                         <ChevronLeft size={18} />
                     </button>
                     <div>
-                        <h2 className="font-black text-white uppercase text-[10px] tracking-[0.3em] italic">{chapter?.name}</h2>
-                        <p className="text-[8px] font-black text-slate-500 uppercase tracking-[0.5em] italic">TACTICAL DRILL // {subject?.name}</p>
+                        <h2 className="font-bold text-zen-ink text-[10px] tracking-widest uppercase">{chapter?.name}</h2>
+                        <p className="text-[8px] font-bold text-slate-400 uppercase tracking-[0.5em]">Practice Session // {subject?.name}</p>
                     </div>
                 </div>
 
-                <div className="flex items-center gap-8">
-                    <div className="flex items-center gap-3 px-6 py-2 bg-white/5 border border-white/10 rounded-2xl">
-                        <Target size={16} className="text-brand-amber" />
-                        <span className="text-sm font-black text-white italic tracking-tighter">{score} / {questions.length}</span>
+                <div className="flex items-center gap-8 text-zen-ink">
+                    <div className="flex items-center gap-3 px-6 py-2 bg-zen-sky/5 border border-zen-sky/10 rounded-2xl">
+                        <Target size={16} className="text-zen-sky" />
+                        <span className="text-sm font-bold tracking-tight">{score} / {questions.length}</span>
                     </div>
                 </div>
             </header>
@@ -134,33 +134,33 @@ const QuizPage = () => {
                     <div className="mb-12">
                         <div className="flex justify-between items-end mb-4">
                             <div className="flex items-center gap-3">
-                                <div className="w-2 h-2 bg-brand-amber rounded-full animate-pulse"></div>
-                                <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] italic">DRILL STATUS: {currentIndex + 1} / {questions.length}</span>
+                                <div className="w-2 h-2 bg-zen-sky rounded-full"></div>
+                                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">PROGRESS: {currentIndex + 1} / {questions.length}</span>
                             </div>
-                            <span className="text-lg font-black text-white italic tracking-tighter">{Math.round(progress)}%</span>
+                            <span className="text-lg font-bold text-zen-ink tracking-tight">{Math.round(progress)}%</span>
                         </div>
-                        <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
+                        <div className="h-1.5 w-full bg-zen-ink/5 rounded-full overflow-hidden border border-zen-ink/5">
                             <div 
-                                className="h-full bg-brand-amber transition-all duration-500 shadow-glow-amber/50"
+                                className="h-full bg-zen-sky transition-all duration-500 shadow-soft"
                                 style={{ width: `${progress}%` }}
                             ></div>
                         </div>
                     </div>
 
-                    <div className="bg-white/[0.03] border border-white/5 backdrop-blur-3xl rounded-[3rem] p-12 lg:p-16 mb-8 shadow-2xl relative overflow-hidden group">
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-amber/20 to-transparent"></div>
-                        <Sparkles size={24} className="text-brand-amber/20 mb-8" />
+                    <div className="bg-white border border-zen-ink/5 rounded-[3rem] p-12 lg:p-16 mb-8 shadow-warm relative overflow-hidden group">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-zen-sky/20 to-transparent"></div>
+                        <Sparkles size={24} className="text-zen-sky/20 mb-8" />
                         
                         {q?.passage && (
-                            <div className="mb-8 p-6 bg-brand-slate/50 border border-white/10 rounded-3xl max-h-[300px] overflow-y-auto custom-scrollbar shadow-inner">
-                                <h4 className="text-xs font-black uppercase tracking-[0.3em] text-brand-emerald mb-3 italic">Case Study / Passage</h4>
-                                <p className="text-slate-300 leading-relaxed text-sm italic font-medium whitespace-pre-wrap">
+                            <div className="mb-8 p-6 bg-zen-paper/50 border border-zen-ink/10 rounded-3xl max-h-[300px] overflow-y-auto custom-scrollbar shadow-inner">
+                                <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-zen-forest mb-3">Case Study / Passage</h4>
+                                <p className="text-slate-600 leading-relaxed text-sm font-medium whitespace-pre-wrap">
                                     {q.passage}
                                 </p>
                             </div>
                         )}
 
-                        <h3 className="text-3xl lg:text-4xl font-black text-white leading-tight italic tracking-tighter mb-4">
+                        <h3 className="text-3xl lg:text-4xl font-bold text-zen-ink leading-tight tracking-tight mb-4">
                             {q?.question}
                         </h3>
                     </div>
@@ -170,11 +170,11 @@ const QuizPage = () => {
                             const isCorrect = q.correct === idx;
                             const isSelected = selectedAnswer === idx;
                             
-                            let buttonStyles = "border-white/5 bg-white/5 hover:border-brand-amber/30 hover:bg-white/10 text-slate-400 hover:text-white";
+                            let buttonStyles = "border-zen-ink/5 bg-zen-ink/5 hover:border-zen-sky/30 hover:bg-zen-ink/10 text-slate-500 hover:text-zen-ink";
                             if (showExplanation) {
-                                if (isCorrect) buttonStyles = "border-brand-emerald bg-brand-emerald/20 text-white shadow-glow-emerald/10";
-                                else if (isSelected) buttonStyles = "border-brand-rose bg-brand-rose/20 text-white opacity-50";
-                                else buttonStyles = "border-white/5 bg-white/5 text-slate-600 opacity-30";
+                                if (isCorrect) buttonStyles = "border-zen-forest bg-zen-forest/10 text-zen-forest";
+                                else if (isSelected) buttonStyles = "border-zen-terracotta bg-zen-terracotta/10 text-zen-terracotta opacity-50";
+                                else buttonStyles = "border-zen-ink/5 bg-zen-ink/5 text-slate-300 opacity-30";
                             }
 
                             return (
@@ -184,36 +184,36 @@ const QuizPage = () => {
                                     onClick={() => handleAnswer(idx)}
                                     className={`w-full p-6 text-left rounded-[1.8rem] border-2 transition-all flex items-center justify-between group/opt active:scale-[0.98] ${buttonStyles}`}
                                 >
-                                    <span className="text-lg font-bold italic tracking-tight">{opt}</span>
-                                    {showExplanation && isCorrect && <CheckCircle2 size={24} className="text-brand-emerald" />}
-                                    {showExplanation && isSelected && !isCorrect && <AlertTriangle size={24} className="text-brand-rose" />}
+                                    <span className="text-lg font-semibold tracking-tight">{opt}</span>
+                                    {showExplanation && isCorrect && <CheckCircle2 size={24} className="text-zen-forest" />}
+                                    {showExplanation && isSelected && !isCorrect && <AlertTriangle size={24} className="text-zen-terracotta" />}
                                 </button>
                             );
                         })}
                     </div>
 
                     {showExplanation && (
-                        <div className="bg-brand-indigo/5 border border-brand-indigo/20 rounded-[2rem] p-8 lg:p-10 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                        <div className="bg-zen-sky/5 border border-zen-sky/20 rounded-[2rem] p-8 lg:p-10 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
                             <div className="flex items-center gap-3 mb-4">
-                                <Zap size={18} className="text-brand-indigo" />
-                                <span className="text-[10px] font-black text-brand-indigo uppercase tracking-[0.4em] italic">LOGIC REVELATION</span>
+                                <Zap size={18} className="text-zen-sky" />
+                                <span className="text-[10px] font-bold text-zen-sky uppercase tracking-[0.4em]">Explanation</span>
                             </div>
                             {q?.explanation && (
-                                <p className="text-slate-300 text-lg italic leading-relaxed font-medium mb-6">
+                                <p className="text-slate-600 text-lg leading-relaxed font-medium mb-6">
                                     {q.explanation}
                                 </p>
                             )}
                             
                             {q?.solution_steps && (
-                                <div className="space-y-4 border-t border-brand-indigo/10 pt-6">
-                                    <h4 className="text-[8px] font-black uppercase tracking-[0.4em] text-brand-indigo/60 mb-2 italic">Step-by-Step Breakdown</h4>
+                                <div className="space-y-4 border-t border-zen-sky/10 pt-6">
+                                    <h4 className="text-[8px] font-bold uppercase tracking-[0.4em] text-zen-sky/60 mb-2">Step-by-Step Breakdown</h4>
                                     <div className="space-y-3">
                                         {q.solution_steps.map((step, idx) => (
                                             <div key={idx} className="flex gap-4 items-start group/step">
-                                                <div className="w-6 h-6 rounded-lg bg-brand-indigo/10 text-brand-indigo flex items-center justify-center text-[10px] font-black shrink-0 mt-1 border border-brand-indigo/20 group-hover/step:bg-brand-indigo group-hover/step:text-white transition-all duration-300">
+                                                <div className="w-6 h-6 rounded-lg bg-zen-sky/10 text-zen-sky flex items-center justify-center text-[10px] font-bold shrink-0 mt-1 border border-zen-sky/10 group-hover/step:bg-zen-sky group-hover/step:text-white transition-all duration-300">
                                                     {idx + 1}
                                                 </div>
-                                                <p className="text-slate-400 text-base italic leading-relaxed group-hover/step:text-slate-200 transition-colors duration-300">
+                                                <p className="text-slate-500 text-base leading-relaxed group-hover/step:text-slate-700 transition-colors duration-300">
                                                     {step}
                                                 </p>
                                             </div>
@@ -223,9 +223,9 @@ const QuizPage = () => {
                             )}
                             <button 
                                 onClick={handleNext}
-                                className="mt-8 flex items-center gap-3 px-8 py-4 bg-brand-amber hover:bg-white text-brand-slate rounded-2xl font-black text-[10px] uppercase tracking-[0.3em] transition-all shadow-glow-amber/20 italic active:scale-95"
+                                className="mt-8 flex items-center gap-3 px-8 py-4 bg-zen-sky hover:bg-zen-ink text-white rounded-2xl font-bold text-[10px] uppercase tracking-widest transition-all shadow-soft active:scale-95"
                             >
-                                {currentIndex < questions.length - 1 ? 'NEXT LOGIC NODULE' : 'FINALIZE DRILL'} <ChevronLeft size={14} className="rotate-180" />
+                                {currentIndex < questions.length - 1 ? 'Next Question' : 'Finish Session'} <ChevronLeft size={14} className="rotate-180" />
                             </button>
                         </div>
                     )}

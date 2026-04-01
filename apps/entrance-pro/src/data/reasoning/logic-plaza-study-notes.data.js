@@ -1,6 +1,6 @@
 export const logicPlazaStudyNotes = [
   // Arrangement Arena
-  { id: "sn-lp-001", topic: "Linear Arrangements", content: "Always check if people are facing North or South. North: Left is your Left. South: Left is your Right.", diagram: "North Facing:\\n[L] P1 -- P2 -- P3 -- P4 [R]\\n\\nSouth Facing:\\n[R] P1 -- P2 -- P3 -- P4 [L]" },
+  { id: "sn-lp-001", topic: "Linear Arrangements", content: "Always check if people are facing North or South. North: Left is your Left. South: Left is your Right.\n\n🏢 Real Life: Like driving—your perspective of 'left' changes if you're facing the car behind you.", diagram: "North Facing:\\n[L] P1 -- P2 -- P3 -- P4 [R]\\n\\nSouth Facing:\\n[R] P1 -- P2 -- P3 -- P4 [L]" },
   { id: "sn-lp-002", topic: "Linear Arrangements", content: "Relative terms: 'To the immediate left' means no one in between. 'Second to the left' means one person in between." },
   { id: "sn-lp-003", topic: "Circular Arrangements", content: "Facing Center: Clockwise is Left, Anti-clockwise is Right." },
   { id: "sn-lp-004", topic: "Circular Arrangements", content: "Facing Outward: Clockwise is Right, Anti-clockwise is Left." },
@@ -14,7 +14,7 @@ export const logicPlazaStudyNotes = [
   { id: "sn-lp-010", topic: "Number Series", content: "If the series grows very fast, look for multiplication or exponential factors." },
   { id: "sn-lp-011", topic: "Number Series", content: "Double difference (the difference of differences) often reveals a constant or arithmetic progression." },
   { id: "sn-lp-012", topic: "Alphabet Series", content: "Memorize E-J-O-T-Y (5-10-15-20-25) for quick letter-to-number mapping." },
-  { id: "sn-lp-013", topic: "Alphabet Series", content: "Pairs like A-Z, B-Y, C-X (Sum = 27) are 'Reverse Pairs' often used in coding." },
+  { id: "sn-lp-013", topic: "Alphabet Series", content: "Pairs like A-Z, B-Y, C-X (Sum = 27) are 'Reverse Pairs' often used in coding.\n\n🏢 Real Life: Imagine a mirror where 'A' at the start sees 'Z' at the very end as its twin.", example: "H is 8th, so its reverse is 19th (S)." },
   { id: "sn-lp-014", topic: "Alphanumeric Series", content: "Solve digits and letters separately. They usually have independent sequences." },
   { id: "sn-lp-015", topic: "Alphanumeric Series", content: "Watch for symbols ($, %, #) which might be placed in alternating positions." },
   
@@ -31,7 +31,7 @@ export const logicPlazaStudyNotes = [
   { id: "sn-lp-023", topic: "Blood Relations", content: "Important relations: Father's brother is Paternal Uncle, Mother's brother is Maternal Uncle." },
   { id: "sn-lp-024", topic: "Direction Sense", content: "Main directions: North, South, East, West. Cardinals: NE, NW, SE, SW.", diagram: "      N\\n  NW  |  NE\\n    \\ | /\\nW --- + --- E\\n    / | \\\\n  SW  |  SE\\n      S" },
   { id: "sn-lp-025", topic: "Direction Sense", content: "Pythagoras Theorem: H² = P² + B² is frequently used to find shortest distance." },
-  { id: "sn-lp-026", topic: "Direction Sense", content: "Shadow logic: Morning (Sun in East) -> Shadow in West. Evening (Sun in West) -> Shadow in East." },
+  { id: "sn-lp-026", topic: "Direction Sense", content: "Shadow logic: Morning (Sun in East) -> Shadow in West. Evening (Sun in West) -> Shadow in East.\n\n🏢 Real Life: Shadows are like shy children—they always run away from the light source.", example: "Facing North in morning -> Shadow is to your Left." },
   { id: "sn-lp-027", topic: "Direction Sense", content: "Facing North, a right turn takes you East. Facing South, a right turn takes you West." },
   
   // Logic Lab
@@ -47,14 +47,14 @@ export const logicPlazaStudyNotes = [
   { id: "sn-lp-037", topic: "Arguments", content: "Strong arguments address why or how something is beneficial or harmful; weak ones are emotional or irrelevant." },
   
   // Visual Vault
-  { id: "sn-lp-038", topic: "Mirror Images", content: "Lateral inversion: Left becomes Right. The side closest to the mirror stays closest in the reflection." },
+  { id: "sn-lp-038", topic: "Mirror Images", content: "Lateral inversion: Left becomes Right. The side closest to the mirror stays closest in the reflection.\n\n🏢 Real Life: Like shaking hands with yourself in a mirror; your 'right' reach meets your reflection's 'left' reach.", example: "AMBULANCE written backward for drivers." },
   { id: "sn-lp-039", topic: "Mirror Images", content: "Clocks: Mirror time = 11:60 - Actual time." },
   { id: "sn-lp-040", topic: "Water Images", content: "Vertical inversion: Top becomes Bottom. Horizontal axis remains unchanged." },
   { id: "sn-lp-041", topic: "Water Images", content: "Clocks: Water time = 18:30 - Actual time (approximate, adjust if result > 60 mins)." },
   { id: "sn-lp-042", topic: "Paper Folding", content: "Visualize the fold as a mirror. The design on one side reflects onto the other layer." },
   { id: "sn-lp-043", topic: "Paper Cutting", content: "Total holes = (Number of punches) x (Number of layers after all folds)." },
   { id: "sn-lp-044", topic: "Cube & Dice", content: "In a net, the faces that are alternate in a straight line are always opposite." },
-  { id: "sn-lp-045", topic: "Cube & Dice", content: "Opposite faces can NEVER be adjacent on a 3D cube view." },
+  { id: "sn-lp-045", topic: "Cube & Dice", content: "Opposite faces can NEVER be adjacent on a 3D cube view.\n\n🏢 Real Life: Like a coin—you can never see Head and Tail at the same time.", example: "If 1 is top, 6 is bottom (unseen)." },
   
   // Advanced Strategies
   { id: "sn-lp-046", topic: "Time Management", content: "Spend max 45 seconds on single MCQs and 2-3 minutes on a 5-question arrangement set." },

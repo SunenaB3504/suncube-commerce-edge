@@ -1,6 +1,6 @@
 export const logicPlazaFlashcards = [
   // 1-10: Arrangement & Floors
-  { id: "lp-fc-001", term: "Linear Left (Facing North)", definition: "Moving towards the Western direction on the line.", example: "X is to the left of Y." },
+  { id: "lp-fc-001", term: "Linear Left (Facing North)", definition: "Moving towards the Western direction on the line.", example: "X is to the left of Y. 🏢 Real Life: Like moving your fork to the left while eating North-facing at a table." },
   { id: "lp-fc-002", term: "Linear Right (Facing South)", definition: "Moving towards the Western direction (Inverted from North).", example: "South-facing: Right = West." },
   { id: "lp-fc-003", term: "Circular Center", definition: "Left turn is Clockwise, Right turn is Anti-clockwise.", example: "Standard circle seating." },
   { id: "lp-fc-004", term: "Circular Outward", definition: "Left turn is Anti-clockwise, Right turn is Clockwise.", example: "Meeting facing away." },
@@ -14,7 +14,7 @@ export const logicPlazaFlashcards = [
   // 11-20: Series
   { id: "lp-fc-011", term: "Arithmetic Series", definition: "Constant difference added to each term.", example: "2, 5, 8, 11 (+3)." },
   { id: "lp-fc-012", term: "Geometric Series", definition: "Constant ratio multiplied to each term.", example: "2, 6, 18, 54 (x3)." },
-  { id: "lp-fc-013", term: "Fibonacci Series", definition: "Each term is the sum of previous two terms.", example: "1, 1, 2, 3, 5, 8..." },
+  { id: "lp-fc-013", term: "Fibonacci Series", definition: "Each term is the sum of previous two terms.", example: "1, 1, 2, 3, 5, 8... 🏢 Real Life: Like the spiral of a snail shell or a pinecone." },
   { id: "lp-fc-014", term: "Square Series", definition: "Sequence of perfect squares.", example: "1, 4, 9, 16, 25..." },
   { id: "lp-fc-015", term: "E-J-O-T-Y", definition: "Alphabet positions: 5, 10, 15, 20, 25.", example: "Basis for alphabet coding." },
   { id: "lp-fc-016", term: "Reverse Alphabet", definition: "Z=1, Y=2... A=26.", example: "Reverse rank formula: 27 - Rank." },
@@ -30,7 +30,7 @@ export const logicPlazaFlashcards = [
   { id: "lp-fc-024", term: "Reflection Coding", definition: "Letters replaced by their reverse pairs.", example: "A->Z, B->Y." },
   { id: "lp-fc-025", term: "Pythagoras Distance", definition: "Shortest distance between two points.", formula: "√(x² + y²)", example: "3m North, 4m East -> 5m distant." },
   { id: "lp-fc-026", term: "Cardinal Directions", definition: "Intermediary points: NE, NW, SE, SW.", example: "Between North and East." },
-  { id: "lp-fc-027", term: "The shadow rule", definition: "Shadow is always opposite to the light source.", example: "Sun East -> Shadow West." },
+  { id: "lp-fc-027", term: "The shadow rule", definition: "Shadow is always opposite to the light source.", example: "Sun East -> Shadow West. 🏢 Real Life: Shadows are like shy children—they always run away from the light source." },
   { id: "lp-fc-028", term: "Degree Rotation", definition: "Clockwise (CW) vs Anti-clockwise (ACW).", example: "Turning 90 deg CW from North -> East." },
   { id: "lp-fc-029", term: "Relative Direction", definition: "Determining X's position compared to Y.", example: "X is to the NE of Y." },
   { id: "lp-fc-030", term: "Home Return", definition: "Calculating distance/direction to reach the starting point.", example: "End is 5m East of Start -> Return via 5m West." },
@@ -38,7 +38,7 @@ export const logicPlazaFlashcards = [
   // 31-40: Blood Relations
   { id: "lp-fc-031", term: "SIBLINGS", definition: "Brother or Sister (Same parents).", example: "Amit and Ritu." },
   { id: "lp-fc-032", term: "SPOUSE", definition: "Husband or Wife.", example: "Mr. and Mrs. X." },
-  { id: "lp-fc-033", term: "Maternal Uncle", definition: "Mother's brother.", example: "Mama." },
+  { id: "lp-fc-033", term: "Maternal Uncle", definition: "Mother's brother.", example: "Mama. 🏢 Real Life: The person who brings 'M'amai' (maternal) gifts!" },
   { id: "lp-fc-034", term: "Paternal Aunt", definition: "Father's sister.", example: "Bua / Phupi." },
   { id: "lp-fc-035", term: "Niece", definition: "Daughter of one's brother or sister.", example: "Female child." },
   { id: "lp-fc-036", term: "Nephew", definition: "Son of one's brother or sister.", example: "Male child." },
@@ -60,7 +60,7 @@ export const logicPlazaFlashcards = [
   { id: "lp-fc-050", term: "Cause and Effect", definition: "One event (A) leads to another (B).", example: "Unrest -> Curfew." },
 
   // 51-60: Visual Vault (Mirror/Water/Cubes)
-  { id: "lp-fc-051", term: "Lateral Inversion", definition: "Mirror effect: Left <-> Right.", example: "P becomes q (reflected)." },
+  { id: "lp-fc-051", term: "Lateral Inversion", definition: "Mirror effect: Left <-> Right.", example: "P becomes q (reflected). 🏢 Real Life: Like shaking hands with a mirror; your right meets its 'left'." },
   { id: "lp-fc-052", term: "Vertical Inversion", definition: "Water effect: Top <-> Bottom.", example: "M becomes W." },
   { id: "lp-fc-053", term: "Mirror Clock Rule", definition: "Subtract from 11:60 to get reflection.", formula: "11:60 - T", example: "4:00 -> 8:00." },
   { id: "lp-fc-054", term: "Water Invariants", definition: "Letters that don't change in water (H, I, O, X).", example: "Vertical symmetry." },
