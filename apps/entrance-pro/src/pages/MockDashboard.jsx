@@ -76,7 +76,7 @@ const MockDashboard = () => {
                     {mockTypes.map((mock) => (
                         <div
                             key={mock.id}
-                            className="group bg-gradient-to-br from-white via-white to-zen-sky/[0.05] border border-zen-ink/5 p-10 rounded-[3rem] hover:bg-white hover:border-zen-sky/20 transition-all cursor-pointer relative overflow-hidden flex flex-col h-full shadow-soft hover:shadow-warm"
+                            className="group zen-mesh-sky border border-zen-ink/10 p-10 rounded-[3.5rem] hover:border-zen-sky/30 transition-all cursor-pointer relative overflow-hidden flex flex-col h-full shadow-warm hover:shadow-bold active:scale-[0.98]"
                             onClick={() => navigate(`/mock-exam/${mock.id}`)}
                         >
                             <div className={`absolute -right-12 -top-12 w-48 h-48 opacity-10 group-hover:opacity-20 transition-opacity duration-700 blur-[60px] rounded-full`} style={{ backgroundColor: mock.color.includes('indigo') ? '#6366f1' : mock.color.includes('emerald') ? '#10b981' : mock.color.includes('amber') ? '#f59e0b' : '#f43f5e' }}></div>
@@ -104,15 +104,15 @@ const MockDashboard = () => {
                 </div>
 
                 {/* Performance Analytics Integration */}
-                <div className="bg-gradient-to-br from-white via-white to-zen-forest/[0.03] border border-zen-ink/5 p-12 lg:p-16 rounded-[4rem] backdrop-blur-3xl relative overflow-hidden shadow-soft">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-zen-forest/20 to-transparent"></div>
+                <div className="zen-mesh-warm border border-zen-ink/10 p-12 lg:p-20 rounded-[4.5rem] backdrop-blur-sm relative overflow-hidden shadow-bold">
+                    <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-zen-forest/20 to-transparent"></div>
                     <div className="flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
                         <div className="max-w-xl">
-                            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-zen-forest/10 border border-zen-forest/20 rounded-full text-zen-forest text-[9px] font-bold uppercase tracking-widest mb-6 italic">
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-zen-forest/20 rounded-full text-zen-forest text-[9px] font-bold uppercase tracking-widest mb-6 italic shadow-sm">
                                 <BarChart3 size={14} /> LIVE PERFORMANCE INSIGHTS
                             </div>
-                            <h2 className="text-4xl font-bold text-zen-ink italic uppercase tracking-tighter mb-4 leading-none">Insight <span className="text-zen-forest">Analytics</span></h2>
-                            <p className="text-zen-ink/40 text-xs font-bold uppercase tracking-widest italic leading-relaxed">
+                            <h2 className="text-4xl lg:text-5xl font-bold text-zen-ink italic uppercase tracking-tighter mb-4 leading-none">Insight <span className="text-zen-forest">Analytics</span></h2>
+                            <p className="text-zen-ink/60 text-xs font-bold uppercase tracking-widest italic leading-relaxed">
                                 Review your previous simulation data to identify conceptual patterns and optimize your exam-day strategies.
                             </p>
                         </div>

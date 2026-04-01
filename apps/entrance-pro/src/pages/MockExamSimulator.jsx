@@ -185,33 +185,33 @@ const MockExamSimulator = () => {
     if (showResults) {
         return (
             <div className="min-h-screen bg-zen-paper flex items-center justify-center p-6 lg:p-12 overflow-y-auto">
-                <div className="bg-white border border-zen-ink/5 rounded-[3rem] p-12 lg:p-16 max-w-2xl w-full text-center relative overflow-hidden group shadow-soft">
-                    <div className="absolute -top-24 -left-24 w-64 h-64 bg-zen-forest/10 blur-[100px] rounded-full group-hover:bg-zen-forest/20 transition-all duration-700"></div>
+                <div className="zen-mesh-vibrant border border-zen-ink/10 rounded-[4.5rem] p-12 lg:p-20 max-w-2xl w-full text-center relative overflow-hidden group shadow-bold">
+                    <div className="absolute -top-24 -left-24 w-64 h-64 bg-zen-forest/20 blur-[100px] rounded-full group-hover:bg-zen-forest/30 transition-all duration-700"></div>
                     
                     <div className="relative z-10">
-                        <div className="w-24 h-24 bg-zen-forest/10 text-zen-forest rounded-[2rem] flex items-center justify-center mx-auto mb-10 shadow-soft border border-zen-forest/20">
+                        <div className="w-24 h-24 bg-white text-zen-forest rounded-[2.5rem] flex items-center justify-center mx-auto mb-10 shadow-bold border border-zen-forest/20">
                             <Trophy size={48} />
                         </div>
                         
                         <h2 className="text-4xl lg:text-5xl font-bold text-zen-ink mb-4 italic tracking-tighter uppercase">Simulation <span className="text-zen-forest">Secure</span></h2>
-                        <p className="text-zen-ink/30 text-xs font-bold uppercase tracking-[0.3em] mb-12 italic">Performance Audit Complete // {config.name}</p>
+                        <p className="text-zen-ink/40 text-xs font-bold uppercase tracking-[0.3em] mb-12 italic">Performance Audit Complete // {config.name}</p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-                            <div className="bg-gradient-to-br from-white via-white to-zen-sky/[0.05] border border-zen-ink/5 p-8 rounded-[2.5rem] flex flex-col items-center gap-3 transition-all shadow-sm hover:shadow-warm">
+                            <div className="zen-mesh-sky border border-zen-ink/10 p-8 rounded-[2.8rem] flex flex-col items-center gap-3 transition-all shadow-bold hover:shadow-warm">
                                 <BarChart3 size={24} className="text-zen-sky" />
-                                <div className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-widest">Logic Score</div>
+                                <div className="text-[10px] font-bold text-zen-ink/40 uppercase tracking-widest">Logic Score</div>
                                 <div className="text-4xl font-bold text-zen-ink italic tracking-tighter">
                                     {showResults.score} <span className="text-sm text-zen-ink/20 font-medium">/ {showResults.totalPossible}</span>
                                 </div>
                             </div>
-                            <div className="bg-gradient-to-br from-white via-white to-zen-forest/[0.05] border border-zen-ink/5 p-8 rounded-[2.5rem] flex flex-col items-center gap-3 transition-all shadow-sm hover:shadow-warm">
+                            <div className="zen-mesh-sky border border-zen-ink/10 p-8 rounded-[2.8rem] flex flex-col items-center gap-3 transition-all shadow-bold hover:shadow-warm">
                                 <Target size={24} className="text-zen-forest" />
-                                <div className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-widest">Accuracy</div>
+                                <div className="text-[10px] font-bold text-zen-ink/40 uppercase tracking-widest">Accuracy</div>
                                 <div className="text-4xl font-bold text-zen-ink italic tracking-tighter">{showResults.accuracy}%</div>
                             </div>
-                            <div className="bg-gradient-to-br from-white via-white to-zen-sand/[0.05] border border-zen-ink/5 p-8 rounded-[2.5rem] flex flex-col items-center gap-3 transition-all shadow-sm hover:shadow-warm sm:col-span-2">
+                            <div className="zen-mesh-warm border border-zen-ink/10 p-8 rounded-[2.8rem] flex flex-col items-center gap-3 transition-all shadow-bold hover:shadow-warm sm:col-span-2">
                                 <Clock size={24} className="text-zen-sand" />
-                                <div className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-widest">Time In Simulation</div>
+                                <div className="text-[10px] font-bold text-zen-ink/40 uppercase tracking-widest">Time In Simulation</div>
                                 <div className="text-4xl font-bold text-zen-ink italic tracking-tighter">{formatTime(showResults.duration)} <span className="text-sm text-zen-ink/20 font-medium">/ {formatTime(config.duration)}</span></div>
                             </div>
                         </div>
@@ -250,7 +250,7 @@ const MockExamSimulator = () => {
                     </div>
                 </div>
 
-                <div className={`px-8 py-2.5 rounded-2xl font-bold text-xl italic tracking-tighter border-2 flex items-center gap-3 transition-all ${timeLeft < 300 ? 'bg-zen-terracotta/10 text-zen-terracotta border-zen-terracotta/40 animate-pulse shadow-soft' : 'bg-white text-zen-sky border-zen-sky/20 shadow-sm'}`}>
+                <div className={`px-8 py-2.5 rounded-2xl font-bold text-xl italic tracking-tighter border-2 flex items-center gap-3 transition-all ${timeLeft < 300 ? 'bg-zen-terracotta text-white border-zen-terracotta animate-pulse shadow-bold' : 'bg-white text-zen-sky border-zen-sky/40 shadow-warm'}`}>
                     <Timer size={20} className={timeLeft < 300 ? 'animate-spin-slow' : ''} />
                     {formatTime(timeLeft)}
                 </div>
@@ -296,7 +296,7 @@ const MockExamSimulator = () => {
                             </div>
                         </div>
 
-                        <div className="relative group/q mb-16 px-10 py-8 bg-gradient-to-br from-white via-white to-zen-sky/[0.05] rounded-[3rem] border-l-8 border-zen-sky transition-all shadow-warm">
+                        <div className="relative group/q mb-16 px-12 py-10 zen-mesh-sky rounded-[3.5rem] border-l-8 border-zen-sky transition-all shadow-bold">
                             <h3 className="text-3xl lg:text-4xl font-bold text-zen-ink leading-tight italic tracking-tighter">
                                 {currentQuestion.question}
                             </h3>
@@ -307,9 +307,9 @@ const MockExamSimulator = () => {
                                 <button
                                     key={idx}
                                     onClick={() => handleAnswer(idx)}
-                                    className={`w-full p-8 text-left rounded-[1.8rem] border-2 transition-all group/opt relative overflow-hidden flex items-center justify-between active:scale-[0.99] shadow-sm ${answers[currentIndex] === idx
-                                            ? 'border-zen-sky bg-zen-sky/10 shadow-soft'
-                                            : 'border-zen-ink/5 bg-white hover:border-zen-sky/30 hover:bg-zen-sky/5'
+                                    className={`w-full p-8 text-left rounded-[2rem] border-2 transition-all group/opt relative overflow-hidden flex items-center justify-between active:scale-[0.99] shadow-sm ${answers[currentIndex] === idx
+                                            ? 'border-zen-sky bg-zen-sky/10 shadow-bold'
+                                            : 'border-zen-ink/10 bg-white hover:border-zen-sky/40 hover:bg-zen-sky/5'
                                         }`}
                                 >
                                     <span className={`text-xl font-bold italic tracking-tight ${answers[currentIndex] === idx ? 'text-zen-ink' : 'text-zen-ink/60 group-hover/opt:text-zen-ink'} transition-all`}>
@@ -359,13 +359,13 @@ const MockExamSimulator = () => {
                     </div>
 
                     <div className="mt-auto space-y-6">
-                        <div className="p-8 bg-gradient-to-br from-white to-zen-sky/[0.05] rounded-[2.5rem] border border-zen-ink/5 relative overflow-hidden group/instr shadow-soft">
-                            <div className="absolute -right-4 -top-4 opacity-[0.03] group-hover/instr:opacity-10 transition-all font-bold text-9xl">🎯</div>
-                            <h4 className="text-[10px] font-bold text-zen-ink/40 uppercase tracking-widest mb-4 italic text-center">PROTOCOL GUIDELINES</h4>
-                            <ul className="text-[9px] font-bold text-zen-ink/30 space-y-3 uppercase tracking-widest italic">
-                                <li className="flex items-center gap-2 group-hover/instr:text-zen-ink/60 transition-colors"><div className="w-2 h-2 rounded-full bg-zen-forest"></div> CORRECT: +{config.correctMark} POINTS</li>
-                                <li className="flex items-center gap-2 group-hover/instr:text-zen-ink/60 transition-colors"><div className="w-2 h-2 rounded-full bg-zen-terracotta"></div> INCORRECT: {config.penaltyMark} POINTS</li>
-                                <li className="flex items-center gap-2 group-hover/instr:text-zen-ink/60 transition-colors"><div className="w-2 h-2 rounded-full bg-zen-ink/10"></div> SKIPPED: 0 POINTS</li>
+                        <div className="p-8 zen-mesh-sky rounded-[2.8rem] border border-zen-ink/10 relative overflow-hidden group/instr shadow-bold">
+                            <div className="absolute -right-4 -top-4 opacity-[0.05] group-hover/instr:opacity-10 transition-all font-bold text-9xl">🎯</div>
+                            <h4 className="text-[10px] font-bold text-zen-ink/60 uppercase tracking-widest mb-4 italic text-center">PROTOCOL GUIDELINES</h4>
+                            <ul className="text-[9px] font-bold text-zen-ink/40 space-y-3 uppercase tracking-widest italic">
+                                <li className="flex items-center gap-2 group-hover/instr:text-zen-ink transition-colors"><div className="w-2 h-2 rounded-full bg-zen-forest"></div> CORRECT: +{config.correctMark} POINTS</li>
+                                <li className="flex items-center gap-2 group-hover/instr:text-zen-ink transition-colors"><div className="w-2 h-2 rounded-full bg-zen-terracotta"></div> INCORRECT: {config.penaltyMark} POINTS</li>
+                                <li className="flex items-center gap-2 group-hover/instr:text-zen-ink transition-colors"><div className="w-2 h-2 rounded-full bg-zen-ink/20"></div> SKIPPED: 0 POINTS</li>
                                 {config.limit && config.limit < config.total && (
                                     <li className="flex items-center gap-2 text-zen-sky"><div className="w-2 h-2 rounded-full bg-zen-sky"></div> ATTEMPT LIMIT: {config.limit}</li>
                                 )}

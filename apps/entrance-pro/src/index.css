@@ -8,8 +8,10 @@
   --color-zen-sky: #0369a1;
   --color-zen-sand: #fef3c7;
   
-  --shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-warm: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-warm: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+  --shadow-bold: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-inner-soft: inset 0 2px 4px 0 rgb(0 0 0 / 0.06);
 }
 
 @layer base {
@@ -33,5 +35,44 @@
   }
   .rotate-y-180 { 
     transform: rotateY(180deg); 
+  }
+
+  /* Microsoft Teams / Fluent inspired Rainbow Mesh Gradients */
+  .zen-mesh-sky {
+    background: radial-gradient(at 0% 0%, #e0f2fe 0px, transparent 50%),
+                radial-gradient(at 50% 0%, #f0f9ff 0px, transparent 50%),
+                radial-gradient(at 100% 0%, #fae8ff 0px, transparent 50%),
+                radial-gradient(at 0% 100%, #dcfce7 0px, transparent 50%),
+                radial-gradient(at 50% 100%, #eff6ff 0px, transparent 50%),
+                radial-gradient(at 100% 100%, #fff1f2 0px, transparent 50%);
+    background-color: #ffffff;
+  }
+
+  .zen-mesh-rainbow {
+    background: radial-gradient(at 15% 15%, #c084fc 0px, transparent 50%),
+                radial-gradient(at 85% 15%, #60a5fa 0px, transparent 50%),
+                radial-gradient(at 50% 50%, #f472b6 0px, transparent 50%),
+                radial-gradient(at 15% 85%, #fbbf24 0px, transparent 50%),
+                radial-gradient(at 85% 85%, #34d399 0px, transparent 50%);
+    background-color: #ffffff;
+  }
+
+  .zen-mesh-warm {
+    background: radial-gradient(at 0% 0%, #fdf4ff 0px, transparent 50%),
+                radial-gradient(at 100% 0%, #fff7ed 0px, transparent 50%),
+                radial-gradient(at 50% 50%, #faf5ff 0px, transparent 50%),
+                radial-gradient(at 0% 100%, #fff1f2 0px, transparent 50%),
+                radial-gradient(at 100% 100%, #f0fdf4 0px, transparent 50%);
+    background-color: #ffffff;
+  }
+
+  /* Vibrant Mesh - Team Style */
+  .zen-mesh-vibrant {
+    background: radial-gradient(at 10% 20%, rgba(147, 51, 234, 0.15) 0px, transparent 50%),
+                radial-gradient(at 90% 10%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(236, 72, 153, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 90%, rgba(245, 158, 11, 0.15) 0px, transparent 50%),
+                radial-gradient(at 20% 80%, rgba(16, 185, 129, 0.15) 0px, transparent 50%);
+    background-color: #ffffff;
   }
 }

@@ -21,13 +21,13 @@ const Home = () => {
     return (
         <div className="container mx-auto px-6 py-12 lg:py-20 max-w-7xl">
             {/* Learning Hub Hero */}
-            <div className="relative mb-16 rounded-[3rem] overflow-hidden group shadow-warm">
-                {/* Background effects with soft mesh vibes */}
-                <div className="absolute inset-0 bg-gradient-to-br from-zen-sky/10 via-white to-zen-sand/20 opacity-90 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="absolute -top-24 -left-24 w-96 h-96 bg-zen-sky/10 blur-[120px] rounded-full mix-blend-multiply animate-pulse"></div>
-                <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-zen-sand/10 blur-[120px] rounded-full mix-blend-multiply animate-pulse delay-1000"></div>
+            <div className="relative mb-16 rounded-[4rem] overflow-hidden group shadow-bold border border-zen-ink/10">
+                {/* Background effects with vibrant mesh vibes */}
+                <div className="absolute inset-0 zen-mesh-vibrant opacity-90 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute -top-24 -left-24 w-96 h-96 bg-zen-sky/20 blur-[120px] rounded-full mix-blend-multiply animate-pulse"></div>
+                <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-zen-sand/20 blur-[120px] rounded-full mix-blend-multiply animate-pulse delay-1000"></div>
                 
-                <div className="relative z-10 p-12 lg:p-16 border border-zen-ink/5 backdrop-blur-3xl flex flex-col lg:flex-row gap-12 items-center justify-between">
+                <div className="relative z-10 p-12 lg:p-16 border border-zen-ink/5 backdrop-blur-sm flex flex-col lg:flex-row gap-12 items-center justify-between">
                     <header className="max-w-2xl text-center lg:text-left">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/40 border border-zen-ink/10 rounded-full mb-8 backdrop-blur-md">
                             <Sparkles size={14} className="text-zen-sky animate-pulse" />
@@ -43,33 +43,33 @@ const Home = () => {
 
                         {/* Performance Matrix */}
                         <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                            <div className="bg-white/[0.03] border border-white/5 px-6 py-4 rounded-[2rem] flex items-center gap-4 group/stat hover:bg-white/5 transition-all">
-                                <div className="p-3 bg-brand-indigo/10 rounded-2xl group-hover/stat:scale-110 transition-transform">
-                                    <Zap size={20} className="text-brand-indigo" />
+                            <div className="bg-white border border-zen-ink/10 px-6 py-4 rounded-[2rem] flex items-center gap-4 group/stat hover:bg-white/5 transition-all shadow-sm">
+                                <div className="p-3 bg-zen-sky/10 rounded-2xl group-hover/stat:scale-110 transition-transform">
+                                    <Zap size={20} className="text-zen-sky" />
                                 </div>
                                 <div className="text-left">
-                                    <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">XP CAPACITY</div>
-                                    <div className="text-2xl font-black text-white italic">{progress.xp}</div>
+                                    <div className="text-[10px] font-bold text-zen-ink/40 uppercase tracking-widest mb-1">XP CAPACITY</div>
+                                    <div className="text-2xl font-black text-zen-ink italic">{progress.xp}</div>
                                 </div>
                             </div>
-                            <div className="bg-white/[0.03] border border-white/5 px-6 py-4 rounded-[2rem] flex items-center gap-4 group/stat hover:bg-white/5 transition-all">
-                                <div className="p-3 bg-brand-emerald/10 rounded-2xl group-hover/stat:scale-110 transition-transform">
-                                    <BookOpen size={20} className="text-brand-emerald" />
+                            <div className="bg-white border border-zen-ink/10 px-6 py-4 rounded-[2rem] flex items-center gap-4 group/stat hover:bg-white/5 transition-all shadow-sm">
+                                <div className="p-3 bg-zen-forest/10 rounded-2xl group-hover/stat:scale-110 transition-transform">
+                                    <BookOpen size={20} className="text-zen-forest" />
                                 </div>
                                 <div className="text-left">
-                                    <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">UNITS SECURED</div>
-                                    <div className="text-2xl font-black text-white italic">
+                                    <div className="text-[10px] font-bold text-zen-ink/40 uppercase tracking-widest mb-1">UNITS SECURED</div>
+                                    <div className="text-2xl font-black text-zen-ink italic">
                                         {new Set(Object.keys(progress.chapterProgress || {}).map(k => k.split('_')[0])).size}
                                     </div>
                                 </div>
                             </div>
-                            <div className="bg-white/[0.03] border border-white/5 px-6 py-4 rounded-[2rem] flex items-center gap-4 group/stat hover:bg-white/5 transition-all">
-                                <div className="p-3 bg-brand-amber/10 rounded-2xl group-hover/stat:scale-110 transition-transform">
-                                    <Flame size={20} className="text-brand-amber animate-pulse" />
+                            <div className="bg-white border border-zen-ink/10 px-6 py-4 rounded-[2rem] flex items-center gap-4 group/stat hover:bg-white/5 transition-all shadow-sm">
+                                <div className="p-3 bg-zen-terracotta/10 rounded-2xl group-hover/stat:scale-110 transition-transform">
+                                    <Flame size={20} className="text-zen-terracotta animate-pulse" />
                                 </div>
                                 <div className="text-left">
-                                    <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">DRILL STREAK</div>
-                                    <div className="text-2xl font-black text-white italic">{streak}</div>
+                                    <div className="text-[10px] font-bold text-zen-ink/40 uppercase tracking-widest mb-1">DRILL STREAK</div>
+                                    <div className="text-2xl font-black text-zen-ink italic">{streak}</div>
                                 </div>
                             </div>
                         </div>
@@ -100,13 +100,13 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="p-8 rounded-[2.5rem] border border-zen-ink/5 bg-gradient-to-br from-white to-zen-sky/5 backdrop-blur-xl group relative overflow-hidden transition-all hover:scale-[1.02] text-zen-ink/60 italic shadow-soft">
+                <div className="p-8 rounded-[2.5rem] border border-zen-ink/10 zen-mesh-warm backdrop-blur-xl group relative overflow-hidden transition-all hover:scale-[1.02] text-zen-ink/60 italic shadow-bold">
                     <div className="absolute -right-4 -top-4 opacity-5 group-hover:scale-125 transition-transform duration-700">
                         <Clock size={120} />
                     </div>
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-8 relative z-10">
                         <div className="flex items-center gap-6">
-                            <div className="bg-white/40 p-4 rounded-3xl border border-zen-ink/5 shadow-sm">
+                            <div className="bg-white p-4 rounded-3xl border border-zen-ink/10 shadow-sm text-zen-ink/40">
                                 <Clock size={32} />
                             </div>
                             <div>
@@ -114,7 +114,7 @@ const Home = () => {
                                 <div className="text-3xl font-bold italic tracking-tighter text-zen-ink">MH-CET BBA</div>
                             </div>
                         </div>
-                        <div className="text-center bg-white/40 px-8 py-4 rounded-[2rem] border border-zen-ink/10 shadow-sm">
+                        <div className="text-center bg-white px-8 py-4 rounded-[2rem] border border-zen-ink/15 shadow-sm">
                             <div className="text-5xl font-bold italic mb-1 tracking-tighter text-zen-ink">{mhCetDays}</div>
                             <div className="text-[10px] font-bold uppercase tracking-widest opacity-50">DAYS REMAINING</div>
                         </div>
@@ -146,7 +146,7 @@ const Home = () => {
                             <button
                                 key={subject.id}
                                 onClick={() => navigate(`/subject/${subject.id}`)}
-                                className="group relative bg-gradient-to-br from-white via-white to-zen-sky/[0.05] p-8 rounded-[3rem] border border-zen-ink/5 transition-all hover:bg-white hover:border-zen-sky/30 hover:-translate-y-2 text-left overflow-hidden shadow-soft hover:shadow-warm"
+                                className="group relative zen-mesh-sky p-8 rounded-[3.5rem] border border-zen-ink/10 transition-all hover:border-zen-sky/30 hover:-translate-y-2 text-left overflow-hidden shadow-warm hover:shadow-bold"
                             >
                                 {/* Decorative Teams-style mesh glow */}
                                 <div
@@ -156,10 +156,10 @@ const Home = () => {
 
                                 <div className="relative z-10">
                                     <div
-                                        className="w-16 h-16 rounded-[1.5rem] flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform duration-500 shadow-xl border border-white/5"
-                                        style={{ backgroundColor: `${subject.color}15` }}
+                                        className="w-16 h-16 rounded-[1.8rem] flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform duration-500 shadow-soft border border-zen-ink/10 bg-white"
+                                        style={{ color: subject.color }}
                                     >
-                                        <span className="drop-shadow-lg">{subject.icon}</span>
+                                        <span className="drop-shadow-sm">{subject.icon}</span>
                                     </div>
 
                                     <h3 className="text-2xl font-bold text-zen-ink mb-2 italic tracking-tighter group-hover:text-zen-sky transition-colors">
@@ -173,8 +173,8 @@ const Home = () => {
                                     {/* Progress Sector */}
                                     <div className="space-y-4">
                                         <div className="flex justify-between items-end">
-                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 italic">Integrity Check</span>
-                                            <span className="text-lg font-black text-white italic tracking-tighter">{subjectProgress}%</span>
+                                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zen-ink/40 italic">Integrity Check</span>
+                                            <span className="text-lg font-black text-zen-ink italic tracking-tighter">{subjectProgress}%</span>
                                         </div>
                                         <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
                                             <div

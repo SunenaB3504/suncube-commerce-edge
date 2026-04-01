@@ -93,10 +93,10 @@ const Flashcards = () => {
                         className={`relative w-full h-[450px] transition-all duration-700 transform-style-3d cursor-pointer ${isFlipped ? 'rotate-y-180' : ''}`}
                     >
                         {/* Front: Question */}
-                        <div className="absolute inset-0 backface-hidden bg-gradient-to-br from-white via-white to-zen-sky/[0.05] border border-zen-ink/5 backdrop-blur-3xl rounded-[3rem] p-12 flex flex-col justify-center items-center text-center group-hover:shadow-warm transition-all overflow-hidden shadow-soft">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-zen-sky/20 to-transparent"></div>
-                            <Sparkles size={32} className="text-zen-sky/20 mb-10" />
-                            <div className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-[0.4em] mb-4 italic">INSIGHT MODULE</div>
+                        <div className="absolute inset-0 backface-hidden zen-mesh-rainbow border border-zen-ink/10 rounded-[4rem] p-12 flex flex-col justify-center items-center text-center transition-all overflow-hidden shadow-bold">
+                            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-zen-sky/20 to-transparent"></div>
+                            <Sparkles size={32} className="text-zen-ink/20 mb-10" />
+                            <div className="text-[10px] font-bold text-zen-ink/40 uppercase tracking-[0.4em] mb-4 italic">INSIGHT MODULE</div>
                             <h3 className="text-3xl lg:text-4xl font-bold text-zen-ink leading-tight italic tracking-tighter">
                                 {currentCard.question}
                             </h3>
@@ -104,14 +104,14 @@ const Flashcards = () => {
                         </div>
  
                         {/* Back: Answer */}
-                        <div className="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-white via-white to-zen-forest/[0.05] border border-zen-forest/20 backdrop-blur-3xl rounded-[3rem] p-12 flex flex-col justify-center items-center text-center overflow-hidden shadow-soft">
-                            <div className="absolute inset-0 bg-gradient-to-br from-zen-forest/5 to-transparent opacity-30"></div>
+                        <div className="absolute inset-0 backface-hidden rotate-y-180 zen-mesh-warm border border-zen-forest/30 rounded-[4rem] p-12 flex flex-col justify-center items-center text-center overflow-hidden shadow-bold">
+                            <div className="absolute inset-0 bg-gradient-to-br from-zen-forest/10 to-transparent opacity-40"></div>
                             <ShieldCheck size={32} className="text-zen-forest mb-10" />
                             <div className="text-[10px] font-bold text-zen-forest uppercase tracking-[0.4em] mb-4 italic">CONCEPT SECURED</div>
                             <p className="text-2xl lg:text-3xl font-bold text-zen-ink leading-snug italic tracking-tighter relative z-10">
                                 {currentCard.answer}
                             </p>
-                            <div className="mt-12 text-[10px] font-bold text-zen-ink/30 uppercase tracking-[0.4em] italic">TAP TO RETURN</div>
+                            <div className="mt-12 text-[10px] font-bold text-zen-ink/40 uppercase tracking-[0.4em] italic">TAP TO RETURN</div>
                         </div>
                     </div>
  
@@ -119,17 +119,17 @@ const Flashcards = () => {
                     <div className="mt-16 flex items-center justify-center gap-10">
                         <button 
                             onClick={(e) => { e.stopPropagation(); handlePrev(); }}
-                            className="w-16 h-16 rounded-2xl bg-white border border-zen-ink/5 flex items-center justify-center text-zen-ink/40 hover:text-zen-sky hover:bg-zen-sky/5 transition-all active:scale-95 shadow-sm"
+                            className="w-16 h-16 rounded-2xl bg-white border border-zen-ink/10 flex items-center justify-center text-zen-ink/40 hover:text-zen-sky hover:bg-zen-sky/5 transition-all active:scale-95 shadow-warm"
                         >
                             <ChevronLeft size={24} />
                         </button>
                         <div className="flex flex-col items-center">
                             <div className="text-3xl font-bold text-zen-ink italic tracking-tighter leading-none">{currentIndex + 1}</div>
-                            <div className="text-[10px] font-bold text-zen-ink/20 uppercase tracking-widest mt-1">OF {flashcards.length}</div>
+                            <div className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-widest mt-1">OF {flashcards.length}</div>
                         </div>
                         <button 
                             onClick={(e) => { e.stopPropagation(); handleNext(); }}
-                            className="w-16 h-16 rounded-2xl bg-white border border-zen-ink/5 flex items-center justify-center text-zen-ink/40 hover:text-zen-sky hover:bg-zen-sky/5 transition-all active:scale-95 shadow-sm"
+                            className="w-16 h-16 rounded-2xl bg-white border border-zen-ink/10 flex items-center justify-center text-zen-ink/40 hover:text-zen-sky hover:bg-zen-sky/5 transition-all active:scale-95 shadow-warm"
                         >
                             <ChevronLeft size={24} className="rotate-180" />
                         </button>

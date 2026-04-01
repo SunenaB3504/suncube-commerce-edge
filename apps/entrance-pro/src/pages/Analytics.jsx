@@ -30,10 +30,10 @@ const Analytics = () => {
                 {/* KPI GRID */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
                     {stats.map((stat, idx) => (
-                        <div key={idx} className="bg-gradient-to-br from-white via-white to-zen-sky/[0.05] border border-zen-ink/5 p-8 rounded-[2.5rem] backdrop-blur-3xl transition-all group relative overflow-hidden shadow-soft hover:shadow-warm">
-                            <div className={`absolute -right-4 -top-4 w-24 h-24 opacity-10 group-hover:scale-125 transition-transform duration-700 blur-2xl rounded-full ${stat.bg}`}></div>
+                        <div key={idx} className="zen-mesh-sky border border-zen-ink/10 p-8 rounded-[2.5rem] transition-all group relative overflow-hidden shadow-bold hover:shadow-warm active:scale-95">
+                            <div className={`absolute -right-4 -top-4 w-24 h-24 opacity-20 group-hover:scale-125 transition-transform duration-700 blur-2xl rounded-full ${stat.bg}`}></div>
                             <stat.icon size={24} className={`${stat.color} mb-6`} />
-                            <div className="text-[10px] font-bold text-zen-ink/30 uppercase tracking-widest mb-1 italic">{stat.label}</div>
+                            <div className="text-[10px] font-bold text-zen-ink/40 uppercase tracking-widest mb-1 italic">{stat.label}</div>
                             <div className="text-3xl font-bold text-zen-ink italic tracking-tighter">{stat.value}</div>
                         </div>
                     ))}
@@ -41,7 +41,7 @@ const Analytics = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
                     {/* SUBJECT MASTERY MAP */}
-                    <div className="lg:col-span-2 bg-gradient-to-br from-white via-white to-zen-sky/[0.03] border border-zen-ink/5 p-10 rounded-[3rem] backdrop-blur-3xl shadow-soft">
+                    <div className="lg:col-span-2 zen-mesh-sky border border-zen-ink/10 p-10 rounded-[3.5rem] shadow-bold">
                         <div className="flex items-center justify-between mb-10">
                             <div className="flex items-center gap-4">
                                 <div className="p-3 bg-zen-sky/10 rounded-2xl border border-zen-sky/20">
@@ -77,7 +77,7 @@ const Analytics = () => {
                     </div>
 
                     {/* RECENT ACHIEVEMENTS */}
-                    <div className="bg-gradient-to-br from-white via-white to-zen-sand/[0.05] border border-zen-ink/5 p-10 rounded-[3rem] backdrop-blur-3xl relative overflow-hidden shadow-soft">
+                    <div className="zen-mesh-warm border border-zen-ink/10 p-10 rounded-[3.5rem] relative overflow-hidden shadow-bold">
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-zen-sand/20 to-transparent"></div>
                         <div className="flex items-center gap-4 mb-10">
                             <div className="p-3 bg-zen-sand/20 rounded-2xl border border-zen-sand/30">
@@ -109,7 +109,7 @@ const Analytics = () => {
                 </div>
 
                 {/* MOCK HISTORY */}
-                <div className="bg-gradient-to-br from-white via-white to-zen-sky/[0.02] border border-zen-ink/5 p-10 rounded-[3rem] backdrop-blur-3xl overflow-hidden relative shadow-soft">
+                <div className="zen-mesh-vibrant border border-zen-ink/10 p-10 rounded-[4rem] overflow-hidden relative shadow-bold">
                     <div className="flex items-center justify-between mb-10">
                         <div className="flex items-center gap-4">
                             <div className="p-3 bg-zen-sky/10 rounded-2xl border border-zen-sky/20">

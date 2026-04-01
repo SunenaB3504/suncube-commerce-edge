@@ -23,39 +23,39 @@ const SubjectDashboard = () => {
         <div className="min-h-screen bg-zen-paper text-zen-ink flex flex-col">
             <div className="container mx-auto px-6 py-12 lg:py-20 max-w-7xl">
                 {/* Header / Mission Briefing */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-12 mb-20 bg-gradient-to-br from-white via-white to-zen-sky/10 border border-zen-ink/5 p-12 lg:p-16 rounded-[3rem] backdrop-blur-3xl relative overflow-hidden group shadow-soft">
-                    <div className="absolute -right-24 -top-24 w-96 h-96 opacity-10 group-hover:opacity-20 transition-opacity duration-700 blur-[120px] rounded-full" style={{ backgroundColor: subject.color }}></div>
+                <div className="flex flex-col md:flex-row items-center justify-between gap-12 mb-20 zen-mesh-rainbow border border-zen-ink/10 p-12 lg:p-16 rounded-[3rem] backdrop-blur-3xl relative overflow-hidden group shadow-bold">
+                    <div className="absolute -right-24 -top-24 w-96 h-96 opacity-20 group-hover:opacity-30 transition-opacity duration-700 blur-[130px] rounded-full" style={{ backgroundColor: subject.color }}></div>
                     
                     <div className="relative z-10 text-center md:text-left">
                         <button 
                             onClick={() => navigate('/')} 
-                            className="inline-flex items-center gap-2 text-[10px] font-bold text-zen-ink/40 uppercase tracking-widest hover:text-zen-sky transition-colors mb-8 italic"
+                            className="inline-flex items-center gap-2 text-[10px] font-bold text-zen-ink/60 uppercase tracking-widest hover:text-zen-sky transition-colors mb-8 italic"
                         >
                             <ChevronLeft size={14} /> BACK TO LEARNING HUB
                         </button>
                         <div className="flex items-center gap-6 justify-center md:justify-start mb-6">
-                            <div className="w-20 h-20 rounded-[1.5rem] flex items-center justify-center text-4xl shadow-glow-amber/5 border border-white/10" style={{ backgroundColor: `${subject.color}15` }}>
-                                <span className="drop-shadow-lg">{subject.icon}</span>
+                            <div className="w-20 h-20 rounded-[1.8rem] flex items-center justify-center text-4xl shadow-soft border border-zen-ink/10 bg-white" style={{ color: subject.color }}>
+                                <span className="drop-shadow-sm">{subject.icon}</span>
                             </div>
                             <div>
-                                <h1 className="text-5xl lg:text-6xl font-black text-white italic tracking-tighter leading-none">{subject.name}</h1>
-                                <p className="text-slate-500 text-[10px] font-black uppercase tracking-[0.4em] mt-3 italic">STRATEGIC SECTOR // {subject.examTags.join(' & ')}</p>
+                                <h1 className="text-5xl lg:text-7xl font-black text-zen-ink italic tracking-tighter leading-none">{subject.name}</h1>
+                                <p className="text-zen-ink/40 text-[10px] font-black uppercase tracking-[0.4em] mt-3 italic">STRATEGIC SECTOR // {subject.examTags.join(' & ')}</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="relative z-10 bg-white/60 border border-zen-ink/5 p-8 rounded-[2.5rem] backdrop-blur-md min-w-[280px] shadow-sm">
+                    <div className="relative z-10 bg-white border border-zen-ink/10 p-8 rounded-[2.5rem] shadow-warm min-w-[280px]">
                         <div className="flex justify-between items-end mb-4">
                             <span className="text-[10px] font-bold text-zen-ink/40 uppercase tracking-[0.3em] italic">MODULE MASTERY</span>
                             <span className="text-3xl font-bold text-zen-ink italic tracking-tighter">{subjectProgress}%</span>
                         </div>
-                        <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden mb-6">
+                        <div className="h-3 w-full bg-zen-ink/5 rounded-full overflow-hidden mb-6 shadow-inner-soft">
                             <div 
-                                className="h-full transition-all duration-1000 shadow-glow-emerald/40" 
+                                className="h-full transition-all duration-1000" 
                                 style={{ width: `${subjectProgress}%`, backgroundColor: subject.color }}
                             ></div>
                         </div>
-                        <div className="flex items-center gap-3 text-[9px] font-bold text-zen-ink/40 uppercase tracking-[0.2em] italic">
+                        <div className="flex items-center gap-3 text-[9px] font-bold text-zen-ink/60 uppercase tracking-[0.2em] italic">
                             <ShieldCheck size={14} className="text-zen-forest" /> {subject.chapters.length} MODULES READY
                         </div>
                     </div>
@@ -71,7 +71,7 @@ const SubjectDashboard = () => {
                         return (
                             <div 
                                 key={chapter.id}
-                                className="group bg-gradient-to-br from-white via-white to-zen-sky/[0.04] border border-zen-ink/5 p-10 rounded-[2.5rem] hover:shadow-warm transition-all flex flex-col relative overflow-hidden"
+                                className="group zen-mesh-sky border border-zen-ink/10 p-10 rounded-[2.8rem] shadow-warm hover:shadow-bold transition-all flex flex-col relative overflow-hidden"
                             >
                                 {/* Visual Marker */}
                                 <div className={`absolute top-0 right-0 w-32 h-32 blur-[60px] opacity-0 group-hover:opacity-10 transition-opacity duration-700 ${isSecure ? 'bg-brand-emerald' : 'bg-brand-amber'}`}></div>
@@ -95,21 +95,21 @@ const SubjectDashboard = () => {
                                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 relative z-10">
                                     <button 
                                         onClick={() => navigate(`/study/${subjectId}/${chapter.id}`)}
-                                        className="flex flex-col items-center gap-3 p-4 bg-white/60 rounded-2xl border border-zen-ink/5 hover:bg-zen-sky/10 hover:border-zen-sky/30 hover:text-zen-sky transition-all group/btn shadow-sm"
+                                        className="flex flex-col items-center gap-3 p-5 bg-white rounded-2xl border border-zen-ink/5 hover:bg-zen-sky hover:text-white transition-all group/btn shadow-sm active:scale-95"
                                     >
                                         <BookOpen size={20} className="group-hover/btn:scale-110 transition-transform" />
                                         <span className="text-[9px] font-bold uppercase tracking-widest italic">EXPLORE</span>
                                     </button>
                                     <button 
                                         onClick={() => navigate(`/quiz/${subjectId}/${chapter.id}`)}
-                                        className="flex flex-col items-center gap-3 p-4 bg-white/60 rounded-2xl border border-zen-ink/5 hover:bg-zen-forest/10 hover:border-zen-forest/30 hover:text-zen-forest transition-all group/btn shadow-sm"
+                                        className="flex flex-col items-center gap-3 p-5 bg-white rounded-2xl border border-zen-ink/5 hover:bg-zen-forest hover:text-white transition-all group/btn shadow-sm active:scale-95"
                                     >
                                         <FlaskConical size={20} className="group-hover/btn:scale-110 transition-transform" />
                                         <span className="text-[9px] font-bold uppercase tracking-widest italic">PRACTICE</span>
                                     </button>
                                     <button 
                                         onClick={() => navigate(`/timed-practice/${subjectId}/${chapter.id}`)}
-                                        className="flex flex-col items-center gap-3 p-4 bg-white/60 rounded-2xl border border-zen-ink/5 hover:bg-zen-sky/10 hover:border-zen-sky/30 hover:text-zen-sky transition-all group/btn shadow-sm"
+                                        className="flex flex-col items-center gap-3 p-5 bg-white rounded-2xl border border-zen-ink/5 hover:bg-zen-ink hover:text-white transition-all group/btn shadow-sm active:scale-95"
                                     >
                                         <Clock size={20} className="group-hover/btn:scale-110 transition-transform" />
                                         <span className="text-[9px] font-bold uppercase tracking-widest italic">CHALLENGE</span>

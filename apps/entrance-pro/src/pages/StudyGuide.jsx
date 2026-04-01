@@ -176,15 +176,15 @@ const StudyGuide = () => {
                             <button
                                 key={topic.id}
                                 onClick={() => document.getElementById(topic.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                                className={`w-full text-left p-6 rounded-[2rem] transition-all group border ${activeTopicId === topic.id
-                                    ? 'bg-zen-sky text-white border-zen-sky/50 shadow-soft'
-                                    : 'bg-white border-zen-ink/5 hover:bg-zen-sky/5 hover:border-zen-sky/10'
+                                className={`w-full text-left p-6 rounded-[2.5rem] transition-all group border shadow-soft hover:shadow-bold ${activeTopicId === topic.id
+                                    ? 'bg-zen-sky text-white border-zen-sky shadow-bold scale-[1.02]'
+                                    : 'bg-white border-zen-ink/10 hover:bg-zen-sky/5 hover:border-zen-sky/20'
                                     }`}
                             >
-                                <div className={`text-[9px] font-bold mb-2 uppercase tracking-widest italic ${activeTopicId === topic.id ? 'text-white/60' : 'text-zen-ink/30'}`}>
+                                <div className={`text-[9px] font-bold mb-2 uppercase tracking-widest italic ${activeTopicId === topic.id ? 'text-white/60' : 'text-zen-ink/40'}`}>
                                     UNIT {String(index + 1).padStart(2, '0')}
                                 </div>
-                                <div className="font-bold text-sm italic tracking-tight leading-tight uppercase">
+                                <div className="font-bold text-sm italic tracking-tight leading-tight uppercase group-hover:text-zen-sky transition-colors">
                                     {topic.title.replace(/^[0-9.]+\s/, '')}
                                 </div>
                             </button>
@@ -198,7 +198,7 @@ const StudyGuide = () => {
                         <div key={topic.id} id={topic.id} className="mb-40 last:mb-0 scroll-mt-32">
                             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
                                 <div className="flex items-center gap-6">
-                                    <div className="w-16 h-16 rounded-[1.5rem] bg-gradient-to-br from-white to-zen-sky/10 border border-zen-sky/20 text-zen-sky flex items-center justify-center text-2xl font-bold italic shadow-soft">
+                                    <div className="w-16 h-16 rounded-[1.8rem] zen-mesh-sky border border-zen-sky/30 text-zen-sky flex items-center justify-center text-2xl font-bold italic shadow-warm">
                                         {tIdx + 1}
                                     </div>
                                     <div>
@@ -218,15 +218,15 @@ const StudyGuide = () => {
                                 <div className="flex items-center gap-3">
                                     <button 
                                         onClick={() => handleSpeech(topic)}
-                                        className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all border ${speakingTopicId === topic.id ? 'bg-zen-sky text-white border-zen-sky/50 animate-pulse shadow-soft' : 'bg-white text-zen-ink/40 border-zen-ink/10 hover:bg-zen-sky/5'}`}
+                                        className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all border shadow-sm ${speakingTopicId === topic.id ? 'bg-zen-sky text-white border-zen-sky animate-pulse shadow-bold' : 'bg-white text-zen-ink/40 border-zen-ink/10 hover:bg-zen-sky/10'}`}
                                     >
                                         <Volume2 size={20} />
                                     </button>
                                     <button 
                                         onClick={() => toggleReadStatus(topic.id)}
-                                        className={`px-6 h-12 rounded-2xl flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest transition-all italic border ${heardTopicIds.includes(topic.id) ? 'bg-zen-forest/10 text-zen-forest border-zen-forest/30 shadow-sm' : 'bg-white text-zen-ink/40 border-zen-ink/10 hover:bg-zen-sky/5'}`}
+                                        className={`px-6 h-12 rounded-2xl flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest transition-all italic border shadow-sm ${heardTopicIds.includes(topic.id) ? 'bg-zen-forest text-white border-zen-forest shadow-bold' : 'bg-white text-zen-ink/40 border-zen-ink/10 hover:bg-zen-sky/10'}`}
                                     >
-                                        {heardTopicIds.includes(topic.id) ? 'MODULE COMPLETE' : 'MARK AS READ'}
+                                        {heardTopicIds.includes(topic.id) ? 'SECURED' : 'MARK READ'}
                                     </button>
                                 </div>
                             </div>
@@ -234,11 +234,11 @@ const StudyGuide = () => {
                             <div className="space-y-16">
                                 {/* Core Concept */}
                                 <section className="relative group">
-                                    <div className="absolute -left-4 top-0 w-1.5 h-full bg-zen-sky/10 rounded-full group-hover:bg-zen-sky transition-colors"></div>
-                                    <div className="bg-gradient-to-br from-white via-white to-zen-sky/[0.05] border border-zen-ink/5 rounded-[2.5rem] p-10 lg:p-14 backdrop-blur-3xl relative overflow-hidden shadow-soft">
-                                        <div className="absolute -right-24 -top-24 w-64 h-64 bg-zen-sky/5 blur-[80px] rounded-full"></div>
+                                    <div className="absolute -left-6 top-8 w-2 h-[calc(100%-64px)] bg-zen-sky/20 rounded-full group-hover:bg-zen-sky transition-colors"></div>
+                                    <div className="zen-mesh-sky border border-zen-ink/10 rounded-[4rem] p-12 lg:p-16 relative overflow-hidden shadow-bold">
+                                        <div className="absolute -right-24 -top-24 w-64 h-64 bg-zen-sky/10 blur-[100px] rounded-full"></div>
                                         <div className="flex items-center gap-4 mb-10">
-                                            <div className="p-3 bg-zen-sky/10 rounded-2xl border border-zen-sky/20 text-zen-sky">
+                                            <div className="p-3 bg-white rounded-2xl border border-zen-ink/10 text-zen-sky shadow-sm">
                                                 <BookOpen size={20} />
                                             </div>
                                             <h3 className="text-2xl font-bold text-zen-ink italic tracking-tighter uppercase">Conceptual Core</h3>
@@ -253,15 +253,15 @@ const StudyGuide = () => {
 
                                 {/* Formula Bank */}
                                 {topic.content?.formulaBank && (
-                                    <section className="bg-gradient-to-br from-white via-white to-zen-sand/10 border border-zen-sand/30 rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden group shadow-soft">
-                                        <div className="absolute -right-12 -top-12 w-48 h-48 bg-zen-sand/20 blur-[60px] rounded-full group-hover:scale-125 transition-transform duration-700"></div>
+                                    <section className="zen-mesh-warm border border-zen-sand/30 rounded-[4rem] p-12 lg:p-16 relative overflow-hidden group shadow-bold">
+                                        <div className="absolute -right-12 -top-12 w-48 h-48 bg-zen-sand/30 blur-[80px] rounded-full group-hover:scale-125 transition-transform duration-700"></div>
                                         <div className="flex items-center gap-4 mb-10">
-                                            <div className="p-3 bg-zen-sand/20 rounded-2xl border border-zen-sand/30 text-zen-sand">
+                                            <div className="p-3 bg-white rounded-2xl border border-zen-sand/30 text-zen-sand shadow-sm">
                                                 <Target size={20} />
                                             </div>
                                             <h3 className="text-2xl font-bold text-zen-ink italic tracking-tighter uppercase">Strategic Formulas</h3>
                                         </div>
-                                        <div className="bg-white/60 border border-zen-ink/5 p-8 rounded-[2rem] font-mono text-zen-ink/80 text-lg leading-relaxed whitespace-pre-wrap italic shadow-inner">
+                                        <div className="bg-white/80 border border-zen-ink/5 p-8 rounded-[2.5rem] font-mono text-zen-ink/80 text-xl leading-relaxed whitespace-pre-wrap italic shadow-inner-soft">
                                             {topic.content.formulaBank}
                                         </div>
                                     </section>
@@ -269,15 +269,15 @@ const StudyGuide = () => {
 
                                 {/* Hacker Logic / Street-Smart */}
                                 {topic.content?.logic && (
-                                    <section className="bg-gradient-to-br from-white via-white to-zen-forest/10 border border-zen-forest/30 rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden group shadow-soft">
-                                        <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-zen-forest/20 blur-[60px] rounded-full group-hover:scale-125 transition-transform duration-700"></div>
+                                    <section className="zen-mesh-vibrant border border-zen-forest/30 rounded-[4rem] p-12 lg:p-16 relative overflow-hidden group shadow-bold">
+                                        <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-zen-forest/20 blur-[80px] rounded-full group-hover:scale-125 transition-transform duration-700"></div>
                                         <div className="flex items-center gap-4 mb-10">
-                                            <div className="p-3 bg-zen-forest/20 rounded-2xl border border-zen-forest/30 text-zen-forest">
+                                            <div className="p-3 bg-white rounded-2xl border border-zen-forest/30 text-zen-forest shadow-sm">
                                                 <Zap size={20} />
                                             </div>
                                             <h3 className="text-2xl font-bold text-zen-ink italic tracking-tighter uppercase">Street-Smart Logic</h3>
                                         </div>
-                                        <div className="bg-white/60 border border-zen-forest/10 p-8 rounded-[2rem] text-zen-forest/90 text-lg leading-relaxed whitespace-pre-wrap italic relative z-10 shadow-inner">
+                                        <div className="bg-white/80 border border-zen-forest/20 p-8 rounded-[2.5rem] text-zen-forest text-xl leading-relaxed whitespace-pre-wrap italic relative z-10 shadow-inner-soft">
                                             <div className="text-[10px] font-bold text-zen-forest uppercase tracking-[0.4em] mb-4">⚡ INSIGHT HACK</div>
                                             {topic.content.logic}
                                         </div>
@@ -286,15 +286,15 @@ const StudyGuide = () => {
 
                                 {/* Examiner Traps */}
                                 {(topic.content?.traps || topic.examAngle) && (
-                                    <section className="bg-gradient-to-br from-white via-white to-zen-terracotta/[0.03] border border-zen-terracotta/10 rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden shadow-soft">
-                                        <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-zen-terracotta/5 blur-[60px] rounded-full"></div>
+                                    <section className="zen-mesh-sky border border-zen-terracotta/20 rounded-[4rem] p-12 lg:p-16 relative overflow-hidden shadow-bold">
+                                        <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-zen-terracotta/10 blur-[80px] rounded-full"></div>
                                         <div className="flex items-center gap-4 mb-10">
-                                            <div className="p-3 bg-zen-terracotta/10 rounded-2xl border border-zen-terracotta/20 text-zen-terracotta">
+                                            <div className="p-3 bg-white rounded-2xl border border-zen-terracotta/10 text-zen-terracotta shadow-sm">
                                                 <AlertCircle size={20} />
                                             </div>
                                             <h3 className="text-2xl font-bold text-zen-ink italic tracking-tighter uppercase">Pitfall Evasion</h3>
                                         </div>
-                                        <div className="bg-white/60 border border-zen-terracotta/10 p-8 rounded-[2rem] text-zen-ink/80 text-lg leading-relaxed italic whitespace-pre-wrap relative z-10 shadow-inner">
+                                        <div className="bg-white/80 border border-zen-terracotta/20 p-8 rounded-[2.5rem] text-zen-ink text-xl leading-relaxed italic whitespace-pre-wrap relative z-10 shadow-inner-soft">
                                             <div className="text-[10px] font-bold text-zen-terracotta uppercase tracking-[0.4em] mb-4">⚠️ ATTENTION REQUIRED</div>
                                             {topic.content?.traps || topic.examAngle}
                                         </div>
