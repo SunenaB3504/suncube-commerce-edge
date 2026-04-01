@@ -1,0 +1,79 @@
+# Suncube Commerce Edge - Consolidated Deployment
+# This workflow builds both @suncube/commerce-hub (Root) and @suncube/entrance-pro (Sub-directory)
+# and deploys them as a single unified site to GitHub Pages.
+
+name: Deploy Consolidated Site to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build All Apps (Hub & Entrance Pro)
+        run: pnpm -r build
+
+      - name: Consolidate Deployment Artifact
+        run: |
+          mkdir -p combined_dist
+          
+          # 1. Hub serves from the root
+          if [ -d "apps/commerce-hub/dist" ]; then
+            cp -r apps/commerce-hub/dist/* combined_dist/
+            echo "Commerce Hub consolidated to root."
+          else
+            echo "ERROR: commerce-hub/dist not found!"
+            exit 1
+          fi
+          
+          # 2. Entrance Pro serves from /entrance-pro/
+          if [ -d "apps/entrance-pro/dist" ]; then
+            mkdir -p combined_dist/entrance-pro
+            cp -r apps/entrance-pro/dist/* combined_dist/entrance-pro/
+            echo "Entrance Pro consolidated to /entrance-pro/."
+          else
+            echo "ERROR: entrance-pro/dist not found!"
+            exit 1
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload the consolidated folder
+          path: './combined_dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
