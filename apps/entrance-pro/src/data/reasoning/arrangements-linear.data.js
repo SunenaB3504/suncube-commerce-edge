@@ -1020,17 +1020,14 @@ export const arrangementsLinearData = {
       question: "Who sits at the right extreme end?",
       options: ["D", "F", "C", "E"],
       correct: 0,
-      explanation: "Sequence: A(1)-B(2)-E(3)-F(4)-C(5)-D(6). Right end is D.",
+      explanation: "Step-by-Step Logic:\n1. A is at one of the ends. Try A at position 1 (Left end).\n2. B is an immediate neighbor of A, so B is at position 2.\n3. F sits second to the right of B (2+2=4). F is at position 4.\n4. C sits between D and E. Slots left are 3, 5, 6.\n5. D is not a neighbor of A(1). For C to be between D and E, let's place E at 3, C at 5, and D at 6.\n6. Sequence: A(1)-B(2)-E(3)-F(4)-C(5)-D(6).\nRight extreme end is D.",
       solution_steps: [
-        "Step 1: A sits at an end. If A is at position 1 (Left end).",
-        "Step 2: B is neighbor of A. So B is at position 2.",
-        "Step 3: F sits second to right of B(2). (B _ F). So F is at 4.",
-        "Step 4: C sits between D and E. Slots 3, 5, 6 are left. If D/E at 3/5/6.",
-        "Step 5: D is not neighbor of A(1). So D is at 6.",
-        "Step 6: C between D(6) and E. So E must be 4? No, F is 4. Let's re-check.",
-        "Step 7: If B neighbor A(1), F at 4. C between D(6) and E(4)? No. Let's try E at 3, F at 4, C at 5, D at 6.",
-        "Final Order: A(1), B(2), E(3), F(4), C(5), D(6).",
-        "Right extreme end is position 6, which is D."
+        "Position 1: A",
+        "Position 2: B",
+        "Position 3: E",
+        "Position 4: F",
+        "Position 5: C",
+        "Position 6: D"
       ],
       examTags: ["CUET", "MH-CET"]
     },
@@ -1047,12 +1044,11 @@ export const arrangementsLinearData = {
       question: "Who is sitting third to the right of A?",
       options: ["F", "E", "C", "B"],
       correct: 0,
-      explanation: "A(1). 1+3=4. Position 4 is F.",
+      explanation: "Based on the order (A-B-E-F-C-D), F is at position 4. Position 4 is third to the right of A (1+3=4).",
       solution_steps: [
         "From sequence: A(1)-B(2)-E(3)-F(4)-C(5)-D(6).",
-        "A is at position 1.",
-        "3rd right of A: 2(1st), 3(2nd), 4(3rd).",
-        "At position 4 is F."
+        "Third to the right of position 1 (A) is position 4.",
+        "The person at position 4 is F."
       ],
       examTags: ["CUET", "MH-CET"]
     },

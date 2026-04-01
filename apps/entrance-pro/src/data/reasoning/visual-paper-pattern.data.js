@@ -74,7 +74,7 @@ export const visualPaperPatternData = {
       question: "A square sheet is folded into a triangle. A hole is punched in the middle. What does the unfolded sheet look like?",
       options: ["Two holes in the diagonal", "One hole in the center", "Four holes in the corners", "None"],
       correct: 0,
-       explanation: "Folding once (rectangle) -> no. Square to triangle means diagonal fold. Punching once in the triangle center unfolds to two holes along the diagonal axis.",
+      explanation: "Step-by-Step Logic:\n1. A square sheet is folded diagonally into a triangle.\n2. Punching a hole in the center of this triangle through both layers.\n3. Upon unfolding, the hole is reflected across the diagonal fold line, resulting in two holes aligned along the diagonal axis.",
       examTags: ["CUET", "MH-CET"]
     },
     {
@@ -388,7 +388,7 @@ export const visualPaperPatternData = {
       id: "vpp-q-035",
       type: "hard",
       question: "Square folded along both diagonals. Cut a triangle on the corner. Unfold result?",
-      options: ["A diamond in the center and 4 corners? No. 4 diamonds? No.", "A complex star shape", "None"],
+      options: ["A diamond in the center and 4 corners", "A complex star shape", "Four central triangles", "None"],
       correct: 0,
       explanation: "Multiple diagonal folds create star-like patterns.",
       examTags: ["CUET", "MH-CET"]

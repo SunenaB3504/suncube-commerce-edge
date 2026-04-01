@@ -594,7 +594,7 @@ export const seriesNumberData = {
       question: "Missing: 7, 25, 61, 121, ?",
       options: ["181", "211", "241", "201"],
       correct: 1,
-      explanation: "n³+n-1? No. n³+(n-1)²? No. Map: 2³-1, 3³-2, 4³-3, 5³-4. 211 is 6³-5. Yes. 216-5=211.",
+      explanation: "Pattern: The series follows the rule (n³ - k) where k is an increasing sequence: 2³-1=7, 3³-2=25, 4³-3=61, 5³-4=121. The next term is 6³-5 = 216-5 = 211.",
       examTags: ["CUET", "MH-CET"]
     },
     {
@@ -764,7 +764,7 @@ export const seriesNumberData = {
       question: "Next term in 52, 51, 48, 43, 34, ?",
       options: ["20", "25", "19", "15"],
       correct: 2,
-      explanation: "Subtract squares 1, 3, 5, 9?? No. Map: -1, -3, -5, -9. No. Map: -1, -3, -5, -9... try prime? No. Differences are -1, -3, -5, -9... try powers of 2? -1, -2-1. No. Final: 52-1=51, 51-3=48, 48-5=43, 43-9=34. Difference of difference? 2, 2, 4. Next 6? 9+6=15. 34-15=19. Matches. Option 2.",
+      explanation: "Pattern: The differences between terms are -1, -3, -5, -9, -15. The difference of these differences is 2, 2, 4, 6 (following the sequence x + next even number). Following this, 34 - 15 = 19.",
       examTags: ["CUET", "MH-CET"]
     },
     {

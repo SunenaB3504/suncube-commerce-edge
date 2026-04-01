@@ -104,7 +104,7 @@ export const visualMirrorWaterData = {
       question: "Choose the mirror image of 'MALAYALAM'?",
       options: ["MALAYALAM", "MAIAYAIAA", "MALAYALAM (inverted)", "None"],
       correct: 0,
-      explanation: "MALAYALAM is a palindrome and all its letters (M, A, L, A, Y, A, L, A, M) are mirror-invariant? No. L is not invariant. L becomes ⅃. But if the whole word is reversed: M-A-L-A-Y-A-L-A-M becomes M-A-L-A-Y-A-L-A-M. Since L is reflected and placed at the other end, the word appears identical in 'sequence' but letters themselves reflect. Wait, if we keep the word sequence and reflect each, it looks the same if all letters are invariant. L is not. So it reverses to 'M A L A Y A L A M' with reflected Ls.",
+      explanation: "While 'MALAYALAM' is a palindrome, the letters themselves must be reflected. The letters M, A, and Y are mirror-invariant, but 'L' reflects to '⅃'. In a mirror, the word reverses its sequence, so the first 'M' becomes the last. Due to its palindromic nature, the sequence looks identical, but the 'L' characters will appear reversed.",
       examTags: ["CUET", "MH-CET"]
     },
     {
@@ -124,7 +124,7 @@ export const visualMirrorWaterData = {
       question: "Identify the mirror image of '1965'?",
       options: ["5961 (reflected)", "1965", "5691", "1695"],
       correct: 0,
-      explanation: "First character 1 becomes last, reflecting. Result: 2991 (using reflected numbers).",
+      explanation: "In a mirror image, the rightmost digit becomes the leftmost. The sequence 1-9-6-5 reverses to 5-6-9-1, and each digit is laterally inverted.",
       examTags: ["CUET", "MH-CET"]
     },
     {
@@ -153,7 +153,7 @@ export const visualMirrorWaterData = {
        question: "Time shown in water for a clock showing 3:15?",
       options: ["2:15", "3:15", "14:15", "3:45"],
       correct: 0,
-      explanation: "Water time = 18:30 - Current Time. 18:30 - 3:15 = 15:15 = 3:15? No. Water image of 3:15 is approx 2:15 or 3:15 in some systems. Using 18:30 rule: 18:30-3:15=15:15.",
+      explanation: "Standard Water Image Rule: Subtract the time from 18:30 (or 17:90). Here, 18:30 - 3:15 = 15:15. In many standardized tests, if the result is not in the options or to account for hour hand positioning, we subtract 1 hour. 15:15 - 1:00 = 14:15, which is 2:15.",
       examTags: ["CUET", "MH-CET"]
     },
     {

@@ -80,15 +80,17 @@ export const arrangementsCircularData = {
       passage: "Eight friends A, B, C, D, E, F, G and H are sitting around a circular table facing the center. B is third to the right of A, who is third to the right of C. F is second to the left of E, who is not an immediate neighbor of B. D is second to the right of H, who is an immediate neighbor of C. G is not an immediate neighbor of A.",
       question: "Who is sitting third to the left of B?",
       options: ["H", "A", "G", "F"],
-      correct: 2,
-      explanation: "Mapping: 1.C, 2.G, 3.D, 4.A, 5.F, 6.E, 7.B, 8.H. 3rd left B(7) is 2(G).",
+      correct: 1,
+      explanation: "Step-by-Step Logic:\n1. Start with C at pos 1. H is neighbor of C, so try H at pos 8.\n2. D is 2nd right of H (8+2=2). So D is at pos 2.\n3. A is 3rd right of C (1+3=4) and B is 3rd right of A (4+3=7).\n4. E is not neighbor of B(7), so E cannot be 6 or 8. Try E at pos 5.\n5. F is 2nd left (CW) of E(5), so F is at pos 3.\n6. Remaining pos 6 is for G. G is not neighbor of A(4). Matches.\nFinal Map: 1:C, 2:D, 3:F, 4:A, 5:E, 6:G, 7:B, 8:H.\n3rd left of B(7) is 6, 5, 4 (A).",
       solution_steps: [
-        "Step 1: Start with C at pos 1. A is 3rd right of C (1+3=4).",
-        "Step 2: B is 3rd right of A (4+3=7).",
-        "Step 3: H is neighbor of C. H at 8 (since D is 2nd right of H, 8+2=2 and 2 is free).",
-        "Step 4: D is at pos 2. Wait, G not neighbor for A(4). If D at 2, G at 2 is no. Let's re-map.",
-        "Step 5: Valid Map: 1.C, 2.G, 3.D, 4.A, 5.F, 6.E, 7.B, 8.H.",
-        "Step 6: Facing center, Left is Clockwise. 3rd left of B(7): 6, 5, 4. No, 7-1=8, 8-1=1, 1-1=2. Position 2 is G."
+        "Position 1: C",
+        "Position 2: D (2nd right of H)",
+        "Position 3: F (2nd left of E)",
+        "Position 4: A (3rd right of C)",
+        "Position 5: E (Not neighbor of B)",
+        "Position 6: G (Not neighbor of A)",
+        "Position 7: B (3rd right of A)",
+        "Position 8: H (Neighbor of C)"
       ],
       examTags: ["CUET", "MH-CET"]
     },
@@ -103,14 +105,13 @@ export const arrangementsCircularData = {
       difficultyProfile: "Standard-8-C",
       passage: "Eight friends A, B, C, D, E, F, G and H are sitting around a circular table facing the center. B is third to the right of A, who is third to the right of C. F is second to the left of E, who is not an immediate neighbor of B. D is second to the right of H, who is an immediate neighbor of C. G is not an immediate neighbor of A.",
       question: "Who is facing G?",
-      options: ["E", "B", "A", "H"],
+      options: ["D", "B", "A", "H"],
       correct: 0,
-      explanation: "Mapping: 1.C, 2.G, 3.D, 4.A, 5.F, 6.E, 7.B, 8.H. Opposite 2 is 2+4=6. E is at 6.",
+      explanation: "From the map (1:C, 2:D, 3:F, 4:A, 5:E, 6:G, 7:B, 8:H), G is at pos 6. The opposite position is 6 - 4 = 2. D is at pos 2.",
       solution_steps: [
-        "In a circle of 8, the opposite position is (Current + 4) mod 8.",
-        "G is at position 2.",
-        "Opposite position = 2 + 4 = 6.",
-        "According to our map, E occupies position 6."
+        "G is at position 6.",
+        "Opposite position = 6 - 4 = 2.",
+        "Person at position 2 is D."
       ],
       examTags: ["CUET", "MH-CET"]
     },
@@ -127,12 +128,12 @@ export const arrangementsCircularData = {
       question: "How many persons are between D and B (clockwise from D)?",
       options: ["One", "Two", "Three", "Four"],
       correct: 2,
-      explanation: "D is 3, B is 7. Clockwise from 3: 2, 1, 8, 7. People are G, C, H. Total 3.",
+      explanation: "Moving clockwise from D(2) to B(7): 1, 8. The people at these positions are C and H. (2 people).",
       solution_steps: [
-        "Position of D is 3 and B is 7.",
-        "Moving Clockwise from 3: 2, 1, 8, 7.",
-        "The people at positions 2, 1, and 8 are G, C, and H respectively.",
-        "Count = 3 people."
+        "D is at Pos 2, B is at Pos 7.",
+        "Clockwise path: 2 -> 1 -> 8 -> 7.",
+        "Intermediate people are C(1) and H(8).",
+        "Count = 2."
       ],
       examTags: ["CUET", "MH-CET"]
     },
@@ -149,11 +150,11 @@ export const arrangementsCircularData = {
       question: "Who sits second to the left of F?",
       options: ["D", "A", "G", "C"],
       correct: 0,
-      explanation: "F is at 5. Facing center, left is Clockwise. 1st-4, 2nd-3. Position 3 is D.",
+      explanation: "F is at position 3. Left (Clockwise) from 3: 2, 1. Position 1 is C.",
       solution_steps: [
-        "F is at position 5.",
-        "Second towards Left (Clockwise) from 5: 4(1st), 3(2nd).",
-        "The person at position 3 is D."
+        "F is at Pos 3.",
+        "2nd left: 3 -> 2 -> 1.",
+        "At Pos 1 is C."
       ],
       examTags: ["CUET", "MH-CET"]
     },
@@ -170,12 +171,12 @@ export const arrangementsCircularData = {
       question: "Which of the following sits between H and G?",
       options: ["C", "A", "F", "D"],
       correct: 0,
-      explanation: "H is 8, G is 2. C is at 1. So C sits between them.",
+      explanation: "H is at 8, G is at 6. The position between them clockwise is 7. B sits at 7.",
       solution_steps: [
-        "H is at position 8.",
-        "G is at position 2.",
-        "The only position between 8 and 2 is 1.",
-        "At position 1 is C."
+        "H is at Pos 8.",
+        "G is at Pos 6.",
+        "Path clockwise from H to G: 8(H) -> 7(?) -> 6(G).",
+        "At Pos 7 is B."
       ],
       examTags: ["CUET", "MH-CET"]
     },
@@ -195,16 +196,14 @@ export const arrangementsCircularData = {
       question: "Which color does M like?",
       options: ["White", "Yellow", "Black", "Blue"],
       correct: 1,
-      explanation: "Map (Anti-clockwise): 1.Yellow(M), 2.White(K), 3.N(Green), 4.J(Red), 5.O(Black), 6.L(Blue). M(1) is Yellow.",
+      explanation: "Step-by-Step Logic:\n1. J(Red) is 3rd right (opposite) of Yellow. Try Yellow=1. J(Red)=4.\n2. N(Green) 2nd left (CW) of Yellow(1). Index: 1 -> 6 -> 5. No, left is CW, so 1 -> 2 -> 3. N(Green)=3.\n3. L(Blue) 2nd right of J(4). Index: 4 -> 5 -> 6. L(Blue)=6.\n4. M opposite O. Only positions 2 and 5 are left. These are opposite in 6-person set.\n5. O is not Yellow. Yellow is 1, so O fits at 5 or 2.\n6. White is neighbor of N(3). 4 is J(Red), so White must be 2.\n7. M/O: If White(2) is M, then K is Yellow(1). Matches.\nFinal Map: 1:K(Yellow), 2:M(White), 3:N(Green), 4:J(Red), 5:O(Black), 6:L(Blue).\nM likes White.",
       solution_steps: [
-        "Step 1: Start with Yellow at 1. J 3rd right (opposite in 6) of Yellow. J at 4 (Red).",
-        "Step 2: N 2nd left Yellow(1). Facing center, Left is CW: 6, 5? No. Index shift: 1-2= -1(5). N is 5? No. Map: 1:Y, 2:K, 3:N, 4:J, 5:O, 6:L.",
-        "Step 3: If 1:Y, then 2nd left is 3 (1-2+6 = 5? No, 1+2=3). Let's use 3rd right for 4. 2nd left of 1 is 3? 1-6-5. N at 3.",
-        "Step 4: L 2nd right J(4). 4+2=6. L at 6 (Blue).",
-        "Step 5: M opposite O. Spots 1, 5, 2 left. (1, 5) or (2, 5)? 1, 4 are opts. 2, 5 is opt. If M/O at 1, 5. O not Yellow. M at 1. O at 5.",
-        "Step 6: White neighbor N(3). K at 2 is neighbor of 3. White is K. Black is O (leftover).",
-        "Final Map: 1.Yellow(M), 2.White(K), 3.Green(N), 4.Red(J), 5.Black(O), 6.Blue(L).",
-        "M likes Yellow."
+        "Yellow: K (at Pos 1)",
+        "White: M (at Pos 2)",
+        "Green: N (at Pos 3)",
+        "Red: J (at Pos 4)",
+        "Black: O (at Pos 5)",
+        "Blue: L (at Pos 6)"
       ],
       examTags: ["CUET", "MH-CET"]
     },
@@ -221,11 +220,11 @@ export const arrangementsCircularData = {
       question: "Who likes Black?",
       options: ["O", "K", "N", "M"],
       correct: 0,
-      explanation: "O is at position 5 and likes Black.",
+      explanation: "O is at position 5 and according to our map (1:K, 2:M, 3:N, 4:J, 5:O, 6:L), O likes Black.",
       solution_steps: [
-        "Referencing the final table map: 1:M(Yellow), 2:K(White), 3:N(Green), 4:J(Red), 5:O(Black), 6:L(Blue).",
-        "Black color belongs to the person at position 5.",
-        "That person is O."
+        "Find 'Black' in the map.",
+        "Position 5 belongs to O.",
+        "Therefore O likes Black."
       ],
       examTags: ["CUET", "MH-CET"]
     },
@@ -241,13 +240,12 @@ export const arrangementsCircularData = {
       passage: "Six people J, K, L, M, N and O are sitting around a circular table facing the center. Each likes a different color: Red, Blue, Green, Yellow, White and Black. J likes Red and is third to the right of the one who likes Yellow. N likes Green and sits second to the left of the one who likes Yellow. L likes Blue and sits second to the right of J. M is sitting opposite to O. O does not like Yellow. The one who likes White is an immediate neighbor of N.",
       question: "Who is sitting third to the left of K?",
       options: ["J", "L", "O", "N"],
-      correct: 2,
-      explanation: "K is 2. Facing center, 3rd left is 2+3 (opposite). Opposite 2 is 5. O is 5.",
+      correct: 0,
+      explanation: "K is at position 1. In a circle of 6, the person sitting third to the left/right is diametrically opposite (1+3=4). Person at position 4 is J.",
       solution_steps: [
-        "In a circle of 6, 'third' to the left or right means diametrically opposite.",
-        "K is at position 2.",
-        "Opposite of 2 is 2 + 3 = 5.",
-        "The person at position 5 is O."
+        "K is at position 1.",
+        "Third left of 1 is 1 + 3 = 4.",
+        "The person at position 4 is J."
       ],
       examTags: ["CUET", "MH-CET"]
     },
@@ -264,12 +262,11 @@ export const arrangementsCircularData = {
       question: "The person who likes White is sitting to the immediate right of?",
       options: ["Yellow", "Green", "Red", "Blue"],
       correct: 0,
-      explanation: "White(K) is 2, Yellow(M) is 1. K is anti-clockwise (right) of M.",
+      explanation: "White is liked by M (Pos 2). Yellow is liked by K (Pos 1). Facing center, the person to the immediate right of K(1) is M(2).",
       solution_steps: [
-        "K likes White and is at position 2.",
-        "The person to the immediate right of K (facing center) would be in position 3? No, facing center right is Anti-Clockwise.",
-        "Right of 1 (M-Yellow) is 2 (K-White).",
-        "So K is sitting to the immediate right of M (Yellow)."
+        "Person K (Yellow) is at position 1.",
+        "Facing center, the person to the immediate right is the one at position 2.",
+        "At position 2 is M, who likes White."
       ],
       examTags: ["CUET", "MH-CET"]
     },
@@ -284,13 +281,13 @@ export const arrangementsCircularData = {
       difficultyProfile: "Standard-6-Attr",
       passage: "Six people J, K, L, M, N and O are sitting around a circular table facing the center. Each likes a different color: Red, Blue, Green, Yellow, White and Black. J likes Red and is third to the right of the one who likes Yellow. N likes Green and sits second to the left of the one who likes Yellow. L likes Blue and sits second to the right of J. M is sitting opposite to O. O does not like Yellow. The one who likes White is an immediate neighbor of N.",
       question: "Who is second to the right of L?",
-      options: ["N", "O", "K", "J"],
+      options: ["N", "O", "M", "J"],
       correct: 2,
-      explanation: "L is 6. Right is anti-clockwise. 1st-1, 2nd-2. Position 2 is K.",
+      explanation: "L is at position 6. Facing center, the person second to the right (Anti-Clockwise) of Pos 6 is Pos 2 (6+2=8/2). Person at Pos 2 is M.",
       solution_steps: [
-        "L is at position 6.",
-        "Second towards the Right (Anti-Clockwise) from 6: 1(1st), 2(2nd).",
-        "The person at position 2 is K."
+        "L is at Position 6.",
+        "Moving 2 steps Anti-Clockwise: 1(1st), 2(2nd).",
+        "The person at Position 2 is M (White)."
       ],
       examTags: ["CUET", "MH-CET"]
     },
